@@ -204,6 +204,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Informatics Research and Development Lab";
 				TargetAttributes = {
+					A62A1A0E1823C9C7006A62B3 = {
+						DevelopmentTeam = Z827RBGAJC;
+					};
 					A62A1A321823C9C7006A62B3 = {
 						TestTargetID = A62A1A0E1823C9C7006A62B3;
 					};
@@ -384,10 +387,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "photon/photon-Prefix.pch";
 				INFOPLIST_FILE = "photon/photon-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1AF4528A-9381-43C4-953D-A353BE0A07CC";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -397,10 +402,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "photon/photon-Prefix.pch";
 				INFOPLIST_FILE = "photon/photon-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1AF4528A-9381-43C4-953D-A353BE0A07CC";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
