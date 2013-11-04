@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Informatics Research and Development Lab. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "IssuesViewController.h"
 
-@interface FirstViewController ()
+@interface IssuesViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation IssuesViewController
 
 - (void)viewDidLoad
 {

@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Informatics Research and Development Lab. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "TagsViewController.h"
 
-@interface SecondViewController ()
+@interface TagsViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation TagsViewController
 
 - (void)viewDidLoad
 {
