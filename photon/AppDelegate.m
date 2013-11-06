@@ -12,8 +12,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
     // Override point for customization after application launch.
-    return YES;
+    [AppManager singletonAppManager];
+   return YES;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

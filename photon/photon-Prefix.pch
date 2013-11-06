@@ -13,4 +13,9 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+    #import "AppManager.h"
+
+#define APP_MGR ((AppManager *)[AppManager singletonAppManager])
+
 #endif

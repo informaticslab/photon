@@ -10,4 +10,7 @@
 
 @interface IssuesViewController : UITableViewController
 
+
+- (IBAction)refresh:(id)sender;
+
 @end

@@ -22,6 +22,11 @@
 		A62A1A371823C9C7006A62B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62A1A161823C9C7006A62B3 /* UIKit.framework */; };
 		A62A1A3F1823C9C7006A62B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A62A1A3D1823C9C7006A62B3 /* InfoPlist.strings */; };
 		A62A1A411823C9C7006A62B3 /* photonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A62A1A401823C9C7006A62B3 /* photonTests.m */; };
+		A6A919D218299BB500F1CE7D /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A919CF18299BB500F1CE7D /* AppManager.m */; };
+		A6A919D61829A1BC00F1CE7D /* IssuesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A919D51829A1BC00F1CE7D /* IssuesManager.m */; };
+		A6A919D81829B48A00F1CE7D /* Issues.json in Resources */ = {isa = PBXBuildFile; fileRef = A6A919D71829B48A00F1CE7D /* Issues.json */; };
+		A6A919DB182A74D400F1CE7D /* Issue.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A919DA182A74D400F1CE7D /* Issue.m */; };
+		A6A919DE182A9B8700F1CE7D /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A919DD182A9B8700F1CE7D /* Article.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +61,16 @@
 		A62A1A3C1823C9C7006A62B3 /* photonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "photonTests-Info.plist"; sourceTree = "<group>"; };
 		A62A1A3E1823C9C7006A62B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A62A1A401823C9C7006A62B3 /* photonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = photonTests.m; sourceTree = "<group>"; };
+		A6A919CF18299BB500F1CE7D /* AppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppManager.m; sourceTree = "<group>"; };
+		A6A919D018299BB500F1CE7D /* AppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
+		A6A919D118299BB500F1CE7D /* Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Debug.h; sourceTree = "<group>"; };
+		A6A919D41829A1BC00F1CE7D /* IssuesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssuesManager.h; sourceTree = "<group>"; };
+		A6A919D51829A1BC00F1CE7D /* IssuesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssuesManager.m; sourceTree = "<group>"; };
+		A6A919D71829B48A00F1CE7D /* Issues.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Issues.json; sourceTree = "<group>"; };
+		A6A919D9182A74D400F1CE7D /* Issue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Issue.h; sourceTree = "<group>"; };
+		A6A919DA182A74D400F1CE7D /* Issue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Issue.m; sourceTree = "<group>"; };
+		A6A919DC182A9B8700F1CE7D /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
+		A6A919DD182A9B8700F1CE7D /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +100,7 @@
 		A62A1A061823C9C7006A62B3 = {
 			isa = PBXGroup;
 			children = (
+				A6A919D71829B48A00F1CE7D /* Issues.json */,
 				A62A1A181823C9C7006A62B3 /* photon */,
 				A62A1A3A1823C9C7006A62B3 /* photonTests */,
 				A62A1A111823C9C7006A62B3 /* Frameworks */,
@@ -117,13 +133,22 @@
 			children = (
 				A62A1A211823C9C7006A62B3 /* AppDelegate.h */,
 				A62A1A221823C9C7006A62B3 /* AppDelegate.m */,
-				A62A1A241823C9C7006A62B3 /* Main.storyboard */,
+				A6A919D018299BB500F1CE7D /* AppManager.h */,
+				A6A919CF18299BB500F1CE7D /* AppManager.m */,
+				A6A919DC182A9B8700F1CE7D /* Article.h */,
+				A6A919DD182A9B8700F1CE7D /* Article.m */,
+				A6A919D118299BB500F1CE7D /* Debug.h */,
+				A62A1A2D1823C9C7006A62B3 /* Images.xcassets */,
+				A6A919D9182A74D400F1CE7D /* Issue.h */,
+				A6A919DA182A74D400F1CE7D /* Issue.m */,
+				A6A919D41829A1BC00F1CE7D /* IssuesManager.h */,
+				A6A919D51829A1BC00F1CE7D /* IssuesManager.m */,
 				A62A1A271823C9C7006A62B3 /* IssuesViewController.h */,
 				A62A1A281823C9C7006A62B3 /* IssuesViewController.m */,
+				A62A1A241823C9C7006A62B3 /* Main.storyboard */,
+				A62A1A191823C9C7006A62B3 /* Supporting Files */,
 				A62A1A2A1823C9C7006A62B3 /* TagsViewController.h */,
 				A62A1A2B1823C9C7006A62B3 /* TagsViewController.m */,
-				A62A1A2D1823C9C7006A62B3 /* Images.xcassets */,
-				A62A1A191823C9C7006A62B3 /* Supporting Files */,
 			);
 			path = photon;
 			sourceTree = "<group>";
@@ -239,6 +264,7 @@
 				A62A1A2E1823C9C7006A62B3 /* Images.xcassets in Resources */,
 				A62A1A1D1823C9C7006A62B3 /* InfoPlist.strings in Resources */,
 				A62A1A261823C9C7006A62B3 /* Main.storyboard in Resources */,
+				A6A919D81829B48A00F1CE7D /* Issues.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +285,12 @@
 			files = (
 				A62A1A2C1823C9C7006A62B3 /* TagsViewController.m in Sources */,
 				A62A1A231823C9C7006A62B3 /* AppDelegate.m in Sources */,
+				A6A919DE182A9B8700F1CE7D /* Article.m in Sources */,
 				A62A1A291823C9C7006A62B3 /* IssuesViewController.m in Sources */,
+				A6A919DB182A74D400F1CE7D /* Issue.m in Sources */,
 				A62A1A1F1823C9C7006A62B3 /* main.m in Sources */,
+				A6A919D218299BB500F1CE7D /* AppManager.m in Sources */,
+				A6A919D61829A1BC00F1CE7D /* IssuesManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

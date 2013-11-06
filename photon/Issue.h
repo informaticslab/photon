@@ -1,0 +1,18 @@
+//
+//  Issue.h
+//  photon
+//
+//  Created by jtq6 on 11/6/13.
+//  Copyright (c) 2013 Informatics Research and Development Lab. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface Issue : NSObject
+
+@property(strong, nonatomic) NSMutableArray *articles;
+@property(strong, nonatomic) NSString *title;
+
+-(id)initWithTitle:(NSString *)title;
+
+@end
