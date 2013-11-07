@@ -17,6 +17,11 @@
         
         self.title= title;
         self.articles = [[NSMutableArray alloc] init];
+        NSArray *titleSplit = [_title componentsSeparatedByString:@"/"];
+        if ([titleSplit count] == 3) {
+            self.date = titleSplit[0];
+        }
+
        
     }
     
