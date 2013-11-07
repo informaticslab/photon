@@ -22,6 +22,7 @@
 		A62A1A371823C9C7006A62B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62A1A161823C9C7006A62B3 /* UIKit.framework */; };
 		A62A1A3F1823C9C7006A62B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A62A1A3D1823C9C7006A62B3 /* InfoPlist.strings */; };
 		A62A1A411823C9C7006A62B3 /* photonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A62A1A401823C9C7006A62B3 /* photonTests.m */; };
+		A67AF51C182BA408000F6EB0 /* IssueArticlesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A67AF51B182BA408000F6EB0 /* IssueArticlesTVC.m */; };
 		A6A919D218299BB500F1CE7D /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A919CF18299BB500F1CE7D /* AppManager.m */; };
 		A6A919D61829A1BC00F1CE7D /* IssuesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A919D51829A1BC00F1CE7D /* IssuesManager.m */; };
 		A6A919D81829B48A00F1CE7D /* Issues.json in Resources */ = {isa = PBXBuildFile; fileRef = A6A919D71829B48A00F1CE7D /* Issues.json */; };
@@ -61,6 +62,8 @@
 		A62A1A3C1823C9C7006A62B3 /* photonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "photonTests-Info.plist"; sourceTree = "<group>"; };
 		A62A1A3E1823C9C7006A62B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A62A1A401823C9C7006A62B3 /* photonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = photonTests.m; sourceTree = "<group>"; };
+		A67AF51A182BA408000F6EB0 /* IssueArticlesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueArticlesTVC.h; sourceTree = "<group>"; };
+		A67AF51B182BA408000F6EB0 /* IssueArticlesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueArticlesTVC.m; sourceTree = "<group>"; };
 		A6A919CF18299BB500F1CE7D /* AppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppManager.m; sourceTree = "<group>"; };
 		A6A919D018299BB500F1CE7D /* AppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
 		A6A919D118299BB500F1CE7D /* Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Debug.h; sourceTree = "<group>"; };
@@ -131,6 +134,8 @@
 		A62A1A181823C9C7006A62B3 /* photon */ = {
 			isa = PBXGroup;
 			children = (
+				A67AF51A182BA408000F6EB0 /* IssueArticlesTVC.h */,
+				A67AF51B182BA408000F6EB0 /* IssueArticlesTVC.m */,
 				A62A1A211823C9C7006A62B3 /* AppDelegate.h */,
 				A62A1A221823C9C7006A62B3 /* AppDelegate.m */,
 				A6A919D018299BB500F1CE7D /* AppManager.h */,
@@ -291,6 +296,7 @@
 				A62A1A1F1823C9C7006A62B3 /* main.m in Sources */,
 				A6A919D218299BB500F1CE7D /* AppManager.m in Sources */,
 				A6A919D61829A1BC00F1CE7D /* IssuesManager.m in Sources */,
+				A67AF51C182BA408000F6EB0 /* IssueArticlesTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

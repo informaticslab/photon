@@ -7,6 +7,7 @@
 //
 
 #import "IssuesViewController.h"
+#import "IssueArticlesTVC.h"
 #import "Issue.h"
 
 @interface IssuesViewController ()
@@ -14,6 +15,7 @@
 @end
 
 NSMutableArray *issues;
+Issue *currIssue;
 
 @implementation IssuesViewController
 
@@ -59,12 +61,30 @@ NSMutableArray *issues;
     // Configure the cell...
     NSInteger index = [indexPath row];
     Issue *cellIssue = APP_MGR.issuesMgr.issues[index];
-    
-    
     cell.textLabel.text = cellIssue.title;
     
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Navigation logic may go here. Create and push another view controller.
+    // [self.navigationController pushViewController:detailViewController animated:YES];
+    currIssue = APP_MGR.issuesMgr.issues[[indexPath row]];
+    [self performSegueWithIdentifier:@"pushIssueArticles" sender:nil];
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"pushIssueArticles"])
+    {
+        IssueArticlesTVC *issueArticlesTVC = segue.destinationViewController;
+        issueArticlesTVC.issue = currIssue;
+        
+    }
+}
+
 
 
 

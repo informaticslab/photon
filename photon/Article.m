@@ -16,7 +16,7 @@
     
     if(self= [super init]) {
         
-        self.title= title;
+        self.title = title;
         
     }
     

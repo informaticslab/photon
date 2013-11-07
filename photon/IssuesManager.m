@@ -26,9 +26,8 @@
 
 -(Issue *)newIssueWithTitle:(NSString *)title
 {
-    Issue *newIssue = [[Issue alloc]init];
+    Issue *newIssue = [[Issue alloc]initWithTitle:title];
     
-    newIssue.title = title;
     [_issues addObject:newIssue];
     
     return newIssue;
@@ -59,16 +58,17 @@
     
     for (NSDictionary *issue in testIssues)
     {
+        // create and add issue
         currIssue = [self newIssueWithTitle:[issue valueForKey:@"title"]];
         NSLog(@"Issue title: %@", [issue valueForKey:@"title"]);
-        [_issues addObject:currIssue];
 
-        
+        // get collection of articles for currrent issue
         NSArray *newArticles = [issue valueForKey:@"articles"];
         
         NSLog(@"articles: %@", newArticles);
         for (NSDictionary *article in newArticles) {
             
+            // add new article to current issues
             NSLog(@"title: %@", [article valueForKey:@"title"]);
             currArticle = [self newArticleWithTitle:[article valueForKey:@"title"]  inIssue:currIssue];
             
