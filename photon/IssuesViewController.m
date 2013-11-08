@@ -23,7 +23,7 @@ Issue *currIssue;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.title = @"Issues";
+    self.navigationItem.title = @"MMWR Express";
 
 }
 

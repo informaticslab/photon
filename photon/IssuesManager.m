@@ -16,6 +16,7 @@
 {
     if (self = [super init]) {
         self.issues = [[NSMutableArray alloc]init];
+        self.tags = [[NSMutableArray alloc]init];
         [self loadTestData];
         
     };
@@ -81,9 +82,20 @@
             currArticle.implications = [article valueForKey:@"implications"];
             NSLog(@"implications: %@", [article valueForKey:@"implications"]);
             
-        }
-    }
+            // get collection of articles for currrent issue
+            NSArray *newTags = [article valueForKey:@"tags"];
+            
+            NSLog(@"tags: %@", newTags);
+            for (NSDictionary *tag in newTags) {
+                NSString *currTag = [tag valueForKey:@"tag"];
+                [_tags addObject:currTag];
+                [currArticle.tags addObject:currTag];
 
+            };
+            
+        }
+
+    }
     
 }
 

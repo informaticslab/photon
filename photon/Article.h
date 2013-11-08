@@ -14,6 +14,7 @@
 @property(strong, nonatomic) NSString *already_know;
 @property(strong, nonatomic) NSString *added_by_report;
 @property(strong, nonatomic) NSString *implications;
+@property(strong, nonatomic) NSMutableArray *tags;
 
 
 

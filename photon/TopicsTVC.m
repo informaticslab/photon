@@ -1,0 +1,75 @@
+//
+//  TopicsTVC.m
+//  photon
+//
+//  Created by jtq6 on 11/8/13.
+//  Copyright (c) 2013 Informatics Research and Development Lab. All rights reserved.
+//
+
+#import "TopicsTVC.h"
+#import "TopicKnownVC.h"
+#import "TopicAddedVC.h"
+#import "TopicImplicationsVC.h"
+
+@interface TopicsTVC ()
+
+@end
+
+@implementation TopicsTVC
+
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+ 
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"pushTopicKnown"])
+    {
+        TopicKnownVC *topicKnownVC = segue.destinationViewController;
+        topicKnownVC.article = _article;
+        topicKnownVC.issue = _issue;
+        
+    }
+    
+    else if([segue.identifier isEqualToString:@"pushTopicAdded"])
+    {
+        TopicAddedVC *topicAddedVC = segue.destinationViewController;
+        topicAddedVC.article = _article;
+        topicAddedVC.issue = _issue;
+        
+    }
+    
+    else if([segue.identifier isEqualToString:@"pushTopicImplications"])
+    {
+        TopicImplicationsVC *topicImplicationsVC = segue.destinationViewController;
+        topicImplicationsVC.article = _article;
+        topicImplicationsVC.issue = _issue;
+        
+    }
+}
+
+
+
+@end

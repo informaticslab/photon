@@ -17,6 +17,7 @@
     if(self= [super init]) {
         
         self.title = title;
+        self.tags = [[NSMutableArray alloc]init];
         
     }
     

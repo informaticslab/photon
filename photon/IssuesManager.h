@@ -11,6 +11,7 @@
 @interface IssuesManager : NSObject
 
 @property(nonatomic, strong) NSMutableArray *issues;
+@property(nonatomic, strong) NSMutableArray *tags;
 
 
 -(id)initWithTestData;

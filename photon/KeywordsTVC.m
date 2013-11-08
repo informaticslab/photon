@@ -1,17 +1,18 @@
 //
-//  IssueArticlesTVC.m
+//  KeywordsTVC.m
 //  photon
 //
-//  Created by jtq6 on 11/7/13.
+//  Created by jtq6 on 11/8/13.
 //  Copyright (c) 2013 Informatics Research and Development Lab. All rights reserved.
 //
 
-#import "IssueArticlesTVC.h"
-#import "ArticleDetails.h"
+#import "KeywordsTVC.h"
 
-Article *currArticle;
+@interface KeywordsTVC ()
 
-@implementation IssueArticlesTVC
+@end
+
+@implementation KeywordsTVC
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,8 +32,6 @@ Article *currArticle;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.navigationItem.title = _issue.date;
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,46 +50,21 @@ Article *currArticle;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // return the number of rows in the section.
-    return [_issue.articles count];
+    // Return the number of rows in the section.
+    return [APP_MGR.issuesMgr.tags count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"IssueArticlesCell";
+    static NSString *CellIdentifier = @"TagsCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // configure the cell...
-    Article *rowArticle = _issue.articles[[indexPath row]];
-
-    cell.textLabel.text = rowArticle.title;
-    cell.textLabel.font=[UIFont systemFontOfSize:13.0];
-    cell.textLabel.numberOfLines = 0;
-    [cell.textLabel sizeToFit];
+    // Configure the cell...
+    NSString *tag = APP_MGR.issuesMgr.tags[[indexPath row]];
+    cell.textLabel.text = tag;
+   
     return cell;
 }
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    // Navigation logic may go here. Create and push another view controller.
-    // [self.navigationController pushViewController:detailViewController animated:YES];
-    currArticle = _issue.articles[[indexPath row]];
-    [self performSegueWithIdentifier:@"pushArticleDetails" sender:nil];
-    
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if([segue.identifier isEqualToString:@"pushArticleDetails"])
-    {
-        ArticleDetails *articleDetailsVC = segue.destinationViewController;
-        articleDetailsVC.article = currArticle;
-        articleDetailsVC.issue = _issue;
-        
-    }
-}
-
 
 /*
 // Override to support conditional editing of the table view.
