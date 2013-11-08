@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KeywordsTVC : UITableViewController<NSFetchedResultsControllerDelegate, UISearchDisplayDelegate, UISearchBarDelegate>
+@interface KeywordsTVC : UITableViewController<UISearchDisplayDelegate>
 
 @end
