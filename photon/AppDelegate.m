@@ -15,7 +15,8 @@
 
     // Override point for customization after application launch.
     [AppManager singletonAppManager];
-   return YES;
+    return YES;
+
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

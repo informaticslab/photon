@@ -62,14 +62,18 @@ Issue *currIssue;
     
     // Configure the cell...
     NSInteger index = [indexPath row];
+    UILabel *descLabel = (UILabel *)[cell.contentView viewWithTag:1];
+
     Issue *cellIssue = APP_MGR.issuesMgr.issues[index];
-    cell.textLabel.text = cellIssue.title;
+    // cell.textLabel.text = cellIssue.title;
+    descLabel.text = cellIssue.title;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     // Navigation logic may go here. Create and push another view controller.
     // [self.navigationController pushViewController:detailViewController animated:YES];
     currIssue = APP_MGR.issuesMgr.issues[[indexPath row]];
@@ -83,7 +87,6 @@ Issue *currIssue;
     {
         IssueArticlesTVC *issueArticlesTVC = segue.destinationViewController;
         issueArticlesTVC.issue = currIssue;
-        
     }
 }
 

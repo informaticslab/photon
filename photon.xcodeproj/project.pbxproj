@@ -15,7 +15,7 @@
 		A62A1A231823C9C7006A62B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A62A1A221823C9C7006A62B3 /* AppDelegate.m */; };
 		A62A1A261823C9C7006A62B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A62A1A241823C9C7006A62B3 /* Main.storyboard */; };
 		A62A1A291823C9C7006A62B3 /* IssuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A62A1A281823C9C7006A62B3 /* IssuesViewController.m */; };
-		A62A1A2C1823C9C7006A62B3 /* TagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A62A1A2B1823C9C7006A62B3 /* TagsViewController.m */; };
+		A62A1A2C1823C9C7006A62B3 /* SubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A62A1A2B1823C9C7006A62B3 /* SubjectViewController.m */; };
 		A62A1A2E1823C9C7006A62B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A62A1A2D1823C9C7006A62B3 /* Images.xcassets */; };
 		A62A1A351823C9C7006A62B3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62A1A341823C9C7006A62B3 /* XCTest.framework */; };
 		A62A1A361823C9C7006A62B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62A1A121823C9C7006A62B3 /* Foundation.framework */; };
@@ -54,8 +54,8 @@
 		A62A1A251823C9C7006A62B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A62A1A271823C9C7006A62B3 /* IssuesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IssuesViewController.h; sourceTree = "<group>"; };
 		A62A1A281823C9C7006A62B3 /* IssuesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IssuesViewController.m; sourceTree = "<group>"; };
-		A62A1A2A1823C9C7006A62B3 /* TagsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagsViewController.h; sourceTree = "<group>"; };
-		A62A1A2B1823C9C7006A62B3 /* TagsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagsViewController.m; sourceTree = "<group>"; };
+		A62A1A2A1823C9C7006A62B3 /* SubjectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubjectViewController.h; sourceTree = "<group>"; };
+		A62A1A2B1823C9C7006A62B3 /* SubjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubjectViewController.m; sourceTree = "<group>"; };
 		A62A1A2D1823C9C7006A62B3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A62A1A331823C9C7006A62B3 /* photonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = photonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A62A1A341823C9C7006A62B3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -152,8 +152,8 @@
 				A62A1A281823C9C7006A62B3 /* IssuesViewController.m */,
 				A62A1A241823C9C7006A62B3 /* Main.storyboard */,
 				A62A1A191823C9C7006A62B3 /* Supporting Files */,
-				A62A1A2A1823C9C7006A62B3 /* TagsViewController.h */,
-				A62A1A2B1823C9C7006A62B3 /* TagsViewController.m */,
+				A62A1A2A1823C9C7006A62B3 /* SubjectViewController.h */,
+				A62A1A2B1823C9C7006A62B3 /* SubjectViewController.m */,
 			);
 			path = photon;
 			sourceTree = "<group>";
@@ -288,7 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A62A1A2C1823C9C7006A62B3 /* TagsViewController.m in Sources */,
+				A62A1A2C1823C9C7006A62B3 /* SubjectViewController.m in Sources */,
 				A62A1A231823C9C7006A62B3 /* AppDelegate.m in Sources */,
 				A6A919DE182A9B8700F1CE7D /* Article.m in Sources */,
 				A62A1A291823C9C7006A62B3 /* IssuesViewController.m in Sources */,

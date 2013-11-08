@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TagsViewController : UIViewController
+@interface SubjectViewController : UIViewController
 
 @end

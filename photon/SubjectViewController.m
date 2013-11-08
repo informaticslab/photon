@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Informatics Research and Development Lab. All rights reserved.
 //
 
-#import "TagsViewController.h"
+#import "SubjectViewController.h"
 
-@interface TagsViewController ()
+@interface SubjectViewController ()
 
 @end
 
-@implementation TagsViewController
+@implementation SubjectViewController
 
 - (void)viewDidLoad
 {

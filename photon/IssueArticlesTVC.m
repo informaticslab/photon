@@ -63,7 +63,9 @@
     
     // configure the cell...
     Article *rowArticle = _issue.articles[[indexPath row]];
+
     cell.textLabel.text = rowArticle.title;
+    cell.textLabel.font=[UIFont systemFontOfSize:13.0];
     cell.textLabel.numberOfLines = 0;
     [cell.textLabel sizeToFit];
     return cell;
