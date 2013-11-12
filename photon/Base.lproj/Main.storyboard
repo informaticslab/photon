@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--KeywordsTVC - Topic-->
+        <!--KeywordsTVC - Subjects-->
         <scene sceneID="S00-oy-uV5">
             <objects>
                 <tableViewController id="Jlz-Rv-MFc" customClass="KeywordsTVC" sceneMemberID="viewController">
@@ -35,7 +35,7 @@
                             <outlet property="delegate" destination="Jlz-Rv-MFc" id="jUa-qE-64a"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Topic" id="17v-Ct-Ngf"/>
+                    <navigationItem key="navigationItem" title="Subjects" id="17v-Ct-Ngf"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="szS-ai-fgd" id="Fks-mc-4bS"/>
                     </connections>
@@ -76,11 +76,14 @@
         <scene sceneID="YNk-BK-Vmg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cEW-B4-Yvd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="View by Issue" image="first" id="u1e-5L-l1D"/>
+                    <tabBarItem key="tabBarItem" title="View by Issue" image="issue_tab_icon_inactive" id="u1e-5L-l1D"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Cc-0l-m0j">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -110,7 +113,7 @@
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IssueDescription" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szp-3x-H13">
                                             <rect key="frame" x="20" y="11" width="267" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -387,11 +390,11 @@
             </objects>
             <point key="canvasLocation" x="3547" y="-233"/>
         </scene>
-        <!--Navigation Controller - View by Topic-->
+        <!--Navigation Controller - View by Subject-->
         <scene sceneID="rk4-TB-uNF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="siQ-rq-DcI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="View by Topic" id="wCW-RR-2K8"/>
+                    <tabBarItem key="tabBarItem" title="View by Subject" image="subject_tab_icon_inactive" id="wCW-RR-2K8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uqC-Ma-XTl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -408,7 +411,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="issue_tab_icon_inactive" width="25" height="25"/>
+        <image name="subject_tab_icon_inactive" width="25" height="25"/>
     </resources>
     <color key="tintColor" red="0.25098039220000001" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -15,8 +15,9 @@
 -(id)initWithTestData
 {
     if (self = [super init]) {
+        
         self.issues = [[NSMutableArray alloc]init];
-        self.tags = [[NSMutableArray alloc]init];
+        self.tags = [[NSMutableDictionary alloc]init];
         [self loadTestData];
         
     };
@@ -54,6 +55,7 @@
                                                             error:&err];
     Issue *currIssue = nil;
     Article *currArticle = nil;
+    NSMutableArray *articlesWithTag = nil;
     
     NSLog(@"Imported Test Issues: %@", testIssues);
     
@@ -88,7 +90,13 @@
             NSLog(@"tags: %@", newTags);
             for (NSDictionary *tag in newTags) {
                 NSString *currTag = [tag valueForKey:@"tag"];
-                [_tags addObject:currTag];
+                if ((articlesWithTag = [_tags objectForKey:currTag]) == nil) {
+                    articlesWithTag = [[NSMutableArray alloc] initWithObjects:currArticle, nil];
+                    [_tags setObject:articlesWithTag forKey:currTag];
+                    
+                } else {
+                    [articlesWithTag addObject:currArticle];
+                }
                 [currArticle.tags addObject:currTag];
 
             };

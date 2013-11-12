@@ -15,13 +15,12 @@
 @implementation KeywordsTVC
 
 NSArray *searchResults;
-
+NSMutableArray *allTags;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -35,6 +34,13 @@ NSArray *searchResults;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // Custom initialization
+    UITabBarItem *item = [self.tabBarController.tabBar.items objectAtIndex:1];
+    item.image = [UIImage imageNamed:@"subject_tab_icon_inactive"];
+    item.selectedImage = [UIImage imageNamed:@"subject_tab_icon_active"];
+    allTags = [[NSMutableArray alloc] init];
+    [allTags addObjectsFromArray:[[APP_MGR.issuesMgr.tags allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,7 +74,7 @@ NSArray *searchResults;
     if (tableView == self.searchDisplayController.searchResultsTableView)
         cell.textLabel.text = searchResults[[indexPath row]];
     else
-        cell.textLabel.text = APP_MGR.issuesMgr.tags[[indexPath row]];
+        cell.textLabel.text = allTags[[indexPath row]];
 
    
     return cell;
@@ -80,8 +86,7 @@ NSArray *searchResults;
     NSPredicate *resultPredicate = [NSPredicate
                                     predicateWithFormat:@"SELF contains[cd] %@",
                                     searchText];
-    
-    searchResults = [APP_MGR.issuesMgr.tags filteredArrayUsingPredicate:resultPredicate];
+    searchResults = [allTags filteredArrayUsingPredicate:resultPredicate];
 }
 
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller
