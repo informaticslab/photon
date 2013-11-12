@@ -15,6 +15,9 @@
 
     // Override point for customization after application launch.
     [AppManager singletonAppManager];
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil];
+    [[UINavigationBar appearance] setTitleTextAttributes:attributes];
+
     return YES;
 
 }

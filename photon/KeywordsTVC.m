@@ -40,6 +40,11 @@ NSMutableArray *allTags;
     item.selectedImage = [UIImage imageNamed:@"subject_tab_icon_active"];
     allTags = [[NSMutableArray alloc] init];
     [allTags addObjectsFromArray:[[APP_MGR.issuesMgr.tags allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar_back"] forBarMetrics:UIBarMetricsDefault];
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
+    //set back button arrow color
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+
     
 }
 
