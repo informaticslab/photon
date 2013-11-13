@@ -31,9 +31,25 @@ Article *currArticle;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.navigationItem.title = _issue.date;
+    self.navigationItem.title = _issue.number;
+    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
+    shareButton.width = 30.0;
+    UIBarButtonItem *helpButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"help_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(help:)];
+    helpButton.width = 30.0;
+    self.navigationItem.rightBarButtonItems  = [NSArray arrayWithObjects:helpButton, shareButton, nil];
 
 }
+
+- (void)share:(id)sender
+{
+    
+}
+
+- (void)help:(id)sender
+{
+    
+}
+
 
 - (void)didReceiveMemoryWarning
 {
