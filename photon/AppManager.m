@@ -44,7 +44,9 @@ static AppManager *sharedAppManager = nil;
 	if ((self = [super init])) {
 		self.appName = @"Photon";
         self.agreedWithEula = FALSE;
-        self.tableFont = [UIFont boldSystemFontOfSize: 16];
+//        self.tableFont = [UIFont boldSystemFontOfSize: 16];
+        self.tableFont = [UIFont fontWithName:@"Helvetica Neue" size:15];
+        self.textFont = [UIFont fontWithName:@"Helvetica Neue" size:13];
         self.issuesMgr = [[IssuesManager alloc  ]initWithTestData];
         
 	

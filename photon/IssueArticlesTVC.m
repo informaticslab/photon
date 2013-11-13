@@ -64,9 +64,14 @@ Article *currArticle;
     Article *rowArticle = _issue.articles[[indexPath row]];
 
     cell.textLabel.text = rowArticle.title;
-    cell.textLabel.font=[UIFont systemFontOfSize:13.0];
+    cell.textLabel.font = APP_MGR.tableFont;
     cell.textLabel.numberOfLines = 0;
     [cell.textLabel sizeToFit];
+//    UILabel *descLabel = (UILabel *)[cell.contentView viewWithTag:1];
+//    descLabel.numberOfLines = 0;
+//    descLabel.text = rowArticle.title;
+//    [descLabel sizeToFit];
+
     return cell;
 }
 

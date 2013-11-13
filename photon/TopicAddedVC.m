@@ -18,8 +18,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    // Do any additional setup after loading the view.
     _txtView.text = _article.added_by_report;
+    _txtView.font = APP_MGR.textFont;
 
 }
 

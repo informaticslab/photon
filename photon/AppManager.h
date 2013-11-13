@@ -16,6 +16,7 @@
 
 @property (nonatomic, retain) NSString *appName;
 @property (nonatomic, retain) UIFont *tableFont;
+@property (nonatomic, retain) UIFont *textFont;
 @property BOOL agreedWithEula;
 
 // Core Data properties

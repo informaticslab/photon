@@ -40,10 +40,11 @@ NSMutableArray *allTags;
     item.selectedImage = [UIImage imageNamed:@"subject_tab_icon_active"];
     allTags = [[NSMutableArray alloc] init];
     [allTags addObjectsFromArray:[[APP_MGR.issuesMgr.tags allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar_back"] forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar_back"] forBarMetrics:UIBarMetricsDefault];
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
     //set back button arrow color
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1];
 
     
 }
@@ -80,6 +81,8 @@ NSMutableArray *allTags;
         cell.textLabel.text = searchResults[[indexPath row]];
     else
         cell.textLabel.text = allTags[[indexPath row]];
+    
+    cell.textLabel.font = APP_MGR.tableFont;
 
    
     return cell;

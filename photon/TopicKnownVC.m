@@ -20,6 +20,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     _txtView.text = _article.already_know;
+    _txtView.font = APP_MGR.textFont;
+
 }
 
 - (void)didReceiveMemoryWarning
