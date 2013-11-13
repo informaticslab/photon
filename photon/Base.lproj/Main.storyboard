@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--KeywordsTVC - Subjects-->
+        <!--KeywordsTVC - MMWR Express-->
         <scene sceneID="S00-oy-uV5">
             <objects>
                 <tableViewController id="Jlz-Rv-MFc" customClass="KeywordsTVC" sceneMemberID="viewController">
@@ -35,7 +35,7 @@
                             <outlet property="delegate" destination="Jlz-Rv-MFc" id="jUa-qE-64a"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Subjects" id="17v-Ct-Ngf">
+                    <navigationItem key="navigationItem" title="MMWR Express" id="17v-Ct-Ngf">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="6jw-fi-xs0">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="aK0-fj-zhQ">
                                 <rect key="frame" x="16" y="11" width="22" height="22"/>
