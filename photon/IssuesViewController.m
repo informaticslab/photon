@@ -27,7 +27,7 @@ Issue *currIssue;
     UITabBarItem *item = [self.tabBarController.tabBar.items objectAtIndex:0];
     item.image = [UIImage imageNamed:@"issue_tab_icon_inactive"];
     item.selectedImage = [UIImage imageNamed:@"issue_tab_icon_active"];
-//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar_back"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar"] forBarMetrics:UIBarMetricsDefault];
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
     //set back button arrow color
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
@@ -35,10 +35,10 @@ Issue *currIssue;
 
 
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
-    shareButton.width = -1.0;
+    shareButton.style = UIBarButtonItemStyleBordered;
 
-    UIBarButtonItem *helpButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"help_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(help:)];
-    helpButton.width = -1.0;
+    UIBarButtonItem *helpButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"help_icon"] style:UIBarButtonItemStyleBordered target:self action:@selector(help:)];
+    helpButton.style = UIBarButtonItemStyleBordered;
 
     self.navigationItem.rightBarButtonItems  = [NSArray arrayWithObjects:helpButton, shareButton, nil];
 

@@ -11,6 +11,9 @@
 
 Article *currArticle;
 
+#define CELL_TEXT_LABEL_WIDTH 230.0
+#define CELL_PADDING 10.0
+
 @implementation IssueArticlesTVC
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -71,6 +74,20 @@ Article *currArticle;
     return [_issue.articles count];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Article *rowArticle = _issue.articles[[indexPath row]];
+    NSString *title = rowArticle.title;
+
+    CGSize constraintSize = CGSizeMake(CELL_TEXT_LABEL_WIDTH, MAXFLOAT);
+    CGSize titleTextSize = CGSizeMake(0.0, 0.0);
+    
+    if (title != nil)
+        titleTextSize = [title sizeWithFont:APP_MGR.tableFont constrainedToSize:constraintSize lineBreakMode:NSLineBreakByWordWrapping];
+    
+    return  titleTextSize.height + (2 * CELL_PADDING);
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"IssueArticlesCell";
@@ -79,10 +96,12 @@ Article *currArticle;
     // configure the cell...
     Article *rowArticle = _issue.articles[[indexPath row]];
 
-    cell.textLabel.text = rowArticle.title;
     cell.textLabel.font = APP_MGR.tableFont;
     cell.textLabel.numberOfLines = 0;
     [cell.textLabel sizeToFit];
+    cell.textLabel.text = rowArticle.title;
+    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+
 //    UILabel *descLabel = (UILabel *)[cell.contentView viewWithTag:1];
 //    descLabel.numberOfLines = 0;
 //    descLabel.text = rowArticle.title;

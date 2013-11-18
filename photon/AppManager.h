@@ -14,9 +14,9 @@
 
 @interface AppManager : NSObject 
 
-@property (nonatomic, retain) NSString *appName;
-@property (nonatomic, retain) UIFont *tableFont;
-@property (nonatomic, retain) UIFont *textFont;
+@property (nonatomic, strong) NSString *appName;
+@property (nonatomic, strong) UIFont *tableFont;
+@property (nonatomic, strong) UIFont *textFont;
 @property BOOL agreedWithEula;
 
 // Core Data properties
