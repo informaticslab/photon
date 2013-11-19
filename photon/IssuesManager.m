@@ -44,6 +44,12 @@
                            
 }
 
+-(NSArray *)articlesWithKeyword:(NSString *)keyword
+{
+    NSArray *articles = [_keywords objectForKey:keyword];
+    return articles;
+}
+
                            
 -(void)loadTestData
 {
@@ -98,13 +104,9 @@
                     [articlesWithKeyword addObject:currArticle];
                 }
                 [currArticle.tags addObject:currKeyword];
-
             };
-            
         }
-
     }
-    
 }
 
 @end

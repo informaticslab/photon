@@ -7,6 +7,7 @@
 //
 
 #import "KeywordsTVC.h"
+#import "KeywordArticlesTVC.h"
 
 @interface KeywordsTVC ()
 
@@ -16,6 +17,7 @@
 
 NSArray *searchResults;
 NSMutableArray *allKeywords;
+NSString *selectedKeyword;
 
 - (void)viewDidLoad
 {
@@ -120,6 +122,34 @@ shouldReloadTableForSearchString:(NSString *)searchString
     
     return YES;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    // Navigation logic may go here. Create and push another view controller.
+    // [self.navigationController pushViewController:detailViewController animated:YES];
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+        selectedKeyword = searchResults[[indexPath row]];
+    else
+        selectedKeyword = allKeywords[[indexPath row]];
+        
+    [self performSegueWithIdentifier:@"pushKeywordArticles" sender:nil];
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"pushKeywordArticles"])
+    {
+        KeywordArticlesTVC *keywordArticlesTVC = segue.destinationViewController;
+        keywordArticlesTVC.keyword = selectedKeyword;
+    }
+}
+
+
+
+
+
 
 /*
 #pragma mark - Navigation

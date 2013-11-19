@@ -15,6 +15,7 @@
 
 
 -(id)initWithTestData;
+-(NSArray *)articlesWithKeyword:(NSString *)keyword;
 
 
 @end
