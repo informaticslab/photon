@@ -15,15 +15,7 @@
 @implementation KeywordsTVC
 
 NSArray *searchResults;
-NSMutableArray *allTags;
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-    }
-    return self;
-}
+NSMutableArray *allKeywords;
 
 - (void)viewDidLoad
 {
@@ -38,8 +30,8 @@ NSMutableArray *allTags;
     UITabBarItem *item = [self.tabBarController.tabBar.items objectAtIndex:1];
     item.image = [UIImage imageNamed:@"subject_tab_icon_inactive"];
     item.selectedImage = [UIImage imageNamed:@"subject_tab_icon_active"];
-    allTags = [[NSMutableArray alloc] init];
-    [allTags addObjectsFromArray:[[APP_MGR.issuesMgr.tags allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]];
+    allKeywords = [[NSMutableArray alloc] init];
+    [allKeywords addObjectsFromArray:[[APP_MGR.issuesMgr.keywords allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar"] forBarMetrics:UIBarMetricsDefault];
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
     //set back button arrow color
@@ -90,18 +82,18 @@ NSMutableArray *allTags;
         return [searchResults count];
 
     // Return the number of rows in the section.
-    return [APP_MGR.issuesMgr.tags count];
+    return [APP_MGR.issuesMgr.keywords count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"TagsCell";
+    static NSString *CellIdentifier = @"KeywordsCell";
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     // Configure the cell...
     if (tableView == self.searchDisplayController.searchResultsTableView)
         cell.textLabel.text = searchResults[[indexPath row]];
     else
-        cell.textLabel.text = allTags[[indexPath row]];
+        cell.textLabel.text = allKeywords[[indexPath row]];
     
     cell.textLabel.font = APP_MGR.tableFont;
 
@@ -115,7 +107,7 @@ NSMutableArray *allTags;
     NSPredicate *resultPredicate = [NSPredicate
                                     predicateWithFormat:@"SELF contains[cd] %@",
                                     searchText];
-    searchResults = [allTags filteredArrayUsingPredicate:resultPredicate];
+    searchResults = [allKeywords filteredArrayUsingPredicate:resultPredicate];
 }
 
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller
@@ -128,44 +120,6 @@ shouldReloadTableForSearchString:(NSString *)searchString
     
     return YES;
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation

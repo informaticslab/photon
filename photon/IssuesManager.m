@@ -17,7 +17,7 @@
     if (self = [super init]) {
         
         self.issues = [[NSMutableArray alloc]init];
-        self.tags = [[NSMutableDictionary alloc]init];
+        self.keywords = [[NSMutableDictionary alloc]init];
         [self loadTestData];
         
     };
@@ -55,7 +55,7 @@
                                                             error:&err];
     Issue *currIssue = nil;
     Article *currArticle = nil;
-    NSMutableArray *articlesWithTag = nil;
+    NSMutableArray *articlesWithKeyword = nil;
     
     NSLog(@"Imported Test Issues: %@", testIssues);
     
@@ -85,19 +85,19 @@
             NSLog(@"implications: %@", [article valueForKey:@"implications"]);
             
             // get collection of articles for currrent issue
-            NSArray *newTags = [article valueForKey:@"tags"];
+            NSArray *newKeywords = [article valueForKey:@"keywords"];
             
-            NSLog(@"tags: %@", newTags);
-            for (NSDictionary *tag in newTags) {
-                NSString *currTag = [tag valueForKey:@"tag"];
-                if ((articlesWithTag = [_tags objectForKey:currTag]) == nil) {
-                    articlesWithTag = [[NSMutableArray alloc] initWithObjects:currArticle, nil];
-                    [_tags setObject:articlesWithTag forKey:currTag];
+            NSLog(@"tags: %@", newKeywords);
+            for (NSDictionary *keyword in newKeywords) {
+                NSString *currKeyword = [keyword valueForKey:@"keyword"];
+                if ((articlesWithKeyword = [_keywords objectForKey:currKeyword]) == nil) {
+                    articlesWithKeyword = [[NSMutableArray alloc] initWithObjects:currArticle, nil];
+                    [_keywords setObject:articlesWithKeyword forKey:currKeyword];
                     
                 } else {
-                    [articlesWithTag addObject:currArticle];
+                    [articlesWithKeyword addObject:currArticle];
                 }
-                [currArticle.tags addObject:currTag];
+                [currArticle.tags addObject:currKeyword];
 
             };
             

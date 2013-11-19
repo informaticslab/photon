@@ -7,21 +7,21 @@
             "already_known": "Persons with epilepsy might be at increased risk for some mental and physical disorders.",
             "added_by_report": "This study, based on the 2010 National Health Interview Survey, found that adults with epilepsy reported co-occurring cardio- vascular, respiratory, some inflammatory, and other disorders more frequently than respondents without epilepsy.",
             "implications": "Epidemiologic studies to show how epilepsy is related to these comorbid conditions could help identify preventable risk factors. Greater collaboration among public health agencies, health-care providers, the Epilepsy Foundation, and other partners might ensure that adults with epilepsy have access to chronic disease self-management programs and to general disease prevention and health promotion information and services.",
-                 "tags": [ {"tag":"Epilepsy"},{"tag":"Mental disorders"},{"tag":"Physical disorders"}]
+                 "keywords": [ {"keyword":"Epilepsy"},{"keyword":"Mental disorders"},{"keyword":"Physical disorders"}]
          },
          {
          "title": "Influenza Vaccination Among Pregnant Women — Massachusetts, 2009–2010",
          "already_known": "Vaccination rates improved during the influenza A (H1N1) pdm09 (pH1N1) outbreak in 2009, with variation across states and among population subgroups. Median coverage among 29 Pregnancy Risk Assessment Monitoring System (PRAMS) states was 47.1% for seasonal and 40.4% for pH1N1 influenza.",
          "added_by_report": "Data from the Massachusetts PRAMS survey indicated that during the 2009–10 influenza season, 67.5% of residents who had live births in Massachusetts received the seasonal vaccine and 57.6% received the pH1N1 vaccine. Non-Hispanic black women were less likely to receive either vaccine. Women who were aged <25 years, Medicaid beneficiaries, or from low- income households were significantly less likely to receive the seasonal vaccine. Vaccination rates were higher among women whose provider offered or recommended vaccination.",
          "implications": "Targeted education and equity campaigns from the MDPH might have contributed comparatively high vaccination coverage rates and fewer disparities in pH1N1 coverage compared with seasonal vaccine coverage. Further efforts to promote the importance and availability of the influenza vaccine and to specifically address safety concerns could improve vaccination rates among pregnant women. Continued monitoring of vaccination coverage among pregnant women is needed to evaluate progress toward greater coverage.",
-                 "tags": [ {"tag":"Influenza"},{"tag":"Vaccination"},{"tag":"Pregnant"}]
+                 "keywords": [ {"keyword":"Influenza"},{"keyword":"Vaccination"},{"keyword":"Pregnant"}]
          },
          {
          "title": "Global Routine Vaccination Coverage — 2012",
          "already_known": "Substantial progress has been made in reducing vaccine-pre- ventable morbidity and mortality since establishment of the global Expanded Programme on Immunization in 1974. However, millions of children, especially those in less developed countries, still are not being reached by the program.",
          "added_by_report": "During 2012, estimated global coverage with the third dose of diphtheria-tetanus-pertussis vaccine (DTP) was 83%. India, Nigeria, and Indonesia accounted for 55% of the 22.6 million children who had not received 3 doses of DTP by age 1 year. Worldwide coverage with other recommended vaccines was 89% for bacille Calmette-Guérin vaccine, 84% for the third dose of poliovirus vaccine, 84% for the first dose of measles-contain- ing vaccine, 79% for the third dose of hepatitis B vaccine, and 45% for the third dose of Haemophilus influenzae type b vaccine. Among all incompletely vaccinated children, 56% had never received the first dose of DTP vaccine.",
          "implications": "Many children, especially those in less developed countries, remain at risk for vaccine-preventable diseases. Strategies to improve vaccination coverage might differ for those children who have never been vaccinated, compared with those who have started but not completed the immunization series.",
-                 "tags": [ {"tag":"Vaccination"},{"tag":"DTP"}]
+                 "keywords": [ {"keyword":"Vaccination"},{"keyword":"DTP"}]
          }
     ]
  },
@@ -33,14 +33,14 @@
          "already_known": "The number of new cases of dracunculiasis (Guinea worm disease) occurring worldwide each year has decreased from an estimated 3.5 million in 1986, when the World Health Assembly declared global elimination as a goal, to 542 in 2012.",
          "added_by_report": "The number of dracunculiasis cases reported worldwide in 2012 declined by 49%, compared with 2011, and by 77% from January–June 2012 to January–June 2013. Transmission remains endemic in four countries, with South Sudan accounting for 83% of all reported cases during January–June 2013.",
          "implications": "Although earlier target dates for global dracunculiasis eradica- tion were missed, progress is accelerating, and eradication is likely within the next few years if disruption of program operations can be minimized, particularly in northern Mali.",
-         "tags": [ {"tag":"Dracunculiasis"}]
+         "keywords": [ {"keyword":"Dracunculiasis"}]
          },
                  {
                  "title": "Histoplasmosis in a State Where It Is Not Known to Be Endemic — Montana, 2012–2013",
                  "already_known": "Histoplasmosis is a potentially severe illness caused by infection with the dimorphic fungus Histoplasma capsulatum. This fungus is endemic in the Ohio River and Mississippi River valleys in the United States, where it is found in soil enriched with bird droppings and bat guano.",
                  "added_by_report": "Four unrelated cases of histoplasmosis were identified during 2012–2013 among residents of Montana, a location further west than areas where H. capsulatum is known to be endemic.",
                  "implications": "Health-care providers should be aware of the possibility of H. capsulatum in Montana and the potential for histoplasmosis in patients with clinically compatible illnesses, even in the absence of a history of travel outside of the state.",
-                 "tags": [ {"tag":"Histoplasmosis"}]
+                 "keywords": [ {"keyword":"Histoplasmosis"}]
                  }
     ]
  }
