@@ -55,6 +55,14 @@ NSString *selectedKeyword;
     
 }
 
+- (IBAction)refresh:(id)sender
+{
+    [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
+}
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -137,10 +145,5 @@ shouldReloadTableForSearchString:(NSString *)searchString
         keywordArticlesTVC.keyword = selectedKeyword;
     }
 }
-
-
-
-
-
 
 @end

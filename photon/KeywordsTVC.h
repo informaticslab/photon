@@ -10,5 +10,6 @@
 
 @interface KeywordsTVC : UITableViewController<UISearchDisplayDelegate>
 
+- (IBAction)refresh:(id)sender;
 
 @end
