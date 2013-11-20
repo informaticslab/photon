@@ -22,13 +22,7 @@
     _txtView.font = APP_MGR.textFont;
 
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
-    shareButton.width = -1.0;
-    
-    UIBarButtonItem *helpButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"help_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(help:)];
-    helpButton.width = -1.0;
-    
-    self.navigationItem.rightBarButtonItems  = [NSArray arrayWithObjects:helpButton, shareButton, nil];
-    
+    self.navigationItem.rightBarButtonItem = shareButton;
     
 }
 
@@ -36,12 +30,6 @@
 {
     
 }
-
-- (void)help:(id)sender
-{
-    
-}
-
 
 
 - (void)didReceiveMemoryWarning

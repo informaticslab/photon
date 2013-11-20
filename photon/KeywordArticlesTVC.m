@@ -8,12 +8,14 @@
 
 #import "KeywordArticlesTVC.h"
 #import "Article.h"
+#import "KeywordArticleDetailVC.h"
 
 @implementation KeywordArticlesTVC
 
 #define CELL_TEXT_LABEL_WIDTH 230.0
 #define CELL_PADDING 10.0
 
+Article *selectedArticle;
 
 NSArray *keywordArticles;
 
@@ -41,9 +43,7 @@ NSArray *keywordArticles;
     
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
     shareButton.width = 30.0;
-    UIBarButtonItem *helpButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"help_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(help:)];
-    helpButton.width = 30.0;
-    self.navigationItem.rightBarButtonItems  = [NSArray arrayWithObjects:helpButton, shareButton, nil];
+    self.navigationItem.rightBarButtonItem = shareButton;
     
 }
 
@@ -51,13 +51,6 @@ NSArray *keywordArticles;
 {
     
 }
-
-- (void)help:(id)sender
-{
-    
-}
-
-
 
 
 - (void)didReceiveMemoryWarning
@@ -100,7 +93,6 @@ NSArray *keywordArticles;
     static NSString *CellIdentifier = @"KeywordArticlesCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
     // configure the cell...
     Article *rowArticle = keywordArticles[[indexPath row]];
     
@@ -109,9 +101,7 @@ NSArray *keywordArticles;
     [cell.textLabel sizeToFit];
     cell.textLabel.text = rowArticle.title;
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    
 
-    
     return cell;
 }
 
@@ -154,7 +144,15 @@ NSArray *keywordArticles;
 }
 */
 
-/*
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    
+    selectedArticle = keywordArticles[[indexPath row]];
+    [self performSegueWithIdentifier:@"pushKeywordArticleDetails" sender:nil];
+    
+}
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
@@ -162,8 +160,18 @@ NSArray *keywordArticles;
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"pushKeywordArticleDetails"])
+    {
+            KeywordArticleDetailVC *keywordArticleDetailVC = segue.destinationViewController;
+            keywordArticleDetailVC.article = selectedArticle;
+    }
 }
+    
+    
 
- */
+    
+
+
+
 
 @end

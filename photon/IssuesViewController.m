@@ -33,14 +33,9 @@ Issue *currIssue;
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1];
 
-
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
     shareButton.style = UIBarButtonItemStyleBordered;
-
-    UIBarButtonItem *helpButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"help_icon"] style:UIBarButtonItemStyleBordered target:self action:@selector(help:)];
-    helpButton.style = UIBarButtonItemStyleBordered;
-
-    self.navigationItem.rightBarButtonItems  = [NSArray arrayWithObjects:helpButton, shareButton, nil];
+    self.navigationItem.rightBarButtonItem = shareButton;
 
 
 }
@@ -49,12 +44,6 @@ Issue *currIssue;
 {
     
 }
-
-- (void)help:(id)sender
-{
-    
-}
-
 
 
 - (void)didReceiveMemoryWarning

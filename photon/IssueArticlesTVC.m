@@ -37,9 +37,7 @@ Article *currArticle;
     self.navigationItem.title = _issue.number;
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
     shareButton.width = 30.0;
-    UIBarButtonItem *helpButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"help_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(help:)];
-    helpButton.width = 30.0;
-    self.navigationItem.rightBarButtonItems  = [NSArray arrayWithObjects:helpButton, shareButton, nil];
+    self.navigationItem.rightBarButtonItem  = shareButton;
 
 }
 
@@ -47,12 +45,6 @@ Article *currArticle;
 {
     
 }
-
-- (void)help:(id)sender
-{
-    
-}
-
 
 - (void)didReceiveMemoryWarning
 {

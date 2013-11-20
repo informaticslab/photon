@@ -45,9 +45,7 @@ NSString *selectedKeyword;
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
     shareButton.style = UIBarButtonItemStyleBordered;
     
-    UIBarButtonItem *helpButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"help_icon"] style:UIBarButtonItemStyleBordered target:self action:@selector(help:)];
-    
-    self.navigationItem.rightBarButtonItems  = [NSArray arrayWithObjects:helpButton, shareButton, nil];
+    self.navigationItem.rightBarButtonItem = shareButton;
     
     
 }
@@ -56,12 +54,6 @@ NSString *selectedKeyword;
 {
     
 }
-
-- (void)help:(id)sender
-{
-    
-}
-
 
 
 - (void)didReceiveMemoryWarning
@@ -150,17 +142,5 @@ shouldReloadTableForSearchString:(NSString *)searchString
 
 
 
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end
