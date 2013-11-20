@@ -7,6 +7,7 @@
 //
 
 #import "KeywordArticleDetailVC.h"
+#import "ArticleDetails.h"
 
 @interface KeywordArticleDetailVC ()
 
@@ -29,7 +30,7 @@
 	// Do any additional setup after loading the view.
     CALayer *btnLayer = [_btnViewArticle layer];
     self.navigationItem.title = @"Article Details";
-    _txtViewArticleDetails.text = _article.title;
+    _txtViewArticleDetails.text = _article.issue.title;
     [btnLayer setMasksToBounds:YES];
     [btnLayer setCornerRadius:5.0f];
 }
@@ -39,5 +40,18 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"pushArticleDetailsForKeywordArticleDetail"])
+    {
+        ArticleDetails *articleDetailsVC = segue.destinationViewController;
+        articleDetailsVC.article = _article;
+        articleDetailsVC.issue = _article.issue;
+        
+    }
+}
+
+
 
 @end

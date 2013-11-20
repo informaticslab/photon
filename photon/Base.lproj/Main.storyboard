@@ -66,7 +66,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1189" y="1111"/>
+            <point key="canvasLocation" x="1217" y="671"/>
         </scene>
         <!--Keyword ArticlesTVC-->
         <scene sceneID="Gmz-R1-6rJ">
@@ -94,11 +94,12 @@
                     <navigationItem key="navigationItem" id="rh7-0R-GCC"/>
                     <connections>
                         <segue destination="IYg-u6-pbr" kind="push" identifier="pushKeywordArticleDetails" id="g7V-rl-fQN"/>
+                        <segue destination="3gw-9Z-QXk" kind="push" identifier="pushArticleDetailsForKeywordArticles" id="XpL-oS-6hh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvX-d4-gab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1634" y="1112"/>
+            <point key="canvasLocation" x="1662" y="672"/>
         </scene>
         <!--Keyword Article DetailVC-->
         <scene sceneID="9ua-ch-mG7">
@@ -121,6 +122,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="3gw-9Z-QXk" kind="push" identifier="pushArticleDetailsForKeywordArticleDetail" id="Jre-1p-lrg"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="10-01-13, Vol 44, Issue 32, Pages 145-148" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sVy-iq-eio">
                                 <rect key="frame" x="20" y="77" width="280" height="54"/>
@@ -140,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5G7-1a-LiA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2164" y="1112"/>
+            <point key="canvasLocation" x="2366" y="672"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vex-rW-GRa">
@@ -367,7 +371,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvi-cS-LSz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2220" y="-264"/>
+            <point key="canvasLocation" x="2910" y="499"/>
         </scene>
         <!--Topic KnownVC - Topic Details-->
         <scene sceneID="cao-8O-jEZ">
@@ -408,7 +412,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFk-g2-6gp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3319" y="-1495"/>
+            <point key="canvasLocation" x="4163" y="-1099"/>
         </scene>
         <!--Topic AddedVC - Topic Details-->
         <scene sceneID="Qeq-qJ-ZuK">
@@ -449,7 +453,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkN-hP-3ln" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3319" y="7"/>
+            <point key="canvasLocation" x="4163" y="403"/>
         </scene>
         <!--Topic ImplicationsVC - Topic Details-->
         <scene sceneID="3qZ-pH-6gS">
@@ -490,7 +494,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Edu-WR-6DA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3319" y="-749"/>
+            <point key="canvasLocation" x="4163" y="-353"/>
         </scene>
         <!--Navigation Controller - View by Subject-->
         <scene sceneID="rk4-TB-uNF">
@@ -510,7 +514,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eEI-cB-lhf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="631" y="1111"/>
+            <point key="canvasLocation" x="659" y="671"/>
         </scene>
     </scenes>
     <resources>
@@ -523,4 +527,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="Jre-1p-lrg"/>
+    </inferredMetricsTieBreakers>
 </document>

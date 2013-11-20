@@ -40,6 +40,7 @@
 {
     Article *newArticle = [[Article alloc] initWithTitle:title];
     [currIssue.articles addObject:newArticle];
+    newArticle.issue = currIssue;
     return newArticle;
                            
 }

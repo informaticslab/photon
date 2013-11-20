@@ -9,6 +9,7 @@
 #import "KeywordArticlesTVC.h"
 #import "Article.h"
 #import "KeywordArticleDetailVC.h"
+#import "ArticleDetails.h"
 
 @implementation KeywordArticlesTVC
 
@@ -144,6 +145,15 @@ NSArray *keywordArticles;
 }
 */
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    // Navigation logic may go here. Create and push another view controller.
+    selectedArticle = keywordArticles[[indexPath row]];
+    [self performSegueWithIdentifier:@"pushArticleDetailsForKeywordArticles" sender:nil];
+    
+}
+
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
@@ -162,8 +172,14 @@ NSArray *keywordArticles;
     // Pass the selected object to the new view controller.
     if([segue.identifier isEqualToString:@"pushKeywordArticleDetails"])
     {
-            KeywordArticleDetailVC *keywordArticleDetailVC = segue.destinationViewController;
-            keywordArticleDetailVC.article = selectedArticle;
+        KeywordArticleDetailVC *keywordArticleDetailVC = segue.destinationViewController;
+        keywordArticleDetailVC.article = selectedArticle;
+    } else if ([segue.identifier isEqualToString:@"pushArticleDetailsForKeywordArticles"]){
+        
+        ArticleDetails *articleDetailsVC = segue.destinationViewController;
+        articleDetailsVC.article = selectedArticle;
+        articleDetailsVC.issue = selectedArticle.issue;
+        
     }
 }
     
