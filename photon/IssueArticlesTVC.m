@@ -8,6 +8,8 @@
 
 #import "IssueArticlesTVC.h"
 #import "ArticleDetails.h"
+#import "TopicsTVC.h"
+
 
 Article *currArticle;
 
@@ -108,17 +110,17 @@ Article *currArticle;
     // Navigation logic may go here. Create and push another view controller.
     // [self.navigationController pushViewController:detailViewController animated:YES];
     currArticle = _issue.articles[[indexPath row]];
-    [self performSegueWithIdentifier:@"pushArticleDetails" sender:nil];
+    [self performSegueWithIdentifier:@"pushTopics" sender:nil];
     
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"pushArticleDetails"])
+    if([segue.identifier isEqualToString:@"pushTopics"])
     {
-        ArticleDetails *articleDetailsVC = segue.destinationViewController;
-        articleDetailsVC.article = currArticle;
-        articleDetailsVC.issue = _issue;
+        TopicsTVC *topicsVC = segue.destinationViewController;
+        topicsVC.article = currArticle;
+        topicsVC.issue = _issue;
         
     }
 }

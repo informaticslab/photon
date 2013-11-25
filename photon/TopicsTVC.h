@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "Issue.h"
 #import "Article.h"
-@interface TopicsTVC : UITableViewController
+@interface TopicsTVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property(nonatomic, weak) Issue *issue;
 @property(nonatomic, weak) Article *article;
 
+@property (weak, nonatomic) IBOutlet UITableView *tvTopics;
 
+@property (weak, nonatomic) IBOutlet UITextView *txtvSourceArticle;
 @end
