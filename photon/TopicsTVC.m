@@ -14,6 +14,9 @@
 #define CELL_TEXT_LABEL_WIDTH 230.0
 #define CELL_PADDING 10.0
 
+NSDictionary *regTextAttributes;
+NSDictionary *boldTextAttributes;
+
 
 @implementation TopicsTVC
 
@@ -31,8 +34,11 @@
     shareButton.width = -1.0;
     self.navigationItem.rightBarButtonItem = shareButton;
     self.txtvSourceArticle.text = _article.title;
+    self.txtfSourceArticleHeading.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:11];
+    regTextAttributes = @{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:13]};
+    boldTextAttributes = @{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Bold" size:13]};
     
-    
+
 }
 
 - (void)share:(id)sender
@@ -84,23 +90,47 @@
     static NSString *CellIdentifier = @"TopicsCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+    
     // configure the cell...
     switch ([indexPath row]) {
         case 0:
-            cell.textLabel.text = @"What is already known on this topic?";
-            break;
-        case 1:
-            cell.textLabel.text = @"What is added by this report?";
-            break;
-        case 2:
-            cell.textLabel.text = @"What are the implications for public health practice?";
-            break;
+        {
+            NSMutableAttributedString *aboutString = [[NSMutableAttributedString alloc] initWithString:@"What is already known on this topic?"];
             
+            [aboutString setAttributes:regTextAttributes range:NSMakeRange(0, 8)];
+            [aboutString setAttributes:boldTextAttributes range:NSMakeRange(8,13)];
+            [aboutString setAttributes:regTextAttributes range:NSMakeRange(21, 15)];
+            [cell.textLabel setAttributedText:aboutString];
+            break;
+        }
+        case 1:
+        {
+            NSMutableAttributedString *addedString = [[NSMutableAttributedString alloc] initWithString:@"What is added by this report?"];
+            
+            [addedString setAttributes:regTextAttributes range:NSMakeRange(0, 8)];
+            [addedString setAttributes:boldTextAttributes range:NSMakeRange(8,6)];
+            [addedString setAttributes:regTextAttributes range:NSMakeRange(13, 16)];
+            [cell.textLabel setAttributedText:addedString];
+            break;
+        }
+        case 2:
+        {
+            NSMutableAttributedString *implString = [[NSMutableAttributedString alloc] initWithString:@"What are the implications for public health practice?"];
+            
+            [implString setAttributes:regTextAttributes range:NSMakeRange(0, 13)];
+            [implString setAttributes:boldTextAttributes range:NSMakeRange(13,39)];
+            [implString setAttributes:regTextAttributes range:NSMakeRange(52,1)];
+            [cell.textLabel setAttributedText:implString];
+            break;
+        }
         default:
             break;
+            
     }
     
-    cell.textLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:14];;
+    
+    
+    //cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:13];
     cell.textLabel.numberOfLines = 0;
     [cell.textLabel sizeToFit];
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;

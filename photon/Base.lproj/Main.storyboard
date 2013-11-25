@@ -181,7 +181,8 @@
                                 <attributedString key="attributedText">
                                     <fragment content="Source Article:">
                                         <attributes>
-                                            <font key="NSFont" size="11" name="HelveticaNeue-Bold"/>
+                                            <font key="NSFont" size="10" name="HelveticaNeue-Bold"/>
+                                            <font key="NSOriginalFont" size="10" name="HelveticaNeue-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
@@ -193,11 +194,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TopicsCell" id="Df8-Bd-YMT">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TopicsCell" id="Df8-Bd-YMT">
                                         <rect key="frame" x="0.0" y="22" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Df8-Bd-YMT" id="iov-1t-CPF">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="247" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -245,6 +246,7 @@
                     <navigationItem key="navigationItem" id="6t1-xz-QeX"/>
                     <connections>
                         <outlet property="tvTopics" destination="xFk-We-ysS" id="3dJ-E4-wVV"/>
+                        <outlet property="txtfSourceArticleHeading" destination="DFw-gg-0h2" id="qox-Z2-JV0"/>
                         <outlet property="txtvSourceArticle" destination="fbz-Bu-pWO" id="wpc-9J-XRs"/>
                         <segue destination="0GO-SD-ARp" kind="push" identifier="pushTopicKnown" id="USu-La-J9e"/>
                         <segue destination="zTc-bu-v0J" kind="push" identifier="pushTopicImplications" id="P4P-nm-NDr"/>

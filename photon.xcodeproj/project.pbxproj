@@ -93,6 +93,7 @@
 		A6A919DA182A74D400F1CE7D /* Issue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Issue.m; sourceTree = "<group>"; };
 		A6A919DC182A9B8700F1CE7D /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
 		A6A919DD182A9B8700F1CE7D /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
+		A6B735491843D6C600872B20 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		A6D9BC76183BBFE000B42118 /* KeywordArticlesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordArticlesTVC.h; sourceTree = "<group>"; };
 		A6D9BC77183BBFE000B42118 /* KeywordArticlesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordArticlesTVC.m; sourceTree = "<group>"; };
 		A6D9BC79183BF57F00B42118 /* KeywordArticleDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordArticleDetailVC.h; sourceTree = "<group>"; };
@@ -147,6 +148,7 @@
 		A62A1A111823C9C7006A62B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A6B735491843D6C600872B20 /* CoreText.framework */,
 				A62A1A121823C9C7006A62B3 /* Foundation.framework */,
 				A62A1A141823C9C7006A62B3 /* CoreGraphics.framework */,
 				A62A1A161823C9C7006A62B3 /* UIKit.framework */,

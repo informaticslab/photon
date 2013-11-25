@@ -15,6 +15,6 @@
 @property(nonatomic, weak) Article *article;
 
 @property (weak, nonatomic) IBOutlet UITableView *tvTopics;
-
+@property (weak, nonatomic) IBOutlet UITextField *txtfSourceArticleHeading;
 @property (weak, nonatomic) IBOutlet UITextView *txtvSourceArticle;
 @end
