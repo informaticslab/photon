@@ -26,6 +26,15 @@
     
 }
 
+- (void)viewDidLayoutSubviews
+{
+    _txtView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    [self.txtView sizeToFit];
+    [_txtView setTextContainerInset:UIEdgeInsetsMake(10, 20, 10, 20)];
+    
+}
+
+
 - (void)share:(id)sender
 {
     

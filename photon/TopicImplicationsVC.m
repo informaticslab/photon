@@ -24,9 +24,20 @@
 
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
     self.navigationItem.rightBarButtonItem = shareButton;
+//    [(UIScrollView *)self.view setContentSize:CGSizeMake(320, 700)];
+
     
     
 }
+
+- (void)viewDidLayoutSubviews
+{
+    _txtView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    [self.txtView sizeToFit];
+    [_txtView setTextContainerInset:UIEdgeInsetsMake(10, 20, 10, 20)];
+    
+}
+
 
 - (void)share:(id)sender
 {

@@ -29,9 +29,26 @@
     
 }
 
+- (void)viewDidLayoutSubviews
+{
+    _txtView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    [self.txtView sizeToFit];
+    [_txtView setTextContainerInset:UIEdgeInsetsMake(10, 20, 10, 20)];
+
+}
+
 - (void)share:(id)sender
 {
     
+}
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+    CGFloat fixedWidth = textView.frame.size.width;
+    CGSize newSize = [textView sizeThatFits:CGSizeMake(fixedWidth, MAXFLOAT)];
+    CGRect newFrame = textView.frame;
+    newFrame.size = CGSizeMake(fmaxf(newSize.width, fixedWidth), newSize.height);
+    textView.frame = newFrame;
 }
 
 - (void)didReceiveMemoryWarning

@@ -11,7 +11,7 @@
 #import "Article.h"
 
 
-@interface TopicKnownVC : UIViewController
+@interface TopicKnownVC : UIViewController <UITextViewDelegate>
 
 @property(nonatomic, weak) Issue *issue;
 @property(nonatomic, weak) Article *article;
