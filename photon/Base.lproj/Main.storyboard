@@ -157,7 +157,7 @@
             </objects>
             <point key="canvasLocation" x="2174" y="671"/>
         </scene>
-        <!--TopicVC - Topic Details-->
+        <!--TopicVC - Blue Box-->
         <scene sceneID="7bJ-mb-b3j">
             <objects>
                 <viewController id="88X-0S-fMp" customClass="TopicVC" sceneMemberID="viewController">
@@ -251,7 +251,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Topic Details" id="M0H-y3-Q84"/>
+                    <navigationItem key="navigationItem" title="Blue Box" id="M0H-y3-Q84"/>
                     <connections>
                         <outlet property="btnViewFullArticle" destination="MRP-z5-FlI" id="h8N-en-gMG"/>
                         <outlet property="lblHeader" destination="J6m-OW-hGg" id="irt-t0-34x"/>
