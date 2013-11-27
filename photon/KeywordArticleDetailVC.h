@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnViewArticle;
 @property (weak, nonatomic) Article *article;
 @property (weak, nonatomic) IBOutlet UITextView *txtViewArticleDetails;
+- (IBAction)btnViewFullArticleTouchUp:(id)sender;
 
 @end

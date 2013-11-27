@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A621F0DB184538D20011D0C5 /* FullArticleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A621F0DA184538D20011D0C5 /* FullArticleVC.m */; };
 		A62A1A131823C9C7006A62B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62A1A121823C9C7006A62B3 /* Foundation.framework */; };
 		A62A1A151823C9C7006A62B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62A1A141823C9C7006A62B3 /* CoreGraphics.framework */; };
 		A62A1A171823C9C7006A62B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62A1A161823C9C7006A62B3 /* UIKit.framework */; };
@@ -23,7 +24,7 @@
 		A6635ACB182D625400E600EA /* ArticleDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635ACA182D625400E600EA /* ArticleDetails.m */; };
 		A6635AD1182D7A0D00E600EA /* SubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635AD0182D7A0D00E600EA /* SubjectViewController.m */; };
 		A6635AD4182D841800E600EA /* TopicsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635AD3182D841800E600EA /* TopicsTVC.m */; };
-		A6635AD7182D86FC00E600EA /* TopicKnownVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635AD6182D86FC00E600EA /* TopicKnownVC.m */; };
+		A6635AD7182D86FC00E600EA /* TopicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635AD6182D86FC00E600EA /* TopicVC.m */; };
 		A6635ADA182D8B7100E600EA /* TopicAddedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635AD9182D8B7100E600EA /* TopicAddedVC.m */; };
 		A6635ADD182D8CD900E600EA /* TopicImplicationsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635ADC182D8CD900E600EA /* TopicImplicationsVC.m */; };
 		A6635AE0182D921A00E600EA /* KeywordsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635ADF182D921A00E600EA /* KeywordsTVC.m */; };
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A621F0D9184538D20011D0C5 /* FullArticleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullArticleVC.h; sourceTree = "<group>"; };
+		A621F0DA184538D20011D0C5 /* FullArticleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullArticleVC.m; sourceTree = "<group>"; };
 		A62A1A0F1823C9C7006A62B3 /* photon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = photon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A62A1A121823C9C7006A62B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A62A1A141823C9C7006A62B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -73,8 +76,8 @@
 		A6635AD0182D7A0D00E600EA /* SubjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectViewController.m; sourceTree = "<group>"; };
 		A6635AD2182D841800E600EA /* TopicsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicsTVC.h; sourceTree = "<group>"; };
 		A6635AD3182D841800E600EA /* TopicsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicsTVC.m; sourceTree = "<group>"; };
-		A6635AD5182D86FC00E600EA /* TopicKnownVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicKnownVC.h; sourceTree = "<group>"; };
-		A6635AD6182D86FC00E600EA /* TopicKnownVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicKnownVC.m; sourceTree = "<group>"; };
+		A6635AD5182D86FC00E600EA /* TopicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicVC.h; sourceTree = "<group>"; };
+		A6635AD6182D86FC00E600EA /* TopicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicVC.m; sourceTree = "<group>"; };
 		A6635AD8182D8B7100E600EA /* TopicAddedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicAddedVC.h; sourceTree = "<group>"; };
 		A6635AD9182D8B7100E600EA /* TopicAddedVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicAddedVC.m; sourceTree = "<group>"; };
 		A6635ADB182D8CD900E600EA /* TopicImplicationsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicImplicationsVC.h; sourceTree = "<group>"; };
@@ -184,8 +187,8 @@
 				A62A1A191823C9C7006A62B3 /* Supporting Files */,
 				A6635AD2182D841800E600EA /* TopicsTVC.h */,
 				A6635AD3182D841800E600EA /* TopicsTVC.m */,
-				A6635AD5182D86FC00E600EA /* TopicKnownVC.h */,
-				A6635AD6182D86FC00E600EA /* TopicKnownVC.m */,
+				A6635AD5182D86FC00E600EA /* TopicVC.h */,
+				A6635AD6182D86FC00E600EA /* TopicVC.m */,
 				A6635AD8182D8B7100E600EA /* TopicAddedVC.h */,
 				A6635AD9182D8B7100E600EA /* TopicAddedVC.m */,
 				A6635ADB182D8CD900E600EA /* TopicImplicationsVC.h */,
@@ -196,6 +199,8 @@
 				A6D9BC77183BBFE000B42118 /* KeywordArticlesTVC.m */,
 				A6D9BC79183BF57F00B42118 /* KeywordArticleDetailVC.h */,
 				A6D9BC7A183BF57F00B42118 /* KeywordArticleDetailVC.m */,
+				A621F0D9184538D20011D0C5 /* FullArticleVC.h */,
+				A621F0DA184538D20011D0C5 /* FullArticleVC.m */,
 			);
 			path = photon;
 			sourceTree = "<group>";
@@ -333,13 +338,14 @@
 				A62A1A231823C9C7006A62B3 /* AppDelegate.m in Sources */,
 				A6D9BC7B183BF57F00B42118 /* KeywordArticleDetailVC.m in Sources */,
 				A6A919DE182A9B8700F1CE7D /* Article.m in Sources */,
-				A6635AD7182D86FC00E600EA /* TopicKnownVC.m in Sources */,
+				A6635AD7182D86FC00E600EA /* TopicVC.m in Sources */,
 				A62A1A291823C9C7006A62B3 /* IssuesViewController.m in Sources */,
 				A6A919DB182A74D400F1CE7D /* Issue.m in Sources */,
 				A62A1A1F1823C9C7006A62B3 /* main.m in Sources */,
 				A6A919D218299BB500F1CE7D /* AppManager.m in Sources */,
 				A6A919D61829A1BC00F1CE7D /* IssuesManager.m in Sources */,
 				A6D9BC78183BBFE000B42118 /* KeywordArticlesTVC.m in Sources */,
+				A621F0DB184538D20011D0C5 /* FullArticleVC.m in Sources */,
 				A6635ADA182D8B7100E600EA /* TopicAddedVC.m in Sources */,
 				A67AF51C182BA408000F6EB0 /* IssueArticlesTVC.m in Sources */,
 				A6635ADD182D8CD900E600EA /* TopicImplicationsVC.m in Sources */,

@@ -10,6 +10,7 @@
 #import "Article.h"
 #import "KeywordArticleDetailVC.h"
 #import "ArticleDetails.h"
+#import "TopicsTVC.h"
 
 @implementation KeywordArticlesTVC
 
@@ -176,10 +177,10 @@ NSArray *keywordArticles;
         keywordArticleDetailVC.article = selectedArticle;
     } else if ([segue.identifier isEqualToString:@"pushArticleDetailsForKeywordArticles"]){
         
-        ArticleDetails *articleDetailsVC = segue.destinationViewController;
-        articleDetailsVC.article = selectedArticle;
-        articleDetailsVC.issue = selectedArticle.issue;
-        
+        TopicsTVC *topicsVC = segue.destinationViewController;
+        topicsVC.article = selectedArticle;
+        topicsVC.issue = selectedArticle.issue;
+
     }
 }
     

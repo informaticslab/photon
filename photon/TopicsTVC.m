@@ -7,7 +7,7 @@
 //
 
 #import "TopicsTVC.h"
-#import "TopicKnownVC.h"
+#import "TopicVC.h"
 #import "TopicAddedVC.h"
 #import "TopicImplicationsVC.h"
 
@@ -173,25 +173,28 @@ NSDictionary *boldTextAttributes;
 {
     if([segue.identifier isEqualToString:@"pushTopicKnown"])
     {
-        TopicKnownVC *topicKnownVC = segue.destinationViewController;
-        topicKnownVC.article = _article;
-        topicKnownVC.issue = _issue;
+        TopicVC *topicVC = segue.destinationViewController;
+        topicVC.article = _article;
+        topicVC.issue = _issue;
+        topicVC.mode = TOPIC_KNOWN;
         
     }
     
     else if([segue.identifier isEqualToString:@"pushTopicAdded"])
     {
-        TopicAddedVC *topicAddedVC = segue.destinationViewController;
-        topicAddedVC.article = _article;
-        topicAddedVC.issue = _issue;
+        TopicVC *topicVC = segue.destinationViewController;
+        topicVC.article = _article;
+        topicVC.issue = _issue;
+        topicVC.mode = TOPIC_ADDED;
         
     }
     
     else if([segue.identifier isEqualToString:@"pushTopicImplications"])
     {
-        TopicImplicationsVC *topicImplicationsVC = segue.destinationViewController;
-        topicImplicationsVC.article = _article;
-        topicImplicationsVC.issue = _issue;
+        TopicVC *topicVC = segue.destinationViewController;
+        topicVC.article = _article;
+        topicVC.issue = _issue;
+        topicVC.mode = TOPIC_IMPLICATIONS;
         
     }
 }

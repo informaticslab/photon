@@ -41,6 +41,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"pushArticleDetailsForKeywordArticleDetail"])
@@ -53,5 +54,8 @@
 }
 
 
+- (IBAction)btnViewFullArticleTouchUp:(id)sender {
+    [self performSegueWithIdentifier:@"pushViewFullArticle" sender:nil];
 
+}
 @end
