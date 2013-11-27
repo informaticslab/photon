@@ -265,7 +265,7 @@
             </objects>
             <point key="canvasLocation" x="2543" y="-286"/>
         </scene>
-        <!--TopicsTVC-->
+        <!--TopicsTVC - Blue Box-->
         <scene sceneID="Exh-Jk-EIr">
             <objects>
                 <viewController id="3o0-s4-Pot" customClass="TopicsTVC" sceneMemberID="viewController">
@@ -345,7 +345,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="6t1-xz-QeX"/>
+                    <navigationItem key="navigationItem" title="Blue Box" id="6t1-xz-QeX"/>
                     <connections>
                         <outlet property="tvTopics" destination="xFk-We-ysS" id="3dJ-E4-wVV"/>
                         <outlet property="txtfSourceArticleHeading" destination="DFw-gg-0h2" id="qox-Z2-JV0"/>
