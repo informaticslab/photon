@@ -55,6 +55,7 @@
 
 
 - (IBAction)btnViewFullArticleTouchUp:(id)sender {
+    
     [self performSegueWithIdentifier:@"pushViewFullArticle" sender:nil];
 
 }

@@ -48,6 +48,8 @@
     shareButton.width = -1.0;
     
     self.navigationItem.rightBarButtonItem = shareButton;
+
+    
     self.txtvSourceArticle.text = _article.title;
     self.txtfSourceArticleHeading.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:11];
 

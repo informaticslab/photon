@@ -41,6 +41,14 @@ NSDictionary *boldTextAttributes;
 
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backButton;
+
+}
+
 - (void)share:(id)sender
 {
     
@@ -171,11 +179,15 @@ NSDictionary *boldTextAttributes;
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+
+    TopicVC *topicVC = segue.destinationViewController;
+    topicVC.article = _article;
+    topicVC.issue = _issue;
+    
+
+
     if([segue.identifier isEqualToString:@"pushTopicKnown"])
     {
-        TopicVC *topicVC = segue.destinationViewController;
-        topicVC.article = _article;
-        topicVC.issue = _issue;
         topicVC.mode = TOPIC_KNOWN;
         
     }
@@ -183,8 +195,6 @@ NSDictionary *boldTextAttributes;
     else if([segue.identifier isEqualToString:@"pushTopicAdded"])
     {
         TopicVC *topicVC = segue.destinationViewController;
-        topicVC.article = _article;
-        topicVC.issue = _issue;
         topicVC.mode = TOPIC_ADDED;
         
     }
@@ -192,11 +202,11 @@ NSDictionary *boldTextAttributes;
     else if([segue.identifier isEqualToString:@"pushTopicImplications"])
     {
         TopicVC *topicVC = segue.destinationViewController;
-        topicVC.article = _article;
-        topicVC.issue = _issue;
         topicVC.mode = TOPIC_IMPLICATIONS;
         
     }
+    
+
 }
 
 
