@@ -49,9 +49,12 @@
     
     self.navigationItem.rightBarButtonItem = shareButton;
 
-    
+
     self.txtvSourceArticle.text = _article.title;
     self.txtfSourceArticleHeading.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:11];
+    self.txtView.editable = NO;
+    self.txtvSourceArticle = NO;
+    self.txtfSourceArticleHeading.enabled = NO;
 
 }
 

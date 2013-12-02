@@ -35,9 +35,12 @@ NSDictionary *boldTextAttributes;
     self.navigationItem.rightBarButtonItem = shareButton;
     self.txtvSourceArticle.text = _article.title;
     self.txtfSourceArticleHeading.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:11];
+    
     regTextAttributes = @{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:13]};
     boldTextAttributes = @{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Bold" size:13]};
     
+    self.txtvSourceArticle.editable = NO;
+    self.txtfSourceArticleHeading.enabled = NO;
 
 }
 
