@@ -25,8 +25,6 @@
 		A6635AD1182D7A0D00E600EA /* SubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635AD0182D7A0D00E600EA /* SubjectViewController.m */; };
 		A6635AD4182D841800E600EA /* TopicsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635AD3182D841800E600EA /* TopicsTVC.m */; };
 		A6635AD7182D86FC00E600EA /* TopicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635AD6182D86FC00E600EA /* TopicVC.m */; };
-		A6635ADA182D8B7100E600EA /* TopicAddedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635AD9182D8B7100E600EA /* TopicAddedVC.m */; };
-		A6635ADD182D8CD900E600EA /* TopicImplicationsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635ADC182D8CD900E600EA /* TopicImplicationsVC.m */; };
 		A6635AE0182D921A00E600EA /* KeywordsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635ADF182D921A00E600EA /* KeywordsTVC.m */; };
 		A67AF51C182BA408000F6EB0 /* IssueArticlesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A67AF51B182BA408000F6EB0 /* IssueArticlesTVC.m */; };
 		A6A919D218299BB500F1CE7D /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A919CF18299BB500F1CE7D /* AppManager.m */; };
@@ -78,10 +76,6 @@
 		A6635AD3182D841800E600EA /* TopicsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicsTVC.m; sourceTree = "<group>"; };
 		A6635AD5182D86FC00E600EA /* TopicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicVC.h; sourceTree = "<group>"; };
 		A6635AD6182D86FC00E600EA /* TopicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicVC.m; sourceTree = "<group>"; };
-		A6635AD8182D8B7100E600EA /* TopicAddedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicAddedVC.h; sourceTree = "<group>"; };
-		A6635AD9182D8B7100E600EA /* TopicAddedVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicAddedVC.m; sourceTree = "<group>"; };
-		A6635ADB182D8CD900E600EA /* TopicImplicationsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicImplicationsVC.h; sourceTree = "<group>"; };
-		A6635ADC182D8CD900E600EA /* TopicImplicationsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicImplicationsVC.m; sourceTree = "<group>"; };
 		A6635ADE182D921A00E600EA /* KeywordsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordsTVC.h; sourceTree = "<group>"; };
 		A6635ADF182D921A00E600EA /* KeywordsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordsTVC.m; sourceTree = "<group>"; };
 		A67AF51A182BA408000F6EB0 /* IssueArticlesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueArticlesTVC.h; sourceTree = "<group>"; };
@@ -189,10 +183,6 @@
 				A6635AD3182D841800E600EA /* TopicsTVC.m */,
 				A6635AD5182D86FC00E600EA /* TopicVC.h */,
 				A6635AD6182D86FC00E600EA /* TopicVC.m */,
-				A6635AD8182D8B7100E600EA /* TopicAddedVC.h */,
-				A6635AD9182D8B7100E600EA /* TopicAddedVC.m */,
-				A6635ADB182D8CD900E600EA /* TopicImplicationsVC.h */,
-				A6635ADC182D8CD900E600EA /* TopicImplicationsVC.m */,
 				A6635ADE182D921A00E600EA /* KeywordsTVC.h */,
 				A6635ADF182D921A00E600EA /* KeywordsTVC.m */,
 				A6D9BC76183BBFE000B42118 /* KeywordArticlesTVC.h */,
@@ -346,9 +336,7 @@
 				A6A919D61829A1BC00F1CE7D /* IssuesManager.m in Sources */,
 				A6D9BC78183BBFE000B42118 /* KeywordArticlesTVC.m in Sources */,
 				A621F0DB184538D20011D0C5 /* FullArticleVC.m in Sources */,
-				A6635ADA182D8B7100E600EA /* TopicAddedVC.m in Sources */,
 				A67AF51C182BA408000F6EB0 /* IssueArticlesTVC.m in Sources */,
-				A6635ADD182D8CD900E600EA /* TopicImplicationsVC.m in Sources */,
 				A6635ACB182D625400E600EA /* ArticleDetails.m in Sources */,
 				A6635AD4182D841800E600EA /* TopicsTVC.m in Sources */,
 				A6635AE0182D921A00E600EA /* KeywordsTVC.m in Sources */,
