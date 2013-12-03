@@ -9,7 +9,7 @@
 #import "IssueArticlesTVC.h"
 #import "ArticleDetails.h"
 #import "TopicsTVC.h"
-
+#import "ShareActivityVC.h"
 
 Article *currArticle;
 
@@ -45,7 +45,10 @@ Article *currArticle;
 
 - (void)share:(id)sender
 {
-    
+    // display the options for sharing
+    ShareActivityVC *shareVC = [[ShareActivityVC alloc] init];
+    [self presentViewController:shareVC animated:YES completion:nil];
+   
 }
 
 - (void)didReceiveMemoryWarning

@@ -11,6 +11,7 @@
 #import "Issue.h"
 #import <Social/Social.h>
 #import "ShareActivityProvider.h"
+#import "ShareActivityVC.h"
 
 @interface IssuesViewController ()
 
@@ -109,25 +110,9 @@ Issue *currIssue;
 
 - (void)share:(id)sender
 {
-    // Create the custom activity provider
-    ShareActivityProvider *shareActivityProvider = [[ShareActivityProvider alloc] init];
-    // get the image we want to share
-    UIImage *shareImage = [UIImage imageNamed:@"about_icon"];
-    // Prepare the URL we want to share
-    NSURL *shareUrl = [NSURL URLWithString:@"http://www.cdc.gov/mmwr/mmwr_wk/wk_cvol.html"];
-    
-    // put the activity provider (for the text), the image, and the URL together in an array
-    NSArray *activityProviders = @[shareActivityProvider, shareImage, shareUrl];
-    
-    // Create the activity view controller passing in the activity provider, image and url we want to share along with the additional source we want to appear (google+)
-    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityProviders applicationActivities:nil];
-    
-    // tell the activity view controller which activities should NOT appear
-    activityViewController.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeCopyToPasteboard, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll, UIActivityTypeAirDrop, UIActivityTypeAddToReadingList];
-    
     // display the options for sharing
-    activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    [self presentViewController:activityViewController animated:YES completion:nil];
+    ShareActivityVC *shareVC = [[ShareActivityVC alloc] init];
+    [self presentViewController:shareVC animated:YES completion:nil];
     
 }
 

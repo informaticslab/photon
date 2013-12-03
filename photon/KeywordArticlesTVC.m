@@ -11,6 +11,7 @@
 #import "KeywordArticleDetailVC.h"
 #import "ArticleDetails.h"
 #import "TopicsTVC.h"
+#import "ShareActivityVC.h"
 
 @implementation KeywordArticlesTVC
 
@@ -51,7 +52,10 @@ NSArray *keywordArticles;
 
 - (void)share:(id)sender
 {
-    
+    // display the options for sharing
+    ShareActivityVC *shareVC = [[ShareActivityVC alloc] init];
+    [self presentViewController:shareVC animated:YES completion:nil];
+
 }
 
 

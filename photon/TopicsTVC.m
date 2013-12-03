@@ -8,6 +8,7 @@
 
 #import "TopicsTVC.h"
 #import "TopicVC.h"
+#import "ShareActivityVC.h"
 
 #define CELL_TEXT_LABEL_WIDTH 230.0
 #define CELL_PADDING 10.0
@@ -52,6 +53,9 @@ NSDictionary *boldTextAttributes;
 
 - (void)share:(id)sender
 {
+    // display the options for sharing
+    ShareActivityVC *shareVC = [[ShareActivityVC alloc] init];
+    [self presentViewController:shareVC animated:YES completion:nil];
     
 }
 

@@ -8,6 +8,7 @@
 
 #import "TopicVC.h"
 #import "FullArticleVC.h"
+#import "ShareActivityVC.h"
 
 @interface TopicVC ()
 
@@ -68,6 +69,9 @@
 
 - (void)share:(id)sender
 {
+    // display the options for sharing
+    ShareActivityVC *shareVC = [[ShareActivityVC alloc] init];
+    [self presentViewController:shareVC animated:YES completion:nil];
     
 }
 
@@ -96,7 +100,7 @@
 {
     if([segue.identifier isEqualToString:@"pushViewFullArticleFromTopic"])
     {
-        FullArticleVC *fullArticleVC = segue.destinationViewController;
+        //FullArticleVC *fullArticleVC = segue.destinationViewController;
         
     }
 }

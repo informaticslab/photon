@@ -8,8 +8,7 @@
 
 #import "KeywordsTVC.h"
 #import "KeywordArticlesTVC.h"
-#import <Social/Social.h>
-
+#import "ShareActivityVC.h"
 
 @interface KeywordsTVC ()
 
@@ -54,23 +53,9 @@ NSString *selectedKeyword;
 
 - (void)share:(id)sender
 {
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
-    {
-        SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [tweetSheet setInitialText:@"I'm using the MMWR Express app from the CDC. You can get it here: http://webaddress.com #CDC #MMWR"];
-        [self presentViewController:tweetSheet animated:YES completion:nil];
-    }
-    else
-    {
-        UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:@"Sorry"
-                                  message:@"You can't send a tweet right now, make sure your device has an internet connection and you have at least one Twitter account setup"
-                                  delegate:self
-                                  cancelButtonTitle:@"OK"
-                                  otherButtonTitles:nil];
-        [alertView show];
-    }
-
+    // display the options for sharing
+    ShareActivityVC *shareVC = [[ShareActivityVC alloc] init];
+    [self presentViewController:shareVC animated:YES completion:nil];
     
 }
 
