@@ -10,6 +10,7 @@
 #import "IssueArticlesTVC.h"
 #import "Issue.h"
 #import <Social/Social.h>
+#import "ShareActivityProvider.h"
 
 @interface IssuesViewController ()
 
@@ -105,26 +106,28 @@ Issue *currIssue;
     }
 }
 
+
 - (void)share:(id)sender
 {
+    // Create the custom activity provider
+    ShareActivityProvider *shareActivityProvider = [[ShareActivityProvider alloc] init];
+    // get the image we want to share
+    UIImage *shareImage = [UIImage imageNamed:@"about_icon"];
+    // Prepare the URL we want to share
+    NSURL *shareUrl = [NSURL URLWithString:@"http://www.cdc.gov/mmwr/mmwr_wk/wk_cvol.html"];
     
+    // put the activity provider (for the text), the image, and the URL together in an array
+    NSArray *activityProviders = @[shareActivityProvider, shareImage, shareUrl];
     
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
-    {
-            SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-            [tweetSheet setInitialText:@"I'm using the MMWR Express app from the CDC. You can get it here: http://webaddress.com #CDC #MMWR"];
-            [self presentViewController:tweetSheet animated:YES completion:nil];
-    }
-    else
-    {
-        UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:@"Sorry"
-                                  message:@"You can't send a tweet right now, make sure your device has an internet connection and you have at least one Twitter account setup"
-                                  delegate:self
-                                  cancelButtonTitle:@"OK"
-                                  otherButtonTitles:nil];
-        [alertView show];
-    }
+    // Create the activity view controller passing in the activity provider, image and url we want to share along with the additional source we want to appear (google+)
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityProviders applicationActivities:nil];
+    
+    // tell the activity view controller which activities should NOT appear
+    activityViewController.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeCopyToPasteboard, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll, UIActivityTypeAirDrop, UIActivityTypeAddToReadingList];
+    
+    // display the options for sharing
+    activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:activityViewController animated:YES completion:nil];
     
 }
 

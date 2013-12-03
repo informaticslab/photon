@@ -24,7 +24,6 @@
             self.number = titleSplit[2];
         }
 
-       
     }
     
     return self;

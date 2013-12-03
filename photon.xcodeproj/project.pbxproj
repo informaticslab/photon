@@ -21,6 +21,7 @@
 		A62A1A371823C9C7006A62B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62A1A161823C9C7006A62B3 /* UIKit.framework */; };
 		A62A1A3F1823C9C7006A62B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A62A1A3D1823C9C7006A62B3 /* InfoPlist.strings */; };
 		A62A1A411823C9C7006A62B3 /* photonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A62A1A401823C9C7006A62B3 /* photonTests.m */; };
+		A639A337184E6496008D3BF6 /* ShareActivityProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A639A336184E6496008D3BF6 /* ShareActivityProvider.m */; };
 		A6635ACB182D625400E600EA /* ArticleDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635ACA182D625400E600EA /* ArticleDetails.m */; };
 		A6635AD1182D7A0D00E600EA /* SubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635AD0182D7A0D00E600EA /* SubjectViewController.m */; };
 		A6635AD4182D841800E600EA /* TopicsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635AD3182D841800E600EA /* TopicsTVC.m */; };
@@ -71,6 +72,8 @@
 		A62A1A3C1823C9C7006A62B3 /* photonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "photonTests-Info.plist"; sourceTree = "<group>"; };
 		A62A1A3E1823C9C7006A62B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A62A1A401823C9C7006A62B3 /* photonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = photonTests.m; sourceTree = "<group>"; };
+		A639A335184E6496008D3BF6 /* ShareActivityProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareActivityProvider.h; sourceTree = "<group>"; };
+		A639A336184E6496008D3BF6 /* ShareActivityProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareActivityProvider.m; sourceTree = "<group>"; };
 		A6635AC9182D625400E600EA /* ArticleDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleDetails.h; sourceTree = "<group>"; };
 		A6635ACA182D625400E600EA /* ArticleDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleDetails.m; sourceTree = "<group>"; };
 		A6635ACF182D7A0D00E600EA /* SubjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectViewController.h; sourceTree = "<group>"; };
@@ -206,6 +209,8 @@
 				A66FB239184D2B9E008F2AB7 /* AboutVC.m */,
 				A66FB23B184D2BB0008F2AB7 /* HelpVC.h */,
 				A66FB23C184D2BB0008F2AB7 /* HelpVC.m */,
+				A639A335184E6496008D3BF6 /* ShareActivityProvider.h */,
+				A639A336184E6496008D3BF6 /* ShareActivityProvider.m */,
 			);
 			path = photon;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 				A62A1A231823C9C7006A62B3 /* AppDelegate.m in Sources */,
 				A6D9BC7B183BF57F00B42118 /* KeywordArticleDetailVC.m in Sources */,
 				A6A919DE182A9B8700F1CE7D /* Article.m in Sources */,
+				A639A337184E6496008D3BF6 /* ShareActivityProvider.m in Sources */,
 				A6635AD7182D86FC00E600EA /* TopicVC.m in Sources */,
 				A62A1A291823C9C7006A62B3 /* IssuesViewController.m in Sources */,
 				A6A919DB182A74D400F1CE7D /* Issue.m in Sources */,
