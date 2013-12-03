@@ -8,8 +8,6 @@
 
 #import "TopicsTVC.h"
 #import "TopicVC.h"
-#import "TopicAddedVC.h"
-#import "TopicImplicationsVC.h"
 
 #define CELL_TEXT_LABEL_WIDTH 230.0
 #define CELL_PADDING 10.0

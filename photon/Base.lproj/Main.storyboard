@@ -39,7 +39,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="MMWR Express" id="17v-Ct-Ngf">
                         <barButtonItem key="leftBarButtonItem" id="6jw-fi-xs0">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="aK0-fj-zhQ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="aK0-fj-zhQ" userLabel="Info Button">
                                 <rect key="frame" x="16" y="11" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -47,6 +47,9 @@
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="ejH-9J-HaU" kind="modal" identifier="pushInfoModalViewFromSubject" id="QJk-cp-B2j"/>
+                                </connections>
                             </button>
                             <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
@@ -81,7 +84,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1217" y="671"/>
+            <point key="canvasLocation" x="1181" y="1047"/>
         </scene>
         <!--Keyword ArticlesTVC-->
         <scene sceneID="Gmz-R1-6rJ">
@@ -114,7 +117,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvX-d4-gab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1706" y="671"/>
+            <point key="canvasLocation" x="1670" y="1047"/>
         </scene>
         <!--Keyword Article DetailVC-->
         <scene sceneID="9ua-ch-mG7">
@@ -156,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5G7-1a-LiA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2174" y="671"/>
+            <point key="canvasLocation" x="2138" y="1047"/>
         </scene>
         <!--TopicVC - Blue Box-->
         <scene sceneID="7bJ-mb-b3j">
@@ -385,7 +388,56 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RfM-An-1Wu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2729" y="671"/>
+            <point key="canvasLocation" x="2693" y="1047"/>
+        </scene>
+        <!--InfoVC-->
+        <scene sceneID="Bzu-FT-wZS">
+            <objects>
+                <viewController id="0lD-We-Pzq" customClass="InfoVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oVb-yl-z3k">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="kUg-aG-yUh">
+                                <rect key="frame" x="99" y="82" width="123" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Help"/>
+                                    <segment title="About"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segCtrlValueChanged:" destination="0lD-We-Pzq" eventType="valueChanged" id="kXJ-JU-dNT"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView contentMode="scaleToFill" id="TfW-bG-e53">
+                                <rect key="frame" x="20" y="118" width="280" height="425"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="DBY-ED-WLm" kind="embed" id="Q66-6a-ZW8"/>
+                                </connections>
+                            </containerView>
+                            <containerView contentMode="scaleToFill" id="hoP-cY-4G0">
+                                <rect key="frame" x="0.0" y="118" width="320" height="425"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="GFa-7e-S6h" kind="embed" id="hKD-tH-NCS"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ODq-jC-7Ex"/>
+                    <connections>
+                        <outlet property="helpVC" destination="hoP-cY-4G0" id="S5R-mP-R4E"/>
+                        <outlet property="infoVC" destination="TfW-bG-e53" id="nbK-CY-J7i"/>
+                        <outlet property="segCtrlHelpAbout" destination="kUg-aG-yUh" id="YfA-BY-CDv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tuc-nF-oHy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1575" y="-1002"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vex-rW-GRa">
@@ -463,11 +515,14 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="557-Qf-0sn">
                         <barButtonItem key="leftBarButtonItem" id="XQY-yw-dxY">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="IsB-ct-eFe">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="IsB-ct-eFe" userLabel="Info Button">
                                 <rect key="frame" x="16" y="11" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="ejH-9J-HaU" kind="modal" identifier="pushInfoModalViewFromIssue" id="XfS-BQ-fbZ"/>
+                                </connections>
                             </button>
                             <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
@@ -545,11 +600,133 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eEI-cB-lhf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="659" y="671"/>
+            <point key="canvasLocation" x="623" y="1047"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6I9-Bv-QYa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ejH-9J-HaU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LFx-8z-WUa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0lD-We-Pzq" kind="relationship" relationship="rootViewController" id="9dw-T9-98T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="89z-JL-0mG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1112" y="-1002"/>
+        </scene>
+        <!--AboutVC-->
+        <scene sceneID="ULE-Yh-VZh">
+            <objects>
+                <viewController storyboardIdentifier="AboutView" automaticallyAdjustsScrollViewInsets="NO" id="DBY-ED-WLm" customClass="AboutVC" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ifg-fP-KY0">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="425"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_icon" id="S4l-aG-biq">
+                                <rect key="frame" x="4" y="20" width="57" height="56"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" id="jne-n6-eh2">
+                                <rect key="frame" x="73" y="20" width="178" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="About MMWR Express">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 0.2.5 Build 4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3xD-Zc-pD0">
+                                <rect key="frame" x="73" y="47" width="148" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="2MU-se-Wgt">
+                                <rect key="frame" x="0.0" y="98" width="280" height="327"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Welcome to the MMWR Express mobile app. 
+
+The goal of this app is to provide fast access to the blue summary boxes in MMWR's Weekly Report.  
+ 
+The Morbidity and Mortality Weekly Report (MMWR) series is prepared by the Centers for Disease Control and Prevention (CDC). Often called “the voice of CDC,” the MMWR series is the agency’s primary vehicle for scientific publication of timely, reliable, authoritative, accurate, objective, and useful public health information and recommendations. 
+ 
+Summaries are searchable by specific MMWR issue, or by specific subject (e.g., salmonella).  
+
+If you have any questions about the app, please contact either the MMWR staff at mmwrq@cdc.gov or the Informatics Innovation Unit staff at informaticslab@cdc.gov.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="lblVersionInfo" destination="3xD-Zc-pD0" id="Qai-eY-d1W"/>
+                        <outlet property="txtfHeader" destination="jne-n6-eh2" id="Fej-1A-HeS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuE-up-0eI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2190" y="-1369"/>
+        </scene>
+        <!--HelpVC-->
+        <scene sceneID="21A-8j-FqC">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="GFa-7e-S6h" customClass="HelpVC" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UKz-tT-CVi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="425"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help_header_icon" id="e6a-aK-2cC">
+                                <rect key="frame" x="20" y="35" width="73" height="27"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" id="XO7-AQ-8R9">
+                                <rect key="frame" x="81" y="34" width="192" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Help for MMWR Express">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help_content_no_page_control" id="Oon-wz-vai">
+                                <rect key="frame" x="0.0" y="83" width="320" height="727"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yx5-kV-sII" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2195" y="-799"/>
         </scene>
     </scenes>
     <resources>
+        <image name="about_icon" width="61" height="60"/>
         <image name="bluebox_subheader_icon" width="35" height="35"/>
+        <image name="help_content_no_page_control" width="320" height="727"/>
+        <image name="help_header_icon" width="33" height="28"/>
         <image name="issue_tab_icon_inactive" width="25" height="25"/>
         <image name="source_BG" width="315" height="81"/>
         <image name="subject_tab_icon_inactive" width="25" height="25"/>
@@ -562,8 +739,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="zoM-3B-Y68"/>
+        <segue reference="QJk-cp-B2j"/>
+        <segue reference="pAq-aL-54R"/>
         <segue reference="3f9-Ze-hpd"/>
-        <segue reference="yzf-wG-M7n"/>
+        <segue reference="von-23-WoB"/>
     </inferredMetricsTieBreakers>
 </document>

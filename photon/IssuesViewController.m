@@ -9,6 +9,7 @@
 #import "IssuesViewController.h"
 #import "IssueArticlesTVC.h"
 #import "Issue.h"
+#import <Social/Social.h>
 
 @interface IssuesViewController ()
 
@@ -32,16 +33,11 @@ Issue *currIssue;
     //set back button arrow color
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1];
-
+    
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
     shareButton.style = UIBarButtonItemStyleBordered;
     self.navigationItem.rightBarButtonItem = shareButton;
-
-
-}
-
-- (void)share:(id)sender
-{
+    
     
 }
 
@@ -82,7 +78,7 @@ Issue *currIssue;
     // Configure the cell...
     NSInteger index = [indexPath row];
     UILabel *descLabel = (UILabel *)[cell.contentView viewWithTag:1];
-
+    
     Issue *cellIssue = APP_MGR.issuesMgr.issues[index];
     // cell.textLabel.text = cellIssue.title;
     descLabel.text = cellIssue.title;
@@ -109,6 +105,28 @@ Issue *currIssue;
     }
 }
 
+- (void)share:(id)sender
+{
+    
+    
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+            SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+            [tweetSheet setInitialText:@"I'm using the MMWR Express app from the CDC. You can get it here: http://webaddress.com #CDC #MMWR"];
+            [self presentViewController:tweetSheet animated:YES completion:nil];
+    }
+    else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Sorry"
+                                  message:@"You can't send a tweet right now, make sure your device has an internet connection and you have at least one Twitter account setup"
+                                  delegate:self
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+        [alertView show];
+    }
+    
+}
 
 
 
