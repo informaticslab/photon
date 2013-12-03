@@ -27,6 +27,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    _scrollView.scrollEnabled = YES;
+    [_scrollView setContentSize:(CGSizeMake(320, 727))];
 }
 
 - (void)didReceiveMemoryWarning

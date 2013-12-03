@@ -28,6 +28,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.lblVersionInfo.text = [NSString stringWithFormat:@"%@ %@", [self getVersionString], [self getBuildString]];
+    _txtvAbout.editable = NO;
+    _txtvAbout.dataDetectorTypes = UIDataDetectorTypeAll;
 
 
 }
