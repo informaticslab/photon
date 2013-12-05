@@ -7,6 +7,7 @@
 //
 
 #import "Issue.h"
+#import "Article.h"
 
 @implementation Issue
 
@@ -17,6 +18,7 @@
         
         self.title= title;
         self.articles = [[NSMutableArray alloc] init];
+        self.unread = YES;
         NSArray *titleSplit = [_title componentsSeparatedByString:@"/"];
         if ([titleSplit count] == 3) {
             self.date = titleSplit[0];
@@ -27,6 +29,21 @@
     }
     
     return self;
+}
+
+-(void)updateUnreadArticleStatus
+{
+    int unreadCount = 0;
+    
+    for (Article *article in _articles)
+        if (article.unread)
+            unreadCount++;
+    
+    if (unreadCount > 0)
+        self.unread = YES;
+    else
+        self.unread = NO;
+    
 }
 
 @end

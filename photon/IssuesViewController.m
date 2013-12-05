@@ -43,6 +43,11 @@ Issue *currIssue;
     
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -79,12 +84,18 @@ Issue *currIssue;
     
     // Configure the cell...
     NSInteger index = [indexPath row];
-    UILabel *descLabel = (UILabel *)[cell.contentView viewWithTag:1];
+//    UILabel *descLabel = (UILabel *)[cell.contentView viewWithTag:1];
     
     Issue *cellIssue = APP_MGR.issuesMgr.issues[index];
-    // cell.textLabel.text = cellIssue.title;
-    descLabel.text = cellIssue.title;
+    cell.textLabel.text = cellIssue.title;
+    //descLabel.text = cellIssue.title;
     
+    if (cellIssue.unread) {
+        cell.imageView.image = [UIImage imageNamed:@"unread_blue_dot"];
+        [cell.imageView sizeToFit];        
+    } else {
+        cell.imageView.image = nil;
+    }
     return cell;
 }
 
@@ -94,7 +105,10 @@ Issue *currIssue;
     // Navigation logic may go here. Create and push another view controller.
     // [self.navigationController pushViewController:detailViewController animated:YES];
     currIssue = APP_MGR.issuesMgr.issues[[indexPath row]];
+    [currIssue updateUnreadArticleStatus];
+    [self.tableView reloadData];
     [self performSegueWithIdentifier:@"pushIssueArticles" sender:nil];
+
     
 }
 

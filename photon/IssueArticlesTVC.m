@@ -87,8 +87,7 @@ Article *currArticle;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"IssueArticlesCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IssueArticlesCell" forIndexPath:indexPath];
     
     // configure the cell...
     Article *rowArticle = _issue.articles[[indexPath row]];
@@ -98,12 +97,13 @@ Article *currArticle;
     [cell.textLabel sizeToFit];
     cell.textLabel.text = rowArticle.title;
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-
-//    UILabel *descLabel = (UILabel *)[cell.contentView viewWithTag:1];
-//    descLabel.numberOfLines = 0;
-//    descLabel.text = rowArticle.title;
-//    [descLabel sizeToFit];
-
+    
+    if (rowArticle.unread) {
+        cell.imageView.image = [UIImage imageNamed:@"unread_blue_dot"];
+        [cell.imageView sizeToFit];
+    } else {
+        cell.imageView.image = nil;
+    }
     return cell;
 }
 
@@ -111,8 +111,10 @@ Article *currArticle;
 {
     
     // Navigation logic may go here. Create and push another view controller.
-    // [self.navigationController pushViewController:detailViewController animated:YES];
     currArticle = _issue.articles[[indexPath row]];
+    currArticle.unread = NO;
+    [self.issue updateUnreadArticleStatus];
+    [self.tableView reloadData];
     [self performSegueWithIdentifier:@"pushTopics" sender:nil];
     
 }

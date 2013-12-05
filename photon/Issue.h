@@ -15,7 +15,9 @@
 @property(strong, nonatomic) NSString *date;
 @property(strong, nonatomic) NSString *number;
 @property(strong, nonatomic) NSString *volume;
+@property BOOL unread;
 
 -(id)initWithTitle:(NSString *)title;
+-(void)updateUnreadArticleStatus;
 
 @end

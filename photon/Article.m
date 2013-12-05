@@ -18,6 +18,7 @@
         
         self.title = title;
         self.tags = [[NSMutableArray alloc]init];
+        self.unread = YES;
         
     }
     
