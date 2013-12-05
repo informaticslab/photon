@@ -32,7 +32,6 @@
     _txtvAbout.selectable = YES;
     _txtvAbout.dataDetectorTypes = UIDataDetectorTypeAll;
 
-
 }
 
 -(NSString *)getVersionString

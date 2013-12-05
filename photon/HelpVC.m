@@ -23,12 +23,26 @@
     return self;
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    _scrollView.scrollEnabled = YES;
+    [_scrollView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    [_scrollView setContentSize:(CGSizeMake(320, 727))];
+////[_scrollView addConstraint:[NSLayoutConstraint constraintWithItem:_imageView
+//                                                            attribute:NSLayoutAttributeBottom
+//                                                            relatedBy:NSLayoutRelationEqual
+//                                                               toItem:_scrollView
+//                                                            attribute:NSLayoutAttributeBottom
+//                                                           multiplier:1.0
+//                                                             constant:0]];
+    
+    
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    _scrollView.scrollEnabled = YES;
-    [_scrollView setContentSize:(CGSizeMake(320, 727))];
 }
 
 - (void)didReceiveMemoryWarning

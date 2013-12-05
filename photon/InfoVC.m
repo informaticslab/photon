@@ -12,15 +12,6 @@
 @implementation InfoVC
 
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -35,6 +26,10 @@
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(donePressed:)];
     doneButton.style = UIBarButtonItemStyleBordered;
     self.navigationItem.rightBarButtonItem = doneButton;
+    _infoVC.hidden = NO;
+    _helpVC.hidden = YES;
+    [self.view bringSubviewToFront:_infoVC];
+
 
 }
 
@@ -53,11 +48,11 @@
 
 - (IBAction)segCtrlValueChanged:(id)sender {
     
-    if (_segCtrlHelpAbout.selectedSegmentIndex == 1) {
+    if (_segCtrlHelpAbout.selectedSegmentIndex == 0) {
         _infoVC.hidden = NO;
         _helpVC.hidden = YES;
         [self.view bringSubviewToFront:_infoVC];
-    } else if (_segCtrlHelpAbout.selectedSegmentIndex == 0) {
+    } else if (_segCtrlHelpAbout.selectedSegmentIndex == 1) {
         _helpVC.hidden = NO;
         _infoVC.hidden = YES;
         [self.view bringSubviewToFront:_helpVC];
