@@ -53,7 +53,7 @@ NSArray *keywordArticles;
 - (void)share:(id)sender
 {
     // display the options for sharing
-    ShareActivityVC *shareVC = [[ShareActivityVC alloc] init];
+    ShareActivityVC *shareVC = [[ShareActivityVC alloc] initToShareApp];
     [self presentViewController:shareVC animated:YES completion:nil];
 
 }

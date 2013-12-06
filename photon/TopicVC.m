@@ -70,7 +70,7 @@
 - (void)share:(id)sender
 {
     // display the options for sharing
-    ShareActivityVC *shareVC = [[ShareActivityVC alloc] init];
+    ShareActivityVC *shareVC = [[ShareActivityVC alloc] initToShareArticleUrl:_article.url];
     [self presentViewController:shareVC animated:YES completion:nil];
     
 }
@@ -100,7 +100,8 @@
 {
     if([segue.identifier isEqualToString:@"pushViewFullArticleFromTopic"])
     {
-        //FullArticleVC *fullArticleVC = segue.destinationViewController;
+        FullArticleVC *fullArticleVC = segue.destinationViewController;
+        fullArticleVC.url = _article.url;
         
     }
 }

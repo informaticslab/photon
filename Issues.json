@@ -1,9 +1,150 @@
 [
+    {
+      "title": "11-29-2013 / Vol 62 / Issue 47",
+      "articles": [
+           {
+              "title": "Differences Between HIV-Infected Men and Women in Antiretroviral Therapy Outcomes — Six African Countries, 2004–2012",
+			  "url":"http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6247a2.htm?s_cid=mm6247a2_w",
+              "already_known": "Evaluating differences between human immunodeficiency virus (HIV)-infected men and women in antiretroviral therapy (ART) enrollment characteristics and treatment outcomes can help program managers understand why proportionally more women than men are accessing ART.",
+              "added_by_report": "This retrospective cohort study of six African countries found lower median CD4 counts and more World Health Organization stage IV HIV disease in men at enrollment in all six countries. In addition, the risk of attrition during ART was significantly higher in men in western and southern African countries, even after controlling for possible baseline predictors of ART outcomes. This finding suggests that unidentified factors are contributing to this higher attrition risk in these countries. In eastern Africa, risk for attrition did not differ significantly between men and women.",
+              "implications": "Further research on country-specific reasons for differences between HIV-infected men and women in ART enrollment and in attrition while on ART are needed. The results of such studies could potentially identify strategies to improve early diagnosis and treatment among men and improve program outcomes.",
+              "keywords": [ {"keyword":"HIV"},{"keyword":"ART"}]
+           },
+           {
+              "title": "Voluntary Medical Male Circumcision — Southern and Eastern Africa, 2010–2012",
+			  "url":"http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6247a3.htm?s_cid=mm6247a3_w",
+              "already_known": "Voluntary medical male circumcision (VMMC) has been recognized by the World Health Organization and Joint United Nations Programme on HIV/AIDS as an effective human immunodeficiency virus (HIV) prevention intervention in settings with a generalized HIV epidemic and low male circumcision prevalence.",
+              "added_by_report": "This report summarizes progress toward the 2011 World AIDS Day VMMC target of 4.7 million circumcisions by 2013. During 2010–2012, VMMC progress has been increasing in nine countries where CDC supports VMMC service delivery, with 137,096 VMMCs in 2010, 347,724 in 2011, and 535,604 in 2012.",
+              "implications": "Accelerated VMMC scale-up can be achieved in southern and eastern Africa while maintaining high acceptance of HIV testing and counseling and low rates of adverse events.",
+              "keywords": [ {"keyword":"Circumcision"},{"keyword":"HIV"},{"keyword":""}]
+           },
+           {
+              "title": "HIV Testing and Risk Behaviors Among Gay, Bisexual, and Other Men Who Have Sex with Men — United States",
+			  "url":"http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6247a4.htm?s_cid=mm6247a4_w",
+              "already_known": "Although men who have sex with men (MSM) are a small proportion of the population, MSM represent the majority of persons diagnosed with human immunodeficiency virus (HIV) in the United States.",
+              "added_by_report": "Unprotected anal sex increased among MSM from 2005 to 2011; unprotected discordant anal sex was the same in 2008 and 2011. In 2011, one third of HIV-positive MSM who did not know they were infected with HIV reported recent unprotected anal sex with a partner of HIV-negative or unknown status, compared with 13% of HIV-positive aware and 12% of HIV-negative MSM. Only 67% of sexually active MSM reported getting an HIV test in the past year.",
+              "implications": "Expanded efforts are needed to reduce HIV risk behaviors and to promote at least annual HIV testing among MSM. Health-care providers and public health officials should work to ensure that 1) sexually active, HIV-negative MSM are tested for HIV at least annually (providers may recommend more frequent testing, for example every 3–6 months); 2) HIV-negative MSM who engage in unprotected sex receive risk-reduction interventions; and 3) HIV- positive MSM receive HIV care, treatment, and prevention services.",
+              "keywords": [ {"keyword":"HIV Testing"},{"keyword":"HIV Risk"},{"keyword":"MSM"}]
+           },
+           {
+              "title": "Tularemia — United States, 2001–2010",
+			  "url":"http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6247a5.htm?s_cid=mm6247a5_w",
+              "already_known": "Tularemia is a bacterial zoonosis that can be acquired through various exposure routes. It has been reported in every state except Hawaii, but cases most commonly occur in central U.S. states. It is caused by Francisella tularensis, an organism classified as a Tier 1 select agent based on its potential use for bioterrorism.",
+              "added_by_report": "The total number of tularemia cases reported via the National Notifiable Diseases Surveillance System during 2001–2010 did not differ from the number reported during the preceding decade. Geographic distribution was less centrally concentrated; 66% of northeastern states and two Pacific states reported more cases during 2001–2010 compared with 1991–2000. Although the majority of patients with tularemia (53%) resided in rural counties, a substantial proportion of patients (47%) resided in urban counties.",
+              "implications": "Although aspects of tularemia surveillance have improved, such as documentation of laboratory confirmation, underreporting and other limitations remain. It is important to maintain and enhance surveillance and collect detailed clinical information on each case to enhance understanding of the disease and elucidate the causes of recent epidemiologic shifts.",
+              "keywords": [ {"keyword":"Tularemia"},{"keyword":"Bacterial zoonosis"},{"keyword":"Francisella tularensis"},{"keyword":"Bioterrorism"}]
+           },
+           {
+              "title": "Very High Blood Lead Levels Among Adults — United States, 2002–2011",
+			  "url":"http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6247a6.htm?s_cid=mm6247a6_w",
+              "already_known": "The vast majority of elevated blood lead levels (BLLs) in the United States are workplace-related. Most lead exposures at work occur in the manufacturing, construction, services, and mining industries. Current research has found that even BLLs <10 μg/dL can cause harm in adults. CDC considers BLLs ≥10 μg/dL to be elevated. In contrast to the CDC reference level, prevailing Occupational Safety and Health Administration (OSHA) lead standards allow workers removed from lead exposure to return to lead work when their BLL falls below 40 μg/dL.",
+              "added_by_report": "Data collected by the Adult Blood Lead Epidemiology and Surveillance program during 2002–2011 identified 11,536 adults with very high BLLs (≥40 μg/dL), of whom 19% had elevated BLLs recorded during ≥2 years. Among those with known exposure source, occupational exposures accounted for 91% of adults with very high BLLs.",
+              "implications": "The finding that many workers have harmful BLLs, some that are persistent for ≥2 years, is of grave concern. Examining physicians should be aware that the OSHA lead standards give them broad flexibility to tailor protections to the worker’s needs, including consideration of removal from lead exposure at BLLs lower than the current OSHA lead standards require. To prevent adverse health outcomes caused by very high BLLs, public health practitioners need to increase lead exposure prevention activities directed at employers, workers, health-care providers, and the community.",
+              "keywords": [ {"keyword":"Lead"},{"keyword":"BLL"}]
+           },
+      ]
+   },
+   {
+     "title": "11-22-2013 / Vol 62 / Issue 46",
+     "articles": [
+          {
+             "title": "Outbreaks of Human Metapneumovirus in Two Skilled Nursing Facilities — West Virginia and Idaho, 2011–2012",
+			 "url":"http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6246a1.htm?s_cid=mm6246a1_w",
+             "already_known": "First identified in 2001, human metapneumovirus (hMPV) is believed to be responsible for an estimated 5%–15% of hospitalizations for lower respiratory tract infections among children. In addition, hMPV can cause symptomatic reinfection throughout life, especially among older adults and immunocompromised persons.",
+             "added_by_report": "These outbreaks of hMPV respiratory illness in skilled nursing facilities (SNFs) caused severe lower respiratory disease in >75% of affected patients, with an overall fatality rate of 11% in a population with a high prevalence of comorbidities or advanced age.",
+             "implications": "Clinicians should consider hMPV infection in the differential diagnosis of illness in patients with respiratory tract infection in SNFs, particularly when clusters of severe unexplained respiratory infections are detected.",
+             "keywords": [ {"keyword":"Human metapneumovirus"},{"keyword":"Respiratory illness"},{"keyword":"Nursing Facilities"}]
+          },
+          {
+             "title": "Fixed Drug Eruption Associated with Sulfonamides Sold in Latino Grocery Stores — Greater Washington, DC, Area, 2012–2013",
+		  	"url":"http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6246a2.htm?s_cid=mm6246a2_w",
+             "already_known": "Self-medication with oral antibiotics obtained without a prescription has been observed among substantial numbers of persons in U.S. Latino communities.",
+             "added_by_report": "Following reports of severe skin conditions in youths, approximately one third of Latino grocery stores surveyed in the greater Washington, DC, area were found to be selling illegally imported sulfonamide antibiotic preparations.",
+             "implications": "Clinicians should be aware that patients with severe skin conditions might have consumed nonprescribed antibiotics and should specifically ask about over-the-counter cold and flu remedies, especially when there is a suspicion of an adverse drug reaction. Health-care professionals and consumers are encouraged to report adverse events related to Baczol Antigripal and Baczol Expectorante to the Food and Drug Administration’s MedWatch Safety Information and Adverse Event Reporting Program.",
+             "keywords": [ {"keyword":"Sulfonamides"},{"keyword":"Latino"}]
+          },
+          {
+             "title": "Childhood Lead Exposure Associated with the Use of Kajal, an Eye Cosmetic from Afghanistan — Albuquerque, New Mexico, 2013",
+		  "url":"http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6246a2.htm?s_cid=mm6246a3_w",
+             "already_known": "Lead poisoning continues to be an important, preventable health problem. The common source of lead exposure in the United States is deteriorating lead-based paint and dust; however, some traditional remedies and cosmetics also contain lead.",
+             "added_by_report": "Two male children in New Mexico, aged 20 and 4 months, were found to have elevated blood lead levels of 27.0 and 33.5 μg/dL, respectively. Investigation implicated kajal, a cosmetic imported from Afghanistan, that was applied as a folk remedy to the children’s eyelids. The kajal was found to contain 54% lead.",
+             "implications": "Health-care providers who provide health services to refugee and immigrant children, even in small communities, should be aware of the unique lead exposure risk factors among this population. Expanding lead screening to all infants and children, and pregnant women, might avoid unintentionally excluding cases. Clinicians and other health-care workers might reduce the risk for lead exposures by discussing lead exposure hazards with their patients, especially with women receiving prenatal care or during early childhood screening programs.",
+             "keywords": [ {"keyword":"Kajal"},{"keyword":"Lead poisoning"}]
+          },
+          {
+             "title": "Health-Care Provider Screening for Tobacco Smoking and Advice to Quit — 17 Countries, 2008–2011",
+		  "url":"http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6246a2.htm?s_cid=mm6246a4_w",
+             "already_known": "Smokers who quit reduce their risk for developing and dying from tobacco-related diseases. Identification of tobacco use and advice to quit by health professionals increases cessation among smokers. Health-care providers should screen all patients for tobacco use, and for those who use tobacco, provide advice to quit, offer assistance, and arrange for follow-up.",
+             "added_by_report": "The proportion of tobacco smokers responding to the Global Adult Tobacco Surveys during 2008–2011 in 17 countries who saw a health-care provider in the past year and who reported that a health-care provider asked them about smoking ranged from 34.9% in Vietnam to 82.1% in Romania; the proportion who said that they were advised to quit ranged from 17.3% in Mexico to 67.3% in Romania. In five of the 17 countries, men were significantly more likely than women to report that a health-care provider asked about smoking and advised them to quit, with adjusted odds ratios ranging from 1.6 to 8.5. In 14 of the 17 countries, older (aged 45–64 years) compared with younger smokers (aged ≤24 years) were significantly more likely to report that a health-care provider asked or advised them to quit, with adjusted odds ratios ranging from 1.8 to 6.7.",
+             "implications": "Globally, health-care provider screening for tobacco smoking and advice to quit varies widely, and many opportunities to offer effective cessation treatment to tobacco users are being missed.",
+             "keywords": [ {"keyword":"Tobacco"},{"keyword":"Smoking"}]
+          },
+          {
+             "title": "Progress Toward Poliomyelitis Eradication — Afghanistan, January 2012–September 2013",
+		  "url":"http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6246a2.htm?s_cid=mm6246a5_w",
+             "already_known": "Afghanistan is one of the three remaining countries (including Pakistan and Nigeria) where indigenous wild poliovirus (WPV) transmission has never been interrupted. The Southern Region has been the main WPV reservoir area in Afghanistan.",
+             "added_by_report": "During 2013, WPV type 1 (WPV1) transmission has declined to the lowest level since 2004. No cases of WPV1 have been reported in the Southern Region since November 2012, and WPV1 transmission in 2013 has been limited to the Eastern Region. Genomic sequence analysis indicates that all cases in 2013 were caused by WPV1 originating in the bordering Federally Administered Tribal Areas of Pakistan. WPV type 3 has not been detected since 2010. From October 2012 to March 2013, however, 14 cases of circulating vaccine-derived poliovirus type 2 were reported in the Southern Region, suggesting significant immunity gaps and raising concerns about the strength of surveillance for acute flaccid paralysis.",
+             "implications": "To achieve and maintain WPV elimination, the government of Afghanistan is improving program accountability and manage- ment capacity, strengthening surveillance, and continuing to develop and implement district level strategies to reach and vaccinate the thousands of repeatedly missed children, particularly in areas bordering Pakistan.",
+             "keywords": [ {"keyword":"Polio"},{"keyword":"WPV"},{"keyword":"Afghanistan"}]
+          },
+          {
+             "title": "Progress Toward Poliomyelitis Eradication — Pakistan, January 2012–September 2013",
+		  "url":"http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6246a2.htm?s_cid=mm6246a6_w",
+             "already_known": "Pakistan is one of the three remaining countries (including Afghanistan and Nigeria) where indigenous wild poliovirus (WPV) transmission has never been interrupted. Pakistan has been the source for imported WPV outbreaks in Afghanistan, China, and Syria and for WPV circulation in Egypt, Israel, the West Bank, and Gaza.",
+             "added_by_report": "Compared with the same period in 2010–2011, WPV type 1 transmission decreased in magnitude and geographic spread, and WPV type 3 has not been detected for >1 year. However, bans on polio vaccination and attacks targeting polio workers in certain areas have resulted in intense WPV type 1 transmission and rapid spread of circulating vaccine-derived poliovirus type 2, especially in the Federally Administered Tribal Areas (FATA).",
+             "implications": "Improvements in polio program performance and the decreased extent of WPV transmission in Pakistan suggest that the successful eradication of polio is achievable. The intense transmission of WPV type 1 and circulating vaccine-derived poliovirus type 2 in FATA, with transmission within and outside Pakistan, demonstrates the ongoing threat to achievement of polio eradication. Efforts by humanitarian, religious, and governmental bodies to improve community acceptance of vaccination and to reach children in conflict-affected and security-compromised areas of Pakistan will be necessary to achieve polio eradication in Pakistan and globally.",
+             "keywords": [ {"keyword":"Polio"},{"keyword":"WPV"},{"keyword":"Pakistan"}]
+          },
+     ]
+  },
+    {
+      "title": "11-15-2013 / Vol 62 / Issue 45",
+      "articles": [
+           {
+              "title": "Tobacco Product Use Among Middle and High School Students — United States, 2011 and 2012",
+			  "url":"http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6245a2.htm?s_cid=mm6245a2_w",
+              "already_known": "Nearly 90% of adult smokers began smoking by age 18 years.",
+              "added_by_report": "Although decreases in the use of certain tobacco products (bidis and kreteks) have been observed, current cigar use has increased among non-Hispanic black high school students (11.7% to 16.7%), and the use of nonconventional products, such as electronic cigarettes, have increased among middle school (0.6% to 1.1%) and high school (1.5% to 2.8%) students.",
+              "implications": "Current use of cigars and nonconventional tobacco products need to be monitored at local, state, and national levels. This is especially true for nonconventional tobacco products and specific population subgroups. To reduce tobacco use among youths, national and state tobacco control programs can continue to implement evidence-based strategies, including those that will work in coordination with the Food and Drug Administration to regulate the manufacture, distribution, and marketing of tobacco products.",
+              "keywords": [ {"keyword":"Tobacco"},{"keyword":"Smoking"},{"keyword":"Cigar"}]
+           },
+      ]
+   },
+   {
+     "title": "11-08-2013 / Vol 62 / Issue 44",
+     "articles": [
+          {
+             "title": "Prevalence of Doctor-Diagnosed Arthritis and Arthritis-Attributable Activity Limitation — United States, 2010–2012",
+		  "url":"http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6244a1.htm?s_cid=mm6244a1_w",
+             "already_known": "Arthritis is the most common cause of disability among U.S. adults, resulting in annual costs estimated at $128 billion in 2003, and is particularly common among persons with multiple chronic conditions.",
+             "added_by_report": "During 2010–2012, an estimated 22.7% of adults had self- reported doctor-diagnosed arthritis, and 43.2% of those with arthritis reported arthritis-attributable activity limitations (AAAL). Approximately half of all adults with heart disease or diabetes had arthritis, and one fourth of adults with either condition and arthritis had AAAL. Approximately one third of adults who were obese also had arthritis, and 15% of those adults had AAAL.",
+             "implications": "Health-care providers and public health practitioners can address both arthritis and other chronic conditions by prioritizing self-management education and appropriate physical activity as effective ways to improve health outcomes (e.g., reducing pain and increasing function and quality-of-life).",
+             "keywords": [ {"keyword":"Arthritis"},{"keyword":"AAAL"}]
+          },
+          {
+             "title": "Multistate Outbreak of Campylobacter jejuni Infections Associated with Undercooked Chicken Livers — Northeastern United States, 2012",
+		  "url":"http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6244a2.htm?s_cid=mm6244a2_w",
+             "already_known": "Campylobacter is a common cause of bacterial foodborne illness, but documented outbreaks caused by the pathogen are relatively rare in the United States. Campylobacter outbreaks caused by consumption of undercooked chicken liver have been well documented overseas.",
+             "added_by_report": "Chicken livers from a Vermont poultry establishment were implicated as the cause of an outbreak of Campylobacter jejuni infection in the northeastern United States in 2012. Six patients were identified; two were hospitalized. Five patients were exposed through consumption of chicken livers; one patient worked at the establishment where the livers were produced. Raw livers yielded the outbreak strain of C. jejuni. Inspection of the poultry producer and two restaurants associated with three of the cases revealed no significant defects in food storage or preparation except that chicken livers were not thoroughly cooked. In response to the investigation, the poultry producer permanently halted the sale of this product.",
+             "implications": "Public health officials, food industry personnel, and consumers should be aware that chicken livers often are contaminated internally with Campylobacter and cannot be made safe to eat without being fully cooked. Pulsed-field gel electrophoresis of Campylobacter isolates can be a helpful tool for investigating suspected outbreaks and might assist with case finding, which could lead to a more accurate assessment of the scope of an outbreak.",
+             "keywords": [ {"keyword":"Campylobacter"},{"keyword":"Chicken livers"}]
+          },
+          {
+             "title": "Youth Exposure to Alcohol Advertising on Television — 25 Markets, United States, 2010",
+		  "url":"http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6244a3.htm?s_cid=mm6244a3_w",
+             "already_known": "Youth exposure to alcohol advertising is associated with the initiation of alcohol use and higher levels of consumption among youths who drink. The alcohol industry uses voluntary advertising codes based on youth audience composition to guide the placement of alcohol advertising, but compliance with these voluntary codes has not been evaluated at the local level.",
+             "added_by_report": "In 25 of the largest television markets in the United States, approximately one in four alcohol advertisements on a sample of 40 national TV programs popular with youths had underage audiences >30%, exceeding the alcohol industry’s voluntary 2003 self-regulatory codes.",
+             "implications": "If the alcohol advertising on the popular national television programs in the 25 largest television markets where >30% of the local audience was underage were eliminated and not replaced, total youth exposure to alcohol advertising on these programs could drop by as much as one third. Continued public health surveillance of youth exposure to alcohol advertising will allow for the ongoing assessment of compliance with market- ing codes and can help inform the planning, implementation, and evaluation of interventions to further reduce youth exposure to alcohol marketing.",
+             "keywords": [ {"keyword":"Alcohol consumption"},{"keyword":"Underage drinking"}]
+		 }
+	 ]
+  },
   {
     "title": "11-01-2013 / Vol 62 / Issue 43",
     "articles": [
          {
             "title": "Comorbidity in Adults with Epilepsy — United States, 2010",
+		  "url":"http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6243a2.htm?s_cid=mm6243a2_w",
             "already_known": "Persons with epilepsy might be at increased risk for some mental and physical disorders.",
             "added_by_report": "This study, based on the 2010 National Health Interview Survey, found that adults with epilepsy reported co-occurring cardio- vascular, respiratory, some inflammatory, and other disorders more frequently than respondents without epilepsy.",
             "implications": "Epidemiologic studies to show how epilepsy is related to these comorbid conditions could help identify preventable risk factors. Greater collaboration among public health agencies, health-care providers, the Epilepsy Foundation, and other partners might ensure that adults with epilepsy have access to chronic disease self-management programs and to general disease prevention and health promotion information and services.",
@@ -11,6 +152,7 @@
          },
          {
          "title": "Influenza Vaccination Among Pregnant Women — Massachusetts, 2009–2010",
+	  "url":"http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6243a3.htm?s_cid=mm6243a3_w",
          "already_known": "Vaccination rates improved during the influenza A (H1N1) pdm09 (pH1N1) outbreak in 2009, with variation across states and among population subgroups. Median coverage among 29 Pregnancy Risk Assessment Monitoring System (PRAMS) states was 47.1% for seasonal and 40.4% for pH1N1 influenza.",
          "added_by_report": "Data from the Massachusetts PRAMS survey indicated that during the 2009–10 influenza season, 67.5% of residents who had live births in Massachusetts received the seasonal vaccine and 57.6% received the pH1N1 vaccine. Non-Hispanic black women were less likely to receive either vaccine. Women who were aged <25 years, Medicaid beneficiaries, or from low-income households were significantly less likely to receive the seasonal vaccine. Vaccination rates were higher among women whose provider offered or recommended vaccination.",
          "implications": "Targeted education and equity campaigns from the MDPH might have contributed comparatively high vaccination coverage rates and fewer disparities in pH1N1 coverage compared with seasonal vaccine coverage. Further efforts to promote the importance and availability of the influenza vaccine and to specifically address safety concerns could improve vaccination rates among pregnant women. Continued monitoring of vaccination coverage among pregnant women is needed to evaluate progress toward greater coverage.",
@@ -18,6 +160,7 @@
          },
          {
          "title": "Global Routine Vaccination Coverage — 2012",
+	  "url":"http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6243a4.htm?s_cid=mm6243a4_w",
          "already_known": "Substantial progress has been made in reducing vaccine-preventable morbidity and mortality since establishment of the global Expanded Programme on Immunization in 1974. However, millions of children, especially those in less developed countries, still are not being reached by the program.",
          "added_by_report": "During 2012, estimated global coverage with the third dose of diphtheria-tetanus-pertussis vaccine (DTP) was 83%. India, Nigeria, and Indonesia accounted for 55% of the 22.6 million children who had not received 3 doses of DTP by age 1 year. Worldwide coverage with other recommended vaccines was 89% for bacille Calmette-Guérin vaccine, 84% for the third dose of poliovirus vaccine, 84% for the first dose of measles-containing vaccine, 79% for the third dose of hepatitis B vaccine, and 45% for the third dose of Haemophilus influenzae type b vaccine. Among all incompletely vaccinated children, 56% had never received the first dose of DTP vaccine.",
          "implications": "Many children, especially those in less developed countries, remain at risk for vaccine-preventable diseases. Strategies to improve vaccination coverage might differ for those children who have never been vaccinated, compared with those who have started but not completed the immunization series.",
@@ -30,6 +173,7 @@
     "articles": [
          {
          "title": "Progress Toward Global Eradication of Dracunculiasis — January 2012–June 2013",
+	  "url":"http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6242a1.htm?s_cid=mm6242a1_w",
          "already_known": "The number of new cases of dracunculiasis (Guinea worm disease) occurring worldwide each year has decreased from an estimated 3.5 million in 1986, when the World Health Assembly declared global elimination as a goal, to 542 in 2012.",
          "added_by_report": "The number of dracunculiasis cases reported worldwide in 2012 declined by 49%, compared with 2011, and by 77% from January–June 2012 to January–June 2013. Transmission remains endemic in four countries, with South Sudan accounting for 83% of all reported cases during January–June 2013.",
          "implications": "Although earlier target dates for global dracunculiasis eradication were missed, progress is accelerating, and eradication is likely within the next few years if disruption of program operations can be minimized, particularly in northern Mali.",
@@ -37,6 +181,7 @@
          },
                  {
                  "title": "Histoplasmosis in a State Where It Is Not Known to Be Endemic — Montana, 2012–2013",
+   			  "url":"http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6242a2.htm?s_cid=mm6242a2_w",
                  "already_known": "Histoplasmosis is a potentially severe illness caused by infection with the dimorphic fungus Histoplasma capsulatum. This fungus is endemic in the Ohio River and Mississippi River valleys in the United States, where it is found in soil enriched with bird droppings and bat guano.",
                  "added_by_report": "Four unrelated cases of histoplasmosis were identified during 2012–2013 among residents of Montana, a location further west than areas where H. capsulatum is known to be endemic.",
                  "implications": "Health-care providers should be aware of the possibility of H. capsulatum in Montana and the potential for histoplasmosis in patients with clinically compatible illnesses, even in the absence of a history of travel outside of the state.",

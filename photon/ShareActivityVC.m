@@ -9,25 +9,25 @@
 #import "ShareActivityVC.h"
 #import "ShareActivityProvider.h"
 
-@interface ShareActivityVC ()
 
-@end
+// Create the custom activity provider
+ShareActivityProvider *shareActivityProvider;
+// get the image we want to share
+UIImage *shareImage;
+// Prepare the URL we want to share
+NSURL *shareUrl;
+
+// put the activity provider (for the text), the image, and the URL together in an array
+NSArray *activityProviders;
+
 
 @implementation ShareActivityVC
 
 - (id)init
 {
-    
-        // Create the custom activity provider
-        ShareActivityProvider *shareActivityProvider = [[ShareActivityProvider alloc] init];
-        // get the image we want to share
-        UIImage *shareImage = [UIImage imageNamed:@"about_icon"];
-        // Prepare the URL we want to share
-        NSURL *shareUrl = [NSURL URLWithString:@"http://www.cdc.gov/mmwr/mmwr_wk/wk_cvol.html"];
-        
         // put the activity provider (for the text), the image, and the URL together in an array
         NSArray *activityProviders = @[shareActivityProvider, shareImage, shareUrl];
-        
+    
         // Create the activity view controller passing in the activity provider, image and url we want to share along with the additional source we want to appear (google+)
         self = [super initWithActivityItems:activityProviders applicationActivities:nil];
         
@@ -39,6 +39,42 @@
         
 
     return self;
+}
+
+- (id)initToShareApp
+{
+    
+    // Create the custom activity provider
+    shareActivityProvider = [[ShareActivityProvider alloc] initToShareApp];
+    
+    // get the image we want to share
+    shareImage = [UIImage imageNamed:@"about_icon"];
+    
+    // Prepare the URL we want to share
+    shareUrl = [NSURL URLWithString:@"http://www.cdc.gov/mmwr/mmwr_wk/wk_cvol.html"];
+    
+    self = [self init];
+    
+    return self;
+
+}
+
+- (id)initToShareArticleUrl:(NSString *)articleUrl
+{
+    
+    // Create the custom activity provider
+    shareActivityProvider = [[ShareActivityProvider alloc] initToShareArticle];
+    
+    // get the image we want to share
+    shareImage = [UIImage imageNamed:@"about_icon"];
+    
+    // Prepare the URL we want to share
+    shareUrl = [NSURL URLWithString:articleUrl];
+    
+    self = [self init];
+    
+    return self;
+    
 }
 
 - (void)viewDidLoad

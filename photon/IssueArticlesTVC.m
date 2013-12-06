@@ -16,6 +16,16 @@ Article *currArticle;
 #define CELL_TEXT_LABEL_WIDTH 230.0
 #define CELL_PADDING 10.0
 
+@interface ArticleCell : UITableViewCell {}
+@end
+@implementation ArticleCell
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.imageView.frame = CGRectMake(0,0,32,32);
+    //self.imageView.bounds
+}
+@end
+
 @implementation IssueArticlesTVC
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -46,7 +56,7 @@ Article *currArticle;
 - (void)share:(id)sender
 {
     // display the options for sharing
-    ShareActivityVC *shareVC = [[ShareActivityVC alloc] init];
+    ShareActivityVC *shareVC = [[ShareActivityVC alloc] initToShareApp];
     [self presentViewController:shareVC animated:YES completion:nil];
    
 }
@@ -98,12 +108,14 @@ Article *currArticle;
     cell.textLabel.text = rowArticle.title;
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     
+    cell.imageView.image = [UIImage imageNamed:@"unread_blue_dot"];
+    [cell.imageView sizeToFit];
     if (rowArticle.unread) {
-        cell.imageView.image = [UIImage imageNamed:@"unread_blue_dot"];
-        [cell.imageView sizeToFit];
+        cell.imageView.hidden = NO;
     } else {
-        cell.imageView.image = nil;
+        cell.imageView.hidden = YES;
     }
+    
     return cell;
 }
 

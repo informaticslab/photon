@@ -12,6 +12,7 @@
 @interface Article : NSObject
 
 @property(strong, nonatomic) NSString *title;
+@property(strong, nonatomic) NSString *url;
 @property(strong, nonatomic) Issue *issue;
 @property(strong, nonatomic) NSString *already_know;
 @property(strong, nonatomic) NSString *added_by_report;

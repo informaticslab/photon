@@ -11,5 +11,6 @@
 @interface FullArticleVC : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) NSString *url;
 
 @end

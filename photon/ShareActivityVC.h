@@ -10,4 +10,7 @@
 
 @interface ShareActivityVC : UIActivityViewController
 
+- (id)initToShareApp;
+- (id)initToShareArticleUrl:(NSString *)articleUrl;
+
 @end

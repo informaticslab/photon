@@ -18,7 +18,7 @@
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil];
     [[UINavigationBar appearance] setTitleTextAttributes:attributes];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-
+    [NSThread sleepForTimeInterval:1.0];
 
     return YES;
 

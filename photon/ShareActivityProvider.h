@@ -10,4 +10,8 @@
 
 @interface ShareActivityProvider : UIActivityItemProvider
 
+-(id)initToShareArticle;
+-(id)initToShareApp;
+
+
 @end

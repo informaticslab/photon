@@ -17,8 +17,11 @@
 
 @end
 
+
 NSMutableArray *issues;
 Issue *currIssue;
+#define CELL_TEXT_LABEL_WIDTH 230.0
+#define CELL_PADDING 20.0
 
 @implementation IssuesViewController
 
@@ -71,6 +74,21 @@ Issue *currIssue;
     return 1;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Issue *cellIssue = APP_MGR.issuesMgr.issues[[indexPath row]];
+
+    NSString *title = cellIssue.title;
+    
+    CGSize constraintSize = CGSizeMake(CELL_TEXT_LABEL_WIDTH, MAXFLOAT);
+    CGSize titleTextSize = CGSizeMake(0.0, 0.0);
+    
+    if (title != nil)
+        titleTextSize = [title sizeWithFont:APP_MGR.tableFont constrainedToSize:constraintSize lineBreakMode:NSLineBreakByWordWrapping];
+    
+    return  titleTextSize.height + (2 * CELL_PADDING);
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
@@ -87,14 +105,20 @@ Issue *currIssue;
 //    UILabel *descLabel = (UILabel *)[cell.contentView viewWithTag:1];
     
     Issue *cellIssue = APP_MGR.issuesMgr.issues[index];
+    cell.textLabel.font = APP_MGR.tableFont;
+    cell.textLabel.numberOfLines = 0;
+    [cell.textLabel sizeToFit];
+    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.textLabel.text = cellIssue.title;
-    //descLabel.text = cellIssue.title;
+
+   //descLabel.text = cellIssue.title;
     
+    cell.imageView.image = [UIImage imageNamed:@"unread_blue_dot"];
+    [cell.imageView sizeToFit];
     if (cellIssue.unread) {
-        cell.imageView.image = [UIImage imageNamed:@"unread_blue_dot"];
-        [cell.imageView sizeToFit];        
+        cell.imageView.hidden = NO;
     } else {
-        cell.imageView.image = nil;
+        cell.imageView.hidden = YES;
     }
     return cell;
 }
@@ -125,7 +149,7 @@ Issue *currIssue;
 - (void)share:(id)sender
 {
     // display the options for sharing
-    ShareActivityVC *shareVC = [[ShareActivityVC alloc] init];
+    ShareActivityVC *shareVC = [[ShareActivityVC alloc] initToShareApp];
     [self presentViewController:shareVC animated:YES completion:nil];
     
 }

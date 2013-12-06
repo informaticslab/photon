@@ -82,6 +82,9 @@
             NSLog(@"title: %@", [article valueForKey:@"title"]);
             currArticle = [self newArticleWithTitle:[article valueForKey:@"title"]  inIssue:currIssue];
             
+            NSLog(@"url: %@", [article valueForKey:@"url"]);
+            currArticle.url = [article valueForKey:@"url"];
+            
             currArticle.already_know = [article valueForKey:@"already_known"];
             NSLog(@"already_known: %@", [article valueForKey:@"already_known"]);
             
