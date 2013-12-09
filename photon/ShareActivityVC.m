@@ -25,9 +25,6 @@ NSArray *activityProviders;
 
 - (id)init
 {
-        // put the activity provider (for the text), the image, and the URL together in an array
-        //NSArray *activityProviders = @[shareActivityProvider, shareImage, shareUrl];
-        NSArray *activityProviders = @[shareActivityProvider];;
     
         // Create the activity view controller passing in the activity provider, image and url we want to share along with the additional source we want to appear (google+)
         self = [super initWithActivityItems:activityProviders applicationActivities:nil];
@@ -55,6 +52,7 @@ NSArray *activityProviders;
     // Prepare the URL we want to share
     // shareUrl = [NSURL URLWithString:@"http://www.cdc.gov/mmwr/express"];
     
+    activityProviders = @[shareActivityProvider];;
     shareUrl = nil;
     self = [self init];
     
@@ -75,6 +73,7 @@ NSArray *activityProviders;
     // Prepare the URL we want to share
     shareUrl = [NSURL URLWithString:articleUrl];
     
+    activityProviders = @[shareActivityProvider, shareUrl];
     self = [self init];
     
     return self;
