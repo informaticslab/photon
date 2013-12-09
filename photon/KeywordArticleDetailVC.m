@@ -8,6 +8,8 @@
 
 #import "KeywordArticleDetailVC.h"
 #import "ArticleDetails.h"
+#import "FullArticleVC.h"
+
 
 @interface KeywordArticleDetailVC ()
 
@@ -42,21 +44,21 @@
 }
 
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if([segue.identifier isEqualToString:@"pushArticleDetailsForKeywordArticleDetail"])
-    {
-        ArticleDetails *articleDetailsVC = segue.destinationViewController;
-        articleDetailsVC.article = _article;
-        articleDetailsVC.issue = _article.issue;
-        
-    }
-}
-
 
 - (IBAction)btnViewFullArticleTouchUp:(id)sender {
     
     [self performSegueWithIdentifier:@"pushViewFullArticle" sender:nil];
 
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"pushViewFullArticle"])
+    {
+        FullArticleVC *fullArticleVC = segue.destinationViewController;
+        fullArticleVC.url = _article.url;
+        
+    }
+}
+
 @end
