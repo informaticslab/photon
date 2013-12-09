@@ -26,7 +26,8 @@ NSArray *activityProviders;
 - (id)init
 {
         // put the activity provider (for the text), the image, and the URL together in an array
-        NSArray *activityProviders = @[shareActivityProvider, shareImage, shareUrl];
+        //NSArray *activityProviders = @[shareActivityProvider, shareImage, shareUrl];
+        NSArray *activityProviders = @[shareActivityProvider];;
     
         // Create the activity view controller passing in the activity provider, image and url we want to share along with the additional source we want to appear (google+)
         self = [super initWithActivityItems:activityProviders applicationActivities:nil];
@@ -48,11 +49,13 @@ NSArray *activityProviders;
     shareActivityProvider = [[ShareActivityProvider alloc] initToShareApp];
     
     // get the image we want to share
-    shareImage = [UIImage imageNamed:@"about_icon"];
+    // shareImage = [UIImage imageNamed:@"about_icon"];
+    shareImage = nil;
     
     // Prepare the URL we want to share
-    shareUrl = [NSURL URLWithString:@"http://www.cdc.gov/mmwr/mmwr_wk/wk_cvol.html"];
+    // shareUrl = [NSURL URLWithString:@"http://www.cdc.gov/mmwr/express"];
     
+    shareUrl = nil;
     self = [self init];
     
     return self;
@@ -66,7 +69,8 @@ NSArray *activityProviders;
     shareActivityProvider = [[ShareActivityProvider alloc] initToShareArticle];
     
     // get the image we want to share
-    shareImage = [UIImage imageNamed:@"about_icon"];
+    //shareImage = [UIImage imageNamed:@"about_icon"];
+    shareImage = nil;
     
     // Prepare the URL we want to share
     shareUrl = [NSURL URLWithString:articleUrl];
@@ -81,6 +85,8 @@ NSArray *activityProviders;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [[UIButton appearanceWhenContainedIn:[UIActivityViewController class], nil] setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+
 }
 
 - (void)didReceiveMemoryWarning

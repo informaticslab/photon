@@ -56,6 +56,10 @@
     self.txtView.editable = NO;
     self.txtvSourceArticle = NO;
     self.txtfSourceArticleHeading.enabled = NO;
+    CALayer *btnLayer = [_btnViewFullArticle layer];
+    [btnLayer setMasksToBounds:YES];
+    [btnLayer setCornerRadius:5.0f];
+
 
 }
 
