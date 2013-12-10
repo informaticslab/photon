@@ -103,7 +103,6 @@ NSString *selectedKeyword;
     
     cell.textLabel.font = APP_MGR.tableFont;
 
-   
     return cell;
 }
 

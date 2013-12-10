@@ -52,7 +52,8 @@
 
 
     self.txtvSourceArticle.text = _article.title;
-    self.txtfSourceArticleHeading.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:11];
+    self.txtvSourceArticle.font = [UIFont fontWithName:@"HelveticaNeue" size:13];
+    self.txtfSourceArticleHeading.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:12];
     self.txtView.editable = NO;
     self.txtvSourceArticle = NO;
     self.txtfSourceArticleHeading.enabled = NO;
