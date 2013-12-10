@@ -36,8 +36,8 @@ NSDictionary *boldTextAttributes;
     self.txtvSourceArticle.font = [UIFont fontWithName:@"HelveticaNeue" size:13];
     self.txtfSourceArticleHeading.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:12];
     
-    regTextAttributes = @{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:13]};
-    boldTextAttributes = @{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Bold" size:13]};
+    regTextAttributes = @{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:15]};
+    boldTextAttributes = @{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Bold" size:15]};
     
     self.txtvSourceArticle.editable = NO;
     self.txtfSourceArticleHeading.enabled = NO;
@@ -81,7 +81,8 @@ NSDictionary *boldTextAttributes;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 58;
+//    return 58;
+    return 60;
 }
 
 //- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -149,10 +150,11 @@ NSDictionary *boldTextAttributes;
     [cell.textLabel sizeToFit];
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     
-    UIImageView *bgi = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, 66)];
-    bgi.contentMode = UIViewContentModeScaleAspectFit;
+    UIImageView *bgi = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, 60)];
+//    bgi.contentMode = UIViewContentModeScaleAspectFit;
+    bgi.contentMode = UIViewContentModeRight;
+
     bgi.clipsToBounds = YES;
-//    bgi.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"topics_BG"]];
     bgi.image = [UIImage imageNamed:@"topics_BG"];
     cell.backgroundView = bgi;
     cell.backgroundColor = [UIColor clearColor];
