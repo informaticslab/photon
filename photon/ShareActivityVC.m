@@ -56,6 +56,8 @@ NSArray *activityProviders;
     shareUrl = nil;
     self = [self init];
     
+    [self setValue:@"MMWR Express" forKey:@"subject"];
+    
     return self;
 
 }
@@ -76,6 +78,7 @@ NSArray *activityProviders;
     activityProviders = @[shareActivityProvider, shareUrl];
     self = [self init];
     
+    
     return self;
     
 }
@@ -85,7 +88,16 @@ NSArray *activityProviders;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [[UIButton appearanceWhenContainedIn:[UIActivityViewController class], nil] setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]}];
 
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
 }
 
 - (void)didReceiveMemoryWarning
