@@ -13,4 +13,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblVersionInfo;
 @property (weak, nonatomic) IBOutlet UITextField *txtfHeader;
 @property (weak, nonatomic) IBOutlet UITextView *txtvAbout;
+
 @end

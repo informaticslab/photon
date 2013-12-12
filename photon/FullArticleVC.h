@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FullArticleVC : UIViewController
+@interface FullArticleVC : UIViewController<UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) NSString *url;
+
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end
