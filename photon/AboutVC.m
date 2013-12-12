@@ -32,8 +32,18 @@
     _txtvAbout.editable = NO;
     _txtvAbout.selectable = YES;
     _txtvAbout.dataDetectorTypes = UIDataDetectorTypeAll;
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]}];
 
 }
+
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
+}
+
 
 -(NSString *)getVersionString
 {
