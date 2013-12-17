@@ -49,7 +49,6 @@ static AppManager *sharedAppManager = nil;
         self.textFont = [UIFont fontWithName:@"HelveticaNeue" size:15];
         self.issuesMgr = [[IssuesManager alloc  ]initWithTestData];
         
-	
     }
 	return self;
 
@@ -70,4 +69,45 @@ static AppManager *sharedAppManager = nil;
     return enabled;
     
 }
+
+- (void)presentEulaModalView
+{
+    
+    if (_agreedWithEula == TRUE)
+    return;
+    
+    // store the data
+    NSDictionary *appInfo = [[NSBundle mainBundle] infoDictionary];
+    NSString *currVersion = [NSString stringWithFormat:@"%@.%@",
+                             [appInfo objectForKey:@"CFBundleShortVersionString"],
+                             [appInfo objectForKey:@"CFBundleVersion"]];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *lastVersionEulaAgreed = (NSString *)[defaults objectForKey:@"agreedToEulaForVersion"];
+    
+    
+    // was the version number the last time EULA was seen and agreed to the
+    // same as the current version, if not show EULA and store the version number
+    if (![currVersion isEqualToString:lastVersionEulaAgreed])
+    {
+        [defaults setObject:currVersion forKey:@"agreedToEulaForVersion"];
+        [defaults synchronize];
+        NSLog(@"Data saved");
+        NSLog(@"%@", currVersion);
+        
+        // Create the modal view controller
+        // EulaViewController *eulaVC = [[EulaViewController alloc] initWithNibName:@"EulaViewController" bundle:nil];
+        
+        // we are the delegate that is responsible for dismissing the help view
+//        eulaVC.delegate = self;
+ //       eulaVC.modalPresentationStyle = UIModalPresentationPageSheet;
+ //       [self presentModalViewController:eulaVC animated:YES];
+        
+    }
+    
+    
+}
+
+
+
+
 @end

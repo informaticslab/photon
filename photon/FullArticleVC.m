@@ -8,11 +8,9 @@
 
 #import "FullArticleVC.h"
 
-@interface FullArticleVC ()
-
-@end
-
 @implementation FullArticleVC
+
+
 
 - (void)viewDidLoad
 {

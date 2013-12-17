@@ -38,6 +38,8 @@
 		A6A919D81829B48A00F1CE7D /* Issues.json in Resources */ = {isa = PBXBuildFile; fileRef = A6A919D71829B48A00F1CE7D /* Issues.json */; };
 		A6A919DB182A74D400F1CE7D /* Issue.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A919DA182A74D400F1CE7D /* Issue.m */; };
 		A6A919DE182A9B8700F1CE7D /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A919DD182A9B8700F1CE7D /* Article.m */; };
+		A6D6AFED185B53A700F37E23 /* ShareActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D6AFEC185B53A700F37E23 /* ShareActionSheet.m */; };
+		A6D6AFEF185B5E1400F37E23 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D6AFEE185B5E1400F37E23 /* Social.framework */; };
 		A6D9BC78183BBFE000B42118 /* KeywordArticlesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D9BC77183BBFE000B42118 /* KeywordArticlesTVC.m */; };
 		A6D9BC7B183BF57F00B42118 /* KeywordArticleDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D9BC7A183BF57F00B42118 /* KeywordArticleDetailVC.m */; };
 /* End PBXBuildFile section */
@@ -107,6 +109,9 @@
 		A6A919DC182A9B8700F1CE7D /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
 		A6A919DD182A9B8700F1CE7D /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 		A6B735491843D6C600872B20 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		A6D6AFEB185B53A700F37E23 /* ShareActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareActionSheet.h; sourceTree = "<group>"; };
+		A6D6AFEC185B53A700F37E23 /* ShareActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareActionSheet.m; sourceTree = "<group>"; };
+		A6D6AFEE185B5E1400F37E23 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		A6D9BC76183BBFE000B42118 /* KeywordArticlesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordArticlesTVC.h; sourceTree = "<group>"; };
 		A6D9BC77183BBFE000B42118 /* KeywordArticlesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordArticlesTVC.m; sourceTree = "<group>"; };
 		A6D9BC79183BF57F00B42118 /* KeywordArticleDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordArticleDetailVC.h; sourceTree = "<group>"; };
@@ -118,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6D6AFEF185B5E1400F37E23 /* Social.framework in Frameworks */,
 				A62A1A151823C9C7006A62B3 /* CoreGraphics.framework in Frameworks */,
 				A62A1A171823C9C7006A62B3 /* UIKit.framework in Frameworks */,
 				A62A1A131823C9C7006A62B3 /* Foundation.framework in Frameworks */,
@@ -160,6 +166,7 @@
 		A62A1A111823C9C7006A62B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A6D6AFEE185B5E1400F37E23 /* Social.framework */,
 				A6B735491843D6C600872B20 /* CoreText.framework */,
 				A62A1A121823C9C7006A62B3 /* Foundation.framework */,
 				A62A1A141823C9C7006A62B3 /* CoreGraphics.framework */,
@@ -216,6 +223,8 @@
 				A639A336184E6496008D3BF6 /* ShareActivityProvider.m */,
 				A639A338184E7361008D3BF6 /* ShareActivityVC.h */,
 				A639A339184E7361008D3BF6 /* ShareActivityVC.m */,
+				A6D6AFEB185B53A700F37E23 /* ShareActionSheet.h */,
+				A6D6AFEC185B53A700F37E23 /* ShareActionSheet.m */,
 			);
 			path = photon;
 			sourceTree = "<group>";
@@ -369,6 +378,7 @@
 				A6635ACB182D625400E600EA /* ArticleDetails.m in Sources */,
 				A66FB235184CE935008F2AB7 /* InfoVC.m in Sources */,
 				A6635AD4182D841800E600EA /* TopicsTVC.m in Sources */,
+				A6D6AFED185B53A700F37E23 /* ShareActionSheet.m in Sources */,
 				A6635AE0182D921A00E600EA /* KeywordsTVC.m in Sources */,
 				A6635AD1182D7A0D00E600EA /* SubjectViewController.m in Sources */,
 			);

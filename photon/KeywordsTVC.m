@@ -8,13 +8,16 @@
 
 #import "KeywordsTVC.h"
 #import "KeywordArticlesTVC.h"
-#import "ShareActivityVC.h"
+#import "ShareActionSheet.h"
 
 @interface KeywordsTVC ()
 
 @end
 
 @implementation KeywordsTVC
+
+ShareActionSheet *shareAS;
+
 
 NSArray *searchResults;
 NSMutableArray *allKeywords;
@@ -54,8 +57,8 @@ NSString *selectedKeyword;
 - (void)share:(id)sender
 {
     // display the options for sharing
-    ShareActivityVC *shareVC = [[ShareActivityVC alloc] initToShareApp];
-    [self presentViewController:shareVC animated:YES completion:nil];
+    shareAS = [[ShareActionSheet alloc] initToShareApp:self];
+    [shareAS showView];
     
 }
 

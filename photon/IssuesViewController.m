@@ -9,13 +9,13 @@
 #import "IssuesViewController.h"
 #import "IssueArticlesTVC.h"
 #import "Issue.h"
-#import <Social/Social.h>
-#import "ShareActivityProvider.h"
-#import "ShareActivityVC.h"
+#import "ShareActionSheet.h"
 
 @interface IssuesViewController ()
 
 @end
+
+ShareActionSheet *shareAS;
 
 
 NSMutableArray *issues;
@@ -34,14 +34,14 @@ Issue *currIssue;
     item.image = [UIImage imageNamed:@"issue_tab_icon_inactive"];
     item.selectedImage = [UIImage imageNamed:@"issue_tab_icon_active"];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar"] forBarMetrics:UIBarMetricsDefault];
-//    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
+    //    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
     //set back button arrow color
     
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-
+    
     // check for diffs between ios 6 & 7
     if ([UINavigationBar instancesRespondToSelector:@selector(barTintColor)])
-        self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1.0];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1.0];
     else {
         //[[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
         [[UINavigationBar appearance] setBackgroundColor:[UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1.0]];
@@ -84,14 +84,14 @@ Issue *currIssue;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Issue *cellIssue = APP_MGR.issuesMgr.issues[[indexPath row]];
-
+    
     NSString *title = cellIssue.title;
     
     CGSize constraintSize = CGSizeMake(CELL_TEXT_LABEL_WIDTH, MAXFLOAT);
     CGSize titleTextSize = CGSizeMake(0.0, 0.0);
     
     if (title != nil)
-        titleTextSize = [title sizeWithFont:APP_MGR.tableFont constrainedToSize:constraintSize lineBreakMode:NSLineBreakByWordWrapping];
+    titleTextSize = [title sizeWithFont:APP_MGR.tableFont constrainedToSize:constraintSize lineBreakMode:NSLineBreakByWordWrapping];
     
     return  titleTextSize.height + (2 * CELL_PADDING);
 }
@@ -109,7 +109,7 @@ Issue *currIssue;
     
     // Configure the cell...
     NSInteger index = [indexPath row];
-//    UILabel *descLabel = (UILabel *)[cell.contentView viewWithTag:1];
+    //    UILabel *descLabel = (UILabel *)[cell.contentView viewWithTag:1];
     
     Issue *cellIssue = APP_MGR.issuesMgr.issues[index];
     cell.textLabel.font = APP_MGR.tableFont;
@@ -117,8 +117,8 @@ Issue *currIssue;
     [cell.textLabel sizeToFit];
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.textLabel.text = cellIssue.title;
-
-   //descLabel.text = cellIssue.title;
+    
+    //descLabel.text = cellIssue.title;
     
     cell.imageView.image = [UIImage imageNamed:@"unread_blue_dot"];
     [cell.imageView sizeToFit];
@@ -139,29 +139,28 @@ Issue *currIssue;
     [currIssue updateUnreadArticleStatus];
     [self.tableView reloadData];
     [self performSegueWithIdentifier:@"pushIssueArticles" sender:nil];
-
+    
     
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    
     if([segue.identifier isEqualToString:@"pushIssueArticles"])
     {
         IssueArticlesTVC *issueArticlesTVC = segue.destinationViewController;
         issueArticlesTVC.issue = currIssue;
     }
+    
 }
 
 
 - (void)share:(id)sender
 {
     // display the options for sharing
-
-    ShareActivityVC *shareVC = [[ShareActivityVC alloc] initToShareApp];
-    [self presentViewController:shareVC animated:YES completion:nil];
-    
+    shareAS = [[ShareActionSheet alloc] initToShareApp:self];
+    [shareAS showView];
 }
-
 
 
 @end

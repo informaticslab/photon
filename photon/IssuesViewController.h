@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface IssuesViewController : UITableViewController
+//@interface IssuesViewController : UITableViewController <UIActionSheetDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate>
+@interface IssuesViewController : UITableViewController 
 
 
 - (IBAction)refresh:(id)sender;
