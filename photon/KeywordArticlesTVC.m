@@ -11,12 +11,16 @@
 #import "KeywordArticleDetailVC.h"
 #import "ArticleDetails.h"
 #import "TopicsTVC.h"
-#import "ShareActivityVC.h"
-
-@implementation KeywordArticlesTVC
+#import "ShareActionSheet.h"
 
 #define CELL_TEXT_LABEL_WIDTH 230.0
 #define CELL_PADDING 10.0
+
+
+
+@implementation KeywordArticlesTVC
+
+ShareActionSheet *shareAS;
 
 Article *selectedArticle;
 
@@ -53,9 +57,8 @@ NSArray *keywordArticles;
 - (void)share:(id)sender
 {
     // display the options for sharing
-    ShareActivityVC *shareVC = [[ShareActivityVC alloc] initToShareApp];
-    [self presentViewController:shareVC animated:YES completion:nil];
-
+    shareAS = [[ShareActionSheet alloc] initToShareApp:self];
+    [shareAS showView];
 }
 
 

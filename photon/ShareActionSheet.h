@@ -15,11 +15,13 @@
 @property(nonatomic, strong) UIActionSheet *actionSheet;
 @property(nonatomic, strong) MFMailComposeViewController *mailVC;
 @property(nonatomic, strong) MFMessageComposeViewController *msgVC;
-
+@property(nonatomic, strong) NSString *shareText;
+@property(nonatomic, strong) NSString *shareUrl;
+@property(nonatomic, strong) NSString *shareSubject;
 
 
 - (id)initToShareApp:(UIViewController *)parentVC;
+- (id)initToShareArticleUrl:(NSString *)articleUrl fromVC:(UIViewController *)parentVC;
 -(void)showView;
-
 
 @end

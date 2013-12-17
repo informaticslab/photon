@@ -11,15 +11,33 @@
 
 @implementation ShareActionSheet
 
+
 - (id)initToShareApp:(UIViewController *)parentVC
 {
     
+    self.shareText = @"I’m using CDC’s MMWR Express mobile app.  Learn more about it here:";
+    self.shareUrl = @"http://www.cdc.gov/mmwr";
+    self.shareSubject = @"MMWR Express App";
     self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share MMWR Express Using" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Mail", @"Message", @"Twitter", @"Facebook", nil];
     
     self.parentVC = parentVC;
     return self;
     
 }
+
+- (id)initToShareArticleUrl:(NSString *)articleUrl fromVC:(UIViewController *)parentVC
+{
+    self.shareText = @"MMWR Weekly article via CDC’s MMWR Express mobile app.";
+    self.shareUrl = articleUrl;
+    self.shareSubject = @"MMWR Weekly Article";
+    
+    self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share MMWR Article Using" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Mail", @"Message", @"Twitter", @"Facebook", nil];
+    
+    self.parentVC = parentVC;
+    return self;
+    
+}
+
 
 -(void)showView
 {
@@ -74,10 +92,10 @@
     };
     
     //  Set the initial body of the Tweet
-    [tweetSheet setInitialText:@"I’m using CDC’s MMWR Express mobile app.  Learn more about it here:"];
+    [tweetSheet setInitialText:self.shareText];
     
     //  Add an URL to the Tweet.  You can add multiple URLs.
-    if (![tweetSheet addURL:[NSURL URLWithString:@"http://www.cdc.gov/mmwr/"]]){
+    if (![tweetSheet addURL:[NSURL URLWithString:self.shareUrl]]){
         NSLog(@"Unable to add the URL!");
     }
     
@@ -110,9 +128,9 @@
     };
     
     //  Set the initial body
-    [fbSheet setInitialText:@"I’m using CDC’s MMWR Express mobile app.  Learn more about it here:"];
+    [fbSheet setInitialText:self.shareText];
     
-    if (![fbSheet addURL:[NSURL URLWithString:@"http://www.cdc.gov/mmwr"]]){
+    if (![fbSheet addURL:[NSURL URLWithString:self.shareUrl]]){
         NSLog(@"Unable to add the URL!");
     }
     
@@ -127,10 +145,12 @@
 
 - (void)showMailSheet
 {
+    NSString *bodyText = [NSString stringWithFormat: @"<br/> <p>%@</p> <a href='%@'>%@</a>", self.shareText, self.shareUrl, self.shareUrl];
     
     self.mailVC = [[MFMailComposeViewController alloc] init];
     self.mailVC.mailComposeDelegate = self;
-    [self.mailVC setMessageBody:@"I’m using CDC’s MMWR Express mobile app.  Learn more about it here:" isHTML:NO];
+    [self.mailVC setMessageBody:bodyText isHTML:YES];
+    [self.mailVC setSubject:self.shareSubject];
 
     [self.parentVC presentViewController:self.mailVC animated:YES completion:nil];
     
@@ -140,9 +160,11 @@
 - (void)showMessageSheet
 {
 
+    NSString *bodyText = [NSString stringWithFormat: @"%@ %@", self.shareText, self.shareUrl];
+
     self.msgVC = [[MFMessageComposeViewController alloc] init];
     self.msgVC.messageComposeDelegate = self;
-    [self.msgVC setBody:@"I’m using CDC’s MMWR Express mobile app.  Learn more about it here:"];
+    [self.msgVC setBody:bodyText];
     [self.parentVC presentViewController:self.msgVC animated:YES completion:nil];
 
 

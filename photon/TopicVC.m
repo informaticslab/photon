@@ -8,13 +8,11 @@
 
 #import "TopicVC.h"
 #import "FullArticleVC.h"
-#import "ShareActivityVC.h"
-
-@interface TopicVC ()
-
-@end
+#import "ShareActionSheet.h"
 
 @implementation TopicVC
+
+ShareActionSheet *shareAS;
 
 
 - (void)viewDidLoad
@@ -75,9 +73,8 @@
 - (void)share:(id)sender
 {
     // display the options for sharing
-    ShareActivityVC *shareVC = [[ShareActivityVC alloc] initToShareArticleUrl:_article.url];
-    [self presentViewController:shareVC animated:YES completion:nil];
-    
+    shareAS = [[ShareActionSheet alloc] initToShareArticleUrl:self.article.url fromVC:self];
+    [shareAS showView];
 }
 
 - (void)textViewDidChange:(UITextView *)textView

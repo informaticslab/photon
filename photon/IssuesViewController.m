@@ -11,10 +11,6 @@
 #import "Issue.h"
 #import "ShareActionSheet.h"
 
-@interface IssuesViewController ()
-
-@end
-
 ShareActionSheet *shareAS;
 
 
