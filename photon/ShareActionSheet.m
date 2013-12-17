@@ -145,14 +145,25 @@
 
 - (void)showMailSheet
 {
-    NSString *bodyText = [NSString stringWithFormat: @"<br/> <p>%@</p> <a href='%@'>%@</a>", self.shareText, self.shareUrl, self.shareUrl];
-    
-    self.mailVC = [[MFMailComposeViewController alloc] init];
-    self.mailVC.mailComposeDelegate = self;
-    [self.mailVC setMessageBody:bodyText isHTML:YES];
-    [self.mailVC setSubject:self.shareSubject];
-
-    [self.parentVC presentViewController:self.mailVC animated:YES completion:nil];
+    if ([MFMailComposeViewController canSendMail]){
+        
+        NSString *bodyText = [NSString stringWithFormat: @"<br/> <p>%@</p> <a href='%@'>%@</a>", self.shareText, self.shareUrl, self.shareUrl];
+        
+        self.mailVC = [[MFMailComposeViewController alloc] init];
+        self.mailVC.mailComposeDelegate = self;
+        [self.mailVC setMessageBody:bodyText isHTML:YES];
+        [self.mailVC setSubject:self.shareSubject];
+        
+        [self.parentVC presentViewController:self.mailVC animated:YES completion:nil];
+        
+    } else {
+        
+        UIAlertView *anAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"There isn't a mail account setup on the device." delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
+        
+        
+        [anAlert addButtonWithTitle:@"Cancel"];
+        [anAlert show];
+    }
     
     
 }
