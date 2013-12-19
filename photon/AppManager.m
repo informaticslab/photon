@@ -47,7 +47,8 @@ static AppManager *sharedAppManager = nil;
 //      self.tableFont = [UIFont boldSystemFontOfSize: 16];
         self.tableFont = [UIFont fontWithName:@"HelveticaNeue" size:16];
         self.textFont = [UIFont fontWithName:@"HelveticaNeue" size:15];
-        self.issuesMgr = [[IssuesManager alloc  ]initWithTestData];
+        //self.issuesMgr = [[IssuesManager alloc  ]initWithTestData];
+        self.issuesMgr = [[IssuesManager alloc  ]initWithFeedParser];
         
     }
 	return self;

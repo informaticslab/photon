@@ -46,6 +46,15 @@ Issue *currIssue;
     shareButton.style = UIBarButtonItemStyleBordered;
     self.navigationItem.rightBarButtonItem = shareButton;
     
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(feedDataUpdateNotification:)
+     name:@"FeedDataUpdated"
+     object:nil];
+    
+
+
+    
     
 }
 
@@ -157,6 +166,13 @@ Issue *currIssue;
     shareAS = [[ShareActionSheet alloc] initToShareApp:self];
     [shareAS showView];
 }
+
+-(void)feedDataUpdateNotification:(NSNotification *)pNotification
+{
+    // NSLog(@"Received notification in CondomUsageRiskChart = %@",(NSString*)[pNotification object]);
+    [self.tableView reloadData];
+}
+
 
 
 @end
