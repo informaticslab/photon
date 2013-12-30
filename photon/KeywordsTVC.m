@@ -78,7 +78,6 @@ NSString *selectedKeyword;
 
 -(void)feedDataUpdateNotification:(NSNotification *)pNotification
 {
-    // NSLog(@"Received notification in CondomUsageRiskChart = %@",(NSString*)[pNotification object]);
     
     [self.tableView reloadData];
     [self.refreshControl endRefreshing];
