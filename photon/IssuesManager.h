@@ -20,6 +20,7 @@
 
 -(id)initWithTestData;
 -(id)initWithFeedParser;
+-(void)updateFromFeed;
 
 -(NSArray *)articlesWithKeyword:(NSString *)keyword;
 

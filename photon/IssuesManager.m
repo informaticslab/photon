@@ -55,6 +55,13 @@
     
 }
 
+-(void)updateFromFeed
+{
+    
+    [_feedParser parse];
+    
+}
+
 -(Issue *)newIssueWithTitle:(NSString *)title
 {
     Issue *issue = [_parsedIssues objectForKey:title];

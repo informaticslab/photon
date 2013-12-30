@@ -71,10 +71,12 @@ Issue *currIssue;
 }
 
 
+
 - (IBAction)refresh:(id)sender
 {
+    [APP_MGR.issuesMgr updateFromFeed];
     [self.tableView reloadData];
-    [self.refreshControl endRefreshing];
+    //[self.refreshControl endRefreshing];
 }
 
 
@@ -170,7 +172,9 @@ Issue *currIssue;
 -(void)feedDataUpdateNotification:(NSNotification *)pNotification
 {
     // NSLog(@"Received notification in CondomUsageRiskChart = %@",(NSString*)[pNotification object]);
+
     [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
 }
 
 

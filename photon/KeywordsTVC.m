@@ -51,6 +51,14 @@ NSString *selectedKeyword;
     
     self.navigationItem.rightBarButtonItem = shareButton;
     
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(feedDataUpdateNotification:)
+     name:@"FeedDataUpdated"
+     object:nil];
+    
+
+    
     
 }
 
@@ -64,6 +72,14 @@ NSString *selectedKeyword;
 
 - (IBAction)refresh:(id)sender
 {
+    [APP_MGR.issuesMgr updateFromFeed];
+    [self.tableView reloadData];
+}
+
+-(void)feedDataUpdateNotification:(NSNotification *)pNotification
+{
+    // NSLog(@"Received notification in CondomUsageRiskChart = %@",(NSString*)[pNotification object]);
+    
     [self.tableView reloadData];
     [self.refreshControl endRefreshing];
 }
