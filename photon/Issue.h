@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Article.h"
+
+@class Article;
 
 @interface Issue : NSObject
 
@@ -19,5 +22,8 @@
 
 -(id)initWithTitle:(NSString *)title;
 -(void)updateUnreadArticleStatus;
+-(Article *)getArticleWithTitle:(NSString *)title;
+-(Article *)addArticleWithTitle:(NSString *)title;
+-(void)replaceArticle:(Article *)oldArticle withArticle:(Article *)newArticle;
 
 @end

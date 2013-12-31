@@ -64,8 +64,10 @@
 
 -(Issue *)newIssueWithTitle:(NSString *)title
 {
+    // check if issue exists
     Issue *issue = [_parsedIssues objectForKey:title];
 
+    // if is does not create it
     if (issue == nil) {
         issue = [[Issue alloc]initWithTitle:title];
         [_parsedIssues setObject:issue forKey:title];
@@ -75,12 +77,36 @@
     
 }
 
--(Article *)newArticleWithTitle:(NSString *)title inIssue:(Issue *)currIssue
+
+-(Article *)newArticleWithTitle:(NSString *)title inIssue:(Issue *)currIssue revision:(NSInteger)ver
 {
-    Article *newArticle = [[Article alloc] initWithTitle:title];
-    [currIssue.articles addObject:newArticle];
-    newArticle.issue = currIssue;
-    return newArticle;
+
+    // check if article with this title already exists in current issue
+    Article *article = [currIssue getArticleWithTitle:title];
+    
+    // if no article with title, add article to current issue
+    if (article == nil) {
+        
+        article = [currIssue addArticleWithTitle:title];
+        article.issue = currIssue;
+        
+    }
+    
+    //
+    else {
+        
+        // check if version number is greater than current version
+        if (ver > article.ver) {
+            
+            // create new article object and replace the old with new
+            Article *newArticle = [[Article alloc]initWithTitle:title];
+            [currIssue replaceArticle:article withArticle:newArticle];
+            
+        }
+    }
+    
+    return article;
+        
                            
 }
 
@@ -90,7 +116,6 @@
     return articles;
 }
 
-                           
 -(void)loadTestData
 {
     
@@ -102,6 +127,8 @@
     Issue *currIssue = nil;
     Article *currArticle = nil;
     NSMutableArray *articlesWithKeyword = nil;
+    NSString *ver = nil;
+    NSInteger vers = 0;
     
     NSLog(@"Imported Test Issues: %@", testIssues);
     
@@ -119,7 +146,7 @@
             
             // add new article to current issues
             NSLog(@"title: %@", [article valueForKey:@"title"]);
-            currArticle = [self newArticleWithTitle:[article valueForKey:@"title"]  inIssue:currIssue];
+            currArticle = [self newArticleWithTitle:[article valueForKey:@"title"]  inIssue:currIssue revision:vers];
             
             NSLog(@"url: %@", [article valueForKey:@"url"]);
             currArticle.url = [article valueForKey:@"url"];
@@ -208,8 +235,15 @@
     Issue *currIssue = nil;
     Article *currArticle = nil;
     NSMutableArray *articlesWithKeyword = nil;
-    
-    
+    NSInteger issuesFound = 0;
+    NSInteger articlesFound = 0;
+    NSInteger tagsFound = 0;
+    NSInteger knownFound = 0;
+    NSInteger addedFound = 0;
+    NSInteger implicationsFound = 0;
+    NSString *verStr = nil;
+    NSInteger vers = 0;
+
     for (NSString *blob in _parsedJsonBlobs)
     {
         id jsonData = [blob dataUsingEncoding:NSUTF8StringEncoding]; //if input is NSString
@@ -218,28 +252,43 @@
         // create and add issue
         currIssue = [self newIssueWithTitle:[issue valueForKey:@"title"]];
         NSLog(@"Issue title: %@", [issue valueForKey:@"title"]);
+        issuesFound++;
+        
+        NSLog(@"ver: %@", [issue valueForKey:@"ver"]);
+        verStr = [issue valueForKey:@"ver"];
+        
+        if (verStr == nil)
+            vers = 0;
+        else
+            vers = [verStr integerValue];
+            
         
         // get collection of articles for currrent issue
         NSArray *newArticles = [issue valueForKey:@"articles"];
         
         NSLog(@"articles: %@", newArticles);
+     
         for (NSDictionary *article in newArticles) {
             
             // add new article to current issues
             NSLog(@"title: %@", [article valueForKey:@"title"]);
-            currArticle = [self newArticleWithTitle:[article valueForKey:@"title"]  inIssue:currIssue];
+            currArticle = [self newArticleWithTitle:[article valueForKey:@"title"]  inIssue:currIssue revision:vers];
+            articlesFound++;
             
             NSLog(@"url: %@", [article valueForKey:@"url"]);
             currArticle.url = [article valueForKey:@"url"];
             
             currArticle.already_know = [article valueForKey:@"already_known"];
             NSLog(@"already_known: %@", [article valueForKey:@"already_known"]);
+            knownFound++;
             
             currArticle.added_by_report = [article valueForKey:@"added_by_report"];
             NSLog(@"added_by_report: %@", [article valueForKey:@"added_by_report"]);
+            addedFound++;
             
             currArticle.implications = [article valueForKey:@"implications"];
             NSLog(@"implications: %@", [article valueForKey:@"implications"]);
+            implicationsFound++;
             
             // get collection of articles for currrent issue
             NSArray *newKeywords = [article valueForKey:@"tags"];
@@ -255,11 +304,14 @@
                     [articlesWithKeyword addObject:currArticle];
                 }
                 [currArticle.tags addObject:currKeyword];
+                tagsFound++;
+
             };
         }
     }
     
     _issues = [_parsedIssues allValues];
+    NSLog(@"Issues found = %d",issuesFound);
     
 }
 

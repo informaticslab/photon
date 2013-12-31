@@ -7,7 +7,6 @@
 //
 
 #import "Issue.h"
-#import "Article.h"
 
 @implementation Issue
 
@@ -43,6 +42,39 @@
         self.unread = YES;
     else
         self.unread = NO;
+    
+}
+
+-(Article *)getArticleWithTitle:(NSString *)title
+{
+
+    if (_articles.count == 0)
+        return nil;
+    
+    for (Article *article in _articles) {
+        if ([article.title isEqualToString:title])
+            return article;
+    }
+    
+    return nil;
+    
+}
+
+-(Article *)addArticleWithTitle:(NSString *)title
+{
+    Article *newArticle = [[Article alloc] initWithTitle:title];
+    
+    [_articles addObject:newArticle];
+    
+    return newArticle;
+    
+}
+
+-(void)replaceArticle:(Article *)oldArticle withArticle:(Article *)newArticle
+{
+    NSUInteger oldIndex = [_articles indexOfObject:oldArticle];
+    
+    [_articles replaceObjectAtIndex:oldIndex withObject:newArticle];
     
 }
 
