@@ -45,6 +45,8 @@
 		A6A919D81829B48A00F1CE7D /* Issues.json in Resources */ = {isa = PBXBuildFile; fileRef = A6A919D71829B48A00F1CE7D /* Issues.json */; };
 		A6A919DB182A74D400F1CE7D /* Issue.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A919DA182A74D400F1CE7D /* Issue.m */; };
 		A6A919DE182A9B8700F1CE7D /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A919DD182A9B8700F1CE7D /* Article.m */; };
+		A6B295D2187352CB00BEF24D /* ContentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B295D1187352CB00BEF24D /* ContentVC.m */; };
+		A6B295D518735EFD00BEF24D /* ContentPagesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B295D418735EFD00BEF24D /* ContentPagesVC.m */; };
 		A6D6AFED185B53A700F37E23 /* ShareActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D6AFEC185B53A700F37E23 /* ShareActionSheet.m */; };
 		A6D6AFEF185B5E1400F37E23 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D6AFEE185B5E1400F37E23 /* Social.framework */; };
 		A6D9BC78183BBFE000B42118 /* KeywordArticlesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D9BC77183BBFE000B42118 /* KeywordArticlesTVC.m */; };
@@ -130,6 +132,10 @@
 		A6A919DA182A74D400F1CE7D /* Issue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Issue.m; sourceTree = "<group>"; };
 		A6A919DC182A9B8700F1CE7D /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
 		A6A919DD182A9B8700F1CE7D /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
+		A6B295D0187352CB00BEF24D /* ContentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentVC.h; sourceTree = "<group>"; };
+		A6B295D1187352CB00BEF24D /* ContentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentVC.m; sourceTree = "<group>"; };
+		A6B295D318735EFD00BEF24D /* ContentPagesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentPagesVC.h; sourceTree = "<group>"; };
+		A6B295D418735EFD00BEF24D /* ContentPagesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentPagesVC.m; sourceTree = "<group>"; };
 		A6B735491843D6C600872B20 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		A6D6AFEB185B53A700F37E23 /* ShareActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareActionSheet.h; sourceTree = "<group>"; };
 		A6D6AFEC185B53A700F37E23 /* ShareActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareActionSheet.m; sourceTree = "<group>"; };
@@ -271,6 +277,10 @@
 				A6D6AFEC185B53A700F37E23 /* ShareActionSheet.m */,
 				A61CA793186231ED00891E00 /* RSSEntry.h */,
 				A61CA794186231ED00891E00 /* RSSEntry.m */,
+				A6B295D0187352CB00BEF24D /* ContentVC.h */,
+				A6B295D1187352CB00BEF24D /* ContentVC.m */,
+				A6B295D318735EFD00BEF24D /* ContentPagesVC.h */,
+				A6B295D418735EFD00BEF24D /* ContentPagesVC.m */,
 			);
 			path = photon;
 			sourceTree = "<group>";
@@ -411,6 +421,7 @@
 				A6D9BC7B183BF57F00B42118 /* KeywordArticleDetailVC.m in Sources */,
 				A61CA7C61863235800891E00 /* MWFeedItem.m in Sources */,
 				A6A919DE182A9B8700F1CE7D /* Article.m in Sources */,
+				A6B295D2187352CB00BEF24D /* ContentVC.m in Sources */,
 				A61CA7C41863235800891E00 /* GTMNSString+HTML.m in Sources */,
 				A639A337184E6496008D3BF6 /* ShareActivityProvider.m in Sources */,
 				A6635AD7182D86FC00E600EA /* TopicVC.m in Sources */,
@@ -426,6 +437,7 @@
 				A67AF51C182BA408000F6EB0 /* IssueArticlesTVC.m in Sources */,
 				A6635ACB182D625400E600EA /* ArticleDetails.m in Sources */,
 				A61CA7C91863235800891E00 /* NSDate+InternetDateTime.m in Sources */,
+				A6B295D518735EFD00BEF24D /* ContentPagesVC.m in Sources */,
 				A61CA7CA1863235800891E00 /* NSString+HTML.m in Sources */,
 				A61CA7C71863235800891E00 /* MWFeedParser.m in Sources */,
 				A61CA7C51863235800891E00 /* MWFeedInfo.m in Sources */,

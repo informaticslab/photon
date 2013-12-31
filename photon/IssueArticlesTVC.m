@@ -10,6 +10,8 @@
 #import "ArticleDetails.h"
 #import "TopicsTVC.h"
 #import "ShareActionSheet.h"
+#import "ContentPagesVC.h"
+
 
 ShareActionSheet *shareAS;
 
@@ -129,7 +131,8 @@ Article *currArticle;
     currArticle.unread = NO;
     [self.issue updateUnreadArticleStatus];
     [self.tableView reloadData];
-    [self performSegueWithIdentifier:@"pushTopics" sender:nil];
+//    [self performSegueWithIdentifier:@"pushTopics" sender:nil];
+    [self performSegueWithIdentifier:@"pushContentPageViews" sender:nil];
     
 }
 
@@ -140,6 +143,13 @@ Article *currArticle;
         TopicsTVC *topicsVC = segue.destinationViewController;
         topicsVC.article = currArticle;
         topicsVC.issue = _issue;
+        
+    }
+    else if([segue.identifier isEqualToString:@"pushContentPageViews"])
+    {
+        ContentPagesVC *contentVC = segue.destinationViewController;
+        contentVC.article = currArticle;
+        contentVC.issue = _issue;
         
     }
 }
