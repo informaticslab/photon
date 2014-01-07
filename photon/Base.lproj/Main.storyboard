@@ -113,11 +113,12 @@
                     <connections>
                         <segue destination="IYg-u6-pbr" kind="push" identifier="pushKeywordArticleDetails" id="g7V-rl-fQN"/>
                         <segue destination="3o0-s4-Pot" kind="push" identifier="pushArticleDetailsForKeywordArticles" id="pAq-aL-54R"/>
+                        <segue destination="tIc-Ga-z3I" kind="push" identifier="pushContentPagesFromKeyword" id="pjO-04-Vnm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvX-d4-gab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1670" y="1047"/>
+            <point key="canvasLocation" x="1645" y="1047"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="QDt-Zb-4r1">
@@ -144,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qwy-zL-EmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3173" y="-715"/>
+            <point key="canvasLocation" x="3125" y="357"/>
         </scene>
         <!--ContentVC-->
         <scene sceneID="FaY-FP-Cpm">
@@ -166,7 +167,8 @@
                                     <fragment>
                                         <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                            <font key="NSOriginalFont" size="15" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
@@ -251,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5G7-1a-LiA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2138" y="1047"/>
+            <point key="canvasLocation" x="2262" y="237"/>
         </scene>
         <!--TopicVC - Blue Box-->
         <scene sceneID="7bJ-mb-b3j">
@@ -567,7 +569,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RfM-An-1Wu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2693" y="1047"/>
+            <point key="canvasLocation" x="3333" y="1335"/>
         </scene>
         <!--InfoVC-->
         <scene sceneID="Bzu-FT-wZS">
@@ -735,11 +737,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IssueArticlesCell" id="8bE-bv-lGg">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IssueArticlesCell" id="8bE-bv-lGg">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8bE-bv-lGg" id="GWa-ZW-MeG">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="273" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -754,6 +756,7 @@
                     <connections>
                         <segue destination="3o0-s4-Pot" kind="push" identifier="pushTopics" id="zoM-3B-Y68"/>
                         <segue destination="tIc-Ga-z3I" kind="push" identifier="pushContentPageViews" id="cPZ-Qk-bcg"/>
+                        <segue destination="IYg-u6-pbr" kind="push" identifier="pushArticleDetails" id="sa5-ms-oeY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Lj-Xt-J71" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -944,6 +947,8 @@ If you have any questions about the app, please contact either the MMWR staff at
     <inferredMetricsTieBreakers>
         <segue reference="XfS-BQ-fbZ"/>
         <segue reference="zoM-3B-Y68"/>
+        <segue reference="sa5-ms-oeY"/>
+        <segue reference="cPZ-Qk-bcg"/>
         <segue reference="3f9-Ze-hpd"/>
         <segue reference="yzf-wG-M7n"/>
     </inferredMetricsTieBreakers>

@@ -12,6 +12,7 @@
 #import "ArticleDetails.h"
 #import "TopicsTVC.h"
 #import "ShareActionSheet.h"
+#import "ContentPagesVC.h"
 
 #define CELL_TEXT_LABEL_WIDTH 230.0
 #define CELL_PADDING 10.0
@@ -158,7 +159,7 @@ NSArray *keywordArticles;
     
     // Navigation logic may go here. Create and push another view controller.
     selectedArticle = keywordArticles[[indexPath row]];
-    [self performSegueWithIdentifier:@"pushArticleDetailsForKeywordArticles" sender:nil];
+    [self performSegueWithIdentifier:@"pushContentPagesFromKeyword" sender:nil];
     
 }
 
@@ -188,6 +189,12 @@ NSArray *keywordArticles;
         topicsVC.article = selectedArticle;
         topicsVC.issue = selectedArticle.issue;
 
+    } else if ([segue.identifier isEqualToString:@"pushContentPagesFromKeyword"]) {
+        ContentPagesVC *contentVC = segue.destinationViewController;
+        contentVC.article = selectedArticle;
+        contentVC.issue = selectedArticle.issue;
+
+        
     }
 }
     

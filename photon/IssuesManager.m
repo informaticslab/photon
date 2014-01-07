@@ -127,7 +127,6 @@
     Issue *currIssue = nil;
     Article *currArticle = nil;
     NSMutableArray *articlesWithKeyword = nil;
-    NSString *ver = nil;
     NSInteger vers = 0;
     
     NSLog(@"Imported Test Issues: %@", testIssues);

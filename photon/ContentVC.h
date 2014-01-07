@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lblHeader;
 @property (weak, nonatomic) IBOutlet UITextView *txtvContentText;
+@property (weak, nonatomic) NSString *navbarTitle;
 
 
 @end

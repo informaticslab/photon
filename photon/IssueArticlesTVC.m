@@ -11,7 +11,7 @@
 #import "TopicsTVC.h"
 #import "ShareActionSheet.h"
 #import "ContentPagesVC.h"
-
+#import "KeywordArticleDetailVC.h"
 
 ShareActionSheet *shareAS;
 
@@ -99,14 +99,20 @@ Article *currArticle;
     return  titleTextSize.height + (2 * CELL_PADDING);
 }
 
+
+-(void)myAction:(id)sender
+{
+    
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IssueArticlesCell" forIndexPath:indexPath];
     
     // configure the cell...
     Article *rowArticle = _issue.articles[[indexPath row]];
-
-    cell.textLabel.font = APP_MGR.tableFont;
+    
+   cell.textLabel.font = APP_MGR.tableFont;
     cell.textLabel.numberOfLines = 0;
     [cell.textLabel sizeToFit];
     cell.textLabel.text = rowArticle.title;
@@ -123,6 +129,7 @@ Article *currArticle;
     return cell;
 }
 
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -135,6 +142,16 @@ Article *currArticle;
     [self performSegueWithIdentifier:@"pushContentPageViews" sender:nil];
     
 }
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    
+    currArticle = _issue.articles[[indexPath row]];
+    [self performSegueWithIdentifier:@"pushArticleDetails" sender:nil];
+    
+}
+
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -151,7 +168,12 @@ Article *currArticle;
         contentVC.article = currArticle;
         contentVC.issue = _issue;
         
+    } else if([segue.identifier isEqualToString:@"pushArticleDetails"])
+    {
+        KeywordArticleDetailVC *keywordArticleDetailVC = segue.destinationViewController;
+        keywordArticleDetailVC.article = currArticle;
     }
+
 }
 
 

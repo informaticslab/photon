@@ -28,12 +28,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    _pageHeader = @[@"What is already known?", @"What is added by this report?", @"What are the implications for public health practice?"];
+    _pageHeaders = @[@"What is already known?", @"What is added by this report?", @"What are the implications for public health practice?"];
     _pageText = @[_article.already_know, _article.added_by_report, _article.implications];
+    _navbarTitles = @[@"Known", @"Added", @"Implications"];
     
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ContentPVC"];
     self.pageViewController.dataSource = self;
+    self.pageViewController.delegate = self;
     
     ContentVC *startingViewController = [self viewControllerAtIndex:0];
     NSArray *viewControllers = @[startingViewController];
@@ -45,20 +47,25 @@
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
-    
+
+    self.navigationItem.title = _navbarTitles[0];
+
 }
 
 - (ContentVC *)viewControllerAtIndex:(NSUInteger)index
 {
-    if (([self.pageHeader count] == 0) || (index >= [self.pageHeader count])) {
+    if (([self.pageHeaders count] == 0) || (index >= [self.pageHeaders count])) {
         return nil;
     }
     
     // Create a new view controller and pass suitable data.
     ContentVC *contentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ContentVC"];
-    contentVC.headerText = self.pageHeader[index];
+    contentVC.headerText = self.pageHeaders[index];
     contentVC.contentText = self.pageText[index];
     contentVC.pageIndex = index;
+    contentVC.navbarTitle = self.navbarTitles[index];
+    contentVC.title = self.navbarTitles[index];
+    //self.navigationItem.title = self.navbarTitles[index];
     
     return contentVC;
 }
@@ -86,7 +93,7 @@
     }
     
     index++;
-    if (index == [self.pageHeader count]) {
+    if (index == [self.pageHeaders count]) {
         return nil;
     }
     return [self viewControllerAtIndex:index];
@@ -94,7 +101,7 @@
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
 {
-    return [self.pageHeader count];
+    return [self.pageHeaders count];
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
@@ -102,6 +109,16 @@
     return 0;
 }
 
+
+- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers
+{
+    for (UIViewController *vc in pendingViewControllers) {
+        // NSLog(@"Transition to view controller = %@", vc.title);
+        self.navigationItem.title = vc.title;
+    }
+    
+
+}
 - (IBAction)startWalkthrough:(id)sender {
     ContentVC *startingViewController = [self viewControllerAtIndex:0];
     NSArray *viewControllers = @[startingViewController];

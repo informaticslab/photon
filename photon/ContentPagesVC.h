@@ -10,7 +10,7 @@
 #import "Issue.h"
 #import "Article.h"
 
-@interface ContentPagesVC : UIViewController<UIPageViewControllerDataSource>
+@interface ContentPagesVC : UIViewController<UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
 @property(nonatomic, weak) Issue *issue;
 @property(nonatomic, weak) Article *article;
@@ -19,8 +19,9 @@
 
 - (IBAction)startWalkthrough:(id)sender;
 @property (strong, nonatomic) UIPageViewController *pageViewController;
-@property (strong, nonatomic) NSArray *pageHeader;
+@property (strong, nonatomic) NSArray *pageHeaders;
 @property (strong, nonatomic) NSArray *pageText;
+@property (strong, nonatomic) NSArray *navbarTitles;
 
 
 @end
