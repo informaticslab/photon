@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContentVC : UIViewController
+@interface ContentVC : UIViewController<UITextViewDelegate>
 
 @property NSUInteger pageIndex;
 @property NSString *headerText;

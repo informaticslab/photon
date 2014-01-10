@@ -31,12 +31,15 @@ NSDictionary *regTextAttributes;
 	// Do any additional setup after loading the view.
     
     self.lblHeader.text = self.headerText;
+    [self.txtvContentText setScrollEnabled:YES];
+    [self.txtvContentText setUserInteractionEnabled:YES];
+    self.txtvContentText.delegate = self;
+    self.txtvContentText.showsVerticalScrollIndicator = YES;
     self.txtvContentText.text = self.contentText;
     self.txtvContentText.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
     self.icon.image = [UIImage imageNamed:_imageName];
 
     self.parentViewController.navigationItem.title = self.navbarTitle;
-    
 
 }
 
