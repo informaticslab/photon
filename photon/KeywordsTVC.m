@@ -73,7 +73,7 @@ NSString *selectedKeyword;
 - (IBAction)refresh:(id)sender
 {
     [APP_MGR.issuesMgr updateFromFeed];
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
 }
 
 -(void)feedDataUpdateNotification:(NSNotification *)pNotification

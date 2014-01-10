@@ -33,6 +33,9 @@
     CALayer *btnLayer = [_btnViewArticle layer];
     self.navigationItem.title = @"Article Details";
     _txtViewArticleDetails.text = _article.issue.title;
+    _txtViewArticleDetails.textAlignment = NSTextAlignmentCenter;
+    _txtViewArticleDetails.font = [UIFont fontWithName:@"HelveticaNeue" size:18];
+
     [btnLayer setMasksToBounds:YES];
     [btnLayer setCornerRadius:5.0f];
 }

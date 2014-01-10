@@ -75,13 +75,12 @@ Issue *currIssue;
 - (IBAction)refresh:(id)sender
 {
     [APP_MGR.issuesMgr updateFromFeed];
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
     //[self.refreshControl endRefreshing];
 }
 
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.

@@ -8,6 +8,8 @@
 
 #import "ContentVC.h"
 
+NSDictionary *regTextAttributes;
+
 @interface ContentVC ()
 
 @end
@@ -29,8 +31,10 @@
 	// Do any additional setup after loading the view.
     
     self.lblHeader.text = self.headerText;
-    self.txtvContentText.font = [UIFont fontWithName:@"HelveticaNeue" size:18];
     self.txtvContentText.text = self.contentText;
+    self.txtvContentText.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
+    self.icon.image = [UIImage imageNamed:_imageName];
+
     self.parentViewController.navigationItem.title = self.navbarTitle;
     
 

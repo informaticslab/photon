@@ -30,7 +30,9 @@
 	// Do any additional setup after loading the view.
     _pageHeaders = @[@"What is already known?", @"What is added by this report?", @"What are the implications for public health practice?"];
     _pageText = @[_article.already_know, _article.added_by_report, _article.implications];
-    _navbarTitles = @[@"Known", @"Added", @"Implications"];
+    _navbarTitles = @[@"Summary", @"Summary", @"Summary"];
+    _icons = @[@"bluebox_subheader_icon", @"added_icon", @"implications_icon"];
+    
     
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ContentPVC"];
@@ -65,6 +67,7 @@
     contentVC.pageIndex = index;
     contentVC.navbarTitle = self.navbarTitles[index];
     contentVC.title = self.navbarTitles[index];
+    contentVC.imageName = self.icons[index];
     //self.navigationItem.title = self.navbarTitles[index];
     
     return contentVC;

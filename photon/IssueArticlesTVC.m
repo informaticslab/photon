@@ -155,21 +155,17 @@ Article *currArticle;
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"pushTopics"])
-    {
+    if([segue.identifier isEqualToString:@"pushTopics"]) {
         TopicsTVC *topicsVC = segue.destinationViewController;
         topicsVC.article = currArticle;
         topicsVC.issue = _issue;
         
-    }
-    else if([segue.identifier isEqualToString:@"pushContentPageViews"])
-    {
+    } else if([segue.identifier isEqualToString:@"pushContentPageViews"]) {
         ContentPagesVC *contentVC = segue.destinationViewController;
         contentVC.article = currArticle;
         contentVC.issue = _issue;
         
-    } else if([segue.identifier isEqualToString:@"pushArticleDetails"])
-    {
+    } else if([segue.identifier isEqualToString:@"pushArticleDetails"]) {
         KeywordArticleDetailVC *keywordArticleDetailVC = segue.destinationViewController;
         keywordArticleDetailVC.article = currArticle;
     }
