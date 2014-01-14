@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
@@ -84,7 +84,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1181" y="1047"/>
+            <point key="canvasLocation" x="1189" y="1047"/>
         </scene>
         <!--Keyword ArticlesTVC-->
         <scene sceneID="Gmz-R1-6rJ">
@@ -961,11 +961,11 @@ If you have any questions about the app, please contact either the MMWR staff at
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="XfS-BQ-fbZ"/>
         <segue reference="sa5-ms-oeY"/>
-        <segue reference="cPZ-Qk-bcg"/>
+        <segue reference="QJk-cp-B2j"/>
         <segue reference="zoM-3B-Y68"/>
-        <segue reference="von-23-WoB"/>
+        <segue reference="cPZ-Qk-bcg"/>
         <segue reference="3f9-Ze-hpd"/>
+        <segue reference="von-23-WoB"/>
     </inferredMetricsTieBreakers>
 </document>
