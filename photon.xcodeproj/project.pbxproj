@@ -30,6 +30,7 @@
 		A62A1A411823C9C7006A62B3 /* photonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A62A1A401823C9C7006A62B3 /* photonTests.m */; };
 		A639A337184E6496008D3BF6 /* ShareActivityProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A639A336184E6496008D3BF6 /* ShareActivityProvider.m */; };
 		A639A33A184E7361008D3BF6 /* ShareActivityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A639A339184E7361008D3BF6 /* ShareActivityVC.m */; };
+		A649A73D18882C0E00BDF9C2 /* SplitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A649A73C18882C0E00BDF9C2 /* SplitVC.m */; };
 		A6635ACB182D625400E600EA /* ArticleDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635ACA182D625400E600EA /* ArticleDetails.m */; };
 		A6635AD1182D7A0D00E600EA /* SubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635AD0182D7A0D00E600EA /* SubjectViewController.m */; };
 		A6635AD4182D841800E600EA /* TopicsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635AD3182D841800E600EA /* TopicsTVC.m */; };
@@ -41,6 +42,7 @@
 		A66FB23A184D2B9E008F2AB7 /* AboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A66FB239184D2B9E008F2AB7 /* AboutVC.m */; };
 		A66FB23D184D2BB0008F2AB7 /* HelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A66FB23C184D2BB0008F2AB7 /* HelpVC.m */; };
 		A67AF51C182BA408000F6EB0 /* IssueArticlesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A67AF51B182BA408000F6EB0 /* IssueArticlesTVC.m */; };
+		A683CC3B1885EF5800354442 /* ContentIpadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A683CC3A1885EF5800354442 /* ContentIpadVC.m */; };
 		A6A919D218299BB500F1CE7D /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A919CF18299BB500F1CE7D /* AppManager.m */; };
 		A6A919D61829A1BC00F1CE7D /* IssuesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A919D51829A1BC00F1CE7D /* IssuesManager.m */; };
 		A6A919D81829B48A00F1CE7D /* Issues.json in Resources */ = {isa = PBXBuildFile; fileRef = A6A919D71829B48A00F1CE7D /* Issues.json */; };
@@ -104,6 +106,8 @@
 		A639A336184E6496008D3BF6 /* ShareActivityProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareActivityProvider.m; sourceTree = "<group>"; };
 		A639A338184E7361008D3BF6 /* ShareActivityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareActivityVC.h; sourceTree = "<group>"; };
 		A639A339184E7361008D3BF6 /* ShareActivityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareActivityVC.m; sourceTree = "<group>"; };
+		A649A73B18882C0E00BDF9C2 /* SplitVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitVC.h; sourceTree = "<group>"; };
+		A649A73C18882C0E00BDF9C2 /* SplitVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitVC.m; sourceTree = "<group>"; };
 		A6635AC9182D625400E600EA /* ArticleDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleDetails.h; sourceTree = "<group>"; };
 		A6635ACA182D625400E600EA /* ArticleDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleDetails.m; sourceTree = "<group>"; };
 		A6635ACF182D7A0D00E600EA /* SubjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectViewController.h; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 		A66FB23C184D2BB0008F2AB7 /* HelpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpVC.m; sourceTree = "<group>"; };
 		A67AF51A182BA408000F6EB0 /* IssueArticlesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueArticlesTVC.h; sourceTree = "<group>"; };
 		A67AF51B182BA408000F6EB0 /* IssueArticlesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueArticlesTVC.m; sourceTree = "<group>"; };
+		A683CC391885EF5800354442 /* ContentIpadVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentIpadVC.h; sourceTree = "<group>"; };
+		A683CC3A1885EF5800354442 /* ContentIpadVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentIpadVC.m; sourceTree = "<group>"; };
 		A6A919CF18299BB500F1CE7D /* AppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppManager.m; sourceTree = "<group>"; };
 		A6A919D018299BB500F1CE7D /* AppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
 		A6A919D118299BB500F1CE7D /* Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Debug.h; sourceTree = "<group>"; };
@@ -284,6 +290,10 @@
 				A6635AD3182D841800E600EA /* TopicsTVC.m */,
 				A6635AD5182D86FC00E600EA /* TopicVC.h */,
 				A6635AD6182D86FC00E600EA /* TopicVC.m */,
+				A683CC391885EF5800354442 /* ContentIpadVC.h */,
+				A683CC3A1885EF5800354442 /* ContentIpadVC.m */,
+				A649A73B18882C0E00BDF9C2 /* SplitVC.h */,
+				A649A73C18882C0E00BDF9C2 /* SplitVC.m */,
 			);
 			path = photon;
 			sourceTree = "<group>";
@@ -442,11 +452,13 @@
 				A6635ACB182D625400E600EA /* ArticleDetails.m in Sources */,
 				A61CA7C91863235800891E00 /* NSDate+InternetDateTime.m in Sources */,
 				A6B295D518735EFD00BEF24D /* ContentPagesVC.m in Sources */,
+				A649A73D18882C0E00BDF9C2 /* SplitVC.m in Sources */,
 				A61CA7CA1863235800891E00 /* NSString+HTML.m in Sources */,
 				A61CA7C71863235800891E00 /* MWFeedParser.m in Sources */,
 				A61CA7C51863235800891E00 /* MWFeedInfo.m in Sources */,
 				A66FB235184CE935008F2AB7 /* InfoVC.m in Sources */,
 				A6635AD4182D841800E600EA /* TopicsTVC.m in Sources */,
+				A683CC3B1885EF5800354442 /* ContentIpadVC.m in Sources */,
 				A6D6AFED185B53A700F37E23 /* ShareActionSheet.m in Sources */,
 				A6635AE0182D921A00E600EA /* KeywordsTVC.m in Sources */,
 				A6635AD1182D7A0D00E600EA /* SubjectViewController.m in Sources */,

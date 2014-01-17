@@ -10,9 +10,11 @@
 #import "Issue.h"
 #import "Article.h"
 
-@interface IssueArticlesTVC : UITableViewController
+@interface IssueArticlesTVC : UITableViewController 
 
 @property(nonatomic, weak) Issue *issue;
 @property(nonatomic, weak) Article *article;
+
+- (IBAction)refresh:(id)sender;
 
 @end

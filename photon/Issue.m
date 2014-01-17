@@ -20,7 +20,9 @@
         self.unread = YES;
         NSArray *titleSplit = [_title componentsSeparatedByString:@"/"];
         if ([titleSplit count] == 3) {
-            self.date = titleSplit[0];
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            formatter.dateFormat = @"yyyy-MM-dd";
+            self.date = [formatter dateFromString:titleSplit[0]];
             self.volume = titleSplit[1];
             self.number = titleSplit[2];
         }

@@ -15,7 +15,7 @@
 
 @property(strong, nonatomic) NSMutableArray *articles;
 @property(strong, nonatomic) NSString *title;
-@property(strong, nonatomic) NSString *date;
+@property(strong, nonatomic) NSDate *date;
 @property(strong, nonatomic) NSString *number;
 @property(strong, nonatomic) NSString *volume;
 @property BOOL unread;
