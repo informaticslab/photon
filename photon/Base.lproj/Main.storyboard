@@ -675,11 +675,11 @@
             </objects>
             <point key="canvasLocation" x="132" y="180"/>
         </scene>
-        <!--Navigation Controller - Issues-->
+        <!--Navigation Controller - Articles-->
         <scene sceneID="YNk-BK-Vmg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cEW-B4-Yvd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Issues" image="issue_tab_icon_inactive" id="u1e-5L-l1D"/>
+                    <tabBarItem key="tabBarItem" title="Articles" image="issue_tab_icon_inactive" id="u1e-5L-l1D"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="8Cc-0l-m0j">

@@ -135,9 +135,41 @@ Article *currArticle;
     currIssue = APP_MGR.issuesMgr.issues[section];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"MMM dd, yyyy";
-    return [formatter stringFromDate:currIssue.date];
+    return [NSString stringWithFormat:@"%@                     %@ %@", [formatter stringFromDate:currIssue.date], currIssue.volume, currIssue.number];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    
+    return 32.0f;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    
+    return 4.0f;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
+{
+    // Background color
+    //view.tintColor = [UIColor blackColor];
+    
+    // Text Color
+    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+    [header.textLabel setTextColor:[UIColor blackColor]];
+    
+    // Another way to set the background color
+    // Note: does not preserve gradient effect of original header
+    // orange is 253, 242, 213 blue is 234, 240, 248
+    header.contentView.backgroundColor = [UIColor colorWithRed:234.0/255.0 green:240.0/255.0 blue:248.0/255.0 alpha:1];
+}
+
+-(UIView*)tableView:(UITableView*)tableView viewForFooterInSection:(NSInteger)section
+{
+    return [[UIView alloc] initWithFrame:CGRectZero];
+}
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
