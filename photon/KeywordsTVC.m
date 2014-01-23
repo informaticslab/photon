@@ -57,6 +57,20 @@ NSString *selectedKeyword;
      name:@"FeedDataUpdated"
      object:nil];
     
+    
+    
+    self.searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    
+   [self.searchDisplayController initWithSearchBar:self.searchBar contentsController:self];
+    
+    self.searchDisplayController.delegate = self;
+    
+    self.searchDisplayController.searchResultsDataSource = self;
+    
+    self.searchDisplayController.searchResultsDelegate = self;
+    
+    
+    self.tableView.tableHeaderView = self.searchDisplayController.searchBar;
 
     
     
@@ -83,7 +97,13 @@ NSString *selectedKeyword;
     [self.refreshControl endRefreshing];
 }
 
-
+- (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller
+{
+    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
+        [self.tableView insertSubview:self.searchDisplayController.searchBar aboveSubview:self.tableView];
+    }
+    return;
+}
 
 
 - (void)didReceiveMemoryWarning

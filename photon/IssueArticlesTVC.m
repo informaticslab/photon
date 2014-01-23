@@ -193,6 +193,14 @@ Article *currArticle;
     
 }
 
+- (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller
+{
+    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
+        [self.tableView insertSubview:self.searchDisplayController.searchBar aboveSubview:self.tableView];
+    }
+    return;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IssueArticlesCell" forIndexPath:indexPath];
@@ -270,6 +278,7 @@ Article *currArticle;
     
     [self.tableView reloadData];
     [self.refreshControl endRefreshing];
+
 }
 
 

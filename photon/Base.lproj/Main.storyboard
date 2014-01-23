@@ -13,18 +13,9 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" text="" placeholder="Search" id="mzg-XC-ySL">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <color key="barTintColor" red="0.85098039215686272" green="0.88627450980392153" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="Jlz-Rv-MFc" id="776-GC-leT"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="KeywordsCell" id="P9Z-Eg-FiL">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P9Z-Eg-FiL" id="6Iq-BQ-dgR">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -77,7 +68,6 @@
                 <searchDisplayController id="szS-ai-fgd">
                     <connections>
                         <outlet property="delegate" destination="Jlz-Rv-MFc" id="lqw-QU-dcK"/>
-                        <outlet property="searchBar" destination="mzg-XC-ySL" id="9Np-Zr-fsN"/>
                         <outlet property="searchContentsController" destination="Jlz-Rv-MFc" id="9md-6K-ESp"/>
                         <outlet property="searchResultsDataSource" destination="Jlz-Rv-MFc" id="v2R-gC-28M"/>
                         <outlet property="searchResultsDelegate" destination="Jlz-Rv-MFc" id="Qzx-Gj-pdW"/>
@@ -744,7 +734,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Lj-Xt-J71" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1125" y="-272"/>
+            <point key="canvasLocation" x="1125" y="-278"/>
         </scene>
         <!--Navigation Controller - Search-->
         <scene sceneID="rk4-TB-uNF">
@@ -929,10 +919,10 @@ If you have any questions about the app, please contact either the MMWR staff at
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="sa5-ms-oeY"/>
-        <segue reference="cPZ-Qk-bcg"/>
         <segue reference="zoM-3B-Y68"/>
-        <segue reference="XfS-BQ-fbZ"/>
         <segue reference="von-23-WoB"/>
         <segue reference="3f9-Ze-hpd"/>
+        <segue reference="QJk-cp-B2j"/>
+        <segue reference="pjO-04-Vnm"/>
     </inferredMetricsTieBreakers>
 </document>

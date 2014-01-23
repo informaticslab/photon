@@ -51,11 +51,7 @@ Issue *currIssue;
      selector:@selector(feedDataUpdateNotification:)
      name:@"FeedDataUpdated"
      object:nil];
-    
 
-
-    
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated

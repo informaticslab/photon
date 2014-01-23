@@ -339,6 +339,7 @@ int implicationsFound = 0;
     addedFound = 0;
     implicationsFound = 0;
     
+    
 }
 
 

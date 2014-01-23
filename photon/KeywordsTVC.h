@@ -11,5 +11,6 @@
 @interface KeywordsTVC : UITableViewController<UISearchDisplayDelegate>
 
 - (IBAction)refresh:(id)sender;
-
+@property(strong, nonatomic) IBOutlet UISearchBar *searchBar;
+//@property(strong, nonatomic) UISearchDisplayController *searchDisplayController;
 @end
