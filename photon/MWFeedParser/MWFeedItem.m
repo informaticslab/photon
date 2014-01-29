@@ -36,7 +36,6 @@
 @synthesize identifier, title, link, date, updated, summary, content, author, enclosures;
 
 #pragma mark NSObject
-
 - (NSString *)description {
 	NSMutableString *string = [[NSMutableString alloc] initWithString:@"MWFeedItem: "];
 	if (title)   [string appendFormat:@"“%@”", EXCERPT(title, 50)];
@@ -48,7 +47,6 @@
 
 
 #pragma mark NSCoding
-
 - (id)initWithCoder:(NSCoder *)decoder {
 	if ((self = [super init])) {
 		identifier = [decoder decodeObjectForKey:@"identifier"];

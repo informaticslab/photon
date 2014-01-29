@@ -5,7 +5,6 @@
 //  Created by jtq6 on 11/6/13.
 //  Copyright (c) 2013 Informatics Research and Development Lab. All rights reserved.
 //
-
 #import "Issue.h"
 
 @implementation Issue
@@ -13,9 +12,9 @@
 -(id)initWithTitle:(NSString *)title
 {
     
-    if(self= [super init]) {
+    if (self = [super init]) {
         
-        self.title= title;
+        self.title = title;
         self.articles = [[NSMutableArray alloc] init];
         self.unread = YES;
         NSArray *titleSplit = [_title componentsSeparatedByString:@"/"];
@@ -23,14 +22,34 @@
             NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
             formatter.dateFormat = @"yyyy-MM-dd";
             self.date = [formatter dateFromString:titleSplit[0]];
-            self.volume = titleSplit[1];
-            self.number = titleSplit[2];
+            self.volume = [titleSplit[1] integerValue];
+            self.number = [titleSplit[2] integerValue];
         }
-
     }
     
     return self;
 }
+
+-(id)initWithDate:(NSString *)dateString volume:(NSInteger)vol number:(NSInteger)num
+{
+    
+    if (self= [super init]) {
+        
+        self.unread = YES;
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        formatter.dateFormat = @"yyyy-MM-dd";
+        self.date = [formatter dateFromString:dateString];
+        self.title = dateString;
+        self.volume = vol;
+        self.number = num;
+        self.articles = [[NSMutableArray alloc] init];
+        
+    }
+    
+    return self;
+    
+}
+
 
 -(void)updateUnreadArticleStatus
 {
@@ -72,11 +91,27 @@
     
 }
 
+-(Article *)storeArticle:(Article *)newArticle
+{
+    
+    [_articles addObject:newArticle];
+    return newArticle;
+    
+}
+
+
 -(void)replaceArticle:(Article *)oldArticle withArticle:(Article *)newArticle
 {
     NSUInteger oldIndex = [_articles indexOfObject:oldArticle];
     
     [_articles replaceObjectAtIndex:oldIndex withObject:newArticle];
+    
+}
+
+
+-(NSUInteger)numberOfArticles
+{
+    return [_articles count];
     
 }
 

@@ -124,7 +124,7 @@ Article *currArticle;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // return the number of rows in the section.
-    currIssue = APP_MGR.issuesMgr.issues[section];
+    currIssue = [APP_MGR.issuesMgr getSortedIssueForIndex:section];
 
     return [currIssue.articles count];
 }
@@ -132,10 +132,10 @@ Article *currArticle;
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    currIssue = APP_MGR.issuesMgr.issues[section];
+    currIssue = [APP_MGR.issuesMgr getSortedIssueForIndex:section];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"MMM dd, yyyy";
-    return [NSString stringWithFormat:@"%@                     %@ %@", [formatter stringFromDate:currIssue.date], currIssue.volume, currIssue.number];
+    return [NSString stringWithFormat:@"%@                          Vol %d No %d", [formatter stringFromDate:currIssue.date], currIssue.volume, currIssue.number];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -174,7 +174,8 @@ Article *currArticle;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    currIssue = APP_MGR.issuesMgr.issues[[indexPath section]];
+    currIssue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
+
     currArticle = currIssue.articles[[indexPath row]];
     NSString *title = currArticle.title;
 
@@ -206,10 +207,10 @@ Article *currArticle;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IssueArticlesCell" forIndexPath:indexPath];
     
     // configure the cell...
-    currIssue = APP_MGR.issuesMgr.issues[[indexPath section]];
+    currIssue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
     currArticle = currIssue.articles[[indexPath row]];
     
-   cell.textLabel.font = APP_MGR.tableFont;
+    cell.textLabel.font = APP_MGR.tableFont;
     cell.textLabel.numberOfLines = 0;
     [cell.textLabel sizeToFit];
     cell.textLabel.text = currArticle.title;
@@ -229,14 +230,17 @@ Article *currArticle;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+
     // Navigation logic may go here. Create and push another view controller.
-    currIssue = APP_MGR.issuesMgr.issues[[indexPath section]];
+    currIssue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
     currArticle = currIssue.articles[[indexPath row]];
     currArticle.unread = NO;
+
+    [self.tableView beginUpdates];
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView endUpdates];
+    
     [self.issue updateUnreadArticleStatus];
-    [self.tableView reloadData];
-//    [self performSegueWithIdentifier:@"pushTopics" sender:nil];
     [self performSegueWithIdentifier:@"pushContentPageViews" sender:nil];
     
 }
@@ -244,7 +248,7 @@ Article *currArticle;
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     
-    currIssue = APP_MGR.issuesMgr.issues[[indexPath section]];
+    currIssue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
     currArticle = currIssue.articles[[indexPath row]];
     [self performSegueWithIdentifier:@"pushArticleDetails" sender:nil];
     

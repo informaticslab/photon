@@ -8,21 +8,28 @@
 
 #import <Foundation/Foundation.h>
 #import "MWFeedParser.h"
+#import "JsonParser.h"
+#import "Issue.h"
 
 @interface IssuesManager : NSObject<MWFeedParserDelegate>
 
 @property(nonatomic, strong) NSMutableDictionary *parsedIssues;
-@property(nonatomic, strong) NSArray *issues;
+@property(nonatomic, strong) NSMutableDictionary *issues;
+@property(nonatomic, strong) NSArray *sortedIssues;
 @property(nonatomic, strong) NSMutableDictionary *keywords;
 @property(nonatomic, strong) MWFeedParser *feedParser;
 @property(nonatomic, strong) NSMutableArray *parsedItems;
 @property(nonatomic, strong) NSMutableArray *parsedJsonBlobs;
 
--(id)initWithTestData;
+-(id)init;
 -(id)initWithFeedParser;
 -(void)updateFromFeed;
 
+
 -(NSArray *)articlesWithKeyword:(NSString *)keyword;
+-(Article *)newArticleWithTitle:(NSString *)title inIssue:(Issue *)currIssue revision:(NSInteger)ver;
+-(void)newArticle:(Article *)article inIssue:(Issue *)issue withTags:(NSArray *)tags version:(NSInteger)ver;
+-(Issue *)getSortedIssueForIndex:(NSUInteger)index;
 
 
 @end

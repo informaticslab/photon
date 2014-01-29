@@ -26,4 +26,19 @@
     
 }
 
+-(id)initWithTitle:(NSString *)title version:(NSInteger)ver
+{
+
+    if(self= [super init]) {
+        
+        self.title = title;
+        self.unread = YES;
+        self.version = ver;
+        
+    }
+    
+    return self;
+
+}
+
 @end

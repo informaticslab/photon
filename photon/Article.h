@@ -19,10 +19,11 @@
 @property(strong, nonatomic) NSString *added_by_report;
 @property(strong, nonatomic) NSString *implications;
 @property(strong, nonatomic) NSMutableArray *tags;
-@property NSInteger ver;
+@property NSInteger version;
 @property BOOL unread;
 
 
 -(id)initWithTitle:(NSString *)title;
+-(id)initWithTitle:(NSString *)title version:(NSInteger)ver;
 
 @end

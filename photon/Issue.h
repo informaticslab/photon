@@ -16,14 +16,20 @@
 @property(strong, nonatomic) NSMutableArray *articles;
 @property(strong, nonatomic) NSString *title;
 @property(strong, nonatomic) NSDate *date;
-@property(strong, nonatomic) NSString *number;
-@property(strong, nonatomic) NSString *volume;
+@property NSInteger number;
+@property NSInteger volume;
 @property BOOL unread;
 
 -(id)initWithTitle:(NSString *)title;
+-(id)initWithDate:(NSString *)date volume:(NSInteger)vol number:(NSInteger)num;
+
+
 -(void)updateUnreadArticleStatus;
+-(Article *)storeArticle:(Article *)newArticle;
 -(Article *)getArticleWithTitle:(NSString *)title;
 -(Article *)addArticleWithTitle:(NSString *)title;
 -(void)replaceArticle:(Article *)oldArticle withArticle:(Article *)newArticle;
+-(NSUInteger)numberOfArticles;
+
 
 @end

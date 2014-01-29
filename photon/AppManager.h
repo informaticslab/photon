@@ -11,6 +11,7 @@
 //#define DEBUG
 #import "Debug.h"
 #import "IssuesManager.h"
+#import "JsonParser.h"
 
 @interface AppManager : NSObject 
 
@@ -24,6 +25,7 @@
 @property (strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (strong, nonatomic) IssuesManager *issuesMgr;
+@property (strong, nonatomic) JsonParser *jsonParser;
 
 + (id)singletonAppManager;
 -(BOOL)isDebugInfoEnabled;

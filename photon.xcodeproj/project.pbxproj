@@ -22,7 +22,6 @@
 		A62A1A1F1823C9C7006A62B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A62A1A1E1823C9C7006A62B3 /* main.m */; };
 		A62A1A231823C9C7006A62B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A62A1A221823C9C7006A62B3 /* AppDelegate.m */; };
 		A62A1A261823C9C7006A62B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A62A1A241823C9C7006A62B3 /* Main.storyboard */; };
-		A62A1A291823C9C7006A62B3 /* IssuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A62A1A281823C9C7006A62B3 /* IssuesViewController.m */; };
 		A62A1A351823C9C7006A62B3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62A1A341823C9C7006A62B3 /* XCTest.framework */; };
 		A62A1A361823C9C7006A62B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62A1A121823C9C7006A62B3 /* Foundation.framework */; };
 		A62A1A371823C9C7006A62B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62A1A161823C9C7006A62B3 /* UIKit.framework */; };
@@ -43,6 +42,9 @@
 		A66FB23D184D2BB0008F2AB7 /* HelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A66FB23C184D2BB0008F2AB7 /* HelpVC.m */; };
 		A67AF51C182BA408000F6EB0 /* IssueArticlesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A67AF51B182BA408000F6EB0 /* IssueArticlesTVC.m */; };
 		A683CC3B1885EF5800354442 /* ContentIpadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A683CC3A1885EF5800354442 /* ContentIpadVC.m */; };
+		A69AFEB918944C47009F0A48 /* V1JsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A69AFEB818944C47009F0A48 /* V1JsonParser.m */; };
+		A69AFEBD1895468A009F0A48 /* JsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A69AFEBC1895468A009F0A48 /* JsonParser.m */; };
+		A69AFEC0189554C0009F0A48 /* JsonParserBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A69AFEBF189554C0009F0A48 /* JsonParserBase.m */; };
 		A6A919D218299BB500F1CE7D /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A919CF18299BB500F1CE7D /* AppManager.m */; };
 		A6A919D61829A1BC00F1CE7D /* IssuesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A919D51829A1BC00F1CE7D /* IssuesManager.m */; };
 		A6A919D81829B48A00F1CE7D /* Issues.json in Resources */ = {isa = PBXBuildFile; fileRef = A6A919D71829B48A00F1CE7D /* Issues.json */; };
@@ -95,8 +97,6 @@
 		A62A1A211823C9C7006A62B3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A62A1A221823C9C7006A62B3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A62A1A251823C9C7006A62B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A62A1A271823C9C7006A62B3 /* IssuesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IssuesViewController.h; sourceTree = "<group>"; };
-		A62A1A281823C9C7006A62B3 /* IssuesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IssuesViewController.m; sourceTree = "<group>"; };
 		A62A1A331823C9C7006A62B3 /* photonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = photonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A62A1A341823C9C7006A62B3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A62A1A3C1823C9C7006A62B3 /* photonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "photonTests-Info.plist"; sourceTree = "<group>"; };
@@ -130,6 +130,13 @@
 		A67AF51B182BA408000F6EB0 /* IssueArticlesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueArticlesTVC.m; sourceTree = "<group>"; };
 		A683CC391885EF5800354442 /* ContentIpadVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentIpadVC.h; sourceTree = "<group>"; };
 		A683CC3A1885EF5800354442 /* ContentIpadVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentIpadVC.m; sourceTree = "<group>"; };
+		A69AFEB718944C47009F0A48 /* V1JsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V1JsonParser.h; sourceTree = "<group>"; };
+		A69AFEB818944C47009F0A48 /* V1JsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V1JsonParser.m; sourceTree = "<group>"; };
+		A69AFEBA18945618009F0A48 /* JsonParserProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JsonParserProtocol.h; sourceTree = "<group>"; };
+		A69AFEBB1895468A009F0A48 /* JsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonParser.h; sourceTree = "<group>"; };
+		A69AFEBC1895468A009F0A48 /* JsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonParser.m; sourceTree = "<group>"; };
+		A69AFEBE189554C0009F0A48 /* JsonParserBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonParserBase.h; sourceTree = "<group>"; };
+		A69AFEBF189554C0009F0A48 /* JsonParserBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonParserBase.m; sourceTree = "<group>"; };
 		A6A919CF18299BB500F1CE7D /* AppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppManager.m; sourceTree = "<group>"; };
 		A6A919D018299BB500F1CE7D /* AppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
 		A6A919D118299BB500F1CE7D /* Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Debug.h; sourceTree = "<group>"; };
@@ -265,8 +272,6 @@
 				A67AF51B182BA408000F6EB0 /* IssueArticlesTVC.m */,
 				A6A919D41829A1BC00F1CE7D /* IssuesManager.h */,
 				A6A919D51829A1BC00F1CE7D /* IssuesManager.m */,
-				A62A1A271823C9C7006A62B3 /* IssuesViewController.h */,
-				A62A1A281823C9C7006A62B3 /* IssuesViewController.m */,
 				A6D9BC79183BF57F00B42118 /* KeywordArticleDetailVC.h */,
 				A6D9BC7A183BF57F00B42118 /* KeywordArticleDetailVC.m */,
 				A6D9BC76183BBFE000B42118 /* KeywordArticlesTVC.h */,
@@ -294,6 +299,13 @@
 				A683CC3A1885EF5800354442 /* ContentIpadVC.m */,
 				A649A73B18882C0E00BDF9C2 /* SplitVC.h */,
 				A649A73C18882C0E00BDF9C2 /* SplitVC.m */,
+				A69AFEB718944C47009F0A48 /* V1JsonParser.h */,
+				A69AFEB818944C47009F0A48 /* V1JsonParser.m */,
+				A69AFEBA18945618009F0A48 /* JsonParserProtocol.h */,
+				A69AFEBB1895468A009F0A48 /* JsonParser.h */,
+				A69AFEBC1895468A009F0A48 /* JsonParser.m */,
+				A69AFEBE189554C0009F0A48 /* JsonParserBase.h */,
+				A69AFEBF189554C0009F0A48 /* JsonParserBase.m */,
 			);
 			path = photon;
 			sourceTree = "<group>";
@@ -435,11 +447,11 @@
 				A6D9BC7B183BF57F00B42118 /* KeywordArticleDetailVC.m in Sources */,
 				A61CA7C61863235800891E00 /* MWFeedItem.m in Sources */,
 				A6A919DE182A9B8700F1CE7D /* Article.m in Sources */,
+				A69AFEBD1895468A009F0A48 /* JsonParser.m in Sources */,
 				A6B295D2187352CB00BEF24D /* ContentVC.m in Sources */,
 				A61CA7C41863235800891E00 /* GTMNSString+HTML.m in Sources */,
 				A639A337184E6496008D3BF6 /* ShareActivityProvider.m in Sources */,
 				A6635AD7182D86FC00E600EA /* TopicVC.m in Sources */,
-				A62A1A291823C9C7006A62B3 /* IssuesViewController.m in Sources */,
 				A61CA795186231ED00891E00 /* RSSEntry.m in Sources */,
 				A6A919DB182A74D400F1CE7D /* Issue.m in Sources */,
 				A62A1A1F1823C9C7006A62B3 /* main.m in Sources */,
@@ -462,6 +474,8 @@
 				A6D6AFED185B53A700F37E23 /* ShareActionSheet.m in Sources */,
 				A6635AE0182D921A00E600EA /* KeywordsTVC.m in Sources */,
 				A6635AD1182D7A0D00E600EA /* SubjectViewController.m in Sources */,
+				A69AFEB918944C47009F0A48 /* V1JsonParser.m in Sources */,
+				A69AFEC0189554C0009F0A48 /* JsonParserBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
