@@ -86,8 +86,9 @@ NSString *selectedKeyword;
 
 - (IBAction)refresh:(id)sender
 {
-    [APP_MGR.issuesMgr updateFromFeed];
-//    [self.tableView reloadData];
+    UIRefreshControl *refreshControl = (UIRefreshControl *)sender;
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Updating articles..."];
+    [APP_MGR.jsonParser updateFromFeed];
 }
 
 -(void)feedDataUpdateNotification:(NSNotification *)pNotification
@@ -97,8 +98,17 @@ NSString *selectedKeyword;
     [self.refreshControl endRefreshing];
 }
 
+- (void)searchDisplayControllerDidBeginSearch:(UISearchDisplayController *)controller
+{
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    return;
+}
+
+
 - (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller
 {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
     if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
         [self.tableView insertSubview:self.searchDisplayController.searchBar aboveSubview:self.tableView];
     }

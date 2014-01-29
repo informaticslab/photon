@@ -50,7 +50,8 @@ static AppManager *sharedAppManager = nil;
         self.issuesMgr = [[IssuesManager alloc  ]init];
         self.jsonParser = [[JsonParser alloc] init];
         
-        [self.jsonParser parseTestData];
+ //       [self.jsonParser parseTestData];
+        [self.jsonParser updateFromFeed];
         
         //self.issuesMgr = [[IssuesManager alloc  ]initWithFeedParser];
         
@@ -59,12 +60,6 @@ static AppManager *sharedAppManager = nil;
 
 }
 
-
--(NSArray *)getAllIssues
-{
-    return _issuesMgr.issues;
-
-}
 
 -(BOOL)isDebugInfoEnabled
 {

@@ -29,6 +29,5 @@
 
 + (id)singletonAppManager;
 -(BOOL)isDebugInfoEnabled;
--(NSArray*)getAllIssues;
 
 @end

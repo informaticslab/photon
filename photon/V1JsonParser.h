@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "JsonParserBase.h"
-#import "SchemaParserProtocol.h"
+#import "JsonParserProtocol.h"
 
 @interface V1JsonParser : JsonParserBase <JsonParserProtocol>
 

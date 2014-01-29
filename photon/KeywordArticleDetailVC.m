@@ -32,10 +32,17 @@
 	// Do any additional setup after loading the view.
     CALayer *btnLayer = [_btnViewArticle layer];
     self.navigationItem.title = @"Article Details";
-    _txtViewArticleDetails.text = _article.issue.title;
-    _txtViewArticleDetails.textAlignment = NSTextAlignmentCenter;
-    _txtViewArticleDetails.font = [UIFont fontWithName:@"HelveticaNeue" size:18];
+    _txtViewArticleTitle.text = _article.title;
+    _txtViewArticleTitle.textAlignment = NSTextAlignmentCenter;
+    _txtViewArticleTitle.font = [UIFont fontWithName:@"HelveticaNeue" size:18];
 
+    _txtViewArticleIssueDate.text = [NSString stringWithFormat:@"Published on %@",_article.issue.title];
+    _txtViewArticleIssueDate.textAlignment = NSTextAlignmentCenter;
+    _txtViewArticleIssueDate.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
+    
+    _txtViewArticleIssueVolNum.text = [NSString stringWithFormat:@"Volume %d, Number %d", _article.issue.volume, _article.issue.number];
+    _txtViewArticleIssueVolNum.textAlignment = NSTextAlignmentCenter;
+    _txtViewArticleIssueVolNum.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
     [btnLayer setMasksToBounds:YES];
     [btnLayer setCornerRadius:5.0f];
 }

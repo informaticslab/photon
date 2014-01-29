@@ -95,6 +95,7 @@
 {
     
     [_articles addObject:newArticle];
+    newArticle.issue = self;
     return newArticle;
     
 }

@@ -100,7 +100,10 @@ Article *currArticle;
 
 - (IBAction)refresh:(id)sender
 {
-    [APP_MGR.issuesMgr updateFromFeed];
+    UIRefreshControl *refreshControl = (UIRefreshControl *)sender;
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Updating articles..."];
+
+    [APP_MGR.jsonParser updateFromFeed];
     //    [self.tableView reloadData];
     //[self.refreshControl endRefreshing];
 }

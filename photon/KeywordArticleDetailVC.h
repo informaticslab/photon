@@ -12,7 +12,10 @@
 @interface KeywordArticleDetailVC : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *btnViewArticle;
 @property (weak, nonatomic) Article *article;
-@property (weak, nonatomic) IBOutlet UITextView *txtViewArticleDetails;
+@property (weak, nonatomic) IBOutlet UITextView *txtViewArticleTitle;
+@property (weak, nonatomic) IBOutlet UITextView *txtViewArticleIssueDate;
+@property (weak, nonatomic) IBOutlet UITextView *txtViewArticleIssueVolNum;
+
 - (IBAction)btnViewFullArticleTouchUp:(id)sender;
 
 @end
