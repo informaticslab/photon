@@ -9,6 +9,10 @@
 #import "KeywordArticleDetailVC.h"
 #import "ArticleDetails.h"
 #import "FullArticleVC.h"
+#import "ShareActionSheet.h"
+
+ShareActionSheet *shareAS;
+
 
 
 @interface KeywordArticleDetailVC ()
@@ -31,6 +35,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     CALayer *btnLayer = [_btnViewArticle layer];
+    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
+    shareButton.width = -1.0;
+    self.navigationItem.rightBarButtonItem = shareButton;
+
     self.navigationItem.title = @"Article Details";
     _txtViewArticleTitle.text = _article.title;
     _txtViewArticleTitle.textAlignment = NSTextAlignmentCenter;
@@ -52,6 +60,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)share:(id)sender
+{
+    // display the options for sharing
+    shareAS = [[ShareActionSheet alloc] initToShareArticleUrl:self.article.url fromVC:self];
+    [shareAS showView];
+    
+}
+
 
 
 
