@@ -2,7 +2,7 @@ Rapid MMWR iPhone App (Photon)
 ===========
 The Rapid MMWR iPhone app provides quick access to highlights from each article in the MMWR Weekly. 
 
-Issue tracker is available: TBD
+Issue tracker is available: [JIRA](https://code.phiresearchlab.org/jira/browse/PHOT)
 
 ## Goals
 To develop an iPhone app that allows quick access to content from MMWR Weekly.
