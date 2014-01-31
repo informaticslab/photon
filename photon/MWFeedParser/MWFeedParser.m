@@ -158,7 +158,7 @@
 	if (connectionType == ConnectionTypeAsynchronously) {
 		
 		// Async
-		urlConnection = [[NSURLConnection alloc] initWithRequest:self.request delegate:self];
+		urlConnection = [[NSURLConnection alloc] initWithRequest:self.request  delegate:self];
 		if (urlConnection) {
 			asyncData = [[NSMutableData alloc] init];// Create data
 		} else {

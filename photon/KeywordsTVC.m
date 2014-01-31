@@ -57,6 +57,7 @@ NSString *selectedKeyword;
      name:@"FeedDataUpdated"
      object:nil];
     
+    self.isSearching = NO;
     
     
     self.searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
@@ -73,6 +74,17 @@ NSString *selectedKeyword;
     self.tableView.tableHeaderView = self.searchDisplayController.searchBar;
 
     
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+    if (self.isSearching == YES)
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    else
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
     
 }
 
@@ -100,6 +112,8 @@ NSString *selectedKeyword;
 
 - (void)searchDisplayControllerDidBeginSearch:(UISearchDisplayController *)controller
 {
+    self.isSearching = YES;
+
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar"] forBarMetrics:UIBarMetricsDefault];
@@ -122,6 +136,8 @@ NSString *selectedKeyword;
 - (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller
 {
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    self.isSearching = NO;
+
 
     if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
         [self.tableView insertSubview:self.searchDisplayController.searchBar aboveSubview:self.tableView];

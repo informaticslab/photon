@@ -53,6 +53,9 @@ NSArray *keywordArticles;
     shareButton.width = 30.0;
     self.navigationItem.rightBarButtonItem = shareButton;
     
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
+    
 }
 
 - (void)share:(id)sender
