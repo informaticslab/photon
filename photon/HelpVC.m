@@ -28,7 +28,7 @@
     _scrollView.scrollEnabled = YES;
     [_scrollView setTranslatesAutoresizingMaskIntoConstraints:NO];
     
-    [_scrollView setContentSize:(CGSizeMake(320, 727))];
+    [_scrollView setContentSize:(CGSizeMake(320, 1250))];
 ////[_scrollView addConstraint:[NSLayoutConstraint constraintWithItem:_imageView
 //                                                            attribute:NSLayoutAttributeBottom
 //                                                            relatedBy:NSLayoutRelationEqual
