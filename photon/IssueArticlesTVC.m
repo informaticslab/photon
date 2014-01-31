@@ -45,11 +45,6 @@ Article *currArticle;
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.title = @"MMWR Express";
     UITabBarItem *item = [self.tabBarController.tabBar.items objectAtIndex:0];
@@ -58,19 +53,14 @@ Article *currArticle;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar"] forBarMetrics:UIBarMetricsDefault];
     //    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
     //set back button arrow color
-    
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
     // check for diffs between ios 6 & 7
     if ([UINavigationBar instancesRespondToSelector:@selector(barTintColor)])
         self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1.0];
     else {
-        //[[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
         [[UINavigationBar appearance] setBackgroundColor:[UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1.0]];
     }
-//    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
-//    shareButton.style = UIBarButtonItemStyleBordered;
-//    self.navigationItem.rightBarButtonItem = shareButton;
     
     [[NSNotificationCenter defaultCenter]
      addObserver:self

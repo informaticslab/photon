@@ -784,7 +784,7 @@
         <scene sceneID="rk4-TB-uNF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="siQ-rq-DcI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" image="subject_tab_icon_inactive" id="wCW-RR-2K8"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="search_tab_inactive" id="wCW-RR-2K8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="uqC-Ma-XTl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -865,8 +865,35 @@
  
 The Morbidity and Mortality Weekly Report (MMWR) series is prepared by the Centers for Disease Control and Prevention (CDC). Often called, “the voice of CDC,” the MMWR series is the agency’s primary vehicle for scientific publication of timely, reliable, authoritative, accurate, objective, and useful public health information and recommendations. 
  
-Summaries are searchable by specific MMWR issue, or by specific subject (e.g., salmonella).  
-
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Summaries are searchable by specific MMWR article ">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="NSColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                            <font key="NSOriginalFont" size="11" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">or by specific subject (e.g., salmonella).  
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
 If you have any questions about the app, please contact either the MMWR staff at mmwrq@cdc.gov or the Informatics Innovation Unit staff at informaticslab@cdc.gov.</string>
                                         <attributes>
                                             <font key="NSFont" size="11" name="HelveticaNeue"/>
@@ -926,7 +953,7 @@ If you have any questions about the app, please contact either the MMWR staff at
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="help_content_no_page_control" translatesAutoresizingMaskIntoConstraints="NO" id="0fe-dA-SVc">
-                                        <rect key="frame" x="0.0" y="1" width="320" height="727"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -948,11 +975,11 @@ If you have any questions about the app, please contact either the MMWR staff at
     <resources>
         <image name="about_icon" width="61" height="60"/>
         <image name="bluebox_subheader_icon" width="35" height="35"/>
-        <image name="help_content_no_page_control" width="320" height="801"/>
+        <image name="help_content_no_page_control" width="320" height="1250"/>
         <image name="help_header_icon" width="33" height="28"/>
         <image name="issue_tab_icon_inactive" width="25" height="25"/>
+        <image name="search_tab_inactive" width="25" height="25"/>
         <image name="source_BG" width="315" height="81"/>
-        <image name="subject_tab_icon_inactive" width="25" height="25"/>
         <image name="topics_icon" width="35" height="35"/>
     </resources>
     <color key="tintColor" red="0.25098039220000001" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
