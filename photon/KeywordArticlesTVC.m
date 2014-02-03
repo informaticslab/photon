@@ -10,7 +10,6 @@
 #import "Article.h"
 #import "KeywordArticleDetailVC.h"
 #import "ArticleDetails.h"
-#import "TopicsTVC.h"
 #import "ShareActionSheet.h"
 #import "ContentPagesVC.h"
 
@@ -186,12 +185,6 @@ NSArray *keywordArticles;
     {
         KeywordArticleDetailVC *keywordArticleDetailVC = segue.destinationViewController;
         keywordArticleDetailVC.article = selectedArticle;
-    } else if ([segue.identifier isEqualToString:@"pushArticleDetailsForKeywordArticles"]){
-        
-        TopicsTVC *topicsVC = segue.destinationViewController;
-        topicsVC.article = selectedArticle;
-        topicsVC.issue = selectedArticle.issue;
-
     } else if ([segue.identifier isEqualToString:@"pushContentPagesFromKeyword"]) {
         ContentPagesVC *contentVC = segue.destinationViewController;
         contentVC.article = selectedArticle;

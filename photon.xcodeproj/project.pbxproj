@@ -32,8 +32,6 @@
 		A649A73D18882C0E00BDF9C2 /* SplitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A649A73C18882C0E00BDF9C2 /* SplitVC.m */; };
 		A6635ACB182D625400E600EA /* ArticleDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635ACA182D625400E600EA /* ArticleDetails.m */; };
 		A6635AD1182D7A0D00E600EA /* SubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635AD0182D7A0D00E600EA /* SubjectViewController.m */; };
-		A6635AD4182D841800E600EA /* TopicsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635AD3182D841800E600EA /* TopicsTVC.m */; };
-		A6635AD7182D86FC00E600EA /* TopicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635AD6182D86FC00E600EA /* TopicVC.m */; };
 		A6635AE0182D921A00E600EA /* KeywordsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635ADF182D921A00E600EA /* KeywordsTVC.m */; };
 		A6687EC11885AA1A008109BF /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6687EBF1885AA1A008109BF /* Main_iPad.storyboard */; };
 		A66FB235184CE935008F2AB7 /* InfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A66FB234184CE935008F2AB7 /* InfoVC.m */; };
@@ -112,10 +110,6 @@
 		A6635ACA182D625400E600EA /* ArticleDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleDetails.m; sourceTree = "<group>"; };
 		A6635ACF182D7A0D00E600EA /* SubjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectViewController.h; sourceTree = "<group>"; };
 		A6635AD0182D7A0D00E600EA /* SubjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectViewController.m; sourceTree = "<group>"; };
-		A6635AD2182D841800E600EA /* TopicsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicsTVC.h; sourceTree = "<group>"; };
-		A6635AD3182D841800E600EA /* TopicsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicsTVC.m; sourceTree = "<group>"; };
-		A6635AD5182D86FC00E600EA /* TopicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicVC.h; sourceTree = "<group>"; };
-		A6635AD6182D86FC00E600EA /* TopicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicVC.m; sourceTree = "<group>"; };
 		A6635ADE182D921A00E600EA /* KeywordsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordsTVC.h; sourceTree = "<group>"; };
 		A6635ADF182D921A00E600EA /* KeywordsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordsTVC.m; sourceTree = "<group>"; };
 		A6687EC01885AA1A008109BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
@@ -291,10 +285,6 @@
 				A6635ACF182D7A0D00E600EA /* SubjectViewController.h */,
 				A6635AD0182D7A0D00E600EA /* SubjectViewController.m */,
 				A62A1A191823C9C7006A62B3 /* Supporting Files */,
-				A6635AD2182D841800E600EA /* TopicsTVC.h */,
-				A6635AD3182D841800E600EA /* TopicsTVC.m */,
-				A6635AD5182D86FC00E600EA /* TopicVC.h */,
-				A6635AD6182D86FC00E600EA /* TopicVC.m */,
 				A683CC391885EF5800354442 /* ContentIpadVC.h */,
 				A683CC3A1885EF5800354442 /* ContentIpadVC.m */,
 				A649A73B18882C0E00BDF9C2 /* SplitVC.h */,
@@ -451,7 +441,6 @@
 				A6B295D2187352CB00BEF24D /* ContentVC.m in Sources */,
 				A61CA7C41863235800891E00 /* GTMNSString+HTML.m in Sources */,
 				A639A337184E6496008D3BF6 /* ShareActivityProvider.m in Sources */,
-				A6635AD7182D86FC00E600EA /* TopicVC.m in Sources */,
 				A61CA795186231ED00891E00 /* RSSEntry.m in Sources */,
 				A6A919DB182A74D400F1CE7D /* Issue.m in Sources */,
 				A62A1A1F1823C9C7006A62B3 /* main.m in Sources */,
@@ -469,7 +458,6 @@
 				A61CA7C71863235800891E00 /* MWFeedParser.m in Sources */,
 				A61CA7C51863235800891E00 /* MWFeedInfo.m in Sources */,
 				A66FB235184CE935008F2AB7 /* InfoVC.m in Sources */,
-				A6635AD4182D841800E600EA /* TopicsTVC.m in Sources */,
 				A683CC3B1885EF5800354442 /* ContentIpadVC.m in Sources */,
 				A6D6AFED185B53A700F37E23 /* ShareActionSheet.m in Sources */,
 				A6635AE0182D921A00E600EA /* KeywordsTVC.m in Sources */,

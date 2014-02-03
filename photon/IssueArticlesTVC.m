@@ -8,7 +8,6 @@
 
 #import "IssueArticlesTVC.h"
 #import "ArticleDetails.h"
-#import "TopicsTVC.h"
 #import "ShareActionSheet.h"
 #import "ContentPagesVC.h"
 #import "KeywordArticleDetailVC.h"
@@ -251,12 +250,7 @@ Article *currArticle;
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"pushTopics"]) {
-        TopicsTVC *topicsVC = segue.destinationViewController;
-        topicsVC.article = currArticle;
-        topicsVC.issue = currIssue;
-        
-    } else if([segue.identifier isEqualToString:@"pushContentPageViews"]) {
+    if([segue.identifier isEqualToString:@"pushContentPageViews"]) {
         ContentPagesVC *contentVC = segue.destinationViewController;
         contentVC.article = currArticle;
         contentVC.issue = currIssue;
