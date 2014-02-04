@@ -227,7 +227,20 @@
     
 }
 
-
+-(Article *)getLatestArticle
+{
+    Issue *latestIssue = (Issue *)self.sortedIssues[0];
+    
+    if (latestIssue != nil) {
+        Article *latestArticle = latestIssue.articles[0];
+        if (latestArticle != nil) {
+            return latestArticle;
+        }
+    }
+    
+    return nil;
+    
+}
 
 
 

@@ -732,8 +732,8 @@ If you have any questions about the app, please contact either the MMWR staff at
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="g7V-rl-fQN"/>
         <segue reference="XfS-BQ-fbZ"/>
-        <segue reference="sa5-ms-oeY"/>
         <segue reference="pjO-04-Vnm"/>
     </inferredMetricsTieBreakers>
 </document>
