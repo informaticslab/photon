@@ -28,6 +28,7 @@ NSDictionary *regTextAttributes;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view.
     
     self.lblHeader.text = self.headerText;

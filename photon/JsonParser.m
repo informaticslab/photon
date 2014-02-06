@@ -50,30 +50,6 @@ int implicationsFound = 0;
     
 }
 
--(id)initWithFeedParser
-{
-    
-    if (self = [super init]) {
-        
-        self.parsedIssues = [[NSMutableDictionary alloc]init];
-        self.parsedKeywords = [[NSMutableDictionary alloc]init];
-        self.parsedItems  = [[NSMutableArray alloc] init];
-        self.parsedJsonBlobs  = [[NSMutableArray alloc] init];
-        
-        NSURL *feedURL = [NSURL URLWithString:@"http://t.cdc.gov/feed.aspx?feedid=100"];
-        _feedParser = [[MWFeedParser alloc] initWithFeedURL:feedURL];
-        _feedParser.delegate = self;
-        _feedParser.feedParseType = ParseTypeFull; // parse feed info and all items
-        _feedParser.connectionType = ConnectionTypeAsynchronously;
-        [_feedParser parse];
-        
-    };
-    
-    return self;
-    
-}
-
-
 -(void)updateFromFeed
 {
     [_feedParser parse];

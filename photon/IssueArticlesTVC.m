@@ -67,11 +67,6 @@ Article *currArticle;
      name:@"FeedDataUpdated"
      object:nil];
     
-    
-    
-    
-    
-
     //self.navigationItem.title = _issue.number;
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
     shareButton.width = 30.0;

@@ -41,6 +41,18 @@
     else {
         [[UINavigationBar appearance] setBackgroundColor:[UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1.0]];
     }
+    
+    self.lblHeader.text = self.headerText;
+    [self.txtvContentText setScrollEnabled:YES];
+    [self.txtvContentText setUserInteractionEnabled:YES];
+    self.txtvContentText.delegate = self;
+    self.txtvContentText.showsVerticalScrollIndicator = YES;
+    self.txtvContentText.text = self.contentText;
+    self.txtvContentText.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
+    self.icon.image = [UIImage imageNamed:_imageName];
+    
+    self.parentViewController.navigationItem.title = self.navbarTitle;
+
 
 }
 

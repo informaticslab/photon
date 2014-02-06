@@ -12,12 +12,9 @@
 
 @interface IssuesManager : NSObject
 
-@property(nonatomic, strong) NSMutableDictionary *parsedIssues;
 @property(nonatomic, strong) NSMutableDictionary *issues;
 @property(nonatomic, strong) NSArray *sortedIssues;
 @property(nonatomic, strong) NSMutableDictionary *keywords;
-@property(nonatomic, strong) NSMutableArray *parsedItems;
-@property(nonatomic, strong) NSMutableArray *parsedJsonBlobs;
 
 -(id)init;
 

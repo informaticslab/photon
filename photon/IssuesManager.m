@@ -26,23 +26,6 @@
     
 }
 
--(id)initWithFeedParser
-{
-    
-    if (self = [super init]) {
-        
-        self.parsedIssues = [[NSMutableDictionary alloc]init];
-        self.keywords = [[NSMutableDictionary alloc]init];
-        self.parsedItems  = [[NSMutableArray alloc] init];
-        self.parsedJsonBlobs  = [[NSMutableArray alloc] init];
-        
-        
-    };
-    
-    return self;
-    
-}
-
 -(BOOL)isIssueNew:(Issue *)newIssue
 {
     // check if issue exists

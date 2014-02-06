@@ -28,15 +28,29 @@
 {
     [super viewDidLoad];
     
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar"] forBarMetrics:UIBarMetricsDefault];
+    //    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
+    //set back button arrow color
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    
+    // check for diffs between ios 6 & 7
+    if ([UINavigationBar instancesRespondToSelector:@selector(barTintColor)])
+        self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1.0];
+    else {
+        [[UINavigationBar appearance] setBackgroundColor:[UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1.0]];
+    }
+
+    
 	// Do any additional setup after loading the view.
     _pageHeaders = @[@"What is already known?", @"What is added by this report?", @"What are the implications for public health practice?"];
     if (_article != nil) {
-
         _pageText = @[_article.already_know, _article.added_by_report, _article.implications];
+    } else {
+        _pageText = @[@"", @"", @""];
     }
+    
     _navbarTitles = @[@"Summary", @"Summary", @"Summary"];
     _icons = @[@"bluebox_subheader_icon", @"added_icon", @"implications_icon"];
-    
     
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ContentPVC"];

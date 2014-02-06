@@ -26,7 +26,6 @@
 
 
 -(id)init;
--(id)initWithFeedParser;
 -(void)updateFromFeed;
 -(void)parseTestData;
 
