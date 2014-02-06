@@ -10,6 +10,7 @@
 #import "ArticleDetails.h"
 #import "ShareActionSheet.h"
 #import "ContentPagesVC.h"
+#import "ContentPagesiPadVC.h"
 #import "KeywordArticleDetailVC.h"
 
 ShareActionSheet *shareAS;
@@ -228,7 +229,11 @@ Article *currArticle;
     [self.tableView endUpdates];
     
     [self.issue updateUnreadArticleStatus];
-    [self performSegueWithIdentifier:@"pushContentPageViews" sender:nil];
+    
+    if ([APP_MGR isDeviceIpad] == YES)
+        [self performSegueWithIdentifier:@"pushContentPageIpadViews" sender:nil];
+    else
+        [self performSegueWithIdentifier:@"pushContentPageViews" sender:nil];
     
 }
 
@@ -250,7 +255,14 @@ Article *currArticle;
         contentVC.article = currArticle;
         contentVC.issue = currIssue;
         
-    } else if([segue.identifier isEqualToString:@"pushArticleDetails"]) {
+    }
+    else if([segue.identifier isEqualToString:@"pushContentPageIpadViews"]) {
+        ContentPagesiPadVC *contentVC = segue.destinationViewController;
+        contentVC.article = currArticle;
+        contentVC.issue = currIssue;
+        
+    }
+    else if([segue.identifier isEqualToString:@"pushArticleDetails"]) {
         KeywordArticleDetailVC *keywordArticleDetailVC = segue.destinationViewController;
         keywordArticleDetailVC.article = currArticle;
     }

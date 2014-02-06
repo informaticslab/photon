@@ -58,6 +58,14 @@ static AppManager *sharedAppManager = nil;
 
 }
 
+-(BOOL)isDeviceIpad
+{
+    // Override point for customization after application launch.
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+        return YES;
+        
+    return NO;
+}
 
 -(BOOL)isDebugInfoEnabled
 {

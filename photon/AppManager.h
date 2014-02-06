@@ -29,5 +29,7 @@
 
 + (id)singletonAppManager;
 -(BOOL)isDebugInfoEnabled;
+-(BOOL)isDeviceIpad;
+
 
 @end

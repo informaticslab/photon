@@ -61,7 +61,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="T1L-FS-2Qr"/>
                     <connections>
-                        <segue destination="aK5-qZ-pOp" kind="replace" identifier="pushContentPageViews" splitViewControllerTargetIndex="1" id="8VJ-i1-eVR"/>
+                        <segue destination="aK5-qZ-pOp" kind="replace" identifier="pushContentPageIpadViews" splitViewControllerTargetIndex="1" id="8VJ-i1-eVR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9BA-vN-P1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -123,7 +123,7 @@
         <!--Content IpadVC-->
         <scene sceneID="GTd-TK-Z84">
             <objects>
-                <viewController storyboardIdentifier="ContentIpadVC" id="IAr-lY-2gS" customClass="ContentIpadVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentIpadVC" autoresizesArchivedViewToFullSize="NO" id="IAr-lY-2gS" customClass="ContentIpadVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ePb-Wg-KAo"/>
                         <viewControllerLayoutGuide type="bottom" id="AJn-O9-wuR"/>
@@ -133,7 +133,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="584-Dy-lpt">
-                                <rect key="frame" x="153" y="185" width="35" height="35"/>
+                                <rect key="frame" x="153" y="185" width="38" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="jHH-DP-CJN">
