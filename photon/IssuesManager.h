@@ -26,6 +26,7 @@
 -(Article *)newArticleWithTitle:(NSString *)title inIssue:(Issue *)currIssue revision:(NSInteger)ver;
 -(void)newArticle:(Article *)article inIssue:(Issue *)issue withTags:(NSArray *)tags version:(NSInteger)ver;
 -(Issue *)getSortedIssueForIndex:(NSUInteger)index;
+-(Article *)getLatestArticle;
 
 
 @end

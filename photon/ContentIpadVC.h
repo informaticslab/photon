@@ -8,9 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContentIpadVC : UIViewController <UISplitViewControllerDelegate>
+@interface ContentIpadVC : UIViewController <UISplitViewControllerDelegate,UITextViewDelegate>
 
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
+
+@property NSUInteger pageIndex;
+@property NSString *headerText;
+@property NSString *contentText;
+@property NSString *imageName;
+@property (weak, nonatomic) NSString *navbarTitle;
+
+@property (weak, nonatomic) IBOutlet UIImageView *icon;
+@property (weak, nonatomic) IBOutlet UILabel *lblHeader;
+@property (weak, nonatomic) IBOutlet UITextView *txtvContentText;
 
 
 @end

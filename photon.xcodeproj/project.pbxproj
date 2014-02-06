@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37039D7418A3B5720091F826 /* ContentPagesiPadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37039D7318A3B5720091F826 /* ContentPagesiPadVC.m */; };
 		A61CA795186231ED00891E00 /* RSSEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CA794186231ED00891E00 /* RSSEntry.m */; };
 		A61CA7C41863235800891E00 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CA7B61863235800891E00 /* GTMNSString+HTML.m */; };
 		A61CA7C51863235800891E00 /* MWFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CA7B81863235800891E00 /* MWFeedInfo.m */; };
@@ -67,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37039D7218A3B5720091F826 /* ContentPagesiPadVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentPagesiPadVC.h; sourceTree = "<group>"; };
+		37039D7318A3B5720091F826 /* ContentPagesiPadVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentPagesiPadVC.m; sourceTree = "<group>"; };
 		A61CA793186231ED00891E00 /* RSSEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSEntry.h; sourceTree = "<group>"; };
 		A61CA794186231ED00891E00 /* RSSEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSEntry.m; sourceTree = "<group>"; };
 		A61CA7B51863235800891E00 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
@@ -248,6 +251,10 @@
 				A6A919DD182A9B8700F1CE7D /* Article.m */,
 				A6635AC9182D625400E600EA /* ArticleDetails.h */,
 				A6635ACA182D625400E600EA /* ArticleDetails.m */,
+				A683CC391885EF5800354442 /* ContentIpadVC.h */,
+				A683CC3A1885EF5800354442 /* ContentIpadVC.m */,
+				37039D7218A3B5720091F826 /* ContentPagesiPadVC.h */,
+				37039D7318A3B5720091F826 /* ContentPagesiPadVC.m */,
 				A6B295D318735EFD00BEF24D /* ContentPagesVC.h */,
 				A6B295D418735EFD00BEF24D /* ContentPagesVC.m */,
 				A6B295D0187352CB00BEF24D /* ContentVC.h */,
@@ -266,6 +273,11 @@
 				A67AF51B182BA408000F6EB0 /* IssueArticlesTVC.m */,
 				A6A919D41829A1BC00F1CE7D /* IssuesManager.h */,
 				A6A919D51829A1BC00F1CE7D /* IssuesManager.m */,
+				A69AFEBB1895468A009F0A48 /* JsonParser.h */,
+				A69AFEBC1895468A009F0A48 /* JsonParser.m */,
+				A69AFEBE189554C0009F0A48 /* JsonParserBase.h */,
+				A69AFEBF189554C0009F0A48 /* JsonParserBase.m */,
+				A69AFEBA18945618009F0A48 /* JsonParserProtocol.h */,
 				A6D9BC79183BF57F00B42118 /* KeywordArticleDetailVC.h */,
 				A6D9BC7A183BF57F00B42118 /* KeywordArticleDetailVC.m */,
 				A6D9BC76183BBFE000B42118 /* KeywordArticlesTVC.h */,
@@ -282,20 +294,13 @@
 				A639A336184E6496008D3BF6 /* ShareActivityProvider.m */,
 				A639A338184E7361008D3BF6 /* ShareActivityVC.h */,
 				A639A339184E7361008D3BF6 /* ShareActivityVC.m */,
+				A649A73B18882C0E00BDF9C2 /* SplitVC.h */,
+				A649A73C18882C0E00BDF9C2 /* SplitVC.m */,
 				A6635ACF182D7A0D00E600EA /* SubjectViewController.h */,
 				A6635AD0182D7A0D00E600EA /* SubjectViewController.m */,
 				A62A1A191823C9C7006A62B3 /* Supporting Files */,
-				A683CC391885EF5800354442 /* ContentIpadVC.h */,
-				A683CC3A1885EF5800354442 /* ContentIpadVC.m */,
-				A649A73B18882C0E00BDF9C2 /* SplitVC.h */,
-				A649A73C18882C0E00BDF9C2 /* SplitVC.m */,
 				A69AFEB718944C47009F0A48 /* V1JsonParser.h */,
 				A69AFEB818944C47009F0A48 /* V1JsonParser.m */,
-				A69AFEBA18945618009F0A48 /* JsonParserProtocol.h */,
-				A69AFEBB1895468A009F0A48 /* JsonParser.h */,
-				A69AFEBC1895468A009F0A48 /* JsonParser.m */,
-				A69AFEBE189554C0009F0A48 /* JsonParserBase.h */,
-				A69AFEBF189554C0009F0A48 /* JsonParserBase.m */,
 			);
 			path = photon;
 			sourceTree = "<group>";
@@ -432,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A66FB23A184D2B9E008F2AB7 /* AboutVC.m in Sources */,
+				37039D7418A3B5720091F826 /* ContentPagesiPadVC.m in Sources */,
 				A66FB23D184D2BB0008F2AB7 /* HelpVC.m in Sources */,
 				A62A1A231823C9C7006A62B3 /* AppDelegate.m in Sources */,
 				A6D9BC7B183BF57F00B42118 /* KeywordArticleDetailVC.m in Sources */,
