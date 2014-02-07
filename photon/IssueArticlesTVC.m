@@ -13,10 +13,6 @@
 #import "ContentPagesiPadVC.h"
 #import "KeywordArticleDetailVC.h"
 
-ShareActionSheet *shareAS;
-Issue *currIssue;
-Article *currArticle;
-
 #define CELL_TEXT_LABEL_WIDTH 230.0
 #define CELL_PADDING 10.0
 
@@ -31,6 +27,12 @@ Article *currArticle;
 @end
 
 @implementation IssueArticlesTVC
+
+
+ShareActionSheet *shareAS;
+//Issue *currIssue;
+//Article *currArticle;
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -112,18 +114,18 @@ Article *currArticle;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // return the number of rows in the section.
-    currIssue = [APP_MGR.issuesMgr getSortedIssueForIndex:section];
+    _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:section];
 
-    return [currIssue.articles count];
+    return [_issue.articles count];
 }
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    currIssue = [APP_MGR.issuesMgr getSortedIssueForIndex:section];
+    _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:section];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"MMM dd, yyyy";
-    return [NSString stringWithFormat:@"%@                          Vol %d No %d", [formatter stringFromDate:currIssue.date], currIssue.volume, currIssue.number];
+    return [NSString stringWithFormat:@"%@                          Vol %d No %d", [formatter stringFromDate:_issue.date], _issue.volume, _issue.number];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -162,16 +164,17 @@ Article *currArticle;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    currIssue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
+    _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
 
-    currArticle = currIssue.articles[[indexPath row]];
-    NSString *title = currArticle.title;
+    _article = _issue.articles[[indexPath row]];
+    NSString *title = _article.title;
 
     CGSize constraintSize = CGSizeMake(CELL_TEXT_LABEL_WIDTH, MAXFLOAT);
     CGSize titleTextSize = CGSizeMake(0.0, 0.0);
     
     if (title != nil)
         titleTextSize = [title sizeWithFont:APP_MGR.tableFont constrainedToSize:constraintSize lineBreakMode:NSLineBreakByWordWrapping];
+    
     
     return  titleTextSize.height + (2 * CELL_PADDING);
 }
@@ -195,18 +198,18 @@ Article *currArticle;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IssueArticlesCell" forIndexPath:indexPath];
     
     // configure the cell...
-    currIssue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
-    currArticle = currIssue.articles[[indexPath row]];
+    _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
+    _article = _issue.articles[[indexPath row]];
     
     cell.textLabel.font = APP_MGR.tableFont;
     cell.textLabel.numberOfLines = 0;
     [cell.textLabel sizeToFit];
-    cell.textLabel.text = currArticle.title;
+    cell.textLabel.text = _article.title;
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     
     cell.imageView.image = [UIImage imageNamed:@"unread_blue_dot"];
     [cell.imageView sizeToFit];
-    if (currArticle.unread) {
+    if (_article.unread) {
         cell.imageView.hidden = NO;
     } else {
         cell.imageView.hidden = YES;
@@ -220,18 +223,19 @@ Article *currArticle;
 {
 
     // Navigation logic may go here. Create and push another view controller.
-    currIssue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
-    currArticle = currIssue.articles[[indexPath row]];
-    currArticle.unread = NO;
+    _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
+    _article = _issue.articles[[indexPath row]];
+    _article.unread = NO;
 
     [self.tableView beginUpdates];
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
     [self.tableView endUpdates];
     
-    [self.issue updateUnreadArticleStatus];
+    [_issue updateUnreadArticleStatus];
     
     if ([APP_MGR isDeviceIpad] == YES)
-        [self performSegueWithIdentifier:@"pushContentPageIpadViews" sender:nil];
+        [self.articleSelectDelegate selectedArticle:_article];
+        //[self performSegueWithIdentifier:@"pushContentPageIpadViews" sender:nil];
     else
         [self performSegueWithIdentifier:@"pushContentPageViews" sender:nil];
     
@@ -240,8 +244,8 @@ Article *currArticle;
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     
-    currIssue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
-    currArticle = currIssue.articles[[indexPath row]];
+    _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
+    _article = _issue.articles[[indexPath row]];
     [self performSegueWithIdentifier:@"pushArticleDetails" sender:nil];
     
 }
@@ -252,19 +256,19 @@ Article *currArticle;
 {
     if([segue.identifier isEqualToString:@"pushContentPageViews"]) {
         ContentPagesVC *contentVC = segue.destinationViewController;
-        contentVC.article = currArticle;
-        contentVC.issue = currIssue;
+        contentVC.article = _article;
+        contentVC.issue = _issue;
         
     }
     else if([segue.identifier isEqualToString:@"pushContentPageIpadViews"]) {
         ContentPagesiPadVC *contentVC = segue.destinationViewController;
-        contentVC.article = currArticle;
-        contentVC.issue = currIssue;
+        contentVC.article = _article;
+        contentVC.issue = _issue;
         
     }
     else if([segue.identifier isEqualToString:@"pushArticleDetails"]) {
         KeywordArticleDetailVC *keywordArticleDetailVC = segue.destinationViewController;
-        keywordArticleDetailVC.article = currArticle;
+        keywordArticleDetailVC.article = _article;
     }
 
 }

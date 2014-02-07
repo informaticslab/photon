@@ -70,6 +70,7 @@
 /* Begin PBXFileReference section */
 		37039D7218A3B5720091F826 /* ContentPagesiPadVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentPagesiPadVC.h; sourceTree = "<group>"; };
 		37039D7318A3B5720091F826 /* ContentPagesiPadVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentPagesiPadVC.m; sourceTree = "<group>"; };
+		3716854018A50CDE0025B32F /* ArticleSelectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleSelectionDelegate.h; sourceTree = "<group>"; };
 		A61CA793186231ED00891E00 /* RSSEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSEntry.h; sourceTree = "<group>"; };
 		A61CA794186231ED00891E00 /* RSSEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSEntry.m; sourceTree = "<group>"; };
 		A61CA7B51863235800891E00 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
@@ -301,6 +302,7 @@
 				A62A1A191823C9C7006A62B3 /* Supporting Files */,
 				A69AFEB718944C47009F0A48 /* V1JsonParser.h */,
 				A69AFEB818944C47009F0A48 /* V1JsonParser.m */,
+				3716854018A50CDE0025B32F /* ArticleSelectionDelegate.h */,
 			);
 			path = photon;
 			sourceTree = "<group>";

@@ -74,6 +74,11 @@
 }
 
 
+-(void)selectedArticle:(Article *)selArticle
+{
+    _article = selArticle;
+}
+
 - (ContentIpadVC *)viewControllerAtIndex:(NSUInteger)index
 {
     if (([self.pageHeaders count] == 0) || (index >= [self.pageHeaders count])) {
