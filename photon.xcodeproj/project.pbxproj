@@ -252,6 +252,7 @@
 				A6A919DD182A9B8700F1CE7D /* Article.m */,
 				A6635AC9182D625400E600EA /* ArticleDetails.h */,
 				A6635ACA182D625400E600EA /* ArticleDetails.m */,
+				3716854018A50CDE0025B32F /* ArticleSelectionDelegate.h */,
 				A683CC391885EF5800354442 /* ContentIpadVC.h */,
 				A683CC3A1885EF5800354442 /* ContentIpadVC.m */,
 				37039D7218A3B5720091F826 /* ContentPagesiPadVC.h */,
@@ -302,7 +303,6 @@
 				A62A1A191823C9C7006A62B3 /* Supporting Files */,
 				A69AFEB718944C47009F0A48 /* V1JsonParser.h */,
 				A69AFEB818944C47009F0A48 /* V1JsonParser.m */,
-				3716854018A50CDE0025B32F /* ArticleSelectionDelegate.h */,
 			);
 			path = photon;
 			sourceTree = "<group>";

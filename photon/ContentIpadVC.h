@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Article.h"
 
 @interface ContentIpadVC : UIViewController <UISplitViewControllerDelegate,UITextViewDelegate>
 
@@ -21,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *icon;
 @property (weak, nonatomic) IBOutlet UILabel *lblHeader;
 @property (weak, nonatomic) IBOutlet UITextView *txtvContentText;
+@property (weak, nonatomic) Article *article;
+@property (weak, nonatomic) Issue *issue;
 
 
 @end

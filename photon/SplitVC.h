@@ -10,8 +10,6 @@
 
 @interface SplitVC : UISplitViewController
 
-@property(nonatomic, retain) UIViewController *rootVC;
-//@property(nonatomic, retain) UIViewController *delegate;
 
 
 @end

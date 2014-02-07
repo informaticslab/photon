@@ -5,36 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Content Pagesi PadVC-->
-        <scene sceneID="WXU-wS-VcV">
-            <objects>
-                <viewController id="aK5-qZ-pOp" customClass="ContentPagesiPadVC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pec-Y8-aES"/>
-                        <viewControllerLayoutGuide type="bottom" id="61m-TJ-SxX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7AO-IS-Rld">
-                        <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Detail View Controller" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJ1-gk-guJ">
-                                <rect key="frame" x="252" y="373" width="165" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="8Kz-Jc-rfE"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eG3-Wx-hVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="262" y="1277"/>
-        </scene>
         <!--Issue ArticlesTVC-->
         <scene sceneID="F3M-Lg-nTd">
             <objects>
@@ -61,7 +31,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="T1L-FS-2Qr"/>
                     <connections>
-                        <segue destination="aK5-qZ-pOp" kind="replace" identifier="pushContentPageIpadViews" splitViewControllerTargetIndex="1" id="8VJ-i1-eVR"/>
+                        <segue destination="IAr-lY-2gS" kind="replace" identifier="pushContentPageIpadViews" splitViewControllerTargetIndex="1" id="WhT-qN-xq9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9BA-vN-P1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -129,7 +99,7 @@
                         <viewControllerLayoutGuide type="bottom" id="AJn-O9-wuR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Udl-rM-iZS">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="584-Dy-lpt">
@@ -168,7 +138,9 @@
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ZNC-9X-86n"/>
                     <connections>
                         <outlet property="icon" destination="584-Dy-lpt" id="MKz-QS-46i"/>
                         <outlet property="lblHeader" destination="jHH-DP-CJN" id="fLB-mK-kJg"/>
@@ -177,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ax-rZ-xZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1139" y="1204"/>
+            <point key="canvasLocation" x="285" y="1284"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="kTO-g4-NTt">
@@ -219,10 +191,10 @@
             </objects>
             <point key="canvasLocation" x="400" y="-781"/>
         </scene>
-        <!--Split View Controller-->
+        <!--SplitVC-->
         <scene sceneID="sle-FN-0V0">
             <objects>
-                <splitViewController id="2rV-5Q-mUE" sceneMemberID="viewController">
+                <splitViewController id="2rV-5Q-mUE" customClass="SplitVC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -265,7 +237,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="aK5-qZ-pOp" kind="relationship" relationship="rootViewController" id="MFM-aT-Mg3"/>
+                        <segue destination="IAr-lY-2gS" kind="relationship" relationship="rootViewController" id="MwH-uh-OQV"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G6o-Ek-7NF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -284,6 +256,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="MFM-aT-Mg3"/>
+        <segue reference="WhT-qN-xq9"/>
     </inferredMetricsTieBreakers>
 </document>
