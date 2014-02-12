@@ -27,6 +27,10 @@
 {
     [super viewDidLoad];
     
+    APP_MGR.splitVM.contentIpadVC = self;
+    [APP_MGR.splitVM setArticleSelectionDelegate:self];
+
+    
 	// Do any additional setup after loading the view.
     self.navigationItem.title = @"Summary";
 
@@ -42,19 +46,41 @@
         [[UINavigationBar appearance] setBackgroundColor:[UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1.0]];
     }
     
-    self.lblHeader.text = self.headerText;
-    [self.txtvContentText setScrollEnabled:YES];
-    [self.txtvContentText setUserInteractionEnabled:YES];
-    self.txtvContentText.delegate = self;
-    self.txtvContentText.showsVerticalScrollIndicator = YES;
-    self.txtvContentText.text = self.contentText;
-    self.txtvContentText.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
-    self.icon.image = [UIImage imageNamed:_imageName];
+    [self.txtvKnownText setScrollEnabled:YES];
+    [self.txtvKnownText setUserInteractionEnabled:YES];
+    self.txtvKnownText.delegate = self;
+    self.txtvKnownText.showsVerticalScrollIndicator = YES;
+    self.txtvKnownText.text = self.contentText;
+    self.txtvKnownText.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
+    
+    [self.txtvAddedText setScrollEnabled:YES];
+    [self.txtvAddedText setUserInteractionEnabled:YES];
+    self.txtvAddedText.delegate = self;
+    self.txtvAddedText.showsVerticalScrollIndicator = YES;
+    self.txtvAddedText.text = self.contentText;
+    self.txtvAddedText.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
+    
+    [self.txtvImplicationsText setScrollEnabled:YES];
+    [self.txtvImplicationsText setUserInteractionEnabled:YES];
+    self.txtvImplicationsText.delegate = self;
+    self.txtvImplicationsText.showsVerticalScrollIndicator = YES;
+    self.txtvImplicationsText.text = self.contentText;
+    self.txtvImplicationsText.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
     
     self.parentViewController.navigationItem.title = self.navbarTitle;
 
+}
+
+
+-(void)selectedArticle:(Article *)selArticle
+{
+    _article = selArticle;
+    self.txtvKnownText.text = _article.already_know;
+    self.txtvAddedText.text = _article.added_by_report;
+    self.txtvImplicationsText.text = _article.implications;
 
 }
+
 
 - (void)didReceiveMemoryWarning
 {

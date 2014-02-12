@@ -12,6 +12,7 @@
 #import "Debug.h"
 #import "IssuesManager.h"
 #import "JsonParser.h"
+#import "SplitViewManager.h"
 
 @interface AppManager : NSObject 
 
@@ -26,6 +27,7 @@
 @property (strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (strong, nonatomic) IssuesManager *issuesMgr;
 @property (strong, nonatomic) JsonParser *jsonParser;
+@property (strong, nonatomic) SplitViewManager *splitVM;
 
 + (id)singletonAppManager;
 -(BOOL)isDebugInfoEnabled;

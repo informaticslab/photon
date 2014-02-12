@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Article.h"
+#import "ArticleSelectionDelegate.h"
 
-@interface ContentIpadVC : UIViewController <UISplitViewControllerDelegate,UITextViewDelegate>
+@interface ContentIpadVC : UIViewController <UISplitViewControllerDelegate,UITextViewDelegate, ArticleSelectionDelegate>
 
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 
@@ -19,9 +20,12 @@
 @property NSString *imageName;
 @property (weak, nonatomic) NSString *navbarTitle;
 
-@property (weak, nonatomic) IBOutlet UIImageView *icon;
-@property (weak, nonatomic) IBOutlet UILabel *lblHeader;
-@property (weak, nonatomic) IBOutlet UITextView *txtvContentText;
+@property (weak, nonatomic) IBOutlet UITextView *txtvKnownText;
+
+@property (weak, nonatomic) IBOutlet UITextView *txtvAddedText;
+
+;
+@property (weak, nonatomic) IBOutlet UITextView *txtvImplicationsText;
 @property (weak, nonatomic) Article *article;
 @property (weak, nonatomic) Issue *issue;
 

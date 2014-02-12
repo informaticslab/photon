@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "SplitVC.h"
+#import "SplitViewManager.h"
 
 @implementation AppDelegate
 
@@ -28,7 +28,6 @@
         UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
         splitViewController.delegate = (id)navigationController.topViewController;
     }
-
 
     UIPageControl *pageControl = [UIPageControl appearance];
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];

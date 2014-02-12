@@ -33,7 +33,6 @@ ShareActionSheet *shareAS;
 //Issue *currIssue;
 //Article *currArticle;
 
-
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -46,7 +45,10 @@ ShareActionSheet *shareAS;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    //set up splitview managment
+    APP_MGR.splitVM.issueArticlesTVC = self;
+    
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.title = @"MMWR Express";
     UITabBarItem *item = [self.tabBarController.tabBar.items objectAtIndex:0];
@@ -74,6 +76,17 @@ ShareActionSheet *shareAS;
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
     shareButton.width = 30.0;
     self.navigationItem.rightBarButtonItem  = shareButton;
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
+    [self.tableView selectRowAtIndexPath:indexPath animated:YES  scrollPosition:UITableViewScrollPositionBottom];
+    _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
+    _article = _issue.articles[[indexPath row]];
+    if ([APP_MGR isDeviceIpad] == YES) 
+        [self.articleSelectDelegate selectedArticle:_article];
+        
 
 }
 
@@ -233,10 +246,11 @@ ShareActionSheet *shareAS;
     
     [_issue updateUnreadArticleStatus];
     
-    if ([APP_MGR isDeviceIpad] == YES)
-        //[self.articleSelectDelegate selectedArticle:_article];
+    if ([APP_MGR isDeviceIpad] == YES) {
+        [self.articleSelectDelegate selectedArticle:_article];
         //[self performSegueWithIdentifier:@"pushContentPageIpadViews" sender:nil];
         NSLog(@"SplitVC ");
+    }
     else
         [self performSegueWithIdentifier:@"pushContentPageViews" sender:nil];
     
