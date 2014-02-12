@@ -20,5 +20,6 @@
 @property(weak, nonatomic) Article *selectedArticle;
 
 -(void)setArticleSelectionDelegate:(ContentIpadVC *)vc;
+-(Article *)getSelectedArticle;
 
 @end

@@ -51,33 +51,43 @@
     self.txtvKnownText.delegate = self;
     self.txtvKnownText.showsVerticalScrollIndicator = YES;
     self.txtvKnownText.text = self.contentText;
-    self.txtvKnownText.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
     
     [self.txtvAddedText setScrollEnabled:YES];
     [self.txtvAddedText setUserInteractionEnabled:YES];
     self.txtvAddedText.delegate = self;
     self.txtvAddedText.showsVerticalScrollIndicator = YES;
     self.txtvAddedText.text = self.contentText;
-    self.txtvAddedText.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
     
     [self.txtvImplicationsText setScrollEnabled:YES];
     [self.txtvImplicationsText setUserInteractionEnabled:YES];
     self.txtvImplicationsText.delegate = self;
     self.txtvImplicationsText.showsVerticalScrollIndicator = YES;
     self.txtvImplicationsText.text = self.contentText;
-    self.txtvImplicationsText.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
     
     self.parentViewController.navigationItem.title = self.navbarTitle;
 
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self selectedArticle:[APP_MGR.splitVM getSelectedArticle]];
+    
+}
 
 -(void)selectedArticle:(Article *)selArticle
 {
+    UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:14];
     _article = selArticle;
+
     self.txtvKnownText.text = _article.already_know;
+    self.txtvKnownText.font = font;
+
     self.txtvAddedText.text = _article.added_by_report;
+    self.txtvAddedText.font = font;
+    
     self.txtvImplicationsText.text = _article.implications;
+    self.txtvImplicationsText.font = font;
+
 
 }
 

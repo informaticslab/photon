@@ -249,7 +249,6 @@ ShareActionSheet *shareAS;
     if ([APP_MGR isDeviceIpad] == YES) {
         [self.articleSelectDelegate selectedArticle:_article];
         //[self performSegueWithIdentifier:@"pushContentPageIpadViews" sender:nil];
-        NSLog(@"SplitVC ");
     }
     else
         [self performSegueWithIdentifier:@"pushContentPageViews" sender:nil];

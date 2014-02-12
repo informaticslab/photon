@@ -34,6 +34,12 @@
 
 }
 
+-(Article *)getSelectedArticle
+{
+    return self.issueArticlesTVC.article;
+    
+}
+
 
 
 - (void)didReceiveMemoryWarning
