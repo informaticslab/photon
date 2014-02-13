@@ -47,7 +47,10 @@ static AppManager *sharedAppManager = nil;
 //      self.tableFont = [UIFont boldSystemFontOfSize: 16];
         self.tableFont = [UIFont fontWithName:@"HelveticaNeue" size:16];
         self.textFont = [UIFont fontWithName:@"HelveticaNeue" size:15];
-        self.splitVM = [[SplitViewManager alloc] init];
+        
+        if ([APP_MGR isDeviceIpad] == YES)
+            self.splitVM = [[SplitViewManager alloc] init];
+        
         self.issuesMgr = [[IssuesManager alloc  ]init];
         self.jsonParser = [[JsonParser alloc] init];
         

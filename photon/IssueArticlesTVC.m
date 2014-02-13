@@ -76,26 +76,27 @@ ShareActionSheet *shareAS;
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
     shareButton.width = 30.0;
     self.navigationItem.rightBarButtonItem  = shareButton;
-
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    if ([APP_MGR.issuesMgr.issues count] != 0) {
-        
-        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
-        [self.tableView selectRowAtIndexPath:indexPath animated:YES  scrollPosition:UITableViewScrollPositionBottom];
-        _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
-        _article = _issue.articles[[indexPath row]];
-        if ([APP_MGR isDeviceIpad] == YES) {
-            //[APP_MGR.splitVM.articleSelectDelegate selectedArticle:_article];
+    
+    // select first row if device is iPad
+    if ([APP_MGR isDeviceIpad] == YES) {
+        if ([APP_MGR.issuesMgr.issues count] != 0) {
+            
+            NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
+            [self.tableView selectRowAtIndexPath:indexPath animated:YES  scrollPosition:UITableViewScrollPositionBottom];
+            _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
+            _article = _issue.articles[[indexPath row]];
             [APP_MGR.splitVM setSelectedArticle:_article];
-
+            
         }
         
     }
     
-
+    
 }
 
 - (void)share:(id)sender
@@ -103,14 +104,14 @@ ShareActionSheet *shareAS;
     // display the options for sharing
     shareAS = [[ShareActionSheet alloc] initToShareApp:self];
     [shareAS showView];
-   
+    
 }
 
 - (IBAction)refresh:(id)sender
 {
     UIRefreshControl *refreshControl = (UIRefreshControl *)sender;
     refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Updating articles..."];
-
+    
     [APP_MGR.jsonParser updateFromFeed];
     //    [self.tableView reloadData];
     //[self.refreshControl endRefreshing];
@@ -129,14 +130,14 @@ ShareActionSheet *shareAS;
 {
     // Return the number of sections.
     return [APP_MGR.issuesMgr.issues count];
-
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // return the number of rows in the section.
     _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:section];
-
+    
     return [_issue.articles count];
 }
 
@@ -186,10 +187,10 @@ ShareActionSheet *shareAS;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
-
+    
     _article = _issue.articles[[indexPath row]];
     NSString *title = _article.title;
-
+    
     CGSize constraintSize = CGSizeMake(CELL_TEXT_LABEL_WIDTH, MAXFLOAT);
     CGSize titleTextSize = CGSizeMake(0.0, 0.0);
     
@@ -242,12 +243,12 @@ ShareActionSheet *shareAS;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    
     // Navigation logic may go here. Create and push another view controller.
     _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
     _article = _issue.articles[[indexPath row]];
     _article.unread = NO;
-
+    
     [self.tableView beginUpdates];
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
     [self.tableView endUpdates];
@@ -294,7 +295,7 @@ ShareActionSheet *shareAS;
         KeywordArticleDetailVC *keywordArticleDetailVC = segue.destinationViewController;
         keywordArticleDetailVC.article = _article;
     }
-
+    
 }
 
 
@@ -307,7 +308,7 @@ ShareActionSheet *shareAS;
     if ([APP_MGR isDeviceIpad] == YES)
         //[APP_MGR.splitVM.articleSelectDelegate selectedArticle:_article];
         [APP_MGR.splitVM setSelectedArticle:_article];
-
+    
 }
 
 
