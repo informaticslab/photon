@@ -229,7 +229,7 @@ ShareActionSheet *shareAS;
     cell.textLabel.text = _article.title;
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     
-    cell.imageView.image = [UIImage imageNamed:@"unread_blue_dot"];
+    cell.imageView.image = [UIImage imageNamed:@"unread_dot"];
     [cell.imageView sizeToFit];
     if (_article.unread) {
         cell.imageView.hidden = NO;

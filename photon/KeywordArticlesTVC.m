@@ -214,8 +214,6 @@ NSArray *keywordArticles;
         ContentPagesVC *contentVC = segue.destinationViewController;
         contentVC.article = _selectedArticle;
         contentVC.issue = _selectedArticle.issue;
-        
-        
     }
 }
 
