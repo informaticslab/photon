@@ -15,7 +15,6 @@
 
 @property(nonatomic, weak) Issue *issue;
 @property(nonatomic, weak) Article *article;
-@property(nonatomic, weak) id<ArticleSelectionDelegate> articleSelectDelegate;
 
 - (IBAction)refresh:(id)sender;
 

@@ -79,14 +79,22 @@ ShareActionSheet *shareAS;
 
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView selectRowAtIndexPath:indexPath animated:YES  scrollPosition:UITableViewScrollPositionBottom];
-    _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
-    _article = _issue.articles[[indexPath row]];
-    if ([APP_MGR isDeviceIpad] == YES) 
-        [self.articleSelectDelegate selectedArticle:_article];
+- (void)viewWillAppear:(BOOL)animated
+{
+    if ([APP_MGR.issuesMgr.issues count] != 0) {
         
+        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
+        [self.tableView selectRowAtIndexPath:indexPath animated:YES  scrollPosition:UITableViewScrollPositionBottom];
+        _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
+        _article = _issue.articles[[indexPath row]];
+        if ([APP_MGR isDeviceIpad] == YES) {
+            //[APP_MGR.splitVM.articleSelectDelegate selectedArticle:_article];
+            [APP_MGR.splitVM setSelectedArticle:_article];
+
+        }
+        
+    }
+    
 
 }
 
@@ -247,7 +255,9 @@ ShareActionSheet *shareAS;
     [_issue updateUnreadArticleStatus];
     
     if ([APP_MGR isDeviceIpad] == YES) {
-        [self.articleSelectDelegate selectedArticle:_article];
+        [APP_MGR.splitVM setSelectedArticle:_article];
+        
+        //[APP_MGR.splitVM.articleSelectDelegate selectedArticle:_article];
         //[self performSegueWithIdentifier:@"pushContentPageIpadViews" sender:nil];
     }
     else
@@ -294,6 +304,9 @@ ShareActionSheet *shareAS;
     
     [self.tableView reloadData];
     [self.refreshControl endRefreshing];
+    if ([APP_MGR isDeviceIpad] == YES)
+        //[APP_MGR.splitVM.articleSelectDelegate selectedArticle:_article];
+        [APP_MGR.splitVM setSelectedArticle:_article];
 
 }
 

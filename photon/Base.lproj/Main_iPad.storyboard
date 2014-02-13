@@ -75,6 +75,7 @@
                     </refreshControl>
                     <connections>
                         <outlet property="searchDisplayController" destination="OPn-cL-0hh" id="rHw-rn-cuj"/>
+                        <segue destination="zin-Ac-9bT" kind="push" identifier="pushKeywordArticles" id="7pc-4x-OQm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNQ-u8-ZxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -89,6 +90,36 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="911" y="247"/>
+        </scene>
+        <!--Keyword ArticlesTVC-->
+        <scene sceneID="i3a-aQ-t4D">
+            <objects>
+                <tableViewController id="zin-Ac-9bT" customClass="KeywordArticlesTVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="w7B-5V-sli">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="719"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="KeywordArticlesCell" id="nPL-Kh-Mfl">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nPL-Kh-Mfl" id="7vE-kz-3A9">
+                                    <rect key="frame" x="0.0" y="0.0" width="273" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="zin-Ac-9bT" id="9iO-7k-3sy"/>
+                            <outlet property="delegate" destination="zin-Ac-9bT" id="VFh-SK-9yi"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="qIe-Sg-4WS"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AA2-zm-e4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1499" y="247"/>
         </scene>
         <!--Content IpadVC-->
         <scene sceneID="GTd-TK-Z84">
@@ -327,6 +358,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="MwH-uh-OQV"/>
+        <segue reference="WhT-qN-xq9"/>
     </inferredMetricsTieBreakers>
 </document>

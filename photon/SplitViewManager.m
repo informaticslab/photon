@@ -7,7 +7,6 @@
 //
 
 #import "SplitViewManager.h"
-#import "ArticleSelectionDelegate.h"
 
 
 @interface SplitViewManager ()
@@ -27,17 +26,23 @@
     
 }
 
-
--(void)setArticleSelectionDelegate:(ContentIpadVC *)vc
-{
-    self.issueArticlesTVC.articleSelectDelegate = vc;
-
-}
-
 -(Article *)getSelectedArticle
 {
-    return self.issueArticlesTVC.article;
+    return self.selArticle;
     
+}
+
+-(void)setSelectedArticle:(Article *)selectedArticle
+{
+    self.selArticle = selectedArticle;
+    if (self.articleSelectDelegate != nil)
+        [self.articleSelectDelegate selectedArticle:selectedArticle];
+    
+}
+
+-(void)setArticleSelectionDelegate:(id <ArticleSelectionDelegate>)vc
+{
+    self.articleSelectDelegate = vc;
 }
 
 

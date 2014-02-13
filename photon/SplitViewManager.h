@@ -8,18 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import "IssueArticlesTVC.h"
+#import "KeywordArticlesTVC.h"
 #import "ContentPagesiPadVC.h"
 #import "ContentIpadVC.h"
 #import "Article.h"
+#import "ArticleSelectionDelegate.h"
 
 @interface SplitViewManager : UISplitViewController
 
 @property(weak, nonatomic) IssueArticlesTVC *issueArticlesTVC;
+@property(weak, nonatomic) KeywordArticlesTVC *keywordArticlesTVC;
 @property(weak, nonatomic) ContentPagesiPadVC *contentPagesiPadVC;
 @property(weak, nonatomic) ContentIpadVC *contentIpadVC;
-@property(weak, nonatomic) Article *selectedArticle;
+@property(weak, nonatomic) Article *selArticle;
+@property(weak, nonatomic) id <ArticleSelectionDelegate> articleSelectDelegate;
 
 -(void)setArticleSelectionDelegate:(ContentIpadVC *)vc;
 -(Article *)getSelectedArticle;
+-(void)setSelectedArticle:(Article *)selArticle;
 
 @end

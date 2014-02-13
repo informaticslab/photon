@@ -7,7 +7,6 @@
 //
 
 #import "KeywordArticlesTVC.h"
-#import "Article.h"
 #import "KeywordArticleDetailVC.h"
 #import "ArticleDetails.h"
 #import "ShareActionSheet.h"
@@ -22,7 +21,6 @@
 
 ShareActionSheet *shareAS;
 
-Article *selectedArticle;
 
 NSArray *keywordArticles;
 
@@ -38,7 +36,10 @@ NSArray *keywordArticles;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    //set up splitview managment
+    APP_MGR.splitVM.keywordArticlesTVC = self;
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -56,6 +57,23 @@ NSArray *keywordArticles;
 
     
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    if ([APP_MGR.issuesMgr.issues count] != 0) {
+        
+        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
+        [self.tableView selectRowAtIndexPath:indexPath animated:YES  scrollPosition:UITableViewScrollPositionBottom];
+        _selectedArticle = keywordArticles[[indexPath row]];
+        if ([APP_MGR isDeviceIpad] == YES)
+            [APP_MGR.splitVM setSelectedArticle:_selectedArticle];
+        
+    }
+    
+    
+}
+
+
 
 - (void)share:(id)sender
 {
@@ -160,8 +178,13 @@ NSArray *keywordArticles;
 {
     
     // Navigation logic may go here. Create and push another view controller.
-    selectedArticle = keywordArticles[[indexPath row]];
-    [self performSegueWithIdentifier:@"pushContentPagesFromKeyword" sender:nil];
+    _selectedArticle = keywordArticles[[indexPath row]];
+    
+    if ([APP_MGR isDeviceIpad] == YES) {
+        [APP_MGR.splitVM setSelectedArticle:_selectedArticle];
+    }
+    else
+        [self performSegueWithIdentifier:@"pushContentPagesFromKeyword" sender:nil];
     
 }
 
@@ -169,7 +192,7 @@ NSArray *keywordArticles;
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     
-    selectedArticle = keywordArticles[[indexPath row]];
+    _selectedArticle = keywordArticles[[indexPath row]];
     [self performSegueWithIdentifier:@"pushKeywordArticleDetails" sender:nil];
     
 }
@@ -184,11 +207,11 @@ NSArray *keywordArticles;
     if([segue.identifier isEqualToString:@"pushKeywordArticleDetails"])
     {
         KeywordArticleDetailVC *keywordArticleDetailVC = segue.destinationViewController;
-        keywordArticleDetailVC.article = selectedArticle;
+        keywordArticleDetailVC.article = _selectedArticle;
     } else if ([segue.identifier isEqualToString:@"pushContentPagesFromKeyword"]) {
         ContentPagesVC *contentVC = segue.destinationViewController;
-        contentVC.article = selectedArticle;
-        contentVC.issue = selectedArticle.issue;
+        contentVC.article = _selectedArticle;
+        contentVC.issue = _selectedArticle.issue;
 
         
     }

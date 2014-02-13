@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Article.h"
+#import "ArticleSelectionDelegate.h"
 
 @interface KeywordArticlesTVC : UITableViewController
 
 @property(weak, nonatomic) NSString *keyword;
+@property(nonatomic, weak) Article *selectedArticle;
 
 @end

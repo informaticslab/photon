@@ -14,4 +14,5 @@
 
 @required
 -(void)selectedArticle:(Article *)selArticle;
+
 @end
