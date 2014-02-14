@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "Article.h"
 #import "ArticleSelectionDelegate.h"
+#import "ModalViewDelegate.h"
 
-@interface KeywordArticlesTVC : UITableViewController
+@interface KeywordArticlesTVC : UITableViewController<ModalViewDelegate>
 
 @property(weak, nonatomic) NSString *keyword;
 @property(nonatomic, weak) Article *selectedArticle;
+- (void)didDismissModalView;
 
 @end

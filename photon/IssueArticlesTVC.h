@@ -10,12 +10,14 @@
 #import "Issue.h"
 #import "Article.h"
 #import "ArticleSelectionDelegate.h"
+#import "ModalViewDelegate.h"
 
-@interface IssueArticlesTVC : UITableViewController 
+@interface IssueArticlesTVC : UITableViewController <ModalViewDelegate>
 
 @property(nonatomic, weak) Issue *issue;
 @property(nonatomic, weak) Article *article;
 
 - (IBAction)refresh:(id)sender;
+- (void)didDismissModalView;
 
 @end

@@ -199,6 +199,18 @@ NSArray *keywordArticles;
     
 }
 
+#pragma mark - Modal Views
+
+
+- (void)didDismissModalView {
+    
+    // Dismiss the modal view controller
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
@@ -210,6 +222,10 @@ NSArray *keywordArticles;
     {
         KeywordArticleDetailVC *keywordArticleDetailVC = segue.destinationViewController;
         keywordArticleDetailVC.article = _selectedArticle;
+        if ([APP_MGR isDeviceIpad] == YES) {
+            keywordArticleDetailVC.modalDelegate = self;
+        }
+
     } else if ([segue.identifier isEqualToString:@"pushContentPagesFromKeyword"]) {
         ContentPagesVC *contentVC = segue.destinationViewController;
         contentVC.article = _selectedArticle;

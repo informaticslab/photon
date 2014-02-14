@@ -28,6 +28,7 @@
 @property (strong, nonatomic) IssuesManager *issuesMgr;
 @property (strong, nonatomic) JsonParser *jsonParser;
 @property (strong, nonatomic) SplitViewManager *splitVM;
+@property (weak, nonatomic) UISplitViewController *splitVC;
 
 + (id)singletonAppManager;
 -(BOOL)isDebugInfoEnabled;

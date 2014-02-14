@@ -108,6 +108,7 @@
 		A639A336184E6496008D3BF6 /* ShareActivityProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareActivityProvider.m; sourceTree = "<group>"; };
 		A639A338184E7361008D3BF6 /* ShareActivityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareActivityVC.h; sourceTree = "<group>"; };
 		A639A339184E7361008D3BF6 /* ShareActivityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareActivityVC.m; sourceTree = "<group>"; };
+		A6403B6318AEA00A004D47DC /* ModalViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalViewDelegate.h; sourceTree = "<group>"; };
 		A649A73B18882C0E00BDF9C2 /* SplitViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitViewManager.h; sourceTree = "<group>"; };
 		A649A73C18882C0E00BDF9C2 /* SplitViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitViewManager.m; sourceTree = "<group>"; };
 		A6635AC9182D625400E600EA /* ArticleDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleDetails.h; sourceTree = "<group>"; };
@@ -269,6 +270,7 @@
 				A66FB236184D211F008F2AB7 /* Images.xcassets */,
 				A66FB233184CE935008F2AB7 /* InfoVC.h */,
 				A66FB234184CE935008F2AB7 /* InfoVC.m */,
+				A6403B6318AEA00A004D47DC /* ModalViewDelegate.h */,
 				A6A919D9182A74D400F1CE7D /* Issue.h */,
 				A6A919DA182A74D400F1CE7D /* Issue.m */,
 				A67AF51A182BA408000F6EB0 /* IssueArticlesTVC.h */,

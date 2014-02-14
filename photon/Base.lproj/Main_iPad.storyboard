@@ -33,6 +33,7 @@
                     <navigationItem key="navigationItem" id="T1L-FS-2Qr"/>
                     <connections>
                         <segue destination="IAr-lY-2gS" kind="replace" identifier="pushContentPageIpadViews" splitViewControllerTargetIndex="1" id="WhT-qN-xq9"/>
+                        <segue destination="eOc-TN-ywc" kind="modal" identifier="pushArticleDetails" modalPresentationStyle="pageSheet" modalTransitionStyle="coverVertical" id="eD3-B8-vSj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9BA-vN-P1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -117,6 +118,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="qIe-Sg-4WS"/>
+                    <connections>
+                        <segue destination="eOc-TN-ywc" kind="modal" identifier="pushKeywordArticleDetails" modalPresentationStyle="pageSheet" id="JaJ-ab-vz3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AA2-zm-e4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -257,7 +261,7 @@
                 <pageViewController storyboardIdentifier="ContentPVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="C0d-a3-Fng" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NvL-6q-tt7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2067" y="1180"/>
+            <point key="canvasLocation" x="2323" y="-748"/>
         </scene>
         <!--Navigation Controller - Search-->
         <scene sceneID="Jp9-KF-q8y">
@@ -344,6 +348,137 @@
             </objects>
             <point key="canvasLocation" x="-595" y="1277"/>
         </scene>
+        <!--Keyword Article DetailVC-->
+        <scene sceneID="adr-mw-iIV">
+            <objects>
+                <viewController id="eOc-TN-ywc" customClass="KeywordArticleDetailVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KKv-uE-wSf"/>
+                        <viewControllerLayoutGuide type="bottom" id="S0j-Bm-BDP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jM5-bL-fU8">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAW-NJ-ruO">
+                                <rect key="frame" x="266" y="394" width="237" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.57647058819999997" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="View Full Article">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnViewFullArticleTouchUp:" destination="eOc-TN-ywc" eventType="touchUpInside" id="7bu-xH-M5M"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsO-T5-dda">
+                                <rect key="frame" x="244" y="167" width="280" height="113"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="10-01-13, Vol 44, Issue 32, Pages 145-148">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLc-vQ-dCy">
+                                <rect key="frame" x="244" y="330" width="280" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="10-01-13, Vol 44, Issue 32, Pages 145-148">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTZ-nb-fXc">
+                                <rect key="frame" x="244" y="299" width="280" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="10-01-13, Vol 44, Issue 32, Pages 145-148">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5xF-u1-Vlt">
+                                <rect key="frame" x="1" y="-1" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="5sr-zY-30y"/>
+                                    <barButtonItem title="Done" id="Wko-T9-aJp">
+                                        <connections>
+                                            <action selector="btnDoneTouchUp:" destination="eOc-TN-ywc" id="fPe-0d-tbf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qnZ-zg-BCB"/>
+                    <connections>
+                        <outlet property="btnViewArticle" destination="qAW-NJ-ruO" id="D2C-hM-tNx"/>
+                        <outlet property="txtViewArticleIssueDate" destination="LTZ-nb-fXc" id="JZM-Gy-fIL"/>
+                        <outlet property="txtViewArticleIssueVolNum" destination="GLc-vQ-dCy" id="MA7-Jo-Am7"/>
+                        <outlet property="txtViewArticleTitle" destination="jsO-T5-dda" id="KTg-sp-DAU"/>
+                        <segue destination="0Z4-r0-38A" kind="push" identifier="pushViewFullArticle" id="hBd-wV-Efd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JeC-dO-FNA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1639" y="1359"/>
+        </scene>
+        <!--Full ArticleVC-->
+        <scene sceneID="Ij4-Wz-Jkz">
+            <objects>
+                <viewController id="0Z4-r0-38A" customClass="FullArticleVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zmO-xw-oHl"/>
+                        <viewControllerLayoutGuide type="bottom" id="ykB-UC-FIw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lDM-iE-Sjr">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z9I-qZ-4E9">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="768"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Qgq-CU-hiH">
+                                <rect key="frame" x="150" y="242" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wg2-bi-oJc"/>
+                    <connections>
+                        <outlet property="spinner" destination="Qgq-CU-hiH" id="u73-Hw-gSJ"/>
+                        <outlet property="webView" destination="z9I-qZ-4E9" id="yYF-sM-4J2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f08-nP-1CE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2950" y="1047"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ipad_added_icon" width="38" height="38"/>
@@ -359,6 +494,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="WhT-qN-xq9"/>
+        <segue reference="MwH-uh-OQV"/>
+        <segue reference="JaJ-ab-vz3"/>
     </inferredMetricsTieBreakers>
 </document>

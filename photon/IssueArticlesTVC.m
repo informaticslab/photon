@@ -12,6 +12,9 @@
 #import "ContentPagesVC.h"
 #import "ContentPagesiPadVC.h"
 #import "KeywordArticleDetailVC.h"
+#import "ArticleDetails.h"
+
+#import "AppDelegate.h"
 
 #define CELL_TEXT_LABEL_WIDTH 230.0
 #define CELL_PADDING 10.0
@@ -93,6 +96,7 @@ ShareActionSheet *shareAS;
             [APP_MGR.splitVM setSelectedArticle:_article];
             
         }
+        
         
     }
     
@@ -254,17 +258,18 @@ ShareActionSheet *shareAS;
     [self.tableView endUpdates];
     
     [_issue updateUnreadArticleStatus];
-    
+
+
     if ([APP_MGR isDeviceIpad] == YES) {
-        [APP_MGR.splitVM setSelectedArticle:_article];
         
-        //[APP_MGR.splitVM.articleSelectDelegate selectedArticle:_article];
-        //[self performSegueWithIdentifier:@"pushContentPageIpadViews" sender:nil];
+        [APP_MGR.splitVM setSelectedArticle:_article];
+    
     }
     else
         [self performSegueWithIdentifier:@"pushContentPageViews" sender:nil];
     
 }
+
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
@@ -286,7 +291,7 @@ ShareActionSheet *shareAS;
         
     }
     else if([segue.identifier isEqualToString:@"pushContentPageIpadViews"]) {
-        ContentPagesiPadVC *contentVC = segue.destinationViewController;
+        ContentIpadVC *contentVC = segue.destinationViewController;
         contentVC.article = _article;
         contentVC.issue = _issue;
         
@@ -294,10 +299,20 @@ ShareActionSheet *shareAS;
     else if([segue.identifier isEqualToString:@"pushArticleDetails"]) {
         KeywordArticleDetailVC *keywordArticleDetailVC = segue.destinationViewController;
         keywordArticleDetailVC.article = _article;
+        if ([APP_MGR isDeviceIpad] == YES) {
+            keywordArticleDetailVC.modalDelegate = self;
+        }
     }
     
 }
 
+
+- (void)didDismissModalView {
+    
+    // Dismiss the modal view controller
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
 
 -(void)feedDataUpdateNotification:(NSNotification *)pNotification
 {
