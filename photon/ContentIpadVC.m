@@ -76,7 +76,7 @@
 
 -(void)selectedArticle:(Article *)selArticle
 {
-    UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:14];
+    UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:15];
     _article = selArticle;
 
     self.txtvKnownText.text = _article.already_know;

@@ -76,10 +76,12 @@ ShareActionSheet *shareAS;
      object:nil];
     
     //self.navigationItem.title = _issue.number;
-    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
-    shareButton.width = 30.0;
-    self.navigationItem.rightBarButtonItem  = shareButton;
-    
+    if ([APP_MGR isDeviceIpad] == NO) {
+        UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
+        shareButton.width = 30.0;
+        self.navigationItem.rightBarButtonItem  = shareButton;
+        
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -205,11 +207,6 @@ ShareActionSheet *shareAS;
     return  titleTextSize.height + (2 * CELL_PADDING);
 }
 
-
--(void)myAction:(id)sender
-{
-    
-}
 
 - (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller
 {

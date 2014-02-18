@@ -253,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ax-rZ-xZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="285" y="1284"/>
+            <point key="canvasLocation" x="251" y="1277"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="kTO-g4-NTt">
@@ -279,11 +279,11 @@
             </objects>
             <point key="canvasLocation" x="292" y="247"/>
         </scene>
-        <!--Navigation Controller - Issues-->
+        <!--Navigation Controller - Articles-->
         <scene sceneID="tx1-Hx-Ngl">
             <objects>
                 <navigationController id="Ye5-XB-Vh8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Issues" image="issue_tab_icon_active" id="7q8-WN-SUQ"/>
+                    <tabBarItem key="tabBarItem" title="Articles" image="issue_tab_icon_active" id="7q8-WN-SUQ"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4iP-k4-a7k">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -494,7 +494,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="MwH-uh-OQV"/>
+        <segue reference="WhT-qN-xq9"/>
         <segue reference="JaJ-ab-vz3"/>
     </inferredMetricsTieBreakers>
 </document>
