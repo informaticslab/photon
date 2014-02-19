@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "Article.h"
 #import "ArticleSelectionDelegate.h"
+#import "ModalViewDelegate.h"
 
-@interface ContentIpadVC : UIViewController <UISplitViewControllerDelegate,UITextViewDelegate, ArticleSelectionDelegate>
+@interface ContentIpadVC : UIViewController <UISplitViewControllerDelegate,UITextViewDelegate, ArticleSelectionDelegate, ModalViewDelegate, UIPopoverControllerDelegate>
 
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
+@property (strong, nonatomic) UIPopoverController *infoPopoverController;
 
 @property NSUInteger pageIndex;
 @property NSString *headerText;
@@ -24,10 +26,12 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *txtvAddedText;
 
-;
+
 @property (weak, nonatomic) IBOutlet UITextView *txtvImplicationsText;
 @property (weak, nonatomic) Article *article;
 @property (weak, nonatomic) Issue *issue;
+
+- (IBAction)infoButtonAction:(UIBarButtonItem *)sender;
 
 
 @end

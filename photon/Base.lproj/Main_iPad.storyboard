@@ -479,8 +479,254 @@
             </objects>
             <point key="canvasLocation" x="2950" y="1047"/>
         </scene>
+        <!--InfoVC-->
+        <scene sceneID="JPN-dA-cfH">
+            <objects>
+                <viewController storyboardIdentifier="InfoPopoverVC" id="cAe-AZ-gzz" customClass="InfoVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KKe-Ik-dLQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="OPY-45-DFf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Oq6-NC-izn">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xUF-HE-zXE">
+                                <rect key="frame" x="139" y="32" width="123" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="IJc-tC-ObE"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="About"/>
+                                    <segment title="Help"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segCtrlValueChanged:" destination="cAe-AZ-gzz" eventType="valueChanged" id="Ank-tv-gqN"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZU-CU-5ia" userLabel="Help View">
+                                <rect key="frame" x="40" y="85" width="320" height="374"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="dgR-M2-GmC" kind="embed" id="fGQ-fb-sp2"/>
+                                </connections>
+                            </containerView>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="npO-TM-Bre" userLabel="About View">
+                                <rect key="frame" x="40" y="86" width="320" height="374"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="PtR-WM-DuH" kind="embed" id="R57-8b-kLR"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="npO-TM-Bre" firstAttribute="top" secondItem="xUF-HE-zXE" secondAttribute="bottom" constant="26" id="8Av-yf-dt4"/>
+                            <constraint firstItem="xUF-HE-zXE" firstAttribute="top" secondItem="KKe-Ik-dLQ" secondAttribute="bottom" constant="32" id="Bkr-hO-oJa"/>
+                            <constraint firstItem="GZU-CU-5ia" firstAttribute="top" secondItem="xUF-HE-zXE" secondAttribute="bottom" constant="25" id="Bwz-Lh-Oq1"/>
+                            <constraint firstAttribute="bottom" secondItem="npO-TM-Bre" secondAttribute="bottom" constant="20" symbolic="YES" id="K6O-el-Zit"/>
+                            <constraint firstItem="GZU-CU-5ia" firstAttribute="leading" secondItem="Oq6-NC-izn" secondAttribute="leading" constant="40" id="PiS-z6-i3m"/>
+                            <constraint firstItem="GZU-CU-5ia" firstAttribute="leading" secondItem="npO-TM-Bre" secondAttribute="leading" id="XQG-Gc-m4I"/>
+                            <constraint firstItem="GZU-CU-5ia" firstAttribute="centerX" secondItem="xUF-HE-zXE" secondAttribute="centerX" id="htV-hq-UZb"/>
+                            <constraint firstItem="GZU-CU-5ia" firstAttribute="trailing" secondItem="npO-TM-Bre" secondAttribute="trailing" id="iEa-OY-xTa"/>
+                            <constraint firstItem="OPY-45-DFf" firstAttribute="top" secondItem="GZU-CU-5ia" secondAttribute="bottom" constant="21" id="jz0-t0-vUy"/>
+                            <constraint firstItem="xUF-HE-zXE" firstAttribute="centerX" secondItem="Oq6-NC-izn" secondAttribute="centerX" id="w8e-ED-SND"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9X3-ss-sgg"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="400" height="480"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="helpVC" destination="GZU-CU-5ia" id="gQj-ZV-2rT"/>
+                        <outlet property="infoVC" destination="npO-TM-Bre" id="ctH-Mv-UIQ"/>
+                        <outlet property="segCtrlHelpAbout" destination="xUF-HE-zXE" id="6eI-HR-7F3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="obR-aP-Z6W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="665" y="2870"/>
+        </scene>
+        <!--AboutVC-->
+        <scene sceneID="7J8-EH-9n8">
+            <objects>
+                <viewController storyboardIdentifier="AboutView" automaticallyAdjustsScrollViewInsets="NO" id="PtR-WM-DuH" customClass="AboutVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yrn-FM-7Ux"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z9i-cr-bfK"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UTk-MN-CNf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="374"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="about_icon" translatesAutoresizingMaskIntoConstraints="NO" id="oZE-Fl-ui3">
+                                <rect key="frame" x="25" y="13" width="61" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QbQ-W0-JQy">
+                                <rect key="frame" x="94" y="21" width="178" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="About MMWR Express">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version 0.2.5 Build 4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m36-aV-q1J">
+                                <rect key="frame" x="94" y="48" width="148" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="puH-Td-keE">
+                                <rect key="frame" x="10" y="81" width="300" height="260"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Welcome to the MMWR Express mobile app - providing fast access to the blue summary boxes in MMWR's Weekly Report.  
+ 
+The Morbidity and Mortality Weekly Report (MMWR) series is prepared by the Centers for Disease Control and Prevention (CDC). Often called, “the voice of CDC,” the MMWR series is the agency’s primary vehicle for scientific publication of timely, reliable, authoritative, accurate, objective, and useful public health information and recommendations. 
+ 
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Summaries are searchable by specific MMWR article ">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="NSColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                            <font key="NSOriginalFont" size="11" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">or by specific subject (e.g., salmonella).  
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+If you have any questions about the app, please contact either the MMWR staff at mmwrq@cdc.gov or the Informatics Innovation Unit staff at informaticslab@cdc.gov.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="lblVersionInfo" destination="m36-aV-q1J" id="7Do-UT-5Or"/>
+                        <outlet property="txtfHeader" destination="QbQ-W0-JQy" id="dNh-RQ-rSv"/>
+                        <outlet property="txtvAbout" destination="puH-Td-keE" id="wia-Nq-mxx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aj2-gg-9WB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1517" y="2671"/>
+        </scene>
+        <!--HelpVC-->
+        <scene sceneID="xWb-ht-GGx">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="dgR-M2-GmC" customClass="HelpVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rd7-Rv-6au"/>
+                        <viewControllerLayoutGuide type="bottom" id="2r0-K0-0Da"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KHv-Fr-Py0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="374"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help_header_icon" translatesAutoresizingMaskIntoConstraints="NO" id="eO2-xi-GDG">
+                                <rect key="frame" x="47" y="14" width="33" height="28"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="46r-DC-J0D">
+                                <rect key="frame" x="88" y="13" width="192" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Help for MMWR Express">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Myg-vG-pE1">
+                                <rect key="frame" x="0.0" y="62" width="320" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help_content_no_page_control" translatesAutoresizingMaskIntoConstraints="NO" id="bLS-gx-3yO">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1250"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bLS-gx-3yO" firstAttribute="leading" secondItem="Myg-vG-pE1" secondAttribute="leading" id="34J-FR-16V"/>
+                                    <constraint firstAttribute="bottom" secondItem="bLS-gx-3yO" secondAttribute="bottom" constant="-969" id="iey-ND-5Mc"/>
+                                    <constraint firstItem="bLS-gx-3yO" firstAttribute="top" secondItem="Myg-vG-pE1" secondAttribute="top" id="kRJ-kZ-wup"/>
+                                    <constraint firstAttribute="trailing" secondItem="bLS-gx-3yO" secondAttribute="trailing" id="wLF-4c-b5o"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eO2-xi-GDG" firstAttribute="leading" secondItem="KHv-Fr-Py0" secondAttribute="leading" constant="47" id="73R-RX-qH7"/>
+                            <constraint firstItem="2r0-K0-0Da" firstAttribute="top" secondItem="Myg-vG-pE1" secondAttribute="bottom" constant="12" id="Jov-Jy-MdZ"/>
+                            <constraint firstItem="46r-DC-J0D" firstAttribute="top" secondItem="rd7-Rv-6au" secondAttribute="bottom" constant="13" id="ReA-SM-rDm"/>
+                            <constraint firstItem="46r-DC-J0D" firstAttribute="centerY" secondItem="eO2-xi-GDG" secondAttribute="centerY" id="SyY-7w-9WB"/>
+                            <constraint firstItem="Myg-vG-pE1" firstAttribute="leading" secondItem="KHv-Fr-Py0" secondAttribute="leading" id="Tqe-Jh-r8a"/>
+                            <constraint firstItem="Myg-vG-pE1" firstAttribute="top" secondItem="46r-DC-J0D" secondAttribute="bottom" constant="19" id="X4w-V7-bEg"/>
+                            <constraint firstItem="46r-DC-J0D" firstAttribute="leading" secondItem="eO2-xi-GDG" secondAttribute="trailing" constant="8" symbolic="YES" id="c40-D2-3N6"/>
+                            <constraint firstItem="eO2-xi-GDG" firstAttribute="top" secondItem="rd7-Rv-6au" secondAttribute="bottom" constant="14" id="jNG-If-MGB"/>
+                            <constraint firstAttribute="trailing" secondItem="Myg-vG-pE1" secondAttribute="trailing" id="lEF-Hn-yzy"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="imageView" destination="bLS-gx-3yO" id="yyq-72-sWW"/>
+                        <outlet property="scrollView" destination="Myg-vG-pE1" id="vLs-SC-I5f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tgG-34-tZD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1517" y="3169"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="about_icon" width="61" height="60"/>
+        <image name="help_content_no_page_control" width="320" height="1250"/>
+        <image name="help_header_icon" width="33" height="28"/>
         <image name="ipad_added_icon" width="38" height="38"/>
         <image name="ipad_implications_icon" width="38" height="38"/>
         <image name="ipad_known_icon" width="38" height="38"/>

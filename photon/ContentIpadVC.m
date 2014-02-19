@@ -7,12 +7,12 @@
 //
 
 #import "ContentIpadVC.h"
-
-@interface ContentIpadVC ()
-
-@end
+#import "ShareActionSheet.h"
+#import "InfoVC.h"
 
 @implementation ContentIpadVC
+
+ShareActionSheet *shareAS;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,11 +29,11 @@
     
     APP_MGR.splitVM.contentIpadVC = self;
     [APP_MGR.splitVM setArticleSelectionDelegate:self];
-
+    
     
 	// Do any additional setup after loading the view.
     self.navigationItem.title = @"Summary";
-
+    
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar"] forBarMetrics:UIBarMetricsDefault];
     //    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
     //set back button arrow color
@@ -45,6 +45,19 @@
     else {
         [[UINavigationBar appearance] setBackgroundColor:[UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1.0]];
     }
+    
+    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
+    shareButton.width = 30.0;
+    
+    UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+	[infoButton addTarget:self action:@selector(infoButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+	UIBarButtonItem *modalButton = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
+	[self.navigationItem setLeftBarButtonItem:modalButton animated:YES];
+    
+    
+    self.navigationItem.rightBarButtonItems  = @[shareButton, modalButton];
+    
+    
     
     [self.txtvKnownText setScrollEnabled:YES];
     [self.txtvKnownText setUserInteractionEnabled:YES];
@@ -65,7 +78,15 @@
     self.txtvImplicationsText.text = self.contentText;
     
     self.parentViewController.navigationItem.title = self.navbarTitle;
+    
+    // Setup the popover for use from the navigation bar.
+    InfoVC *content = [self.storyboard instantiateViewControllerWithIdentifier:@"InfoPopoverVC"];
 
+	self.infoPopoverController = [[UIPopoverController alloc] initWithContentViewController:content];
+	self.infoPopoverController.popoverContentSize = CGSizeMake(400., 480.);
+	self.infoPopoverController.delegate = self;
+
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -74,21 +95,51 @@
     
 }
 
+- (void)share:(id)sender
+{
+    // display the options for sharing
+    shareAS = [[ShareActionSheet alloc] initToShareApp:self];
+    [shareAS showView];
+    
+}
+
+- (void)didDismissModalView {
+    
+    // Dismiss the modal view controller
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+- (IBAction)infoButtonAction:(UIBarButtonItem *)sender
+{
+	// Set the sender to a UIButton.
+	UIButton *tappedButton = (UIButton *)sender;
+	
+	// Present the popover from the button that was tapped in the detail view.
+	[self.infoPopoverController presentPopoverFromRect:tappedButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    
+	// Set the last button tapped to the current button that was tapped.
+	//self.lastTappedButton = sender;
+}
+
+
+
+
 -(void)selectedArticle:(Article *)selArticle
 {
     UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:15];
     _article = selArticle;
-
+    
     self.txtvKnownText.text = _article.already_know;
     self.txtvKnownText.font = font;
-
+    
     self.txtvAddedText.text = _article.added_by_report;
     self.txtvAddedText.font = font;
     
     self.txtvImplicationsText.text = _article.implications;
     self.txtvImplicationsText.font = font;
-
-
+    
+    
 }
 
 
@@ -114,5 +165,13 @@
     self.masterPopoverController = nil;
 }
 
+
+#pragma mark - Popover controller delegates
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    // If a popover is dismissed, set the last button tapped to nil.
+    //self.lastTappedButton = nil;
+}
 
 @end
