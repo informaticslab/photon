@@ -42,43 +42,45 @@ NSString *selectedKeyword;
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
     //set back button arrow color
     // Do any additional setup after loading the view, typically from a nib.
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName ]];
+   // check for diffs between ios 6 & 7
+    if ([UINavigationBar instancesRespondToSelector:@selector(barTintColor)])
+        self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1.0];
+    else {
+        [[UINavigationBar appearance] setBackgroundColor:[UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1.0]];
+    }
+    
+    // set title and share button based on device
     if([APP_MGR isDeviceIpad] == YES)
         self.navigationItem.title = @"Search";
-    else
+    else {
         self.navigationItem.title = @"MMWR Express";
-   [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1];
+        UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
+        shareButton.style = UIBarButtonItemStyleBordered;
+        
+        self.navigationItem.rightBarButtonItem = shareButton;
+
+    }
  
-    
-    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
-    shareButton.style = UIBarButtonItemStyleBordered;
-    
-    self.navigationItem.rightBarButtonItem = shareButton;
-    
+    // register for update notification
     [[NSNotificationCenter defaultCenter]
      addObserver:self
      selector:@selector(feedDataUpdateNotification:)
      name:@"FeedDataUpdated"
      object:nil];
     
+    
+    // search setup
     self.isSearching = NO;
-    
-    
     self.searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
-    
    [self.searchDisplayController initWithSearchBar:self.searchBar contentsController:self];
-    
     self.searchDisplayController.delegate = self;
-    
     self.searchDisplayController.searchResultsDataSource = self;
-    
     self.searchDisplayController.searchResultsDelegate = self;
-    
-    
     self.tableView.tableHeaderView = self.searchDisplayController.searchBar;
 
-    
-    
+
+
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -89,7 +91,13 @@ NSString *selectedKeyword;
     else
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 
-    
+   
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+
 }
 
 
@@ -124,7 +132,6 @@ NSString *selectedKeyword;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar"] forBarMetrics:UIBarMetricsDefault];
     //    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
     // set back button arrow color
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
     // check for diffs between ios 6 & 7
     if ([UINavigationBar instancesRespondToSelector:@selector(barTintColor)])
@@ -133,6 +140,7 @@ NSString *selectedKeyword;
         [[UINavigationBar appearance] setBackgroundColor:[UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1.0]];
     }
     
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     self.navigationController.navigationBar.translucent = NO;
     return;
 }

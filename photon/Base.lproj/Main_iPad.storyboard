@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Issue ArticlesTVC-->
+        <!--Issue ArticlesTVC - MMWR Articles-->
         <scene sceneID="F3M-Lg-nTd">
             <objects>
                 <tableViewController id="w6h-OD-rQb" customClass="IssueArticlesTVC" sceneMemberID="viewController">
@@ -30,7 +30,7 @@
                             <outlet property="delegate" destination="w6h-OD-rQb" id="Rn6-Yi-aAU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="T1L-FS-2Qr"/>
+                    <navigationItem key="navigationItem" title="MMWR Articles" id="T1L-FS-2Qr"/>
                     <connections>
                         <segue destination="IAr-lY-2gS" kind="replace" identifier="pushContentPageIpadViews" splitViewControllerTargetIndex="1" id="WhT-qN-xq9"/>
                         <segue destination="eOc-TN-ywc" kind="modal" identifier="pushArticleDetails" modalPresentationStyle="pageSheet" modalTransitionStyle="coverVertical" id="eD3-B8-vSj"/>
@@ -40,7 +40,7 @@
             </objects>
             <point key="canvasLocation" x="1002" y="-789"/>
         </scene>
-        <!--KeywordsTVC - MMWR Express-->
+        <!--KeywordsTVC-->
         <scene sceneID="lgY-5g-MB1">
             <objects>
                 <tableViewController id="seA-bz-DGV" customClass="KeywordsTVC" sceneMemberID="viewController">
@@ -68,7 +68,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="MMWR Express" id="zsx-9S-q3V"/>
+                    <navigationItem key="navigationItem" id="zsx-9S-q3V"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="i3k-cr-Gfg">
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
@@ -284,7 +284,12 @@
                 <navigationController definesPresentationContext="YES" id="7nf-kp-pBM" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" image="search_tab_inactive" id="WsF-90-aOH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aaN-6s-Sw1">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="seA-bz-DGV" kind="relationship" relationship="rootViewController" id="bCZ-eS-6ae"/>
@@ -301,6 +306,10 @@
                     <tabBarItem key="tabBarItem" title="Articles" image="issue_tab_icon_active" id="7q8-WN-SUQ"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4iP-k4-a7k">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="w6h-OD-rQb" kind="relationship" relationship="rootViewController" id="i3c-px-Yak"/>
