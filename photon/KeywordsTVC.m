@@ -41,10 +41,14 @@ NSString *selectedKeyword;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar"] forBarMetrics:UIBarMetricsDefault];
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
     //set back button arrow color
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    // Do any additional setup after loading the view, typically from a nib.
+    if([APP_MGR isDeviceIpad] == YES)
+        self.navigationItem.title = @"Search";
+    else
+        self.navigationItem.title = @"MMWR Express";
+   [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1];
-    self.navigationItem.title = @"MMWR Express";
-
+ 
     
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
     shareButton.style = UIBarButtonItemStyleBordered;

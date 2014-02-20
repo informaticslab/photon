@@ -54,7 +54,10 @@ ShareActionSheet *shareAS;
     isArticleSelected = NO;
     
     // Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.title = @"MMWR Express";
+    if([APP_MGR isDeviceIpad] == YES)
+        self.navigationItem.title = @"MMWR Articles";
+    else
+        self.navigationItem.title = @"MMWR Express";
     UITabBarItem *item = [self.tabBarController.tabBar.items objectAtIndex:0];
     item.image = [UIImage imageNamed:@"issue_tab_icon_inactive"];
     item.selectedImage = [UIImage imageNamed:@"issue_tab_icon_active"];
