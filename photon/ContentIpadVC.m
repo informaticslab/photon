@@ -14,6 +14,7 @@
 
 ShareActionSheet *shareAS;
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,7 +35,7 @@ ShareActionSheet *shareAS;
 	// Do any additional setup after loading the view.
     self.navigationItem.title = @"Summary";
     
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"ipad_detail_navbar"] forBarMetrics:UIBarMetricsDefault];
     //    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
     //set back button arrow color
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
@@ -77,6 +78,14 @@ ShareActionSheet *shareAS;
     self.txtvImplicationsText.showsVerticalScrollIndicator = YES;
     self.txtvImplicationsText.text = self.contentText;
     
+    [self.txtvArticleTitle setScrollEnabled:YES];
+    [self.txtvArticleTitle setUserInteractionEnabled:YES];
+    self.txtvArticleTitle.delegate = self;
+    self.txtvArticleTitle.showsVerticalScrollIndicator = YES;
+    self.txtvArticleTitle.text = self.contentText;
+    self.txtvArticleTitle.text = self.contentText;
+    
+
     self.parentViewController.navigationItem.title = self.navbarTitle;
     
     // Setup the popover for use from the navigation bar.
@@ -138,6 +147,10 @@ ShareActionSheet *shareAS;
     
     self.txtvImplicationsText.text = _article.implications;
     self.txtvImplicationsText.font = font;
+    
+    self.txtvArticleTitle.text = _article.title;
+    self.txtvArticleTitle.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16];
+    self.txtvArticleTitle.textAlignment = NSTextAlignmentCenter;
     
     
 }

@@ -139,11 +139,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ipad_known_icon" translatesAutoresizingMaskIntoConstraints="NO" id="584-Dy-lpt">
-                                <rect key="frame" x="20" y="99" width="38" height="38"/>
+                                <rect key="frame" x="20" y="141" width="38" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="jHH-DP-CJN">
-                                <rect key="frame" x="79" y="106" width="453" height="21"/>
+                                <rect key="frame" x="66" y="148" width="453" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="What is already known?">
@@ -157,7 +157,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="9OP-ME-cnK">
-                                <rect key="frame" x="79" y="323" width="453" height="21"/>
+                                <rect key="frame" x="66" y="347" width="453" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="What is added by this report?">
@@ -171,7 +171,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hl9-mZ-D9x">
-                                <rect key="frame" x="20" y="154" width="663" height="119"/>
+                                <rect key="frame" x="20" y="178" width="663" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <attributedString key="attributedText">
@@ -187,11 +187,11 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ipad_added_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ikK-eu-3GF">
-                                <rect key="frame" x="20" y="315" width="38" height="38"/>
+                                <rect key="frame" x="20" y="339" width="38" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANr-Cc-vfy">
-                                <rect key="frame" x="20" y="370" width="663" height="119"/>
+                                <rect key="frame" x="20" y="385" width="663" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <attributedString key="attributedText">
@@ -207,11 +207,11 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ipad_implications_icon" translatesAutoresizingMaskIntoConstraints="NO" id="6FQ-xd-nnu">
-                                <rect key="frame" x="20" y="517" width="38" height="38"/>
+                                <rect key="frame" x="20" y="551" width="38" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="bGx-Rk-heL">
-                                <rect key="frame" x="79" y="524" width="453" height="21"/>
+                                <rect key="frame" x="66" y="559" width="453" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="What are the implications for public health practice?">
@@ -225,7 +225,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYi-zc-Tce">
-                                <rect key="frame" x="20" y="572" width="663" height="119"/>
+                                <rect key="frame" x="20" y="597" width="663" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <attributedString key="attributedText">
@@ -240,6 +240,20 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0E-oZ-Wc7">
+                                <rect key="frame" x="20" y="73" width="663" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="10-01-13, Vol 44, Issue 32, Pages 145-148">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -247,6 +261,7 @@
                     <navigationItem key="navigationItem" id="ZNC-9X-86n"/>
                     <connections>
                         <outlet property="txtvAddedText" destination="ANr-Cc-vfy" id="8hu-dv-Kma"/>
+                        <outlet property="txtvArticleTitle" destination="S0E-oZ-Wc7" id="Z3J-nD-SN2"/>
                         <outlet property="txtvImplicationsText" destination="yYi-zc-Tce" id="c4R-uw-2sH"/>
                         <outlet property="txtvKnownText" destination="Hl9-mZ-D9x" id="q8T-B5-zH3"/>
                     </connections>
@@ -740,7 +755,7 @@ If you have any questions about the app, please contact either the MMWR staff at
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="eD3-B8-vSj"/>
         <segue reference="WhT-qN-xq9"/>
-        <segue reference="JaJ-ab-vz3"/>
     </inferredMetricsTieBreakers>
 </document>

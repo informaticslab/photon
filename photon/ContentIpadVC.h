@@ -21,6 +21,7 @@
 @property NSString *contentText;
 @property NSString *imageName;
 @property (weak, nonatomic) NSString *navbarTitle;
+@property (weak, nonatomic) IBOutlet UITextView *txtvArticleTitle;
 
 @property (weak, nonatomic) IBOutlet UITextView *txtvKnownText;
 

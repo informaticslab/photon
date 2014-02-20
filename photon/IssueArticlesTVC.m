@@ -31,7 +31,7 @@
 
 @implementation IssueArticlesTVC
 
-
+BOOL isArticleSelected;
 ShareActionSheet *shareAS;
 //Issue *currIssue;
 //Article *currArticle;
@@ -51,13 +51,14 @@ ShareActionSheet *shareAS;
     
     //set up splitview managment
     APP_MGR.splitVM.issueArticlesTVC = self;
+    isArticleSelected = NO;
     
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.title = @"MMWR Express";
     UITabBarItem *item = [self.tabBarController.tabBar.items objectAtIndex:0];
     item.image = [UIImage imageNamed:@"issue_tab_icon_inactive"];
     item.selectedImage = [UIImage imageNamed:@"issue_tab_icon_active"];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"ipad_master_navbar"] forBarMetrics:UIBarMetricsDefault];
     //    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
     //set back button arrow color
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
@@ -91,18 +92,18 @@ ShareActionSheet *shareAS;
     if ([APP_MGR isDeviceIpad] == YES) {
         if ([APP_MGR.issuesMgr.issues count] != 0) {
             
-            NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
-            [self.tableView selectRowAtIndexPath:indexPath animated:YES  scrollPosition:UITableViewScrollPositionBottom];
-            _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
-            _article = _issue.articles[[indexPath row]];
-            [APP_MGR.splitVM setSelectedArticle:_article];
+            if (isArticleSelected == NO) {
+            
+                NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
+                [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+                _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
+                _article = _issue.articles[[indexPath row]];
+                [APP_MGR.splitVM setSelectedArticle:_article];
+            }
+
             
         }
-        
-        
     }
-    
-    
 }
 
 - (void)share:(id)sender
@@ -244,12 +245,14 @@ ShareActionSheet *shareAS;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    isArticleSelected = YES;
+
     // Navigation logic may go here. Create and push another view controller.
     _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
     _article = _issue.articles[[indexPath row]];
     _article.unread = NO;
     
+
     [self.tableView beginUpdates];
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
     [self.tableView endUpdates];
@@ -264,6 +267,8 @@ ShareActionSheet *shareAS;
     }
     else
         [self performSegueWithIdentifier:@"pushContentPageViews" sender:nil];
+    
+    [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     
 }
 
@@ -315,12 +320,18 @@ ShareActionSheet *shareAS;
 {
     // NSLog(@"Received notification in CondomUsageRiskChart = %@",(NSString*)[pNotification object]);
     
+    
     [self.tableView reloadData];
     [self.refreshControl endRefreshing];
-    if ([APP_MGR isDeviceIpad] == YES)
+    if ([APP_MGR isDeviceIpad] == YES) {
         //[APP_MGR.splitVM.articleSelectDelegate selectedArticle:_article];
         [APP_MGR.splitVM setSelectedArticle:_article];
-    
+ //     [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+        if (isArticleSelected == NO) {
+            NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
+            [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+        }
+    }
 }
 
 
