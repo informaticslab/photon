@@ -12,7 +12,6 @@
 #import "ContentPagesVC.h"
 #import "ContentPagesiPadVC.h"
 #import "KeywordArticleDetailVC.h"
-#import "ArticleDetails.h"
 
 #import "AppDelegate.h"
 
@@ -281,7 +280,22 @@ ShareActionSheet *shareAS;
     
     _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
     _article = _issue.articles[[indexPath row]];
-    [self performSegueWithIdentifier:@"pushArticleDetails" sender:nil];
+    
+    KeywordArticleDetailVC *content = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverArticleDetails"];
+    content.article = _article;
+
+	// Setup the popover for use from the navigation bar.
+	self.detailViewPopover = [[UIPopoverController alloc] initWithContentViewController:content];
+	self.detailViewPopover.popoverContentSize = CGSizeMake(400., 358.);
+	self.detailViewPopover.delegate = self;
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+
+    // Present the popover from the button that was tapped in the detail view.
+    [self.detailViewPopover presentPopoverFromRect:cell.bounds inView:cell.contentView
+                     permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+
+    //[self performSegueWithIdentifier:@"pushArticleDetails" sender:nil];
     
 }
 
@@ -336,6 +350,14 @@ ShareActionSheet *shareAS;
         }
     }
 }
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+	// If a popover is dismissed, set the last button tapped to nil.
+	//self.lastTappedButton = nil;
+}
+
+
 
 
 
