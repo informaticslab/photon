@@ -52,4 +52,8 @@
 
 }
 
+- (IBAction)btnDoneTouchUp:(id)sender {
+    [self.modalDelegate didDismissModalView];
+}
+
 @end

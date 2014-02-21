@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ModalViewDelegate.h"
 
 @interface FullArticleVC : UIViewController<UIWebViewDelegate>
 
@@ -14,5 +15,8 @@
 @property (weak, nonatomic) NSString *url;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) id <ModalViewDelegate> modalDelegate;
+
+- (IBAction)btnDoneTouchUp:(id)sender;
 
 @end

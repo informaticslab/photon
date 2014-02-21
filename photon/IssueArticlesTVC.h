@@ -11,8 +11,9 @@
 #import "Article.h"
 #import "ArticleSelectionDelegate.h"
 #import "ModalViewDelegate.h"
+#import "PopoverViewDelegate.h"
 
-@interface IssueArticlesTVC : UITableViewController <UIPopoverControllerDelegate, ModalViewDelegate>
+@interface IssueArticlesTVC : UITableViewController <UIPopoverControllerDelegate, PopoverViewDelegate, ModalViewDelegate>
 
 @property(nonatomic, weak) Issue *issue;
 @property(nonatomic, weak) Article *article;

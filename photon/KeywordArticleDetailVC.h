@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Article.h"
 #import "ModalViewDelegate.h"
+#import "PopoverViewDelegate.h"
 
 @interface KeywordArticleDetailVC : UIViewController<UISplitViewControllerDelegate>
 
@@ -21,8 +22,10 @@
 
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 @property (weak, nonatomic) id <ModalViewDelegate> modalDelegate;
+@property (weak, nonatomic) id <PopoverViewDelegate> popoverViewDelegate;
 
-- (IBAction)btnViewFullArticleTouchUp:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btnViewFullArticleTouchUp;
 
 - (IBAction)btnDoneTouchUp:(UIBarButtonItem *)sender;
+- (IBAction)btnViewFullArticleTouchUp:(id)sender;
 @end

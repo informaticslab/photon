@@ -33,6 +33,7 @@
                     <navigationItem key="navigationItem" title="MMWR Articles" id="T1L-FS-2Qr"/>
                     <connections>
                         <segue destination="IAr-lY-2gS" kind="replace" identifier="pushContentPageIpadViews" splitViewControllerTargetIndex="1" id="WhT-qN-xq9"/>
+                        <segue destination="agv-o0-Y9V" kind="modal" identifier="modalFullArticle" modalPresentationStyle="fullScreen" id="2Za-UK-tFB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9BA-vN-P1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -281,7 +282,7 @@
                 <pageViewController storyboardIdentifier="ContentPVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="C0d-a3-Fng" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NvL-6q-tt7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2323" y="-748"/>
+            <point key="canvasLocation" x="3375" y="-628"/>
         </scene>
         <!--Navigation Controller - Search-->
         <scene sceneID="Jp9-KF-q8y">
@@ -489,49 +490,15 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="btnViewArticle" destination="qAW-NJ-ruO" id="D2C-hM-tNx"/>
+                        <outlet property="btnViewFullArticleTouchUp" destination="qAW-NJ-ruO" id="hdc-AF-8Rz"/>
                         <outlet property="txtViewArticleIssueDate" destination="LTZ-nb-fXc" id="JZM-Gy-fIL"/>
                         <outlet property="txtViewArticleIssueVolNum" destination="GLc-vQ-dCy" id="MA7-Jo-Am7"/>
                         <outlet property="txtViewArticleTitle" destination="jsO-T5-dda" id="KTg-sp-DAU"/>
-                        <segue destination="0Z4-r0-38A" kind="push" identifier="pushViewFullArticle" id="hBd-wV-Efd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JeC-dO-FNA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2026" y="1545"/>
-        </scene>
-        <!--Full ArticleVC-->
-        <scene sceneID="Ij4-Wz-Jkz">
-            <objects>
-                <viewController id="0Z4-r0-38A" customClass="FullArticleVC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zmO-xw-oHl"/>
-                        <viewControllerLayoutGuide type="bottom" id="ykB-UC-FIw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lDM-iE-Sjr">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="358"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z9I-qZ-4E9">
-                                <rect key="frame" x="0.0" y="0.0" width="400" height="358"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Qgq-CU-hiH">
-                                <rect key="frame" x="150" y="242" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="wg2-bi-oJc"/>
-                    <connections>
-                        <outlet property="spinner" destination="Qgq-CU-hiH" id="u73-Hw-gSJ"/>
-                        <outlet property="webView" destination="z9I-qZ-4E9" id="yYF-sM-4J2"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f08-nP-1CE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2950" y="1047"/>
+            <point key="canvasLocation" x="2642" y="-651"/>
         </scene>
         <!--InfoVC-->
         <scene sceneID="JPN-dA-cfH">
@@ -776,23 +743,52 @@ If you have any questions about the app, please contact either the MMWR staff at
             </objects>
             <point key="canvasLocation" x="1517" y="3169"/>
         </scene>
-        <!--View Controller-->
+        <!--Full ArticleVC-->
         <scene sceneID="54U-fI-B8V">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="agv-o0-Y9V" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="agv-o0-Y9V" customClass="FullArticleVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="M4y-bg-dSS"/>
                         <viewControllerLayoutGuide type="bottom" id="SyB-Zt-wJz"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uOd-mm-Rul">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B7N-FC-fMj">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="724"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mhR-l1-Cud">
+                                <rect key="frame" x="0.0" y="724" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="dGI-9H-zKJ"/>
+                                    <barButtonItem systemItem="done" id="6Gs-vF-1bE">
+                                        <connections>
+                                            <action selector="btnDoneTouchUp:" destination="agv-o0-Y9V" id="Szz-Xs-wt7"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="sE2-Yo-EiC">
+                                <rect key="frame" x="502" y="352" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <toolbarItems/>
+                    <connections>
+                        <outlet property="spinner" destination="sE2-Yo-EiC" id="7pF-xo-w29"/>
+                        <outlet property="webView" destination="B7N-FC-fMj" id="laE-96-kQd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V9b-xJ-gWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2250" y="441"/>
         </scene>
     </scenes>
     <resources>

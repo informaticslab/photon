@@ -1,5 +1,5 @@
 //
-//  IssueViewDelegate.h
+//  ModalViewDelegate.h
 //  mmwrMockup
 //
 //

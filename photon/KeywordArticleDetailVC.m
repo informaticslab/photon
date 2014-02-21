@@ -70,17 +70,15 @@ ShareActionSheet *shareAS;
 }
 
 
-
-
 - (IBAction)btnViewFullArticleTouchUp:(id)sender {
     
-    [self performSegueWithIdentifier:@"pushViewFullArticle" sender:nil];
+    [self.popoverViewDelegate didClickFullArticleButton];
 
 }
 
 - (IBAction)btnDoneTouchUp:(UIBarButtonItem *)sender {
     
-    [self.modalDelegate didDismissModalView];
+    [self.popoverViewDelegate didClickDoneButton];
 
 }
 

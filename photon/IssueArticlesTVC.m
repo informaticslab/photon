@@ -12,6 +12,7 @@
 #import "ContentPagesVC.h"
 #import "ContentPagesiPadVC.h"
 #import "KeywordArticleDetailVC.h"
+#import "FullArticleVC.h"
 
 #import "AppDelegate.h"
 
@@ -285,6 +286,8 @@ ShareActionSheet *shareAS;
     
     KeywordArticleDetailVC *content = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverArticleDetails"];
     content.article = _article;
+    content.modalDelegate = self;
+    content.popoverViewDelegate = self;
 
 	// Setup the popover for use from the navigation bar.
 	self.detailViewPopover = [[UIPopoverController alloc] initWithContentViewController:content];
@@ -324,6 +327,11 @@ ShareActionSheet *shareAS;
             keywordArticleDetailVC.modalDelegate = self;
         }
     }
+    else if([segue.identifier isEqualToString:@"modalFullArticle"]) {
+        FullArticleVC *fullArticleVC = segue.destinationViewController;
+        fullArticleVC.url = _article.url;
+        fullArticleVC.modalDelegate = self;
+    }
     
 }
 
@@ -334,6 +342,25 @@ ShareActionSheet *shareAS;
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
+
+-(void)didClickDoneButton;
+{
+    
+    // dismiss popover
+     [self.detailViewPopover dismissPopoverAnimated:YES];
+    
+}
+
+-(void)didClickFullArticleButton
+{
+    
+    // dismiss popover
+    [self.detailViewPopover dismissPopoverAnimated:YES];
+    [self performSegueWithIdentifier:@"modalFullArticle" sender:nil];
+
+    
+}
+
 
 -(void)feedDataUpdateNotification:(NSNotification *)pNotification
 {
@@ -357,6 +384,8 @@ ShareActionSheet *shareAS;
 {
 	// If a popover is dismissed, set the last button tapped to nil.
 	//self.lastTappedButton = nil;
+    [self.detailViewPopover dismissPopoverAnimated:YES];
+    
 }
 
 
