@@ -30,6 +30,7 @@ ShareActionSheet *shareAS;
     
     APP_MGR.splitVM.contentIpadVC = self;
     [APP_MGR.splitVM setArticleSelectionDelegate:self];
+    self.startSearchView.hidden = YES;
     
     
 	// Do any additional setup after loading the view.
@@ -149,8 +150,24 @@ ShareActionSheet *shareAS;
     self.txtvImplicationsText.font = font;
     
     self.txtvArticleTitle.text = _article.title;
-    self.txtvArticleTitle.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16];
+    self.txtvArticleTitle.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:16];
     self.txtvArticleTitle.textAlignment = NSTextAlignmentCenter;
+    
+    
+}
+
+-(void)searchStart
+{
+    
+    self.startSearchView.hidden = NO;
+    
+    
+}
+
+-(void)searchEnd
+{
+    
+    self.startSearchView.hidden = YES;
     
     
 }

@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *txtvKnownText;
 
 @property (weak, nonatomic) IBOutlet UITextView *txtvAddedText;
+@property (weak, nonatomic) IBOutlet UIView *startSearchView;
 
 
 @property (weak, nonatomic) IBOutlet UITextView *txtvImplicationsText;

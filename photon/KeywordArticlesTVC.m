@@ -60,18 +60,7 @@ NSArray *keywordArticles;
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    // select first row if device is iPad
-    if ([APP_MGR isDeviceIpad] == YES) {
-        
-        if ([APP_MGR.issuesMgr.issues count] != 0) {
-            
-            NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
-            [self.tableView selectRowAtIndexPath:indexPath animated:YES  scrollPosition:UITableViewScrollPositionBottom];
-            _selectedArticle = keywordArticles[[indexPath row]];
-            [APP_MGR.splitVM setSelectedArticle:_selectedArticle];
-            
-        }
-    }
+    [APP_MGR.splitVM searchStart];
     
 }
 
@@ -184,6 +173,7 @@ NSArray *keywordArticles;
     
     if ([APP_MGR isDeviceIpad] == YES) {
         [APP_MGR.splitVM setSelectedArticle:_selectedArticle];
+        [APP_MGR.splitVM searchEnd];
     }
     else
         [self performSegueWithIdentifier:@"pushContentPagesFromKeyword" sender:nil];

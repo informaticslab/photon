@@ -78,6 +78,8 @@ NSString *selectedKeyword;
     self.searchDisplayController.searchResultsDataSource = self;
     self.searchDisplayController.searchResultsDelegate = self;
     self.tableView.tableHeaderView = self.searchDisplayController.searchBar;
+    
+    [APP_MGR.splitVM searchStart];
 
 
 
@@ -90,6 +92,8 @@ NSString *selectedKeyword;
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     else
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    [APP_MGR.splitVM searchStart];
 
    
 }

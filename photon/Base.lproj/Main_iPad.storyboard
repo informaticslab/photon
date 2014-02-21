@@ -250,12 +250,21 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UN7-bL-OhY">
+                                <rect key="frame" x="20" y="20" width="663" height="728"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="rRq-Xx-aDe" kind="embed" id="oK6-YJ-b4l"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZNC-9X-86n"/>
                     <connections>
+                        <outlet property="startSearchView" destination="UN7-bL-OhY" id="8JS-ys-Qpm"/>
                         <outlet property="txtvAddedText" destination="ANr-Cc-vfy" id="8hu-dv-Kma"/>
                         <outlet property="txtvArticleTitle" destination="S0E-oZ-Wc7" id="Z3J-nD-SN2"/>
                         <outlet property="txtvImplicationsText" destination="yYi-zc-Tce" id="c4R-uw-2sH"/>
@@ -368,6 +377,32 @@
             </objects>
             <point key="canvasLocation" x="-595" y="1277"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="0d2-go-frc">
+            <objects>
+                <viewController id="rRq-Xx-aDe" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Uu-GX-dih"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xmq-Iy-Cx2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yYw-8b-FjS">
+                        <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="search_start" translatesAutoresizingMaskIntoConstraints="NO" id="DPD-ME-Vmh">
+                                <rect key="frame" x="81" y="111" width="541" height="545"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="19L-B3-Qwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1183" y="1277"/>
+        </scene>
         <!--Keyword Article DetailVC - PopoverArticleDetails-->
         <scene sceneID="adr-mw-iIV">
             <objects>
@@ -462,7 +497,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JeC-dO-FNA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1636" y="1455"/>
+            <point key="canvasLocation" x="2026" y="1545"/>
         </scene>
         <!--Full ArticleVC-->
         <scene sceneID="Ij4-Wz-Jkz">
@@ -741,6 +776,24 @@ If you have any questions about the app, please contact either the MMWR staff at
             </objects>
             <point key="canvasLocation" x="1517" y="3169"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="54U-fI-B8V">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="agv-o0-Y9V" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M4y-bg-dSS"/>
+                        <viewControllerLayoutGuide type="bottom" id="SyB-Zt-wJz"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uOd-mm-Rul">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V9b-xJ-gWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="about_icon" width="61" height="60"/>
@@ -750,6 +803,7 @@ If you have any questions about the app, please contact either the MMWR staff at
         <image name="ipad_implications_icon" width="38" height="38"/>
         <image name="ipad_known_icon" width="38" height="38"/>
         <image name="issue_tab_icon_active" width="25" height="25"/>
+        <image name="search_start" width="541" height="545"/>
         <image name="search_tab_inactive" width="25" height="25"/>
     </resources>
     <color key="tintColor" red="0.25098039220000001" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>

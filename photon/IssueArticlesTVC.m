@@ -106,6 +106,8 @@ ShareActionSheet *shareAS;
             
         }
     }
+    [APP_MGR.splitVM searchEnd];
+
 }
 
 - (void)share:(id)sender
@@ -269,7 +271,7 @@ ShareActionSheet *shareAS;
     }
     else
         [self performSegueWithIdentifier:@"pushContentPageViews" sender:nil];
-    
+        
     [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     
 }

@@ -26,5 +26,7 @@
 -(void)setArticleSelectionDelegate:(ContentIpadVC *)vc;
 -(Article *)getSelectedArticle;
 -(void)setSelectedArticle:(Article *)selArticle;
+-(void)searchStart;
+-(void)searchEnd;
 
 @end

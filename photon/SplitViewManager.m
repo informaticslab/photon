@@ -45,6 +45,17 @@
     self.articleSelectDelegate = vc;
 }
 
+-(void)searchStart
+{
+    
+    [self.articleSelectDelegate searchStart];
+}
+
+-(void)searchEnd
+{
+    
+    [self.articleSelectDelegate searchEnd];
+}
 
 
 - (void)didReceiveMemoryWarning
