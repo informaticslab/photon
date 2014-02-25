@@ -20,6 +20,7 @@
 @implementation KeywordArticlesTVC
 
 ShareActionSheet *shareAS;
+BOOL isArticleSelected;
 
 
 NSArray *keywordArticles;
@@ -61,6 +62,17 @@ NSArray *keywordArticles;
 - (void)viewWillAppear:(BOOL)animated
 {
     [APP_MGR.splitVM searchStart];
+    if (isArticleSelected == NO) {
+        
+        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
+        [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+        _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
+        _selectedArticle = _issue.articles[[indexPath row]];
+        [APP_MGR.splitVM setSelectedArticle:_selectedArticle];
+        [APP_MGR.splitVM searchEnd];
+
+    }
+
     
 }
 
@@ -170,6 +182,8 @@ NSArray *keywordArticles;
     
     // Navigation logic may go here. Create and push another view controller.
     _selectedArticle = keywordArticles[[indexPath row]];
+    isArticleSelected = YES;
+
     
     if ([APP_MGR isDeviceIpad] == YES) {
         [APP_MGR.splitVM setSelectedArticle:_selectedArticle];

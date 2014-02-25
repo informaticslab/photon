@@ -41,7 +41,8 @@ static AppManager *sharedAppManager = nil;
 
 - (id)init {
     
-	if ((self = [super init])) {
+	if ((self = [super init]))
+    {
 		self.appName = @"Photon";
         self.agreedWithEula = FALSE;
 //      self.tableFont = [UIFont boldSystemFontOfSize: 16];

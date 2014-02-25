@@ -84,7 +84,6 @@ ShareActionSheet *shareAS;
     self.txtvArticleTitle.delegate = self;
     self.txtvArticleTitle.showsVerticalScrollIndicator = YES;
     self.txtvArticleTitle.text = self.contentText;
-    self.txtvArticleTitle.text = self.contentText;
     
 
     self.parentViewController.navigationItem.title = self.navbarTitle;
@@ -150,7 +149,7 @@ ShareActionSheet *shareAS;
     self.txtvImplicationsText.font = font;
     
     self.txtvArticleTitle.text = _article.title;
-    self.txtvArticleTitle.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:16];
+    self.txtvArticleTitle.font = APP_MGR.tableFont;
     self.txtvArticleTitle.textAlignment = NSTextAlignmentCenter;
     
     
@@ -190,9 +189,11 @@ ShareActionSheet *shareAS;
 
 - (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
 {
+    
     // Called when the view is shown again in the split view, invalidating the button and popover controller.
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
+    
 }
 
 
