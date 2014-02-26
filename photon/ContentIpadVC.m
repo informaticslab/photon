@@ -144,12 +144,16 @@ ShareActionSheet *shareAS;
     
     self.txtvKnownText.text = _article.already_know;
     self.txtvKnownText.font = font;
+    self.txtvKnownText.textContainerInset = UIEdgeInsetsMake(5,5,5,5);
+
     
     self.txtvAddedText.text = _article.added_by_report;
     self.txtvAddedText.font = font;
+    self.txtvAddedText.textContainerInset = UIEdgeInsetsMake(5,5,5,5);
     
     self.txtvImplicationsText.text = _article.implications;
     self.txtvImplicationsText.font = font;
+    self.txtvImplicationsText.textContainerInset = UIEdgeInsetsMake(5,5,5,5);
     
     self.txtvArticleTitle.text = _article.title;
     self.txtvArticleTitle.font = APP_MGR.tableFont;

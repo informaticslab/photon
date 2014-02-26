@@ -50,9 +50,12 @@ NSArray *keywordArticles;
     self.navigationItem.title = _keyword;
     keywordArticles = [APP_MGR.issuesMgr articlesWithKeyword:_keyword];
     
-    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
-    shareButton.width = 30.0;
-    self.navigationItem.rightBarButtonItem = shareButton;
+    if([APP_MGR isDeviceIpad] == NO) {
+
+        UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
+        shareButton.width = 30.0;
+        self.navigationItem.rightBarButtonItem = shareButton;
+    }
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     

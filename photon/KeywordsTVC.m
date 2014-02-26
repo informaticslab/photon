@@ -38,7 +38,7 @@ NSString *selectedKeyword;
     item.selectedImage = [UIImage imageNamed:@"search_tab_active"];
     allKeywords = [[NSMutableArray alloc] init];
     [allKeywords addObjectsFromArray:[[APP_MGR.issuesMgr.keywords allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"ipad_master_navbar"] forBarMetrics:UIBarMetricsDefault];
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
     //set back button arrow color
     // Do any additional setup after loading the view, typically from a nib.
