@@ -61,21 +61,46 @@ NSArray *keywordArticles;
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [APP_MGR.splitVM searchStart];
-    if (isArticleSelected == NO) {
-        
-        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
-        [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
-        _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
-        _selectedArticle = _issue.articles[[indexPath row]];
+    
+    [self updateArticleSelection];
+//    if (_selectedArticle == nil) {
+//        
+//        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
+//        [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+//        _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
+//        _selectedArticle = _issue.articles[[indexPath row]];
+//
+//    }
+//
+//    [APP_MGR.splitVM setSelectedArticle:_selectedArticle];
+//    [APP_MGR.splitVM searchEnd];
+//    
+}
+
+-(void)updateArticleSelection
+{
+    
+    // select first row if device is iPad
+    if ([APP_MGR isDeviceIpad] == YES) {
+        if ([APP_MGR.issuesMgr.issues count] != 0) {
+            
+            if (_selectedArticle == nil) {
+                
+                NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
+                [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+                _selectedArticle = keywordArticles[[indexPath row]];
+                if (_selectedArticle != nil) {
+                    isArticleSelected = YES;
+                }
+            }
+        }
         [APP_MGR.splitVM setSelectedArticle:_selectedArticle];
         [APP_MGR.splitVM searchEnd];
 
     }
-
+    
     
 }
-
 
 
 - (void)share:(id)sender

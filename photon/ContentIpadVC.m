@@ -136,6 +136,9 @@ ShareActionSheet *shareAS;
 
 -(void)selectedArticle:(Article *)selArticle
 {
+    if (selArticle == nil)
+        return;
+    
     UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:15];
     _article = selArticle;
     

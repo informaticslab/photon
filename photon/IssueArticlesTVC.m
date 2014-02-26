@@ -91,24 +91,7 @@ ShareActionSheet *shareAS;
 - (void)viewWillAppear:(BOOL)animated
 {
     
-    // select first row if device is iPad
-    if ([APP_MGR isDeviceIpad] == YES) {
-        if ([APP_MGR.issuesMgr.issues count] != 0) {
-            
-            if (isArticleSelected == NO) {
-            
-                NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
-                [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
-                _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
-                _article = _issue.articles[[indexPath row]];
-                [APP_MGR.splitVM setSelectedArticle:_article];
-            }
-
-            
-        }
-    }
-    [APP_MGR.splitVM searchEnd];
-
+    [self updateArticleSelection];
 }
 
 - (void)share:(id)sender
@@ -361,23 +344,39 @@ ShareActionSheet *shareAS;
     
 }
 
+-(void)updateArticleSelection
+{
+    
+    // select first row if device is iPad
+    if ([APP_MGR isDeviceIpad] == YES) {
+        if ([APP_MGR.issuesMgr.issues count] != 0) {
+            
+            if (isArticleSelected == NO) {
+                
+                NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
+                [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+                _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
+                if (_issue != nil) {
+                    _article = _issue.articles[[indexPath row]];
+                    if (_article != nil) {
+                        isArticleSelected = YES;
+                    }
+                }
+            }
+        }
+        [APP_MGR.splitVM setSelectedArticle:_article];
+        [APP_MGR.splitVM searchEnd];
+        
+    }
+    
+}
+
 
 -(void)feedDataUpdateNotification:(NSNotification *)pNotification
 {
-    // NSLog(@"Received notification in CondomUsageRiskChart = %@",(NSString*)[pNotification object]);
-    
-    
     [self.tableView reloadData];
     [self.refreshControl endRefreshing];
-    if ([APP_MGR isDeviceIpad] == YES) {
-        //[APP_MGR.splitVM.articleSelectDelegate selectedArticle:_article];
-        [APP_MGR.splitVM setSelectedArticle:_article];
- //     [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
-        if (isArticleSelected == NO) {
-            NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
-            [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
-        }
-    }
+    [self updateArticleSelection];
 }
 
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
