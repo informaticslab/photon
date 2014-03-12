@@ -33,7 +33,7 @@
                     <navigationItem key="navigationItem" title="MMWR Articles" id="T1L-FS-2Qr"/>
                     <connections>
                         <segue destination="IAr-lY-2gS" kind="replace" identifier="pushContentPageIpadViews" splitViewControllerTargetIndex="1" id="WhT-qN-xq9"/>
-                        <segue destination="agv-o0-Y9V" kind="modal" identifier="modalFullArticle" modalPresentationStyle="fullScreen" id="2Za-UK-tFB"/>
+                        <segue destination="agv-o0-Y9V" kind="modal" identifier="modalFullArticle" modalPresentationStyle="pageSheet" id="2Za-UK-tFB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9BA-vN-P1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -103,11 +103,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="KeywordArticlesCell" id="nPL-Kh-Mfl">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="KeywordArticlesCell" id="nPL-Kh-Mfl">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nPL-Kh-Mfl" id="7vE-kz-3A9">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="273" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -118,6 +118,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="qIe-Sg-4WS"/>
+                    <connections>
+                        <segue destination="agv-o0-Y9V" kind="modal" identifier="modalFullArticle" modalPresentationStyle="pageSheet" id="qhf-Oy-WfU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AA2-zm-e4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -754,16 +757,16 @@ If you have any questions about the app, please contact either the MMWR staff at
                         <viewControllerLayoutGuide type="bottom" id="SyB-Zt-wJz"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uOd-mm-Rul">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B7N-FC-fMj">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="724"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B7N-FC-fMj">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="724"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mhR-l1-Cud">
-                                <rect key="frame" x="0.0" y="724" width="320" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhR-l1-Cud">
+                                <rect key="frame" x="0.0" y="724" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="dGI-9H-zKJ"/>
@@ -774,12 +777,23 @@ If you have any questions about the app, please contact either the MMWR staff at
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="sE2-Yo-EiC">
-                                <rect key="frame" x="502" y="352" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="sE2-Yo-EiC">
+                                <rect key="frame" x="374" y="352" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="B7N-FC-fMj" secondAttribute="trailing" id="IAJ-ha-rHV"/>
+                            <constraint firstItem="sE2-Yo-EiC" firstAttribute="centerY" secondItem="B7N-FC-fMj" secondAttribute="centerY" id="KA6-Yd-L4k"/>
+                            <constraint firstItem="mhR-l1-Cud" firstAttribute="trailing" secondItem="B7N-FC-fMj" secondAttribute="trailing" id="UMh-7A-PRt"/>
+                            <constraint firstItem="mhR-l1-Cud" firstAttribute="top" secondItem="B7N-FC-fMj" secondAttribute="bottom" id="W3O-4p-6MG"/>
+                            <constraint firstItem="mhR-l1-Cud" firstAttribute="centerX" secondItem="sE2-Yo-EiC" secondAttribute="centerX" id="auh-Nr-a8u"/>
+                            <constraint firstItem="mhR-l1-Cud" firstAttribute="leading" secondItem="uOd-mm-Rul" secondAttribute="leading" id="bb2-K4-btU"/>
+                            <constraint firstItem="B7N-FC-fMj" firstAttribute="top" secondItem="uOd-mm-Rul" secondAttribute="top" id="q8w-t2-4QC"/>
+                            <constraint firstItem="mhR-l1-Cud" firstAttribute="leading" secondItem="B7N-FC-fMj" secondAttribute="leading" id="s9u-bd-rFU"/>
+                            <constraint firstAttribute="bottom" secondItem="mhR-l1-Cud" secondAttribute="bottom" id="xxR-7l-1In"/>
+                        </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <toolbarItems/>
@@ -790,7 +804,7 @@ If you have any questions about the app, please contact either the MMWR staff at
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V9b-xJ-gWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2250" y="441"/>
+            <point key="canvasLocation" x="2440" y="609"/>
         </scene>
     </scenes>
     <resources>
@@ -811,6 +825,7 @@ If you have any questions about the app, please contact either the MMWR staff at
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="qhf-Oy-WfU"/>
         <segue reference="WhT-qN-xq9"/>
     </inferredMetricsTieBreakers>
 </document>

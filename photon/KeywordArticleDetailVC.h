@@ -11,7 +11,7 @@
 #import "ModalViewDelegate.h"
 #import "PopoverViewDelegate.h"
 
-@interface KeywordArticleDetailVC : UIViewController<UISplitViewControllerDelegate>
+@interface KeywordArticleDetailVC : UIViewController<UISplitViewControllerDelegate, ModalViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UIButton *btnViewArticle;

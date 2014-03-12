@@ -11,6 +11,7 @@
 #import "ArticleDetails.h"
 #import "ShareActionSheet.h"
 #import "ContentPagesVC.h"
+#import "FullArticleVC.h"
 
 #define CELL_TEXT_LABEL_WIDTH 230.0
 #define CELL_PADDING 10.0
@@ -104,6 +105,25 @@ NSArray *keywordArticles;
     
     
 }
+
+-(void)didClickDoneButton;
+{
+    
+    // dismiss popover
+    [self.detailViewPopover dismissPopoverAnimated:YES];
+    
+}
+
+-(void)didClickFullArticleButton
+{
+    
+    // dismiss popover
+    [self.detailViewPopover dismissPopoverAnimated:YES];
+    [self performSegueWithIdentifier:@"modalFullArticle" sender:nil];
+    
+    
+}
+
 
 
 - (void)share:(id)sender
@@ -226,8 +246,25 @@ NSArray *keywordArticles;
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     
-    _selectedArticle = keywordArticles[[indexPath row]];
-    [self performSegueWithIdentifier:@"pushKeywordArticleDetails" sender:nil];
+    ArticleMO *rowArticle = keywordArticles[[indexPath row]];
+    _selectedArticle = rowArticle;
+    
+    KeywordArticleDetailVC *content = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverArticleDetails"];
+    content.article = rowArticle;
+    content.modalDelegate = self;
+    content.popoverViewDelegate = self;
+    
+	// Setup the popover for use from the navigation bar.
+	self.detailViewPopover = [[UIPopoverController alloc] initWithContentViewController:content];
+	self.detailViewPopover.popoverContentSize = CGSizeMake(400., 358.);
+	self.detailViewPopover.delegate = self;
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    // Present the popover from the button that was tapped in the detail view.
+    [self.detailViewPopover presentPopoverFromRect:cell.bounds inView:cell.contentView
+                          permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+
     
 }
 
@@ -262,7 +299,12 @@ NSArray *keywordArticles;
         ContentPagesVC *contentVC = segue.destinationViewController;
         contentVC.article = _selectedArticle;
         contentVC.issue = _selectedArticle.issue;
+    } else if([segue.identifier isEqualToString:@"modalFullArticle"]) {
+        FullArticleVC *fullArticleVC = segue.destinationViewController;
+        fullArticleVC.url = _selectedArticle.url;
+        fullArticleVC.modalDelegate = self;
     }
+
 }
 
 

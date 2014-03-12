@@ -44,7 +44,10 @@ ShareActionSheet *shareAS;
     _txtViewArticleTitle.textAlignment = NSTextAlignmentCenter;
     _txtViewArticleTitle.font = [UIFont fontWithName:@"HelveticaNeue" size:18];
 
-    _txtViewArticleIssueDate.text = [NSString stringWithFormat:@"Published on %@",_article.issue.date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"MMM dd, yyyy";
+
+    _txtViewArticleIssueDate.text = [NSString stringWithFormat:@"Published on %@",[formatter stringFromDate:_article.issue.date]];
     _txtViewArticleIssueDate.textAlignment = NSTextAlignmentCenter;
     _txtViewArticleIssueDate.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
     
@@ -69,6 +72,15 @@ ShareActionSheet *shareAS;
     
 }
 
+- (void)didDismissModalView {
+    
+    // Dismiss the modal view controller
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+
+
 
 - (IBAction)btnViewFullArticleTouchUp:(id)sender {
     
@@ -88,8 +100,11 @@ ShareActionSheet *shareAS;
     {
         FullArticleVC *fullArticleVC = segue.destinationViewController;
         fullArticleVC.url = _article.url;
+        fullArticleVC.modalDelegate = self;
         
     }
+    
+
 }
 
 #pragma mark - Split view
