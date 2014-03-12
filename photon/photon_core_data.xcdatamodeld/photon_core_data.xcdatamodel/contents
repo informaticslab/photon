@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ArticleMO" representedClassName="ArticleMO" syncable="YES">
+        <attribute name="added_by_report" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="already_known" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="implications" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unread" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="version" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="issue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="IssueMO" inverseName="articles" inverseEntity="IssueMO" syncable="YES"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="KeywordMO" inverseName="articles" inverseEntity="KeywordMO" syncable="YES"/>
+    </entity>
+    <entity name="IssueMO" representedClassName="IssueMO" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unread" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="volume" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="articles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ArticleMO" inverseName="issue" inverseEntity="ArticleMO" syncable="YES"/>
+    </entity>
+    <entity name="KeywordMO" representedClassName="KeywordMO" syncable="YES">
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="articles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ArticleMO" inverseName="tags" inverseEntity="ArticleMO" syncable="YES"/>
+    </entity>
+    <fetchRequest name="GetAllIssues" entity="IssueMO"/>
+    <fetchRequest name="GetAllKeywords" entity="KeywordMO"/>
+    <fetchRequest name="GetIssueWithDateVolumeNumber" entity="IssueMO" predicateString="volume == $VOLUME AND date == $DATE AND number == $NUMBER"/>
+    <fetchRequest name="GetKeywordWithText" entity="KeywordMO" predicateString="text == $TEXT"/>
+    <elements>
+        <element name="ArticleMO" positionX="0" positionY="0" width="128" height="180"/>
+        <element name="IssueMO" positionX="0" positionY="0" width="128" height="135"/>
+        <element name="KeywordMO" positionX="0" positionY="0" width="128" height="73"/>
+    </elements>
+</model>

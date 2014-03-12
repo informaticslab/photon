@@ -33,6 +33,7 @@
 + (id)singletonAppManager;
 -(BOOL)isDebugInfoEnabled;
 -(BOOL)isDeviceIpad;
+- (void)saveContext;
 
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Article.h"
+#import "ArticleMO+Article.h"
 #import "ModalViewDelegate.h"
 #import "PopoverViewDelegate.h"
 
@@ -15,7 +15,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UIButton *btnViewArticle;
-@property (weak, nonatomic) Article *article;
+@property (weak, nonatomic) ArticleMO *article;
 @property (weak, nonatomic) IBOutlet UITextView *txtViewArticleTitle;
 @property (weak, nonatomic) IBOutlet UITextView *txtViewArticleIssueDate;
 @property (weak, nonatomic) IBOutlet UITextView *txtViewArticleIssueVolNum;

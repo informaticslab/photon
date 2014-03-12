@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2rV-5Q-mUE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2rV-5Q-mUE">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Issue ArticlesTVC - MMWR Articles-->
@@ -488,6 +488,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="qnZ-zg-BCB"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="358"/>
                     <connections>
                         <outlet property="btnViewArticle" destination="qAW-NJ-ruO" id="D2C-hM-tNx"/>
                         <outlet property="btnViewFullArticleTouchUp" destination="qAW-NJ-ruO" id="hdc-AF-8Rz"/>
@@ -563,6 +564,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="480"/>
                     <connections>
                         <outlet property="helpVC" destination="GZU-CU-5ia" id="gQj-ZV-2rT"/>
                         <outlet property="infoVC" destination="npO-TM-Bre" id="ctH-Mv-UIQ"/>
@@ -752,16 +754,16 @@ If you have any questions about the app, please contact either the MMWR staff at
                         <viewControllerLayoutGuide type="bottom" id="SyB-Zt-wJz"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uOd-mm-Rul">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B7N-FC-fMj">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="724"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="724"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mhR-l1-Cud">
-                                <rect key="frame" x="0.0" y="724" width="1024" height="44"/>
+                                <rect key="frame" x="0.0" y="724" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="dGI-9H-zKJ"/>

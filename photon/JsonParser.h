@@ -28,6 +28,6 @@
 -(id)init;
 -(void)updateFromFeed;
 -(void)parseTestData;
-
+-(void)parseAndPersistTestData;
 
 @end

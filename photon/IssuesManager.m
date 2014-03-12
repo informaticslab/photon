@@ -9,16 +9,56 @@
 #import "IssuesManager.h"
 #import "Issue.h"
 #import "Article.h"
+#import "IssueMO+Issue.h"
+#import "ArticleMO+Article.h"
+#import "KeywordMO.h"
 
 
 @implementation IssuesManager
+
+NSManagedObjectModel *model;
+NSManagedObjectContext *context;
+
+
 
 -(id)init
 {
     if (self = [super init]) {
         
+        model = APP_MGR.managedObjectModel;
+        context = APP_MGR.managedObjectContext;
+        
+        NSFetchRequest *fetchRequest = [[model fetchRequestTemplateForName:@"GetAllIssues"] copy];
+        
+        // Specify how the fetched objects should be sorted
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date"
+                                                                       ascending:NO];
+        [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
+        
+        NSError *error = nil;
+        NSArray *fetchedObjects = [APP_MGR.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+        if (fetchedObjects == nil) {
+            NSLog(@"Issues Manager has no stored issues.");
+        }
+    
+        self.sortedIssues = fetchedObjects;
         self.issues = [[NSMutableDictionary alloc]init];
-        self.keywords = [[NSMutableDictionary alloc]init];
+
+        fetchRequest = [[model fetchRequestTemplateForName:@"GetAllKeywords"] copy];
+        
+        // Specify how the fetched objects should be sorted
+        sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"text"
+                                                                       ascending:YES];
+        [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
+        
+        error = nil;
+        fetchedObjects = [APP_MGR.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+        if (fetchedObjects == nil) {
+            NSLog(@"Issues Manager has no stored keywords.");
+        }
+        
+        
+        self.keywords = fetchedObjects;
         
     };
 
@@ -26,111 +66,121 @@
     
 }
 
+#pragma mark - Issue methods
+-(IssueMO *)createNewIssue:(Issue *)newIssue
+{
+    
+    IssueMO *issue = (IssueMO *)[NSEntityDescription
+                                 insertNewObjectForEntityForName:@"IssueMO"
+                                 inManagedObjectContext:context];
+    
+    
+    issue.date = newIssue.date;
+    issue.volume = [NSNumber numberWithInteger:newIssue.volume];
+    issue.number = [NSNumber numberWithInteger:newIssue.number];
+    
+    [APP_MGR saveContext];
+    
+    return issue;
+    
+    
+}
+
+-(IssueMO *)getStoredIssueForIssue:(Issue *)newIssue
+{
+    
+    NSDictionary *substitutionDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                            newIssue.date, @"DATE", [NSNumber numberWithInteger:newIssue.volume], @"VOLUME",
+                                            [NSNumber numberWithInteger:newIssue.number], @"NUMBER", nil];
+    
+    NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"GetIssueWithDateVolumeNumber" substitutionVariables:substitutionDictionary];
+    
+    NSError *error = nil;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    
+    if (fetchedObjects == nil) {
+        NSLog(@"Issues Manager has no issues with date = %@, volume = %ld, number = %ld", newIssue.date, (long)newIssue.volume, (long)newIssue.number);
+        return nil;
+    }
+    else if([fetchedObjects count] == 1)
+        return (IssueMO *)[fetchedObjects objectAtIndex:0];
+    else
+        return nil;
+
+}
+
 -(BOOL)isIssueNew:(Issue *)newIssue
 {
-    // check if issue exists
-    Issue *currIssue = [_issues objectForKey:newIssue.title];
     
-    if (currIssue == nil)
+    IssueMO *issue = [self getStoredIssueForIssue:newIssue];
+    
+    if (issue ==nil)
         return YES;
-    
-    return NO;
+    else
+        return NO;
     
 }
 
--(BOOL)isArticleNew:(Article *)article inIssue:(Issue *)issue
-{
-    if ([issue numberOfArticles] == 0)
-        return YES;
-    
-    // check if article with this title already exists in current issue
-    Article *existingArticle = [issue getArticleWithTitle:article.title];
-    
-    // if no article with title
-    if (existingArticle == nil)
-        return YES;
-    
-    return NO;
-    
-}
 
--(BOOL)isArticleNewer:(Article *)article inIssue:(Issue *)issue
+-(IssueMO *)getSortedIssueForIndex:(NSUInteger)index
 {
-    // check if article with this title already exists in current issue
-    Article *existingArticle = [issue getArticleWithTitle:article.title];
+    if ([self.sortedIssues count] == 0)
+        return nil;
     
-    // if no article with title
-    if (existingArticle == nil)
-        return YES;
-    
-    return NO;
-    
-}
-
--(Issue *)storeNewIssue:(Issue *)newIssue
-{
-    
-    [_issues setObject:newIssue forKey:newIssue.title];
-    
-    //_sortedIssues = [[_issues allKeys] sortedArrayUsingSelector:@selector(compare:options::)];
-    
-    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:NO selector:@selector(localizedCompare:)];
-    _sortedIssues = [[_issues allKeys]  sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-    
-    return newIssue;
-    
-    
-}
-
--(Issue *)newIssueWithTitle:(NSString *)title
-{
-
-    Issue *issue = [[Issue alloc]initWithTitle:title];
-    [_issues setObject:issue forKey:title];
+    IssueMO *issue = (IssueMO *)_sortedIssues[index];
     
     return issue;
     
 }
 
--(Issue *)getStoredIssueForIssue:(Issue *)issue
+
+#pragma mark - Article methods
+-(BOOL)isArticleNew:(Article *)article inIssue:(IssueMO *)issue
 {
-    Issue *storedIssue = [_issues objectForKey:issue.title];
-     
-    return storedIssue;
     
+    if ([issue.articles count] == 0)
+        return YES;
+    
+    // check if article with this title already exists in current issue
+    ArticleMO *existingArticle = [issue getArticleWithTitle:article.title];
+    
+    // if no article with title
+    if (existingArticle == nil)
+        return YES;
+    
+    return NO;
     
 }
 
--(Article *)storeNewArticle:(Article *)newArticle inIssue:(Issue *)issue
+
+-(ArticleMO *)createNewArticle:(Article *)newArticle inIssue:(IssueMO *)issue
 {
-
-    return [issue storeArticle:newArticle];
     
-}
-
--(void)addArticleTags:(NSArray *)tags forArticle:(Article *)article
-{
-    NSMutableArray *articlesWithTag;
+    ArticleMO *article = (ArticleMO *)[NSEntityDescription
+                                 insertNewObjectForEntityForName:@"ArticleMO"
+                                 inManagedObjectContext:context];
     
-    for (NSString *tag in tags) {
-        if ((articlesWithTag = [_keywords objectForKey:tag]) == nil) {
-            articlesWithTag = [[NSMutableArray alloc] initWithObjects:article, nil];
-            [_keywords setObject:articlesWithTag forKey:tag];
+    [article initWithTitle:newArticle.title version:newArticle.version];
+    article.issue = issue;
+    article.implications = newArticle.implications;
+    article.added_by_report = newArticle.added_by_report;
+    article.already_known = newArticle.already_know;
+    article.url = newArticle.url;
+    [APP_MGR saveContext];
+    return article;
+    
 
-        } else {
-            [articlesWithTag addObject:article];
-        }
-    }
 }
 
 
 -(void)newArticle:(Article *)article inIssue:(Issue *)issue withTags:(NSArray *)tags version:(NSInteger)ver
 {
-    Issue *storedIssue = nil;
-    Article *storedArticle = nil;
+    
+    IssueMO *storedIssue = nil;
+    ArticleMO *storedArticle = nil;
     
     if ([self isIssueNew:issue]) {
-        storedIssue = [self storeNewIssue:issue];
+        storedIssue = [self createNewIssue:issue];
     } else {
         storedIssue = [self getStoredIssueForIssue:issue];
         
@@ -139,91 +189,89 @@
     if ([self isArticleNew:article inIssue:storedIssue])
     {
         
-        storedArticle = [self storeNewArticle:article inIssue:storedIssue];
+        storedArticle = [self createNewArticle:article inIssue:storedIssue];
         
     } else {
         
         storedArticle = [storedIssue getArticleWithTitle:article.title];
         
         // check if version number is greater than current version
-        if (article.version > storedArticle.version) {
+        if (article.version > storedArticle.version.integerValue ) {
             
             // create new article object and replace the old with new
-            [issue replaceArticle:storedArticle withArticle:article];
+            [storedIssue replaceArticle:storedArticle withArticle:article];
             
         }
     }
     
-    [self addArticleTags:tags forArticle:storedArticle];
+    [self addArticleKeywords:tags forArticle:storedArticle];
 
 }
 
-
--(Article *)newArticleWithTitle:(NSString *)title inIssue:(Issue *)currIssue revision:(NSInteger)ver
+#pragma mark - Keyword methods
+-(KeywordMO *)createNewKeyword:(NSString *)text inArticle:(ArticleMO *)article
 {
-
-    // check if article with this title already exists in current issue
-    Article *article = [currIssue getArticleWithTitle:title];
     
-    // if no article with title, add article to current issue
-    if (article == nil) {
-        
-        article = [currIssue addArticleWithTitle:title];
-        article.issue = currIssue;
-        
+    KeywordMO *keyword = (KeywordMO *)[NSEntityDescription
+                                       insertNewObjectForEntityForName:@"KeywordMO"
+                                       inManagedObjectContext:context];
+    
+    keyword.text = text;
+    [keyword addArticlesObject:article];
+    
+    [APP_MGR saveContext];
+    return keyword;
+}
+
+
+
+-(NSArray *)articlesWithKeyword:(KeywordMO *)keyword
+{
+    
+    return [keyword.articles allObjects];
+    
+}
+
+
+-(KeywordMO *)getKeywordWithText:(NSString *)text
+{
+    
+    NSDictionary *substitutionDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                            text, @"TEXT", nil];
+    
+    NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"GetKeywordWithText" substitutionVariables:substitutionDictionary];
+    
+    NSError *error = nil;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    
+    if (fetchedObjects == nil) {
+        NSLog(@"Issues Manager has no keyword with text = %@.", text);
+        return nil;
     }
-    
-    //
-    else {
-        
-        // check if version number is greater than current version
-        if (ver > article.version) {
-            
-            // create new article object and replace the old with new
-            Article *newArticle = [[Article alloc]initWithTitle:title];
-            [currIssue replaceArticle:article withArticle:newArticle];
-            
-        }
-    }
-    
-    return article;
-}
-
--(NSArray *)articlesWithKeyword:(NSString *)keyword
-{
-    NSArray *articles = [_keywords objectForKey:keyword];
-    return articles;
-}
-
-
--(Issue *)getSortedIssueForIndex:(NSUInteger)index
-{
-    if ([self.issues count] == 0)
+    else if([fetchedObjects count] == 1)
+        return (KeywordMO *)[fetchedObjects objectAtIndex:0];
+    else
         return nil;
     
-    if ([self.sortedIssues count] == 0)
-        return nil;
-    
-    NSString *issueKey = _sortedIssues[index];
-    
-    return [self.issues objectForKey:issueKey];
-    
 }
 
--(Article *)getLatestArticle
+-(void)addArticleKeywords:(NSArray *)tags forArticle:(ArticleMO *)article
 {
-    Issue *latestIssue = (Issue *)self.sortedIssues[0];
+    KeywordMO *keywordMO;
     
-    if (latestIssue != nil) {
-        Article *latestArticle = latestIssue.articles[0];
-        if (latestArticle != nil) {
-            return latestArticle;
+    for (NSString *tag in tags) {
+        
+        if ((keywordMO = [self getKeywordWithText:tag]) == nil) {
+            keywordMO = [self createNewKeyword:tag inArticle:article];
+        
+        } else {
+            [keywordMO addArticlesObject:article];
+            
         }
     }
-    
-    return nil;
-    
 }
+
+
 
 
 

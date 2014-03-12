@@ -31,7 +31,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     _pageHeaders = @[@"What is already known?", @"What is added by this report?", @"What are the implications for public health practice?"];
-    _pageText = @[_article.already_know, _article.added_by_report, _article.implications];
+    _pageText = @[_article.already_known, _article.added_by_report, _article.implications];
     _navbarTitles = @[@"Summary", @"Summary", @"Summary"];
     _icons = @[@"bluebox_subheader_icon", @"added_icon", @"implications_icon"];
     
@@ -40,7 +40,7 @@
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ContentPVC"];
     self.pageViewController.dataSource = self;
     self.pageViewController.delegate = self;
-    
+
     ContentVC *startingViewController = [self viewControllerAtIndex:0];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];

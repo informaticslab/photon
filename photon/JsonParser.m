@@ -13,6 +13,7 @@
 
 #import "NSString+HTML.h"
 #import "MWFeedParser.h"
+#import "IssueMO+Issue.h"
 
 @implementation JsonParser
 
@@ -101,6 +102,42 @@ int implicationsFound = 0;
     
 }
 
+-(void)parseAndPersistJsonBlobs:(NSArray *)jsonBlobs
+{
+    Issue *currIssue = nil;
+    Article *currArticle = nil;
+    NSArray *tags = nil;
+    NSInteger schemaVer = 0;
+    NSInteger contentVer = 0;
+    
+    NSLog(@"Imported Test Issues: %@", jsonBlobs);
+    
+    for (NSDictionary *articleJsonBlob in jsonBlobs)
+    {
+        // get schema version
+        schemaVer = [JsonParserBase parseSchemaVersionFromJson:articleJsonBlob];
+        
+        id <JsonParserProtocol> versionParser = [self getParserForSchemaVersion:schemaVer];
+        
+        // get issue from blob
+        currIssue = [versionParser parseIssueJson:articleJsonBlob];
+        
+        // add article info
+        currArticle = [versionParser parseArticleJson:articleJsonBlob];
+        
+        // get content version
+        contentVer = [versionParser parseContentVersionJson:articleJsonBlob];
+        
+        // get collection of tags for currrent article
+        tags = [versionParser parseTagsJson:articleJsonBlob];
+        
+        [APP_MGR.issuesMgr newArticle:currArticle inIssue:currIssue withTags:tags version:contentVer];
+        
+    }
+    
+    
+}
+
 
 -(void)parseTestData
 {
@@ -110,6 +147,21 @@ int implicationsFound = 0;
     NSArray *testJsonBlobs = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPath]
                                                             options:kNilOptions
                                                               error:&err];
+    
+    [self parseJsonBlobs:testJsonBlobs];
+    
+    
+}
+
+
+-(void)parseAndPersistTestData
+{
+    
+    NSError *err = nil;
+    NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"Issues" ofType:@"json"];
+    NSArray *testJsonBlobs = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPath]
+                                                             options:kNilOptions
+                                                               error:&err];
     
     [self parseJsonBlobs:testJsonBlobs];
     

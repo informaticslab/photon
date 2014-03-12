@@ -7,17 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Article.h"
+#import "ArticleMO+Article.h"
 #import "ArticleSelectionDelegate.h"
 #import "ModalViewDelegate.h"
-#import "Issue.h"
+#import "IssueMO+Issue.h"
+#import "KeywordMO.h"
 
 
 @interface KeywordArticlesTVC : UITableViewController<ModalViewDelegate>
 
-@property(weak, nonatomic) NSString *keyword;
-@property(nonatomic, weak) Article *selectedArticle;
-@property(nonatomic, weak) Issue *issue;
+@property(weak, nonatomic) KeywordMO *keyword;
+@property(nonatomic, weak) ArticleMO *selectedArticle;
+@property(nonatomic, weak) IssueMO *issue;
 
 - (void)didDismissModalView;
 

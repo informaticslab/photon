@@ -8,22 +8,22 @@
 
 #import <Foundation/Foundation.h>
 #import "JsonParser.h"
-#import "Issue.h"
+#import "IssueMO+Issue.h"
+#import "KeywordMO.h"
 
 @interface IssuesManager : NSObject
 
 @property(nonatomic, strong) NSMutableDictionary *issues;
 @property(nonatomic, strong) NSArray *sortedIssues;
-@property(nonatomic, strong) NSMutableDictionary *keywords;
+@property(nonatomic, strong) NSArray *keywords;
+
 
 -(id)init;
 
 
--(NSArray *)articlesWithKeyword:(NSString *)keyword;
--(Article *)newArticleWithTitle:(NSString *)title inIssue:(Issue *)currIssue revision:(NSInteger)ver;
+-(NSArray *)articlesWithKeyword:(KeywordMO *)keyword;
 -(void)newArticle:(Article *)article inIssue:(Issue *)issue withTags:(NSArray *)tags version:(NSInteger)ver;
--(Issue *)getSortedIssueForIndex:(NSUInteger)index;
--(Article *)getLatestArticle;
+-(IssueMO *)getSortedIssueForIndex:(NSUInteger)index;
 
 
 @end

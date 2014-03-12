@@ -9,6 +9,7 @@
 #import "KeywordsTVC.h"
 #import "KeywordArticlesTVC.h"
 #import "ShareActionSheet.h"
+#import "KeywordMO.h"
 
 @interface KeywordsTVC ()
 
@@ -20,30 +21,29 @@ ShareActionSheet *shareAS;
 
 
 NSArray *searchResults;
-NSMutableArray *allKeywords;
-NSString *selectedKeyword;
+NSArray *allKeywords;
+KeywordMO *selectedKeyword;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
+    
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     // Custom initialization
     UITabBarItem *item = [self.tabBarController.tabBar.items objectAtIndex:1];
     item.image = [UIImage imageNamed:@"search_tab_inactive"];
     item.selectedImage = [UIImage imageNamed:@"search_tab_active"];
-    allKeywords = [[NSMutableArray alloc] init];
-    [allKeywords addObjectsFromArray:[[APP_MGR.issuesMgr.keywords allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]];
+    allKeywords  = APP_MGR.issuesMgr.keywords;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"ipad_master_navbar"] forBarMetrics:UIBarMetricsDefault];
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
     //set back button arrow color
     // Do any additional setup after loading the view, typically from a nib.
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName ]];
-   // check for diffs between ios 6 & 7
+    // check for diffs between ios 6 & 7
     if ([UINavigationBar instancesRespondToSelector:@selector(barTintColor)])
         self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1.0];
     else {
@@ -59,9 +59,9 @@ NSString *selectedKeyword;
         shareButton.style = UIBarButtonItemStyleBordered;
         
         self.navigationItem.rightBarButtonItem = shareButton;
-
+        
     }
- 
+    
     // register for update notification
     [[NSNotificationCenter defaultCenter]
      addObserver:self
@@ -73,16 +73,16 @@ NSString *selectedKeyword;
     // search setup
     self.isSearching = NO;
     self.searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
-   [self.searchDisplayController initWithSearchBar:self.searchBar contentsController:self];
+    [self.searchDisplayController initWithSearchBar:self.searchBar contentsController:self];
     self.searchDisplayController.delegate = self;
     self.searchDisplayController.searchResultsDataSource = self;
     self.searchDisplayController.searchResultsDelegate = self;
     self.tableView.tableHeaderView = self.searchDisplayController.searchBar;
     
     [APP_MGR.splitVM searchStart];
-
-
-
+    
+    
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -94,14 +94,14 @@ NSString *selectedKeyword;
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     [APP_MGR.splitVM searchStart];
-
-   
+    
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-
+    
 }
 
 
@@ -130,7 +130,7 @@ NSString *selectedKeyword;
 - (void)searchDisplayControllerDidBeginSearch:(UISearchDisplayController *)controller
 {
     self.isSearching = YES;
-
+    
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar"] forBarMetrics:UIBarMetricsDefault];
@@ -154,8 +154,8 @@ NSString *selectedKeyword;
 {
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     self.isSearching = NO;
-
-
+    
+    
     if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
         [self.tableView insertSubview:self.searchDisplayController.searchBar aboveSubview:self.tableView];
     }
@@ -181,7 +181,7 @@ NSString *selectedKeyword;
 {
     if (tableView == self.searchDisplayController.searchResultsTableView)
         return [searchResults count];
-
+    
     // Return the number of rows in the section.
     return [APP_MGR.issuesMgr.keywords count];
 }
@@ -192,12 +192,12 @@ NSString *selectedKeyword;
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     // Configure the cell...
     if (tableView == self.searchDisplayController.searchResultsTableView)
-        cell.textLabel.text = searchResults[[indexPath row]];
+        cell.textLabel.text = ((KeywordMO *)searchResults[[indexPath row]]).text;
     else
-        cell.textLabel.text = allKeywords[[indexPath row]];
+        cell.textLabel.text = ((KeywordMO *)allKeywords[[indexPath row]]).text;
     
     cell.textLabel.font = APP_MGR.tableFont;
-
+    
     return cell;
 }
 
@@ -230,7 +230,7 @@ shouldReloadTableForSearchString:(NSString *)searchString
         selectedKeyword = searchResults[[indexPath row]];
     else
         selectedKeyword = allKeywords[[indexPath row]];
-        
+    
     [self performSegueWithIdentifier:@"pushKeywordArticles" sender:nil];
     
 }

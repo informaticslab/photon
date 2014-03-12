@@ -134,7 +134,7 @@ ShareActionSheet *shareAS;
 
 
 
--(void)selectedArticle:(Article *)selArticle
+-(void)selectedArticle:(ArticleMO *)selArticle
 {
     if (selArticle == nil)
         return;
@@ -142,7 +142,7 @@ ShareActionSheet *shareAS;
     UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:15];
     _article = selArticle;
     
-    self.txtvKnownText.text = _article.already_know;
+    self.txtvKnownText.text = _article.already_known;
     self.txtvKnownText.font = font;
     self.txtvKnownText.textContainerInset = UIEdgeInsetsMake(5,5,5,5);
 

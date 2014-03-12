@@ -47,7 +47,7 @@ NSArray *keywordArticles;
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.navigationItem.title = _keyword;
+    self.navigationItem.title = _keyword.text;
     keywordArticles = [APP_MGR.issuesMgr articlesWithKeyword:_keyword];
     
     if([APP_MGR isDeviceIpad] == NO) {
@@ -155,7 +155,7 @@ NSArray *keywordArticles;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // configure the cell...
-    Article *rowArticle = keywordArticles[[indexPath row]];
+    ArticleMO *rowArticle = keywordArticles[[indexPath row]];
     
     cell.textLabel.font = APP_MGR.tableFont;
     cell.textLabel.numberOfLines = 0;

@@ -86,6 +86,7 @@ ShareActionSheet *shareAS;
         self.navigationItem.rightBarButtonItem  = shareButton;
         
     }
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -124,7 +125,7 @@ ShareActionSheet *shareAS;
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return [APP_MGR.issuesMgr.issues count];
+    return [APP_MGR.issuesMgr.sortedIssues count];
     
 }
 
@@ -142,7 +143,7 @@ ShareActionSheet *shareAS;
     _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:section];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"MMM dd, yyyy";
-    return [NSString stringWithFormat:@"%@                          Vol %d No %d", [formatter stringFromDate:_issue.date], _issue.volume, _issue.number];
+    return [NSString stringWithFormat:@"%@                          Vol %@ No %@", [formatter stringFromDate:_issue.date], _issue.volume, _issue.number];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -182,8 +183,9 @@ ShareActionSheet *shareAS;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
+    NSArray *articles = [_issue.articles allObjects];
     
-    _article = _issue.articles[[indexPath row]];
+    _article = [articles objectAtIndex:[indexPath row]];
     NSString *title = _article.title;
     
     CGSize constraintSize = CGSizeMake(CELL_TEXT_LABEL_WIDTH, MAXFLOAT);
@@ -211,7 +213,8 @@ ShareActionSheet *shareAS;
     
     // configure the cell...
     _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
-    _article = _issue.articles[[indexPath row]];
+    NSArray *articles = [_issue.articles allObjects];
+    _article = [articles objectAtIndex:[indexPath row]];
     
     cell.textLabel.font = APP_MGR.tableFont;
     cell.textLabel.numberOfLines = 0;
@@ -237,7 +240,8 @@ ShareActionSheet *shareAS;
 
     // Navigation logic may go here. Create and push another view controller.
     _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
-    _article = _issue.articles[[indexPath row]];
+    NSArray *articles = [_issue.articles allObjects];
+    _article = [articles objectAtIndex:[indexPath row]];
     _article.unread = NO;
     
 
@@ -265,7 +269,8 @@ ShareActionSheet *shareAS;
 {
     
     _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
-    _article = _issue.articles[[indexPath row]];
+    NSArray *articles = [_issue.articles allObjects];
+    _article = [articles objectAtIndex:[indexPath row]];
     
     KeywordArticleDetailVC *content = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverArticleDetails"];
     content.article = _article;
@@ -357,7 +362,8 @@ ShareActionSheet *shareAS;
                 [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
                 _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
                 if (_issue != nil) {
-                    _article = _issue.articles[[indexPath row]];
+                    NSArray *articles = [_issue.articles allObjects];
+                    _article = [articles objectAtIndex:[indexPath row]];
                     if (_article != nil) {
                         isArticleSelected = YES;
                     }

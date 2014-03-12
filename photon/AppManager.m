@@ -45,9 +45,15 @@ static AppManager *sharedAppManager = nil;
     {
 		self.appName = @"Photon";
         self.agreedWithEula = FALSE;
+        
 //      self.tableFont = [UIFont boldSystemFontOfSize: 16];
         self.tableFont = [UIFont fontWithName:@"HelveticaNeue" size:16];
         self.textFont = [UIFont fontWithName:@"HelveticaNeue" size:15];
+        
+        // set up core data properties
+        self.managedObjectContext = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).managedObjectContext;
+        self.managedObjectModel = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).managedObjectModel;
+        self.persistentStoreCoordinator = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).persistentStoreCoordinator;
         
         if ([APP_MGR isDeviceIpad] == YES)
             self.splitVM = [[SplitViewManager alloc] init];
@@ -55,8 +61,9 @@ static AppManager *sharedAppManager = nil;
         self.issuesMgr = [[IssuesManager alloc  ]init];
         self.jsonParser = [[JsonParser alloc] init];
         
-//        [self.jsonParser parseTestData];
-        [self.jsonParser updateFromFeed];
+        [self.jsonParser parseAndPersistTestData];
+        //[self.jsonParser parseTestData];
+        //[self.jsonParser updateFromFeed];
                 
     }
 	return self;
@@ -117,6 +124,22 @@ static AppManager *sharedAppManager = nil;
     
     
 }
+
+- (void)saveContext
+{
+    NSError *error = nil;
+    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+    if (managedObjectContext != nil) {
+        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
+}
+
+
 
 
 

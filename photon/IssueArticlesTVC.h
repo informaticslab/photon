@@ -7,16 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Issue.h"
-#import "Article.h"
+#import "IssueMO+Issue.h"
+#import "ArticleMO+Article.h"
 #import "ArticleSelectionDelegate.h"
 #import "ModalViewDelegate.h"
 #import "PopoverViewDelegate.h"
 
 @interface IssueArticlesTVC : UITableViewController <UIPopoverControllerDelegate, PopoverViewDelegate, ModalViewDelegate>
 
-@property(nonatomic, weak) Issue *issue;
-@property(nonatomic, weak) Article *article;
+@property(nonatomic, weak) IssueMO *issue;
+@property(nonatomic, weak) ArticleMO *article;
 @property (nonatomic, strong) UIPopoverController *detailViewPopover;
 
 - (IBAction)refresh:(id)sender;

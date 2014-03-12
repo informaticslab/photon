@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Article.h"
+#import "ArticleMO+Article.h"
 #import "ArticleSelectionDelegate.h"
 #import "ModalViewDelegate.h"
 
@@ -30,8 +30,8 @@
 
 
 @property (weak, nonatomic) IBOutlet UITextView *txtvImplicationsText;
-@property (weak, nonatomic) Article *article;
-@property (weak, nonatomic) Issue *issue;
+@property (weak, nonatomic) ArticleMO *article;
+@property (weak, nonatomic) IssueMO *issue;
 
 - (IBAction)infoButtonAction:(UIBarButtonItem *)sender;
 

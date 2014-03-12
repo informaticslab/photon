@@ -17,7 +17,7 @@
         self.title = title;
         self.articles = [[NSMutableArray alloc] init];
         self.unread = YES;
-        NSArray *titleSplit = [_title componentsSeparatedByString:@"/"];
+        NSArray *titleSplit = [title componentsSeparatedByString:@"/"];
         if ([titleSplit count] == 3) {
             NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
             formatter.dateFormat = @"yyyy-MM-dd";
