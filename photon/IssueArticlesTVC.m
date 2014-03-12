@@ -354,7 +354,7 @@ ShareActionSheet *shareAS;
     
     // select first row if device is iPad
     if ([APP_MGR isDeviceIpad] == YES) {
-        if ([APP_MGR.issuesMgr.issues count] != 0) {
+        if ([APP_MGR.issuesMgr.sortedIssues count] != 0) {
             
             if (isArticleSelected == NO) {
                 

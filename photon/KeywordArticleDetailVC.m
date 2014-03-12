@@ -44,11 +44,11 @@ ShareActionSheet *shareAS;
     _txtViewArticleTitle.textAlignment = NSTextAlignmentCenter;
     _txtViewArticleTitle.font = [UIFont fontWithName:@"HelveticaNeue" size:18];
 
-    _txtViewArticleIssueDate.text = [NSString stringWithFormat:@"Published on %@",_article.issue.title];
+    _txtViewArticleIssueDate.text = [NSString stringWithFormat:@"Published on %@",_article.issue.date];
     _txtViewArticleIssueDate.textAlignment = NSTextAlignmentCenter;
     _txtViewArticleIssueDate.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
     
-    _txtViewArticleIssueVolNum.text = [NSString stringWithFormat:@"Volume %d, Number %d", _article.issue.volume, _article.issue.number];
+    _txtViewArticleIssueVolNum.text = [NSString stringWithFormat:@"Volume %@, Number %@", _article.issue.volume, _article.issue.number];
     _txtViewArticleIssueVolNum.textAlignment = NSTextAlignmentCenter;
     _txtViewArticleIssueVolNum.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
     [btnLayer setMasksToBounds:YES];

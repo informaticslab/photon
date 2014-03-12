@@ -26,13 +26,13 @@
     
 }
 
--(Article *)getSelectedArticle
+-(ArticleMO *)getSelectedArticle
 {
     return self.selArticle;
     
 }
 
--(void)setSelectedArticle:(Article *)selectedArticle
+-(void)setSelectedArticle:(ArticleMO *)selectedArticle
 {
     self.selArticle = selectedArticle;
     if (self.articleSelectDelegate != nil)

@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@class Article;
+@class ArticleMO;
 
 @protocol ArticleSelectionDelegate <NSObject>
 
 @required
--(void)selectedArticle:(Article *)selArticle;
+-(void)selectedArticle:(ArticleMO *)selArticle;
 -(void)searchStart;
 -(void)searchEnd;
 
