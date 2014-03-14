@@ -35,6 +35,7 @@
 -(void)setSelectedArticle:(ArticleMO *)selectedArticle
 {
     self.selArticle = selectedArticle;
+    NSLog(@"Selected Article = %@", selectedArticle.title);
     if (self.articleSelectDelegate != nil)
         [self.articleSelectDelegate selectedArticle:selectedArticle];
     
@@ -48,13 +49,13 @@
 -(void)searchStart
 {
     
-    [self.articleSelectDelegate searchStart];
+    [self.articleSelectDelegate noArticleSelected];
 }
 
 -(void)searchEnd
 {
     
-    [self.articleSelectDelegate searchEnd];
+    [self.articleSelectDelegate articleSelected];
 }
 
 

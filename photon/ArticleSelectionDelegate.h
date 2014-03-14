@@ -14,7 +14,7 @@
 
 @required
 -(void)selectedArticle:(ArticleMO *)selArticle;
--(void)searchStart;
--(void)searchEnd;
+-(void)noArticleSelected;
+-(void)articleSelected;
 
 @end

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		37039D7418A3B5720091F826 /* ContentPagesiPadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37039D7318A3B5720091F826 /* ContentPagesiPadVC.m */; };
 		A61CA795186231ED00891E00 /* RSSEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CA794186231ED00891E00 /* RSSEntry.m */; };
 		A61CA7C41863235800891E00 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CA7B61863235800891E00 /* GTMNSString+HTML.m */; };
 		A61CA7C51863235800891E00 /* MWFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CA7B81863235800891E00 /* MWFeedInfo.m */; };
@@ -46,6 +45,7 @@
 		A66FB23A184D2B9E008F2AB7 /* AboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A66FB239184D2B9E008F2AB7 /* AboutVC.m */; };
 		A66FB23D184D2BB0008F2AB7 /* HelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A66FB23C184D2BB0008F2AB7 /* HelpVC.m */; };
 		A67AF51C182BA408000F6EB0 /* IssueArticlesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A67AF51B182BA408000F6EB0 /* IssueArticlesTVC.m */; };
+		A680F34B18D37E41000653CC /* IpadTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A680F34A18D37E41000653CC /* IpadTabBarController.m */; };
 		A683CC3B1885EF5800354442 /* ContentIpadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A683CC3A1885EF5800354442 /* ContentIpadVC.m */; };
 		A69AFEB918944C47009F0A48 /* V1JsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A69AFEB818944C47009F0A48 /* V1JsonParser.m */; };
 		A69AFEBD1895468A009F0A48 /* JsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A69AFEBC1895468A009F0A48 /* JsonParser.m */; };
@@ -75,8 +75,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		37039D7218A3B5720091F826 /* ContentPagesiPadVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentPagesiPadVC.h; sourceTree = "<group>"; };
-		37039D7318A3B5720091F826 /* ContentPagesiPadVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentPagesiPadVC.m; sourceTree = "<group>"; };
 		3716854018A50CDE0025B32F /* ArticleSelectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleSelectionDelegate.h; sourceTree = "<group>"; };
 		37C4300318B7DE2800CCDE8A /* PopoverViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopoverViewDelegate.h; sourceTree = "<group>"; };
 		A61CA793186231ED00891E00 /* RSSEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSEntry.h; sourceTree = "<group>"; };
@@ -145,6 +143,8 @@
 		A66FB23C184D2BB0008F2AB7 /* HelpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpVC.m; sourceTree = "<group>"; };
 		A67AF51A182BA408000F6EB0 /* IssueArticlesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueArticlesTVC.h; sourceTree = "<group>"; };
 		A67AF51B182BA408000F6EB0 /* IssueArticlesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueArticlesTVC.m; sourceTree = "<group>"; };
+		A680F34918D37E41000653CC /* IpadTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IpadTabBarController.h; sourceTree = "<group>"; };
+		A680F34A18D37E41000653CC /* IpadTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IpadTabBarController.m; sourceTree = "<group>"; };
 		A683CC391885EF5800354442 /* ContentIpadVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentIpadVC.h; sourceTree = "<group>"; };
 		A683CC3A1885EF5800354442 /* ContentIpadVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentIpadVC.m; sourceTree = "<group>"; };
 		A69AFEB718944C47009F0A48 /* V1JsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V1JsonParser.h; sourceTree = "<group>"; };
@@ -282,8 +282,6 @@
 				3716854018A50CDE0025B32F /* ArticleSelectionDelegate.h */,
 				A683CC391885EF5800354442 /* ContentIpadVC.h */,
 				A683CC3A1885EF5800354442 /* ContentIpadVC.m */,
-				37039D7218A3B5720091F826 /* ContentPagesiPadVC.h */,
-				37039D7318A3B5720091F826 /* ContentPagesiPadVC.m */,
 				A6B295D318735EFD00BEF24D /* ContentPagesVC.h */,
 				A6B295D418735EFD00BEF24D /* ContentPagesVC.m */,
 				A6B295D0187352CB00BEF24D /* ContentVC.h */,
@@ -339,6 +337,8 @@
 				A62A1A191823C9C7006A62B3 /* Supporting Files */,
 				A69AFEB718944C47009F0A48 /* V1JsonParser.h */,
 				A69AFEB818944C47009F0A48 /* V1JsonParser.m */,
+				A680F34918D37E41000653CC /* IpadTabBarController.h */,
+				A680F34A18D37E41000653CC /* IpadTabBarController.m */,
 			);
 			path = photon;
 			sourceTree = "<group>";
@@ -475,7 +475,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A66FB23A184D2B9E008F2AB7 /* AboutVC.m in Sources */,
-				37039D7418A3B5720091F826 /* ContentPagesiPadVC.m in Sources */,
 				A66FB23D184D2BB0008F2AB7 /* HelpVC.m in Sources */,
 				A62A1A231823C9C7006A62B3 /* AppDelegate.m in Sources */,
 				A6D9BC7B183BF57F00B42118 /* KeywordArticleDetailVC.m in Sources */,
@@ -514,6 +513,7 @@
 				A69AFEB918944C47009F0A48 /* V1JsonParser.m in Sources */,
 				A6CA277C18CE6976003713BA /* ArticleMO.m in Sources */,
 				A69AFEC0189554C0009F0A48 /* JsonParserBase.m in Sources */,
+				A680F34B18D37E41000653CC /* IpadTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

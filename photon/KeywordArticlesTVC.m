@@ -66,7 +66,7 @@ NSArray *keywordArticles;
 - (void)viewWillAppear:(BOOL)animated
 {
     
-    [self updateArticleSelection];
+    //[self updateArticleSelection];
 //    if (_selectedArticle == nil) {
 //        
 //        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];

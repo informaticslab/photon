@@ -13,6 +13,5 @@
 +(NSInteger)integerValueForKey:(NSString *)key inJson:(NSDictionary *)json;
 +(NSString *)stringValueForKey:(NSString *)key inJson:(NSDictionary *)json;
 +(NSInteger)parseSchemaVersionFromJson:(NSDictionary *)json;
-+(NSInteger)parseContentVersionFromJson:(NSDictionary *)json;
 
 @end

@@ -16,7 +16,6 @@
 
 
 -(void)updateUnreadArticleStatus;
--(Article *)storeArticle:(Article *)newArticle;
 -(ArticleMO *)getArticleWithTitle:(NSString *)title;
 -(Article *)addArticleWithTitle:(NSString *)title;
 -(void)replaceArticle:(ArticleMO *)oldArticle withArticle:(Article *)newArticle;

@@ -39,6 +39,7 @@
         self.unread = @YES;
     else
         self.unread = @NO;
+    [APP_MGR saveContext];
     
 }
 

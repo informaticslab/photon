@@ -30,7 +30,7 @@ ShareActionSheet *shareAS;
     
     APP_MGR.splitVM.contentIpadVC = self;
     [APP_MGR.splitVM setArticleSelectionDelegate:self];
-    self.startSearchView.hidden = YES;
+    self.grayedOutContentView.hidden = YES;
     
     
 	// Do any additional setup after loading the view.
@@ -162,18 +162,18 @@ ShareActionSheet *shareAS;
     
 }
 
--(void)searchStart
+-(void)noArticleSelected
 {
     
-    self.startSearchView.hidden = NO;
+    self.grayedOutContentView.hidden = NO;
     
     
 }
 
--(void)searchEnd
+-(void)articleSelected
 {
     
-    self.startSearchView.hidden = YES;
+    self.grayedOutContentView.hidden = YES;
     
     
 }

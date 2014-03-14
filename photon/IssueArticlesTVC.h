@@ -17,6 +17,7 @@
 
 @property(nonatomic, weak) IssueMO *issue;
 @property(nonatomic, weak) ArticleMO *article;
+@property(nonatomic, weak) ArticleMO *selectedArticle;
 @property (nonatomic, strong) UIPopoverController *detailViewPopover;
 
 - (IBAction)refresh:(id)sender;

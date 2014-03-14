@@ -31,10 +31,8 @@
 
 @implementation IssueArticlesTVC
 
-BOOL isArticleSelected;
 ShareActionSheet *shareAS;
-//Issue *currIssue;
-//Article *currArticle;
+bool didViewJustLoad;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -51,7 +49,7 @@ ShareActionSheet *shareAS;
     
     //set up splitview managment
     APP_MGR.splitVM.issueArticlesTVC = self;
-    isArticleSelected = NO;
+
     
     // Do any additional setup after loading the view, typically from a nib.
     if([APP_MGR isDeviceIpad] == YES)
@@ -62,7 +60,7 @@ ShareActionSheet *shareAS;
     item.image = [UIImage imageNamed:@"issue_tab_icon_inactive"];
     item.selectedImage = [UIImage imageNamed:@"issue_tab_icon_active"];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"ipad_master_navbar"] forBarMetrics:UIBarMetricsDefault];
-    //    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
+    //[[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
     //set back button arrow color
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName ]];
 
@@ -86,13 +84,31 @@ ShareActionSheet *shareAS;
         self.navigationItem.rightBarButtonItem  = shareButton;
         
     }
+    else {
+        [self updateArticleSelection];
+    }
+    
+    didViewJustLoad = YES;
     
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     
-    [self updateArticleSelection];
+    //[self updateArticleSelection];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    if (didViewJustLoad == YES) {
+        didViewJustLoad = NO;
+    } else {
+        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+        if (indexPath) {
+            [self.tableView deselectRowAtIndexPath:indexPath animated:animated];
+        }
+    }
+    
 }
 
 - (void)share:(id)sender
@@ -109,7 +125,7 @@ ShareActionSheet *shareAS;
     refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Updating articles..."];
     
     [APP_MGR.jsonParser updateFromFeed];
-    //    [self.tableView reloadData];
+    //[self.tableView reloadData];
     //[self.refreshControl endRefreshing];
 }
 
@@ -236,13 +252,12 @@ ShareActionSheet *shareAS;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    isArticleSelected = YES;
 
     // Navigation logic may go here. Create and push another view controller.
     _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
     NSArray *articles = [_issue.articles allObjects];
-    _article = [articles objectAtIndex:[indexPath row]];
-    _article.unread = NO;
+    _selectedArticle = [articles objectAtIndex:[indexPath row]];
+    _selectedArticle.unread = NO;
     
 
     [self.tableView beginUpdates];
@@ -254,13 +269,15 @@ ShareActionSheet *shareAS;
 
     if ([APP_MGR isDeviceIpad] == YES) {
         
-        [APP_MGR.splitVM setSelectedArticle:_article];
+        [APP_MGR.splitVM setSelectedArticle:_selectedArticle];
     
     }
     else
         [self performSegueWithIdentifier:@"pushContentPageViews" sender:nil];
         
     [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+    [APP_MGR.splitVM searchEnd];
+
     
 }
 
@@ -351,28 +368,25 @@ ShareActionSheet *shareAS;
 
 -(void)updateArticleSelection
 {
+    NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
     
     // select first row if device is iPad
     if ([APP_MGR isDeviceIpad] == YES) {
         if ([APP_MGR.issuesMgr.sortedIssues count] != 0) {
             
-            if (isArticleSelected == NO) {
+            if (_selectedArticle == nil) {
                 
-                NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
+                //NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
                 [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
                 _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
                 if (_issue != nil) {
                     NSArray *articles = [_issue.articles allObjects];
-                    _article = [articles objectAtIndex:[indexPath row]];
-                    if (_article != nil) {
-                        isArticleSelected = YES;
-                    }
+                    _selectedArticle = [articles objectAtIndex:[indexPath row]];
                 }
             }
         }
-        [APP_MGR.splitVM setSelectedArticle:_article];
+        [APP_MGR.splitVM setSelectedArticle:_selectedArticle];
         [APP_MGR.splitVM searchEnd];
-        
     }
     
 }
