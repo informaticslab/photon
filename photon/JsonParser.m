@@ -100,7 +100,8 @@ int implicationsFound = 0;
     }
     
     
-    
+    //
+    [APP_MGR.issuesMgr reloadData];
     
 }
 
@@ -158,7 +159,8 @@ int implicationsFound = 0;
         [APP_MGR.issuesMgr newArticle:currArticle inIssue:currIssue withTags:tags version:contentVer];
         
     }
-    
+    [APP_MGR.issuesMgr reloadData];
+
     [_parsedIssues removeAllObjects];
     [_parsedItems removeAllObjects];
     [_parsedJsonBlobs removeAllObjects];

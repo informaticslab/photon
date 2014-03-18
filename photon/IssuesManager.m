@@ -66,6 +66,44 @@ NSManagedObjectContext *context;
     
 }
 
+-(void)reloadData
+{
+    
+    NSFetchRequest *fetchRequest = [[model fetchRequestTemplateForName:@"GetAllIssues"] copy];
+    
+    // Specify how the fetched objects should be sorted
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date"
+                                                                   ascending:NO];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
+    
+    NSError *error = nil;
+    NSArray *fetchedObjects = [APP_MGR.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (fetchedObjects == nil) {
+        NSLog(@"Issues Manager has no stored issues.");
+    }
+    
+    self.sortedIssues = fetchedObjects;
+    
+    fetchRequest = [[model fetchRequestTemplateForName:@"GetAllKeywords"] copy];
+    
+    // Specify how the fetched objects should be sorted
+    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"text"
+                                                 ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
+    
+    error = nil;
+    fetchedObjects = [APP_MGR.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (fetchedObjects == nil) {
+        NSLog(@"Issues Manager has no stored keywords.");
+    }
+    
+    
+    self.keywords = fetchedObjects;
+    
+    
+    
+}
+
 #pragma mark - Issue methods
 -(IssueMO *)createNewIssue:(Issue *)newIssue
 {

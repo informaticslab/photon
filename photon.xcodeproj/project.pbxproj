@@ -55,6 +55,7 @@
 		A6A919D81829B48A00F1CE7D /* Issues.json in Resources */ = {isa = PBXBuildFile; fileRef = A6A919D71829B48A00F1CE7D /* Issues.json */; };
 		A6A919DB182A74D400F1CE7D /* Issue.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A919DA182A74D400F1CE7D /* Issue.m */; };
 		A6A919DE182A9B8700F1CE7D /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A919DD182A9B8700F1CE7D /* Article.m */; };
+		A6AC5FAA18D794D3000D0832 /* EulaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AC5FA818D794D3000D0832 /* EulaVC.m */; };
 		A6B295D2187352CB00BEF24D /* ContentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B295D1187352CB00BEF24D /* ContentVC.m */; };
 		A6B295D518735EFD00BEF24D /* ContentPagesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B295D418735EFD00BEF24D /* ContentPagesVC.m */; };
 		A6CA277C18CE6976003713BA /* ArticleMO.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CA277B18CE6976003713BA /* ArticleMO.m */; };
@@ -164,6 +165,8 @@
 		A6A919DA182A74D400F1CE7D /* Issue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Issue.m; sourceTree = "<group>"; };
 		A6A919DC182A9B8700F1CE7D /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
 		A6A919DD182A9B8700F1CE7D /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
+		A6AC5FA818D794D3000D0832 /* EulaVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EulaVC.m; sourceTree = "<group>"; };
+		A6AC5FA918D794D3000D0832 /* EulaVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EulaVC.h; sourceTree = "<group>"; };
 		A6B295D0187352CB00BEF24D /* ContentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentVC.h; sourceTree = "<group>"; };
 		A6B295D1187352CB00BEF24D /* ContentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentVC.m; sourceTree = "<group>"; };
 		A6B295D318735EFD00BEF24D /* ContentPagesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentPagesVC.h; sourceTree = "<group>"; };
@@ -265,6 +268,8 @@
 		A62A1A181823C9C7006A62B3 /* photon */ = {
 			isa = PBXGroup;
 			children = (
+				A6AC5FA818D794D3000D0832 /* EulaVC.m */,
+				A6AC5FA918D794D3000D0832 /* EulaVC.h */,
 				A66FB238184D2B9E008F2AB7 /* AboutVC.h */,
 				A66FB239184D2B9E008F2AB7 /* AboutVC.m */,
 				A62A1A211823C9C7006A62B3 /* AppDelegate.h */,
@@ -477,6 +482,7 @@
 				A66FB23A184D2B9E008F2AB7 /* AboutVC.m in Sources */,
 				A66FB23D184D2BB0008F2AB7 /* HelpVC.m in Sources */,
 				A62A1A231823C9C7006A62B3 /* AppDelegate.m in Sources */,
+				A6AC5FAA18D794D3000D0832 /* EulaVC.m in Sources */,
 				A6D9BC7B183BF57F00B42118 /* KeywordArticleDetailVC.m in Sources */,
 				A61CA7C61863235800891E00 /* MWFeedItem.m in Sources */,
 				A6A919DE182A9B8700F1CE7D /* Article.m in Sources */,

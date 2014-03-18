@@ -24,6 +24,6 @@
 -(NSArray *)articlesWithKeyword:(KeywordMO *)keyword;
 -(void)newArticle:(Article *)article inIssue:(Issue *)issue withTags:(NSArray *)tags version:(NSInteger)ver;
 -(IssueMO *)getSortedIssueForIndex:(NSUInteger)index;
-
+-(void)reloadData;
 
 @end
