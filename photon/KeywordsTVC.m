@@ -204,10 +204,31 @@ KeywordMO *selectedKeyword;
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
-    NSPredicate *resultPredicate = [NSPredicate
-                                    predicateWithFormat:@"SELF contains[cd] %@",
-                                    searchText];
-    searchResults = [allKeywords filteredArrayUsingPredicate:resultPredicate];
+//    NSPredicate *resultPredicate = [NSPredicate
+//                                    predicateWithFormat:@"SELF contains[cd] %@",
+//                                    searchText];
+//    searchResults = [allKeywords filteredArrayUsingPredicate:resultPredicate];
+    
+    NSDictionary *substitutionDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                            searchText, @"TEXT", nil];
+    
+
+    NSFetchRequest *fetchRequest = [APP_MGR.managedObjectModel fetchRequestFromTemplateWithName:@"GetKeywordsWithText" substitutionVariables:substitutionDictionary];
+    
+    // Specify how the fetched objects should be sorted
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"text"
+                                                 ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
+    
+    NSError *error = nil;
+    NSArray *fetchedObjects = [APP_MGR.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (fetchedObjects == nil) {
+        NSLog(@"Issues Manager has no stored keywords.");
+    }
+    
+    
+    searchResults = fetchedObjects;
+
 }
 
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller

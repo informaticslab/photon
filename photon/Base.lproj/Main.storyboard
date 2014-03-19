@@ -502,6 +502,7 @@
                     <connections>
                         <segue destination="tIc-Ga-z3I" kind="push" identifier="pushContentPageViews" id="cPZ-Qk-bcg"/>
                         <segue destination="IYg-u6-pbr" kind="push" identifier="pushArticleDetails" id="sa5-ms-oeY"/>
+                        <segue destination="YbN-ib-Nkw" kind="modal" identifier="displayEulaSegue" id="qDi-OO-8hr"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Lj-Xt-J71" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -716,13 +717,85 @@ If you have any questions about the app, please contact either the MMWR staff at
             </objects>
             <point key="canvasLocation" x="3287" y="-483"/>
         </scene>
+        <!--EulaVC-->
+        <scene sceneID="grB-3l-1fx">
+            <objects>
+                <viewController modalPresentationStyle="pageSheet" id="YbN-ib-Nkw" customClass="EulaVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n3U-D0-nMB"/>
+                        <viewControllerLayoutGuide type="bottom" id="L8O-ud-Fk9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gbh-Kh-4Ao">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c7I-0F-8kV">
+                                <rect key="frame" x="0.0" y="125" width="320" height="311"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dxo-TW-nvj">
+                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hbu-Ej-iGe"/>
+                                    <barButtonItem title="I Agree" id="maE-cY-ihJ">
+                                        <connections>
+                                            <action selector="btnAcceptTouchUp:" destination="YbN-ib-Nkw" id="z85-Qi-k27"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eula_icon" translatesAutoresizingMaskIntoConstraints="NO" id="yGh-ib-wLl">
+                                <rect key="frame" x="44" y="74" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0vN-Ru-SBS">
+                                <rect key="frame" x="87" y="77" width="233" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="MMWR Express Agreement">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nav_bar" translatesAutoresizingMaskIntoConstraints="NO" id="zJk-Ml-g0a">
+                                <rect key="frame" x="0.0" y="-11" width="320" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Agreement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ua-9i-D8X">
+                                <rect key="frame" x="101" y="24" width="118" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnAgree" destination="maE-cY-ihJ" id="hP1-E9-6v7"/>
+                        <outlet property="webView" destination="c7I-0F-8kV" id="4eX-7p-T3D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rV8-kE-edx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1275" y="-1035"/>
+        </scene>
     </scenes>
     <resources>
         <image name="about_icon" width="61" height="60"/>
         <image name="bluebox_subheader_icon" width="35" height="35"/>
+        <image name="eula_icon" width="35" height="35"/>
         <image name="help_content_no_page_control" width="320" height="1250"/>
         <image name="help_header_icon" width="33" height="28"/>
         <image name="issue_tab_icon_inactive" width="25" height="25"/>
+        <image name="nav_bar" width="320" height="64"/>
         <image name="search_tab_inactive" width="25" height="25"/>
     </resources>
     <color key="tintColor" red="0.25098039220000001" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>

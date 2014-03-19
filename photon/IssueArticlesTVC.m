@@ -47,6 +47,11 @@ bool didViewJustLoad;
 {
     [super viewDidLoad];
     
+    if (APP_MGR.agreedWithEula == FALSE) {
+        [self presentEulaModalView];
+    }
+
+    
     //set up splitview managment
     APP_MGR.splitVM.issueArticlesTVC = self;
 
@@ -110,6 +115,38 @@ bool didViewJustLoad;
     }
     
 }
+
+- (void)presentEulaModalView
+{
+    static BOOL alwaysShowEula = FALSE;
+    
+    if (APP_MGR.agreedWithEula == TRUE && alwaysShowEula == FALSE)
+        return;
+    
+    // store the data
+    NSDictionary *appInfo = [[NSBundle mainBundle] infoDictionary];
+    NSString *currVersion = [NSString stringWithFormat:@"%@.%@",
+                             [appInfo objectForKey:@"CFBundleShortVersionString"],
+                             [appInfo objectForKey:@"CFBundleVersion"]];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *lastVersionEulaAgreed = (NSString *)[defaults objectForKey:@"agreedToEulaForVersion"];
+    
+    
+    // was the version number the last time EULA was seen and agreed to the
+    // same as the current version, if not show EULA and store the version number
+    if (![currVersion isEqualToString:lastVersionEulaAgreed] || alwaysShowEula) {
+        [defaults setObject:currVersion forKey:@"agreedToEulaForVersion"];
+        [defaults synchronize];
+        NSLog(@"Data saved");
+        NSLog(@"%@", currVersion);
+        
+        //
+        [self performSegueWithIdentifier:@"displayEulaSegue" sender:self];
+    }
+    
+    
+}
+
 
 - (void)share:(id)sender
 {

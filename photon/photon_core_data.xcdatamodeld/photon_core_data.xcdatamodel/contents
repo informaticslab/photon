@@ -26,7 +26,8 @@
     <fetchRequest name="GetAllIssues" entity="IssueMO"/>
     <fetchRequest name="GetAllKeywords" entity="KeywordMO"/>
     <fetchRequest name="GetIssueWithDateVolumeNumber" entity="IssueMO" predicateString="volume == $VOLUME AND date == $DATE AND number == $NUMBER"/>
-    <fetchRequest name="GetKeywordWithText" entity="KeywordMO" predicateString="text == $TEXT"/>
+    <fetchRequest name="GetKeywordsWithText" entity="KeywordMO" predicateString="text BEGINSWITH[cd] $TEXT"/>
+    <fetchRequest name="GetMatchingKeywords" entity="KeywordMO"/>
     <elements>
         <element name="ArticleMO" positionX="0" positionY="0" width="128" height="180"/>
         <element name="IssueMO" positionX="0" positionY="0" width="128" height="135"/>

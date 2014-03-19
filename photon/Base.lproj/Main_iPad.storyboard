@@ -40,6 +40,7 @@
                     <connections>
                         <segue destination="IAr-lY-2gS" kind="replace" identifier="pushContentPageIpadViews" splitViewControllerTargetIndex="1" id="WhT-qN-xq9"/>
                         <segue destination="agv-o0-Y9V" kind="modal" identifier="modalFullArticle" modalPresentationStyle="pageSheet" id="2Za-UK-tFB"/>
+                        <segue destination="NsL-dn-fNK" kind="modal" identifier="displayEulaSegue" modalPresentationStyle="formSheet" id="6FL-Pm-J5C"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9BA-vN-P1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -808,12 +809,85 @@ If you have any questions about the app, please contact either the MMWR staff at
             </objects>
             <point key="canvasLocation" x="2440" y="609"/>
         </scene>
+        <!--EulaVC-->
+        <scene sceneID="i7f-NI-bqV">
+            <objects>
+                <viewController modalPresentationStyle="pageSheet" id="NsL-dn-fNK" customClass="EulaVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p4m-PD-UsV"/>
+                        <viewControllerLayoutGuide type="bottom" id="sGO-rN-qH1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ad6-gF-oAF">
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q4g-RF-HKE">
+                                <rect key="frame" x="0.0" y="143" width="540" height="433"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vZ3-kt-gCj">
+                                <rect key="frame" x="0.0" y="576" width="540" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="EMq-NL-pWG"/>
+                                    <barButtonItem title="I Agree" id="8WS-sN-QFV">
+                                        <connections>
+                                            <action selector="btnAcceptTouchUp:" destination="NsL-dn-fNK" id="UQ7-SO-AeO"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eula_icon" translatesAutoresizingMaskIntoConstraints="NO" id="FTw-jY-Ofg">
+                                <rect key="frame" x="132" y="75" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0qY-6E-2nk">
+                                <rect key="frame" x="175" y="78" width="233" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="MMWR Express Agreement">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ipad_detail_navbar" translatesAutoresizingMaskIntoConstraints="NO" id="23u-ZV-bKk">
+                                <rect key="frame" x="0.0" y="0.0" width="540" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Agreement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttJ-Sh-PlJ">
+                                <rect key="frame" x="186" y="20" width="168" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnAgree" destination="8WS-sN-QFV" id="Cwk-5V-00A"/>
+                        <outlet property="webView" destination="q4g-RF-HKE" id="ZrK-R9-zGv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HrL-Jh-6TK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1150" y="-2031"/>
+        </scene>
     </scenes>
     <resources>
         <image name="about_icon" width="61" height="60"/>
+        <image name="eula_icon" width="35" height="35"/>
         <image name="help_content_no_page_control" width="320" height="1250"/>
         <image name="help_header_icon" width="33" height="28"/>
         <image name="ipad_added_icon" width="38" height="38"/>
+        <image name="ipad_detail_navbar" width="704" height="64"/>
         <image name="ipad_implications_icon" width="38" height="38"/>
         <image name="ipad_known_icon" width="38" height="38"/>
         <image name="issue_tab_icon_active" width="25" height="25"/>

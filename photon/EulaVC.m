@@ -9,8 +9,6 @@
 #import "EulaVC.h"
 #import "AppManager.h"
 
-
-
 @implementation EulaVC
 
 AppManager *appMgr;
@@ -29,7 +27,7 @@ AppManager *appMgr;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"neweula"
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"photon_eula"
                                                      ofType:@"html"];
     
     NSString *html = [NSString stringWithContentsOfFile:path
