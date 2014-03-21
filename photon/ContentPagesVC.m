@@ -11,6 +11,8 @@
 
 @interface ContentPagesVC ()
 
+@property (weak, nonatomic) ContentVC *currVC;
+
 @end
 
 @implementation ContentPagesVC
@@ -42,6 +44,7 @@
     self.pageViewController.delegate = self;
 
     ContentVC *startingViewController = [self viewControllerAtIndex:0];
+    self.currVC = startingViewController;
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
@@ -79,6 +82,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
+    self.currVC = (ContentVC *)viewController;
     NSUInteger index = ((ContentVC *) viewController).pageIndex;
     
     if ((index == 0) || (index == NSNotFound)) {
@@ -86,11 +90,12 @@
     }
     
     index--;
-    return [self viewControllerAtIndex:index];
+    return self.currVC = [self viewControllerAtIndex:index];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
+    self.currVC = (ContentVC *)viewController;
     NSUInteger index = ((ContentVC *) viewController).pageIndex;
     
     if (index == NSNotFound) {
@@ -101,7 +106,7 @@
     if (index == [self.pageHeaders count]) {
         return nil;
     }
-    return [self viewControllerAtIndex:index];
+    return self.currVC = [self viewControllerAtIndex:index];
 }
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
@@ -124,12 +129,45 @@
     
 
 }
-- (IBAction)startWalkthrough:(id)sender {
-    ContentVC *startingViewController = [self viewControllerAtIndex:0];
-    NSArray *viewControllers = @[startingViewController];
-    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
+
+- (void)pageForward
+{
+    UIViewController *nextViewController = [self pageViewController:self.pageViewController viewControllerAfterViewController:(UIViewController *)self.currVC];
+    if (nextViewController != nil) {
+        NSArray *viewControllers = @[nextViewController];
+        [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+        UIAccessibilityPostNotification(UIAccessibilityPageScrolledNotification,
+                                        @"Scrolling left to next page.");
+    }
+    
 }
 
+
+- (void)pageBackwards
+{
+    UIViewController *previousViewController = [self pageViewController:self.pageViewController viewControllerBeforeViewController:(UIViewController *)self.currVC];
+    if (previousViewController != nil) {
+        NSArray *viewControllers = @[previousViewController];
+        [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
+        UIAccessibilityPostNotification(UIAccessibilityPageScrolledNotification,
+                                        @"Scrolling right to previous page.");
+    }
+}
+
+- (BOOL)accessibilityScroll:(UIAccessibilityScrollDirection)direction
+{
+    if (direction == UIAccessibilityScrollDirectionRight) {
+        [self pageBackwards];
+         return YES;
+
+    }
+    else if (direction == UIAccessibilityScrollDirectionLeft) {
+        [self pageForward];
+        return YES;
+    }
+    else
+        return NO;
+}
 
 - (void)didReceiveMemoryWarning
 {

@@ -276,13 +276,18 @@ bool didViewJustLoad;
     [cell.textLabel sizeToFit];
     cell.textLabel.text = _article.title;
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.textLabel.isAccessibilityElement = YES;
+    
     
     cell.imageView.image = [UIImage imageNamed:@"unread_dot"];
     [cell.imageView sizeToFit];
     if (_article.unread) {
         cell.imageView.hidden = NO;
+        cell.imageView.isAccessibilityElement = YES;
+        cell.imageView.accessibilityTraits = UIAccessibilityTraitImage;
+        cell.imageView.accessibilityLabel = @"Unread article blue dot";
     } else {
-        cell.imageView.hidden = YES;
+       cell.imageView.hidden = YES;
     }
     
     return cell;
