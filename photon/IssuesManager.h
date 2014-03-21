@@ -16,6 +16,7 @@
 @property(nonatomic, strong) NSMutableDictionary *issues;
 @property(nonatomic, strong) NSArray *sortedIssues;
 @property(nonatomic, strong) NSArray *keywords;
+@property BOOL hasIssues;
 
 
 -(id)init;

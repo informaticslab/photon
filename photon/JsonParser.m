@@ -121,6 +121,20 @@ int implicationsFound = 0;
     
 }
 
+-(void)loadAndPersistPreloadData
+{
+    
+    NSError *err = nil;
+    NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"PreloadIssues" ofType:@"json"];
+    NSArray *preloadJsonBlobs = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPath]
+                                                             options:kNilOptions
+                                                               error:&err];
+    
+    [self parseAndPersistJsonBlobs:preloadJsonBlobs];
+    
+    
+}
+
 -(void)parseFeedData
 {
     NSError *err = nil;

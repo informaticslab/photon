@@ -60,6 +60,9 @@ static AppManager *sharedAppManager = nil;
         
         self.issuesMgr = [[IssuesManager alloc  ]init];
         self.jsonParser = [[JsonParser alloc] init];
+        if (_issuesMgr.hasIssues == NO) {
+            [self.jsonParser loadAndPersistPreloadData];
+        }
         
         //[self.jsonParser parseAndPersistTestData];
        // [self.jsonParser updateFromFeed];

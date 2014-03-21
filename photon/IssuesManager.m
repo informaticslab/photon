@@ -36,12 +36,14 @@ NSManagedObjectContext *context;
         [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
         
         NSError *error = nil;
-        NSArray *fetchedObjects = [APP_MGR.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-        if (fetchedObjects == nil) {
+        NSArray *fetchedIssues = [APP_MGR.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+        if ([fetchedIssues  count] == 0) {
             NSLog(@"Issues Manager has no stored issues.");
-        }
+            self.hasIssues = NO;
+        } else
+            self.hasIssues = YES;
     
-        self.sortedIssues = fetchedObjects;
+        self.sortedIssues = fetchedIssues;
         self.issues = [[NSMutableDictionary alloc]init];
 
         fetchRequest = [[model fetchRequestTemplateForName:@"GetAllKeywords"] copy];
@@ -52,13 +54,13 @@ NSManagedObjectContext *context;
         [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
         
         error = nil;
-        fetchedObjects = [APP_MGR.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-        if (fetchedObjects == nil) {
+        NSArray *fetchedKeywords = [APP_MGR.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+        if ([fetchedKeywords count] == 0) {
             NSLog(@"Issues Manager has no stored keywords.");
         }
         
         
-        self.keywords = fetchedObjects;
+        self.keywords = fetchedKeywords;
         
     };
 
@@ -78,7 +80,7 @@ NSManagedObjectContext *context;
     
     NSError *error = nil;
     NSArray *fetchedObjects = [APP_MGR.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    if (fetchedObjects == nil) {
+    if ([fetchedObjects count] == 0) {
         NSLog(@"Issues Manager has no stored issues.");
     }
     
@@ -93,7 +95,7 @@ NSManagedObjectContext *context;
     
     error = nil;
     fetchedObjects = [APP_MGR.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    if (fetchedObjects == nil) {
+    if ([fetchedObjects count] == 0) {
         NSLog(@"Issues Manager has no stored keywords.");
     }
     
@@ -136,7 +138,7 @@ NSManagedObjectContext *context;
     NSError *error = nil;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     
-    if (fetchedObjects == nil) {
+    if ([fetchedObjects count] == 0 ) {
         NSLog(@"Issues Manager has no issues with date = %@, volume = %ld, number = %ld", newIssue.date, (long)newIssue.volume, (long)newIssue.number);
         return nil;
     }
@@ -277,12 +279,12 @@ NSManagedObjectContext *context;
     NSDictionary *substitutionDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
                                             text, @"TEXT", nil];
     
-    NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"GetKeywordWithText" substitutionVariables:substitutionDictionary];
+    NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"GetKeywordsWithText" substitutionVariables:substitutionDictionary];
     
     NSError *error = nil;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     
-    if (fetchedObjects == nil) {
+    if ([fetchedObjects count] == 0) {
         NSLog(@"Issues Manager has no keyword with text = %@.", text);
         return nil;
     }

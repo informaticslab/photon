@@ -38,6 +38,7 @@
 		A6635ACB182D625400E600EA /* ArticleDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635ACA182D625400E600EA /* ArticleDetails.m */; };
 		A6635AD1182D7A0D00E600EA /* SubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635AD0182D7A0D00E600EA /* SubjectViewController.m */; };
 		A6635AE0182D921A00E600EA /* KeywordsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6635ADF182D921A00E600EA /* KeywordsTVC.m */; };
+		A6636DF418DCF1410095593D /* PreloadIssues.json in Resources */ = {isa = PBXBuildFile; fileRef = A6636DF318DCF1410095593D /* PreloadIssues.json */; };
 		A6687EC11885AA1A008109BF /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6687EBF1885AA1A008109BF /* Main_iPad.storyboard */; };
 		A66F689E18D0761F008D3EF5 /* KeywordMO.m in Sources */ = {isa = PBXBuildFile; fileRef = A66F689D18D0761F008D3EF5 /* KeywordMO.m */; };
 		A66FB235184CE935008F2AB7 /* InfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A66FB234184CE935008F2AB7 /* InfoVC.m */; };
@@ -133,6 +134,7 @@
 		A6635AD0182D7A0D00E600EA /* SubjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectViewController.m; sourceTree = "<group>"; };
 		A6635ADE182D921A00E600EA /* KeywordsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordsTVC.h; sourceTree = "<group>"; };
 		A6635ADF182D921A00E600EA /* KeywordsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordsTVC.m; sourceTree = "<group>"; };
+		A6636DF318DCF1410095593D /* PreloadIssues.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PreloadIssues.json; sourceTree = "<group>"; };
 		A6687EC01885AA1A008109BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		A66F689C18D0761F008D3EF5 /* KeywordMO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordMO.h; sourceTree = "<group>"; };
 		A66F689D18D0761F008D3EF5 /* KeywordMO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordMO.m; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 		A62A1A061823C9C7006A62B3 = {
 			isa = PBXGroup;
 			children = (
+				A6636DF318DCF1410095593D /* PreloadIssues.json */,
 				A61CA7B41863235800891E00 /* MWFeedParser */,
 				A6A919D71829B48A00F1CE7D /* Issues.json */,
 				A62A1A181823C9C7006A62B3 /* photon */,
@@ -460,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6687EC11885AA1A008109BF /* Main_iPad.storyboard in Resources */,
+				A6636DF418DCF1410095593D /* PreloadIssues.json in Resources */,
 				A68081D518D8943F00C6199B /* photon_eula.html in Resources */,
 				A62A1A1D1823C9C7006A62B3 /* InfoPlist.strings in Resources */,
 				A66FB237184D211F008F2AB7 /* Images.xcassets in Resources */,
