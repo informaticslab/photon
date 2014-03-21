@@ -22,9 +22,9 @@ NSString *messageString;
     
     if (self ) {
         
-        NSString *shareString = @"I’m using CDC’s MMWR Express mobile app.  Learn more about it at: http://www.cdc.gov/mmwr/express";
+        NSString *shareString = @"I’m using CDC’s MMWR Express mobile app.  Learn more about it at: http://www.cdc.gov/mmwr";
         facebookString = mailString = messageString = shareString;
-        twitterString = @"I’m using CDC’s MMWR Express mobile app.  Learn more about it at http://www.cdc.gov/mmwr/express";
+        twitterString = @"I’m using CDC’s MMWR Express mobile app.  Learn more about it at: http://www.cdc.gov/mmwr";
         
     }
     

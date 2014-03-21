@@ -50,7 +50,7 @@ NSArray *activityProviders;
     shareImage = nil;
     
     // Prepare the URL we want to share
-    // shareUrl = [NSURL URLWithString:@"http://www.cdc.gov/mmwr/express"];
+    // shareUrl = [NSURL URLWithString:@"http://www.cdc.gov/mmwr"];
     
     activityProviders = @[shareActivityProvider];;
     shareUrl = nil;

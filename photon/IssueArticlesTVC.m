@@ -86,6 +86,8 @@ bool didViewJustLoad;
     if ([APP_MGR isDeviceIpad] == NO) {
         UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
         shareButton.width = 30.0;
+        shareButton.accessibilityHint = @"Double tap to open share view to share the app with others.";
+        shareButton.accessibilityLabel = @"Share";
         self.navigationItem.rightBarButtonItem  = shareButton;
         
     }
@@ -326,6 +328,8 @@ bool didViewJustLoad;
     NSArray *articles = [_issue.articles allObjects];
     _article = [articles objectAtIndex:[indexPath row]];
     
+    if ([APP_MGR isDeviceIpad] == YES) {
+
     KeywordArticleDetailVC *content = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverArticleDetails"];
     content.article = _article;
     content.modalDelegate = self;
@@ -341,8 +345,12 @@ bool didViewJustLoad;
     // Present the popover from the button that was tapped in the detail view.
     [self.detailViewPopover presentPopoverFromRect:cell.bounds inView:cell.contentView
                      permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        
+    } else {
+        [self performSegueWithIdentifier:@"pushArticleDetails" sender:nil];
+        
+    }
 
-    //[self performSegueWithIdentifier:@"pushArticleDetails" sender:nil];
     
 }
 

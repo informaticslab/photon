@@ -84,7 +84,11 @@ ShareActionSheet *shareAS;
 
 - (IBAction)btnViewFullArticleTouchUp:(id)sender {
     
-    [self.popoverViewDelegate didClickFullArticleButton];
+    if (APP_MGR.isDeviceIpad)
+        [self.popoverViewDelegate didClickFullArticleButton];
+    else
+        [self performSegueWithIdentifier:@"pushViewFullArticle" sender:nil];
+
 
 }
 

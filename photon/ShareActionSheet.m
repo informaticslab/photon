@@ -15,7 +15,7 @@
 - (id)initToShareApp:(UIViewController *)parentVC
 {
     
-    self.shareText = @"I’m using CDC’s MMWR Express mobile app.  Learn more about it here:";
+    self.shareText = @"I’m using CDC’s MMWR Express mobile app.\nLearn more about it here:";
     self.shareUrl = @"http://www.cdc.gov/mmwr";
     self.shareSubject = @"MMWR Express App";
     self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share MMWR Express Using" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Mail", @"Message", @"Twitter", @"Facebook", nil];
@@ -148,7 +148,7 @@
     if ([MFMailComposeViewController canSendMail]){
         
         NSString *bodyText = [NSString stringWithFormat: @"<br/> <p>%@</p> <a href='%@'>%@</a>", self.shareText, self.shareUrl, self.shareUrl];
-        
+     
         self.mailVC = [[MFMailComposeViewController alloc] init];
         self.mailVC.mailComposeDelegate = self;
         [self.mailVC setMessageBody:bodyText isHTML:YES];
@@ -170,15 +170,25 @@
 
 - (void)showMessageSheet
 {
-
+    
     NSString *bodyText = [NSString stringWithFormat: @"%@ %@", self.shareText, self.shareUrl];
-
-    self.msgVC = [[MFMessageComposeViewController alloc] init];
-    self.msgVC.messageComposeDelegate = self;
-    [self.msgVC setBody:bodyText];
-    [self.parentVC presentViewController:self.msgVC animated:YES completion:nil];
-
-
+    
+    if ([MFMessageComposeViewController canSendText]) {
+        
+        self.msgVC = [[MFMessageComposeViewController alloc] init];
+        self.msgVC.messageComposeDelegate = self;
+        [self.msgVC setBody:bodyText];
+        [self.parentVC presentViewController:self.msgVC animated:YES completion:nil];
+    } else {
+        
+        UIAlertView *anAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"This device does not support messaging or it is not currently configured to send messages." delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
+    
+        [anAlert addButtonWithTitle:@"Cancel"];
+        [anAlert show];
+        
+    }
+    
+    
 }
 
 
