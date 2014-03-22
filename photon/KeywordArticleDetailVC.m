@@ -38,6 +38,9 @@ ShareActionSheet *shareAS;
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
     shareButton.width = -1.0;
     self.navigationItem.rightBarButtonItem = shareButton;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.translucent = NO;
+ 
 
     self.navigationItem.title = @"Article Details";
     _txtViewArticleTitle.text = _article.title;

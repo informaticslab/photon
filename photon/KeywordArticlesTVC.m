@@ -249,6 +249,10 @@ NSArray *keywordArticles;
     ArticleMO *rowArticle = keywordArticles[[indexPath row]];
     _selectedArticle = rowArticle;
     
+    if ([APP_MGR isDeviceIpad] == YES) {
+        
+
+    
     KeywordArticleDetailVC *content = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverArticleDetails"];
     content.article = rowArticle;
     content.modalDelegate = self;
@@ -265,7 +269,11 @@ NSArray *keywordArticles;
     [self.detailViewPopover presentPopoverFromRect:cell.bounds inView:cell.contentView
                           permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 
-    
+    } else {
+        [self performSegueWithIdentifier:@"pushKeywordArticleDetails" sender:nil];
+
+        
+    }
 }
 
 #pragma mark - Modal Views

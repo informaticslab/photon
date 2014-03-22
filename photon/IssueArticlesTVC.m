@@ -50,11 +50,11 @@ bool didViewJustLoad;
     if (APP_MGR.agreedWithEula == FALSE) {
         [self presentEulaModalView];
     }
-
+    
     
     //set up splitview managment
     APP_MGR.splitVM.issueArticlesTVC = self;
-
+    
     
     // Do any additional setup after loading the view, typically from a nib.
     if([APP_MGR isDeviceIpad] == YES)
@@ -65,10 +65,20 @@ bool didViewJustLoad;
     item.image = [UIImage imageNamed:@"issue_tab_icon_inactive"];
     item.selectedImage = [UIImage imageNamed:@"issue_tab_icon_active"];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"ipad_master_navbar"] forBarMetrics:UIBarMetricsDefault];
+    if ([APP_MGR isDeviceIpad] == NO) {
+        UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
+        shareButton.width = 30.0;
+        shareButton.accessibilityHint = @"Double tap to open share view to share the app with others.";
+        shareButton.accessibilityLabel = @"Share";
+        self.navigationItem.rightBarButtonItem  = shareButton;
+        self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
+        self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+        
+    }
     //[[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
     //set back button arrow color
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName ]];
-
+    
     // check for diffs between ios 6 & 7
     if ([UINavigationBar instancesRespondToSelector:@selector(barTintColor)])
         self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1.0];
@@ -82,16 +92,7 @@ bool didViewJustLoad;
      name:@"FeedDataUpdated"
      object:nil];
     
-    //self.navigationItem.title = _issue.number;
-    if ([APP_MGR isDeviceIpad] == NO) {
-        UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
-        shareButton.width = 30.0;
-        shareButton.accessibilityHint = @"Double tap to open share view to share the app with others.";
-        shareButton.accessibilityLabel = @"Share";
-        self.navigationItem.rightBarButtonItem  = shareButton;
-        
-    }
-    else {
+    if ([APP_MGR isDeviceIpad] == YES) {
         [self updateArticleSelection];
     }
     
@@ -198,7 +199,7 @@ bool didViewJustLoad;
     _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:section];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"MMM dd, yyyy";
-    return [NSString stringWithFormat:@"%@                          Vol %@ No %@", [formatter stringFromDate:_issue.date], _issue.volume, _issue.number];
+    return [NSString stringWithFormat:@"%@                         Vol %@ No %@", [formatter stringFromDate:_issue.date], _issue.volume, _issue.number];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -287,7 +288,7 @@ bool didViewJustLoad;
         cell.imageView.accessibilityTraits = UIAccessibilityTraitImage;
         cell.imageView.accessibilityLabel = @"Unread article blue dot";
     } else {
-       cell.imageView.hidden = YES;
+        cell.imageView.hidden = YES;
     }
     
     return cell;
@@ -296,32 +297,32 @@ bool didViewJustLoad;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    
     // Navigation logic may go here. Create and push another view controller.
     _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
     NSArray *articles = [_issue.articles allObjects];
     _selectedArticle = [articles objectAtIndex:[indexPath row]];
     _selectedArticle.unread = NO;
     
-
+    
     [self.tableView beginUpdates];
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
     [self.tableView endUpdates];
     
     [_issue updateUnreadArticleStatus];
-
-
+    
+    
     if ([APP_MGR isDeviceIpad] == YES) {
         
         [APP_MGR.splitVM setSelectedArticle:_selectedArticle];
-    
+        
     }
     else
         [self performSegueWithIdentifier:@"pushContentPageViews" sender:nil];
-        
+    
     [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     [APP_MGR.splitVM searchEnd];
-
+    
     
 }
 
@@ -334,28 +335,28 @@ bool didViewJustLoad;
     _article = [articles objectAtIndex:[indexPath row]];
     
     if ([APP_MGR isDeviceIpad] == YES) {
-
-    KeywordArticleDetailVC *content = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverArticleDetails"];
-    content.article = _article;
-    content.modalDelegate = self;
-    content.popoverViewDelegate = self;
-
-	// Setup the popover for use from the navigation bar.
-	self.detailViewPopover = [[UIPopoverController alloc] initWithContentViewController:content];
-	self.detailViewPopover.popoverContentSize = CGSizeMake(400., 358.);
-	self.detailViewPopover.delegate = self;
-    
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-
-    // Present the popover from the button that was tapped in the detail view.
-    [self.detailViewPopover presentPopoverFromRect:cell.bounds inView:cell.contentView
-                     permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        
+        KeywordArticleDetailVC *content = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverArticleDetails"];
+        content.article = _article;
+        content.modalDelegate = self;
+        content.popoverViewDelegate = self;
+        
+        // Setup the popover for use from the navigation bar.
+        self.detailViewPopover = [[UIPopoverController alloc] initWithContentViewController:content];
+        self.detailViewPopover.popoverContentSize = CGSizeMake(400., 358.);
+        self.detailViewPopover.delegate = self;
+        
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        
+        // Present the popover from the button that was tapped in the detail view.
+        [self.detailViewPopover presentPopoverFromRect:cell.bounds inView:cell.contentView
+                              permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
         
     } else {
         [self performSegueWithIdentifier:@"pushArticleDetails" sender:nil];
         
     }
-
+    
     
 }
 
@@ -402,7 +403,7 @@ bool didViewJustLoad;
 {
     
     // dismiss popover
-     [self.detailViewPopover dismissPopoverAnimated:YES];
+    [self.detailViewPopover dismissPopoverAnimated:YES];
     
 }
 
@@ -412,7 +413,7 @@ bool didViewJustLoad;
     // dismiss popover
     [self.detailViewPopover dismissPopoverAnimated:YES];
     [self performSegueWithIdentifier:@"modalFullArticle" sender:nil];
-
+    
     
 }
 

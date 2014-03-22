@@ -57,9 +57,11 @@ KeywordMO *selectedKeyword;
         self.navigationItem.title = @"MMWR Express";
         UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
         shareButton.style = UIBarButtonItemStyleBordered;
-        
+        shareButton.accessibilityHint = @"Double tap to open share view to share the app with others.";
+        shareButton.accessibilityLabel = @"Share";        
         self.navigationItem.rightBarButtonItem = shareButton;
-        
+        self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
+
     }
     
     // register for update notification
