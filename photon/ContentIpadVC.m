@@ -53,6 +53,10 @@ ShareActionSheet *shareAS;
     
     UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
 	[infoButton addTarget:self action:@selector(infoButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    infoButton.accessibilityHint = @"Double tap to access information about MMWR Express.";
+    infoButton.accessibilityLabel = @"MMWR Express Info";
+
+    
 	UIBarButtonItem *modalButton = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
 	[self.navigationItem setLeftBarButtonItem:modalButton animated:YES];
     
