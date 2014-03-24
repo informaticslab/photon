@@ -92,7 +92,7 @@
         // Create default request with no caching
         NSMutableURLRequest *req = [[NSMutableURLRequest alloc] initWithURL:url
                                                                  cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
-                                                             timeoutInterval:60];
+                                                             timeoutInterval:15];
         [req setValue:@"MWFeedParser" forHTTPHeaderField:@"User-Agent"];
         self.request = req;
 		

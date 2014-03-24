@@ -235,8 +235,14 @@ int implicationsFound = 0;
 
 - (void)feedParser:(MWFeedParser *)parser didFailWithError:(NSError *)error {
 	NSLog(@"Finished Parsing With Error: %@", error);
-    if (_parsedItems.count == 0) {
-        //self.title = @"Failed"; // Show failed message in title
+    if (error.code == 2) {
+        // Failed but some items parsed, so show and inform of error
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"A Network Error Occurred"
+                                                        message:error.localizedDescription
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Dismiss"
+                                              otherButtonTitles:nil];
+        [alert show];
     } else {
         // Failed but some items parsed, so show and inform of error
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Parsing Incomplete"
@@ -247,6 +253,11 @@ int implicationsFound = 0;
         [alert show];
     }
     //[self updateTableWithParsedItems];
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"FeedDataUpdated"
+     object:self];
+    
+
 }
 
 
