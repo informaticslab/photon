@@ -278,7 +278,12 @@ bool didViewJustLoad;
     cell.textLabel.text = _article.title;
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.textLabel.isAccessibilityElement = YES;
-    
+    cell.accessoryView.isAccessibilityElement = YES;
+    cell.textLabel.accessibilityHint = @"Double tap to display content in summary view";
+    cell.textLabel.accessibilityTraits = UIAccessibilityTraitButton;
+    cell.accessoryView.accessibilityHint = @"Double tap to get more info about the article.";
+    cell.accessoryView.accessibilityLabel = @"More Info.";
+    cell.accessoryView.accessibilityTraits = UIAccessibilityTraitButton;
     
     cell.imageView.image = [UIImage imageNamed:@"unread_dot"];
     [cell.imageView sizeToFit];
