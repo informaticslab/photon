@@ -36,6 +36,8 @@ AppManager *appMgr;
     
     [self.webView loadHTMLString:html baseURL:nil];
     self.webView.delegate = self;
+    self.btnAgree.accessibilityHint = @"Double tap to agree to the MMWR Express License Agreement.";
+
     
     if (appMgr.agreedWithEula == TRUE) {
         _btnAgree.title = @"Done";

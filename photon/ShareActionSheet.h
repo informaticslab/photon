@@ -16,6 +16,7 @@
 @property(nonatomic, strong) MFMailComposeViewController *mailVC;
 @property(nonatomic, strong) MFMessageComposeViewController *msgVC;
 @property(nonatomic, strong) NSString *shareText;
+@property(nonatomic, strong) NSString *htmlText;
 @property(nonatomic, strong) NSString *shareUrl;
 @property(nonatomic, strong) NSString *shareSubject;
 

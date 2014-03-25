@@ -41,6 +41,8 @@ NSDictionary *regTextAttributes;
     self.icon.image = [UIImage imageNamed:_imageName];
 
     self.parentViewController.navigationItem.title = self.navbarTitle;
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName ]];
+    
 
 }
 

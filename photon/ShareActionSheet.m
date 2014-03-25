@@ -15,7 +15,7 @@
 - (id)initToShareApp:(UIViewController *)parentVC
 {
     
-    self.shareText = @"I’m using CDC’s MMWR Express mobile app.\nLearn more about it here:";
+    self.shareText = @"I’m using CDC’s MMWR Express mobile app. Learn more about it here:";
     self.shareUrl = @"http://www.cdc.gov/mmwr";
     self.shareSubject = @"MMWR Express App";
     self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share MMWR Express Using" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Mail", @"Message", @"Twitter", @"Facebook", nil];
@@ -147,11 +147,23 @@
 {
     if ([MFMailComposeViewController canSendMail]){
         
-        NSString *bodyText = [NSString stringWithFormat: @"<br/> <p>%@</p> <a href='%@'>%@</a>", self.shareText, self.shareUrl, self.shareUrl];
+        //NSString *bodyText = [NSString stringWithFormat: @"%@<a href=\"%@\">%@</a>", self.shareText, self.shareUrl, self.shareUrl];
+        
+        NSString *bodyText = [NSString stringWithFormat: @"I’m using CDC’s MMWR Express mobile app. Learn more about it here:"];
+
+        
+        NSMutableString *body = [NSMutableString string];
+        // add HTML before the link here with line breaks (\n)
+        [body appendString:@"<html><body>\n"];
+        [body appendString:@"</br><div><p>I’m using CDC’s MMWR\n"];
+        [body appendString:@"Express mobile app. Learn more\n"];
+        [body appendString:@"about it here:</p></div>\n"];
+        [body appendString:@"<div><a href=\"http://www.cdc.gov/mmwr\">http://www.cdc.gov/mmwr</a></div></body></html>"];
+        NSLog(@"Share URL for mail is : %@", bodyText);
      
         self.mailVC = [[MFMailComposeViewController alloc] init];
         self.mailVC.mailComposeDelegate = self;
-        [self.mailVC setMessageBody:bodyText isHTML:YES];
+        [self.mailVC setMessageBody:body isHTML:YES];
         [self.mailVC setSubject:self.shareSubject];
         
         [self.parentVC presentViewController:self.mailVC animated:YES completion:nil];

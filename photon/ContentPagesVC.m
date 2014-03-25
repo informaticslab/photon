@@ -56,6 +56,9 @@
     [self.pageViewController didMoveToParentViewController:self];
 
     self.navigationItem.title = _navbarTitles[0];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName ]];
+    
 
 }
 
