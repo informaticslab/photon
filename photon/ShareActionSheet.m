@@ -18,7 +18,7 @@
     self.shareText = @"I’m using CDC’s MMWR Express mobile app. Learn more about it here:";
     self.shareUrl = @"http://www.cdc.gov/mmwr";
     self.shareSubject = @"MMWR Express App";
-    self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share MMWR Express Using" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Mail", @"Message", @"Twitter", @"Facebook", nil];
+    self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share MMWR Express" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Mail", @"Message", @"Twitter", @"Facebook", nil];
     
     self.parentVC = parentVC;
     return self;
@@ -31,7 +31,7 @@
     self.shareUrl = articleUrl;
     self.shareSubject = @"MMWR Weekly Article";
     
-    self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share MMWR Article Using" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Mail", @"Message", @"Twitter", @"Facebook", nil];
+    self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share MMWR Article" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Mail", @"Message", @"Twitter", @"Facebook", nil];
     
     self.parentVC = parentVC;
     return self;
