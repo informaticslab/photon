@@ -42,6 +42,14 @@
 {
     
     [_spinner performSelectorInBackground: @selector(stopAnimating) withObject: nil];
+    // Failed but some items parsed, so show and inform of error
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Could Not Display Full Article"
+                                                    message:@"The Internet connection appears to be offline. Please check the connection, and try again."
+                                                   delegate:nil
+                                          cancelButtonTitle:@"Dismiss"
+                                          otherButtonTitles:nil];
+    [alert show];
+
     
 }
 

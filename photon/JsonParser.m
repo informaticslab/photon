@@ -237,8 +237,8 @@ int implicationsFound = 0;
 	NSLog(@"Finished Parsing With Error: %@", error);
     if (error.code == 2) {
         // Failed but some items parsed, so show and inform of error
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"A Network Error Occurred"
-                                                        message:error.localizedDescription
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Could Not Update Articles"
+                                                        message:@"The Internet connection appears to be offline. Please check the connection, and try again."
                                                        delegate:nil
                                               cancelButtonTitle:@"Dismiss"
                                               otherButtonTitles:nil];

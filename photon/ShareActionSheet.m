@@ -16,7 +16,7 @@
 {
     
     self.shareText = @"I’m using CDC’s MMWR Express mobile app. Learn more about it here:";
-    self.shareUrl = @"http://www.cdc.gov/mmwr";
+    self.shareUrl = @"http://www.cdc.gov/mmwr/";
     self.shareSubject = @"MMWR Express App";
     self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share MMWR Express" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Mail", @"Message", @"Twitter", @"Facebook", nil];
     
