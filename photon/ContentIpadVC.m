@@ -35,6 +35,8 @@ ShareActionSheet *shareAS;
     
 	// Do any additional setup after loading the view.
     self.navigationItem.title = @"Summary";
+    self.navigationItem.accessibilityLabel = @"Summary of Article";
+    
     
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"ipad_detail_navbar"] forBarMetrics:UIBarMetricsDefault];
     //    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
@@ -185,6 +187,8 @@ ShareActionSheet *shareAS;
 {
     if (selArticle == nil)
         return;
+
+    NSLog(@"Article title is %@", self.article.title);
     
     UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:15];
     _article = selArticle;
@@ -206,6 +210,9 @@ ShareActionSheet *shareAS;
     self.txtvArticleTitle.font = APP_MGR.tableFont;
     self.txtvArticleTitle.textAlignment = NSTextAlignmentCenter;
     
+    self.navigationItem.accessibilityLabel = [NSString stringWithFormat:@"%@ %@", @"Summary of Article with title ", self.article.title];
+
+    
     
 }
 
@@ -214,6 +221,8 @@ ShareActionSheet *shareAS;
     
     self.grayedOutContentView.hidden = NO;
     self.article = nil;
+    self.navigationItem.accessibilityLabel = @"Summary of Article. No article is currently selected.";
+
     
     
 }

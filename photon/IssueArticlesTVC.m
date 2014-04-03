@@ -61,6 +61,8 @@ bool didViewJustLoad;
         self.navigationItem.title = @"MMWR Articles";
     else
         self.navigationItem.title = @"MMWR Express";
+    
+    self.navigationItem.accessibilityLabel =  @"List of MMWR Articles";
     UITabBarItem *item = [self.tabBarController.tabBar.items objectAtIndex:0];
     item.image = [UIImage imageNamed:@"issue_tab_icon_inactive"];
     item.selectedImage = [UIImage imageNamed:@"issue_tab_icon_active"];

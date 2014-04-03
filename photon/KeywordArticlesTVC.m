@@ -49,6 +49,8 @@ NSArray *keywordArticles;
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.navigationItem.title = _keyword.text;
+    self.navigationItem.accessibilityLabel =  [NSString stringWithFormat:@"%@ %@",@"List of articles containing search term", _keyword.text ];
+
     keywordArticles = [APP_MGR.issuesMgr articlesWithKeyword:_keyword];
     
     if([APP_MGR isDeviceIpad] == NO) {
@@ -102,7 +104,6 @@ NSArray *keywordArticles;
         [APP_MGR.splitVM searchEnd];
 
     }
-    
     
 }
 

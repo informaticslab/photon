@@ -63,6 +63,8 @@ KeywordMO *selectedKeyword;
         self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
 
     }
+    self.navigationItem.accessibilityLabel =  @"List of search terms";
+    
     
     // register for update notification
     [[NSNotificationCenter defaultCenter]
