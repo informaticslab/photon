@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PopoverViewDelegate.h"
 
 @interface InfoVC : UIViewController
 - (IBAction)segCtrlValueChanged:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *infoVC;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segCtrlHelpAbout;
 @property (weak, nonatomic) IBOutlet UIView *helpVC;
+@property (weak, nonatomic) id <PopoverViewDelegate> popoverViewDelegate;
+
+- (IBAction)btnReadUserAgreementTouchUp:(id)sender;
 
 @end

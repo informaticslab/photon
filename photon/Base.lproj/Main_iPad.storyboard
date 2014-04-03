@@ -44,7 +44,7 @@
                     <connections>
                         <segue destination="IAr-lY-2gS" kind="replace" identifier="pushContentPageIpadViews" splitViewControllerTargetIndex="1" id="WhT-qN-xq9"/>
                         <segue destination="agv-o0-Y9V" kind="modal" identifier="modalFullArticle" modalPresentationStyle="pageSheet" id="2Za-UK-tFB"/>
-                        <segue destination="NsL-dn-fNK" kind="modal" identifier="displayEulaSegue" modalPresentationStyle="formSheet" id="6FL-Pm-J5C"/>
+                        <segue destination="NsL-dn-fNK" kind="modal" identifier="displayEulaSegue" modalPresentationStyle="formSheet" animates="NO" id="6FL-Pm-J5C"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9BA-vN-P1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -297,11 +297,12 @@
                         <outlet property="txtvArticleTitle" destination="S0E-oZ-Wc7" id="Z3J-nD-SN2"/>
                         <outlet property="txtvImplicationsText" destination="yYi-zc-Tce" id="c4R-uw-2sH"/>
                         <outlet property="txtvKnownText" destination="Hl9-mZ-D9x" id="q8T-B5-zH3"/>
+                        <segue destination="NsL-dn-fNK" kind="modal" identifier="displayEulaSegue" modalPresentationStyle="formSheet" animates="NO" id="R5g-MU-xge"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ax-rZ-xZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="251" y="1277"/>
+            <point key="canvasLocation" x="254" y="1277"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="kTO-g4-NTt">
@@ -542,14 +543,14 @@
                         <viewControllerLayoutGuide type="bottom" id="OPY-45-DFf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Oq6-NC-izn">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="540"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xUF-HE-zXE">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xUF-HE-zXE">
                                 <rect key="frame" x="139" y="32" width="123" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="123" id="IJc-tC-ObE"/>
+                                    <constraint firstAttribute="width" constant="123" id="OmD-Ts-V1B"/>
                                 </constraints>
                                 <segments>
                                     <segment title="About"/>
@@ -559,35 +560,48 @@
                                     <action selector="segCtrlValueChanged:" destination="cAe-AZ-gzz" eventType="valueChanged" id="Ank-tv-gqN"/>
                                 </connections>
                             </segmentedControl>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZU-CU-5ia" userLabel="Help View">
-                                <rect key="frame" x="40" y="85" width="320" height="374"/>
+                            <containerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GZU-CU-5ia" userLabel="Help View">
+                                <rect key="frame" x="40" y="85" width="320" height="400"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="dgR-M2-GmC" kind="embed" id="fGQ-fb-sp2"/>
                                 </connections>
                             </containerView>
-                            <containerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="npO-TM-Bre" userLabel="About View">
-                                <rect key="frame" x="40" y="85" width="320" height="374"/>
+                            <containerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="npO-TM-Bre" userLabel="About View">
+                                <rect key="frame" x="40" y="85" width="320" height="400"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="PtR-WM-DuH" kind="embed" id="R57-8b-kLR"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M90-tL-1SC">
+                                <rect key="frame" x="115" y="499" width="171" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="171" id="M49-FX-cop"/>
+                                </constraints>
+                                <state key="normal" title="Read User Agreement">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnReadUserAgreementTouchUp:" destination="cAe-AZ-gzz" eventType="touchUpInside" id="1Fb-gC-0Tb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="npO-TM-Bre" firstAttribute="top" secondItem="xUF-HE-zXE" secondAttribute="bottom" constant="26" id="8Av-yf-dt4"/>
-                            <constraint firstItem="xUF-HE-zXE" firstAttribute="top" secondItem="KKe-Ik-dLQ" secondAttribute="bottom" constant="32" id="Bkr-hO-oJa"/>
-                            <constraint firstItem="GZU-CU-5ia" firstAttribute="top" secondItem="xUF-HE-zXE" secondAttribute="bottom" constant="25" id="Bwz-Lh-Oq1"/>
-                            <constraint firstAttribute="bottom" secondItem="npO-TM-Bre" secondAttribute="bottom" constant="20" symbolic="YES" id="K6O-el-Zit"/>
-                            <constraint firstItem="GZU-CU-5ia" firstAttribute="leading" secondItem="Oq6-NC-izn" secondAttribute="leading" constant="40" id="PiS-z6-i3m"/>
-                            <constraint firstItem="GZU-CU-5ia" firstAttribute="leading" secondItem="npO-TM-Bre" secondAttribute="leading" id="XQG-Gc-m4I"/>
-                            <constraint firstItem="GZU-CU-5ia" firstAttribute="centerX" secondItem="xUF-HE-zXE" secondAttribute="centerX" id="htV-hq-UZb"/>
-                            <constraint firstItem="GZU-CU-5ia" firstAttribute="trailing" secondItem="npO-TM-Bre" secondAttribute="trailing" id="iEa-OY-xTa"/>
-                            <constraint firstItem="OPY-45-DFf" firstAttribute="top" secondItem="GZU-CU-5ia" secondAttribute="bottom" constant="21" id="jz0-t0-vUy"/>
-                            <constraint firstItem="xUF-HE-zXE" firstAttribute="centerX" secondItem="Oq6-NC-izn" secondAttribute="centerX" id="w8e-ED-SND"/>
+                            <constraint firstItem="GZU-CU-5ia" firstAttribute="centerX" secondItem="M90-tL-1SC" secondAttribute="centerX" id="GJS-El-Q7f"/>
+                            <constraint firstItem="GZU-CU-5ia" firstAttribute="centerX" secondItem="xUF-HE-zXE" secondAttribute="centerX" id="LP6-e9-04w"/>
+                            <constraint firstItem="npO-TM-Bre" firstAttribute="top" secondItem="xUF-HE-zXE" secondAttribute="bottom" constant="25" id="NYi-TZ-7OX"/>
+                            <constraint firstItem="OPY-45-DFf" firstAttribute="top" secondItem="M90-tL-1SC" secondAttribute="bottom" constant="11" id="RbP-im-2jF"/>
+                            <constraint firstItem="npO-TM-Bre" firstAttribute="leading" secondItem="GZU-CU-5ia" secondAttribute="leading" id="TrL-EQ-KAw"/>
+                            <constraint firstItem="M90-tL-1SC" firstAttribute="top" secondItem="npO-TM-Bre" secondAttribute="bottom" constant="14" id="VSA-Y5-tE8"/>
+                            <constraint firstItem="GZU-CU-5ia" firstAttribute="bottom" secondItem="npO-TM-Bre" secondAttribute="bottom" id="Z8S-py-xbT"/>
+                            <constraint firstItem="npO-TM-Bre" firstAttribute="trailing" secondItem="GZU-CU-5ia" secondAttribute="trailing" id="hfp-Qf-Ara"/>
+                            <constraint firstItem="npO-TM-Bre" firstAttribute="top" secondItem="GZU-CU-5ia" secondAttribute="top" id="rJB-7Z-b2g"/>
+                            <constraint firstItem="xUF-HE-zXE" firstAttribute="top" secondItem="KKe-Ik-dLQ" secondAttribute="bottom" constant="32" id="v6y-Um-qTQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9X3-ss-sgg"/>
@@ -596,7 +610,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="400" height="480"/>
+                    <size key="freeformSize" width="400" height="540"/>
                     <connections>
                         <outlet property="helpVC" destination="GZU-CU-5ia" id="gQj-ZV-2rT"/>
                         <outlet property="infoVC" destination="npO-TM-Bre" id="ctH-Mv-UIQ"/>
@@ -616,7 +630,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Z9i-cr-bfK"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UTk-MN-CNf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="374"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="about_icon" translatesAutoresizingMaskIntoConstraints="NO" id="oZE-Fl-ui3">
@@ -722,7 +736,7 @@ If you have any questions about the app, please contact either the MMWR staff at
                         <viewControllerLayoutGuide type="bottom" id="2r0-K0-0Da"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KHv-Fr-Py0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="374"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help_header_icon" translatesAutoresizingMaskIntoConstraints="NO" id="eO2-xi-GDG">
@@ -744,7 +758,7 @@ If you have any questions about the app, please contact either the MMWR staff at
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Myg-vG-pE1">
-                                <rect key="frame" x="0.0" y="62" width="320" height="300"/>
+                                <rect key="frame" x="0.0" y="62" width="320" height="326"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help_content_no_page_control" translatesAutoresizingMaskIntoConstraints="NO" id="bLS-gx-3yO">
@@ -915,7 +929,7 @@ If you have any questions about the app, please contact either the MMWR staff at
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HrL-Jh-6TK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1150" y="-2031"/>
+            <point key="canvasLocation" x="2042" y="1257"/>
         </scene>
     </scenes>
     <resources>
@@ -937,7 +951,8 @@ If you have any questions about the app, please contact either the MMWR staff at
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="2Za-UK-tFB"/>
         <segue reference="WhT-qN-xq9"/>
+        <segue reference="2Za-UK-tFB"/>
+        <segue reference="R5g-MU-xge"/>
     </inferredMetricsTieBreakers>
 </document>

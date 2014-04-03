@@ -41,6 +41,18 @@
 }
 
 
+- (IBAction)btnReadUserAgreementTouchUp:(id)sender {
+    
+    if (APP_MGR.isDeviceIpad)
+        [self.popoverViewDelegate didTouchReadUserAgreementButton];
+    else
+        [self performSegueWithIdentifier:@"pushViewFullArticle" sender:nil];
+    
+    
+}
+
+
+
 
 - (void)donePressed:(id)sender
 {

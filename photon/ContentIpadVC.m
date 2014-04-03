@@ -96,8 +96,9 @@ ShareActionSheet *shareAS;
     InfoVC *content = [self.storyboard instantiateViewControllerWithIdentifier:@"InfoPopoverVC"];
 
 	self.infoPopoverController = [[UIPopoverController alloc] initWithContentViewController:content];
-	self.infoPopoverController.popoverContentSize = CGSizeMake(400., 480.);
+	self.infoPopoverController.popoverContentSize = CGSizeMake(400., 540.);
 	self.infoPopoverController.delegate = self;
+    content.popoverViewDelegate = self;
 
     
 }
@@ -133,6 +134,48 @@ ShareActionSheet *shareAS;
     
 	// Set the last button tapped to the current button that was tapped.
 	//self.lastTappedButton = sender;
+}
+
+-(void)didTouchReadUserAgreementButton
+{
+    
+    // dismiss popover
+    [self.infoPopoverController dismissPopoverAnimated:YES];
+    [self presentEulaModalView];
+    
+    
+}
+
+
+- (void)presentEulaModalView
+{
+    static BOOL alwaysShowEula = TRUE;
+    
+    if (APP_MGR.agreedWithEula == TRUE && alwaysShowEula == FALSE)
+        return;
+    
+    // store the data
+    NSDictionary *appInfo = [[NSBundle mainBundle] infoDictionary];
+    NSString *currVersion = [NSString stringWithFormat:@"%@.%@",
+                             [appInfo objectForKey:@"CFBundleShortVersionString"],
+                             [appInfo objectForKey:@"CFBundleVersion"]];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *lastVersionEulaAgreed = (NSString *)[defaults objectForKey:@"agreedToEulaForVersion"];
+    
+    
+    // was the version number the last time EULA was seen and agreed to the
+    // same as the current version, if not show EULA and store the version number
+    if (![currVersion isEqualToString:lastVersionEulaAgreed] || alwaysShowEula) {
+        [defaults setObject:currVersion forKey:@"agreedToEulaForVersion"];
+        [defaults synchronize];
+        NSLog(@"Data saved");
+        NSLog(@"%@", currVersion);
+        
+        //
+        [self performSegueWithIdentifier:@"displayEulaSegue" sender:self];
+    }
+    
+    
 }
 
 

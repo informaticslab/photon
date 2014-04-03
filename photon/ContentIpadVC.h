@@ -10,8 +10,9 @@
 #import "ArticleMO+Article.h"
 #import "ArticleSelectionDelegate.h"
 #import "ModalViewDelegate.h"
+#import "PopoverViewDelegate.h"
 
-@interface ContentIpadVC : UIViewController <UISplitViewControllerDelegate,UITextViewDelegate, ArticleSelectionDelegate, ModalViewDelegate, UIPopoverControllerDelegate>
+@interface ContentIpadVC : UIViewController <UISplitViewControllerDelegate,UITextViewDelegate, ArticleSelectionDelegate, ModalViewDelegate, UIPopoverControllerDelegate, PopoverViewDelegate>
 
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 @property (strong, nonatomic) UIPopoverController *infoPopoverController;
@@ -34,6 +35,7 @@
 @property (weak, nonatomic) IssueMO *issue;
 
 - (IBAction)infoButtonAction:(UIBarButtonItem *)sender;
+-(void)didTouchReadUserAgreementButton;
 
 
 @end
