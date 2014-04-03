@@ -148,7 +148,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="250" translatesAutoresizingMaskIntoConstraints="NO" id="V8M-Ek-bKP">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="250" translatesAutoresizingMaskIntoConstraints="NO" id="V8M-Ek-bKP">
                                 <rect key="frame" x="60" y="32" width="250" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
@@ -162,14 +162,14 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bluebox_subheader_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ogy-Uh-eiX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bluebox_subheader_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ogy-Uh-eiX">
                                 <rect key="frame" x="17" y="41" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="Pvp-xF-mam"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ul-ym-V9Y">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0ul-ym-V9Y">
                                 <rect key="frame" x="0.0" y="84" width="18" height="376"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.70196078429999997" green="0.78039215689999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -177,7 +177,7 @@
                                     <constraint firstAttribute="width" constant="18" id="8JH-o1-6aq"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubz-db-p6p">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubz-db-p6p">
                                 <rect key="frame" x="10" y="84" width="300" height="376"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -363,7 +363,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kUg-aG-yUh">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kUg-aG-yUh">
                                 <rect key="frame" x="99" y="20" width="123" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
@@ -375,7 +375,7 @@
                                 </connections>
                             </segmentedControl>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hoP-cY-4G0" userLabel="Help View">
-                                <rect key="frame" x="0.0" y="62" width="320" height="334"/>
+                                <rect key="frame" x="0.0" y="62" width="320" height="297"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
@@ -383,26 +383,40 @@
                                 </connections>
                             </containerView>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TfW-bG-e53" userLabel="About View">
-                                <rect key="frame" x="0.0" y="62" width="320" height="334"/>
+                                <rect key="frame" x="0.0" y="62" width="320" height="297"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="DBY-ED-WLm" kind="embed" id="Q66-6a-ZW8"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAo-M0-gKe">
+                                <rect key="frame" x="74" y="373" width="173" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Read User Agreement">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnReadUserAgreementTouchUp:" destination="0lD-We-Pzq" eventType="touchUpInside" id="1dE-Qt-1dj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hoP-cY-4G0" firstAttribute="bottom" secondItem="TfW-bG-e53" secondAttribute="bottom" id="1HJ-ya-qlV"/>
-                            <constraint firstItem="hoP-cY-4G0" firstAttribute="trailing" secondItem="TfW-bG-e53" secondAttribute="trailing" id="6JJ-rO-7o8"/>
-                            <constraint firstItem="hoP-cY-4G0" firstAttribute="top" secondItem="TfW-bG-e53" secondAttribute="top" id="HaY-op-U0O"/>
-                            <constraint firstAttribute="trailing" secondItem="hoP-cY-4G0" secondAttribute="trailing" id="Plu-by-cQH"/>
-                            <constraint firstItem="hoP-cY-4G0" firstAttribute="leading" secondItem="TfW-bG-e53" secondAttribute="leading" id="VLa-lE-Lcm"/>
-                            <constraint firstItem="hoP-cY-4G0" firstAttribute="top" secondItem="oVb-yl-z3k" secondAttribute="top" constant="62" id="acj-3j-xvt"/>
-                            <constraint firstItem="h7P-4N-aQD" firstAttribute="top" secondItem="TfW-bG-e53" secondAttribute="bottom" constant="20" id="bxv-C2-Jwb"/>
-                            <constraint firstItem="hoP-cY-4G0" firstAttribute="leading" secondItem="oVb-yl-z3k" secondAttribute="leading" id="dSp-of-dH8"/>
-                            <constraint firstItem="hoP-cY-4G0" firstAttribute="top" secondItem="kUg-aG-yUh" secondAttribute="bottom" constant="14" id="q4N-dL-D9Z"/>
-                            <constraint firstItem="hoP-cY-4G0" firstAttribute="centerX" secondItem="kUg-aG-yUh" secondAttribute="centerX" id="zfT-L9-eK8"/>
+                            <constraint firstItem="SAo-M0-gKe" firstAttribute="top" secondItem="TfW-bG-e53" secondAttribute="bottom" constant="14" id="4Wl-sp-M1n"/>
+                            <constraint firstItem="SAo-M0-gKe" firstAttribute="leading" secondItem="oVb-yl-z3k" secondAttribute="leading" constant="74" id="6ku-wi-2qc"/>
+                            <constraint firstItem="kUg-aG-yUh" firstAttribute="top" secondItem="oVb-yl-z3k" secondAttribute="top" constant="20" symbolic="YES" id="AW7-rS-cE9"/>
+                            <constraint firstAttribute="trailing" secondItem="TfW-bG-e53" secondAttribute="trailing" id="Arr-Nk-Lcm"/>
+                            <constraint firstItem="hoP-cY-4G0" firstAttribute="centerX" secondItem="SAo-M0-gKe" secondAttribute="centerX" id="DP5-0g-f36"/>
+                            <constraint firstItem="TfW-bG-e53" firstAttribute="leading" secondItem="hoP-cY-4G0" secondAttribute="leading" id="LJM-x3-9Rg"/>
+                            <constraint firstItem="kUg-aG-yUh" firstAttribute="leading" secondItem="oVb-yl-z3k" secondAttribute="leading" constant="99" id="LUE-Zp-1wN"/>
+                            <constraint firstItem="kUg-aG-yUh" firstAttribute="centerX" secondItem="hoP-cY-4G0" secondAttribute="centerX" id="MdR-9e-pBY"/>
+                            <constraint firstItem="TfW-bG-e53" firstAttribute="bottom" secondItem="hoP-cY-4G0" secondAttribute="bottom" id="R0n-dd-NpE"/>
+                            <constraint firstItem="hoP-cY-4G0" firstAttribute="trailing" secondItem="TfW-bG-e53" secondAttribute="trailing" id="TYm-1J-x9H"/>
+                            <constraint firstItem="TfW-bG-e53" firstAttribute="top" secondItem="kUg-aG-yUh" secondAttribute="bottom" constant="14" id="ek5-85-Wds"/>
+                            <constraint firstItem="TfW-bG-e53" firstAttribute="top" secondItem="hoP-cY-4G0" secondAttribute="top" id="iaE-Sj-gsp"/>
+                            <constraint firstItem="TfW-bG-e53" firstAttribute="leading" secondItem="oVb-yl-z3k" secondAttribute="leading" id="o3a-bD-LHO"/>
+                            <constraint firstItem="h7P-4N-aQD" firstAttribute="top" secondItem="SAo-M0-gKe" secondAttribute="bottom" constant="13" id="zIq-RQ-nwc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ODq-jC-7Ex"/>
@@ -410,6 +424,7 @@
                         <outlet property="helpVC" destination="hoP-cY-4G0" id="S5R-mP-R4E"/>
                         <outlet property="infoVC" destination="TfW-bG-e53" id="nbK-CY-J7i"/>
                         <outlet property="segCtrlHelpAbout" destination="kUg-aG-yUh" id="YfA-BY-CDv"/>
+                        <segue destination="YbN-ib-Nkw" kind="modal" identifier="displayEulaSegue" id="1Me-sS-qMG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tuc-nF-oHy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -573,7 +588,7 @@
                         <viewControllerLayoutGuide type="bottom" id="sUS-cU-MKi"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ifg-fP-KY0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="334"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="297"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="about_icon" translatesAutoresizingMaskIntoConstraints="NO" id="S4l-aG-biq">
@@ -679,7 +694,7 @@ If you have any questions about the app, please contact either the MMWR staff at
                         <viewControllerLayoutGuide type="bottom" id="Cpy-NI-cL6"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UKz-tT-CVi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="334"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="297"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help_header_icon" translatesAutoresizingMaskIntoConstraints="NO" id="e6a-aK-2cC">
@@ -704,7 +719,7 @@ If you have any questions about the app, please contact either the MMWR staff at
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EaY-K3-UXl">
-                                <rect key="frame" x="0.0" y="62" width="320" height="260"/>
+                                <rect key="frame" x="0.0" y="62" width="320" height="223"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help_content_no_page_control" translatesAutoresizingMaskIntoConstraints="NO" id="0fe-dA-SVc">
@@ -837,7 +852,7 @@ If you have any questions about the app, please contact either the MMWR staff at
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rV8-kE-edx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2116" y="-1431"/>
+            <point key="canvasLocation" x="2158" y="-1380"/>
         </scene>
     </scenes>
     <resources>
@@ -857,8 +872,9 @@ If you have any questions about the app, please contact either the MMWR staff at
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="cPZ-Qk-bcg"/>
         <segue reference="sa5-ms-oeY"/>
         <segue reference="XfS-BQ-fbZ"/>
+        <segue reference="cPZ-Qk-bcg"/>
+        <segue reference="1Me-sS-qMG"/>
     </inferredMetricsTieBreakers>
 </document>

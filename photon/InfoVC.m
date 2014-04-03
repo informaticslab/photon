@@ -46,7 +46,7 @@
     if (APP_MGR.isDeviceIpad)
         [self.popoverViewDelegate didTouchReadUserAgreementButton];
     else
-        [self performSegueWithIdentifier:@"pushViewFullArticle" sender:nil];
+        [self performSegueWithIdentifier:@"displayEulaSegue" sender:nil];
     
     
 }
