@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3751624A18EE0B01002DA08C /* 508_help_text_iPad.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3751624818EE0B01002DA08C /* 508_help_text_iPad.txt */; };
+		3751624B18EE0B01002DA08C /* 508_help_text_iPhone.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3751624918EE0B01002DA08C /* 508_help_text_iPhone.txt */; };
 		A61CA795186231ED00891E00 /* RSSEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CA794186231ED00891E00 /* RSSEntry.m */; };
 		A61CA7C41863235800891E00 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CA7B61863235800891E00 /* GTMNSString+HTML.m */; };
 		A61CA7C51863235800891E00 /* MWFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CA7B81863235800891E00 /* MWFeedInfo.m */; };
@@ -79,6 +81,8 @@
 
 /* Begin PBXFileReference section */
 		3716854018A50CDE0025B32F /* ArticleSelectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleSelectionDelegate.h; sourceTree = "<group>"; };
+		3751624818EE0B01002DA08C /* 508_help_text_iPad.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 508_help_text_iPad.txt; sourceTree = "<group>"; };
+		3751624918EE0B01002DA08C /* 508_help_text_iPhone.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 508_help_text_iPhone.txt; sourceTree = "<group>"; };
 		37C4300318B7DE2800CCDE8A /* PopoverViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopoverViewDelegate.h; sourceTree = "<group>"; };
 		A61CA793186231ED00891E00 /* RSSEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSEntry.h; sourceTree = "<group>"; };
 		A61CA794186231ED00891E00 /* RSSEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSEntry.m; sourceTree = "<group>"; };
@@ -273,6 +277,8 @@
 		A62A1A181823C9C7006A62B3 /* photon */ = {
 			isa = PBXGroup;
 			children = (
+				3751624818EE0B01002DA08C /* 508_help_text_iPad.txt */,
+				3751624918EE0B01002DA08C /* 508_help_text_iPhone.txt */,
 				A68081D418D8943F00C6199B /* photon_eula.html */,
 				A6AC5FA818D794D3000D0832 /* EulaVC.m */,
 				A6AC5FA918D794D3000D0832 /* EulaVC.h */,
@@ -464,8 +470,10 @@
 			files = (
 				A6687EC11885AA1A008109BF /* Main_iPad.storyboard in Resources */,
 				A6636DF418DCF1410095593D /* PreloadIssues.json in Resources */,
+				3751624A18EE0B01002DA08C /* 508_help_text_iPad.txt in Resources */,
 				A68081D518D8943F00C6199B /* photon_eula.html in Resources */,
 				A62A1A1D1823C9C7006A62B3 /* InfoPlist.strings in Resources */,
+				3751624B18EE0B01002DA08C /* 508_help_text_iPhone.txt in Resources */,
 				A66FB237184D211F008F2AB7 /* Images.xcassets in Resources */,
 				A62A1A261823C9C7006A62B3 /* Main.storyboard in Resources */,
 				A6A919D81829B48A00F1CE7D /* Issues.json in Resources */,
