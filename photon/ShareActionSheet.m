@@ -12,25 +12,36 @@
 @implementation ShareActionSheet
 
 
-- (id)initToShareApp:(UIViewController *)parentVC
-{
-    
-    self.shareText = @"I’m using CDC’s MMWR Express mobile app. Learn more about it here:";
-    self.shareUrl = @"http://www.cdc.gov/mmwr/";
-    self.shareSubject = @"MMWR Express App";
-    self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Mail", @"Message", @"Twitter", @"Facebook", nil];
-    
-    self.parentVC = parentVC;
-    return self;
-    
-}
+
+//- (id)initToShareApp:(UIViewController *)parentVC
+//{
+//    
+//    self.shareText = @"I’m using CDC’s MMWR Express mobile app. Learn more about it here:";
+//    self.shareUrl = @"http://www.cdc.gov/mmwr/";
+//    self.shareSubject = @"MMWR Express App";
+//    self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Mail", @"Message", @"Twitter", @"Facebook", nil];
+//    
+//    self.parentVC = parentVC;
+//    return self;
+//    
+//}
 
 - (id)initToShareArticleUrl:(NSString *)articleUrl fromVC:(UIViewController *)parentVC
 {
-    self.shareText = @"MMWR Weekly article via CDC’s MMWR Express mobile app.";
-    self.shareUrl = articleUrl;
-    self.shareSubject = @"MMWR Weekly Article";
     
+    if (articleUrl == nil ) {
+        self.shareText = @"I’m using CDC’s MMWR Express mobile app. Learn more about it here:";
+        self.shareUrl = @"http://www.cdc.gov/mmwr/";
+        self.shareSubject = @"MMWR Express App";
+    } else {
+        
+        self.shareText = @"MMWR Weekly article via CDC’s MMWR Express mobile app.";
+        self.shareUrl = articleUrl;
+        self.shareSubject = @"MMWR Weekly Article";
+        
+        
+    }
+
     self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Mail", @"Message", @"Twitter", @"Facebook", nil];
     
     self.parentVC = parentVC;
@@ -149,16 +160,20 @@
         
         //NSString *bodyText = [NSString stringWithFormat: @"%@<a href=\"%@\">%@</a>", self.shareText, self.shareUrl, self.shareUrl];
         
-        NSString *bodyText = [NSString stringWithFormat: @"I’m using CDC’s MMWR Express mobile app. Learn more about it here:"];
+        NSString *bodyText = @"";
 
         
         NSMutableString *body = [NSMutableString string];
         // add HTML before the link here with line breaks (\n)
         [body appendString:@"<html><body>\n"];
-        [body appendString:@"</br><div><p>I’m using CDC’s MMWR\n"];
-        [body appendString:@"Express mobile app. Learn more\n"];
-        [body appendString:@"about it here:</p></div>\n"];
-        [body appendString:@"<div><a href=\"http://www.cdc.gov/mmwr\">http://www.cdc.gov/mmwr</a></div></body></html>"];
+        [body appendString:@"</br><div><p>"];
+        [body appendString:self.shareText];
+        [body appendString:@"</p></div>\n"];
+        [body appendString:@"<div><a href=\""];
+        [body appendString:self.shareUrl];
+        [body appendString:@"\">"];
+        [body appendString:self.shareUrl];
+        [body appendString:@"</a></div></body></html>"];
         NSLog(@"Share URL for mail is : %@", bodyText);
      
         self.mailVC = [[MFMailComposeViewController alloc] init];

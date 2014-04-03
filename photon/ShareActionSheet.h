@@ -21,7 +21,7 @@
 @property(nonatomic, strong) NSString *shareSubject;
 
 
-- (id)initToShareApp:(UIViewController *)parentVC;
+//- (id)initToShareApp:(UIViewController *)parentVC;
 - (id)initToShareArticleUrl:(NSString *)articleUrl fromVC:(UIViewController *)parentVC;
 -(void)showView;
 

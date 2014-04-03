@@ -154,7 +154,8 @@ bool didViewJustLoad;
 - (void)share:(id)sender
 {
     // display the options for sharing
-    shareAS = [[ShareActionSheet alloc] initToShareApp:self];
+    
+    shareAS = [[ShareActionSheet alloc] initToShareArticleUrl:self.selectedArticle.url fromVC:self];
     [shareAS showView];
     
 }

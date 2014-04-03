@@ -111,7 +111,7 @@ ShareActionSheet *shareAS;
 - (void)share:(id)sender
 {
     // display the options for sharing
-    shareAS = [[ShareActionSheet alloc] initToShareApp:self];
+    shareAS = [[ShareActionSheet alloc] initToShareArticleUrl:self.article.url fromVC:self];
     [shareAS showView];
     
 }
@@ -170,6 +170,7 @@ ShareActionSheet *shareAS;
 {
     
     self.grayedOutContentView.hidden = NO;
+    self.article = nil;
     
     
 }

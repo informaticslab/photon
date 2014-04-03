@@ -110,7 +110,7 @@ KeywordMO *selectedKeyword;
 - (void)share:(id)sender
 {
     // display the options for sharing
-    shareAS = [[ShareActionSheet alloc] initToShareApp:self];
+    shareAS = [[ShareActionSheet alloc] initToShareArticleUrl:nil fromVC:self];
     [shareAS showView];
     
 }
