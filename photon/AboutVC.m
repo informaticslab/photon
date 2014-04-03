@@ -37,27 +37,6 @@
 }
 
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-//    if (APP_MGR.isDeviceIpad)
-//        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-//    else
-//        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]}];
-//    
-    
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    
-//    if (APP_MGR.isDeviceIpad)
-//        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]}];
-//    else
-//        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-//    
-    
-}
-
 
 -(NSString *)getVersionString
 {
