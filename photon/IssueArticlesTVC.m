@@ -208,14 +208,13 @@ bool didViewJustLoad;
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     
-    return 32.0f;
+    return 36.0f;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    
-    return 4.0f;
+    return CGFLOAT_MIN;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
@@ -280,6 +279,7 @@ bool didViewJustLoad;
     [cell.textLabel sizeToFit];
     cell.textLabel.text = _article.title;
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.textLabel.isAccessibilityElement = YES;
     cell.accessoryView.isAccessibilityElement = YES;
     cell.textLabel.accessibilityHint = @"Double tap to display content in summary view";
