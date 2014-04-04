@@ -26,6 +26,13 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     _scrollView.scrollEnabled = YES;
+    
+    if ([APP_MGR isDeviceIpad] == YES) {
+        _imageView.accessibilityLabel = ipad_help;
+    } else {
+        _imageView.accessibilityLabel = iphone_help;
+        
+    }
     [_scrollView setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     [_scrollView setContentSize:(CGSizeMake(320, 1250))];

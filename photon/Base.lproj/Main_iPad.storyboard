@@ -761,9 +761,12 @@ If you have any questions about the app, please contact either the MMWR staff at
                                 <rect key="frame" x="0.0" y="62" width="320" height="326"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help_content_no_page_control" translatesAutoresizingMaskIntoConstraints="NO" id="bLS-gx-3yO">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1250"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help_content_iPad" translatesAutoresizingMaskIntoConstraints="NO" id="bLS-gx-3yO">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1132"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -935,7 +938,7 @@ If you have any questions about the app, please contact either the MMWR staff at
     <resources>
         <image name="about_icon" width="61" height="60"/>
         <image name="eula_icon" width="35" height="35"/>
-        <image name="help_content_no_page_control" width="320" height="1250"/>
+        <image name="help_content_iPad" width="320" height="1132"/>
         <image name="help_header_icon" width="33" height="28"/>
         <image name="ipad_added_icon" width="38" height="38"/>
         <image name="ipad_detail_navbar" width="704" height="64"/>
