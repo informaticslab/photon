@@ -156,8 +156,10 @@ bool didViewJustLoad;
 - (void)share:(id)sender
 {
     // display the options for sharing
-    
-    shareAS = [[ShareActionSheet alloc] initToShareArticleUrl:self.selectedArticle.url fromVC:self];
+    if (APP_MGR.isDeviceIpad)
+        shareAS = [[ShareActionSheet alloc] initToShareArticleUrl:self.selectedArticle.url fromVC:self];
+    else
+        shareAS = [[ShareActionSheet alloc] initToShareArticleUrl:nil fromVC:self];
     [shareAS showView];
     
 }
