@@ -661,7 +661,7 @@ The Morbidity and Mortality Weekly Report (MMWR) series is prepared by the Cente
                                     </fragment>
                                     <fragment>
                                         <string key="content">
-If you have any questions about the app, please contact either the MMWR staff at mmwrq@cdc.gov or the Informatics Innovation Unit staff at informaticslab@cdc.gov.</string>
+If you have any questions about the app, please contact either the MMWR staff at mmwrq@cdc.gov or the Informatics Innovation Unit staff at informaticslab@cdc.gov.       </string>
                                         <attributes>
                                             <font key="NSFont" size="11" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
@@ -872,9 +872,9 @@ If you have any questions about the app, please contact either the MMWR staff at
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="cPZ-Qk-bcg"/>
         <segue reference="sa5-ms-oeY"/>
         <segue reference="XfS-BQ-fbZ"/>
-        <segue reference="cPZ-Qk-bcg"/>
         <segue reference="1Me-sS-qMG"/>
     </inferredMetricsTieBreakers>
 </document>

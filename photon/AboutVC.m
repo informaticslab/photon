@@ -7,6 +7,7 @@
 //
 
 #import "AboutVC.h"
+#import <MessageUI/MessageUI.h>
 
 @interface AboutVC ()
 
@@ -32,7 +33,7 @@
     _txtvAbout.editable = NO;
     _txtvAbout.selectable = YES;
     _txtvAbout.dataDetectorTypes = UIDataDetectorTypeAll;
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]}];
+    _txtvAbout.delegate = self;
 
 }
 
@@ -55,4 +56,57 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
+- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange
+{
+    NSString *recipent = nil;
+    
+    if ([[URL absoluteString] isEqualToString:@"mailto:mmwrq@cdc.gov"])
+        recipent = @"mmwrq@cdc.gov";
+    else if ([[URL absoluteString] isEqualToString:@"mailto:informaticslab@cdc.gov"])
+        recipent = @"informaticslab@cdc.gov";
+    else
+        return NO;
+    
+    MFMailComposeViewController *mailVC = [[MFMailComposeViewController alloc] init];
+    mailVC.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor darkGrayColor]};
+    [mailVC setToRecipients:@[recipent]];
+        
+    [mailVC setSubject:@"MMWR Express"];
+    mailVC.mailComposeDelegate = self;
+        
+    // Re-set the styling
+    mailVC.navigationBar.barTintColor = [UIColor blueColor];
+    
+    [self presentViewController:mailVC animated:YES completion:nil];
+    
+    return NO;
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+    // Notifies users about errors associated with the interface
+    NSLog(@"Email from About screen result: ");
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"canceled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"failed");
+            break;
+        default:
+            NSLog(@"not sent");
+            break;
+    }
+    
+    [controller dismissViewControllerAnimated:YES completion:nil];
+}
 @end

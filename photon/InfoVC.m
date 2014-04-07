@@ -33,13 +33,6 @@
 
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-    
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-    
-}
-
 
 - (IBAction)btnReadUserAgreementTouchUp:(id)sender {
     

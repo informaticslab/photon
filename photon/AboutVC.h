@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface AboutVC : UIViewController
+@interface AboutVC : UIViewController <UITextViewDelegate, MFMailComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *lblVersionInfo;
 @property (weak, nonatomic) IBOutlet UITextField *txtfHeader;
