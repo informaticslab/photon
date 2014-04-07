@@ -746,6 +746,9 @@ If you have any questions about the app, please contact either the MMWR staff at
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="46r-DC-J0D">
                                 <rect key="frame" x="88" y="13" width="192" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                </accessibility>
                                 <attributedString key="attributedText">
                                     <fragment content="Help for MMWR Express">
                                         <attributes>
