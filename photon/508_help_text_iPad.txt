@@ -1,7 +1,0 @@
-Help for tabs: The Articles tab allows you to View summaries of specific MMWR articles. The Search tab allows you to search by subject to view related article summaries.
-
-Help for new content: Pull down to refesh content within the Articles or Search lists. Within the list of articles, a blue dot appears before unread articles.
-
-Help for sharing: Share a link to an article by tapping the Share icon, which is located on the navigation bar. The article must be selected within the Master view (the left pane of the screen). When you share an article, the MMWR Express app is also shared. If you do not select an article, only the MMWR Express app will be shared when you tap the Share icon.
-
-Help for Info icon: Tapping the Info icon besidean article name in the Articles or Search lists will display the Article Details popover. The Article Details popover has the full article name, publication date, volume, and number. You can also view the full article text by tapping the View Full Article button. 
