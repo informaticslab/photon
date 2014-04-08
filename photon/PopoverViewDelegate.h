@@ -12,7 +12,6 @@
 
 -(void)didClickDoneButton;
 -(void)didClickFullArticleButton;
--(void)didClickFullArticleButton;
 -(void)didTouchReadUserAgreementButton;
 
 

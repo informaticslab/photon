@@ -55,6 +55,9 @@ static AppManager *sharedAppManager = nil;
         self.managedObjectModel = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).managedObjectModel;
         self.persistentStoreCoordinator = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).persistentStoreCoordinator;
         
+        [self processDebugSettings];
+
+        
         if ([APP_MGR isDeviceIpad] == YES)
             self.splitVM = [[SplitViewManager alloc] init];
         
@@ -87,6 +90,38 @@ static AppManager *sharedAppManager = nil;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     BOOL enabled = [defaults boolForKey:@"enableDebugInfo"];
     return enabled;
+    
+}
+
+- (void) deleteAllObjects: (NSString *) entityDescription  {
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityDescription inManagedObjectContext:_managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSError *error;
+    NSArray *items = [_managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    
+    for (NSManagedObject *managedObject in items) {
+    	[_managedObjectContext deleteObject:managedObject];
+    	NSLog(@"%@ object deleted",entityDescription);
+    }
+    if (![_managedObjectContext save:&error]) {
+    	NSLog(@"Error deleting %@ - error:%@",entityDescription,error);
+    }
+    
+}
+
+-(void)processDebugSettings
+{
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"DeleteDatabaseOnRestart"]) {
+        
+        [self deleteAllObjects:@"ArticleMO"];
+        [self deleteAllObjects:@"KeywordMO"];
+        [self deleteAllObjects:@"IssueMO"];
+        
+    }
+    
     
 }
 

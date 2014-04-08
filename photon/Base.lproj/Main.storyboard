@@ -791,11 +791,11 @@ If you have any questions about the app, please contact either the MMWR staff at
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="eula_icon" translatesAutoresizingMaskIntoConstraints="NO" id="yGh-ib-wLl">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eula_icon" translatesAutoresizingMaskIntoConstraints="NO" id="yGh-ib-wLl">
                                 <rect key="frame" x="29" y="74" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0vN-Ru-SBS">
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0vN-Ru-SBS">
                                 <rect key="frame" x="72" y="77" width="233" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
@@ -817,7 +817,7 @@ If you have any questions about the app, please contact either the MMWR staff at
                                 <rect key="frame" x="101" y="24" width="118" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="118" id="0b6-6j-gYK"/>
+                                    <constraint firstAttribute="width" constant="118" id="XCy-rV-BJw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -826,23 +826,23 @@ If you have any questions about the app, please contact either the MMWR staff at
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dxo-TW-nvj" firstAttribute="top" secondItem="c7I-0F-8kV" secondAttribute="bottom" id="7jS-4O-nA9"/>
-                            <constraint firstItem="c7I-0F-8kV" firstAttribute="leading" secondItem="zJk-Ml-g0a" secondAttribute="leading" id="90t-GO-jJ1"/>
-                            <constraint firstItem="c7I-0F-8kV" firstAttribute="trailing" secondItem="0vN-Ru-SBS" secondAttribute="trailing" id="D1q-oV-Vwl"/>
-                            <constraint firstItem="0vN-Ru-SBS" firstAttribute="top" secondItem="zJk-Ml-g0a" secondAttribute="bottom" constant="24" id="Grz-Se-fKw"/>
-                            <constraint firstItem="zJk-Ml-g0a" firstAttribute="centerX" secondItem="9ua-9i-D8X" secondAttribute="centerX" id="Iqn-UH-vCY"/>
-                            <constraint firstItem="yGh-ib-wLl" firstAttribute="leading" secondItem="gbh-Kh-4Ao" secondAttribute="leading" constant="44" id="LvV-fF-2SY"/>
-                            <constraint firstItem="c7I-0F-8kV" firstAttribute="leading" secondItem="dxo-TW-nvj" secondAttribute="leading" id="MSN-UH-7jj"/>
-                            <constraint firstItem="0vN-Ru-SBS" firstAttribute="leading" secondItem="yGh-ib-wLl" secondAttribute="trailing" constant="8" symbolic="YES" id="Mn4-hJ-OHa"/>
-                            <constraint firstItem="c7I-0F-8kV" firstAttribute="trailing" secondItem="dxo-TW-nvj" secondAttribute="trailing" id="Now-hg-9VB"/>
-                            <constraint firstItem="dxo-TW-nvj" firstAttribute="leading" secondItem="gbh-Kh-4Ao" secondAttribute="leading" id="TLy-cf-oXP"/>
-                            <constraint firstAttribute="bottom" secondItem="dxo-TW-nvj" secondAttribute="bottom" id="anx-eN-c0z"/>
-                            <constraint firstItem="c7I-0F-8kV" firstAttribute="top" secondItem="yGh-ib-wLl" secondAttribute="bottom" constant="16" id="i6Z-4f-uHe"/>
-                            <constraint firstItem="zJk-Ml-g0a" firstAttribute="trailing" secondItem="0vN-Ru-SBS" secondAttribute="trailing" id="kfz-2F-tIP"/>
-                            <constraint firstItem="0vN-Ru-SBS" firstAttribute="top" secondItem="9ua-9i-D8X" secondAttribute="bottom" constant="32" id="lbF-y3-7Of"/>
-                            <constraint firstItem="c7I-0F-8kV" firstAttribute="top" secondItem="0vN-Ru-SBS" secondAttribute="bottom" constant="18" id="pY4-Y5-gpd"/>
-                            <constraint firstItem="yGh-ib-wLl" firstAttribute="top" secondItem="zJk-Ml-g0a" secondAttribute="bottom" constant="21" id="q54-6V-t74"/>
-                            <constraint firstItem="9ua-9i-D8X" firstAttribute="top" secondItem="n3U-D0-nMB" secondAttribute="bottom" constant="4" id="wn6-Pl-DGb"/>
+                            <constraint firstItem="yGh-ib-wLl" firstAttribute="leading" secondItem="gbh-Kh-4Ao" secondAttribute="leading" constant="29" id="1ce-dE-5pt"/>
+                            <constraint firstItem="c7I-0F-8kV" firstAttribute="top" secondItem="yGh-ib-wLl" secondAttribute="bottom" constant="16" id="1mF-rN-PaP"/>
+                            <constraint firstItem="dxo-TW-nvj" firstAttribute="top" secondItem="c7I-0F-8kV" secondAttribute="bottom" id="5bQ-T4-Le2"/>
+                            <constraint firstAttribute="bottom" secondItem="dxo-TW-nvj" secondAttribute="bottom" id="EmG-58-coI"/>
+                            <constraint firstItem="yGh-ib-wLl" firstAttribute="top" secondItem="zJk-Ml-g0a" secondAttribute="bottom" constant="21" id="FXw-zf-QCf"/>
+                            <constraint firstItem="dxo-TW-nvj" firstAttribute="leading" secondItem="gbh-Kh-4Ao" secondAttribute="leading" id="GCX-gR-h45"/>
+                            <constraint firstItem="0vN-Ru-SBS" firstAttribute="leading" secondItem="yGh-ib-wLl" secondAttribute="trailing" constant="8" symbolic="YES" id="IdH-ec-2ae"/>
+                            <constraint firstItem="dxo-TW-nvj" firstAttribute="trailing" secondItem="c7I-0F-8kV" secondAttribute="trailing" id="K6b-5O-3V1"/>
+                            <constraint firstItem="9ua-9i-D8X" firstAttribute="top" secondItem="n3U-D0-nMB" secondAttribute="bottom" constant="4" id="aFc-FN-EEY"/>
+                            <constraint firstItem="c7I-0F-8kV" firstAttribute="top" secondItem="0vN-Ru-SBS" secondAttribute="bottom" constant="18" id="d2O-In-c4c"/>
+                            <constraint firstItem="c7I-0F-8kV" firstAttribute="leading" secondItem="dxo-TW-nvj" secondAttribute="leading" id="dQf-di-1pc"/>
+                            <constraint firstItem="0vN-Ru-SBS" firstAttribute="top" secondItem="zJk-Ml-g0a" secondAttribute="bottom" constant="24" id="eUS-Zm-UyM"/>
+                            <constraint firstItem="zJk-Ml-g0a" firstAttribute="trailing" secondItem="c7I-0F-8kV" secondAttribute="trailing" id="g9h-gC-Xxj"/>
+                            <constraint firstItem="0vN-Ru-SBS" firstAttribute="top" secondItem="9ua-9i-D8X" secondAttribute="bottom" constant="32" id="gTz-QU-xCo"/>
+                            <constraint firstItem="zJk-Ml-g0a" firstAttribute="leading" secondItem="c7I-0F-8kV" secondAttribute="leading" id="kze-hk-7GA"/>
+                            <constraint firstItem="zJk-Ml-g0a" firstAttribute="centerX" secondItem="9ua-9i-D8X" secondAttribute="centerX" id="lK9-NR-9pJ"/>
+                            <constraint firstAttribute="trailing" secondItem="0vN-Ru-SBS" secondAttribute="trailing" constant="15" id="tRc-HW-y10"/>
                         </constraints>
                     </view>
                     <connections>

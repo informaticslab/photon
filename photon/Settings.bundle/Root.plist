@@ -20,7 +20,7 @@
 			<key>IsSecure</key>
 			<false/>
 			<key>Key</key>
-			<string>name_preference</string>
+			<string>DeleteDatabaseOnRestart</string>
 			<key>KeyboardType</key>
 			<string>Alphabet</string>
 			<key>Title</key>
