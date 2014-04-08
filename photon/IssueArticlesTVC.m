@@ -142,8 +142,8 @@ bool didViewJustLoad;
     if (![currVersion isEqualToString:lastVersionEulaAgreed] || alwaysShowEula) {
         [defaults setObject:currVersion forKey:@"agreedToEulaForVersion"];
         [defaults synchronize];
-        NSLog(@"Data saved");
-        NSLog(@"%@", currVersion);
+        DebugLog(@"Data saved");
+        DebugLog(@"%@", currVersion);
         
         //
         [self performSegueWithIdentifier:@"displayEulaSegue" sender:self];

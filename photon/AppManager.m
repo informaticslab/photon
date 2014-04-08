@@ -46,6 +46,9 @@ static AppManager *sharedAppManager = nil;
 		self.appName = @"Photon";
         self.agreedWithEula = FALSE;
         
+         
+        DebugLog(@"%@ %@ is loading....", self.appName, [self getAppVersion]);
+        
 //      self.tableFont = [UIFont boldSystemFontOfSize: 16];
         self.tableFont = [UIFont fontWithName:@"HelveticaNeue" size:16];
         self.textFont = [UIFont fontWithName:@"HelveticaNeue" size:15];
@@ -84,6 +87,16 @@ static AppManager *sharedAppManager = nil;
     return NO;
 }
 
+-(NSString *)getAppVersion
+{
+    NSDictionary *appInfo = [[NSBundle mainBundle] infoDictionary];
+    NSString *currVersion = [NSString stringWithFormat:@"%@.%@",
+                             [appInfo objectForKey:@"CFBundleShortVersionString"],
+                             [appInfo objectForKey:@"CFBundleVersion"]];
+
+    return currVersion;
+}
+
 -(BOOL)isDebugInfoEnabled
 {
     // Get user preference
@@ -104,10 +117,10 @@ static AppManager *sharedAppManager = nil;
     
     for (NSManagedObject *managedObject in items) {
     	[_managedObjectContext deleteObject:managedObject];
-    	NSLog(@"%@ object deleted",entityDescription);
+    	DebugLog(@"%@ object deleted", entityDescription);
     }
     if (![_managedObjectContext save:&error]) {
-    	NSLog(@"Error deleting %@ - error:%@",entityDescription,error);
+    	DebugLog(@"Error deleting %@ - error:%@",entityDescription,error);
     }
     
 }
@@ -125,6 +138,7 @@ static AppManager *sharedAppManager = nil;
     
 }
 
+
 - (void)presentEulaModalView
 {
     
@@ -132,10 +146,7 @@ static AppManager *sharedAppManager = nil;
     return;
     
     // store the data
-    NSDictionary *appInfo = [[NSBundle mainBundle] infoDictionary];
-    NSString *currVersion = [NSString stringWithFormat:@"%@.%@",
-                             [appInfo objectForKey:@"CFBundleShortVersionString"],
-                             [appInfo objectForKey:@"CFBundleVersion"]];
+    NSString *currVersion = [self getAppVersion];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *lastVersionEulaAgreed = (NSString *)[defaults objectForKey:@"agreedToEulaForVersion"];
     
@@ -146,8 +157,8 @@ static AppManager *sharedAppManager = nil;
     {
         [defaults setObject:currVersion forKey:@"agreedToEulaForVersion"];
         [defaults synchronize];
-        NSLog(@"Data saved");
-        NSLog(@"%@", currVersion);
+        DebugLog(@"Data saved");
+        DebugLog(@"%@", currVersion);
         
         // Create the modal view controller
         // EulaViewController *eulaVC = [[EulaViewController alloc] initWithNibName:@"EulaViewController" bundle:nil];
@@ -170,7 +181,7 @@ static AppManager *sharedAppManager = nil;
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            DebugLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
     }

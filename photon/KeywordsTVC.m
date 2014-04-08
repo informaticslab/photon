@@ -227,7 +227,7 @@ KeywordMO *selectedKeyword;
     NSError *error = nil;
     NSArray *fetchedObjects = [APP_MGR.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     if (fetchedObjects == nil) {
-        NSLog(@"Issues Manager has no stored keywords.");
+        DebugLog(@"Issues Manager has no stored keywords.");
     }
     
     

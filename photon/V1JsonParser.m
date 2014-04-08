@@ -65,10 +65,10 @@
     
     NSMutableArray *parsedTags = [[NSMutableArray alloc] init];
     
-    NSLog(@"\tTags:");
+    DebugLog(@"\tTags:");
     for (NSDictionary *tag in newTags) {
         NSString *currTag = [tag valueForKey:@"tag"];
-        NSLog(@"\t\ttag:%@", currTag);
+        DebugLog(@"\t\ttag:%@", currTag);
         [parsedTags addObject:currTag];
         
     };

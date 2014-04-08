@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-//#define DEBUG
 #import "Debug.h"
 #import "IssuesManager.h"
 #import "JsonParser.h"

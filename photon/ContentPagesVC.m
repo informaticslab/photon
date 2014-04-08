@@ -126,7 +126,6 @@
 - (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers
 {
     for (UIViewController *vc in pendingViewControllers) {
-        // NSLog(@"Transition to view controller = %@", vc.title);
         self.navigationItem.title = vc.title;
     }
     

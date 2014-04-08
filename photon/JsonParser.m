@@ -60,7 +60,7 @@ int implicationsFound = 0;
 -(id)getParserForSchemaVersion:(NSInteger)schemaVersion
 {
     if ( (schemaVersion > 0) && (schemaVersion < [self.schemaParsers count]) ) {
-        NSLog(@"");
+        DebugLog(@"");
     }
     return self.schemaParsers[schemaVersion-1];
 }
@@ -74,7 +74,7 @@ int implicationsFound = 0;
     NSInteger schemaVer = 0;
     NSInteger contentVer = 0;
     
-    NSLog(@"Imported Test Issues: %@", jsonBlobs);
+    DebugLog(@"Imported Test Issues: %@", jsonBlobs);
     
     for (NSDictionary *articleJsonBlob in jsonBlobs)
     {
@@ -185,12 +185,12 @@ int implicationsFound = 0;
 -(void) dump_parse_stats
 {
     
-    NSLog(@"Issues found = %d", issuesFound);
-    NSLog(@"Articles found = %d", articlesFound);
-    NSLog(@"Tags found = %d", tagsFound);
-    NSLog(@"Known found = %d", knownFound);
-    NSLog(@"Added found = %d", addedFound);
-    NSLog(@"Implication found = %d", implicationsFound);
+    DebugLog(@"Issues found = %d", issuesFound);
+    DebugLog(@"Articles found = %d", articlesFound);
+    DebugLog(@"Tags found = %d", tagsFound);
+    DebugLog(@"Known found = %d", knownFound);
+    DebugLog(@"Added found = %d", addedFound);
+    DebugLog(@"Implication found = %d", implicationsFound);
     
     issuesFound = 0;
     articlesFound = 0;
@@ -206,16 +206,16 @@ int implicationsFound = 0;
 #pragma mark MWFeedParserDelegate
 
 - (void)feedParserDidStart:(MWFeedParser *)parser {
-	NSLog(@"Started Parsing: %@", parser.url);
+	DebugLog(@"Started Parsing: %@", parser.url);
 }
 
 - (void)feedParser:(MWFeedParser *)parser didParseFeedInfo:(MWFeedInfo *)info {
-	NSLog(@"Parsed Feed Info: “%@”", info.title);
+	DebugLog(@"Parsed Feed Info: “%@”", info.title);
 	//self.title = info.title;
 }
 
 - (void)feedParser:(MWFeedParser *)parser didParseFeedItem:(MWFeedItem *)item {
-	NSLog(@"Parsed Feed Item: “%@”", item.title);
+	DebugLog(@"Parsed Feed Item: “%@”", item.title);
 	if (item)
     {
         [_parsedItems addObject:item];
@@ -225,7 +225,7 @@ int implicationsFound = 0;
 }
 
 - (void)feedParserDidFinish:(MWFeedParser *)parser {
-	NSLog(@"Finished Parsing%@", (parser.stopped ? @" (Stopped)" : @""));
+	DebugLog(@"Finished Parsing%@", (parser.stopped ? @" (Stopped)" : @""));
     [self parseFeedData];
     [[NSNotificationCenter defaultCenter]
      postNotificationName:@"FeedDataUpdated"
@@ -234,7 +234,7 @@ int implicationsFound = 0;
 }
 
 - (void)feedParser:(MWFeedParser *)parser didFailWithError:(NSError *)error {
-	NSLog(@"Finished Parsing With Error: %@", error);
+	DebugLog(@"Finished Parsing With Error: %@", error);
     if (error.code == 2) {
         // Failed but some items parsed, so show and inform of error
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Could Not Update Articles"

@@ -38,7 +38,7 @@ NSManagedObjectContext *context;
         NSError *error = nil;
         NSArray *fetchedIssues = [APP_MGR.managedObjectContext executeFetchRequest:fetchRequest error:&error];
         if ([fetchedIssues  count] == 0) {
-            NSLog(@"Issues Manager has no stored issues.");
+            DebugLog(@"Issues Manager has no stored issues.");
             self.hasIssues = NO;
         } else
             self.hasIssues = YES;
@@ -56,7 +56,7 @@ NSManagedObjectContext *context;
         error = nil;
         NSArray *fetchedKeywords = [APP_MGR.managedObjectContext executeFetchRequest:fetchRequest error:&error];
         if ([fetchedKeywords count] == 0) {
-            NSLog(@"Issues Manager has no stored keywords.");
+            DebugLog(@"Issues Manager has no stored keywords.");
         }
         
         
@@ -81,7 +81,7 @@ NSManagedObjectContext *context;
     NSError *error = nil;
     NSArray *fetchedObjects = [APP_MGR.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     if ([fetchedObjects count] == 0) {
-        NSLog(@"Issues Manager has no stored issues.");
+        DebugLog(@"Issues Manager has no stored issues.");
     }
     
     self.sortedIssues = fetchedObjects;
@@ -96,7 +96,7 @@ NSManagedObjectContext *context;
     error = nil;
     fetchedObjects = [APP_MGR.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     if ([fetchedObjects count] == 0) {
-        NSLog(@"Issues Manager has no stored keywords.");
+        DebugLog(@"Issues Manager has no stored keywords.");
     }
     
     
@@ -139,7 +139,7 @@ NSManagedObjectContext *context;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     
     if ([fetchedObjects count] == 0 ) {
-        NSLog(@"Issues Manager has no issues with date = %@, volume = %ld, number = %ld", newIssue.date, (long)newIssue.volume, (long)newIssue.number);
+        DebugLog(@"Issues Manager has no issues with date = %@, volume = %ld, number = %ld", newIssue.date, (long)newIssue.volume, (long)newIssue.number);
         return nil;
     }
     else if([fetchedObjects count] == 1)
@@ -285,7 +285,7 @@ NSManagedObjectContext *context;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     
     if ([fetchedObjects count] == 0) {
-        NSLog(@"Issues Manager has no keyword with text = %@.", text);
+        DebugLog(@"Issues Manager has no keyword with text = %@.", text);
         return nil;
     }
     else if([fetchedObjects count] == 1)

@@ -170,8 +170,8 @@ ShareActionSheet *shareAS;
     if (![currVersion isEqualToString:lastVersionEulaAgreed] || alwaysShowEula) {
         [defaults setObject:currVersion forKey:@"agreedToEulaForVersion"];
         [defaults synchronize];
-        NSLog(@"Data saved");
-        NSLog(@"%@", currVersion);
+        DebugLog(@"Data saved");
+        DebugLog(@"%@", currVersion);
         
         //
         [self performSegueWithIdentifier:@"displayEulaSegue" sender:self];
@@ -188,7 +188,7 @@ ShareActionSheet *shareAS;
     if (selArticle == nil)
         return;
 
-    NSLog(@"Article title is %@", self.article.title);
+    DebugLog(@"Article title is %@", self.article.title);
     
     UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:15];
     _article = selArticle;

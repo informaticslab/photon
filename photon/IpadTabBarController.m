@@ -44,7 +44,7 @@
     
     if (self.selectedIndex != _lastSelectedIndex) {
         _lastSelectedIndex = self.selectedIndex;
-        NSLog(@"New tab selected. Tab index = %d", _lastSelectedIndex);
+        DebugLog(@"New tab selected. Tab index = %d", _lastSelectedIndex);
         [APP_MGR.splitVM searchStart];
 
         

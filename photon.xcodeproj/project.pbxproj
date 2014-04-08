@@ -147,6 +147,7 @@
 		A66FB23B184D2BB0008F2AB7 /* HelpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpVC.h; sourceTree = "<group>"; };
 		A66FB23C184D2BB0008F2AB7 /* HelpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpVC.m; sourceTree = "<group>"; };
 		A679A80218F43E0F00BC8750 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = photon/Settings.bundle; sourceTree = "<group>"; };
+		A679A84218F4A24E00BC8750 /* photon copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "photon copy-Info.plist"; path = "/Users/jtq6/informaticslab/photon/photon copy-Info.plist"; sourceTree = "<absolute>"; };
 		A67AF51A182BA408000F6EB0 /* IssueArticlesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueArticlesTVC.h; sourceTree = "<group>"; };
 		A67AF51B182BA408000F6EB0 /* IssueArticlesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueArticlesTVC.m; sourceTree = "<group>"; };
 		A68081D418D8943F00C6199B /* photon_eula.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = photon_eula.html; sourceTree = "<group>"; };
@@ -247,6 +248,7 @@
 				A62A1A3A1823C9C7006A62B3 /* photonTests */,
 				A62A1A111823C9C7006A62B3 /* Frameworks */,
 				A62A1A101823C9C7006A62B3 /* Products */,
+				A679A84218F4A24E00BC8750 /* photon copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -669,8 +671,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "photon/photon-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "DEBUG=1";
 				INFOPLIST_FILE = "photon/photon-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_CFLAGS = "";
+				"OTHER_CFLAGS[arch=*]" = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -688,6 +694,7 @@
 				GCC_PREFIX_HEADER = "photon/photon-Prefix.pch";
 				INFOPLIST_FILE = "photon/photon-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_CFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

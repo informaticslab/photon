@@ -87,23 +87,23 @@
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
 {
     // Notifies users about errors associated with the interface
-    NSLog(@"Email from About screen result: ");
+    DebugLog(@"Email from About screen result: ");
     switch (result)
     {
         case MFMailComposeResultCancelled:
-            NSLog(@"canceled");
+            DebugLog(@"canceled");
             break;
         case MFMailComposeResultSaved:
-            NSLog(@"saved");
+            DebugLog(@"saved");
             break;
         case MFMailComposeResultSent:
-            NSLog(@"sent");
+            DebugLog(@"sent");
             break;
         case MFMailComposeResultFailed:
-            NSLog(@"failed");
+            DebugLog(@"failed");
             break;
         default:
-            NSLog(@"not sent");
+            DebugLog(@"not sent");
             break;
     }
     

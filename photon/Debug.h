@@ -1,18 +1,12 @@
 //
 //  Debug.h
-//  pedigree
 //
 //  Created by jtq6 on 3/21/13.
 //  Copyright (c) 2013 CDC Informatics R&D Lab. All rights reserved.
 //
 
-#ifndef pedigree_Debug_h
-#define pedigree_Debug_h
-
-#ifndef DEBUG
-//#define DEBUG
-#else
-#endif
+#ifndef photon_Debug_h
+#define photon_Debug_h
 
 #ifdef DEBUG
 #define DebugLog(fmt, ...) NSLog((@"%s[Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);

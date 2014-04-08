@@ -35,7 +35,7 @@
 -(void)setSelectedArticle:(ArticleMO *)selectedArticle
 {
     self.selArticle = selectedArticle;
-    NSLog(@"Selected Article = %@", selectedArticle.title);
+    DebugLog(@"Selected Article = %@", selectedArticle.title);
     if (self.articleSelectDelegate != nil)
         [self.articleSelectDelegate selectedArticle:selectedArticle];
     

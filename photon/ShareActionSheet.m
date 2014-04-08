@@ -107,12 +107,12 @@
     
     //  Add an URL to the Tweet.  You can add multiple URLs.
     if (![tweetSheet addURL:[NSURL URLWithString:self.shareUrl]]){
-        NSLog(@"Unable to add the URL!");
+        DebugLog(@"Unable to add the URL!");
     }
     
     //  Presents the Tweet Sheet to the user
     [self.parentVC presentViewController:tweetSheet animated:NO completion:^{
-        NSLog(@"Tweet sheet has been presented.");
+        DebugLog(@"Tweet sheet has been presented.");
     }];
 
     
@@ -142,12 +142,12 @@
     [fbSheet setInitialText:self.shareText];
     
     if (![fbSheet addURL:[NSURL URLWithString:self.shareUrl]]){
-        NSLog(@"Unable to add the URL!");
+        DebugLog(@"Unable to add the URL!");
     }
     
     //  Presents the Tweet Sheet to the user
     [self.parentVC presentViewController:fbSheet animated:NO completion:^{
-        NSLog(@"FaceBook sheet has been presented.");
+        DebugLog(@"FaceBook sheet has been presented.");
     }];
     
     
@@ -174,7 +174,7 @@
         [body appendString:@"\">"];
         [body appendString:self.shareUrl];
         [body appendString:@"</a></div></body></html>"];
-        NSLog(@"Share URL for mail is : %@", bodyText);
+        DebugLog(@"Share URL for mail is : %@", bodyText);
      
         self.mailVC = [[MFMailComposeViewController alloc] init];
         self.mailVC.mailComposeDelegate = self;
@@ -224,16 +224,16 @@
     switch (result)
     {
         case MFMailComposeResultCancelled:
-            NSLog(@"Mail cancelled");
+            DebugLog(@"Mail cancelled");
             break;
         case MFMailComposeResultSaved:
-            NSLog(@"Mail saved");
+            DebugLog(@"Mail saved");
             break;
         case MFMailComposeResultSent:
-            NSLog(@"Mail sent");
+            DebugLog(@"Mail sent");
             break;
         case MFMailComposeResultFailed:
-            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            DebugLog(@"Mail sent failure: %@", [error localizedDescription]);
             break;
         default:
             break;
@@ -253,16 +253,16 @@
     switch (result)
     {
         case MessageComposeResultCancelled:
-            NSLog(@"Result: SMS sending canceled");
+            DebugLog(@"Result: SMS sending canceled");
             break;
         case MessageComposeResultSent:
-            NSLog(@"Result: SMS sent");
+            DebugLog(@"Result: SMS sent");
             break;
         case MessageComposeResultFailed:
-            NSLog(@"Result: SMS sending failed");
+            DebugLog(@"Result: SMS sending failed");
             break;
         default:
-            NSLog(@"Result: SMS not sent");
+            DebugLog(@"Result: SMS not sent");
             break;
     }
     

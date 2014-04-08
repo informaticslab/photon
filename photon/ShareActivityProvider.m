@@ -48,7 +48,7 @@ NSString *messageString;
 - (id)activityViewController:(UIActivityViewController *)activityViewController itemForActivityType:(NSString *)activityType {
    
     // Log out the activity type that we are sharing with
-    NSLog(@"%@", activityType);
+    DebugLog(@"%@", activityType);
     NSString *shareString;
     
     // customize the sharing string for facebook, twitter
