@@ -22,6 +22,7 @@
 @property (nonatomic, retain) NSNumber * version;
 @property (nonatomic, retain) IssueMO *issue;
 @property (nonatomic, retain) NSSet *tags;
+
 @end
 
 @interface ArticleMO (CoreDataGeneratedAccessors)

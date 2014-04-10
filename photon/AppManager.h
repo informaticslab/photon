@@ -12,6 +12,8 @@
 #import "IssuesManager.h"
 #import "JsonParser.h"
 #import "SplitViewManager.h"
+#include "Reachability.h"
+#include "SiteCatalystController.h"
 
 @interface AppManager : NSObject 
 
@@ -28,11 +30,16 @@
 @property (strong, nonatomic) JsonParser *jsonParser;
 @property (strong, nonatomic) SplitViewManager *splitVM;
 @property (weak, nonatomic) UISplitViewController *splitVC;
+@property (strong, nonatomic) Reachability *hostReachability;
 
 + (id)singletonAppManager;
 -(BOOL)isDebugInfoEnabled;
 -(BOOL)isDeviceIpad;
 - (void)saveContext;
 
+-(NSString *)getDeviceModel;
+-(NSString *)getDeviceSystemVersion;
+-(NSString *)getDeviceSystemName;
+-(NSString *)getAppVersion;
 
 @end

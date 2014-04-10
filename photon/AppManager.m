@@ -12,6 +12,7 @@ static AppManager *sharedAppManager = nil;
 
 @implementation AppManager
 
+SiteCatalystController *scController;
 
 #pragma mark Singleton Methods
 + (id)singletonAppManager {
@@ -46,8 +47,14 @@ static AppManager *sharedAppManager = nil;
 		self.appName = @"Photon";
         self.agreedWithEula = FALSE;
         
+        scController = [[SiteCatalystController alloc] init];
+        [scController trackAppLaunchEvent];
+        
          
         DebugLog(@"%@ %@ is loading....", self.appName, [self getAppVersion]);
+        DebugLog(@"Device System Name = %@", [self getDeviceSystemName]);
+        DebugLog(@"Device System Version = %@", [self getDeviceSystemVersion]);
+        DebugLog(@"Device Model = %@", [self getDeviceModel]);
         
 //      self.tableFont = [UIFont boldSystemFontOfSize: 16];
         self.tableFont = [UIFont fontWithName:@"HelveticaNeue" size:16];
@@ -87,16 +94,48 @@ static AppManager *sharedAppManager = nil;
     return NO;
 }
 
+-(NSString *)getDeviceModel
+{
+    UIDevice *device = [UIDevice currentDevice];
+    return [device model];
+}
+
+-(NSString *)getDeviceSystemVersion
+{
+    UIDevice *device = [UIDevice currentDevice];
+    return [device systemVersion];
+}
+
+-(NSString *)getDeviceSystemName
+{
+    UIDevice *device = [UIDevice currentDevice];
+    return [device systemName];
+}
+
+
+
 -(NSString *)getAppVersion
 {
+    
     NSDictionary *appInfo = [[NSBundle mainBundle] infoDictionary];
     NSString *currVersion = [NSString stringWithFormat:@"%@.%@",
                              [appInfo objectForKey:@"CFBundleShortVersionString"],
                              [appInfo objectForKey:@"CFBundleVersion"]];
 
     return currVersion;
+    
 }
 
+//-(BOOL)isInternetReachable
+//{
+//    
+//    NSString *remoteHostName = @"www.google.com";
+//    self.hostReachability = [Reachability reachabilityWithHostName:remoteHostName];
+//    [self.hostReachability startNotifier];
+//    //[self updateInterfaceWithReachability:self.hostReachability];
+//
+//    
+//}
 -(BOOL)isDebugInfoEnabled
 {
     // Get user preference
@@ -125,6 +164,7 @@ static AppManager *sharedAppManager = nil;
     
 }
 
+
 -(void)processDebugSettings
 {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"DeleteDatabaseOnRestart"]) {
@@ -134,8 +174,6 @@ static AppManager *sharedAppManager = nil;
         [self deleteAllObjects:@"IssueMO"];
         
     }
-    
-    
 }
 
 
