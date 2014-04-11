@@ -44,7 +44,9 @@
 //                                                           multiplier:1.0
 //                                                             constant:0]];
     
-    
+    [APP_MGR.usageTracker trackNavigationEvent:SC_PAGE_TITLE_HELP inSection:SC_SECTION_HELP];
+        
+ 
 }
 
 

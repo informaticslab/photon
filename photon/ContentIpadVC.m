@@ -211,6 +211,10 @@ ShareActionSheet *shareAS;
     self.txtvArticleTitle.textAlignment = NSTextAlignmentCenter;
     
     self.navigationItem.accessibilityLabel = [NSString stringWithFormat:@"%@ %@", @"Summary of Article with title ", self.article.title];
+    
+    // track page
+    [APP_MGR.usageTracker trackNavigationEvent:SC_PAGE_TITLE_SUMMARY inSection:SC_SECTION_SUMMARY];
+
 
     
     

@@ -42,6 +42,9 @@ AppManager *appMgr;
     if (appMgr.agreedWithEula == TRUE) {
         _btnAgree.title = @"Done";
     }
+    
+    [APP_MGR.usageTracker trackNavigationEvent:SC_PAGE_TITLE_EULA inSection:SC_SECTION_EULA];
+
 
 }
 

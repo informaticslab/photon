@@ -99,12 +99,15 @@ KeywordMO *selectedKeyword;
     
     [APP_MGR.splitVM searchStart];
     
+
+    
     
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    [APP_MGR.usageTracker trackNavigationEvent:SC_PAGE_TITLE_SEARCH_KEYWORDS inSection:SC_SECTION_SEARCH];
     
 }
 

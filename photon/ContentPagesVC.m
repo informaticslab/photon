@@ -62,6 +62,14 @@
 
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    
+    [APP_MGR.usageTracker trackNavigationEvent:SC_PAGE_TITLE_SUMMARY inSection:SC_SECTION_SUMMARY];
+
+}
+
+
 - (ContentVC *)viewControllerAtIndex:(NSUInteger)index
 {
     if (([self.pageHeaders count] == 0) || (index >= [self.pageHeaders count])) {

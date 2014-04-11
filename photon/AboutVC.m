@@ -7,7 +7,7 @@
 //
 
 #import "AboutVC.h"
-#import <MessageUI/MessageUI.h>
+#import "SiteCatalystController.h"
 
 @interface AboutVC ()
 
@@ -37,6 +37,12 @@
 
 }
 
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [APP_MGR.usageTracker trackNavigationEvent:SC_PAGE_TITLE_ABOUT inSection:SC_SECTION_ABOUT];
+    
+}
 
 
 -(NSString *)getVersionString

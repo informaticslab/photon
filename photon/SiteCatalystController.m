@@ -13,11 +13,10 @@
 NSString *cdcServer = @"http://tools.cdc.gov/metrics.aspx?";
 //NSString *localServer = @"http://172.16.3.154:8989/metrics?";
 NSString *localServer = @"http://localhost:8989/metrics?";
-NSString *commonConstParams = @"c8=Mobile App&c51=Standalone&c52=MMWR Express&c5=eng&channel=IRDA&c58=Content: Browse";
+NSString *commonConstParams = @"c8=Mobile App&c51=Standalone&c52=MMWR Express&c5=eng&channel=IIU";
 NSString *prodConstParams = @"reportsuite=cdcsynd";
 NSString *debugConstParams = @"reportsuite=devcdc";
 NSURLConnection *conn;
-
 
 
 #pragma mark NSURLConnection Delegate Methods
@@ -26,7 +25,7 @@ NSURLConnection *conn;
 {
     NSString *deviceModel, *deviceOsName, *deviceOsVers, *deviceParams;
     NSString *sectionInfo, *appVersion, *server, *appInfoParams, *pageName;
-    NSString *deviceOnline, *constParams, *metricUrl, *encodedURL;
+    NSString *deviceOnline, *constParams, *metricUrl, *encodedURL, *eventInfo;
     
     DebugLog(@"In trackEvent");
     
@@ -47,19 +46,21 @@ NSURLConnection *conn;
     // application info
     appInfoParams = [NSString stringWithFormat:@"c53=%@", appVersion];
     
+    // set event param
+    eventInfo = [NSString stringWithFormat:@"c58=%@", event];
+    
+    // set section param
+    sectionInfo = [NSString stringWithFormat:@"c59=%@", section];
+    
     // page information
     pageName = [NSString stringWithFormat:@"contenttitle=%@", title];
-    
-    if (section != nil) {
-        sectionInfo = [NSString stringWithFormat:@"c59=%@", event];
-    }
     
     // device online status
     deviceOnline = @"c57=1";
     
     constParams = [NSString stringWithFormat:@"%@&%@", (debug ? debugConstParams : prodConstParams), commonConstParams];
     
-    metricUrl = [NSString stringWithFormat:@"%@%@&%@&%@&%@&%@&%@",server, constParams, deviceParams, appInfoParams, deviceOnline, sectionInfo, pageName];
+    metricUrl = [NSString stringWithFormat:@"%@%@&%@&%@&%@&%@&%@&%@",server, constParams, deviceParams, appInfoParams, deviceOnline, eventInfo, sectionInfo, pageName];
     encodedURL = [NSString stringWithFormat:@"%@", [metricUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     
     [self postSCEvent:encodedURL];
@@ -69,7 +70,13 @@ NSURLConnection *conn;
 
 -(void)trackAppLaunchEvent
 {
-    [self trackEvent: @"Application:Launch" withContentTitle:@"MMWR Express" inSection:nil];
+    [self trackEvent:SC_EVENT_APP_LAUNCH withContentTitle:SC_PAGE_TITLE_LAUNCH inSection:SC_SECTION_ARTICLES];
+    
+}
+
+-(void)trackNavigationEvent:(NSString *)pageTitle inSection:(NSString *)section
+{
+    [self trackEvent:SC_EVENT_NAV_SECTION withContentTitle:pageTitle inSection:section];
     
 }
 

@@ -61,6 +61,13 @@ ShareActionSheet *shareAS;
     [btnLayer setCornerRadius:5.0f];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    
+    [APP_MGR.usageTracker trackNavigationEvent:SC_PAGE_TITLE_DETAILS inSection:SC_SECTION_DETAILS];
+
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

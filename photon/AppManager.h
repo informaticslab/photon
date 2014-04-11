@@ -31,6 +31,7 @@
 @property (strong, nonatomic) SplitViewManager *splitVM;
 @property (weak, nonatomic) UISplitViewController *splitVC;
 @property (strong, nonatomic) Reachability *hostReachability;
+@property (strong, nonatomic) SiteCatalystController *usageTracker;
 
 + (id)singletonAppManager;
 -(BOOL)isDebugInfoEnabled;

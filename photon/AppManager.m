@@ -12,7 +12,6 @@ static AppManager *sharedAppManager = nil;
 
 @implementation AppManager
 
-SiteCatalystController *scController;
 
 #pragma mark Singleton Methods
 + (id)singletonAppManager {
@@ -47,8 +46,8 @@ SiteCatalystController *scController;
 		self.appName = @"Photon";
         self.agreedWithEula = FALSE;
         
-        scController = [[SiteCatalystController alloc] init];
-        [scController trackAppLaunchEvent];
+        self.usageTracker = [[SiteCatalystController alloc] init];
+        [_usageTracker trackAppLaunchEvent];
         
          
         DebugLog(@"%@ %@ is loading....", self.appName, [self getAppVersion]);

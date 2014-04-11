@@ -83,6 +83,13 @@ NSArray *keywordArticles;
 //    
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    
+    [APP_MGR.usageTracker trackNavigationEvent:SC_PAGE_TITLE_SEARCH_KEYWORD_ARTICLES inSection:SC_SECTION_SEARCH];
+
+}
+
 -(void)updateArticleSelection
 {
     

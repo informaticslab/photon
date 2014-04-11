@@ -106,6 +106,7 @@ bool didViewJustLoad;
 {
     
     //[self updateArticleSelection];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -118,6 +119,9 @@ bool didViewJustLoad;
             [self.tableView deselectRowAtIndexPath:indexPath animated:animated];
         }
     }
+    
+    [APP_MGR.usageTracker trackNavigationEvent:SC_SECTION_ARTICLES inSection:SC_PAGE_TITLE_LIST];
+
     
 }
 

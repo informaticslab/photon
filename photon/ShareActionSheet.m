@@ -53,6 +53,8 @@
 -(void)showView
 {
     [self.actionSheet showInView:self.parentVC.view];
+    [APP_MGR.usageTracker trackNavigationEvent:SC_PAGE_TITLE_SHARE inSection:SC_SECTION_SHARE];
+
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -114,6 +116,9 @@
     [self.parentVC presentViewController:tweetSheet animated:NO completion:^{
         DebugLog(@"Tweet sheet has been presented.");
     }];
+    
+    [APP_MGR.usageTracker trackNavigationEvent:SC_PAGE_TITLE_SHARE_TWITTER inSection:SC_SECTION_SHARE];
+
 
     
 }
@@ -150,6 +155,8 @@
         DebugLog(@"FaceBook sheet has been presented.");
     }];
     
+    [APP_MGR.usageTracker trackNavigationEvent:SC_PAGE_TITLE_SHARE_FACEBOOK inSection:SC_SECTION_SHARE];
+
     
     
 }
@@ -182,11 +189,12 @@
         [self.mailVC setSubject:self.shareSubject];
         
         [self.parentVC presentViewController:self.mailVC animated:YES completion:nil];
+        [APP_MGR.usageTracker trackNavigationEvent:SC_PAGE_TITLE_SHARE_MAIL inSection:SC_SECTION_SHARE];
+
         
     } else {
         
         UIAlertView *anAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"There isn't a mail account setup on the device." delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
-        
         
         [anAlert addButtonWithTitle:@"Cancel"];
         [anAlert show];
@@ -206,6 +214,8 @@
         self.msgVC.messageComposeDelegate = self;
         [self.msgVC setBody:bodyText];
         [self.parentVC presentViewController:self.msgVC animated:YES completion:nil];
+        [APP_MGR.usageTracker trackNavigationEvent:SC_PAGE_TITLE_SHARE_MESSAGE inSection:SC_SECTION_SHARE];
+
     } else {
         
         UIAlertView *anAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"This device does not support messaging or it is not currently configured to send messages." delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
