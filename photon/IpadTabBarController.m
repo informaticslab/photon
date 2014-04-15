@@ -44,7 +44,6 @@
     
     if (self.selectedIndex != _lastSelectedIndex) {
         _lastSelectedIndex = self.selectedIndex;
-        DebugLog(@"New tab selected. Tab index = %d", _lastSelectedIndex);
         [APP_MGR.splitVM searchStart];
 
         
