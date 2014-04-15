@@ -12,26 +12,12 @@
 @implementation ShareActionSheet
 
 
-
-//- (id)initToShareApp:(UIViewController *)parentVC
-//{
-//    
-//    self.shareText = @"I’m using CDC’s MMWR Express mobile app. Learn more about it here:";
-//    self.shareUrl = @"http://www.cdc.gov/mmwr/";
-//    self.shareSubject = @"MMWR Express App";
-//    self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Mail", @"Message", @"Twitter", @"Facebook", nil];
-//    
-//    self.parentVC = parentVC;
-//    return self;
-//    
-//}
-
 - (id)initToShareArticleUrl:(NSString *)articleUrl fromVC:(UIViewController *)parentVC
 {
     
     if (articleUrl == nil ) {
         self.shareText = @"I’m using CDC’s MMWR Express mobile app. Learn more about it here:";
-        self.shareUrl = @"http://www.cdc.gov/mmwr/";
+        self.shareUrl = @"http://www.cdc.gov/mmwr/mmwr_expresspage.html";
         self.shareSubject = @"MMWR Express App";
     } else {
         
