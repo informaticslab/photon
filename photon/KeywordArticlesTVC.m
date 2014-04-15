@@ -168,12 +168,13 @@ NSArray *keywordArticles;
     NSString *title = rowArticle.title;
     
     CGSize constraintSize = CGSizeMake(CELL_TEXT_LABEL_WIDTH, MAXFLOAT);
-    CGSize titleTextSize = CGSizeMake(0.0, 0.0);
+    CGRect textRect = [title boundingRectWithSize:constraintSize
+                                         options:NSStringDrawingUsesLineFragmentOrigin
+                                      attributes:@{NSFontAttributeName:APP_MGR.tableFont}
+                                         context:nil];
     
-    if (title != nil)
-        titleTextSize = [title sizeWithFont:APP_MGR.tableFont constrainedToSize:constraintSize lineBreakMode:NSLineBreakByWordWrapping];
+    return  textRect.size.height + (2 * CELL_PADDING);
     
-    return  titleTextSize.height + (2 * CELL_PADDING);
 }
 
 

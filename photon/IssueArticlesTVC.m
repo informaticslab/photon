@@ -253,13 +253,14 @@ bool didViewJustLoad;
     NSString *title = _article.title;
     
     CGSize constraintSize = CGSizeMake(CELL_TEXT_LABEL_WIDTH, MAXFLOAT);
-    CGSize titleTextSize = CGSizeMake(0.0, 0.0);
     
-    if (title != nil)
-        titleTextSize = [title sizeWithFont:APP_MGR.tableFont constrainedToSize:constraintSize lineBreakMode:NSLineBreakByWordWrapping];
+    CGRect textRect = [title boundingRectWithSize:constraintSize
+                                          options:NSStringDrawingUsesLineFragmentOrigin
+                                       attributes:@{NSFontAttributeName:APP_MGR.tableFont}
+                                          context:nil];
     
-    
-    return  titleTextSize.height + (2 * CELL_PADDING);
+    return  textRect.size.height + (2 * CELL_PADDING);
+
 }
 
 

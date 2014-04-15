@@ -10,9 +10,10 @@
 
 @protocol PopoverViewDelegate <NSObject>
 
--(void)didClickDoneButton;
--(void)didClickFullArticleButton;
--(void)didTouchReadUserAgreementButton;
 
+@optional
+-(void)didClickDoneButton;
+-(void)didTouchReadUserAgreementButton;
+-(void)didClickFullArticleButton;
 
 @end

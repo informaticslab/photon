@@ -77,7 +77,7 @@ KeywordMO *selectedKeyword;
     // search setup
     self.isSearching = NO;
     self.searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
-    [self.searchDisplayController initWithSearchBar:self.searchBar contentsController:self];
+    //[self.searchDisplayController initWithSearchBar:self.searchBar contentsController:self];
     self.searchDisplayController.delegate = self;
     self.searchDisplayController.searchResultsDataSource = self;
     self.searchDisplayController.searchResultsDelegate = self;
