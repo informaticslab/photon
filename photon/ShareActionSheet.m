@@ -153,7 +153,6 @@
         
         //NSString *bodyText = [NSString stringWithFormat: @"%@<a href=\"%@\">%@</a>", self.shareText, self.shareUrl, self.shareUrl];
         
-        NSString *bodyText = @"";
 
         
         NSMutableString *body = [NSMutableString string];
@@ -167,7 +166,7 @@
         [body appendString:@"\">"];
         [body appendString:self.shareUrl];
         [body appendString:@"</a></div></body></html>"];
-        DebugLog(@"Share URL for mail is : %@", bodyText);
+        DebugLog(@"Share URL for mail is : %@", self.shareUrl);
      
         self.mailVC = [[MFMailComposeViewController alloc] init];
         self.mailVC.mailComposeDelegate = self;
