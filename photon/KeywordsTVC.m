@@ -122,10 +122,12 @@ KeywordMO *selectedKeyword;
 
 - (IBAction)refresh:(id)sender
 {
+    
     DebugLog(@"Current keyword count before refresh = %d", [APP_MGR.issuesMgr.keywords count] );
     UIRefreshControl *refreshControl = (UIRefreshControl *)sender;
     refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Updating articles..."];
     [APP_MGR.jsonParser updateFromFeed];
+    
 }
 
 -(void)feedDataUpdateNotification:(NSNotification *)pNotification
@@ -189,11 +191,13 @@ KeywordMO *selectedKeyword;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    
     if (tableView == self.searchDisplayController.searchResultsTableView)
         return [searchResults count];
     
     // Return the number of rows in the section.
     return [APP_MGR.issuesMgr.keywords count];
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

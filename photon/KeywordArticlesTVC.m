@@ -253,7 +253,16 @@ NSArray *keywordArticles;
     _selectedArticle = keywordArticles[[indexPath row]];
     isArticleSelected = YES;
 
+    _selectedArticle.unread = NO;
+    IssueMO *selectedArticleIssue = _selectedArticle.issue;
+    [selectedArticleIssue updateUnreadArticleStatus];
     
+    [_issue updateUnreadArticleStatus];
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"FeedDataUpdated"
+     object:self];
+
+
     if ([APP_MGR isDeviceIpad] == YES) {
         [APP_MGR.splitVM setSelectedArticle:_selectedArticle];
         [APP_MGR.splitVM searchEnd];

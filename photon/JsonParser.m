@@ -161,6 +161,11 @@ int implicationsFound = 0;
         // get issue from blob
         currIssue = [versionParser parseIssueJson:articleJsonBlob];
         
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        
+        [formatter setDateFormat:@"YYYY-MM-dd"];
+        DebugLog(@"Found issue from feed with date %@, volume %d, number = %d", currIssue.title, currIssue.volume, currIssue.number);
+        
         // add article info
         currArticle = [versionParser parseArticleJson:articleJsonBlob];
         
