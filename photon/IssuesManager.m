@@ -230,6 +230,7 @@ NSManagedObjectContext *context;
     {
         
         storedArticle = [self createNewArticle:article inIssue:storedIssue];
+        [self addArticleKeywords:tags forArticle:storedArticle];
         
     } else {
         
@@ -240,11 +241,10 @@ NSManagedObjectContext *context;
             
             // create new article object and replace the old with new
             [storedIssue replaceArticle:storedArticle withArticle:article];
+            [self addArticleKeywords:tags forArticle:storedArticle];
             
         }
     }
-    
-    [self addArticleKeywords:tags forArticle:storedArticle];
 
 }
 
