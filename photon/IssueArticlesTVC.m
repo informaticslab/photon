@@ -105,8 +105,8 @@ bool didViewJustLoad;
 - (void)viewWillAppear:(BOOL)animated
 {
     
-    //[self updateArticleSelection];
-    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+   
 }
 
 -(void)viewDidAppear:(BOOL)animated
