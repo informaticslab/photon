@@ -12,7 +12,7 @@
 #import "IssueMO+Issue.h"
 #import "ArticleMO+Article.h"
 #import "KeywordMO.h"
-
+#import "KeywordSearchResults.h"
 
 @implementation IssuesManager
 
@@ -45,27 +45,84 @@ NSManagedObjectContext *context;
     
         self.sortedIssues = fetchedIssues;
         self.issues = [[NSMutableDictionary alloc]init];
+        
+        [self getAllKeywords];
+        [self removeDuplicateKeywords];
 
-        fetchRequest = [[model fetchRequestTemplateForName:@"GetAllKeywords"] copy];
-        
-        // Specify how the fetched objects should be sorted
-        sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"text"
-                                                                       ascending:YES];
-        [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
-        
-        error = nil;
-        NSArray *fetchedKeywords = [APP_MGR.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-        if ([fetchedKeywords count] == 0) {
-            DebugLog(@"Issues Manager has no stored keywords.");
-        }
-        
-        
-        self.keywords = fetchedKeywords;
-        
     };
 
     return self;
     
+}
+
+-(void)getAllKeywords
+{
+    
+    NSFetchRequest *fetchRequest = [[model fetchRequestTemplateForName:@"GetAllKeywords"] copy];
+    
+    // Specify how the fetched objects should be sorted
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"text"
+                                                 ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
+    
+    NSError *error = nil;
+    NSArray *fetchedKeywords = [APP_MGR.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if ([fetchedKeywords count] == 0) {
+        DebugLog(@"Issues Manager has no stored keywords.");
+    }
+    
+    self.keywords = fetchedKeywords;
+    
+
+}
+
+// this method was written to remove the duplicate tags that occur due to a bug in the very first
+// release in the Apple App Store, version 1.0.0.
+-(void)removeDuplicateKeywords
+{
+    BOOL foundDups = NO;
+    NSString *lastDuplicateKeyword = @"";
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger duplicateKeywordsRemoved = [defaults integerForKey:@"RemoveKeywordDuplicatesV1"];
+    
+    // return if duplicates have been removed
+    if (duplicateKeywordsRemoved == 1)
+        return;
+
+    
+    // go through all the keywords that were loaded at init
+    // and check for duplicates
+    for (KeywordMO *currKeyword in self.keywords) {
+        
+        KeywordSearchResults *kwSearchResults = [[KeywordSearchResults alloc] initAndSearchForKeyword:currKeyword.text];
+        
+        // if keyword is duplicate and we have already merged them than delete KeywordMO
+        if ([currKeyword.text isEqualToString:lastDuplicateKeyword]) {
+            [context deleteObject:currKeyword];
+        }
+        
+        
+        // if keyword found more than once, remove duplicates and set flag
+        else if (kwSearchResults.fetchCount > 1 ) {
+            DebugLog(@"Issues Manager found duplicate keywords for keyword = %@.", currKeyword.text);
+
+            [kwSearchResults mergeDuplicateKeywords];
+            foundDups = YES;
+            lastDuplicateKeyword = currKeyword.text;
+        }
+        
+    }
+    
+    // if we found dups than refresh keyword collection
+    if (foundDups)
+        [self getAllKeywords];
+    
+    // set flag indicating remove duplicates has been run
+    [defaults setInteger:1 forKey:@"RemoveKeywordDuplicatesV1"];
+    [defaults synchronize];
+    
+
 }
 
 -(void)reloadData
@@ -272,9 +329,10 @@ NSManagedObjectContext *context;
     
 }
 
-
 -(KeywordMO *)getKeywordWithText:(NSString *)text
 {
+    
+    NSUInteger keywordCount = 0;
     
     NSDictionary *substitutionDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
                                             text, @"TEXT", nil];
@@ -284,11 +342,12 @@ NSManagedObjectContext *context;
     NSError *error = nil;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     
-    if ([fetchedObjects count] == 0) {
+    keywordCount = [fetchedObjects count];
+    if (keywordCount == 0) {
         DebugLog(@"Issues Manager has no keyword with text = %@.", text);
         return nil;
     }
-    else if([fetchedObjects count] == 1)
+    else if (keywordCount == 1)
         return (KeywordMO *)[fetchedObjects objectAtIndex:0];
     else
         return nil;

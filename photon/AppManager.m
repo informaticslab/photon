@@ -76,9 +76,6 @@ static AppManager *sharedAppManager = nil;
             [self.jsonParser loadAndPersistPreloadData];
         }
         
-        //[self.jsonParser parseAndPersistTestData];
-       // [self.jsonParser updateFromFeed];
-                
     }
 	return self;
 
@@ -222,6 +219,13 @@ static AppManager *sharedAppManager = nil;
             abort();
         }
     }
+}
+
+-(void)removeDuplicateTags
+{
+    
+    
+    
 }
 
 

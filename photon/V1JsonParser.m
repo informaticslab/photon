@@ -68,9 +68,10 @@
     DebugLog(@"\tTags:");
     for (NSDictionary *tag in newTags) {
         NSString *currTag = [tag valueForKey:@"tag"];
+        if ([currTag isEqualToString:@"Cancer"])
+            DebugLog(@"Found Cancer.");
         DebugLog(@"\t\ttag:%@", currTag);
         [parsedTags addObject:currTag];
-        
     };
     
     return [NSArray arrayWithArray:parsedTags];

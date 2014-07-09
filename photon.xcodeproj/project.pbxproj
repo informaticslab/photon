@@ -68,6 +68,7 @@
 		A6D6AFEF185B5E1400F37E23 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D6AFEE185B5E1400F37E23 /* Social.framework */; };
 		A6D9BC78183BBFE000B42118 /* KeywordArticlesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D9BC77183BBFE000B42118 /* KeywordArticlesTVC.m */; };
 		A6D9BC7B183BF57F00B42118 /* KeywordArticleDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D9BC7A183BF57F00B42118 /* KeywordArticleDetailVC.m */; };
+		A6DD5B65196C7B6400CC6B04 /* KeywordSearchResults.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DD5B64196C7B6400CC6B04 /* KeywordSearchResults.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,6 +194,8 @@
 		A6D9BC77183BBFE000B42118 /* KeywordArticlesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordArticlesTVC.m; sourceTree = "<group>"; };
 		A6D9BC79183BF57F00B42118 /* KeywordArticleDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordArticleDetailVC.h; sourceTree = "<group>"; };
 		A6D9BC7A183BF57F00B42118 /* KeywordArticleDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordArticleDetailVC.m; sourceTree = "<group>"; };
+		A6DD5B63196C7B6400CC6B04 /* KeywordSearchResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordSearchResults.h; sourceTree = "<group>"; };
+		A6DD5B64196C7B6400CC6B04 /* KeywordSearchResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordSearchResults.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +339,8 @@
 				A6D9BC77183BBFE000B42118 /* KeywordArticlesTVC.m */,
 				A66F689C18D0761F008D3EF5 /* KeywordMO.h */,
 				A66F689D18D0761F008D3EF5 /* KeywordMO.m */,
+				A6DD5B63196C7B6400CC6B04 /* KeywordSearchResults.h */,
+				A6DD5B64196C7B6400CC6B04 /* KeywordSearchResults.m */,
 				A6635ADE182D921A00E600EA /* KeywordsTVC.h */,
 				A6635ADF182D921A00E600EA /* KeywordsTVC.m */,
 				A62A1A241823C9C7006A62B3 /* Main.storyboard */,
@@ -511,6 +516,7 @@
 				A69AFEBD1895468A009F0A48 /* JsonParser.m in Sources */,
 				A6B295D2187352CB00BEF24D /* ContentVC.m in Sources */,
 				A61CA7C41863235800891E00 /* GTMNSString+HTML.m in Sources */,
+				A6DD5B65196C7B6400CC6B04 /* KeywordSearchResults.m in Sources */,
 				A639A337184E6496008D3BF6 /* ShareActivityProvider.m in Sources */,
 				A61CA795186231ED00891E00 /* RSSEntry.m in Sources */,
 				A6A919DB182A74D400F1CE7D /* Issue.m in Sources */,
@@ -762,7 +768,7 @@
 				A62A1A431823C9C7006A62B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		A62A1A441823C9C7006A62B3 /* Build configuration list for PBXNativeTarget "photon" */ = {
 			isa = XCConfigurationList;
@@ -771,7 +777,7 @@
 				A62A1A461823C9C7006A62B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		A62A1A471823C9C7006A62B3 /* Build configuration list for PBXNativeTarget "photonTests" */ = {
 			isa = XCConfigurationList;
@@ -780,7 +786,7 @@
 				A62A1A491823C9C7006A62B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 

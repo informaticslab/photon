@@ -38,6 +38,7 @@ int implicationsFound = 0;
         V1JsonParser *v1 = [[V1JsonParser alloc] init];
         _schemaParsers = @[v1];
         
+//        NSURL *feedURL = [NSURL URLWithString:@"http://t.cdc.gov/feed.aspx?feedid=100&&fromdate=2014-05-01"];
         NSURL *feedURL = [NSURL URLWithString:@"http://t.cdc.gov/feed.aspx?feedid=100"];
         _feedParser = [[MWFeedParser alloc] initWithFeedURL:feedURL];
         _feedParser.delegate = self;
