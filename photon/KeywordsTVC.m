@@ -227,7 +227,7 @@ KeywordMO *selectedKeyword;
                                             searchText, @"TEXT", nil];
     
 
-    NSFetchRequest *fetchRequest = [APP_MGR.managedObjectModel fetchRequestFromTemplateWithName:@"GetKeywordsWithText" substitutionVariables:substitutionDictionary];
+    NSFetchRequest *fetchRequest = [APP_MGR.managedObjectModel fetchRequestFromTemplateWithName:@"GetKeywordsBeginWith" substitutionVariables:substitutionDictionary];
     
     // Specify how the fetched objects should be sorted
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"text"
