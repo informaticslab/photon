@@ -7,8 +7,8 @@
 //
 
 #import "JsonParser.h"
-#import "Article.h"
-#import "Issue.h"
+#import "ArticleMO+Article.h"
+#import "IssueMO+Issue.h"
 #import "V1JsonParser.h"
 
 #import "NSString+HTML.h"

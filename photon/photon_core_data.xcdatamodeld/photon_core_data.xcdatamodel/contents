@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="ArticleMO" representedClassName="ArticleMO" syncable="YES">
         <attribute name="added_by_report" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="already_known" optional="YES" attributeType="String" syncable="YES"/>
@@ -30,8 +30,8 @@
     <fetchRequest name="GetKeywordsWithText" entity="KeywordMO" predicateString="text LIKE[cd] $TEXT"/>
     <fetchRequest name="GetMatchingKeywords" entity="KeywordMO"/>
     <elements>
-        <element name="ArticleMO" positionX="0" positionY="0" width="128" height="180"/>
-        <element name="IssueMO" positionX="0" positionY="0" width="128" height="135"/>
-        <element name="KeywordMO" positionX="0" positionY="0" width="128" height="73"/>
+        <element name="ArticleMO" positionX="-254" positionY="-81" width="128" height="180"/>
+        <element name="IssueMO" positionX="-459" positionY="-63" width="128" height="135"/>
+        <element name="KeywordMO" positionX="-54" positionY="-27" width="128" height="73"/>
     </elements>
 </model>

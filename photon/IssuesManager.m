@@ -7,8 +7,6 @@
 //
 
 #import "IssuesManager.h"
-#import "Issue.h"
-#import "Article.h"
 #import "IssueMO+Issue.h"
 #import "ArticleMO+Article.h"
 #import "KeywordMO.h"
@@ -73,7 +71,6 @@ NSManagedObjectContext *context;
     
     self.keywords = fetchedKeywords;
     
-
 }
 
 // this method was written to remove the duplicate tags that occur due to a bug in the very first

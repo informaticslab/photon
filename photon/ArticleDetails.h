@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Issue.h"
-#import "Article.h"
+#import "IssueMO+Issue.h"
+#import "ArticleMO+Article.h"
 
 @interface ArticleDetails : UIViewController
 
