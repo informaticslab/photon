@@ -269,7 +269,7 @@ NSManagedObjectContext *context;
 
 -(void)newArticle:(Article *)article inIssue:(Issue *)issue withTags:(NSArray *)tags version:(NSInteger)ver
 {
-    
+
     IssueMO *storedIssue = nil;
     ArticleMO *storedArticle = nil;
     
@@ -294,13 +294,25 @@ NSManagedObjectContext *context;
         if (article.version > storedArticle.version.integerValue ) {
             
             // create new article object and replace the old with new
-            [storedIssue replaceArticle:storedArticle withArticle:article];
-            [self addArticleKeywords:tags forArticle:storedArticle];
+            [self updateArticle:storedArticle withArticle:article];
+            [self updatedKeywords:tags fromArticle:storedArticle];
             
         }
     }
 
 }
+
+-(void)updateArticle:(ArticleMO *)storedArticle withArticle:(Article *)updatedArticle
+{
+    storedArticle.implications = updatedArticle.implications;
+    storedArticle.added_by_report = updatedArticle.added_by_report;
+    storedArticle.already_known = updatedArticle.already_know;
+    storedArticle.url = updatedArticle.url;
+    [APP_MGR saveContext];
+    
+}
+
+
 
 #pragma mark - Keyword methods
 -(KeywordMO *)createNewKeyword:(NSString *)text inArticle:(ArticleMO *)article
@@ -317,6 +329,52 @@ NSManagedObjectContext *context;
     return keyword;
 }
 
+-(void)removeArticle:(ArticleMO *)article fromKeyword:(NSString *)keyword
+{
+    KeywordMO *keywordMO = [self getKeywordWithText:keyword];
+    
+    if (keywordMO == nil)
+        DebugLog(@"No KeowrdMO with text %@ exists.", keyword);
+    
+    [keywordMO removeArticlesObject:article];
+    
+    if (keywordMO.articles.count == 0) {
+        [context deleteObject:keywordMO];
+    }
+    
+    
+}
+
+-(void)updatedKeywords:(NSArray *)latestKeywords fromArticle:(ArticleMO *)article
+{
+
+    NSMutableSet *feedKeywords = [[NSMutableSet alloc] initWithArray:latestKeywords];
+    
+    
+    // get existing stored keywords for article
+    NSMutableSet *storedKeywords = [self keywordsForArticle:article];
+    
+    // add new keywords from feed
+    // if they are not already in stored keywords
+    for (NSString *currKeyword in feedKeywords) {
+        if ([storedKeywords containsObject:currKeyword])
+            continue;
+        else
+            [self createNewKeyword:currKeyword inArticle:article];
+        
+    }
+    
+    // delete keywords that are stored
+    // if they are not in feed
+    for (NSString *currKeyword in storedKeywords) {
+        if ([feedKeywords containsObject:currKeyword])
+            continue;
+        else
+            [self createNewKeyword:currKeyword inArticle:article];
+        
+    }
+
+}
 
 
 -(NSArray *)articlesWithKeyword:(KeywordMO *)keyword
@@ -324,6 +382,22 @@ NSManagedObjectContext *context;
     
     return [keyword.articles allObjects];
     
+}
+
+
+// returns NSMutableSet for KeywordMO for
+-(NSMutableSet *)keywordsForArticle:(ArticleMO *)storedArticle
+{
+    NSMutableSet *articleKeywords = [[NSMutableSet alloc] init];
+    
+    for (KeywordMO *storedKeyword in self.keywords) {
+        if ([storedKeyword.articles containsObject:storedArticle] ) {
+            [articleKeywords addObject:storedKeyword];
+        }
+    }
+
+    return articleKeywords;
+
 }
 
 -(KeywordMO *)getKeywordWithText:(NSString *)text

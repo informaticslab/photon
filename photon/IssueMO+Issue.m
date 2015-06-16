@@ -72,12 +72,14 @@
 
 
 
--(void)replaceArticle:(Article *)oldArticle withArticle:(Article *)newArticle
+-(void)updateArticle:(ArticleMO *)storedArticle withArticle:(Article *)updatedArticle
 {
-//    NSUInteger oldIndex = [self.articles indexOfObject:oldArticle];
-    
-//    [self.articles replaceObjectAtIndex:oldIndex withObject:newArticle];
-    
+    storedArticle.implications = updatedArticle.implications;
+    storedArticle.added_by_report = updatedArticle.added_by_report;
+    storedArticle.already_known = updatedArticle.already_know;
+    storedArticle.url = updatedArticle.url;
+    [APP_MGR saveContext];
+
 }
 
 

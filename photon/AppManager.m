@@ -221,13 +221,6 @@ static AppManager *sharedAppManager = nil;
     }
 }
 
--(void)removeDuplicateTags
-{
-    
-    
-    
-}
-
 
 
 @end
