@@ -291,7 +291,7 @@ NSManagedObjectContext *context;
         storedArticle = [storedIssue getArticleWithTitle:article.title];
         
         // check if version number is greater than current version
-        if (article.version > storedArticle.version.integerValue ) {
+        if (ver > storedArticle.version.integerValue ) {
             
             // create new article object and replace the old with new
             [self updateArticle:storedArticle withArticle:article];
@@ -334,7 +334,7 @@ NSManagedObjectContext *context;
     KeywordMO *keywordMO = [self getKeywordWithText:keyword];
     
     if (keywordMO == nil)
-        DebugLog(@"No KeowrdMO with text %@ exists.", keyword);
+        DebugLog(@"No KeywordMO with text %@ exists.", keyword);
     
     [keywordMO removeArticlesObject:article];
     
@@ -370,7 +370,7 @@ NSManagedObjectContext *context;
         if ([feedKeywords containsObject:currKeyword])
             continue;
         else
-            [self createNewKeyword:currKeyword inArticle:article];
+            [self removeArticle:article fromKeyword:currKeyword];
         
     }
 
@@ -392,7 +392,7 @@ NSManagedObjectContext *context;
     
     for (KeywordMO *storedKeyword in self.keywords) {
         if ([storedKeyword.articles containsObject:storedArticle] ) {
-            [articleKeywords addObject:storedKeyword];
+            [articleKeywords addObject:storedKeyword.text];
         }
     }
 

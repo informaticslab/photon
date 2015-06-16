@@ -39,7 +39,9 @@ int implicationsFound = 0;
         _schemaParsers = @[v1];
         
 //        NSURL *feedURL = [NSURL URLWithString:@"http://t.cdc.gov/feed.aspx?feedid=100&&fromdate=2014-05-01"];
-        NSURL *feedURL = [NSURL URLWithString:@"http://t.cdc.gov/feed.aspx?feedid=100"];
+#warning Fix TODO
+        // TODO: Use Correct URL For Production         NSURL *feedURL = [NSURL URLWithString:@"http://t.cdc.gov/feed.aspx?feedid=100"];
+        NSURL *feedURL = [NSURL URLWithString:@"http://t.cdc.gov/feed.aspx?feedid=105"];
         _feedParser = [[MWFeedParser alloc] initWithFeedURL:feedURL];
         _feedParser.delegate = self;
         _feedParser.feedParseType = ParseTypeFull; // parse feed info and all items

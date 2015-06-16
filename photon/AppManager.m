@@ -73,7 +73,9 @@ static AppManager *sharedAppManager = nil;
         self.issuesMgr = [[IssuesManager alloc  ]init];
         self.jsonParser = [[JsonParser alloc] init];
         if (_issuesMgr.hasIssues == NO) {
-            [self.jsonParser loadAndPersistPreloadData];
+#warning Fix TODO
+            // TODO: Uncomment out line below for production
+            //[self.jsonParser loadAndPersistPreloadData];
         }
         
     }
