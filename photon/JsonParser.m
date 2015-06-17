@@ -167,7 +167,7 @@ int implicationsFound = 0;
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         
         [formatter setDateFormat:@"YYYY-MM-dd"];
-        DebugLog(@"Found issue from feed with date %@, volume %d, number = %d", currIssue.title, currIssue.volume, currIssue.number);
+        DebugLog(@"Found issue from feed with date %@, volume %ld, number = %ld", currIssue.title, (long)currIssue.volume, (long)currIssue.number);
         
         // add article info
         currArticle = [versionParser parseArticleJson:articleJsonBlob];

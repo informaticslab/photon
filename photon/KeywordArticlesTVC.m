@@ -253,7 +253,7 @@ NSArray *keywordArticles;
     _selectedArticle = keywordArticles[[indexPath row]];
     isArticleSelected = YES;
 
-    _selectedArticle.unread = NO;
+    _selectedArticle.unread = 0;
     IssueMO *selectedArticleIssue = _selectedArticle.issue;
     [selectedArticleIssue updateUnreadArticleStatus];
     

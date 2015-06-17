@@ -123,7 +123,7 @@ KeywordMO *selectedKeyword;
 - (IBAction)refresh:(id)sender
 {
     
-    DebugLog(@"Current keyword count before refresh = %d", [APP_MGR.issuesMgr.keywords count] );
+    DebugLog(@"Current keyword count before refresh = %lu", (unsigned long)[APP_MGR.issuesMgr.keywords count] );
     UIRefreshControl *refreshControl = (UIRefreshControl *)sender;
     refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Updating articles..."];
     [APP_MGR.jsonParser updateFromFeed];
@@ -136,7 +136,7 @@ KeywordMO *selectedKeyword;
     allKeywords  = APP_MGR.issuesMgr.keywords;
     [self.tableView reloadData];
     [self.refreshControl endRefreshing];
-    DebugLog(@"Current keyword count after refresh = %d", [APP_MGR.issuesMgr.keywords count] );
+    DebugLog(@"Current keyword count after refresh = %lu", (unsigned long)[APP_MGR.issuesMgr.keywords count] );
 }
 
 - (void)searchDisplayControllerDidBeginSearch:(UISearchDisplayController *)controller

@@ -317,7 +317,7 @@ bool didViewJustLoad;
     _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
     NSArray *articles = [_issue.articles allObjects];
     _selectedArticle = [articles objectAtIndex:[indexPath row]];
-    _selectedArticle.unread = NO;
+    _selectedArticle.unread = 0;
     
     
     [self.tableView beginUpdates];
