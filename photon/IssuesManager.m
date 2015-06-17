@@ -129,7 +129,8 @@ NSManagedObjectContext *context;
     
     // Specify how the fetched objects should be sorted
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date"
-                                                                   ascending:NO];
+                                                                   ascending:NO
+                                        selector:@selector(localizedCaseInsensitiveCompare:)];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
     
     NSError *error = nil;
@@ -143,8 +144,7 @@ NSManagedObjectContext *context;
     fetchRequest = [[model fetchRequestTemplateForName:@"GetAllKeywords"] copy];
     
     // Specify how the fetched objects should be sorted
-    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"text"
-                                                 ascending:YES];
+    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"text" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
     
     error = nil;
