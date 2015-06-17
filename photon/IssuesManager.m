@@ -308,8 +308,9 @@ NSManagedObjectContext *context;
     storedArticle.added_by_report = updatedArticle.added_by_report;
     storedArticle.already_known = updatedArticle.already_know;
     storedArticle.url = updatedArticle.url;
+    storedArticle.version = [NSNumber numberWithInteger:updatedArticle.version ];
     [APP_MGR saveContext];
-    
+
 }
 
 
@@ -342,7 +343,8 @@ NSManagedObjectContext *context;
         [context deleteObject:keywordMO];
     }
     
-    
+    [APP_MGR saveContext];
+
 }
 
 -(void)updatedKeywords:(NSArray *)latestKeywords fromArticle:(ArticleMO *)article

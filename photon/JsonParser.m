@@ -174,6 +174,7 @@ int implicationsFound = 0;
         
         // get content version
         contentVer = [versionParser parseContentVersionJson:articleJsonBlob];
+        currArticle.version = contentVer;
         
         // get collection of tags for currrent article
         tags = [versionParser parseTagsJson:articleJsonBlob];
