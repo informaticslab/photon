@@ -10,7 +10,7 @@
 #import "Issue.h"
 
 @class Issue;
-@interface Article : NSObject
+@interface FeedArticle : NSObject
 
 @property(strong, nonatomic) NSString *title;
 @property(strong, nonatomic) NSString *url;
@@ -18,7 +18,6 @@
 @property(strong, nonatomic) NSString *already_know;
 @property(strong, nonatomic) NSString *added_by_report;
 @property(strong, nonatomic) NSString *implications;
-@property(strong, nonatomic) NSMutableArray *tags;
 @property NSInteger version;
 @property BOOL unread;
 

@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Informatics Research and Development Lab. All rights reserved.
 //
 
-#import "Article.h"
+#import "FeedArticle.h"
 
-@implementation Article
+@implementation FeedArticle
 
 
 -(id)initWithTitle:(NSString *)title
@@ -17,7 +17,6 @@
     if(self= [super init]) {
         
         self.title = title;
-        self.tags = [[NSMutableArray alloc]init];
         self.unread = YES;
         
     }

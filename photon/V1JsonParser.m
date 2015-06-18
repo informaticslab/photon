@@ -21,7 +21,7 @@
 }
 
 
--(Article *)parseArticleJson:(NSDictionary *)json
+-(FeedArticle *)parseArticleJson:(NSDictionary *)json
 {
 
     NSString *title = [JsonParserBase stringValueForKey:@"title" inJson:json];
@@ -30,7 +30,7 @@
     NSString *implications = [JsonParserBase stringValueForKey:@"implications" inJson:json];
     
     NSString *url = [JsonParserBase stringValueForKey:@"url" inJson:json];
-    Article *parsedArticle = [[Article alloc] initWithTitle:title];
+    FeedArticle *parsedArticle = [[FeedArticle alloc] initWithTitle:title];
     parsedArticle.already_know = known;
     parsedArticle.added_by_report = added;
     parsedArticle.implications = implications;

@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Article.h"
+#import "FeedArticle.h"
 
-@class Article;
+@class FeedArticle;
 
 @interface Issue : NSObject
 
@@ -25,10 +25,10 @@
 
 
 -(void)updateUnreadArticleStatus;
--(Article *)storeArticle:(Article *)newArticle;
--(Article *)getArticleWithTitle:(NSString *)title;
--(Article *)addArticleWithTitle:(NSString *)title;
--(void)replaceArticle:(Article *)oldArticle withArticle:(Article *)newArticle;
+-(FeedArticle *)storeArticle:(FeedArticle *)newArticle;
+-(FeedArticle *)getArticleWithTitle:(NSString *)title;
+-(FeedArticle *)addArticleWithTitle:(NSString *)title;
+-(void)replaceArticle:(FeedArticle *)oldArticle withArticle:(FeedArticle *)newArticle;
 -(NSUInteger)numberOfArticles;
 
 

@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @class Issue;
-@class Article;
+@class FeedArticle;
 
 @protocol JsonParserProtocol <NSObject>
 
--(Article *)parseArticleJson:(NSDictionary *)json;
+-(FeedArticle *)parseArticleJson:(NSDictionary *)json;
 -(Issue *)parseIssueJson:(NSDictionary *)json;
 -(NSArray *)parseTagsJson:(NSDictionary *)json;
 -(NSInteger)parseContentVersionJson:(NSDictionary *)json;

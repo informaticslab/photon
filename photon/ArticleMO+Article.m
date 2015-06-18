@@ -8,21 +8,21 @@
 
 #import "ArticleMO+Article.h"
 
-@implementation ArticleMO (Article)
+@implementation ArticleMO (FeedArticle)
 
 
 
 -(void)initWithTitle:(NSString *)title
 {
         self.title = title;
-        self.unread = @YES;
+        self.unread = [NSNumber numberWithBool:YES];
 }
 
 -(void)initWithTitle:(NSString *)title version:(NSInteger)ver
 {
     
         self.title = title;
-        self.unread = @YES;
+        self.unread = [NSNumber numberWithBool:YES];
         self.version = [NSNumber numberWithInteger:ver];
     
 }

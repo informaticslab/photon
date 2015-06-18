@@ -164,7 +164,7 @@ NSArray *keywordArticles;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Article *rowArticle = keywordArticles[[indexPath row]];
+    FeedArticle *rowArticle = keywordArticles[[indexPath row]];
     NSString *title = rowArticle.title;
     
     CGSize constraintSize = CGSizeMake(CELL_TEXT_LABEL_WIDTH, MAXFLOAT);

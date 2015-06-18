@@ -8,7 +8,7 @@
 
 #import "ArticleMO.h"
 
-@interface ArticleMO (Article)
+@interface ArticleMO (FeedArticle)
 
 -(void)initWithTitle:(NSString *)title;
 -(void)initWithTitle:(NSString *)title version:(NSInteger)ver;

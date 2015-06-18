@@ -16,14 +16,14 @@
 -(void)initWithDate:(NSString *)dateString volume:(NSNumber *)vol number:(NSNumber *)num
 {
     
-        self.unread = @YES;
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        formatter.dateFormat = @"yyyy-MM-dd";
-        self.date = [formatter dateFromString:dateString];
-        self.title = dateString;
-        self.volume = vol;
-        self.number = num;
-
+    self.unread = [NSNumber numberWithBool:YES];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy-MM-dd";
+    self.date = [formatter dateFromString:dateString];
+    self.title = dateString;
+    self.volume = vol;
+    self.number = num;
+    
 }
 
 
@@ -36,9 +36,9 @@
             unreadCount++;
     
     if (unreadCount > 0)
-        self.unread = @YES;
+        self.unread = [NSNumber numberWithBool:YES];
     else
-        self.unread = @NO;
+        self.unread = [NSNumber numberWithBool:NO];
     [APP_MGR saveContext];
     
 }
@@ -61,8 +61,8 @@
 -(ArticleMO *)addArticleWithTitle:(NSString *)title
 {
     ArticleMO *newArticle = (ArticleMO *)[NSEntityDescription
-                                    insertNewObjectForEntityForName:@"ArticleMO"
-                                    inManagedObjectContext:self.managedObjectContext];
+                                          insertNewObjectForEntityForName:@"ArticleMO"
+                                          inManagedObjectContext:self.managedObjectContext];
     [newArticle initWithTitle:title];
     newArticle.issue = self;
     
@@ -72,14 +72,14 @@
 
 
 
--(void)updateArticle:(ArticleMO *)storedArticle withArticle:(Article *)updatedArticle
+-(void)updateArticle:(ArticleMO *)storedArticle withArticle:(FeedArticle *)updatedArticle
 {
     storedArticle.implications = updatedArticle.implications;
     storedArticle.added_by_report = updatedArticle.added_by_report;
     storedArticle.already_known = updatedArticle.already_know;
     storedArticle.url = updatedArticle.url;
     [APP_MGR saveContext];
-
+    
 }
 
 

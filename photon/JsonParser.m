@@ -72,7 +72,7 @@ int implicationsFound = 0;
 -(void)parseAndPersistJsonBlobs:(NSArray *)jsonBlobs
 {
     Issue *currIssue = nil;
-    Article *currArticle = nil;
+    FeedArticle *currArticle = nil;
     NSArray *tags = nil;
     NSInteger schemaVer = 0;
     NSInteger contentVer = 0;
@@ -101,8 +101,7 @@ int implicationsFound = 0;
         [APP_MGR.issuesMgr newArticle:currArticle inIssue:currIssue withTags:tags version:contentVer];
         
     }
-    
-    
+
     //
     [APP_MGR.issuesMgr reloadData];
     
@@ -143,7 +142,7 @@ int implicationsFound = 0;
     NSError *err = nil;
     
     Issue *currIssue = nil;
-    Article *currArticle = nil;
+    FeedArticle *currArticle = nil;
     NSArray *tags = nil;
     NSInteger schemaVer = 0;
     NSInteger contentVer = 0;

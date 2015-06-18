@@ -13,6 +13,6 @@
 @interface ArticleDetails : UIViewController
 
 @property(nonatomic, weak) Issue *issue;
-@property(nonatomic, weak) Article *article;
+@property(nonatomic, weak) FeedArticle *article;
 
 @end

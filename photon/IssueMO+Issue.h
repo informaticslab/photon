@@ -7,7 +7,7 @@
 //
 
 #import "IssueMO.h"
-#import "Article.h"
+#import "FeedArticle.h"
 #import "ArticleMO.h"
 
 @interface IssueMO (Issue)
@@ -17,8 +17,8 @@
 
 -(void)updateUnreadArticleStatus;
 -(ArticleMO *)getArticleWithTitle:(NSString *)title;
--(Article *)addArticleWithTitle:(NSString *)title;
--(void)replaceArticle:(ArticleMO *)oldArticle withArticle:(Article *)newArticle;
+-(FeedArticle *)addArticleWithTitle:(NSString *)title;
+-(void)updateArticle:(ArticleMO *)oldArticle withArticle:(FeedArticle *)newArticle;
 -(NSUInteger)numberOfArticles;
 
 

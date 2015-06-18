@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Issue.h"
-#import "Article.h"
+#import "FeedArticle.h"
 #import "ArticleSelectionDelegate.h"
 
 @interface ContentPagesiPadVC : UIViewController<UIPageViewControllerDataSource, UIPageViewControllerDelegate, ArticleSelectionDelegate>
 
 @property(nonatomic, weak) Issue *issue;
-@property(nonatomic, weak) Article *article;
+@property(nonatomic, weak) FeedArticle *article;
 
 
 

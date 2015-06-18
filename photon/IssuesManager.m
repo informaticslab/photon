@@ -229,7 +229,7 @@ NSManagedObjectContext *context;
 
 
 #pragma mark - Article methods
--(BOOL)isArticleNew:(Article *)article inIssue:(IssueMO *)issue
+-(BOOL)isArticleNew:(FeedArticle *)article inIssue:(IssueMO *)issue
 {
     
     if ([issue.articles count] == 0)
@@ -247,7 +247,7 @@ NSManagedObjectContext *context;
 }
 
 
--(ArticleMO *)createNewArticle:(Article *)newArticle inIssue:(IssueMO *)issue
+-(ArticleMO *)createNewArticle:(FeedArticle *)newArticle inIssue:(IssueMO *)issue
 {
     
     ArticleMO *article = (ArticleMO *)[NSEntityDescription
@@ -267,7 +267,7 @@ NSManagedObjectContext *context;
 }
 
 
--(void)newArticle:(Article *)article inIssue:(Issue *)issue withTags:(NSArray *)tags version:(NSInteger)ver
+-(void)newArticle:(FeedArticle *)article inIssue:(Issue *)issue withTags:(NSArray *)tags version:(NSInteger)ver
 {
 
     IssueMO *storedIssue = nil;
@@ -302,7 +302,7 @@ NSManagedObjectContext *context;
 
 }
 
--(void)updateArticle:(ArticleMO *)storedArticle withArticle:(Article *)updatedArticle
+-(void)updateArticle:(ArticleMO *)storedArticle withArticle:(FeedArticle *)updatedArticle
 {
     storedArticle.implications = updatedArticle.implications;
     storedArticle.added_by_report = updatedArticle.added_by_report;

@@ -55,7 +55,7 @@
 {
     int unreadCount = 0;
     
-    for (Article *article in _articles)
+    for (FeedArticle *article in _articles)
         if (article.unread)
             unreadCount++;
     
@@ -66,13 +66,13 @@
     
 }
 
--(Article *)getArticleWithTitle:(NSString *)title
+-(FeedArticle *)getArticleWithTitle:(NSString *)title
 {
 
     if (_articles.count == 0)
         return nil;
     
-    for (Article *article in _articles) {
+    for (FeedArticle *article in _articles) {
         if ([article.title isEqualToString:title])
             return article;
     }
@@ -81,9 +81,9 @@
     
 }
 
--(Article *)addArticleWithTitle:(NSString *)title
+-(FeedArticle *)addArticleWithTitle:(NSString *)title
 {
-    Article *newArticle = [[Article alloc] initWithTitle:title];
+    FeedArticle *newArticle = [[FeedArticle alloc] initWithTitle:title];
     
     [_articles addObject:newArticle];
     
@@ -91,7 +91,7 @@
     
 }
 
--(Article *)storeArticle:(Article *)newArticle
+-(FeedArticle *)storeArticle:(FeedArticle *)newArticle
 {
     
     [_articles addObject:newArticle];
@@ -101,7 +101,7 @@
 }
 
 
--(void)replaceArticle:(Article *)oldArticle withArticle:(Article *)newArticle
+-(void)replaceArticle:(FeedArticle *)oldArticle withArticle:(FeedArticle *)newArticle
 {
     NSUInteger oldIndex = [_articles indexOfObject:oldArticle];
     
