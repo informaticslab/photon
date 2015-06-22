@@ -208,7 +208,7 @@ bool didViewJustLoad;
     _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:section];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"MMM dd, yyyy";
-    return [NSString stringWithFormat:@"%@                         Vol %@ No %@", [formatter stringFromDate:_issue.date], _issue.volume, _issue.number];
+    return [NSString stringWithFormat:@"%@   --   Vol %@ No %@", [formatter stringFromDate:_issue.date], _issue.volume, _issue.number];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
