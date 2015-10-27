@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3742D96E1BDFB35000C23902 /* RegistrationClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3742D96D1BDFB35000C23902 /* RegistrationClient.m */; };
 		A61466E418F7148B00DB0099 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A61466E318F7148B00DB0099 /* Reachability.m */; };
 		A61CA795186231ED00891E00 /* RSSEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CA794186231ED00891E00 /* RSSEntry.m */; };
 		A61CA7C41863235800891E00 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CA7B61863235800891E00 /* GTMNSString+HTML.m */; };
@@ -83,6 +84,8 @@
 
 /* Begin PBXFileReference section */
 		3716854018A50CDE0025B32F /* ArticleSelectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleSelectionDelegate.h; sourceTree = "<group>"; };
+		3742D96C1BDFB35000C23902 /* RegistrationClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationClient.h; sourceTree = "<group>"; };
+		3742D96D1BDFB35000C23902 /* RegistrationClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationClient.m; sourceTree = "<group>"; };
 		37C4300318B7DE2800CCDE8A /* PopoverViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopoverViewDelegate.h; sourceTree = "<group>"; };
 		A61466E218F7148B00DB0099 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		A61466E318F7148B00DB0099 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -285,6 +288,8 @@
 		A62A1A181823C9C7006A62B3 /* photon */ = {
 			isa = PBXGroup;
 			children = (
+				3742D96C1BDFB35000C23902 /* RegistrationClient.h */,
+				3742D96D1BDFB35000C23902 /* RegistrationClient.m */,
 				A66FB238184D2B9E008F2AB7 /* AboutVC.h */,
 				A66FB239184D2B9E008F2AB7 /* AboutVC.m */,
 				A62A1A211823C9C7006A62B3 /* AppDelegate.h */,
@@ -507,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A66FB23A184D2B9E008F2AB7 /* AboutVC.m in Sources */,
+				3742D96E1BDFB35000C23902 /* RegistrationClient.m in Sources */,
 				A66FB23D184D2BB0008F2AB7 /* HelpVC.m in Sources */,
 				A62A1A231823C9C7006A62B3 /* AppDelegate.m in Sources */,
 				A6AC5FAA18D794D3000D0832 /* EulaVC.m in Sources */,
