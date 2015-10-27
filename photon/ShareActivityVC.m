@@ -23,7 +23,7 @@ NSArray *activityProviders;
 
 @implementation ShareActivityVC
 
-- (id)init
+- (id)initWithActivityProvider
 {
     
         // Create the activity view controller passing in the activity provider, image and url we want to share along with the additional source we want to appear (google+)
@@ -54,7 +54,7 @@ NSArray *activityProviders;
     
     activityProviders = @[shareActivityProvider];;
     shareUrl = nil;
-    self = [self init];
+    self = [self initWithActivityProvider];
     
     [self setValue:@"MMWR Express" forKey:@"subject"];
     
@@ -76,7 +76,7 @@ NSArray *activityProviders;
     shareUrl = [NSURL URLWithString:articleUrl];
     
     activityProviders = @[shareActivityProvider, shareUrl];
-    self = [self init];
+    self = [self initWithActivityProvider];
     
     
     return self;

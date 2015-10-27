@@ -18,15 +18,12 @@ NSString *messageString;
 
 -(id)initToShareApp
 {
-    self = [super init];
+    NSString *shareString = @"I’m using CDC’s MMWR Express mobile app.  Learn more about it at: http://www.cdc.gov/mmwr";
     
-    if (self ) {
-        
-        NSString *shareString = @"I’m using CDC’s MMWR Express mobile app.  Learn more about it at: http://www.cdc.gov/mmwr";
-        facebookString = mailString = messageString = shareString;
-        twitterString = @"I’m using CDC’s MMWR Express mobile app.  Learn more about it at: http://www.cdc.gov/mmwr";
-        
-    }
+    self = [super initWithPlaceholderItem:shareString];
+    
+    if (self )
+        facebookString = mailString = messageString = twitterString = shareString;
     
     return self;
 }
@@ -34,12 +31,12 @@ NSString *messageString;
 -(id)initToShareArticle
 {
 
-    self = [super init];
+    NSString *shareString = @"MMWR Weekly article via CDC’s MMWR Express mobile app.";
+
+    self = [super initWithPlaceholderItem:shareString];
     
-    if (self ) {
-        NSString *shareString = @"MMWR Weekly article via CDC’s MMWR Express mobile app.";
+    if (self )
         facebookString = mailString = messageString = twitterString = shareString;
-    }
     
     return self;
     
