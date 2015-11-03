@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		374063FC1BE81943005D4B77 /* Pushwoosh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374063FB1BE81943005D4B77 /* Pushwoosh.framework */; };
+		374063FE1BE81B78005D4B77 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 374063FD1BE81B78005D4B77 /* libz.tbd */; };
+		374064001BE81B8B005D4B77 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 374063FF1BE81B8B005D4B77 /* libstdc++.tbd */; };
 		3742D96E1BDFB35000C23902 /* RegistrationClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3742D96D1BDFB35000C23902 /* RegistrationClient.m */; };
 		A61466E418F7148B00DB0099 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A61466E318F7148B00DB0099 /* Reachability.m */; };
 		A61CA795186231ED00891E00 /* RSSEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CA794186231ED00891E00 /* RSSEntry.m */; };
@@ -84,6 +87,9 @@
 
 /* Begin PBXFileReference section */
 		3716854018A50CDE0025B32F /* ArticleSelectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleSelectionDelegate.h; sourceTree = "<group>"; };
+		374063FB1BE81943005D4B77 /* Pushwoosh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pushwoosh.framework; path = photon/Frameworks/Pushwoosh.framework; sourceTree = "<group>"; };
+		374063FD1BE81B78005D4B77 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		374063FF1BE81B8B005D4B77 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		3742D96C1BDFB35000C23902 /* RegistrationClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationClient.h; sourceTree = "<group>"; };
 		3742D96D1BDFB35000C23902 /* RegistrationClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationClient.m; sourceTree = "<group>"; };
 		37C4300318B7DE2800CCDE8A /* PopoverViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopoverViewDelegate.h; sourceTree = "<group>"; };
@@ -206,7 +212,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				374064001BE81B8B005D4B77 /* libstdc++.tbd in Frameworks */,
+				374063FE1BE81B78005D4B77 /* libz.tbd in Frameworks */,
 				A647B05A18CA1FEC0081F760 /* CoreData.framework in Frameworks */,
+				374063FC1BE81943005D4B77 /* Pushwoosh.framework in Frameworks */,
 				A6D6AFEF185B5E1400F37E23 /* Social.framework in Frameworks */,
 				A62A1A151823C9C7006A62B3 /* CoreGraphics.framework in Frameworks */,
 				A62A1A171823C9C7006A62B3 /* UIKit.framework in Frameworks */,
@@ -274,6 +283,9 @@
 		A62A1A111823C9C7006A62B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				374063FF1BE81B8B005D4B77 /* libstdc++.tbd */,
+				374063FD1BE81B78005D4B77 /* libz.tbd */,
+				374063FB1BE81943005D4B77 /* Pushwoosh.framework */,
 				A647B05918CA1FEC0081F760 /* CoreData.framework */,
 				A6D6AFEE185B5E1400F37E23 /* Social.framework */,
 				A6B735491843D6C600872B20 /* CoreText.framework */,
@@ -455,6 +467,11 @@
 				TargetAttributes = {
 					A62A1A0E1823C9C7006A62B3 = {
 						DevelopmentTeam = Z827RBGAJC;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					A62A1A321823C9C7006A62B3 = {
 						TestTargetID = A62A1A0E1823C9C7006A62B3;
@@ -692,6 +709,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/photon/Frameworks",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "photon/photon-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
@@ -700,7 +722,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "";
 				"OTHER_CFLAGS[arch=*]" = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "gov.cdc.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.cdc.iiu.mmwrexpress;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -713,13 +735,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/photon/Frameworks",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "photon/photon-Prefix.pch";
 				INFOPLIST_FILE = "photon/photon-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "gov.cdc.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.cdc.iiu.mmwrexpress;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
