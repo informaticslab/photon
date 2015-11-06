@@ -14,7 +14,6 @@
 @import AVFoundation;
 @import ImageIO;
 
-#import <Pushwoosh/PushNotificationManager.h>
 
 @implementation AppDelegate
 
