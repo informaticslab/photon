@@ -76,19 +76,58 @@ KeywordMO *selectedKeyword;
     
     // search setup
     self.isSearching = NO;
-    self.searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
-    
-    [self.searchDisplayController initWithSearchBar:self.searchBar contentsController:self];
-    self.searchDisplayController.delegate = self;
-    self.searchDisplayController.searchResultsDataSource = self;
-    self.searchDisplayController.searchResultsDelegate = self;
-    self.tableView.tableHeaderView = self.searchDisplayController.searchBar;
-    
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.searchController.searchResultsUpdater = self;
+    self.searchController.delegate = self;
+    self.searchController.dimsBackgroundDuringPresentation = YES;
+    self.searchController.hidesNavigationBarDuringPresentation = NO;
+    self.searchController.searchBar.delegate = self;
+    self.tableView.tableHeaderView = self.searchController.searchBar;
+    self.definesPresentationContext = NO;
+
     [APP_MGR.splitVM searchStart];
     
+}
+
+-(void)willPresentSearchController:(UISearchController *)searchController
+{
     
+    self.searchController.searchBar.hidden = NO;
+    //[self.tableView addSubview:self.searchController.searchBar];
+
+
+}
+
+- (void)didPresentSearchController:(UISearchController *)searchController
+{
+   // searchController.searchResultsController.view.hidden = NO;
+    self.isSearching = YES;
+    searchResults = [allKeywords copy];
+    [self.tableView reloadData];
+    NSLog(@"Presenting search controller");
+}
+
+-(void)didDismissSearchController:(UISearchController *)searchController
+{
+    self.isSearching = NO;
+    [self.tableView reloadData];
+    NSLog(@"Dismissing search controller");
+
     
 }
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController
+{
+
+    NSString *searchString = searchController.searchBar.text;
+    [self filterContentForSearchText:searchString
+                               scope:[[self.searchController.searchBar scopeButtonTitles]
+                                      objectAtIndex:[self.searchController.searchBar
+                                                     selectedScopeButtonIndex]]];
+
+    [self.tableView reloadData];
+}
+
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -99,9 +138,6 @@ KeywordMO *selectedKeyword;
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     [APP_MGR.splitVM searchStart];
-    
-
-    
     
 }
 
@@ -190,10 +226,12 @@ KeywordMO *selectedKeyword;
     return 1;
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
-    if (tableView == self.searchDisplayController.searchResultsTableView)
+
+    // if (tableView == self.searchDisplayController.searchResultsTableView)
+    if (self.isSearching)
         return [searchResults count];
     
     // Return the number of rows in the section.
@@ -206,7 +244,8 @@ KeywordMO *selectedKeyword;
     static NSString *CellIdentifier = @"KeywordsCell";
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     // Configure the cell...
-    if (tableView == self.searchDisplayController.searchResultsTableView)
+    //if (tableView == self.searchDisplayController.searchResultsTableView)
+    if (self.isSearching)
         cell.textLabel.text = ((KeywordMO *)searchResults[[indexPath row]]).text;
     else
         cell.textLabel.text = ((KeywordMO *)allKeywords[[indexPath row]]).text;
@@ -240,21 +279,8 @@ KeywordMO *selectedKeyword;
     if (fetchedObjects == nil) {
         DebugLog(@"Issues Manager has no stored keywords.");
     }
-    
-    
     searchResults = fetchedObjects;
 
-}
-
--(BOOL)searchDisplayController:(UISearchDisplayController *)controller
-shouldReloadTableForSearchString:(NSString *)searchString
-{
-    [self filterContentForSearchText:searchString
-                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
-                                      objectAtIndex:[self.searchDisplayController.searchBar
-                                                     selectedScopeButtonIndex]]];
-    
-    return YES;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -262,7 +288,8 @@ shouldReloadTableForSearchString:(NSString *)searchString
     
     // Navigation logic may go here. Create and push another view controller.
     // [self.navigationController pushViewController:detailViewController animated:YES];
-    if (tableView == self.searchDisplayController.searchResultsTableView)
+    //if (tableView == self.searchDisplayController.searchResultsTableView)
+    if (self.isSearching)
         selectedKeyword = searchResults[[indexPath row]];
     else
         selectedKeyword = allKeywords[[indexPath row]];

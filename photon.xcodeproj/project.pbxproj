@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		374063FC1BE81943005D4B77 /* Pushwoosh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374063FB1BE81943005D4B77 /* Pushwoosh.framework */; };
+		374031C71BED682F00765200 /* Pushwoosh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374063FB1BE81943005D4B77 /* Pushwoosh.framework */; };
 		374063FE1BE81B78005D4B77 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 374063FD1BE81B78005D4B77 /* libz.tbd */; };
 		374064001BE81B8B005D4B77 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 374063FF1BE81B8B005D4B77 /* libstdc++.tbd */; };
 		A61466E418F7148B00DB0099 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A61466E318F7148B00DB0099 /* Reachability.m */; };
@@ -207,10 +207,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				374031C71BED682F00765200 /* Pushwoosh.framework in Frameworks */,
 				374064001BE81B8B005D4B77 /* libstdc++.tbd in Frameworks */,
 				374063FE1BE81B78005D4B77 /* libz.tbd in Frameworks */,
 				A647B05A18CA1FEC0081F760 /* CoreData.framework in Frameworks */,
-				374063FC1BE81943005D4B77 /* Pushwoosh.framework in Frameworks */,
 				A6D6AFEF185B5E1400F37E23 /* Social.framework in Frameworks */,
 				A62A1A151823C9C7006A62B3 /* CoreGraphics.framework in Frameworks */,
 				A62A1A171823C9C7006A62B3 /* UIKit.framework in Frameworks */,
@@ -702,10 +702,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/photon/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/photon/Frameworks";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "photon/photon-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
@@ -731,10 +728,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/photon/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/photon/Frameworks";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "photon/photon-Prefix.pch";
 				INFOPLIST_FILE = "photon/photon-Info.plist";

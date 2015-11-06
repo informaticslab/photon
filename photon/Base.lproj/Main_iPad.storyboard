@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2rV-5Q-mUE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2rV-5Q-mUE">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -13,15 +13,18 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Uwh-gw-Bfr">
                         <rect key="frame" x="0.0" y="64" width="320" height="655"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IssueArticlesCell" id="yzb-SM-wg1">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yzb-SM-wg1" id="9vK-FO-cfX">
-                                    <rect key="frame" x="0.0" y="0.0" width="273" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="273" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <accessibility key="accessibilityConfiguration" hint="">
                                     <accessibilityTraits key="traits" none="YES"/>
                                     <bool key="isElement" value="NO"/>
@@ -37,6 +40,7 @@
                     <navigationItem key="navigationItem" title="MMWR Articles" id="T1L-FS-2Qr"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="PYt-Om-xws">
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <connections>
                             <action selector="refresh:" destination="w6h-OD-rQb" eventType="valueChanged" id="KPf-KM-3aF"/>
                         </connections>
@@ -44,7 +48,7 @@
                     <connections>
                         <segue destination="IAr-lY-2gS" kind="replace" identifier="pushContentPageIpadViews" splitViewControllerTargetIndex="1" id="WhT-qN-xq9"/>
                         <segue destination="agv-o0-Y9V" kind="modal" identifier="modalFullArticle" modalPresentationStyle="pageSheet" id="2Za-UK-tFB"/>
-                        <segue destination="NsL-dn-fNK" kind="modal" identifier="displayEulaSegue" modalPresentationStyle="formSheet" animates="NO" id="6FL-Pm-J5C"/>
+                        <segue destination="NsL-dn-fNK" kind="modal" identifier="displayEulaSegue" animates="NO" modalPresentationStyle="formSheet" id="6FL-Pm-J5C"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9BA-vN-P1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -58,10 +62,12 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FF7-kR-bnE">
                         <rect key="frame" x="0.0" y="64" width="320" height="655"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="bE6-iA-Kbl">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <animations/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
                                 <outlet property="delegate" destination="seA-bz-DGV" id="SbS-hh-sr3"/>
@@ -72,15 +78,18 @@
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D9R-9O-xnJ" id="I6E-BI-jqE">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" id="zsx-9S-q3V"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="i3k-cr-Gfg">
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <connections>
                             <action selector="refresh:" destination="seA-bz-DGV" eventType="valueChanged" id="2VK-EA-Y9E"/>
                         </connections>
@@ -110,15 +119,18 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="w7B-5V-sli">
                         <rect key="frame" x="0.0" y="64" width="320" height="655"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="KeywordArticlesCell" id="nPL-Kh-Mfl">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nPL-Kh-Mfl" id="7vE-kz-3A9">
-                                    <rect key="frame" x="0.0" y="0.0" width="273" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="273" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -149,9 +161,11 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ipad_known_icon" translatesAutoresizingMaskIntoConstraints="NO" id="584-Dy-lpt">
                                 <rect key="frame" x="20" y="84" width="38" height="38"/>
+                                <animations/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="jHH-DP-CJN">
                                 <rect key="frame" x="66" y="91" width="453" height="21"/>
+                                <animations/>
                                 <attributedString key="attributedText">
                                     <fragment content="What is already known?">
                                         <attributes>
@@ -165,6 +179,7 @@
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="9OP-ME-cnK">
                                 <rect key="frame" x="66" y="290" width="453" height="21"/>
+                                <animations/>
                                 <attributedString key="attributedText">
                                     <fragment content="What is added by this report?">
                                         <attributes>
@@ -178,9 +193,10 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hl9-mZ-D9x">
                                 <rect key="frame" x="20" y="121" width="663" height="144"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                    <accessibilityTraits key="traits" staticText="YES"/>
                                 </accessibility>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -196,12 +212,14 @@
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ipad_added_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ikK-eu-3GF">
                                 <rect key="frame" x="20" y="282" width="38" height="38"/>
+                                <animations/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANr-Cc-vfy">
                                 <rect key="frame" x="20" y="328" width="663" height="144"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                    <accessibilityTraits key="traits" staticText="YES"/>
                                 </accessibility>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -217,9 +235,11 @@
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ipad_implications_icon" translatesAutoresizingMaskIntoConstraints="NO" id="6FQ-xd-nnu">
                                 <rect key="frame" x="20" y="494" width="38" height="38"/>
+                                <animations/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="bGx-Rk-heL">
                                 <rect key="frame" x="66" y="502" width="453" height="21"/>
+                                <animations/>
                                 <attributedString key="attributedText">
                                     <fragment content="What are the implications for public health practice?">
                                         <attributes>
@@ -233,9 +253,10 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYi-zc-Tce">
                                 <rect key="frame" x="20" y="540" width="663" height="144"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                    <accessibilityTraits key="traits" staticText="YES"/>
                                 </accessibility>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -251,9 +272,10 @@
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0E-oZ-Wc7">
                                 <rect key="frame" x="20" y="16" width="663" height="58"/>
+                                <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                    <accessibilityTraits key="traits" staticText="YES"/>
                                 </accessibility>
                                 <attributedString key="attributedText">
                                     <fragment content="10-01-13, Vol 44, Issue 32, Pages 145-148">
@@ -267,6 +289,7 @@
                             </textView>
                             <containerView alpha="0.49999999999999961" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UN7-bL-OhY">
                                 <rect key="frame" x="0.0" y="0.0" width="703" height="704"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -274,6 +297,7 @@
                                 </connections>
                             </containerView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZNC-9X-86n"/>
@@ -283,7 +307,7 @@
                         <outlet property="txtvArticleTitle" destination="S0E-oZ-Wc7" id="Z3J-nD-SN2"/>
                         <outlet property="txtvImplicationsText" destination="yYi-zc-Tce" id="c4R-uw-2sH"/>
                         <outlet property="txtvKnownText" destination="Hl9-mZ-D9x" id="q8T-B5-zH3"/>
-                        <segue destination="NsL-dn-fNK" kind="modal" identifier="displayEulaSegue" modalPresentationStyle="formSheet" animates="NO" id="R5g-MU-xge"/>
+                        <segue destination="NsL-dn-fNK" kind="modal" identifier="displayEulaSegue" animates="NO" modalPresentationStyle="formSheet" id="R5g-MU-xge"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ax-rZ-xZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -306,6 +330,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="aaN-6s-Sw1">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -326,6 +351,7 @@
                     <tabBarItem key="tabBarItem" title="Articles" image="issue_tab_icon_active" id="7q8-WN-SUQ"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translucent="NO" id="4iP-k4-a7k">
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -363,6 +389,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="OMQ-rk-var">
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
@@ -382,6 +409,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="pJA-cP-ltM">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -403,6 +431,7 @@
                     <view key="view" contentMode="scaleToFill" id="yYw-8b-FjS">
                         <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -426,6 +455,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAW-NJ-ruO">
                                 <rect key="frame" x="82" y="282" width="237" height="35"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.57647058819999997" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Double tap to open full article in web view"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
@@ -439,9 +469,10 @@
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsO-T5-dda">
                                 <rect key="frame" x="20" y="64" width="360" height="113"/>
+                                <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                    <accessibilityTraits key="traits" staticText="YES"/>
                                 </accessibility>
                                 <attributedString key="attributedText">
                                     <fragment content="10-01-13, Vol 44, Issue 32, Pages 145-148">
@@ -455,9 +486,10 @@
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLc-vQ-dCy">
                                 <rect key="frame" x="60" y="218" width="280" height="38"/>
+                                <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                    <accessibilityTraits key="traits" staticText="YES"/>
                                 </accessibility>
                                 <attributedString key="attributedText">
                                     <fragment content="10-01-13, Vol 44, Issue 32, Pages 145-148">
@@ -471,9 +503,10 @@
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTZ-nb-fXc">
                                 <rect key="frame" x="60" y="187" width="280" height="37"/>
+                                <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                    <accessibilityTraits key="traits" staticText="YES"/>
                                 </accessibility>
                                 <attributedString key="attributedText">
                                     <fragment content="10-01-13, Vol 44, Issue 32, Pages 145-148">
@@ -487,6 +520,7 @@
                             </textView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5xF-u1-Vlt">
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
+                                <animations/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="5sr-zY-30y"/>
                                     <barButtonItem title="Done" id="Wko-T9-aJp">
@@ -497,6 +531,7 @@
                                 </items>
                             </toolbar>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="qnZ-zg-BCB"/>
@@ -528,6 +563,7 @@
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xUF-HE-zXE">
                                 <rect key="frame" x="139" y="32" width="123" height="29"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="123" id="OmD-Ts-V1B"/>
                                 </constraints>
@@ -541,6 +577,7 @@
                             </segmentedControl>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZU-CU-5ia" userLabel="Help View">
                                 <rect key="frame" x="40" y="85" width="320" height="400"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="dgR-M2-GmC" kind="embed" id="fGQ-fb-sp2"/>
@@ -548,6 +585,7 @@
                             </containerView>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="npO-TM-Bre" userLabel="About View">
                                 <rect key="frame" x="40" y="85" width="320" height="400"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="PtR-WM-DuH" kind="embed" id="R57-8b-kLR"/>
@@ -555,6 +593,7 @@
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M90-tL-1SC">
                                 <rect key="frame" x="115" y="499" width="171" height="30"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="171" id="M49-FX-cop"/>
                                 </constraints>
@@ -566,6 +605,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="GZU-CU-5ia" firstAttribute="centerX" secondItem="M90-tL-1SC" secondAttribute="centerX" id="GJS-El-Q7f"/>
@@ -615,11 +655,13 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="about_icon" translatesAutoresizingMaskIntoConstraints="NO" id="oZE-Fl-ui3">
                                 <rect key="frame" x="25" y="7" width="61" height="60"/>
+                                <animations/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QbQ-W0-JQy">
                                 <rect key="frame" x="94" y="15" width="178" height="30"/>
+                                <animations/>
                                 <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                    <accessibilityTraits key="traits" staticText="YES"/>
                                 </accessibility>
                                 <attributedString key="attributedText">
                                     <fragment content="About MMWR Express">
@@ -634,15 +676,17 @@
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version 0.2.5 Build 4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m36-aV-q1J">
                                 <rect key="frame" x="94" y="42" width="148" height="21"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="puH-Td-keE">
                                 <rect key="frame" x="0.0" y="73" width="320" height="301"/>
+                                <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                    <accessibilityTraits key="traits" staticText="YES"/>
                                 </accessibility>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -690,6 +734,7 @@ If you have any questions about the app, please contact either the MMWR staff at
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                             </textView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
@@ -717,11 +762,13 @@ If you have any questions about the app, please contact either the MMWR staff at
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help_header_icon" translatesAutoresizingMaskIntoConstraints="NO" id="eO2-xi-GDG">
                                 <rect key="frame" x="47" y="14" width="33" height="28"/>
+                                <animations/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="46r-DC-J0D">
                                 <rect key="frame" x="88" y="13" width="192" height="30"/>
+                                <animations/>
                                 <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                    <accessibilityTraits key="traits" staticText="YES"/>
                                 </accessibility>
                                 <attributedString key="attributedText">
                                     <fragment content="Help for MMWR Express">
@@ -739,11 +786,13 @@ If you have any questions about the app, please contact either the MMWR staff at
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help_content_iPad" translatesAutoresizingMaskIntoConstraints="NO" id="bLS-gx-3yO">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1132"/>
+                                        <animations/>
                                         <accessibility key="accessibilityConfiguration">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
                                     </imageView>
                                 </subviews>
+                                <animations/>
                                 <constraints>
                                     <constraint firstItem="bLS-gx-3yO" firstAttribute="leading" secondItem="Myg-vG-pE1" secondAttribute="leading" id="34J-FR-16V"/>
                                     <constraint firstAttribute="bottom" secondItem="bLS-gx-3yO" secondAttribute="bottom" constant="-969" id="iey-ND-5Mc"/>
@@ -752,6 +801,7 @@ If you have any questions about the app, please contact either the MMWR staff at
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eO2-xi-GDG" firstAttribute="leading" secondItem="KHv-Fr-Py0" secondAttribute="leading" constant="47" id="73R-RX-qH7"/>
@@ -784,15 +834,17 @@ If you have any questions about the app, please contact either the MMWR staff at
                         <viewControllerLayoutGuide type="bottom" id="SyB-Zt-wJz"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uOd-mm-Rul">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B7N-FC-fMj">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="724"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="724"/>
+                                <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhR-l1-Cud">
-                                <rect key="frame" x="0.0" y="724" width="768" height="44"/>
+                                <rect key="frame" x="0.0" y="724" width="1024" height="44"/>
+                                <animations/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="dGI-9H-zKJ"/>
                                     <barButtonItem systemItem="done" id="6Gs-vF-1bE">
@@ -803,9 +855,11 @@ If you have any questions about the app, please contact either the MMWR staff at
                                 </items>
                             </toolbar>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="sE2-Yo-EiC">
-                                <rect key="frame" x="374" y="352" width="20" height="20"/>
+                                <rect key="frame" x="502" y="352" width="20" height="20"/>
+                                <animations/>
                             </activityIndicatorView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="B7N-FC-fMj" secondAttribute="trailing" id="IAJ-ha-rHV"/>
@@ -843,11 +897,13 @@ If you have any questions about the app, please contact either the MMWR staff at
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q4g-RF-HKE">
                                 <rect key="frame" x="0.0" y="143" width="540" height="433"/>
+                                <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
                             </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vZ3-kt-gCj">
                                 <rect key="frame" x="0.0" y="576" width="540" height="44"/>
+                                <animations/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="EMq-NL-pWG"/>
                                     <barButtonItem title="I Agree" id="8WS-sN-QFV">
@@ -859,12 +915,14 @@ If you have any questions about the app, please contact either the MMWR staff at
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eula_icon" translatesAutoresizingMaskIntoConstraints="NO" id="FTw-jY-Ofg">
                                 <rect key="frame" x="132" y="75" width="35" height="35"/>
+                                <animations/>
                                 <accessibility key="accessibilityConfiguration" label="MMWR Express Agreement"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0qY-6E-2nk">
                                 <rect key="frame" x="175" y="78" width="233" height="30"/>
+                                <animations/>
                                 <accessibility key="accessibilityConfiguration" label="MMWR Express Agreement">
-                                    <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                                    <accessibilityTraits key="traits" staticText="YES"/>
                                 </accessibility>
                                 <attributedString key="attributedText">
                                     <fragment content="MMWR Express Agreement">
@@ -879,14 +937,17 @@ If you have any questions about the app, please contact either the MMWR staff at
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ipad_detail_navbar" translatesAutoresizingMaskIntoConstraints="NO" id="23u-ZV-bKk">
                                 <rect key="frame" x="0.0" y="0.0" width="540" height="53"/>
+                                <animations/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Agreement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttJ-Sh-PlJ">
                                 <rect key="frame" x="186" y="20" width="168" height="21"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
@@ -911,11 +972,6 @@ If you have any questions about the app, please contact either the MMWR staff at
         <image name="issue_tab_icon_active" width="25" height="25"/>
         <image name="search_tab_inactive" width="25" height="25"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
-    </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="WhT-qN-xq9"/>
         <segue reference="2Za-UK-tFB"/>

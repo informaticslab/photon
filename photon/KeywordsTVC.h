@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 
 
-@interface KeywordsTVC : UITableViewController<UISearchDisplayDelegate>
+@interface KeywordsTVC : UITableViewController<UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate>
 
 - (IBAction)refresh:(id)sender;
 
 @property(strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property BOOL isSearching;
 
+@property (strong, nonatomic) UISearchController *searchController;
 
 
 @end
