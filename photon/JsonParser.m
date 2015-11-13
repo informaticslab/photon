@@ -91,13 +91,14 @@ int implicationsFound = 0;
         // add article info
         currArticle = [versionParser parseArticleJson:articleJsonBlob];
         
-        // get content version
+        // get content version and set article object version
         contentVer = [versionParser parseContentVersionJson:articleJsonBlob];
+        currArticle.version = contentVer;
         
         // get collection of tags for currrent article
         tags = [versionParser parseTagsJson:articleJsonBlob];
         
-        [APP_MGR.issuesMgr newArticle:currArticle inIssue:currIssue withTags:tags version:contentVer];
+        [APP_MGR.issuesMgr newArticle:currArticle inIssue:currIssue withTags:tags];
         
     }
 
@@ -170,14 +171,14 @@ int implicationsFound = 0;
         // add article info
         currArticle = [versionParser parseArticleJson:articleJsonBlob];
         
-        // get content version
+        // get content version and store it on article object
         contentVer = [versionParser parseContentVersionJson:articleJsonBlob];
         currArticle.version = contentVer;
         
         // get collection of tags for currrent article
         tags = [versionParser parseTagsJson:articleJsonBlob];
         
-        [APP_MGR.issuesMgr newArticle:currArticle inIssue:currIssue withTags:tags version:contentVer];
+        [APP_MGR.issuesMgr newArticle:currArticle inIssue:currIssue withTags:tags];
         
     }
     [APP_MGR.issuesMgr reloadData];

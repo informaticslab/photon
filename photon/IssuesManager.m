@@ -53,75 +53,6 @@ NSManagedObjectContext *context;
     
 }
 
--(void)getAllKeywords
-{
-    
-    NSFetchRequest *fetchRequest = [[model fetchRequestTemplateForName:@"GetAllKeywords"] copy];
-    
-    // Specify how the fetched objects should be sorted
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"text"
-                                                 ascending:YES];
-    [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
-    
-    NSError *error = nil;
-    NSArray *fetchedKeywords = [APP_MGR.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    if ([fetchedKeywords count] == 0) {
-        DebugLog(@"Issues Manager has no stored keywords.");
-    }
-    
-    self.keywords = fetchedKeywords;
-    
-}
-
-// this method was written to remove the duplicate tags that occur due to a bug in the very first
-// release in the Apple App Store, version 1.0.0.
--(void)removeDuplicateKeywords
-{
-    BOOL foundDups = NO;
-    NSString *lastDuplicateKeyword = @"";
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSInteger duplicateKeywordsRemoved = [defaults integerForKey:@"RemoveKeywordDuplicatesV1"];
-    
-    // return if duplicates have been removed
-    if (duplicateKeywordsRemoved == 1)
-        return;
-
-    
-    // go through all the keywords that were loaded at init
-    // and check for duplicates
-    for (KeywordMO *currKeyword in self.keywords) {
-        
-        KeywordSearchResults *kwSearchResults = [[KeywordSearchResults alloc] initAndSearchForKeyword:currKeyword.text];
-        
-        // if keyword is duplicate and we have already merged them than delete KeywordMO
-        if ([currKeyword.text isEqualToString:lastDuplicateKeyword]) {
-            [context deleteObject:currKeyword];
-        }
-        
-        
-        // if keyword found more than once, remove duplicates and set flag
-        else if (kwSearchResults.fetchCount > 1 ) {
-            DebugLog(@"Issues Manager found duplicate keywords for keyword = %@.", currKeyword.text);
-
-            [kwSearchResults mergeDuplicateKeywords];
-            foundDups = YES;
-            lastDuplicateKeyword = currKeyword.text;
-        }
-        
-    }
-    
-    // if we found dups than refresh keyword collection
-    if (foundDups)
-        [self getAllKeywords];
-    
-    // set flag indicating remove duplicates has been run
-    [defaults setInteger:1 forKey:@"RemoveKeywordDuplicatesV1"];
-    [defaults synchronize];
-    
-
-}
-
 -(void)reloadData
 {
     
@@ -267,7 +198,7 @@ NSManagedObjectContext *context;
 }
 
 
--(void)newArticle:(FeedArticle *)article inIssue:(Issue *)issue withTags:(NSArray *)tags version:(NSInteger)ver
+-(void)newArticle:(FeedArticle *)article inIssue:(Issue *)issue withTags:(NSArray *)tags
 {
 
     IssueMO *storedIssue = nil;
@@ -289,9 +220,11 @@ NSManagedObjectContext *context;
     } else {
         
         storedArticle = [storedIssue getArticleWithTitle:article.title];
+        NSInteger storedVersion = storedArticle.version.integerValue;
+        
         
         // check if version number is greater than current version
-        if (ver > storedArticle.version.integerValue ) {
+        if (article.version > storedVersion ) {
             
             // create new article object and replace the old with new
             [self updateArticle:storedArticle withArticle:article];
@@ -316,6 +249,101 @@ NSManagedObjectContext *context;
 
 
 #pragma mark - Keyword methods
+-(void)getAllKeywords
+{
+    
+    NSFetchRequest *fetchRequest = [[model fetchRequestTemplateForName:@"GetAllKeywords"] copy];
+    
+    // Specify how the fetched objects should be sorted
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"text"
+                                                                   ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
+    
+    NSError *error = nil;
+    NSArray *fetchedKeywords = [APP_MGR.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if ([fetchedKeywords count] == 0) {
+        DebugLog(@"Issues Manager has no stored keywords.");
+    }
+    
+    self.keywords = fetchedKeywords;
+    
+}
+
+// case insensitive keyword search
+-(KeywordMO *)getKeywordWithText:(NSString *)searchText
+{
+    NSDictionary *substitutionDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                            searchText, @"TEXT", nil];
+    
+    NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"GetKeywordsWithText" substitutionVariables:substitutionDictionary];    
+    NSError *error = nil;
+    NSArray *matchedKeywords = [context executeFetchRequest:fetchRequest error:&error];
+    
+    if ([matchedKeywords count] == 0) {
+        DebugLog(@"Issues Manager has no keywords matching text: %@", searchText);
+        return nil;
+    }
+    else if([matchedKeywords count] == 1)
+        return (KeywordMO *)[matchedKeywords objectAtIndex:0];
+    else {
+        DebugLog(@"Issues Manager has no keywords matching text: %@", searchText);
+        return nil;
+    }
+    
+    
+}
+
+
+// this method was written to remove the duplicate tags that occur due to a bug in the very first
+// release in the Apple App Store, version 1.0.0.
+-(void)removeDuplicateKeywords
+{
+    BOOL foundDups = NO;
+    NSString *lastDuplicateKeyword = @"";
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger duplicateKeywordsRemoved = [defaults integerForKey:@"RemoveKeywordDuplicatesV1"];
+    
+    // return if duplicates have been removed
+    if (duplicateKeywordsRemoved == 1)
+        return;
+    
+    
+    // go through all the keywords that were loaded at init
+    // and check for duplicates
+    for (KeywordMO *currKeyword in self.keywords) {
+        
+        KeywordSearchResults *kwSearchResults = [[KeywordSearchResults alloc] initAndSearchForKeyword:currKeyword.text];
+        
+        // if keyword is duplicate and we have already merged them than delete KeywordMO
+        if ([currKeyword.text isEqualToString:lastDuplicateKeyword]) {
+            [context deleteObject:currKeyword];
+        }
+        
+        
+        // if keyword found more than once, remove duplicates and set flag
+        else if (kwSearchResults.fetchCount > 1 ) {
+            DebugLog(@"Issues Manager found duplicate keywords for keyword = %@.", currKeyword.text);
+            
+            [kwSearchResults mergeDuplicateKeywords];
+            foundDups = YES;
+            lastDuplicateKeyword = currKeyword.text;
+        }
+        
+    }
+    
+    // if we found dups than refresh keyword collection
+    if (foundDups)
+        [self getAllKeywords];
+    
+    // set flag indicating remove duplicates has been run
+    [defaults setInteger:1 forKey:@"RemoveKeywordDuplicatesV1"];
+    [defaults synchronize];
+    
+    
+}
+
+
 -(KeywordMO *)createNewKeyword:(NSString *)text inArticle:(ArticleMO *)article
 {
     
@@ -334,8 +362,10 @@ NSManagedObjectContext *context;
 {
     KeywordMO *keywordMO = [self getKeywordWithText:keyword];
     
-    if (keywordMO == nil)
+    if (keywordMO == nil) {
         DebugLog(@"No KeywordMO with text %@ exists.", keyword);
+        return;
+    }
     
     [keywordMO removeArticlesObject:article];
     
@@ -350,8 +380,8 @@ NSManagedObjectContext *context;
 -(void)updatedKeywords:(NSArray *)latestKeywords fromArticle:(ArticleMO *)article
 {
 
+    KeywordMO *keywordMO = nil;
     NSMutableSet *feedKeywords = [[NSMutableSet alloc] initWithArray:latestKeywords];
-    
     
     // get existing stored keywords for article
     NSMutableSet *storedKeywords = [self keywordsForArticle:article];
@@ -359,8 +389,15 @@ NSManagedObjectContext *context;
     // add new keywords from feed
     // if they are not already in stored keywords
     for (NSString *currKeyword in feedKeywords) {
+        // do quick case sensitive search first
         if ([storedKeywords containsObject:currKeyword])
             continue;
+        // do case insensitive search and store new case formatted keyword if match
+        else if ((keywordMO = [self getKeywordWithText:currKeyword]) != nil) {
+            keywordMO.text = currKeyword;
+            [APP_MGR saveContext];
+            continue;
+        }
         else
             [self createNewKeyword:currKeyword inArticle:article];
         
@@ -402,43 +439,21 @@ NSManagedObjectContext *context;
 
 }
 
--(KeywordMO *)getKeywordWithText:(NSString *)text
-{
-    
-    NSUInteger keywordCount = 0;
-    
-    NSDictionary *substitutionDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                                            text, @"TEXT", nil];
-    
-    NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"GetKeywordsWithText" substitutionVariables:substitutionDictionary];
-    
-    NSError *error = nil;
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    
-    keywordCount = [fetchedObjects count];
-    if (keywordCount == 0) {
-        DebugLog(@"Issues Manager has no keyword with text = %@.", text);
-        return nil;
-    }
-    else if (keywordCount == 1)
-        return (KeywordMO *)[fetchedObjects objectAtIndex:0];
-    else
-        return nil;
-    
-}
-
 -(void)addArticleKeywords:(NSArray *)tags forArticle:(ArticleMO *)article
 {
     KeywordMO *keywordMO;
     
+    // for all 
     for (NSString *tag in tags) {
         
+        // do case insensisive search
         if ((keywordMO = [self getKeywordWithText:tag]) == nil) {
             keywordMO = [self createNewKeyword:tag inArticle:article];
         
         } else {
             [keywordMO addArticlesObject:article];
-            
+            // always store the lastest case of keyword text
+            keywordMO.text = tag;
         }
     }
 }

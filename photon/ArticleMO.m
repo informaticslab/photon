@@ -23,4 +23,11 @@
 @dynamic issue;
 @dynamic tags;
 
+-(NSString *)debugDescription
+{
+    
+    NSString *returnString = [NSString stringWithFormat:@"%@ %@", self.title, self.version];
+    return returnString;
+
+}
 @end
