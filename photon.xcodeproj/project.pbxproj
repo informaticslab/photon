@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		372CDAA31BFA8348006D65C8 /* addArticle.json in Resources */ = {isa = PBXBuildFile; fileRef = 372CDAA21BFA8348006D65C8 /* addArticle.json */; };
+		372CDAA51BFB8EE7006D65C8 /* addArticle.json in Resources */ = {isa = PBXBuildFile; fileRef = 372CDAA41BFB8EE7006D65C8 /* addArticle.json */; };
 		373CA3821BFA7114005B5DF1 /* testParsingJsonBlobs.m in Sources */ = {isa = PBXBuildFile; fileRef = 373CA3811BFA7114005B5DF1 /* testParsingJsonBlobs.m */; };
 		374031C71BED682F00765200 /* Pushwoosh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374063FB1BE81943005D4B77 /* Pushwoosh.framework */; };
 		374063FE1BE81B78005D4B77 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 374063FD1BE81B78005D4B77 /* libz.tbd */; };
@@ -86,7 +86,7 @@
 
 /* Begin PBXFileReference section */
 		3716854018A50CDE0025B32F /* ArticleSelectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleSelectionDelegate.h; sourceTree = "<group>"; };
-		372CDAA21BFA8348006D65C8 /* addArticle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = addArticle.json; path = ../../../addArticle.json; sourceTree = "<group>"; };
+		372CDAA41BFB8EE7006D65C8 /* addArticle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = addArticle.json; sourceTree = "<group>"; };
 		373CA3811BFA7114005B5DF1 /* testParsingJsonBlobs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testParsingJsonBlobs.m; sourceTree = "<group>"; };
 		374063FB1BE81943005D4B77 /* Pushwoosh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pushwoosh.framework; path = photon/Frameworks/Pushwoosh.framework; sourceTree = "<group>"; };
 		374063FD1BE81B78005D4B77 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -395,7 +395,7 @@
 		A62A1A3A1823C9C7006A62B3 /* photonTests */ = {
 			isa = PBXGroup;
 			children = (
-				372CDAA21BFA8348006D65C8 /* addArticle.json */,
+				372CDAA41BFB8EE7006D65C8 /* addArticle.json */,
 				A62A1A401823C9C7006A62B3 /* photonTests.m */,
 				373CA3811BFA7114005B5DF1 /* testParsingJsonBlobs.m */,
 				A62A1A3B1823C9C7006A62B3 /* Supporting Files */,
@@ -510,7 +510,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				372CDAA31BFA8348006D65C8 /* addArticle.json in Resources */,
+				372CDAA51BFB8EE7006D65C8 /* addArticle.json in Resources */,
 				A62A1A3F1823C9C7006A62B3 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
