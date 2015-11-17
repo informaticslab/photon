@@ -84,10 +84,13 @@ NSManagedObjectContext *context;
         DebugLog(@"Issues Manager has no stored keywords.");
     }
     
-    
     self.keywords = fetchedObjects;
     
-    
+}
+
+-(void)clearAllData
+{
+    [APP_MGR clearDatabase];
     
 }
 
@@ -232,6 +235,8 @@ NSManagedObjectContext *context;
             
         }
     }
+    
+    [APP_MGR saveContext];
 
 }
 

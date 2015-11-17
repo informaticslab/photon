@@ -72,13 +72,26 @@ static AppManager *sharedAppManager = nil;
         
         self.issuesMgr = [[IssuesManager alloc  ]init];
         self.jsonParser = [[JsonParser alloc] init];
-        if (_issuesMgr.hasIssues == NO) {
-            [self.jsonParser loadAndPersistPreloadData];
+        
+        if (isRunningTests() == NO) {
+            if (_issuesMgr.hasIssues == NO) {
+                [self.jsonParser loadAndPersistPreloadData];
+            }
         }
         
     }
 	return self;
 
+}
+
+static BOOL isRunningTests(void)
+{
+    NSDictionary* environment = [[NSProcessInfo processInfo] environment];
+    NSString* injectBundle = environment[@"XCInjectBundle"];
+    NSString* pathExtension = [injectBundle pathExtension];
+    
+    return ([pathExtension isEqualToString:@"octest"] ||
+            [pathExtension isEqualToString:@"xctest"]);
 }
 
 -(BOOL)isDeviceIpad
@@ -160,16 +173,22 @@ static AppManager *sharedAppManager = nil;
     
 }
 
+-(void)clearDatabase
+{
+    
+    [self deleteAllObjects:@"ArticleMO"];
+    [self deleteAllObjects:@"KeywordMO"];
+    [self deleteAllObjects:@"IssueMO"];
+    
+}
+
 
 -(void)processDebugSettings
 {
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"DeleteDatabaseOnRestart"]) {
-        
-        [self deleteAllObjects:@"ArticleMO"];
-        [self deleteAllObjects:@"KeywordMO"];
-        [self deleteAllObjects:@"IssueMO"];
-        
-    }
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"DeleteDatabaseOnRestart"])
+        [self clearDatabase];
+
 }
 
 

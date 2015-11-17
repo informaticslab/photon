@@ -42,5 +42,6 @@
 -(NSString *)getDeviceSystemVersion;
 -(NSString *)getDeviceSystemName;
 -(NSString *)getAppVersion;
+-(void)clearDatabase;
 
 @end

@@ -29,5 +29,6 @@
 -(void)updateFromFeed;
 -(void)parseAndPersistTestData;
 -(void)loadAndPersistPreloadData;
+-(void)parseAndPersistJsonBlobs:(NSArray *)jsonBlobs;
 
 @end

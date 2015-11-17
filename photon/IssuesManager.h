@@ -26,5 +26,6 @@
 -(void)newArticle:(FeedArticle *)article inIssue:(Issue *)issue withTags:(NSArray *)tags;
 -(IssueMO *)getSortedIssueForIndex:(NSUInteger)index;
 -(void)reloadData;
+-(void)clearAllData;
 
 @end
