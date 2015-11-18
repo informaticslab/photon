@@ -30,10 +30,10 @@
     
     // Override point for customization after application launch.
     // Let the device know we want to receive push notifications
-    UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
-    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
-    [application registerUserNotificationSettings:settings];
-    [application registerForRemoteNotifications];
+//    UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+//    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+//    [application registerUserNotificationSettings:settings];
+//    [application registerForRemoteNotifications];
     
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil];
     [[UINavigationBar appearance] setTitleTextAttributes:attributes];
@@ -209,7 +209,6 @@
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     [[PushNotificationManager pushManager] handlePushRegistrationFailure:error];
 }
-
 // system push notifications callback, delegate to pushManager
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [[PushNotificationManager pushManager] handlePushReceived:userInfo];
