@@ -14,11 +14,11 @@
 +(NSInteger)integerValueForKey:(NSString *)key inJson:(NSDictionary *)json
 {
     NSString *integerStr = [json valueForKey:key];
-    if (integerStr == nil) {
-        DebugLog(@"JSON key:%@ not found", key);
-    } else {
-        DebugLog(@"JSON key:%@ has integer value:%@", key, integerStr);
-    }
+//    if (integerStr == nil) {
+//        DebugLog(@"JSON key:%@ not found", key);
+//    } else {
+//        DebugLog(@"JSON key:%@ has integer value:%@", key, integerStr);
+//    }
     
     NSInteger integerValue = [integerStr integerValue];
     
@@ -29,11 +29,11 @@
 +(NSString *)stringValueForKey:(NSString *)key inJson:(NSDictionary *)json
 {
     NSString *strValue = [json valueForKey:key];
-    if (strValue == nil) {
-        DebugLog(@"JSON key:%@ not found", key);
-    } else {
-        DebugLog(@"JSON key:%@ has string value:%@", key, strValue);
-    }
+//    if (strValue == nil) {
+//        DebugLog(@"JSON key:%@ not found", key);
+//    } else {
+//        DebugLog(@"JSON key:%@ has string value:%@", key, strValue);
+//    }
     return strValue;
     
 }

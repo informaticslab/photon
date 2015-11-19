@@ -13,6 +13,7 @@
 		374031C71BED682F00765200 /* Pushwoosh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374063FB1BE81943005D4B77 /* Pushwoosh.framework */; };
 		374063FE1BE81B78005D4B77 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 374063FD1BE81B78005D4B77 /* libz.tbd */; };
 		374064001BE81B8B005D4B77 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 374063FF1BE81B8B005D4B77 /* libstdc++.tbd */; };
+		375A18201BFD35C2001AFB08 /* versionedArticleDifferentKeywords.json in Resources */ = {isa = PBXBuildFile; fileRef = 375A181F1BFD35C2001AFB08 /* versionedArticleDifferentKeywords.json */; };
 		A61466E418F7148B00DB0099 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A61466E318F7148B00DB0099 /* Reachability.m */; };
 		A61CA795186231ED00891E00 /* RSSEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CA794186231ED00891E00 /* RSSEntry.m */; };
 		A61CA7C41863235800891E00 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CA7B61863235800891E00 /* GTMNSString+HTML.m */; };
@@ -93,6 +94,7 @@
 		374063FB1BE81943005D4B77 /* Pushwoosh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pushwoosh.framework; path = photon/Frameworks/Pushwoosh.framework; sourceTree = "<group>"; };
 		374063FD1BE81B78005D4B77 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		374063FF1BE81B8B005D4B77 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		375A181F1BFD35C2001AFB08 /* versionedArticleDifferentKeywords.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = versionedArticleDifferentKeywords.json; sourceTree = "<group>"; };
 		37C4300318B7DE2800CCDE8A /* PopoverViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopoverViewDelegate.h; sourceTree = "<group>"; };
 		A61466E218F7148B00DB0099 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		A61466E318F7148B00DB0099 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 		A62A1A3A1823C9C7006A62B3 /* photonTests */ = {
 			isa = PBXGroup;
 			children = (
+				375A181F1BFD35C2001AFB08 /* versionedArticleDifferentKeywords.json */,
 				372CDAA41BFB8EE7006D65C8 /* addArticle.json */,
 				372CDAA61BFB8FEE006D65C8 /* versionedArticleSameKeywords.json */,
 				A62A1A401823C9C7006A62B3 /* photonTests.m */,
@@ -513,6 +516,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				375A18201BFD35C2001AFB08 /* versionedArticleDifferentKeywords.json in Resources */,
 				372CDAA71BFB8FEE006D65C8 /* versionedArticleSameKeywords.json in Resources */,
 				372CDAA51BFB8EE7006D65C8 /* addArticle.json in Resources */,
 				A62A1A3F1823C9C7006A62B3 /* InfoPlist.strings in Resources */,

@@ -15,4 +15,12 @@
 @dynamic text;
 @dynamic articles;
 
+-(NSString *)debugDescription
+{
+    
+    NSString *returnString = [NSString stringWithFormat:@"Keyword text=%@", self.text];
+    return returnString;
+    
+}
+
 @end

@@ -20,6 +20,8 @@
 
 @implementation photonTests
 
+BOOL hasDataBeenCleared = NO;
+
 #define expectOneIssue() XCTAssert([self.issuesMgr.sortedIssues count] == 1, @"The number of sorted issues is not equal to 1.");
 
 - (void)setUp
@@ -106,5 +108,47 @@
     
     
 }
+
+//  loads two versions of same article and tests that last version is only one saved
+- (void)testVersionedArticleDifferentKeywords
+{
+    
+    [self parseAndPersistTestFile:@"versionedArticleDifferentKeywords" ofType:@"json"];
+    NSString *expectedTitle = @"Versioned Article - Different Keywords";
+    NSString *expectedKnown = @"V2 already known";
+    NSString *expectedAdded = @"V2 added by report";
+    NSString *expectedImplications = @"V2 implications";
+    
+    expectOneIssue();
+    IssueMO *issue = self.issuesMgr.sortedIssues[0];
+    XCTAssert(issue !=nil, @"The first issue does not exist in the sorted issues set.");
+    
+    
+    NSArray *articles = [issue.articles allObjects];
+    XCTAssertEqual([articles count], 1, @"The number of articles in the issue does not equal 1.");
+    XCTAssertNotNil(articles);
+    ArticleMO *article = [articles objectAtIndex:0];
+    
+    // check title
+    XCTAssertTrue([article.title isEqualToString:expectedTitle], @"Expect article title:%@ --- Retrieved title:%@", expectedTitle, article.title);
+    XCTAssertTrue([article.already_known isEqualToString:expectedKnown], @"Expect already_known field:%@ --- Retrieved already_known:%@", expectedKnown, article.already_known);
+    XCTAssertTrue([article.added_by_report isEqualToString:expectedAdded], @"Expect added_by_report field:%@ --- Retrieved added_by_report:%@", expectedAdded, article.added_by_report);
+    XCTAssertTrue([article.implications isEqualToString:expectedImplications], @"Expect article implications field:%@ --- Retrieved implications:%@", expectedImplications, article.implications);
+    
+    for (KeywordMO *keyword in self.issuesMgr.keywords) {
+        XCTAssertFalse([keyword.text isEqualToString:@"Pregnancy"], @"The keyword Prenancy should not exist in any article.");
+
+    }
+    
+}
+
+
+- (void)testParseBundleArticlesPerformance {
+    [self measureBlock:^{
+        [self.jsonParser loadAndPersistPreloadData];
+
+    }];
+}
+
 
 @end

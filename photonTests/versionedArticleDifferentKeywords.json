@@ -1,0 +1,3 @@
+[{"issue-date":"3000-12-12","issue-vol":"99","issue-no":"88","title":"Versioned Article - Different Keywords","already_known":"V1 already known","added_by_report":"V1 added by report","implications":"V1 implications","tags":[{"tag":"Gestational Weight"},{"tag":"Pregnancy"}],"url":"http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6443a3.htm?s_cid=mm6443a3_w","content-ver":"1","schema-ver":"1"},
+{"issue-date":"3000-12-12","issue-vol":"99","issue-no":"88","title":"Versioned Article - Different Keywords","already_known":"V2 already known","added_by_report":"V2 added by report","implications":"V2 implications","tags":[{"tag":"Gestational Weight"}],"url":"http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6443a3.htm?s_cid=mm6443a3_w","content-ver":"2","schema-ver":"1"}
+]

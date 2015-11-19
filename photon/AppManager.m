@@ -165,7 +165,7 @@ static BOOL isRunningTests(void)
     
     for (NSManagedObject *managedObject in items) {
     	[_managedObjectContext deleteObject:managedObject];
-    	DebugLog(@"%@ object deleted", entityDescription);
+//    	DebugLog(@"%@ object deleted", entityDescription);
     }
     if (![_managedObjectContext save:&error]) {
     	DebugLog(@"Error deleting %@ - error:%@",entityDescription,error);
