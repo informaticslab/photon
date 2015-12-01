@@ -13,6 +13,8 @@
 		374031C71BED682F00765200 /* Pushwoosh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374063FB1BE81943005D4B77 /* Pushwoosh.framework */; };
 		374063FE1BE81B78005D4B77 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 374063FD1BE81B78005D4B77 /* libz.tbd */; };
 		374064001BE81B8B005D4B77 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 374063FF1BE81B8B005D4B77 /* libstdc++.tbd */; };
+		3752D3761C0C723E0083E761 /* SupportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3752D3751C0C723E0083E761 /* SupportVC.m */; };
+		3752D3781C0C72E90083E761 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3752D3771C0C72E90083E761 /* MessageUI.framework */; };
 		375A18201BFD35C2001AFB08 /* versionedArticleDifferentKeywords.json in Resources */ = {isa = PBXBuildFile; fileRef = 375A181F1BFD35C2001AFB08 /* versionedArticleDifferentKeywords.json */; };
 		A61466E418F7148B00DB0099 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A61466E318F7148B00DB0099 /* Reachability.m */; };
 		A61CA795186231ED00891E00 /* RSSEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CA794186231ED00891E00 /* RSSEntry.m */; };
@@ -94,6 +96,9 @@
 		374063FB1BE81943005D4B77 /* Pushwoosh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pushwoosh.framework; path = photon/Frameworks/Pushwoosh.framework; sourceTree = "<group>"; };
 		374063FD1BE81B78005D4B77 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		374063FF1BE81B8B005D4B77 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		3752D3741C0C723E0083E761 /* SupportVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupportVC.h; sourceTree = "<group>"; };
+		3752D3751C0C723E0083E761 /* SupportVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportVC.m; sourceTree = "<group>"; };
+		3752D3771C0C72E90083E761 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		375A181F1BFD35C2001AFB08 /* versionedArticleDifferentKeywords.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = versionedArticleDifferentKeywords.json; sourceTree = "<group>"; };
 		37C4300318B7DE2800CCDE8A /* PopoverViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopoverViewDelegate.h; sourceTree = "<group>"; };
 		A61466E218F7148B00DB0099 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -213,6 +218,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3752D3781C0C72E90083E761 /* MessageUI.framework in Frameworks */,
 				374031C71BED682F00765200 /* Pushwoosh.framework in Frameworks */,
 				374064001BE81B8B005D4B77 /* libstdc++.tbd in Frameworks */,
 				374063FE1BE81B78005D4B77 /* libz.tbd in Frameworks */,
@@ -282,6 +288,7 @@
 		A62A1A111823C9C7006A62B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3752D3771C0C72E90083E761 /* MessageUI.framework */,
 				374063FF1BE81B8B005D4B77 /* libstdc++.tbd */,
 				374063FD1BE81B78005D4B77 /* libz.tbd */,
 				374063FB1BE81943005D4B77 /* Pushwoosh.framework */,
@@ -381,6 +388,8 @@
 				A62A1A191823C9C7006A62B3 /* Supporting Files */,
 				A69AFEB718944C47009F0A48 /* V1JsonParser.h */,
 				A69AFEB818944C47009F0A48 /* V1JsonParser.m */,
+				3752D3741C0C723E0083E761 /* SupportVC.h */,
+				3752D3751C0C723E0083E761 /* SupportVC.m */,
 			);
 			path = photon;
 			sourceTree = "<group>";
@@ -539,6 +548,7 @@
 				A6A919DE182A9B8700F1CE7D /* FeedArticle.m in Sources */,
 				A69AFEBD1895468A009F0A48 /* JsonParser.m in Sources */,
 				A6B295D2187352CB00BEF24D /* ContentVC.m in Sources */,
+				3752D3761C0C723E0083E761 /* SupportVC.m in Sources */,
 				A61CA7C41863235800891E00 /* GTMNSString+HTML.m in Sources */,
 				A6DD5B65196C7B6400CC6B04 /* KeywordSearchResults.m in Sources */,
 				A639A337184E6496008D3BF6 /* ShareActivityProvider.m in Sources */,
@@ -759,7 +769,6 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/photon.app/photon";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
@@ -782,7 +791,6 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/photon.app/photon";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);

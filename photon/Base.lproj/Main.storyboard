@@ -368,17 +368,13 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kUg-aG-yUh">
-                                <rect key="frame" x="99" y="20" width="123" height="29"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rCP-fh-Dj4" userLabel="Support View">
+                                <rect key="frame" x="0.0" y="62" width="320" height="297"/>
                                 <animations/>
-                                <segments>
-                                    <segment title="About"/>
-                                    <segment title="Help"/>
-                                </segments>
                                 <connections>
-                                    <action selector="segCtrlValueChanged:" destination="0lD-We-Pzq" eventType="valueChanged" id="kXJ-JU-dNT"/>
+                                    <segue destination="HTo-pn-7QL" kind="embed" id="Xrf-q8-2S0"/>
                                 </connections>
-                            </segmentedControl>
+                            </containerView>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hoP-cY-4G0" userLabel="Help View">
                                 <rect key="frame" x="0.0" y="62" width="320" height="297"/>
                                 <animations/>
@@ -392,7 +388,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="DBY-ED-WLm" kind="embed" id="Q66-6a-ZW8"/>
+                                    <segue destination="DBY-ED-WLm" kind="embed" id="ahz-lm-yQr"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAo-M0-gKe">
@@ -405,23 +401,39 @@
                                     <action selector="btnReadUserAgreementTouchUp:" destination="0lD-We-Pzq" eventType="touchUpInside" id="1dE-Qt-1dj"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kUg-aG-yUh">
+                                <rect key="frame" x="20" y="20" width="280" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="About"/>
+                                    <segment title="Help"/>
+                                    <segment title="Support"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segCtrlValueChanged:" destination="0lD-We-Pzq" eventType="valueChanged" id="kXJ-JU-dNT"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SAo-M0-gKe" firstAttribute="top" secondItem="TfW-bG-e53" secondAttribute="bottom" constant="14" id="4Wl-sp-M1n"/>
                             <constraint firstItem="SAo-M0-gKe" firstAttribute="leading" secondItem="oVb-yl-z3k" secondAttribute="leading" constant="74" id="6ku-wi-2qc"/>
-                            <constraint firstItem="kUg-aG-yUh" firstAttribute="top" secondItem="oVb-yl-z3k" secondAttribute="top" constant="20" symbolic="YES" id="AW7-rS-cE9"/>
                             <constraint firstAttribute="trailing" secondItem="TfW-bG-e53" secondAttribute="trailing" id="Arr-Nk-Lcm"/>
+                            <constraint firstItem="kUg-aG-yUh" firstAttribute="leading" secondItem="oVb-yl-z3k" secondAttribute="leadingMargin" constant="4" id="D4l-MP-kv7"/>
                             <constraint firstItem="hoP-cY-4G0" firstAttribute="centerX" secondItem="SAo-M0-gKe" secondAttribute="centerX" id="DP5-0g-f36"/>
+                            <constraint firstItem="TfW-bG-e53" firstAttribute="bottom" secondItem="rCP-fh-Dj4" secondAttribute="bottom" id="F8K-c5-O0Q"/>
                             <constraint firstItem="TfW-bG-e53" firstAttribute="leading" secondItem="hoP-cY-4G0" secondAttribute="leading" id="LJM-x3-9Rg"/>
-                            <constraint firstItem="kUg-aG-yUh" firstAttribute="leading" secondItem="oVb-yl-z3k" secondAttribute="leading" constant="99" id="LUE-Zp-1wN"/>
-                            <constraint firstItem="kUg-aG-yUh" firstAttribute="centerX" secondItem="hoP-cY-4G0" secondAttribute="centerX" id="MdR-9e-pBY"/>
+                            <constraint firstItem="hoP-cY-4G0" firstAttribute="top" secondItem="rCP-fh-Dj4" secondAttribute="top" id="Nvv-66-GjM"/>
+                            <constraint firstItem="hoP-cY-4G0" firstAttribute="leading" secondItem="rCP-fh-Dj4" secondAttribute="leading" id="Oyx-7j-ZSn"/>
                             <constraint firstItem="TfW-bG-e53" firstAttribute="bottom" secondItem="hoP-cY-4G0" secondAttribute="bottom" id="R0n-dd-NpE"/>
                             <constraint firstItem="hoP-cY-4G0" firstAttribute="trailing" secondItem="TfW-bG-e53" secondAttribute="trailing" id="TYm-1J-x9H"/>
-                            <constraint firstItem="TfW-bG-e53" firstAttribute="top" secondItem="kUg-aG-yUh" secondAttribute="bottom" constant="14" id="ek5-85-Wds"/>
+                            <constraint firstItem="kUg-aG-yUh" firstAttribute="centerX" secondItem="rCP-fh-Dj4" secondAttribute="centerX" id="dS9-I5-y29"/>
                             <constraint firstItem="TfW-bG-e53" firstAttribute="top" secondItem="hoP-cY-4G0" secondAttribute="top" id="iaE-Sj-gsp"/>
+                            <constraint firstItem="kUg-aG-yUh" firstAttribute="centerX" secondItem="hoP-cY-4G0" secondAttribute="centerX" id="ntL-3s-bDa"/>
                             <constraint firstItem="TfW-bG-e53" firstAttribute="leading" secondItem="oVb-yl-z3k" secondAttribute="leading" id="o3a-bD-LHO"/>
+                            <constraint firstItem="kUg-aG-yUh" firstAttribute="top" secondItem="oVb-yl-z3k" secondAttribute="top" constant="20" symbolic="YES" id="u6U-s2-OJJ"/>
+                            <constraint firstItem="rCP-fh-Dj4" firstAttribute="top" secondItem="kUg-aG-yUh" secondAttribute="bottom" constant="14" id="y7R-A2-m5a"/>
                             <constraint firstItem="h7P-4N-aQD" firstAttribute="top" secondItem="SAo-M0-gKe" secondAttribute="bottom" constant="13" id="zIq-RQ-nwc"/>
                         </constraints>
                     </view>
@@ -430,12 +442,13 @@
                         <outlet property="helpVC" destination="hoP-cY-4G0" id="S5R-mP-R4E"/>
                         <outlet property="infoVC" destination="TfW-bG-e53" id="nbK-CY-J7i"/>
                         <outlet property="segCtrlHelpAbout" destination="kUg-aG-yUh" id="YfA-BY-CDv"/>
+                        <outlet property="supportVC" destination="rCP-fh-Dj4" id="YLd-ha-hvp"/>
                         <segue destination="YbN-ib-Nkw" kind="modal" identifier="displayEulaSegue" id="1Me-sS-qMG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tuc-nF-oHy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2663" y="-736"/>
+            <point key="canvasLocation" x="2668" y="-707"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vex-rW-GRa">
@@ -574,6 +587,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eEI-cB-lhf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="663" y="1027"/>
+        </scene>
+        <!--SupportVC-->
+        <scene sceneID="dTw-qG-6uT">
+            <objects>
+                <viewController id="HTo-pn-7QL" customClass="SupportVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="10K-nk-98f"/>
+                        <viewControllerLayoutGuide type="bottom" id="BN5-Ba-r6w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CZT-Gw-sba">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="297"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="haW-9x-62D">
+                                <rect key="frame" x="10" y="50" width="300" height="65"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" label="Text">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <attributedString key="attributedText">
+                                    <fragment content="If you have would like to report a problem with the app or ask for additional help, touch the Email Support button below.   ">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6u-M4-eFY">
+                                <rect key="frame" x="96" y="141" width="128" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Email Support"/>
+                                <connections>
+                                    <action selector="btnEmailSupportTouchUp:" destination="HTo-pn-7QL" eventType="touchUpInside" id="eoz-oS-Ag1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QbI-hL-cGU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fjc-ds-KO2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3344" y="-18.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6I9-Bv-QYa">
@@ -887,8 +948,8 @@ If you have any questions about the app, please contact either the MMWR staff at
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="QJk-cp-B2j"/>
         <segue reference="cPZ-Qk-bcg"/>
+        <segue reference="XfS-BQ-fbZ"/>
         <segue reference="sa5-ms-oeY"/>
         <segue reference="1Me-sS-qMG"/>
     </inferredMetricsTieBreakers>

@@ -28,17 +28,9 @@
     // Override point for customization after application launch.
     [AppManager singletonAppManager];
     
-    // Override point for customization after application launch.
-    // Let the device know we want to receive push notifications
-//    UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
-//    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
-//    [application registerUserNotificationSettings:settings];
-//    [application registerForRemoteNotifications];
-    
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil];
     [[UINavigationBar appearance] setTitleTextAttributes:attributes];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    [NSThread sleepForTimeInterval:0.25];
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         
@@ -200,19 +192,25 @@
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
+#pragma mark - Push Notification registration
+
 // system push notification registration success callback, delegate to pushManager
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     [[PushNotificationManager pushManager] handlePushRegistration:deviceToken];
 }
 
+
 // system push notification registration error callback, delegate to pushManager
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     [[PushNotificationManager pushManager] handlePushRegistrationFailure:error];
 }
+
+
 // system push notifications callback, delegate to pushManager
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [[PushNotificationManager pushManager] handlePushReceived:userInfo];
 }
+
 
 - (void) onPushAccepted:(PushNotificationManager *)pushManager withNotification:(NSDictionary *)pushNotification {
     NSLog(@"Push notification received");

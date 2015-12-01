@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIView *infoVC;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segCtrlHelpAbout;
 @property (weak, nonatomic) IBOutlet UIView *helpVC;
+@property (weak, nonatomic) IBOutlet UIView *supportVC;
+
 @property (weak, nonatomic) id <PopoverViewDelegate> popoverViewDelegate;
 
 - (IBAction)btnReadUserAgreementTouchUp:(id)sender;

@@ -24,6 +24,7 @@ static AppManager *sharedAppManager = nil;
 
 }
 
+
 + (id)allocWithZone:(NSZone *)zone {
 	@synchronized(self) {
 		if(sharedAppManager == nil)  {
@@ -34,6 +35,7 @@ static AppManager *sharedAppManager = nil;
 	return nil;
 }
 
+
 - (id)copyWithZone:(NSZone *)zone {
 	return self;
 }
@@ -43,7 +45,7 @@ static AppManager *sharedAppManager = nil;
     
 	if ((self = [super init]))
     {
-		self.appName = @"Photon";
+		self.appName = @"MMWR Express for iOS";
         self.agreedWithEula = FALSE;
         
         self.usageTracker = [[SiteCatalystController alloc] init];
@@ -55,7 +57,6 @@ static AppManager *sharedAppManager = nil;
         DebugLog(@"Device System Version = %@", [self getDeviceSystemVersion]);
         DebugLog(@"Device Model = %@", [self getDeviceModel]);
         
-//      self.tableFont = [UIFont boldSystemFontOfSize: 16];
         self.tableFont = [UIFont fontWithName:@"HelveticaNeue" size:16];
         self.textFont = [UIFont fontWithName:@"HelveticaNeue" size:15];
         
@@ -84,6 +85,7 @@ static AppManager *sharedAppManager = nil;
 
 }
 
+
 static BOOL isRunningTests(void)
 {
     NSDictionary* environment = [[NSProcessInfo processInfo] environment];
@@ -94,6 +96,7 @@ static BOOL isRunningTests(void)
             [pathExtension isEqualToString:@"xctest"]);
 }
 
+
 -(BOOL)isDeviceIpad
 {
     // Override point for customization after application launch.
@@ -103,17 +106,20 @@ static BOOL isRunningTests(void)
     return NO;
 }
 
+
 -(NSString *)getDeviceModel
 {
     UIDevice *device = [UIDevice currentDevice];
     return [device model];
 }
 
+
 -(NSString *)getDeviceSystemVersion
 {
     UIDevice *device = [UIDevice currentDevice];
     return [device systemVersion];
 }
+
 
 -(NSString *)getDeviceSystemName
 {
@@ -135,6 +141,7 @@ static BOOL isRunningTests(void)
     
 }
 
+
 //-(BOOL)isInternetReachable
 //{
 //    
@@ -154,6 +161,7 @@ static BOOL isRunningTests(void)
     
 }
 
+
 - (void) deleteAllObjects: (NSString *) entityDescription  {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:entityDescription inManagedObjectContext:_managedObjectContext];
@@ -172,6 +180,7 @@ static BOOL isRunningTests(void)
     }
     
 }
+
 
 -(void)clearDatabase
 {
@@ -225,6 +234,7 @@ static BOOL isRunningTests(void)
     
     
 }
+
 
 - (void)saveContext
 {

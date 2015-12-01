@@ -28,6 +28,7 @@
     self.navigationItem.rightBarButtonItem = doneButton;
     _infoVC.hidden = NO;
     _helpVC.hidden = YES;
+    _supportVC.hidden = YES;
     [self.view bringSubviewToFront:_infoVC];
 
 
@@ -65,11 +66,18 @@
     if (_segCtrlHelpAbout.selectedSegmentIndex == 0) {
         _infoVC.hidden = NO;
         _helpVC.hidden = YES;
+        _supportVC.hidden = YES;
         [self.view bringSubviewToFront:_infoVC];
     } else if (_segCtrlHelpAbout.selectedSegmentIndex == 1) {
         _helpVC.hidden = NO;
         _infoVC.hidden = YES;
+        _supportVC.hidden = YES;
         [self.view bringSubviewToFront:_helpVC];
+    } else if (_segCtrlHelpAbout.selectedSegmentIndex == 2) {
+        _supportVC.hidden = NO;
+        _helpVC.hidden = YES;
+        _infoVC.hidden = YES;
+        [self.view bringSubviewToFront:_supportVC];
     }
 
 }
