@@ -311,8 +311,6 @@
 				A62A1A221823C9C7006A62B3 /* AppDelegate.m */,
 				A6A919D018299BB500F1CE7D /* AppManager.h */,
 				A6A919CF18299BB500F1CE7D /* AppManager.m */,
-				A6A919DC182A9B8700F1CE7D /* FeedArticle.h */,
-				A6A919DD182A9B8700F1CE7D /* FeedArticle.m */,
 				A6635AC9182D625400E600EA /* ArticleDetails.h */,
 				A6635ACA182D625400E600EA /* ArticleDetails.m */,
 				A6CA277A18CE6976003713BA /* ArticleMO.h */,
@@ -329,6 +327,8 @@
 				A6A919D118299BB500F1CE7D /* Debug.h */,
 				A6AC5FA918D794D3000D0832 /* EulaVC.h */,
 				A6AC5FA818D794D3000D0832 /* EulaVC.m */,
+				A6A919DC182A9B8700F1CE7D /* FeedArticle.h */,
+				A6A919DD182A9B8700F1CE7D /* FeedArticle.m */,
 				A621F0D9184538D20011D0C5 /* FullArticleVC.h */,
 				A621F0DA184538D20011D0C5 /* FullArticleVC.m */,
 				A66FB23B184D2BB0008F2AB7 /* HelpVC.h */,
@@ -385,11 +385,11 @@
 				A649A73C18882C0E00BDF9C2 /* SplitViewManager.m */,
 				A6635ACF182D7A0D00E600EA /* SubjectViewController.h */,
 				A6635AD0182D7A0D00E600EA /* SubjectViewController.m */,
-				A62A1A191823C9C7006A62B3 /* Supporting Files */,
-				A69AFEB718944C47009F0A48 /* V1JsonParser.h */,
-				A69AFEB818944C47009F0A48 /* V1JsonParser.m */,
 				3752D3741C0C723E0083E761 /* SupportVC.h */,
 				3752D3751C0C723E0083E761 /* SupportVC.m */,
+				A69AFEB718944C47009F0A48 /* V1JsonParser.h */,
+				A69AFEB818944C47009F0A48 /* V1JsonParser.m */,
+				A62A1A191823C9C7006A62B3 /* Supporting Files */,
 			);
 			path = photon;
 			sourceTree = "<group>";

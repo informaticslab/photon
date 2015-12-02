@@ -17,21 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if ([MFMailComposeViewController canSendMail])
-    {
-        self.mail = [[MFMailComposeViewController alloc] init];
-        
-        self.mail.mailComposeDelegate = self;
-        [self.mail setSubject:@"App Support Request: MMWR Express for iOS"];
-        NSString *messageBody = [NSString stringWithFormat:@"\n\n\nApp name:  MMWR Express for iOS \nApp version:  %@  \nDevice model:  %@ \nSystem name:  %@ \nSystem version:  %@", [APP_MGR getAppVersion], [APP_MGR getDeviceModel], [APP_MGR getDeviceSystemName], [APP_MGR getDeviceSystemVersion]];
-        [self.mail setMessageBody:messageBody isHTML:NO];
-        [self.mail setToRecipients:@[@"gsledbetter@gmail.com"]];
-        
-    }
-    else
-    {
-        NSLog(@"This device cannot send email");
-    }
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -78,6 +63,23 @@
 */
 
 - (IBAction)btnEmailSupportTouchUp:(id)sender {
+
+    if ([MFMailComposeViewController canSendMail])
+    {
+        self.mail = [[MFMailComposeViewController alloc] init];
+        
+        self.mail.mailComposeDelegate = self;
+        [self.mail setSubject:@"App Support Request: MMWR Express for iOS"];
+        NSString *messageBody = [NSString stringWithFormat:@"\n\n\nApp name:  MMWR Express for iOS \nApp version:  %@  \nDevice model:  %@ \nSystem name:  %@ \nSystem version:  %@", [APP_MGR getAppVersion], [APP_MGR getDeviceModel], [APP_MGR getDeviceSystemName], [APP_MGR getDeviceSystemVersion]];
+        [self.mail setMessageBody:messageBody isHTML:NO];
+        [self.mail setToRecipients:@[@"informaticslab@cdc.gov"]];
+        
+    }
+    else
+    {
+        NSLog(@"This device cannot send email");
+    }
+
     
     [self presentViewController:self.mail animated:YES completion:NULL];
 

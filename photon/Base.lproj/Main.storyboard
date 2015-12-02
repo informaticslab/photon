@@ -150,7 +150,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="250" translatesAutoresizingMaskIntoConstraints="NO" id="V8M-Ek-bKP">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="250" translatesAutoresizingMaskIntoConstraints="NO" id="V8M-Ek-bKP">
                                 <rect key="frame" x="60" y="32" width="250" height="49"/>
                                 <animations/>
                                 <attributedString key="attributedText">
@@ -164,14 +164,14 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bluebox_subheader_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ogy-Uh-eiX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bluebox_subheader_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ogy-Uh-eiX">
                                 <rect key="frame" x="17" y="41" width="35" height="35"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="Pvp-xF-mam"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0ul-ym-V9Y">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ul-ym-V9Y">
                                 <rect key="frame" x="0.0" y="84" width="18" height="376"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.70196078429999997" green="0.78039215689999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -179,7 +179,7 @@
                                     <constraint firstAttribute="width" constant="18" id="8JH-o1-6aq"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubz-db-p6p">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubz-db-p6p">
                                 <rect key="frame" x="10" y="84" width="300" height="376"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -626,6 +626,27 @@
                                     <action selector="btnEmailSupportTouchUp:" destination="HTo-pn-7QL" eventType="touchUpInside" id="eoz-oS-Ag1"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XIs-ZD-5Eb">
+                                <rect key="frame" x="64" y="20" width="218" height="30"/>
+                                <animations/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                </accessibility>
+                                <attributedString key="attributedText">
+                                    <fragment content="Support for MMWR Express">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="support_header_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Fw0-gC-LpU">
+                                <rect key="frame" x="23" y="21" width="33" height="28"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -941,6 +962,7 @@ If you have any questions about the app, please contact either the MMWR staff at
         <image name="issue_tab_icon_inactive" width="25" height="25"/>
         <image name="nav_bar" width="320" height="64"/>
         <image name="search_tab_inactive" width="25" height="25"/>
+        <image name="support_header_icon" width="33" height="28"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
