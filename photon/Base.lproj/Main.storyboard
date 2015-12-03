@@ -150,7 +150,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="250" translatesAutoresizingMaskIntoConstraints="NO" id="V8M-Ek-bKP">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="250" translatesAutoresizingMaskIntoConstraints="NO" id="V8M-Ek-bKP">
                                 <rect key="frame" x="60" y="32" width="250" height="49"/>
                                 <animations/>
                                 <attributedString key="attributedText">
@@ -164,14 +164,14 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bluebox_subheader_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ogy-Uh-eiX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bluebox_subheader_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ogy-Uh-eiX">
                                 <rect key="frame" x="17" y="41" width="35" height="35"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="Pvp-xF-mam"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ul-ym-V9Y">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0ul-ym-V9Y">
                                 <rect key="frame" x="0.0" y="84" width="18" height="376"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.70196078429999997" green="0.78039215689999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -179,7 +179,7 @@
                                     <constraint firstAttribute="width" constant="18" id="8JH-o1-6aq"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubz-db-p6p">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubz-db-p6p">
                                 <rect key="frame" x="10" y="84" width="300" height="376"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -724,41 +724,121 @@
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
                                 <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">Welcome to the MMWR Express mobile app — providing fast access to the blue summary boxes in MMWR's Weekly Report.  
- 
-The Morbidity and Mortality Weekly Report (MMWR) series is prepared by the Centers for Disease Control and Prevention (CDC). Often called, “the voice of CDC,” the MMWR series is the agency’s primary vehicle for scientific publication of timely, reliable, authoritative, accurate, objective, and useful public health information and recommendations. 
- 
-</string>
+                                    <fragment content="Welcome to the ">
                                         <attributes>
                                             <font key="NSFont" size="11" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="Summaries are searchable by specific MMWR article ">
+                                    <fragment content="MMWR">
                                         <attributes>
-                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
-                                            <color key="NSColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="11" name="HelveticaNeue-MediumItalic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" Express mobile app — providing fast access to the blue summary boxes in the ">
+                                        <attributes>
                                             <font key="NSFont" size="11" name="HelveticaNeue"/>
-                                            <font key="NSOriginalFont" size="11" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="MMWR">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="HelveticaNeue-MediumItalic"/>
+                                            <font key="NSOriginalFont" size="11" name="HelveticaNeue-MediumItalic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">or by specific subject (e.g., salmonella).  
-</string>
+                                        <string key="content"> Weekly Report. 
+
+The </string>
                                         <attributes>
                                             <font key="NSFont" size="11" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Morbidity and Mortality Weekly Report">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="HelveticaNeue-MediumItalic"/>
+                                            <font key="NSOriginalFont" size="11" name="HelveticaNeue-MediumItalic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" (">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="MMWR">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="HelveticaNeue-MediumItalic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=") series is prepared by the Centers for Disease Control and Prevention (CDC). Often called, “the voice of CDC,” the ">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="MMWR">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="HelveticaNeue-MediumItalic"/>
+                                            <font key="NSOriginalFont" size="11" name="HelveticaNeue-MediumItalic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">
-If you have any questions about the app, please contact either the MMWR staff at mmwrq@cdc.gov or the Informatics Innovation Unit staff at informaticslab@cdc.gov.       </string>
+                                        <string key="content"> series is the agency’s primary vehicle for scientific publication of timely, authoritative, and useful public health information and recommendations.
+
+Summaries are searchable by specific </string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="MMWR">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="HelveticaNeue-MediumItalic"/>
+                                            <font key="NSOriginalFont" size="11" name="HelveticaNeue-MediumItalic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> article or by specific subject (e.g., salmonella). 
+
+This application is a result of a collaboration between CDC's </string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="MMWR">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="HelveticaNeue-MediumItalic"/>
+                                            <font key="NSOriginalFont" size="11" name="HelveticaNeue-MediumItalic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> staff and the Informatics Innovation Unit (IIU) within the Division of Public Health Information Dissemination (DPHID).
+
+If you have any questions about the app, please contact either the </string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="MMWR">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="HelveticaNeue-MediumItalic"/>
+                                            <font key="NSOriginalFont" size="11" name="HelveticaNeue-MediumItalic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" staff at mmwrq@cdc.gov or the Informatics Innovation Unit staff at informaticslab@cdc.gov.      ">
                                         <attributes>
                                             <font key="NSFont" size="11" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
