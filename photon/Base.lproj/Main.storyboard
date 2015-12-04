@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P9Z-Eg-FiL" id="6Iq-BQ-dgR">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -88,7 +88,7 @@
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t99-TL-mjf" id="COM-g1-rc0">
-                                    <rect key="frame" x="0.0" y="0.0" width="273" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="273" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -507,10 +507,10 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IssueArticlesCell" id="8bE-bv-lGg">
-                                <rect key="frame" x="0.0" y="50" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="49.5" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8bE-bv-lGg" id="GWa-ZW-MeG">
-                                    <rect key="frame" x="0.0" y="0.0" width="273" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="273" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -688,11 +688,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="297"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="about_icon" translatesAutoresizingMaskIntoConstraints="NO" id="S4l-aG-biq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_icon" translatesAutoresizingMaskIntoConstraints="NO" id="S4l-aG-biq">
                                 <rect key="frame" x="25" y="13" width="61" height="60"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="61" id="cXD-US-fEk"/>
+                                </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jne-n6-eh2">
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jne-n6-eh2">
                                 <rect key="frame" x="94" y="21" width="178" height="30"/>
                                 <animations/>
                                 <accessibility key="accessibilityConfiguration" label="">
@@ -709,15 +712,15 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version 0.2.5 Build 4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xD-Zc-pD0">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 0.2.5 Build 4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xD-Zc-pD0">
                                 <rect key="frame" x="94" y="48" width="148" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2MU-se-Wgt">
-                                <rect key="frame" x="10" y="81" width="300" height="260"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2MU-se-Wgt">
+                                <rect key="frame" x="10" y="81" width="300" height="208"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="Text">
@@ -851,6 +854,22 @@ If you have any questions about the app, please contact either the </string>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="3xD-Zc-pD0" secondAttribute="trailing" constant="62" id="00R-5w-OaU"/>
+                            <constraint firstItem="S4l-aG-biq" firstAttribute="top" secondItem="GLJ-in-CvO" secondAttribute="bottom" constant="13" id="Di8-99-UqD"/>
+                            <constraint firstItem="2MU-se-Wgt" firstAttribute="top" secondItem="jne-n6-eh2" secondAttribute="bottom" constant="30" id="I2C-DA-nvh"/>
+                            <constraint firstItem="sUS-cU-MKi" firstAttribute="top" secondItem="2MU-se-Wgt" secondAttribute="bottom" constant="8" symbolic="YES" id="Jxv-7K-zxQ"/>
+                            <constraint firstItem="2MU-se-Wgt" firstAttribute="leading" secondItem="Ifg-fP-KY0" secondAttribute="leadingMargin" constant="-6" id="NF5-8K-9I3"/>
+                            <constraint firstItem="jne-n6-eh2" firstAttribute="top" secondItem="GLJ-in-CvO" secondAttribute="bottom" constant="21" id="Oh8-bX-MJp"/>
+                            <constraint firstItem="2MU-se-Wgt" firstAttribute="top" secondItem="3xD-Zc-pD0" secondAttribute="bottom" constant="12" id="P2Y-D5-0XD"/>
+                            <constraint firstItem="3xD-Zc-pD0" firstAttribute="top" secondItem="GLJ-in-CvO" secondAttribute="bottom" constant="48" id="Ueb-bx-hG3"/>
+                            <constraint firstItem="jne-n6-eh2" firstAttribute="leading" secondItem="3xD-Zc-pD0" secondAttribute="leading" id="VeR-IB-9Q7"/>
+                            <constraint firstItem="S4l-aG-biq" firstAttribute="leading" secondItem="Ifg-fP-KY0" secondAttribute="leadingMargin" constant="9" id="acF-Nm-oTM"/>
+                            <constraint firstItem="2MU-se-Wgt" firstAttribute="top" secondItem="S4l-aG-biq" secondAttribute="bottom" constant="8" symbolic="YES" id="etJ-GI-RYe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jne-n6-eh2" secondAttribute="trailing" constant="32" id="gXX-XW-Nu0"/>
+                            <constraint firstItem="jne-n6-eh2" firstAttribute="leading" secondItem="S4l-aG-biq" secondAttribute="trailing" constant="8" symbolic="YES" id="o7c-kL-NGV"/>
+                            <constraint firstItem="2MU-se-Wgt" firstAttribute="centerX" secondItem="Ifg-fP-KY0" secondAttribute="centerX" id="vFJ-d9-wGU"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <connections>
@@ -861,7 +880,7 @@ If you have any questions about the app, please contact either the </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuE-up-0eI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3302" y="-1069"/>
+            <point key="canvasLocation" x="3302" y="-1069.5"/>
         </scene>
         <!--HelpVC-->
         <scene sceneID="21A-8j-FqC">
