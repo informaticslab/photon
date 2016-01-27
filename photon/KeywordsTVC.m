@@ -142,10 +142,7 @@ KeywordMO *selectedKeyword;
 -(void)viewWillAppear:(BOOL)animated
 {
     
-    if (self.isSearching == YES)
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-    else
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     [APP_MGR.splitVM searchStart];
     
@@ -308,6 +305,8 @@ KeywordMO *selectedKeyword;
         selectedKeyword = allKeywords[[indexPath row]];
     
     [self performSegueWithIdentifier:@"pushKeywordArticles" sender:nil];
+    [self.searchController.searchBar resignFirstResponder];
+
     
 }
 

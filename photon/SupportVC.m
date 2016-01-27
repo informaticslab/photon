@@ -16,7 +16,10 @@
 
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+
+
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -67,6 +70,8 @@
     if ([MFMailComposeViewController canSendMail])
     {
         self.mail = [[MFMailComposeViewController alloc] init];
+        [self.mail.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName]];
+
         
         self.mail.mailComposeDelegate = self;
         [self.mail setSubject:@"App Support Request: MMWR Express for iOS"];
