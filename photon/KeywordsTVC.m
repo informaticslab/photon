@@ -78,16 +78,26 @@ KeywordMO *selectedKeyword;
     self.isSearching = NO;
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.searchController.searchResultsUpdater = self;
+    [self.searchController.searchBar sizeToFit];
+    self.tableView.tableHeaderView = self.searchController.searchBar;
+    
     self.searchController.delegate = self;
-    self.searchController.dimsBackgroundDuringPresentation = YES;
+    self.searchController.dimsBackgroundDuringPresentation = NO;
     self.searchController.hidesNavigationBarDuringPresentation = NO;
     self.searchController.searchBar.delegate = self;
-    self.tableView.tableHeaderView = self.searchController.searchBar;
-    self.definesPresentationContext = NO;
+//    self.definesPresentationContext = YES;
 
     [APP_MGR.splitVM searchStart];
     
 }
+
+
+#pragma mark - UISearchBarDelegate
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self.searchController.searchBar resignFirstResponder];
+}
+
 
 -(void)willPresentSearchController:(UISearchController *)searchController
 {
@@ -138,6 +148,9 @@ KeywordMO *selectedKeyword;
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     [APP_MGR.splitVM searchStart];
+    
+    self.searchController.searchBar.hidden = NO;
+
     
 }
 
@@ -304,6 +317,7 @@ KeywordMO *selectedKeyword;
     {
         KeywordArticlesTVC *keywordArticlesTVC = segue.destinationViewController;
         keywordArticlesTVC.keyword = selectedKeyword;
+        self.searchController.searchBar.hidden = YES;
     }
 }
 

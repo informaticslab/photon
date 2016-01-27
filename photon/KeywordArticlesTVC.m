@@ -80,7 +80,9 @@ NSArray *keywordArticles;
 //
 //    [APP_MGR.splitVM setSelectedArticle:_selectedArticle];
 //    [APP_MGR.splitVM searchEnd];
-//    
+//
+    
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated

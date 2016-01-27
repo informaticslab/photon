@@ -13,7 +13,6 @@
 
 - (IBAction)refresh:(id)sender;
 
-@property(strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property BOOL isSearching;
 
 @property (strong, nonatomic) UISearchController *searchController;
