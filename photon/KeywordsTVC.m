@@ -85,7 +85,8 @@ KeywordMO *selectedKeyword;
     self.searchController.dimsBackgroundDuringPresentation = NO;
     self.searchController.hidesNavigationBarDuringPresentation = NO;
     self.searchController.searchBar.delegate = self;
-//    self.definesPresentationContext = YES;
+    self.definesPresentationContext = YES;
+    self.extendedLayoutIncludesOpaqueBars = YES;
 
     [APP_MGR.splitVM searchStart];
     
