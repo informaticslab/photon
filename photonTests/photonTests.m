@@ -23,6 +23,7 @@
 BOOL hasDataBeenCleared = NO;
 
 #define expectOneIssue() XCTAssert([self.issuesMgr.sortedIssues count] == 1, @"The number of sorted issues is not equal to 1.");
+#define expectTwoIssues() XCTAssert([self.issuesMgr.sortedIssues count] == 2, @"The number of sorted issues is not equal to 2.");
 
 - (void)setUp
 {
@@ -141,6 +142,29 @@ BOOL hasDataBeenCleared = NO;
     }
     
 }
+
+
+//  loads two versions of same article and tests that last version is only one saved
+- (void)testUnknownAttribute
+{
+    
+    [self parseAndPersistTestFile:@"unknownAttribute" ofType:@"json"];
+    NSString *expectedResult = @"Test Article - Unknown Attribute";
+    
+    expectOneIssue();
+    IssueMO *issue = self.issuesMgr.sortedIssues[0];
+    XCTAssert(issue !=nil, @"The first issue does not exist in the sorted issues set.");
+    
+    
+    NSArray *articles = [issue.articles allObjects];
+    XCTAssertNotNil(articles);
+    XCTAssert([articles count] ==1, @"The number of articles in the issue does not equal 1.");
+    ArticleMO *savedArticle = [articles objectAtIndex:0];
+    XCTAssertTrue([savedArticle.title isEqualToString:expectedResult], @"Expect article title:%@ --- Retrieved title:%@", expectedResult, savedArticle.title);
+    
+}
+
+
 
 
 - (void)testParseBundleArticlesPerformance {
