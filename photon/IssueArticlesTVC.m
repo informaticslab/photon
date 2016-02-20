@@ -11,6 +11,7 @@
 #import "ShareActionSheet.h"
 #import "ContentPagesVC.h"
 #import "ContentPagesiPadVC.h"
+#import "ContentIphoneVC.h"
 #import "KeywordArticleDetailVC.h"
 #import "FullArticleVC.h"
 
@@ -333,7 +334,8 @@ bool didViewJustLoad;
         
     }
     else
-        [self performSegueWithIdentifier:@"pushContentPageViews" sender:nil];
+        //[self performSegueWithIdentifier:@"pushContentPageViews" sender:nil];
+        [self performSegueWithIdentifier:@"pushContentIphoneView" sender:nil];
     
     [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     [APP_MGR.splitVM searchEnd];
@@ -346,6 +348,11 @@ bool didViewJustLoad;
 {
     if([segue.identifier isEqualToString:@"pushContentPageViews"]) {
         ContentPagesVC *contentVC = segue.destinationViewController;
+        contentVC.article = _article;
+        contentVC.issue = _issue;
+    }
+    else if([segue.identifier isEqualToString:@"pushContentIphoneView"]) {
+        ContentIphoneVC *contentVC = segue.destinationViewController;
         contentVC.article = _article;
         contentVC.issue = _issue;
         

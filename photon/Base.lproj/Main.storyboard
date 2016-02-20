@@ -141,7 +141,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="250" translatesAutoresizingMaskIntoConstraints="NO" id="V8M-Ek-bKP">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="250" translatesAutoresizingMaskIntoConstraints="NO" id="V8M-Ek-bKP">
                                 <rect key="frame" x="60" y="32" width="250" height="49"/>
                                 <attributedString key="attributedText">
                                     <fragment content="What is already known?">
@@ -154,20 +154,20 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bluebox_subheader_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ogy-Uh-eiX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bluebox_subheader_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ogy-Uh-eiX">
                                 <rect key="frame" x="17" y="41" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="Pvp-xF-mam"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ul-ym-V9Y">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0ul-ym-V9Y">
                                 <rect key="frame" x="0.0" y="84" width="18" height="376"/>
                                 <color key="backgroundColor" red="0.70196078429999997" green="0.78039215689999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="18" id="8JH-o1-6aq"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubz-db-p6p">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubz-db-p6p">
                                 <rect key="frame" x="10" y="84" width="300" height="376"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -213,6 +213,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8WP-dL-qr7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2438" y="10"/>
+        </scene>
+        <!--Content IphoneVC-->
+        <scene sceneID="i0i-uw-SMZ">
+            <objects>
+                <viewController storyboardIdentifier="ContentIphoneVC" id="NIc-VT-iqm" customClass="ContentIphoneVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="za9-F5-sAF"/>
+                        <viewControllerLayoutGuide type="bottom" id="CTC-qa-98V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8tS-El-hCA">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9v-Gl-ES5">
+                                <rect key="frame" x="20" y="0.0" width="280" height="359"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Sk-Qx-AHf">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="944"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="944" id="C4r-Gy-iF6"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="XWS-I9-eD7" kind="embed" identifier="embedSummaryIphoneView" id="etO-Kt-o5b"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="7Sk-Qx-AHf" firstAttribute="centerX" secondItem="I9v-Gl-ES5" secondAttribute="centerX" id="HAq-nn-8Ha"/>
+                                    <constraint firstItem="7Sk-Qx-AHf" firstAttribute="top" secondItem="I9v-Gl-ES5" secondAttribute="top" id="QIa-Gl-6M6"/>
+                                    <constraint firstAttribute="bottom" secondItem="7Sk-Qx-AHf" secondAttribute="bottom" constant="-585" id="Zla-1Q-AMp"/>
+                                    <constraint firstAttribute="trailing" secondItem="7Sk-Qx-AHf" secondAttribute="trailing" id="tbM-Pa-iZ8"/>
+                                    <constraint firstItem="7Sk-Qx-AHf" firstAttribute="leading" secondItem="I9v-Gl-ES5" secondAttribute="leading" id="x5v-WB-h94"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I9v-Gl-ES5" firstAttribute="leading" secondItem="8tS-El-hCA" secondAttribute="leadingMargin" constant="4" id="cIv-6L-zwc"/>
+                            <constraint firstItem="I9v-Gl-ES5" firstAttribute="top" secondItem="za9-F5-sAF" secondAttribute="bottom" id="meG-Cg-M8W"/>
+                            <constraint firstItem="I9v-Gl-ES5" firstAttribute="centerX" secondItem="8tS-El-hCA" secondAttribute="centerX" id="qN2-PB-beS"/>
+                            <constraint firstItem="CTC-qa-98V" firstAttribute="top" secondItem="I9v-Gl-ES5" secondAttribute="bottom" constant="8" symbolic="YES" id="uX9-Hg-ArZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sIE-UQ-oSp">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="ftx-K4-fxU">
+                            <rect key="frame" x="77" y="7" width="166" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Full Article"/>
+                                <segment title="Summary"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="containerView" destination="7Sk-Qx-AHf" id="cYJ-gX-8pS"/>
+                        <outlet property="scrollView" destination="I9v-Gl-ES5" id="qv1-A0-Joz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ov6-LO-iFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3357" y="458"/>
         </scene>
         <!--Keyword Article DetailVC-->
         <scene sceneID="9ua-ch-mG7">
@@ -523,6 +585,7 @@
                         <segue destination="tIc-Ga-z3I" kind="push" identifier="pushContentPageViews" id="cPZ-Qk-bcg"/>
                         <segue destination="IYg-u6-pbr" kind="push" identifier="pushArticleDetails" id="sa5-ms-oeY"/>
                         <segue destination="YbN-ib-Nkw" kind="modal" identifier="displayEulaSegue" id="qDi-OO-8hr"/>
+                        <segue destination="NIc-VT-iqm" kind="push" identifier="pushContentIphoneView" id="Zo0-tv-bSu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Lj-Xt-J71" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1058,6 +1121,129 @@ IAoKA
             </objects>
             <point key="canvasLocation" x="2158" y="-1380"/>
         </scene>
+        <!--Summary IphoneVC-->
+        <scene sceneID="RMh-6s-VRf">
+            <objects>
+                <viewController id="XWS-I9-eD7" customClass="SummaryIphoneVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rz6-FD-cnN">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="944"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ipad_known_icon" translatesAutoresizingMaskIntoConstraints="NO" id="GLt-hY-6VC">
+                                <rect key="frame" x="0.0" y="11" width="38" height="38"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="TWw-8q-08E">
+                                <rect key="frame" x="40" y="251" width="232" height="38"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="What is added by this report?">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BW4-f6-Klc">
+                                <rect key="frame" x="0.0" y="303" width="272" height="289"/>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                </accessibility>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                            <font key="NSOriginalFont" size="15" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ipad_added_icon" translatesAutoresizingMaskIntoConstraints="NO" id="54F-VQ-PFs">
+                                <rect key="frame" x="0.0" y="242" width="38" height="38"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="875-vi-ieQ">
+                                <rect key="frame" x="0.0" y="57" width="272" height="144"/>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                </accessibility>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                            <font key="NSOriginalFont" size="15" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ipad_implications_icon" translatesAutoresizingMaskIntoConstraints="NO" id="wV1-8x-nMz">
+                                <rect key="frame" x="0.0" y="645" width="38" height="38"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="j4Y-K5-Zh2">
+                                <rect key="frame" x="61" y="616" width="199" height="79"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="What are the implications for public health practice?">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1z-aC-g3o">
+                                <rect key="frame" x="0.0" y="703" width="272" height="144"/>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                </accessibility>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                            <font key="NSOriginalFont" size="15" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="mAl-Qo-g7V">
+                                <rect key="frame" x="44" y="19" width="192" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="What is already known?">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="txtvAddedText" destination="BW4-f6-Klc" id="MyC-Jg-nX8"/>
+                        <outlet property="txtvImplicationsText" destination="s1z-aC-g3o" id="2cn-hy-PZe"/>
+                        <outlet property="txtvKnownText" destination="875-vi-ieQ" id="Hy6-6z-oMv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dk1-jJ-kkb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3877" y="458"/>
+        </scene>
     </scenes>
     <resources>
         <image name="about_icon" width="61" height="60"/>
@@ -1065,6 +1251,9 @@ IAoKA
         <image name="eula_icon" width="35" height="35"/>
         <image name="help_content_no_page_control" width="320" height="1250"/>
         <image name="help_header_icon" width="33" height="28"/>
+        <image name="ipad_added_icon" width="38" height="38"/>
+        <image name="ipad_implications_icon" width="38" height="38"/>
+        <image name="ipad_known_icon" width="38" height="38"/>
         <image name="issue_tab_icon_inactive" width="25" height="25"/>
         <image name="nav_bar" width="320" height="64"/>
         <image name="search_tab_inactive" width="25" height="25"/>

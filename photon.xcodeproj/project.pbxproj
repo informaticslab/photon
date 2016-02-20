@@ -16,6 +16,8 @@
 		3752D3761C0C723E0083E761 /* SupportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3752D3751C0C723E0083E761 /* SupportVC.m */; };
 		3752D3781C0C72E90083E761 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3752D3771C0C72E90083E761 /* MessageUI.framework */; };
 		375A18201BFD35C2001AFB08 /* versionedArticleDifferentKeywords.json in Resources */ = {isa = PBXBuildFile; fileRef = 375A181F1BFD35C2001AFB08 /* versionedArticleDifferentKeywords.json */; };
+		378BBF1A1C78EE3300396251 /* ContentIphoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 378BBF181C78EE3300396251 /* ContentIphoneVC.m */; };
+		378BBF1D1C78F5EB00396251 /* SummaryIphoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 378BBF1C1C78F5EB00396251 /* SummaryIphoneVC.m */; };
 		A61466E418F7148B00DB0099 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A61466E318F7148B00DB0099 /* Reachability.m */; };
 		A61CA795186231ED00891E00 /* RSSEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CA794186231ED00891E00 /* RSSEntry.m */; };
 		A61CA7C41863235800891E00 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CA7B61863235800891E00 /* GTMNSString+HTML.m */; };
@@ -100,6 +102,10 @@
 		3752D3751C0C723E0083E761 /* SupportVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportVC.m; sourceTree = "<group>"; };
 		3752D3771C0C72E90083E761 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		375A181F1BFD35C2001AFB08 /* versionedArticleDifferentKeywords.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = versionedArticleDifferentKeywords.json; sourceTree = "<group>"; };
+		378BBF181C78EE3300396251 /* ContentIphoneVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentIphoneVC.m; sourceTree = "<group>"; };
+		378BBF191C78EE3300396251 /* ContentIphoneVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentIphoneVC.h; sourceTree = "<group>"; };
+		378BBF1B1C78F5EB00396251 /* SummaryIphoneVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryIphoneVC.h; sourceTree = "<group>"; };
+		378BBF1C1C78F5EB00396251 /* SummaryIphoneVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryIphoneVC.m; sourceTree = "<group>"; };
 		37C4300318B7DE2800CCDE8A /* PopoverViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopoverViewDelegate.h; sourceTree = "<group>"; };
 		A61466E218F7148B00DB0099 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		A61466E318F7148B00DB0099 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -305,6 +311,8 @@
 		A62A1A181823C9C7006A62B3 /* photon */ = {
 			isa = PBXGroup;
 			children = (
+				378BBF181C78EE3300396251 /* ContentIphoneVC.m */,
+				378BBF191C78EE3300396251 /* ContentIphoneVC.h */,
 				A66FB238184D2B9E008F2AB7 /* AboutVC.h */,
 				A66FB239184D2B9E008F2AB7 /* AboutVC.m */,
 				A62A1A211823C9C7006A62B3 /* AppDelegate.h */,
@@ -390,6 +398,8 @@
 				A69AFEB718944C47009F0A48 /* V1JsonParser.h */,
 				A69AFEB818944C47009F0A48 /* V1JsonParser.m */,
 				A62A1A191823C9C7006A62B3 /* Supporting Files */,
+				378BBF1B1C78F5EB00396251 /* SummaryIphoneVC.h */,
+				378BBF1C1C78F5EB00396251 /* SummaryIphoneVC.m */,
 			);
 			path = photon;
 			sourceTree = "<group>";
@@ -564,11 +574,13 @@
 				A647B05518CA19770081F760 /* photon_core_data.xcdatamodeld in Sources */,
 				A621F0DB184538D20011D0C5 /* FullArticleVC.m in Sources */,
 				A647B06018CA4F820081F760 /* ArticleMO+Article.m in Sources */,
+				378BBF1A1C78EE3300396251 /* ContentIphoneVC.m in Sources */,
 				A67AF51C182BA408000F6EB0 /* IssueArticlesTVC.m in Sources */,
 				A6635ACB182D625400E600EA /* ArticleDetails.m in Sources */,
 				A61CA7C91863235800891E00 /* NSDate+InternetDateTime.m in Sources */,
 				A647B05D18CA44E60081F760 /* IssueMO+Issue.m in Sources */,
 				A6B295D518735EFD00BEF24D /* ContentPagesVC.m in Sources */,
+				378BBF1D1C78F5EB00396251 /* SummaryIphoneVC.m in Sources */,
 				A649A73D18882C0E00BDF9C2 /* SplitViewManager.m in Sources */,
 				A61466E418F7148B00DB0099 /* Reachability.m in Sources */,
 				A61CA7CA1863235800891E00 /* NSString+HTML.m in Sources */,
