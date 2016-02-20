@@ -342,41 +342,6 @@ bool didViewJustLoad;
 }
 
 
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-    
-    _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
-    NSArray *articles = [_issue.articles allObjects];
-    _article = [articles objectAtIndex:[indexPath row]];
-    
-    if ([APP_MGR isDeviceIpad] == YES) {
-        
-        KeywordArticleDetailVC *content = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverArticleDetails"];
-        content.article = _article;
-        content.modalDelegate = self;
-        content.popoverViewDelegate = self;
-        
-        // Setup the popover for use from the navigation bar.
-        self.detailViewPopover = [[UIPopoverController alloc] initWithContentViewController:content];
-        self.detailViewPopover.popoverContentSize = CGSizeMake(400., 358.);
-        self.detailViewPopover.delegate = self;
-        
-        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-        
-        // Present the popover from the button that was tapped in the detail view.
-        [self.detailViewPopover presentPopoverFromRect:cell.bounds inView:cell.contentView
-                              permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-        
-    } else {
-        [self performSegueWithIdentifier:@"pushArticleDetails" sender:nil];
-        
-    }
-    
-    
-}
-
-
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"pushContentPageViews"]) {

@@ -15,11 +15,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IssueArticlesCell" id="yzb-SM-wg1">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IssueArticlesCell" id="yzb-SM-wg1">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yzb-SM-wg1" id="9vK-FO-cfX">
-                                    <rect key="frame" x="0.0" y="0.0" width="273" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration" hint="">
@@ -48,7 +48,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9BA-vN-P1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1002" y="-789"/>
+            <point key="canvasLocation" x="1002" y="-781"/>
         </scene>
         <!--KeywordsTVC-->
         <scene sceneID="lgY-5g-MB1">
@@ -111,11 +111,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="KeywordArticlesCell" id="nPL-Kh-Mfl">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="KeywordArticlesCell" id="nPL-Kh-Mfl">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nPL-Kh-Mfl" id="7vE-kz-3A9">
-                                    <rect key="frame" x="0.0" y="0.0" width="273" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -140,7 +140,7 @@
                         <viewControllerLayoutGuide type="bottom" id="AJn-O9-wuR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Udl-rM-iZS">
-                        <rect key="frame" x="0.0" y="64" width="703" height="704"/>
+                        <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ipad_known_icon" translatesAutoresizingMaskIntoConstraints="NO" id="584-Dy-lpt">
@@ -261,18 +261,18 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BQo-dJ-Dpa" userLabel="Full Article View">
+                                <rect key="frame" x="0.0" y="0.0" width="703" height="704"/>
+                                <connections>
+                                    <segue destination="EDB-Od-E07" kind="embed" identifier="embedFullArticleView" id="Doz-ZS-vab"/>
+                                </connections>
+                            </containerView>
                             <containerView hidden="YES" alpha="0.49999999999999961" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UN7-bL-OhY">
                                 <rect key="frame" x="0.0" y="0.0" width="703" height="704"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="rRq-Xx-aDe" kind="embed" id="oK6-YJ-b4l"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BQo-dJ-Dpa" userLabel="Full Article View">
-                                <rect key="frame" x="0.0" y="0.0" width="703" height="704"/>
-                                <connections>
-                                    <segue destination="EDB-Od-E07" kind="embed" identifier="embedFullArticleView" id="Doz-ZS-vab"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -865,7 +865,7 @@ IAoKA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aj2-gg-9WB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1517" y="2671"/>
+            <point key="canvasLocation" x="1252" y="2787"/>
         </scene>
         <!--HelpVC-->
         <scene sceneID="xWb-ht-GGx">
@@ -1104,20 +1104,6 @@ IAoKA
             </objects>
             <point key="canvasLocation" x="1618" y="4047"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="bHI-7C-YJn">
-            <objects>
-                <viewController id="WjF-Q2-zS7" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MKc-Xn-gQv">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GIm-BP-fTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="169" y="2389"/>
-        </scene>
     </scenes>
     <resources>
         <image name="about_icon" width="61" height="60"/>
@@ -1133,7 +1119,7 @@ IAoKA
         <image name="support_header_icon" width="33" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MwH-uh-OQV"/>
+        <segue reference="WhT-qN-xq9"/>
         <segue reference="R5g-MU-xge"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.25098039220000001" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
