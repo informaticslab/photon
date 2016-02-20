@@ -31,6 +31,7 @@ ShareActionSheet *shareAS;
     APP_MGR.splitVM.contentIpadVC = self;
     [APP_MGR.splitVM setArticleSelectionDelegate:self];
     self.grayedOutContentView.hidden = YES;
+    self.fullArticleContentView.hidden = NO;
     
     
 	// Do any additional setup after loading the view.
@@ -102,13 +103,22 @@ ShareActionSheet *shareAS;
 	self.infoPopoverController.delegate = self;
     content.popoverViewDelegate = self;
 
+
     
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSString * segueName = segue.identifier;
+    if ([segueName isEqualToString: @"embedFullArticleView"]) {
+        self.childFullArticleVC = (FullArticleVC *) [segue destinationViewController];
+     }
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [self selectedArticle:[APP_MGR.splitVM getSelectedArticle]];
-    
+   
 }
 
 - (void)share:(id)sender
@@ -148,6 +158,20 @@ ShareActionSheet *shareAS;
     
 }
 
+- (IBAction)segCtrlFullSummary:(id)sender {
+    
+    UISegmentedControl *segCtrl = (UISegmentedControl *)sender;
+    
+    if (segCtrl.selectedSegmentIndex == 0) {
+        self.fullArticleContentView.hidden = NO;
+        self.grayedOutContentView.hidden = YES;
+    } else if (segCtrl.selectedSegmentIndex == 1) {
+        self.fullArticleContentView.hidden = YES;
+        self.grayedOutContentView.hidden = YES;
+    }
+    
+}
+
 
 - (void)presentEulaModalView
 {
@@ -181,8 +205,6 @@ ShareActionSheet *shareAS;
 }
 
 
-
-
 -(void)selectedArticle:(ArticleMO *)selArticle
 {
     if (selArticle == nil)
@@ -190,9 +212,12 @@ ShareActionSheet *shareAS;
 
     DebugLog(@"Article title is %@", self.article.title);
     
-    UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:15];
+
     _article = selArticle;
     
+    [self.childFullArticleVC loadUrl:_article.url];
+
+    UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:15];
     self.txtvKnownText.text = _article.already_known;
     self.txtvKnownText.font = font;
     self.txtvKnownText.textContainerInset = UIEdgeInsetsMake(5,5,5,5);

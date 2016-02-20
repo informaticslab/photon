@@ -341,8 +341,7 @@ NSArray *keywordArticles;
         contentVC.issue = _selectedArticle.issue;
     } else if([segue.identifier isEqualToString:@"modalFullArticle"]) {
         FullArticleVC *fullArticleVC = segue.destinationViewController;
-        fullArticleVC.url = _selectedArticle.url;
-        fullArticleVC.modalDelegate = self;
+        //fullArticleVC.url = _selectedArticle.url;
     }
 
 }

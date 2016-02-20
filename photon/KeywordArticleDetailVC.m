@@ -113,8 +113,7 @@ ShareActionSheet *shareAS;
     if([segue.identifier isEqualToString:@"pushViewFullArticle"])
     {
         FullArticleVC *fullArticleVC = segue.destinationViewController;
-        fullArticleVC.url = _article.url;
-        fullArticleVC.modalDelegate = self;
+        //fullArticleVC.url = _article.url;
         
     }
     

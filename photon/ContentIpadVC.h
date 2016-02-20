@@ -11,6 +11,7 @@
 #import "ArticleSelectionDelegate.h"
 #import "ModalViewDelegate.h"
 #import "PopoverViewDelegate.h"
+#import "FullArticleVC.h"
 
 @interface ContentIpadVC : UIViewController <UISplitViewControllerDelegate,UITextViewDelegate, ArticleSelectionDelegate, ModalViewDelegate, UIPopoverControllerDelegate, PopoverViewDelegate>
 
@@ -28,14 +29,16 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *txtvAddedText;
 @property (weak, nonatomic) IBOutlet UIView *grayedOutContentView;
+@property (weak, nonatomic) IBOutlet UIView *fullArticleContentView;
 
 
 @property (weak, nonatomic) IBOutlet UITextView *txtvImplicationsText;
 @property (weak, nonatomic) ArticleMO *article;
 @property (weak, nonatomic) IssueMO *issue;
-
+@property (strong, nonatomic) FullArticleVC *childFullArticleVC;
 - (IBAction)infoButtonAction:(UIBarButtonItem *)sender;
 -(void)didTouchReadUserAgreementButton;
 
+- (IBAction)segCtrlFullSummary:(id)sender;
 
 @end

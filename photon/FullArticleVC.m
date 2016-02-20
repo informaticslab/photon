@@ -18,7 +18,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.webView.delegate = self;
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_url]]];
     _spinner.hidesWhenStopped = YES;
 
 }
@@ -27,6 +26,11 @@
 {
     [APP_MGR.usageTracker trackNavigationEvent:SC_PAGE_TITLE_FULL inSection:SC_SECTION_DETAILS];
 
+}
+
+-(void)loadUrl:(NSString *)url
+{
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,10 +68,6 @@
     
     [_spinner performSelectorInBackground: @selector(stopAnimating) withObject: nil];
 
-}
-
-- (IBAction)btnDoneTouchUp:(id)sender {
-    [self.modalDelegate didDismissModalView];
 }
 
 @end

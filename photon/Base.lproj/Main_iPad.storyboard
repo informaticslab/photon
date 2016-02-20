@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2rV-5Q-mUE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2rV-5Q-mUE">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -43,7 +43,6 @@
                     </refreshControl>
                     <connections>
                         <segue destination="IAr-lY-2gS" kind="replace" identifier="pushContentPageIpadViews" splitViewControllerTargetIndex="1" id="WhT-qN-xq9"/>
-                        <segue destination="agv-o0-Y9V" kind="modal" identifier="modalFullArticle" modalPresentationStyle="pageSheet" id="2Za-UK-tFB"/>
                         <segue destination="NsL-dn-fNK" kind="modal" identifier="displayEulaSegue" animates="NO" modalPresentationStyle="formSheet" id="6FL-Pm-J5C"/>
                     </connections>
                 </tableViewController>
@@ -127,9 +126,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="qIe-Sg-4WS"/>
-                    <connections>
-                        <segue destination="agv-o0-Y9V" kind="modal" identifier="modalFullArticle" modalPresentationStyle="pageSheet" id="qhf-Oy-WfU"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AA2-zm-e4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -144,7 +140,7 @@
                         <viewControllerLayoutGuide type="bottom" id="AJn-O9-wuR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Udl-rM-iZS">
-                        <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
+                        <rect key="frame" x="0.0" y="64" width="703" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ipad_known_icon" translatesAutoresizingMaskIntoConstraints="NO" id="584-Dy-lpt">
@@ -265,7 +261,7 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <containerView alpha="0.49999999999999961" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UN7-bL-OhY">
+                            <containerView hidden="YES" alpha="0.49999999999999961" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UN7-bL-OhY">
                                 <rect key="frame" x="0.0" y="0.0" width="703" height="704"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -273,11 +269,32 @@
                                     <segue destination="rRq-Xx-aDe" kind="embed" id="oK6-YJ-b4l"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BQo-dJ-Dpa" userLabel="Full Article View">
+                                <rect key="frame" x="0.0" y="0.0" width="703" height="704"/>
+                                <connections>
+                                    <segue destination="EDB-Od-E07" kind="embed" identifier="embedFullArticleView" id="Doz-ZS-vab"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ZNC-9X-86n"/>
+                    <navigationItem key="navigationItem" id="ZNC-9X-86n">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="I99-oY-2jg">
+                            <rect key="frame" x="211" y="7" width="281" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Full Article"/>
+                                <segment title="Summary"/>
+                            </segments>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="segCtrlFullSummary:" destination="IAr-lY-2gS" eventType="valueChanged" id="EhM-aN-cel"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
                     <connections>
+                        <outlet property="fullArticleContentView" destination="BQo-dJ-Dpa" id="qq0-rz-PGu"/>
                         <outlet property="grayedOutContentView" destination="UN7-bL-OhY" id="Li2-7V-SOC"/>
                         <outlet property="txtvAddedText" destination="ANr-Cc-vfy" id="8hu-dv-Kma"/>
                         <outlet property="txtvArticleTitle" destination="S0E-oZ-Wc7" id="Z3J-nD-SN2"/>
@@ -288,7 +305,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ax-rZ-xZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="254" y="1277"/>
+            <point key="canvasLocation" x="253.5" y="1277"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="kTO-g4-NTt">
@@ -410,7 +427,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="19L-B3-Qwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1183" y="1277"/>
+            <point key="canvasLocation" x="1242.5" y="2003"/>
         </scene>
         <!--PopoverArticleDetails-->
         <scene sceneID="adr-mw-iIV">
@@ -922,60 +939,6 @@ IAoKA
             </objects>
             <point key="canvasLocation" x="1517" y="3169"/>
         </scene>
-        <!--Full ArticleVC-->
-        <scene sceneID="54U-fI-B8V">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="agv-o0-Y9V" customClass="FullArticleVC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="M4y-bg-dSS"/>
-                        <viewControllerLayoutGuide type="bottom" id="SyB-Zt-wJz"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uOd-mm-Rul">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B7N-FC-fMj">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="724"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhR-l1-Cud">
-                                <rect key="frame" x="0.0" y="724" width="1024" height="44"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="dGI-9H-zKJ"/>
-                                    <barButtonItem systemItem="done" id="6Gs-vF-1bE">
-                                        <connections>
-                                            <action selector="btnDoneTouchUp:" destination="agv-o0-Y9V" id="Szz-Xs-wt7"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="sE2-Yo-EiC">
-                                <rect key="frame" x="502" y="352" width="20" height="20"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="B7N-FC-fMj" secondAttribute="trailing" id="IAJ-ha-rHV"/>
-                            <constraint firstItem="sE2-Yo-EiC" firstAttribute="centerY" secondItem="B7N-FC-fMj" secondAttribute="centerY" id="KA6-Yd-L4k"/>
-                            <constraint firstItem="mhR-l1-Cud" firstAttribute="trailing" secondItem="B7N-FC-fMj" secondAttribute="trailing" id="UMh-7A-PRt"/>
-                            <constraint firstItem="mhR-l1-Cud" firstAttribute="top" secondItem="B7N-FC-fMj" secondAttribute="bottom" id="W3O-4p-6MG"/>
-                            <constraint firstItem="mhR-l1-Cud" firstAttribute="centerX" secondItem="sE2-Yo-EiC" secondAttribute="centerX" id="auh-Nr-a8u"/>
-                            <constraint firstItem="mhR-l1-Cud" firstAttribute="leading" secondItem="uOd-mm-Rul" secondAttribute="leading" id="bb2-K4-btU"/>
-                            <constraint firstItem="B7N-FC-fMj" firstAttribute="top" secondItem="uOd-mm-Rul" secondAttribute="top" id="q8w-t2-4QC"/>
-                            <constraint firstItem="mhR-l1-Cud" firstAttribute="leading" secondItem="B7N-FC-fMj" secondAttribute="leading" id="s9u-bd-rFU"/>
-                            <constraint firstAttribute="bottom" secondItem="mhR-l1-Cud" secondAttribute="bottom" id="xxR-7l-1In"/>
-                        </constraints>
-                    </view>
-                    <toolbarItems/>
-                    <connections>
-                        <outlet property="spinner" destination="sE2-Yo-EiC" id="7pF-xo-w29"/>
-                        <outlet property="webView" destination="B7N-FC-fMj" id="laE-96-kQd"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V9b-xJ-gWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2440" y="609"/>
-        </scene>
         <!--EulaVC-->
         <scene sceneID="i7f-NI-bqV">
             <objects>
@@ -1045,6 +1008,38 @@ IAoKA
             </objects>
             <point key="canvasLocation" x="2042" y="1257"/>
         </scene>
+        <!--Full ArticleVC-->
+        <scene sceneID="Dw2-r4-dDw">
+            <objects>
+                <viewController id="EDB-Od-E07" customClass="FullArticleVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yTr-1j-mdE"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Ss-cu-0sP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xGj-w0-Uqm">
+                        <rect key="frame" x="0.0" y="0.0" width="703" height="704"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BqP-cl-zxt">
+                                <rect key="frame" x="0.0" y="0.0" width="703" height="704"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="FkL-oI-tIp">
+                                <rect key="frame" x="341" y="342" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="spinner" destination="FkL-oI-tIp" id="nbk-Sg-u0c"/>
+                        <outlet property="webView" destination="BqP-cl-zxt" id="vPn-8d-m6Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PVN-hr-ObK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1193.5" y="1057"/>
+        </scene>
         <!--SupportVC-->
         <scene sceneID="V2o-mN-vj1">
             <objects>
@@ -1109,6 +1104,20 @@ IAoKA
             </objects>
             <point key="canvasLocation" x="1618" y="4047"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="bHI-7C-YJn">
+            <objects>
+                <viewController id="WjF-Q2-zS7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MKc-Xn-gQv">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GIm-BP-fTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="169" y="2389"/>
+        </scene>
     </scenes>
     <resources>
         <image name="about_icon" width="61" height="60"/>
@@ -1124,8 +1133,7 @@ IAoKA
         <image name="support_header_icon" width="33" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WhT-qN-xq9"/>
-        <segue reference="2Za-UK-tFB"/>
+        <segue reference="MwH-uh-OQV"/>
         <segue reference="R5g-MU-xge"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.25098039220000001" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
