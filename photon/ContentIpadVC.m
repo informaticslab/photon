@@ -117,9 +117,11 @@ ShareActionSheet *shareAS;
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    
     [self selectedArticle:[APP_MGR.splitVM getSelectedArticle]];
    
 }
+
 
 - (void)share:(id)sender
 {
@@ -129,12 +131,14 @@ ShareActionSheet *shareAS;
     
 }
 
+
 - (void)didDismissModalView {
     
     // Dismiss the modal view controller
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
+
 
 - (IBAction)infoButtonAction:(UIBarButtonItem *)sender
 {
@@ -164,11 +168,13 @@ ShareActionSheet *shareAS;
     
     if (segCtrl.selectedSegmentIndex == 0) {
         self.fullArticleContentView.hidden = NO;
-        self.grayedOutContentView.hidden = YES;
     } else if (segCtrl.selectedSegmentIndex == 1) {
         self.fullArticleContentView.hidden = YES;
-        self.grayedOutContentView.hidden = YES;
     }
+    if (self.article != nil)
+        self.grayedOutContentView.hidden = YES;
+    else
+        self.grayedOutContentView.hidden = NO;
     
 }
 
@@ -252,9 +258,8 @@ ShareActionSheet *shareAS;
     self.article = nil;
     self.navigationItem.accessibilityLabel = @"Summary of Article. No article is currently selected.";
 
-    
-    
 }
+
 
 -(void)articleSelected
 {
@@ -271,6 +276,7 @@ ShareActionSheet *shareAS;
     // Dispose of any resources that can be recreated.
 }
 
+
 #pragma mark - Split view
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
@@ -279,6 +285,7 @@ ShareActionSheet *shareAS;
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
     self.masterPopoverController = popoverController;
 }
+
 
 - (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
 {
