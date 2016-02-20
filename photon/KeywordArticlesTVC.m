@@ -50,11 +50,11 @@ NSArray *keywordArticles;
     
     self.navigationItem.title = _keyword.text;
     self.navigationItem.accessibilityLabel =  [NSString stringWithFormat:@"%@ %@",@"List of articles containing search term", _keyword.text ];
-
+    
     keywordArticles = [APP_MGR.issuesMgr articlesWithKeyword:_keyword];
     
     if([APP_MGR isDeviceIpad] == NO) {
-
+        
         UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
         shareButton.width = 30.0;
         self.navigationItem.rightBarButtonItem = shareButton;
@@ -69,18 +69,18 @@ NSArray *keywordArticles;
 {
     
     //[self updateArticleSelection];
-//    if (_selectedArticle == nil) {
-//        
-//        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
-//        [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
-//        _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
-//        _selectedArticle = _issue.articles[[indexPath row]];
-//
-//    }
-//
-//    [APP_MGR.splitVM setSelectedArticle:_selectedArticle];
-//    [APP_MGR.splitVM searchEnd];
-//
+    //    if (_selectedArticle == nil) {
+    //
+    //        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
+    //        [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+    //        _issue = [APP_MGR.issuesMgr getSortedIssueForIndex:[indexPath section]];
+    //        _selectedArticle = _issue.articles[[indexPath row]];
+    //
+    //    }
+    //
+    //    [APP_MGR.splitVM setSelectedArticle:_selectedArticle];
+    //    [APP_MGR.splitVM searchEnd];
+    //
     
     
 }
@@ -89,7 +89,7 @@ NSArray *keywordArticles;
 {
     
     [APP_MGR.usageTracker trackNavigationEvent:SC_PAGE_TITLE_SEARCH_KEYWORD_ARTICLES inSection:SC_SECTION_SEARCH];
-
+    
 }
 
 -(void)updateArticleSelection
@@ -111,7 +111,7 @@ NSArray *keywordArticles;
         }
         [APP_MGR.splitVM setSelectedArticle:_selectedArticle];
         [APP_MGR.splitVM searchEnd];
-
+        
     }
     
 }
@@ -171,9 +171,9 @@ NSArray *keywordArticles;
     
     CGSize constraintSize = CGSizeMake(CELL_TEXT_LABEL_WIDTH, MAXFLOAT);
     CGRect textRect = [title boundingRectWithSize:constraintSize
-                                         options:NSStringDrawingUsesLineFragmentOrigin
-                                      attributes:@{NSFontAttributeName:APP_MGR.tableFont}
-                                         context:nil];
+                                          options:NSStringDrawingUsesLineFragmentOrigin
+                                       attributes:@{NSFontAttributeName:APP_MGR.tableFont}
+                                          context:nil];
     
     return  textRect.size.height + (2 * CELL_PADDING);
     
@@ -198,55 +198,16 @@ NSArray *keywordArticles;
     cell.textLabel.isAccessibilityElement = YES;
     cell.textLabel.accessibilityHint = @"Double tap to display content in summary view";
     cell.textLabel.accessibilityTraits = UIAccessibilityTraitButton;
-
+    
     // accessory view of cell
     cell.accessoryView.isAccessibilityElement = YES;
     cell.accessoryView.accessibilityHint = @"Double tap to get more info about the article.";
     cell.accessoryView.accessibilityLabel = @"More Info.";
     cell.accessoryView.accessibilityTraits = UIAccessibilityTraitButton;
-
+    
     
     return cell;
 }
-
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -254,17 +215,13 @@ NSArray *keywordArticles;
     // Navigation logic may go here. Create and push another view controller.
     _selectedArticle = keywordArticles[[indexPath row]];
     isArticleSelected = YES;
-
+    
     _selectedArticle.unread = 0;
     IssueMO *selectedArticleIssue = _selectedArticle.issue;
     [selectedArticleIssue updateUnreadArticleStatus];
     
     [_issue updateUnreadArticleStatus];
-    [[NSNotificationCenter defaultCenter]
-     postNotificationName:@"FeedDataUpdated"
-     object:self];
-
-
+    
     if ([APP_MGR isDeviceIpad] == YES) {
         [APP_MGR.splitVM setSelectedArticle:_selectedArticle];
         [APP_MGR.splitVM searchEnd];
@@ -283,27 +240,27 @@ NSArray *keywordArticles;
     
     if ([APP_MGR isDeviceIpad] == YES) {
         
-
-    
-    KeywordArticleDetailVC *content = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverArticleDetails"];
-    content.article = rowArticle;
-    content.modalDelegate = self;
-    content.popoverViewDelegate = self;
-    
-	// Setup the popover for use from the navigation bar.
-	self.detailViewPopover = [[UIPopoverController alloc] initWithContentViewController:content];
-	self.detailViewPopover.popoverContentSize = CGSizeMake(400., 358.);
-	self.detailViewPopover.delegate = self;
-    
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    
-    // Present the popover from the button that was tapped in the detail view.
-    [self.detailViewPopover presentPopoverFromRect:cell.bounds inView:cell.contentView
-                          permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-
+        
+        
+        KeywordArticleDetailVC *content = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverArticleDetails"];
+        content.article = rowArticle;
+        content.modalDelegate = self;
+        content.popoverViewDelegate = self;
+        
+        // Setup the popover for use from the navigation bar.
+        self.detailViewPopover = [[UIPopoverController alloc] initWithContentViewController:content];
+        self.detailViewPopover.popoverContentSize = CGSizeMake(400., 358.);
+        self.detailViewPopover.delegate = self;
+        
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        
+        // Present the popover from the button that was tapped in the detail view.
+        [self.detailViewPopover presentPopoverFromRect:cell.bounds inView:cell.contentView
+                              permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        
     } else {
         [self performSegueWithIdentifier:@"pushKeywordArticleDetails" sender:nil];
-
+        
         
     }
 }
@@ -334,7 +291,7 @@ NSArray *keywordArticles;
         if ([APP_MGR isDeviceIpad] == YES) {
             keywordArticleDetailVC.modalDelegate = self;
         }
-
+        
     } else if ([segue.identifier isEqualToString:@"pushContentPagesFromKeyword"]) {
         ContentPagesVC *contentVC = segue.destinationViewController;
         contentVC.article = _selectedArticle;
@@ -343,7 +300,7 @@ NSArray *keywordArticles;
         FullArticleVC *fullArticleVC = segue.destinationViewController;
         //fullArticleVC.url = _selectedArticle.url;
     }
-
+    
 }
 
 

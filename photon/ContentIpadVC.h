@@ -35,7 +35,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *txtvImplicationsText;
 @property (weak, nonatomic) ArticleMO *article;
 @property (weak, nonatomic) IssueMO *issue;
-@property (strong, nonatomic) FullArticleVC *childFullArticleVC;
+@property (weak, nonatomic) FullArticleVC *childFullArticleVC;
 - (IBAction)infoButtonAction:(UIBarButtonItem *)sender;
 -(void)didTouchReadUserAgreementButton;
 
