@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P9Z-Eg-FiL" id="6Iq-BQ-dgR">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -82,7 +82,7 @@
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t99-TL-mjf" id="COM-g1-rc0">
-                                    <rect key="frame" x="0.0" y="0.0" width="273" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="273" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -226,34 +226,24 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9v-Gl-ES5">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I9v-Gl-ES5">
                                 <rect key="frame" x="20" y="0.0" width="280" height="359"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Sk-Qx-AHf">
+                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Sk-Qx-AHf">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="944"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="944" id="C4r-Gy-iF6"/>
-                                        </constraints>
                                         <connections>
                                             <segue destination="XWS-I9-eD7" kind="embed" identifier="embedSummaryIphoneView" id="etO-Kt-o5b"/>
                                         </connections>
                                     </containerView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="7Sk-Qx-AHf" firstAttribute="centerX" secondItem="I9v-Gl-ES5" secondAttribute="centerX" id="HAq-nn-8Ha"/>
-                                    <constraint firstItem="7Sk-Qx-AHf" firstAttribute="top" secondItem="I9v-Gl-ES5" secondAttribute="top" id="QIa-Gl-6M6"/>
-                                    <constraint firstAttribute="bottom" secondItem="7Sk-Qx-AHf" secondAttribute="bottom" constant="-585" id="Zla-1Q-AMp"/>
-                                    <constraint firstAttribute="trailing" secondItem="7Sk-Qx-AHf" secondAttribute="trailing" id="tbM-Pa-iZ8"/>
-                                    <constraint firstItem="7Sk-Qx-AHf" firstAttribute="leading" secondItem="I9v-Gl-ES5" secondAttribute="leading" id="x5v-WB-h94"/>
-                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="I9v-Gl-ES5" firstAttribute="leading" secondItem="8tS-El-hCA" secondAttribute="leadingMargin" constant="4" id="cIv-6L-zwc"/>
-                            <constraint firstItem="I9v-Gl-ES5" firstAttribute="top" secondItem="za9-F5-sAF" secondAttribute="bottom" id="meG-Cg-M8W"/>
-                            <constraint firstItem="I9v-Gl-ES5" firstAttribute="centerX" secondItem="8tS-El-hCA" secondAttribute="centerX" id="qN2-PB-beS"/>
-                            <constraint firstItem="CTC-qa-98V" firstAttribute="top" secondItem="I9v-Gl-ES5" secondAttribute="bottom" constant="8" symbolic="YES" id="uX9-Hg-ArZ"/>
+                            <constraint firstItem="I9v-Gl-ES5" firstAttribute="centerX" secondItem="8tS-El-hCA" secondAttribute="centerX" id="EKK-p6-r2e"/>
+                            <constraint firstItem="CTC-qa-98V" firstAttribute="top" secondItem="I9v-Gl-ES5" secondAttribute="bottom" constant="8" symbolic="YES" id="b1z-Hc-qO1"/>
+                            <constraint firstItem="I9v-Gl-ES5" firstAttribute="top" secondItem="za9-F5-sAF" secondAttribute="bottom" id="oVx-0N-1og"/>
+                            <constraint firstItem="I9v-Gl-ES5" firstAttribute="leading" secondItem="8tS-El-hCA" secondAttribute="leadingMargin" constant="4" id="qtC-pB-m2v"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sIE-UQ-oSp">
@@ -265,6 +255,7 @@
                                 <segment title="Full Article"/>
                                 <segment title="Summary"/>
                             </segments>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </segmentedControl>
                     </navigationItem>
                     <connections>
@@ -538,10 +529,10 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IssueArticlesCell" id="8bE-bv-lGg">
-                                <rect key="frame" x="0.0" y="50" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="49.5" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8bE-bv-lGg" id="GWa-ZW-MeG">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1125,6 +1116,10 @@ IAoKA
         <scene sceneID="RMh-6s-VRf">
             <objects>
                 <viewController id="XWS-I9-eD7" customClass="SummaryIphoneVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IvF-Xy-ASp"/>
+                        <viewControllerLayoutGuide type="bottom" id="YDG-tF-7Po"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rz6-FD-cnN">
                         <rect key="frame" x="0.0" y="0.0" width="280" height="944"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1146,7 +1141,7 @@ IAoKA
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BW4-f6-Klc">
-                                <rect key="frame" x="0.0" y="303" width="272" height="289"/>
+                                <rect key="frame" x="0.0" y="303" width="272" height="267"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES"/>
@@ -1167,7 +1162,7 @@ IAoKA
                                 <rect key="frame" x="0.0" y="242" width="38" height="38"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="875-vi-ieQ">
-                                <rect key="frame" x="0.0" y="57" width="272" height="144"/>
+                                <rect key="frame" x="0.0" y="57" width="272" height="167"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES"/>
@@ -1201,7 +1196,7 @@ IAoKA
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1z-aC-g3o">
-                                <rect key="frame" x="0.0" y="703" width="272" height="144"/>
+                                <rect key="frame" x="0.0" y="703" width="272" height="221"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES"/>
