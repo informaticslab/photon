@@ -12,6 +12,7 @@
 #import "ShareActionSheet.h"
 #import "ContentPagesVC.h"
 #import "FullArticleVC.h"
+#import "ContentIphoneVC.h"
 
 #define CELL_TEXT_LABEL_WIDTH 230.0
 #define CELL_PADDING 10.0
@@ -227,7 +228,7 @@ NSArray *keywordArticles;
         [APP_MGR.splitVM searchEnd];
     }
     else
-        [self performSegueWithIdentifier:@"pushContentPagesFromKeyword" sender:nil];
+        [self performSegueWithIdentifier:@"pushKeywordContentIphoneView" sender:nil];
     
 }
 
@@ -259,7 +260,7 @@ NSArray *keywordArticles;
                               permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
         
     } else {
-        [self performSegueWithIdentifier:@"pushKeywordArticleDetails" sender:nil];
+        [self performSegueWithIdentifier:@"pushContentIphoneView" sender:nil];
         
         
     }
@@ -292,6 +293,10 @@ NSArray *keywordArticles;
             keywordArticleDetailVC.modalDelegate = self;
         }
         
+    } else if([segue.identifier isEqualToString:@"pushKeywordContentIphoneView"]) {
+        ContentIphoneVC *contentVC = segue.destinationViewController;
+        contentVC.article = _selectedArticle;
+        contentVC.issue = _issue;
     } else if ([segue.identifier isEqualToString:@"pushContentPagesFromKeyword"]) {
         ContentPagesVC *contentVC = segue.destinationViewController;
         contentVC.article = _selectedArticle;

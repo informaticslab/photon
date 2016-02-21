@@ -96,11 +96,12 @@
                     <connections>
                         <segue destination="IYg-u6-pbr" kind="push" identifier="pushKeywordArticleDetails" id="g7V-rl-fQN"/>
                         <segue destination="tIc-Ga-z3I" kind="push" identifier="pushContentPagesFromKeyword" id="pjO-04-Vnm"/>
+                        <segue destination="NIc-VT-iqm" kind="push" identifier="pushKeywordContentIphoneView" id="hIx-l5-gqv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvX-d4-gab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1685" y="1027"/>
+            <point key="canvasLocation" x="1785" y="1049"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="QDt-Zb-4r1">
@@ -368,7 +369,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5G7-1a-LiA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2479" y="1027"/>
+            <point key="canvasLocation" x="2930" y="1049"/>
         </scene>
         <!--InfoVC-->
         <scene sceneID="Bzu-FT-wZS">
@@ -1295,10 +1296,11 @@ IAoKA
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="XfS-BQ-fbZ"/>
-        <segue reference="cPZ-Qk-bcg"/>
-        <segue reference="sa5-ms-oeY"/>
+        <segue reference="pjO-04-Vnm"/>
         <segue reference="qDi-OO-8hr"/>
+        <segue reference="XfS-BQ-fbZ"/>
+        <segue reference="hIx-l5-gqv"/>
+        <segue reference="g7V-rl-fQN"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.25098039220000001" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
