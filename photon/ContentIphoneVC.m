@@ -27,10 +27,9 @@ ShareActionSheet *shareAS;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.grayedOutContentView.hidden = YES;
-    self.fullArticleContentView.hidden = NO;
-    
+    self.fullArticleContainer.hidden = NO;
+    self.summaryScrollView.hidden = YES;
+
     
 	// Do any additional setup after loading the view.
     self.navigationItem.title = @"Summary";
@@ -108,7 +107,7 @@ ShareActionSheet *shareAS;
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSString * segueName = segue.identifier;
-    if ([segueName isEqualToString: @"embedFullArticleView"]) {
+    if ([segueName isEqualToString: @"embedFullArticleIphoneView"]) {
         self.childFullArticleVC = (FullArticleVC *) [segue destinationViewController];
     }
     else if ([segueName isEqualToString: @"embedSummaryIphoneView"]) {
@@ -166,14 +165,12 @@ ShareActionSheet *shareAS;
     UISegmentedControl *segCtrl = (UISegmentedControl *)sender;
     
     if (segCtrl.selectedSegmentIndex == 0) {
-        self.fullArticleContentView.hidden = NO;
+        self.fullArticleContainer.hidden = NO;
+        self.summaryScrollView.hidden = YES;
     } else if (segCtrl.selectedSegmentIndex == 1) {
-        self.fullArticleContentView.hidden = YES;
+        self.fullArticleContainer.hidden = YES;
+        self.summaryScrollView.hidden = NO;
     }
-    if (self.article != nil)
-        self.grayedOutContentView.hidden = YES;
-    else
-        self.grayedOutContentView.hidden = NO;
     
 }
 
@@ -249,25 +246,6 @@ ShareActionSheet *shareAS;
     
     
 }
-
--(void)noArticleSelected
-{
-    
-    self.grayedOutContentView.hidden = NO;
-    self.article = nil;
-    self.navigationItem.accessibilityLabel = @"Summary of Article. No article is currently selected.";
-
-}
-
-
--(void)articleSelected
-{
-    
-    self.grayedOutContentView.hidden = YES;
-    
-    
-}
-
 
 - (void)didReceiveMemoryWarning
 {

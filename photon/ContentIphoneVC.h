@@ -26,8 +26,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *txtvKnownText;
 
 @property (weak, nonatomic) IBOutlet UITextView *txtvAddedText;
-@property (weak, nonatomic) IBOutlet UIView *grayedOutContentView;
-@property (weak, nonatomic) IBOutlet UIView *fullArticleContentView;
+@property (weak, nonatomic) IBOutlet UIView *fullArticleContainer;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 
@@ -37,6 +36,7 @@
 @property (weak, nonatomic) IssueMO *issue;
 @property (weak, nonatomic) FullArticleVC *childFullArticleVC;
 @property (weak, nonatomic) SummaryIphoneVC *childSummaryIphoneVC;
+@property (weak, nonatomic) IBOutlet UIScrollView *summaryScrollView;
 
 
 - (IBAction)infoButtonAction:(UIBarButtonItem *)sender;
