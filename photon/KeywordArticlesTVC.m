@@ -51,6 +51,8 @@ NSArray *keywordArticles;
     
     self.navigationItem.title = _keyword.text;
     self.navigationItem.accessibilityLabel =  [NSString stringWithFormat:@"%@ %@",@"List of articles containing search term", _keyword.text ];
+    self.navigationItem.backBarButtonItem = nil;
+
     
     keywordArticles = [APP_MGR.issuesMgr articlesWithKeyword:_keyword];
     

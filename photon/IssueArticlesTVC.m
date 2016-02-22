@@ -62,7 +62,7 @@ bool didViewJustLoad;
         self.navigationItem.title = @"MMWR Articles";
     else
         self.navigationItem.title = @"MMWR Express";
-    
+    self.navigationItem.backBarButtonItem = nil;
     self.navigationItem.accessibilityLabel =  @"List of MMWR Articles";
     UITabBarItem *item = [self.tabBarController.tabBar.items objectAtIndex:0];
     item.image = [UIImage imageNamed:@"issue_tab_icon_inactive"];
@@ -125,6 +125,7 @@ bool didViewJustLoad;
 
     
 }
+
 
 - (void)presentEulaModalView
 {
@@ -355,6 +356,7 @@ bool didViewJustLoad;
         ContentIphoneVC *contentVC = segue.destinationViewController;
         contentVC.article = _article;
         contentVC.issue = _issue;
+
         
     }
     else if([segue.identifier isEqualToString:@"pushContentPageIpadViews"]) {
