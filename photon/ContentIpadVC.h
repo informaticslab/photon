@@ -30,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *txtvAddedText;
 @property (weak, nonatomic) IBOutlet UIView *grayedOutContentView;
 @property (weak, nonatomic) IBOutlet UIView *fullArticleContentView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segCtrlArticleView;
 
 
 @property (weak, nonatomic) IBOutlet UITextView *txtvImplicationsText;

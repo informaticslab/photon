@@ -277,6 +277,7 @@
                         <outlet property="containerView" destination="7Sk-Qx-AHf" id="cYJ-gX-8pS"/>
                         <outlet property="fullArticleContainer" destination="940-ss-V6C" id="tmt-fg-CRr"/>
                         <outlet property="scrollView" destination="I9v-Gl-ES5" id="qv1-A0-Joz"/>
+                        <outlet property="segCtrlArticleView" destination="ftx-K4-fxU" id="S4l-M3-3l1"/>
                         <outlet property="summaryScrollView" destination="I9v-Gl-ES5" id="4B2-oj-8GI"/>
                     </connections>
                 </viewController>

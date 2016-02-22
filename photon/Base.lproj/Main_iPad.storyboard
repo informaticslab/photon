@@ -296,6 +296,7 @@
                     <connections>
                         <outlet property="fullArticleContentView" destination="BQo-dJ-Dpa" id="qq0-rz-PGu"/>
                         <outlet property="grayedOutContentView" destination="UN7-bL-OhY" id="Li2-7V-SOC"/>
+                        <outlet property="segCtrlArticleView" destination="I99-oY-2jg" id="eRC-q7-yT4"/>
                         <outlet property="txtvAddedText" destination="ANr-Cc-vfy" id="8hu-dv-Kma"/>
                         <outlet property="txtvArticleTitle" destination="S0E-oZ-Wc7" id="Z3J-nD-SN2"/>
                         <outlet property="txtvImplicationsText" destination="yYi-zc-Tce" id="c4R-uw-2sH"/>

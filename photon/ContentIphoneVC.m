@@ -94,6 +94,12 @@ ShareActionSheet *shareAS;
     
     self.scrollView.contentSize = self.containerView.frame.size;
     
+    if ([APP_MGR isSummaryDefaultArticleView] == YES) {
+        self.segCtrlArticleView.selectedSegmentIndex = 1;
+        self.fullArticleContainer.hidden = YES;
+        self.summaryScrollView.hidden = NO;
+
+    }
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

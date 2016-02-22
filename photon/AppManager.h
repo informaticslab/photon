@@ -37,6 +37,7 @@
 -(BOOL)isDebugInfoEnabled;
 -(BOOL)isDeviceIpad;
 - (void)saveContext;
+-(BOOL)isSummaryDefaultArticleView;
 
 -(NSString *)getDeviceModel;
 -(NSString *)getDeviceSystemVersion;

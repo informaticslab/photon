@@ -37,6 +37,7 @@
 @property (weak, nonatomic) FullArticleVC *childFullArticleVC;
 @property (weak, nonatomic) SummaryIphoneVC *childSummaryIphoneVC;
 @property (weak, nonatomic) IBOutlet UIScrollView *summaryScrollView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segCtrlArticleView;
 
 
 - (IBAction)infoButtonAction:(UIBarButtonItem *)sender;

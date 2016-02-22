@@ -103,6 +103,11 @@ ShareActionSheet *shareAS;
 	self.infoPopoverController.delegate = self;
     content.popoverViewDelegate = self;
 
+    if ([APP_MGR isSummaryDefaultArticleView] == YES) {
+        self.segCtrlArticleView.selectedSegmentIndex = 1;
+        self.fullArticleContentView.hidden = YES;
+        
+    }
 
     
 }

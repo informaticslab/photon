@@ -46,7 +46,7 @@ static AppManager *sharedAppManager = nil;
 	if ((self = [super init]))
     {
 		self.appName = @"MMWR Express for iOS";
-        self.agreedWithEula = FALSE;
+        self.agreedWithEula = NO;
         
         self.usageTracker = [[SiteCatalystController alloc] init];
         [_usageTracker trackAppLaunchEvent];
@@ -161,7 +161,6 @@ static BOOL isRunningTests(void)
     
 }
 
-
 - (void) deleteAllObjects: (NSString *) entityDescription  {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:entityDescription inManagedObjectContext:_managedObjectContext];
@@ -198,8 +197,18 @@ static BOOL isRunningTests(void)
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"DeleteDatabaseOnRestart"])
         [self clearDatabase];
 
+
 }
 
+-(BOOL)isSummaryDefaultArticleView
+{
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"SummaryIsDefaultArticleView"])
+        return YES;
+    
+    return NO;
+    
+    
+}
 
 - (void)presentEulaModalView
 {
