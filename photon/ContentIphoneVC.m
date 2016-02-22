@@ -51,17 +51,8 @@ ShareActionSheet *shareAS;
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
     shareButton.width = 30.0;
     
-    UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
-	[infoButton addTarget:self action:@selector(infoButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    infoButton.accessibilityHint = @"Double tap to access information about MMWR Express.";
-    infoButton.accessibilityLabel = @"MMWR Express Info";
-
     
-	UIBarButtonItem *modalButton = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
-	//[self.navigationItem setRightBarButtonItem:modalButton animated:YES];
-    
-    
-    self.navigationItem.rightBarButtonItems  = @[shareButton, modalButton];
+    self.navigationItem.rightBarButtonItems  = @[shareButton];
     
     [self.childSummaryIphoneVC.txtvKnownText setScrollEnabled:YES];
     [self.childSummaryIphoneVC.txtvKnownText setUserInteractionEnabled:YES];

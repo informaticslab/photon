@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yzb-SM-wg1" id="9vK-FO-cfX">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration" hint="">
@@ -71,7 +71,7 @@
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D9R-9O-xnJ" id="I6E-BI-jqE">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -115,7 +115,7 @@
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nPL-Kh-Mfl" id="7vE-kz-3A9">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -901,8 +901,8 @@ IAoKA
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Myg-vG-pE1">
                                 <rect key="frame" x="0.0" y="62" width="320" height="326"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help_content_iPad" translatesAutoresizingMaskIntoConstraints="NO" id="bLS-gx-3yO">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1132"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help_content_iPad" translatesAutoresizingMaskIntoConstraints="NO" id="bLS-gx-3yO">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="969"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
@@ -1108,7 +1108,7 @@ IAoKA
     <resources>
         <image name="about_icon" width="61" height="60"/>
         <image name="eula_icon" width="35" height="35"/>
-        <image name="help_content_iPad" width="320" height="1132"/>
+        <image name="help_content_iPad" width="320" height="775"/>
         <image name="help_header_icon" width="33" height="28"/>
         <image name="ipad_added_icon" width="38" height="38"/>
         <image name="ipad_detail_navbar" width="704" height="64"/>
