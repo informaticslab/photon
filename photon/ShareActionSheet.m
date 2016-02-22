@@ -181,7 +181,7 @@
         
         UIAlertView *anAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"There isn't a mail account setup on the device." delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
         
-        [anAlert addButtonWithTitle:@"Cancel"];
+        [anAlert addButtonWithTitle:@"Dismiss"];
         [anAlert show];
     }
     

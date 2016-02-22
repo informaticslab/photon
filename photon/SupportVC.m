@@ -78,15 +78,22 @@
         NSString *messageBody = [NSString stringWithFormat:@"\n\n\nApp name:  MMWR Express for iOS \nApp version:  %@  \nDevice model:  %@ \nSystem name:  %@ \nSystem version:  %@", [APP_MGR getAppVersion], [APP_MGR getDeviceModel], [APP_MGR getDeviceSystemName], [APP_MGR getDeviceSystemVersion]];
         [self.mail setMessageBody:messageBody isHTML:NO];
         [self.mail setToRecipients:@[@"informaticslab@cdc.gov"]];
-        
+
+        [self presentViewController:self.mail animated:YES completion:NULL];
+
     }
     else
     {
         NSLog(@"This device cannot send email");
+        UIAlertView *anAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"There isn't a mail account setup on the device." delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
+        
+        [anAlert addButtonWithTitle:@"Dismiss"];
+        [anAlert show];
+
+
     }
 
     
-    [self presentViewController:self.mail animated:YES completion:NULL];
 
 }
 @end
