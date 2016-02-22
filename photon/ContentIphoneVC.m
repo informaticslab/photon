@@ -12,6 +12,7 @@
 
 @implementation ContentIphoneVC
 
+
 ShareActionSheet *shareAS;
 
 
@@ -106,9 +107,27 @@ ShareActionSheet *shareAS;
     }
 }
 
+
+-(void)flashScrollingIndicators
+{
+    
+    [self.childSummaryIphoneVC.txtvKnownText flashScrollIndicators];
+    [self.childSummaryIphoneVC.txtvAddedText flashScrollIndicators];
+    [self.childSummaryIphoneVC.txtvImplicationsText flashScrollIndicators];
+    
+}
+
+
 -(void)viewWillAppear:(BOOL)animated
 {
+    
    
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self flashScrollingIndicators];
+    
 }
 
 

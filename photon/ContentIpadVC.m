@@ -85,7 +85,7 @@ ShareActionSheet *shareAS;
     self.txtvImplicationsText.delegate = self;
     self.txtvImplicationsText.showsVerticalScrollIndicator = YES;
     self.txtvImplicationsText.text = self.contentText;
-    
+
     [self.txtvArticleTitle setScrollEnabled:YES];
     [self.txtvArticleTitle setUserInteractionEnabled:YES];
     self.txtvArticleTitle.delegate = self;
@@ -107,6 +107,16 @@ ShareActionSheet *shareAS;
     
 }
 
+-(void)flashScrollingIndicators
+{
+    
+    [self.txtvKnownText flashScrollIndicators];
+    [self.txtvAddedText flashScrollIndicators];
+    [self.txtvImplicationsText flashScrollIndicators];
+    
+    
+}
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSString * segueName = segue.identifier;
@@ -119,9 +129,14 @@ ShareActionSheet *shareAS;
 {
     
     [self selectedArticle:[APP_MGR.splitVM getSelectedArticle]];
-   
+
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self flashScrollingIndicators];
+    
+}
 
 - (void)share:(id)sender
 {
@@ -170,6 +185,7 @@ ShareActionSheet *shareAS;
         self.fullArticleContentView.hidden = NO;
     } else if (segCtrl.selectedSegmentIndex == 1) {
         self.fullArticleContentView.hidden = YES;
+        [self flashScrollingIndicators];
     }
     if (self.article != nil)
         self.grayedOutContentView.hidden = YES;
@@ -242,6 +258,8 @@ ShareActionSheet *shareAS;
     self.txtvArticleTitle.textAlignment = NSTextAlignmentCenter;
     
     self.navigationItem.accessibilityLabel = [NSString stringWithFormat:@"%@ %@", @"Summary of Article with title ", self.article.title];
+    
+    [self flashScrollingIndicators];
     
     // track page
     [APP_MGR.usageTracker trackNavigationEvent:SC_PAGE_TITLE_SUMMARY inSection:SC_SECTION_SUMMARY];
