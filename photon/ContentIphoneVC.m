@@ -225,6 +225,7 @@ ShareActionSheet *shareAS;
 
 -(void)selectedArticle:(ArticleMO *)selArticle
 {
+    
     if (selArticle == nil)
         return;
 
@@ -235,20 +236,10 @@ ShareActionSheet *shareAS;
     
     [self.childFullArticleVC loadUrl:_article.url];
 
-    UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:15];
-    self.childSummaryIphoneVC.txtvKnownText.text = _article.already_known;
-    self.childSummaryIphoneVC.txtvKnownText.font = font;
-    self.childSummaryIphoneVC.txtvKnownText.textContainerInset = UIEdgeInsetsMake(5,5,5,5);
+    [self.childSummaryIphoneVC setKnownText:_article.already_known];
+    [self.childSummaryIphoneVC setAddedText:_article.added_by_report];
+    [self.childSummaryIphoneVC setImplicationsText:_article.implications];
 
-    
-    self.childSummaryIphoneVC.txtvAddedText.text = _article.added_by_report;
-    self.childSummaryIphoneVC.txtvAddedText.font = font;
-    self.childSummaryIphoneVC.txtvAddedText.textContainerInset = UIEdgeInsetsMake(5,5,5,5);
-    
-    self.childSummaryIphoneVC.txtvImplicationsText.text = _article.implications;
-    self.childSummaryIphoneVC.txtvImplicationsText.font = font;
-    self.childSummaryIphoneVC.txtvImplicationsText.textContainerInset = UIEdgeInsetsMake(5,5,5,5);
-    
     self.childSummaryIphoneVC.txtvArticleTitle.text = _article.title;
     self.childSummaryIphoneVC.txtvArticleTitle.font = APP_MGR.tableFont;
     self.childSummaryIphoneVC.txtvArticleTitle.textAlignment = NSTextAlignmentCenter;
@@ -262,11 +253,6 @@ ShareActionSheet *shareAS;
     } else {
         [APP_MGR.usageTracker trackNavigationEvent:SC_PAGE_TITLE_SUMMARY inSection:SC_SECTION_SUMMARY];
     }
-    
-    
-
-
-    
     
 }
 

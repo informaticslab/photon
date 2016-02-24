@@ -8,11 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SummaryIphoneVC : UIViewController
+@interface SummaryIphoneVC : UIViewController <UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *txtvArticleTitle;
 @property (weak, nonatomic) IBOutlet UITextView *txtvKnownText;
 @property (weak, nonatomic) IBOutlet UITextView *txtvAddedText;
 @property (weak, nonatomic) IBOutlet UITextView *txtvImplicationsText;
+
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *txtvKnownTextHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *txtvAddedTextHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *txtvImplicationsTextHeightConstraint;
+
+-(void)setKnownText:(NSString *)text;
+-(void)setAddedText:(NSString *)text;
+-(void)setImplicationsText:(NSString *)text;
 
 @end
