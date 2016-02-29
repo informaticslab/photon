@@ -27,7 +27,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *txtvAddedText;
 @property (weak, nonatomic) IBOutlet UIView *fullArticleContainer;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 
 

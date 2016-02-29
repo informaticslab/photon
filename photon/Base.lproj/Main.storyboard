@@ -206,18 +206,28 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I9v-Gl-ES5" userLabel="Summary Scroll View">
-                                <rect key="frame" x="20" y="0.0" width="280" height="460"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9v-Gl-ES5" userLabel="Summary Scroll View">
+                                <rect key="frame" x="20" y="0.0" width="280" height="367"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Sk-Qx-AHf">
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Sk-Qx-AHf">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="944"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="944" id="aLG-ZE-wVF"/>
+                                        </constraints>
                                         <connections>
                                             <segue destination="XWS-I9-eD7" kind="embed" identifier="embedSummaryIphoneView" id="etO-Kt-o5b"/>
                                         </connections>
                                     </containerView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="7Sk-Qx-AHf" firstAttribute="leading" secondItem="I9v-Gl-ES5" secondAttribute="leading" id="2Di-Jk-Ice"/>
+                                    <constraint firstItem="7Sk-Qx-AHf" firstAttribute="centerX" secondItem="I9v-Gl-ES5" secondAttribute="centerX" id="bCC-05-PWX"/>
+                                    <constraint firstAttribute="bottom" secondItem="7Sk-Qx-AHf" secondAttribute="bottom" constant="-484" id="doM-R1-AtM"/>
+                                    <constraint firstAttribute="trailing" secondItem="7Sk-Qx-AHf" secondAttribute="trailing" id="iNS-AI-oZK"/>
+                                    <constraint firstItem="7Sk-Qx-AHf" firstAttribute="top" secondItem="I9v-Gl-ES5" secondAttribute="top" id="xNU-PM-Iy2"/>
+                                </constraints>
                             </scrollView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="940-ss-V6C" userLabel="Full Article Container">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="940-ss-V6C" userLabel="Full Article Container">
                                 <rect key="frame" x="20" y="0.0" width="280" height="367"/>
                                 <connections>
                                     <segue destination="Oyu-kB-Iaf" kind="embed" identifier="embedFullArticleIphoneView" id="j28-Om-Yze"/>
@@ -225,6 +235,17 @@
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I9v-Gl-ES5" firstAttribute="bottom" secondItem="7vg-TD-XdT" secondAttribute="top" id="1xR-WH-7IJ"/>
+                            <constraint firstItem="940-ss-V6C" firstAttribute="bottom" secondItem="7vg-TD-XdT" secondAttribute="top" id="79y-5S-Hp0"/>
+                            <constraint firstItem="I9v-Gl-ES5" firstAttribute="top" secondItem="EoA-0U-s8i" secondAttribute="bottom" id="7Sb-bk-Ako"/>
+                            <constraint firstItem="I9v-Gl-ES5" firstAttribute="top" secondItem="940-ss-V6C" secondAttribute="top" id="93o-SJ-eJb"/>
+                            <constraint firstItem="I9v-Gl-ES5" firstAttribute="leading" secondItem="8tS-El-hCA" secondAttribute="leadingMargin" constant="4" id="D7f-ST-HgC"/>
+                            <constraint firstItem="I9v-Gl-ES5" firstAttribute="centerX" secondItem="8tS-El-hCA" secondAttribute="centerX" id="SUr-aV-YVV"/>
+                            <constraint firstItem="I9v-Gl-ES5" firstAttribute="leading" secondItem="940-ss-V6C" secondAttribute="leading" id="V1l-vZ-HSA"/>
+                            <constraint firstItem="I9v-Gl-ES5" firstAttribute="trailing" secondItem="940-ss-V6C" secondAttribute="trailing" id="j3X-Eh-IEj"/>
+                            <constraint firstItem="I9v-Gl-ES5" firstAttribute="top" secondItem="EoA-0U-s8i" secondAttribute="bottom" id="xOP-fG-WsJ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sIE-UQ-oSp">
                         <nil key="title"/>
@@ -244,7 +265,6 @@
                     <connections>
                         <outlet property="containerView" destination="7Sk-Qx-AHf" id="cYJ-gX-8pS"/>
                         <outlet property="fullArticleContainer" destination="940-ss-V6C" id="tmt-fg-CRr"/>
-                        <outlet property="scrollView" destination="I9v-Gl-ES5" id="qv1-A0-Joz"/>
                         <outlet property="segCtrlArticleView" destination="ftx-K4-fxU" id="S4l-M3-3l1"/>
                         <outlet property="summaryScrollView" destination="I9v-Gl-ES5" id="4B2-oj-8GI"/>
                     </connections>
@@ -1080,7 +1100,7 @@ IAoKA
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1z-aC-g3o">
-                                <rect key="frame" x="2" y="704" width="280" height="240"/>
+                                <rect key="frame" x="0.0" y="704" width="280" height="240"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES"/>
@@ -1130,7 +1150,7 @@ IAoKA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dk1-jJ-kkb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4311" y="458"/>
+            <point key="canvasLocation" x="4154" y="784"/>
         </scene>
         <!--Full ArticleVC-->
         <scene sceneID="8LN-4d-ViD">

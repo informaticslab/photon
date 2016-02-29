@@ -92,7 +92,6 @@ ShareActionSheet *shareAS;
 
     [self selectedArticle:self.article];
     
-    self.scrollView.contentSize = self.containerView.frame.size;
     
     if ([APP_MGR isSummaryDefaultArticleView] == YES) {
         self.segCtrlArticleView.selectedSegmentIndex = 1;
@@ -133,6 +132,9 @@ ShareActionSheet *shareAS;
 -(void)viewDidAppear:(BOOL)animated
 {
     [self flashScrollingIndicators];
+    CGSize containerSize = self.containerView.frame.size;
+    CGSize scrollContentSize = CGSizeMake(containerSize.width, containerSize.height + 60.0);
+    self.summaryScrollView.contentSize = scrollContentSize;
     
 }
 
