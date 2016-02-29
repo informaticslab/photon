@@ -373,7 +373,7 @@ bool didViewJustLoad;
         }
     }
     else if([segue.identifier isEqualToString:@"modalFullArticle"]) {
-        FullArticleVC *fullArticleVC = segue.destinationViewController;
+        //FullArticleVC *fullArticleVC = segue.destinationViewController;
         //fullArticleVC.url = _article.url;
     }
     

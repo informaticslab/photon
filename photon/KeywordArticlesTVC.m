@@ -303,11 +303,7 @@ NSArray *keywordArticles;
         ContentPagesVC *contentVC = segue.destinationViewController;
         contentVC.article = _selectedArticle;
         contentVC.issue = _selectedArticle.issue;
-    } else if([segue.identifier isEqualToString:@"modalFullArticle"]) {
-        FullArticleVC *fullArticleVC = segue.destinationViewController;
-        //fullArticleVC.url = _selectedArticle.url;
-    }
-    
+    } 
 }
 
 

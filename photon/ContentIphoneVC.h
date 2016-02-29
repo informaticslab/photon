@@ -8,13 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ArticleMO+Article.h"
-#import "ArticleSelectionDelegate.h"
 #import "ModalViewDelegate.h"
 #import "PopoverViewDelegate.h"
 #import "FullArticleVC.h"
 #import "SummaryIphoneVC.h"
 
-@interface ContentIphoneVC : UIViewController <UITextViewDelegate, ArticleSelectionDelegate, ModalViewDelegate>
+@interface ContentIphoneVC : UIViewController <UITextViewDelegate, ModalViewDelegate>
 
 @property NSUInteger pageIndex;
 @property NSString *headerText;
@@ -39,7 +38,6 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segCtrlArticleView;
 
 
-- (IBAction)infoButtonAction:(UIBarButtonItem *)sender;
 -(void)didTouchReadUserAgreementButton;
 
 - (IBAction)segCtrlFullSummary:(id)sender;

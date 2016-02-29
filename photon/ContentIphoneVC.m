@@ -156,18 +156,6 @@ ShareActionSheet *shareAS;
 }
 
 
-- (IBAction)infoButtonAction:(UIBarButtonItem *)sender
-{
-	// Set the sender to a UIButton.
-	UIButton *tappedButton = (UIButton *)sender;
-	
-	// Present the popover from the button that was tapped in the detail view.
-	//[self.infoPopoverController presentPopoverFromRect:tappedButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-    
-	// Set the last button tapped to the current button that was tapped.
-	//self.lastTappedButton = sender;
-}
-
 -(void)didTouchReadUserAgreementButton
 {
     
