@@ -995,12 +995,12 @@ IAoKA
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c7I-0F-8kV">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7I-0F-8kV">
                                 <rect key="frame" x="0.0" y="125" width="320" height="311"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
                             </webView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dxo-TW-nvj">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dxo-TW-nvj">
                                 <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="hbu-Ej-iGe"/>
@@ -1011,10 +1011,10 @@ IAoKA
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eula_icon" translatesAutoresizingMaskIntoConstraints="NO" id="yGh-ib-wLl">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eula_icon" translatesAutoresizingMaskIntoConstraints="NO" id="yGh-ib-wLl">
                                 <rect key="frame" x="29" y="74" width="35" height="35"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0vN-Ru-SBS">
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0vN-Ru-SBS">
                                 <rect key="frame" x="72" y="77" width="233" height="30"/>
                                 <attributedString key="attributedText">
                                     <fragment content="MMWR Express Agreement">
@@ -1027,10 +1027,10 @@ IAoKA
                                 </attributedString>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nav_bar" translatesAutoresizingMaskIntoConstraints="NO" id="zJk-Ml-g0a">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_bar" translatesAutoresizingMaskIntoConstraints="NO" id="zJk-Ml-g0a">
                                 <rect key="frame" x="0.0" y="-11" width="320" height="64"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Agreement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ua-9i-D8X">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agreement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ua-9i-D8X">
                                 <rect key="frame" x="101" y="24" width="118" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1038,6 +1038,26 @@ IAoKA
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="0vN-Ru-SBS" secondAttribute="trailing" constant="-1" id="CdQ-qY-Yii"/>
+                            <constraint firstItem="c7I-0F-8kV" firstAttribute="leading" secondItem="dxo-TW-nvj" secondAttribute="leading" id="CgI-GM-EJb"/>
+                            <constraint firstItem="yGh-ib-wLl" firstAttribute="centerY" secondItem="0vN-Ru-SBS" secondAttribute="centerY" id="DAK-rZ-Ulw"/>
+                            <constraint firstItem="c7I-0F-8kV" firstAttribute="leading" secondItem="zJk-Ml-g0a" secondAttribute="leading" id="Dk9-zG-YMT"/>
+                            <constraint firstItem="dxo-TW-nvj" firstAttribute="top" secondItem="c7I-0F-8kV" secondAttribute="bottom" id="RIX-Kj-4GG"/>
+                            <constraint firstItem="yGh-ib-wLl" firstAttribute="leading" secondItem="gbh-Kh-4Ao" secondAttribute="leadingMargin" constant="13" id="SC6-P8-Km0"/>
+                            <constraint firstItem="0vN-Ru-SBS" firstAttribute="top" secondItem="9ua-9i-D8X" secondAttribute="bottom" constant="32" id="Sdq-Sr-hyj"/>
+                            <constraint firstItem="9ua-9i-D8X" firstAttribute="leading" secondItem="gbh-Kh-4Ao" secondAttribute="leadingMargin" constant="85" id="VZe-OH-hmR"/>
+                            <constraint firstItem="c7I-0F-8kV" firstAttribute="top" secondItem="yGh-ib-wLl" secondAttribute="bottom" constant="16" id="WHV-xc-6xl"/>
+                            <constraint firstItem="9ua-9i-D8X" firstAttribute="centerX" secondItem="zJk-Ml-g0a" secondAttribute="centerX" id="aWi-gj-lfi"/>
+                            <constraint firstItem="9ua-9i-D8X" firstAttribute="top" secondItem="5iM-7Y-khn" secondAttribute="bottom" constant="4" id="gq6-4n-0B4"/>
+                            <constraint firstItem="c7I-0F-8kV" firstAttribute="top" secondItem="0vN-Ru-SBS" secondAttribute="bottom" constant="18" id="i7V-Mf-rL5"/>
+                            <constraint firstItem="yGh-ib-wLl" firstAttribute="top" secondItem="zJk-Ml-g0a" secondAttribute="bottom" constant="21" id="mUM-Gl-4Nc"/>
+                            <constraint firstItem="zJk-Ml-g0a" firstAttribute="trailing" secondItem="c7I-0F-8kV" secondAttribute="trailing" id="nt3-fM-nSt"/>
+                            <constraint firstItem="dxo-TW-nvj" firstAttribute="leading" secondItem="gbh-Kh-4Ao" secondAttribute="leading" id="oOE-XE-55h"/>
+                            <constraint firstItem="dxo-TW-nvj" firstAttribute="bottom" secondItem="El5-YC-9M6" secondAttribute="top" id="uZn-l6-PDc"/>
+                            <constraint firstItem="0vN-Ru-SBS" firstAttribute="leading" secondItem="yGh-ib-wLl" secondAttribute="trailing" constant="8" symbolic="YES" id="z8q-Hy-hyc"/>
+                            <constraint firstItem="dxo-TW-nvj" firstAttribute="trailing" secondItem="c7I-0F-8kV" secondAttribute="trailing" id="zgb-VF-Baj"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="btnAgree" destination="maE-cY-ihJ" id="hP1-E9-6v7"/>
@@ -1063,8 +1083,8 @@ IAoKA
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_known_icon" translatesAutoresizingMaskIntoConstraints="NO" id="GLt-hY-6VC">
                                 <rect key="frame" x="0.0" y="8" width="38" height="38"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="TWw-8q-08E">
-                                <rect key="frame" x="46" y="304" width="214" height="59"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="TWw-8q-08E">
+                                <rect key="frame" x="46" y="306" width="214" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="Qju-i4-EPj"/>
                                 </constraints>
@@ -1079,8 +1099,8 @@ IAoKA
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BW4-f6-Klc">
-                                <rect key="frame" x="0.0" y="366" width="280" height="240"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BW4-f6-Klc">
+                                <rect key="frame" x="0.0" y="368" width="280" height="240"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES"/>
@@ -1091,14 +1111,14 @@ IAoKA
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ipad_added_icon" translatesAutoresizingMaskIntoConstraints="NO" id="54F-VQ-PFs">
-                                <rect key="frame" x="0.0" y="315" width="38" height="38"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_added_icon" translatesAutoresizingMaskIntoConstraints="NO" id="54F-VQ-PFs">
+                                <rect key="frame" x="0.0" y="317" width="38" height="38"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ipad_implications_icon" translatesAutoresizingMaskIntoConstraints="NO" id="wV1-8x-nMz">
-                                <rect key="frame" x="0.0" y="640" width="38" height="38"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_implications_icon" translatesAutoresizingMaskIntoConstraints="NO" id="wV1-8x-nMz">
+                                <rect key="frame" x="0.0" y="642" width="38" height="38"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="214" translatesAutoresizingMaskIntoConstraints="NO" id="j4Y-K5-Zh2">
-                                <rect key="frame" x="46" y="614" width="214" height="89"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="214" translatesAutoresizingMaskIntoConstraints="NO" id="j4Y-K5-Zh2">
+                                <rect key="frame" x="46" y="616" width="214" height="89"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="89" id="CpB-ip-Vow"/>
                                 </constraints>
@@ -1126,8 +1146,8 @@ IAoKA
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="875-vi-ieQ">
-                                <rect key="frame" x="0.0" y="45" width="280" height="238"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="875-vi-ieQ">
+                                <rect key="frame" x="0.0" y="45" width="280" height="240"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES"/>
@@ -1138,8 +1158,8 @@ IAoKA
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1z-aC-g3o">
-                                <rect key="frame" x="0.0" y="704" width="280" height="240"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1z-aC-g3o">
+                                <rect key="frame" x="0.0" y="688" width="280" height="240"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES"/>
@@ -1173,7 +1193,7 @@ IAoKA
                             <constraint firstItem="GLt-hY-6VC" firstAttribute="top" secondItem="Ao0-vm-8yx" secondAttribute="bottom" constant="8" id="cec-HG-9vN"/>
                             <constraint firstItem="875-vi-ieQ" firstAttribute="trailing" secondItem="s1z-aC-g3o" secondAttribute="trailing" id="hqF-4n-oPJ"/>
                             <constraint firstItem="TWw-8q-08E" firstAttribute="centerY" secondItem="54F-VQ-PFs" secondAttribute="centerY" id="kzK-yH-zny"/>
-                            <constraint firstItem="s1z-aC-g3o" firstAttribute="top" secondItem="j4Y-K5-Zh2" secondAttribute="bottom" constant="1" id="luf-3t-OKT"/>
+                            <constraint firstItem="s1z-aC-g3o" firstAttribute="top" secondItem="j4Y-K5-Zh2" secondAttribute="bottom" constant="-17" id="luf-3t-OKT"/>
                             <constraint firstItem="TWw-8q-08E" firstAttribute="top" secondItem="875-vi-ieQ" secondAttribute="bottom" constant="21" id="oSS-Lg-lIr"/>
                             <constraint firstItem="875-vi-ieQ" firstAttribute="top" secondItem="mAl-Qo-g7V" secondAttribute="bottom" constant="8" symbolic="YES" id="r35-QI-F1f"/>
                         </constraints>
