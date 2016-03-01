@@ -43,11 +43,11 @@
 -(Issue *)parseIssueJson:(NSDictionary *)json
 {
     
-    NSString *title = [JsonParserBase stringValueForKey:@"issue-date" inJson:json];
+    NSString *date = [JsonParserBase stringValueForKey:@"issue-date" inJson:json];
     NSInteger vol = [JsonParserBase integerValueForKey:@"issue-vol" inJson:json];
     NSInteger num = [JsonParserBase integerValueForKey:@"issue-no" inJson:json];
 
-    Issue *parsedIssue = [[Issue alloc] initWithDate:title volume:vol number:num];
+    Issue *parsedIssue = [[Issue alloc] initWithDate:date volume:vol number:num];
     
     return parsedIssue;
     
