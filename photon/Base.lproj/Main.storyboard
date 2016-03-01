@@ -244,6 +244,7 @@
                             <constraint firstItem="I9v-Gl-ES5" firstAttribute="centerX" secondItem="8tS-El-hCA" secondAttribute="centerX" id="SUr-aV-YVV"/>
                             <constraint firstItem="I9v-Gl-ES5" firstAttribute="leading" secondItem="940-ss-V6C" secondAttribute="leading" id="V1l-vZ-HSA"/>
                             <constraint firstItem="I9v-Gl-ES5" firstAttribute="trailing" secondItem="940-ss-V6C" secondAttribute="trailing" id="j3X-Eh-IEj"/>
+                            <constraint firstItem="940-ss-V6C" firstAttribute="centerX" secondItem="8tS-El-hCA" secondAttribute="centerX" id="o9d-mJ-diI"/>
                             <constraint firstItem="I9v-Gl-ES5" firstAttribute="top" secondItem="EoA-0U-s8i" secondAttribute="bottom" id="xOP-fG-WsJ"/>
                         </constraints>
                     </view>
@@ -1226,12 +1227,18 @@ IAoKA
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="n9S-Py-i7a">
                                 <rect key="frame" x="130" y="174" width="20" height="20"/>
                             </activityIndicatorView>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vw1-Gt-KQL">
-                                <rect key="frame" x="0.0" y="0.0" width="280" height="367"/>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vw1-Gt-KQL">
+                                <rect key="frame" x="-4" y="0.0" width="288" height="367"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vw1-Gt-KQL" firstAttribute="leading" secondItem="N49-eP-an0" secondAttribute="leadingMargin" constant="-20" id="C5f-Nn-e3o"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vw1-Gt-KQL" secondAttribute="trailing" constant="-20" id="M5E-Ls-TrQ"/>
+                            <constraint firstItem="FI3-78-G55" firstAttribute="top" secondItem="vw1-Gt-KQL" secondAttribute="bottom" id="NyG-KQ-F1r"/>
+                            <constraint firstItem="vw1-Gt-KQL" firstAttribute="top" secondItem="xgv-MZ-auf" secondAttribute="bottom" id="TDh-uw-WcC"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="spinner" destination="n9S-Py-i7a" id="MmP-CC-l2V"/>
