@@ -22,6 +22,7 @@
 
 BOOL hasDataBeenCleared = NO;
 
+#define expectZeroIssues() XCTAssert([self.issuesMgr.sortedIssues count] == 0, @"The number of sorted issues is not equal to 0.");
 #define expectOneIssue() XCTAssert([self.issuesMgr.sortedIssues count] == 1, @"The number of sorted issues is not equal to 1.");
 #define expectTwoIssues() XCTAssert([self.issuesMgr.sortedIssues count] == 2, @"The number of sorted issues is not equal to 2.");
 
@@ -79,6 +80,14 @@ BOOL hasDataBeenCleared = NO;
     ArticleMO *savedArticle = [articles objectAtIndex:0];
     XCTAssertTrue([savedArticle.title isEqualToString:expectedResult], @"Expect article title:%@ --- Retrieved title:%@", expectedResult, savedArticle.title);
 }
+
+- (void)testDeleteArticle
+{
+    [self parseAndPersistTestFile:@"deleteCommand" ofType:@"json"];
+    
+    expectZeroIssues();
+}
+
 
 
 //  loads two versions of same article and tests that last version is only one saved

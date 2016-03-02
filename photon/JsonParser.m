@@ -89,14 +89,25 @@ int implicationsFound = 0;
         // add article info
         currArticle = [versionParser parseArticleJson:articleJsonBlob];
         
-        // get content version and set article object version
-        contentVer = [versionParser parseContentVersionJson:articleJsonBlob];
-        currArticle.version = contentVer;
+        // check for delete command and delete article
+        if ([versionParser isDeleteCommandInJson:articleJsonBlob]) {
+            
+            // delete the article from the database
+            [APP_MGR.issuesMgr deleteArticle:currArticle inIssue:currIssue];
+            
+        } else {
+
         
-        // get collection of tags for currrent article
-        tags = [versionParser parseTagsJson:articleJsonBlob];
-        
-        [APP_MGR.issuesMgr newArticle:currArticle inIssue:currIssue withTags:tags];
+            // get content version and set article object version
+            contentVer = [versionParser parseContentVersionJson:articleJsonBlob];
+            currArticle.version = contentVer;
+            
+            // get collection of tags for currrent article
+            tags = [versionParser parseTagsJson:articleJsonBlob];
+            
+            [APP_MGR.issuesMgr newArticle:currArticle inIssue:currIssue withTags:tags];
+            
+        }
         
     }
     
