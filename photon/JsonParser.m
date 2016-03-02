@@ -34,11 +34,11 @@ int implicationsFound = 0;
         self.parsedKeywords = [[NSMutableDictionary alloc]init];
         self.parsedItems  = [[NSMutableArray alloc] init];
         self.parsedJsonBlobs  = [[NSMutableArray alloc] init];
-
+        
         V1JsonParser *v1 = [[V1JsonParser alloc] init];
         _schemaParsers = @[v1];
         
-//        NSURL *feedURL = [NSURL URLWithString:@"http://t.cdc.gov/feed.aspx?feedid=100&&fromdate=2014-05-01"];
+        //        NSURL *feedURL = [NSURL URLWithString:@"http://t.cdc.gov/feed.aspx?feedid=100&&fromdate=2014-05-01"];
         NSURL *feedURL = [NSURL URLWithString:@"http://t.cdc.gov/feed.aspx?feedid=100"];
         // test feed :: NSURL *feedURL = [NSURL URLWithString:@"http://t.cdc.gov/feed.aspx?feedid=105"];
         _feedParser = [[MWFeedParser alloc] initWithFeedURL:feedURL];
@@ -75,7 +75,7 @@ int implicationsFound = 0;
     NSArray *tags = nil;
     NSInteger schemaVer = 0;
     NSInteger contentVer = 0;
-        
+    
     for (NSDictionary *articleJsonBlob in jsonBlobs)
     {
         // get schema version
@@ -99,7 +99,7 @@ int implicationsFound = 0;
         [APP_MGR.issuesMgr newArticle:currArticle inIssue:currIssue withTags:tags];
         
     }
-
+    
     //
     [APP_MGR.issuesMgr reloadData];
     
@@ -127,8 +127,8 @@ int implicationsFound = 0;
     NSError *err = nil;
     NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"PreloadIssues" ofType:@"json"];
     NSArray *preloadJsonBlobs = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPath]
-                                                             options:kNilOptions
-                                                               error:&err];
+                                                                options:kNilOptions
+                                                                  error:&err];
     
     [self parseAndPersistJsonBlobs:preloadJsonBlobs];
     
@@ -145,7 +145,8 @@ int implicationsFound = 0;
     NSInteger schemaVer = 0;
     NSInteger contentVer = 0;
     
-
+    
+    DebugLog(@"Starting to parse feed data............................");
     
     for (NSString *blob in _parsedJsonBlobs)
     {
@@ -161,26 +162,40 @@ int implicationsFound = 0;
         // get issue from blob
         currIssue = [versionParser parseIssueJson:articleJsonBlob];
         
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        //NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         
-        [formatter setDateFormat:@"YYYY-MM-dd"];
+        //[formatter setDateFormat:@"YYYY-MM-dd"];
         //DebugLog(@"Found issue from feed with date %@, volume %ld, number = %ld", currIssue.title, (long)currIssue.volume, (long)currIssue.number);
         
         // add article info
         currArticle = [versionParser parseArticleJson:articleJsonBlob];
         
-        // get content version and store it on article object
-        contentVer = [versionParser parseContentVersionJson:articleJsonBlob];
-        currArticle.version = contentVer;
-        
-        // get collection of tags for currrent article
-        tags = [versionParser parseTagsJson:articleJsonBlob];
-        
-        [APP_MGR.issuesMgr newArticle:currArticle inIssue:currIssue withTags:tags];
+        // check for delete command and delete article
+        if ([versionParser isDeleteCommandInJson:articleJsonBlob]) {
+            
+            // delete the article from the database
+            [APP_MGR.issuesMgr deleteArticle:currArticle inIssue:currIssue];
+            
+        } else {
+            
+            
+            // get content version and store it on article object
+            contentVer = [versionParser parseContentVersionJson:articleJsonBlob];
+            currArticle.version = contentVer;
+            
+            // get collection of tags for currrent article
+            tags = [versionParser parseTagsJson:articleJsonBlob];
+            
+            [APP_MGR.issuesMgr newArticle:currArticle inIssue:currIssue withTags:tags];
+            
+        }
         
     }
+    
+    DebugLog(@"Finished parsing feed data............................");
+    
     [APP_MGR.issuesMgr reloadData];
-
+    
     [_parsedIssues removeAllObjects];
     [_parsedItems removeAllObjects];
     [_parsedJsonBlobs removeAllObjects];
@@ -212,17 +227,17 @@ int implicationsFound = 0;
 #pragma mark MWFeedParserDelegate
 
 - (void)feedParserDidStart:(MWFeedParser *)parser {
-	DebugLog(@"Started Parsing: %@", parser.url);
+    DebugLog(@"Started Parsing: %@", parser.url);
 }
 
 - (void)feedParser:(MWFeedParser *)parser didParseFeedInfo:(MWFeedInfo *)info {
-	DebugLog(@"Parsed Feed Info: “%@”", info.title);
-	//self.title = info.title;
+    DebugLog(@"Parsed Feed Info: “%@”", info.title);
+    //self.title = info.title;
 }
 
 - (void)feedParser:(MWFeedParser *)parser didParseFeedItem:(MWFeedItem *)item {
-	DebugLog(@"Parsed Feed Item: “%@”", item.title);
-	if (item)
+    DebugLog(@"Parsed Feed Item: “%@”", item.title);
+    if (item)
     {
         [_parsedItems addObject:item];
         [_parsedJsonBlobs addObject:item.summary];
@@ -231,7 +246,7 @@ int implicationsFound = 0;
 }
 
 - (void)feedParserDidFinish:(MWFeedParser *)parser {
-	DebugLog(@"Finished Parsing%@", (parser.stopped ? @" (Stopped)" : @""));
+    DebugLog(@"Finished Parsing%@", (parser.stopped ? @" (Stopped)" : @""));
     [self parseFeedData];
     [[NSNotificationCenter defaultCenter]
      postNotificationName:@"FeedDataUpdated"
@@ -239,8 +254,9 @@ int implicationsFound = 0;
     
 }
 
+
 - (void)feedParser:(MWFeedParser *)parser didFailWithError:(NSError *)error {
-	DebugLog(@"Finished Parsing With Error: %@", error);
+    DebugLog(@"Finished Parsing With Error: %@", error);
     if (error.code == 2) {
         // Failed but some items parsed, so show and inform of error
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Could Not Update Articles"
@@ -263,7 +279,7 @@ int implicationsFound = 0;
      postNotificationName:@"FeedDataUpdated"
      object:self];
     
-
+    
 }
 
 

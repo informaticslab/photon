@@ -20,6 +20,6 @@
 -(FeedArticle *)addArticleWithTitle:(NSString *)title;
 -(void)updateArticle:(ArticleMO *)oldArticle withArticle:(FeedArticle *)newArticle;
 -(NSUInteger)numberOfArticles;
-
+-(void)deleteArticle:(ArticleMO *)article;
 
 @end

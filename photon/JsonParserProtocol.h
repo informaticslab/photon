@@ -17,5 +17,7 @@
 -(Issue *)parseIssueJson:(NSDictionary *)json;
 -(NSArray *)parseTagsJson:(NSDictionary *)json;
 -(NSInteger)parseContentVersionJson:(NSDictionary *)json;
+-(BOOL)isDeleteCommandInJson:(NSDictionary *)json;
+
 
 @end

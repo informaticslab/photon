@@ -53,6 +53,7 @@ NSManagedObjectContext *context;
     
 }
 
+
 -(void)reloadKeywords
 {
 
@@ -101,11 +102,13 @@ NSManagedObjectContext *context;
     
 }
 
+
 -(void)clearAllData
 {
     [APP_MGR clearDatabase];
     
 }
+
 
 #pragma mark - Issue methods
 -(IssueMO *)createNewIssue:(Issue *)newIssue
@@ -209,6 +212,45 @@ NSManagedObjectContext *context;
     article.url = newArticle.url;
     [APP_MGR saveContext];
     return article;
+    
+
+}
+
+-(void)deleteArticle:(FeedArticle *)article inIssue:(Issue *)issue
+{
+    
+    IssueMO *storedIssue = nil;
+    ArticleMO *storedArticle = nil;
+    
+    // if issue does not exist just return, else get stored issue
+    if ([self isIssueNew:issue]) {
+        return;
+    } else {
+        storedIssue = [self getStoredIssueForIssue:issue];
+    }
+
+    // issue exists, see if article does, if not return
+    if ([self isArticleNew:article inIssue:storedIssue] == YES)
+        return;
+    
+        
+    // check if article with this title already exists in current issue
+    storedArticle = [storedIssue getArticleWithTitle:article.title];
+        
+    // if no article with this title then return
+    if (storedArticle == nil)
+        return;
+    
+    // remove article from keyword objects
+    [self deleteArticleFromKeywords:storedArticle];
+    
+    // now delete article
+    [storedIssue deleteArticle:storedArticle];
+    
+    if ([storedIssue.articles count] == 0)
+        [APP_MGR.managedObjectContext deleteObject:storedIssue];
+    
+    [APP_MGR saveContext];
     
 
 }
@@ -394,6 +436,21 @@ NSManagedObjectContext *context;
     [APP_MGR saveContext];
 
 }
+
+
+-(void)deleteArticleFromKeywords:(ArticleMO *)article
+{
+
+    // get existing stored keywords for article
+    NSMutableSet *storedKeywords = [self keywordsForArticle:article];
+    
+    // remove article reference to stored keywords
+    for (NSString *currKeyword in storedKeywords)
+        [self removeArticle:article fromKeyword:currKeyword];
+
+    
+}
+
 
 -(void)updatedKeywords:(NSArray *)latestKeywords fromArticle:(ArticleMO *)article
 {

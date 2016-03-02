@@ -53,6 +53,22 @@
     
 }
 
+
+-(BOOL)isDeleteCommandInJson:(NSDictionary *)json
+{
+    BOOL haveDeleteCommand = NO;
+    
+    NSString *command = [JsonParserBase stringValueForKey:@"command" inJson:json];
+    
+    if ([command isEqualToString:@"delete"])
+        haveDeleteCommand = YES;
+    
+    
+    return haveDeleteCommand;
+    
+}
+
+
 -(NSArray *)parseTagsJson:(NSDictionary *)json
 {
     

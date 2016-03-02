@@ -71,6 +71,21 @@
 }
 
 
+-(void)deleteArticle:(ArticleMO *)article
+{
+    // delete article from set of articles
+    NSMutableSet *articles = [NSMutableSet setWithSet:self.articles];
+    [articles removeObject:article];
+    self.articles = articles;
+    
+    //delete article managed object
+    [APP_MGR.managedObjectContext deleteObject:article];
+
+    return;
+}
+
+
+
 
 -(void)updateArticle:(ArticleMO *)storedArticle withArticle:(FeedArticle *)updatedArticle
 {

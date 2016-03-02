@@ -27,5 +27,6 @@
 -(IssueMO *)getSortedIssueForIndex:(NSUInteger)index;
 -(void)reloadData;
 -(void)clearAllData;
+-(void)deleteArticle:(FeedArticle *)newArticle inIssue:(Issue *)issue;
 
 @end
