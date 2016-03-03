@@ -153,7 +153,7 @@ BOOL hasDataBeenCleared = NO;
 }
 
 
-//  loads two versions of same article and tests that last version is only one saved
+//  parses an unknown attribute in JSON blob
 - (void)testUnknownAttribute
 {
     

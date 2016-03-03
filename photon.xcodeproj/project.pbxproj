@@ -16,6 +16,7 @@
 		3752D3761C0C723E0083E761 /* SupportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3752D3751C0C723E0083E761 /* SupportVC.m */; };
 		3752D3781C0C72E90083E761 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3752D3771C0C72E90083E761 /* MessageUI.framework */; };
 		375A18201BFD35C2001AFB08 /* versionedArticleDifferentKeywords.json in Resources */ = {isa = PBXBuildFile; fileRef = 375A181F1BFD35C2001AFB08 /* versionedArticleDifferentKeywords.json */; };
+		376DDCD71C88D285006BB051 /* unknownAttribute.json in Resources */ = {isa = PBXBuildFile; fileRef = 376DDCD61C88D285006BB051 /* unknownAttribute.json */; };
 		377111771C877E840002F775 /* deleteCommand.json in Resources */ = {isa = PBXBuildFile; fileRef = 377111761C877E840002F775 /* deleteCommand.json */; };
 		378BBF1A1C78EE3300396251 /* ContentIphoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 378BBF181C78EE3300396251 /* ContentIphoneVC.m */; };
 		378BBF1D1C78F5EB00396251 /* SummaryIphoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 378BBF1C1C78F5EB00396251 /* SummaryIphoneVC.m */; };
@@ -103,6 +104,7 @@
 		3752D3751C0C723E0083E761 /* SupportVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportVC.m; sourceTree = "<group>"; };
 		3752D3771C0C72E90083E761 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		375A181F1BFD35C2001AFB08 /* versionedArticleDifferentKeywords.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = versionedArticleDifferentKeywords.json; sourceTree = "<group>"; };
+		376DDCD61C88D285006BB051 /* unknownAttribute.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = unknownAttribute.json; sourceTree = "<group>"; };
 		377111761C877E840002F775 /* deleteCommand.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = deleteCommand.json; sourceTree = "<group>"; };
 		378BBF181C78EE3300396251 /* ContentIphoneVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentIphoneVC.m; sourceTree = "<group>"; };
 		378BBF191C78EE3300396251 /* ContentIphoneVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentIphoneVC.h; sourceTree = "<group>"; };
@@ -420,13 +422,14 @@
 		A62A1A3A1823C9C7006A62B3 /* photonTests */ = {
 			isa = PBXGroup;
 			children = (
+				376DDCD61C88D285006BB051 /* unknownAttribute.json */,
 				375A181F1BFD35C2001AFB08 /* versionedArticleDifferentKeywords.json */,
 				372CDAA41BFB8EE7006D65C8 /* addArticle.json */,
+				377111761C877E840002F775 /* deleteCommand.json */,
 				372CDAA61BFB8FEE006D65C8 /* versionedArticleSameKeywords.json */,
 				A62A1A401823C9C7006A62B3 /* photonTests.m */,
 				373CA3811BFA7114005B5DF1 /* testParsingJsonBlobs.m */,
 				A62A1A3B1823C9C7006A62B3 /* Supporting Files */,
-				377111761C877E840002F775 /* deleteCommand.json */,
 			);
 			path = photonTests;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				375A18201BFD35C2001AFB08 /* versionedArticleDifferentKeywords.json in Resources */,
+				376DDCD71C88D285006BB051 /* unknownAttribute.json in Resources */,
 				372CDAA71BFB8FEE006D65C8 /* versionedArticleSameKeywords.json in Resources */,
 				377111771C877E840002F775 /* deleteCommand.json in Resources */,
 				372CDAA51BFB8EE7006D65C8 /* addArticle.json in Resources */,

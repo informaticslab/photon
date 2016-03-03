@@ -39,8 +39,8 @@ int implicationsFound = 0;
         _schemaParsers = @[v1];
         
         //        NSURL *feedURL = [NSURL URLWithString:@"http://t.cdc.gov/feed.aspx?feedid=100&&fromdate=2014-05-01"];
-        NSURL *feedURL = [NSURL URLWithString:@"http://t.cdc.gov/feed.aspx?feedid=100"];
-        // test feed :: NSURL *feedURL = [NSURL URLWithString:@"http://t.cdc.gov/feed.aspx?feedid=105"];
+        // NSURL *feedURL = [NSURL URLWithString:@"http://t.cdc.gov/feed.aspx?feedid=100"];
+        NSURL *feedURL = [NSURL URLWithString:@"http://t.cdc.gov/feed.aspx?feedid=105"];
         _feedParser = [[MWFeedParser alloc] initWithFeedURL:feedURL];
         _feedParser.delegate = self;
         _feedParser.feedParseType = ParseTypeFull; // parse feed info and all items
@@ -81,34 +81,39 @@ int implicationsFound = 0;
         // get schema version
         schemaVer = [JsonParserBase parseSchemaVersionFromJson:articleJsonBlob];
         
-        id <JsonParserProtocol> versionParser = [self getParserForSchemaVersion:schemaVer];
         
-        // get issue from blob
-        currIssue = [versionParser parseIssueJson:articleJsonBlob];
-        
-        // add article info
-        currArticle = [versionParser parseArticleJson:articleJsonBlob];
-        
-        // check for delete command and delete article
-        if ([versionParser isDeleteCommandInJson:articleJsonBlob]) {
+        // only support schema version 1 now
+        if ( schemaVer == 1 ) {
             
-            // delete the article from the database
-            [APP_MGR.issuesMgr deleteArticle:currArticle inIssue:currIssue];
+            id <JsonParserProtocol> versionParser = [self getParserForSchemaVersion:schemaVer];
             
-        } else {
-
-        
-            // get content version and set article object version
-            contentVer = [versionParser parseContentVersionJson:articleJsonBlob];
-            currArticle.version = contentVer;
+            // get issue from blob
+            currIssue = [versionParser parseIssueJson:articleJsonBlob];
             
-            // get collection of tags for currrent article
-            tags = [versionParser parseTagsJson:articleJsonBlob];
+            // add article info
+            currArticle = [versionParser parseArticleJson:articleJsonBlob];
             
-            [APP_MGR.issuesMgr newArticle:currArticle inIssue:currIssue withTags:tags];
+            // check for delete command and delete article
+            if ([versionParser isDeleteCommandInJson:articleJsonBlob]) {
+                
+                // delete the article from the database
+                [APP_MGR.issuesMgr deleteArticle:currArticle inIssue:currIssue];
+                
+            } else {
+                
+                
+                // get content version and set article object version
+                contentVer = [versionParser parseContentVersionJson:articleJsonBlob];
+                currArticle.version = contentVer;
+                
+                // get collection of tags for currrent article
+                tags = [versionParser parseTagsJson:articleJsonBlob];
+                
+                [APP_MGR.issuesMgr newArticle:currArticle inIssue:currIssue withTags:tags];
+                
+            }
             
         }
-        
     }
     
     //
@@ -161,6 +166,7 @@ int implicationsFound = 0;
     
     for (NSString *blob in _parsedJsonBlobs)
     {
+        
         id jsonData = [blob dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary *articleJsonBlob = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&err];
         
@@ -168,39 +174,42 @@ int implicationsFound = 0;
         // get schema version
         schemaVer = [JsonParserBase parseSchemaVersionFromJson:articleJsonBlob];
         
-        id <JsonParserProtocol> versionParser = [self getParserForSchemaVersion:schemaVer];
-        
-        // get issue from blob
-        currIssue = [versionParser parseIssueJson:articleJsonBlob];
-        
-        //NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        
-        //[formatter setDateFormat:@"YYYY-MM-dd"];
-        //DebugLog(@"Found issue from feed with date %@, volume %ld, number = %ld", currIssue.title, (long)currIssue.volume, (long)currIssue.number);
-        
-        // add article info
-        currArticle = [versionParser parseArticleJson:articleJsonBlob];
-        
-        // check for delete command and delete article
-        if ([versionParser isDeleteCommandInJson:articleJsonBlob]) {
+        // only support schema version 1 now
+        if ( schemaVer == 1 ) {
             
-            // delete the article from the database
-            [APP_MGR.issuesMgr deleteArticle:currArticle inIssue:currIssue];
+            id <JsonParserProtocol> versionParser = [self getParserForSchemaVersion:schemaVer];
             
-        } else {
+            // get issue from blob
+            currIssue = [versionParser parseIssueJson:articleJsonBlob];
             
+            //NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
             
-            // get content version and store it on article object
-            contentVer = [versionParser parseContentVersionJson:articleJsonBlob];
-            currArticle.version = contentVer;
+            //[formatter setDateFormat:@"YYYY-MM-dd"];
+            //DebugLog(@"Found issue from feed with date %@, volume %ld, number = %ld", currIssue.title, (long)currIssue.volume, (long)currIssue.number);
             
-            // get collection of tags for currrent article
-            tags = [versionParser parseTagsJson:articleJsonBlob];
+            // add article info
+            currArticle = [versionParser parseArticleJson:articleJsonBlob];
             
-            [APP_MGR.issuesMgr newArticle:currArticle inIssue:currIssue withTags:tags];
-            
+            // check for delete command and delete article
+            if ([versionParser isDeleteCommandInJson:articleJsonBlob]) {
+                
+                // delete the article from the database
+                [APP_MGR.issuesMgr deleteArticle:currArticle inIssue:currIssue];
+                
+            } else {
+                
+                
+                // get content version and store it on article object
+                contentVer = [versionParser parseContentVersionJson:articleJsonBlob];
+                currArticle.version = contentVer;
+                
+                // get collection of tags for currrent article
+                tags = [versionParser parseTagsJson:articleJsonBlob];
+                
+                [APP_MGR.issuesMgr newArticle:currArticle inIssue:currIssue withTags:tags];
+                
+            }
         }
-        
     }
     
     DebugLog(@"Finished parsing feed data............................");
