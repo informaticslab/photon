@@ -198,7 +198,6 @@ int implicationsFound = 0;
                 
             } else {
                 
-                
                 // get content version and store it on article object
                 contentVer = [versionParser parseContentVersionJson:articleJsonBlob];
                 currArticle.version = contentVer;

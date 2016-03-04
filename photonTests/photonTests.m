@@ -64,10 +64,11 @@ BOOL hasDataBeenCleared = NO;
     
 }
 
+
 - (void)testAddArticle
 {
     [self parseAndPersistTestFile:@"addArticle" ofType:@"json"];
-    NSString *expectedResult = @"Test Article - Adding Articles JSON";
+    NSString *expectedResult = @"Test Article - Adding Articles JSON 1";
 
     expectOneIssue();
     IssueMO *issue = self.issuesMgr.sortedIssues[0];
@@ -76,18 +77,50 @@ BOOL hasDataBeenCleared = NO;
 
     NSArray *articles = [issue.articles allObjects];
     XCTAssertNotNil(articles);
-    XCTAssert([articles count] ==1, @"The number of articles in the issue does not equal 1.");
+    XCTAssert([articles count] == 3, @"The number of articles in the issue does not equal 3.");
     ArticleMO *savedArticle = [articles objectAtIndex:0];
     XCTAssertTrue([savedArticle.title isEqualToString:expectedResult], @"Expect article title:%@ --- Retrieved title:%@", expectedResult, savedArticle.title);
 }
 
-- (void)testDeleteArticle
+
+
+-(void)addTestArticles
 {
-    [self parseAndPersistTestFile:@"deleteCommand" ofType:@"json"];
-    
-    expectZeroIssues();
+    [self parseAndPersistTestFile:@"testArticles" ofType:@"json"];
+
 }
 
+- (void)testDeleteArticle
+{
+    
+    IssueMO *issue = nil;
+    
+    // add standard test articles
+    [self addTestArticles];
+    
+    // this blob deletes one article from each test issues
+    // articles with 3 and 6 in title
+    [self parseAndPersistTestFile:@"deleteCommand" ofType:@"json"];
+    
+    expectTwoIssues();
+    
+    // first issue is the latest issue based on date
+    issue = self.issuesMgr.sortedIssues[0];
+    XCTAssert(issue !=nil, @"The newest issue does not exist in the sorted issues set.");
+    
+    XCTAssertNotNil([self.issuesMgr.sortedIssues[0] getArticleWithTitle:@"Test Article 4"]);
+    XCTAssertNotNil([self.issuesMgr.sortedIssues[0] getArticleWithTitle:@"Test Article 5"]);
+    XCTAssert([self.issuesMgr.sortedIssues[0] numberOfArticles] == 2, @"The number of articles in the issue does not equal 2.");
+
+    issue = self.issuesMgr.sortedIssues[1];
+    XCTAssert(issue !=nil, @"The oldes issue does not exist in the sorted issues set.");
+    
+    XCTAssertNotNil([self.issuesMgr.sortedIssues[1] getArticleWithTitle:@"Test Article 1"]);
+    XCTAssertNotNil([self.issuesMgr.sortedIssues[1] getArticleWithTitle:@"Test Article 2"]);
+    XCTAssert([self.issuesMgr.sortedIssues[1] numberOfArticles] == 2, @"The number of articles in the issue does not equal 2.");
+
+    
+}
 
 
 //  loads two versions of same article and tests that last version is only one saved
@@ -172,8 +205,6 @@ BOOL hasDataBeenCleared = NO;
     XCTAssertTrue([savedArticle.title isEqualToString:expectedResult], @"Expect article title:%@ --- Retrieved title:%@", expectedResult, savedArticle.title);
     
 }
-
-
 
 
 - (void)testParseBundleArticlesPerformance {
