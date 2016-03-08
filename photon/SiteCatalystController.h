@@ -24,6 +24,7 @@ NSMutableData *_responseData;
 #define SC_SECTION_EULA @"Eula"
 #define SC_SECTION_SUMMARY @"Summary"
 #define SC_SECTION_DETAILS @"Article-Details"
+#define SC_SECTION_ARTICLE @"Article View"
 
 
 
@@ -37,7 +38,7 @@ NSMutableData *_responseData;
 #define SC_PAGE_TITLE_DETAILS @"Article-Details"
 #define SC_PAGE_TITLE_SEARCH_KEYWORDS @"Search-Keywords"
 #define SC_PAGE_TITLE_SEARCH_KEYWORD_ARTICLES @"Search-Keywords-Articles"
-#define SC_PAGE_TITLE_FULL @"View-Full-Article"
+#define SC_PAGE_TITLE_FULL @"Full-Article"
 #define SC_PAGE_TITLE_SHARE @"Share"
 #define SC_PAGE_TITLE_SHARE_MAIL @"Share-Via-Mail"
 #define SC_PAGE_TITLE_SHARE_MESSAGE @"Share-Via-Message"

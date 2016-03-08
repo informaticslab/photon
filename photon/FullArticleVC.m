@@ -24,7 +24,7 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    [APP_MGR.usageTracker trackNavigationEvent:SC_PAGE_TITLE_FULL inSection:SC_SECTION_DETAILS];
+//    [APP_MGR.usageTracker trackNavigationEvent:SC_PAGE_TITLE_FULL inSection:SC_SECTION_DETAILS];
 
 }
 
