@@ -221,7 +221,7 @@
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qpH-qj-y7A">
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HrS-KE-6nb">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="HrS-KE-6nb">
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86d-fk-F2s">
                                                         <subviews>
@@ -253,15 +253,12 @@
                                                     </textView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vxK-4E-m5M">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="vxK-4E-m5M">
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PVy-Cf-V28">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PVy-Cf-V28">
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ipad_added_icon" translatesAutoresizingMaskIntoConstraints="NO" id="54F-VQ-PFs">
-                                                                <frame key="frameInset" width="97" height="38"/>
-                                                            </imageView>
-                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="TWw-8q-08E">
-                                                                <frame key="frameInset" minX="97" width="238" height="38"/>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_added_icon" translatesAutoresizingMaskIntoConstraints="NO" id="54F-VQ-PFs"/>
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="TWw-8q-08E">
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="What is added by this report?">
                                                                         <attributes>
@@ -288,7 +285,7 @@
                                                     </textView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="7Rx-ZV-k2p">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="7Rx-ZV-k2p">
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pWz-IE-LRc">
                                                         <subviews>
@@ -329,7 +326,7 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="qpH-qj-y7A" firstAttribute="top" secondItem="I9v-Gl-ES5" secondAttribute="top" id="9Gq-3j-jTQ"/>
+                                    <constraint firstItem="qpH-qj-y7A" firstAttribute="top" secondItem="I9v-Gl-ES5" secondAttribute="top" constant="10" id="9Gq-3j-jTQ"/>
                                     <constraint firstAttribute="bottom" secondItem="qpH-qj-y7A" secondAttribute="bottom" constant="338" id="JGR-Zh-XFA"/>
                                     <constraint firstItem="qpH-qj-y7A" firstAttribute="width" secondItem="I9v-Gl-ES5" secondAttribute="width" id="cJH-Qd-NOB"/>
                                     <constraint firstAttribute="trailing" secondItem="qpH-qj-y7A" secondAttribute="trailing" id="hmh-91-SCb"/>

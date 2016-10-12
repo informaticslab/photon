@@ -126,18 +126,10 @@ UIFont *font;
 -(void)flashScrollingIndicators
 {
     
-    [self.txtvKnownText flashScrollIndicators];
-    [self.txtvAddedText flashScrollIndicators];
-    [self.txtvImplicationsText flashScrollIndicators];
+    [self.summaryScrollView flashScrollIndicators];
     
 }
 
-
--(void)viewWillAppear:(BOOL)animated
-{
-    
-   
-}
 
 -(void)viewDidAppear:(BOOL)animated
 {
@@ -245,10 +237,6 @@ UIFont *font;
     self.txtvKnownText.text = text;
     self.txtvKnownText.font = font;
     self.txtvKnownText.textContainerInset = UIEdgeInsetsMake(3,3,3,3);
-    //[self.txtvKnownText sizeToFit];
-    
-//    CGSize sizeThatFitsTextView = [self.txtvKnownText sizeThatFits:self.txtvKnownText.frame.size];
-//    self.txtvKnownTextHeightConstraint.constant = sizeThatFitsTextView.height+60;
     
 }
 
@@ -258,10 +246,6 @@ UIFont *font;
     self.txtvAddedText.text = text;
     self.txtvAddedText.font = font;
     self.txtvAddedText.textContainerInset = UIEdgeInsetsMake(3,3,3,3);
-    //[self.txtvAddedText sizeToFit];
-    
-//    CGSize sizeThatFitsTextView = [self.txtvAddedText sizeThatFits:self.txtvAddedText.frame.size];
-//    self.txtvAddedTextHeightConstraint.constant = sizeThatFitsTextView.height+60;
     
 }
 
@@ -272,11 +256,7 @@ UIFont *font;
     self.txtvImplicationsText.text = text;
     self.txtvImplicationsText.font = font;
     self.txtvImplicationsText.textContainerInset = UIEdgeInsetsMake(3,3,3,3);
-    //[self.txtvImplicationsText sizeToFit];
-    
-//    CGSize sizeThatFitsTextView = [self.txtvImplicationsText sizeThatFits:CGSizeMake(self.txtvImplicationsText.frame.size.width, MAXFLOAT)];
-//    self.txtvImplicationsTextHeightConstraint.constant = sizeThatFitsTextView.height;
-    
+
 }
 
 
