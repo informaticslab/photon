@@ -31,7 +31,7 @@ NSURLConnection *conn;
     // these first change most often depending on version and if debug is true
     appVersion = [APP_MGR getAppVersion ];
     BOOL debug = YES;
-    BOOL debugLocal = NO;
+    BOOL debugLocal = YES;
     
     // server information
     server = debugLocal ? localServer : cdcServer;
@@ -60,7 +60,7 @@ NSURLConnection *conn;
     constParams = [NSString stringWithFormat:@"%@&%@", (debug ? debugConstParams : prodConstParams), commonConstParams];
     
     metricUrl = [NSString stringWithFormat:@"%@%@&%@&%@&%@&%@&%@&%@",server, constParams, deviceParams, appInfoParams, deviceOnline, eventInfo, sectionInfo, pageName];
-    encodedURL = [NSString stringWithFormat:@"%@", [metricUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    encodedURL = [NSString stringWithFormat:@"%@", [metricUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
     
     [self postSCEvent:encodedURL];
     DebugLog(@"metric URL = %@",metricUrl);
@@ -82,22 +82,58 @@ NSURLConnection *conn;
 -(void)postSCEvent:(NSString *)scString
 {
     
-    // Create the request.
+    // create the url and request
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:scString]];
-    
-    // Specify that it will be a POST request
-    [request setHTTPMethod:@"GET"];
-    
-    // This is how we set header fields
+    request.HTTPMethod = @"GET";
     [request setValue:@"application/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
-    // Convert your data and set your request's HTTPBody property
+    
+    // set network activity indicator and get shared session
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    NSURLSession *session = [NSURLSession sharedSession];
+
+    
+    // convert data and set request's HTTPBody property
     NSString *stringData = @"";
     NSData *requestBodyData = [stringData dataUsingEncoding:NSUTF8StringEncoding];
     [request setHTTPBody:requestBodyData];
     
-    // Create url connection and fire request
-    conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+
+        
+        // handle basic connectivity issues here
+        if (error) {
+            DebugLog(@"SiteCatalyst connectivity error: %@", error.userInfo[@"NSLocalizedDescription"]);
+            
+        }
+        
+        // handle HTTP errors here
+        else if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+            
+            NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
+            
+            if (statusCode != 200) {
+                DebugLog(@"SiteCatalyst connectivity HTTP status code: %ld", (long)statusCode);
+            } else {
+                [_responseData appendData:data];
+            }
+        }
+        
+        else {
+            [_responseData appendData:data];
+            
+            // otherwise, everything is probably fine and you should interpret the `data` contents
+            DebugLog(@"data: %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+            
+        }
+        
+        return;
+        
+    }];
+    
+    [task resume];
     
 }
 
