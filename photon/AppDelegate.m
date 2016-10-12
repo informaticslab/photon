@@ -30,8 +30,6 @@
     
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil];
     [[UINavigationBar appearance] setTitleTextAttributes:attributes];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
