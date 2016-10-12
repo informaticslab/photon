@@ -20,16 +20,19 @@
 @property NSString *contentText;
 @property NSString *imageName;
 @property (weak, nonatomic) NSString *navbarTitle;
-@property (weak, nonatomic) IBOutlet UITextView *txtvArticleTitle;
 
 @property (weak, nonatomic) IBOutlet UITextView *txtvKnownText;
-
 @property (weak, nonatomic) IBOutlet UITextView *txtvAddedText;
-@property (weak, nonatomic) IBOutlet UIView *fullArticleContainer;
-@property (weak, nonatomic) IBOutlet UIView *containerView;
-
-
 @property (weak, nonatomic) IBOutlet UITextView *txtvImplicationsText;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *txtvKnownTextHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *txtvAddedTextHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *txtvImplicationsTextHeightConstraint;
+
+
+@property (weak, nonatomic) IBOutlet UIView *fullArticleContainer;
+
+
 @property (weak, nonatomic) ArticleMO *article;
 @property (weak, nonatomic) IssueMO *issue;
 @property (weak, nonatomic) FullArticleVC *childFullArticleVC;
