@@ -20,7 +20,6 @@
 @property(weak, nonatomic) KeywordMO *keyword;
 @property(nonatomic, weak) ArticleMO *selectedArticle;
 @property(nonatomic, weak) IssueMO *issue;
-@property (nonatomic, strong) UIPopoverController *detailViewPopover;
 
 
 - (void)didDismissModalView;

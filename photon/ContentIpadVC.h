@@ -13,10 +13,8 @@
 #import "PopoverViewDelegate.h"
 #import "FullArticleVC.h"
 
-@interface ContentIpadVC : UIViewController <UISplitViewControllerDelegate,UITextViewDelegate, ArticleSelectionDelegate, ModalViewDelegate, UIPopoverControllerDelegate, PopoverViewDelegate>
+@interface ContentIpadVC : UIViewController <UISplitViewControllerDelegate,UITextViewDelegate, ArticleSelectionDelegate, ModalViewDelegate>
 
-@property (strong, nonatomic) UIPopoverController *masterPopoverController;
-@property (strong, nonatomic) UIPopoverController *infoPopoverController;
 
 @property NSUInteger pageIndex;
 @property NSString *headerText;

@@ -13,12 +13,11 @@
 #import "ModalViewDelegate.h"
 #import "PopoverViewDelegate.h"
 
-@interface IssueArticlesTVC : UITableViewController <UIPopoverControllerDelegate, PopoverViewDelegate, ModalViewDelegate>
+@interface IssueArticlesTVC : UITableViewController <UIPopoverControllerDelegate, ModalViewDelegate>
 
 @property(nonatomic, weak) IssueMO *issue;
 @property(nonatomic, weak) ArticleMO *article;
 @property(nonatomic, weak) ArticleMO *selectedArticle;
-@property (nonatomic, strong) UIPopoverController *detailViewPopover;
 
 - (IBAction)refresh:(id)sender;
 - (void)didDismissModalView;

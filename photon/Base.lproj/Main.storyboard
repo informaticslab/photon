@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A319" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -69,7 +68,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAq-g3-R1y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1229" y="1027"/>
+            <point key="canvasLocation" x="1227" y="600"/>
         </scene>
         <!--Keyword ArticlesTVC-->
         <scene sceneID="Gmz-R1-6rJ">
@@ -96,109 +95,12 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="rh7-0R-GCC"/>
                     <connections>
-                        <segue destination="IYg-u6-pbr" kind="push" identifier="pushKeywordArticleDetails" id="g7V-rl-fQN"/>
-                        <segue destination="tIc-Ga-z3I" kind="push" identifier="pushContentPagesFromKeyword" id="pjO-04-Vnm"/>
                         <segue destination="NIc-VT-iqm" kind="push" identifier="pushKeywordContentIphoneView" id="hIx-l5-gqv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvX-d4-gab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1785" y="1049"/>
-        </scene>
-        <!--Page View Controller-->
-        <scene sceneID="QDt-Zb-4r1">
-            <objects>
-                <pageViewController storyboardIdentifier="ContentPVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="PRx-yA-s05" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P2H-WC-3Sh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2877" y="10"/>
-        </scene>
-        <!--Content PagesVC-->
-        <scene sceneID="Rmj-B8-BTt">
-            <objects>
-                <viewController id="tIc-Ga-z3I" customClass="ContentPagesVC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="r2k-bA-X6p"/>
-                        <viewControllerLayoutGuide type="bottom" id="QcA-F6-RMh"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZjD-3Y-9Eh">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="OtI-iM-Mkd"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qwy-zL-EmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2029" y="10"/>
-        </scene>
-        <!--ContentVC-->
-        <scene sceneID="FaY-FP-Cpm">
-            <objects>
-                <viewController storyboardIdentifier="ContentVC" id="q7l-ml-Dxf" customClass="ContentVC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="va6-Vn-7r2"/>
-                        <viewControllerLayoutGuide type="bottom" id="lHQ-gc-1sf"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="N1d-cX-A0j">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="250" translatesAutoresizingMaskIntoConstraints="NO" id="V8M-Ek-bKP">
-                                <frame key="frameInset" minX="60" minY="32" width="250" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="What is already known?">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bluebox_subheader_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ogy-Uh-eiX">
-                                <frame key="frameInset" minX="17" minY="41" width="35" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ul-ym-V9Y">
-                                <frame key="frameInset" minY="84" width="18" height="376"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.70196078429999997" green="0.78039215689999997" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubz-db-p6p">
-                                <frame key="frameInset" minX="10" minY="84" width="300" height="376"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" staticText="YES"/>
-                                </accessibility>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <attributes>
-                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
-                                            <font key="NSOriginalFont" size="15" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="tBP-vt-kzr"/>
-                    <connections>
-                        <outlet property="icon" destination="ogy-Uh-eiX" id="4ds-kQ-x3S"/>
-                        <outlet property="lblHeader" destination="V8M-Ek-bKP" id="sau-6a-4Ij"/>
-                        <outlet property="txtvContentText" destination="Ubz-db-p6p" id="Mrs-s1-c3j"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8WP-dL-qr7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2438" y="10"/>
+            <point key="canvasLocation" x="1783" y="622"/>
         </scene>
         <!--Content IphoneVC-->
         <scene sceneID="i0i-uw-SMZ">
@@ -378,98 +280,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ov6-LO-iFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3544" y="600"/>
-        </scene>
-        <!--Keyword Article DetailVC-->
-        <scene sceneID="9ua-ch-mG7">
-            <objects>
-                <viewController storyboardIdentifier="PopoverArticleDetails" id="IYg-u6-pbr" customClass="KeywordArticleDetailVC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5sn-CA-s86"/>
-                        <viewControllerLayoutGuide type="bottom" id="R8P-SD-VdP"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ATo-Ab-HDy">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1CK-Hy-mYN">
-                                <frame key="frameInset" minX="42" minY="259" width="237" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.57647058823529407" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" title="View Full Article">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnViewFullArticleTouchUp:" destination="IYg-u6-pbr" eventType="touchUpInside" id="ob5-eO-0JD"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVy-iq-eio">
-                                <frame key="frameInset" minX="20" minY="32" width="280" height="113"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" staticText="YES"/>
-                                </accessibility>
-                                <attributedString key="attributedText">
-                                    <fragment content="10-01-13, Vol 44, Issue 32, Pages 145-148">
-                                        <attributes>
-                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wV-Hz-CBt">
-                                <frame key="frameInset" minX="20" minY="195" width="280" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" staticText="YES"/>
-                                </accessibility>
-                                <attributedString key="attributedText">
-                                    <fragment content="10-01-13, Vol 44, Issue 32, Pages 145-148">
-                                        <attributes>
-                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mea-HR-LSg">
-                                <frame key="frameInset" minX="20" minY="164" width="280" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" staticText="YES"/>
-                                </accessibility>
-                                <attributedString key="attributedText">
-                                    <fragment content="10-01-13, Vol 44, Issue 32, Pages 145-148">
-                                        <attributes>
-                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="tFr-Fh-61K"/>
-                    <connections>
-                        <outlet property="btnViewArticle" destination="1CK-Hy-mYN" id="uNT-ZE-z2p"/>
-                        <outlet property="txtViewArticleIssueDate" destination="Mea-HR-LSg" id="Nsj-VB-vdb"/>
-                        <outlet property="txtViewArticleIssueVolNum" destination="6wV-Hz-CBt" id="Ejj-FT-TEy"/>
-                        <outlet property="txtViewArticleTitle" destination="sVy-iq-eio" id="g5n-yx-aZb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5G7-1a-LiA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2930" y="1049"/>
+            <point key="canvasLocation" x="2277" y="141"/>
         </scene>
         <!--InfoVC-->
         <scene sceneID="Bzu-FT-wZS">
@@ -551,7 +362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tuc-nF-oHy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2668" y="-707"/>
+            <point key="canvasLocation" x="2310" y="-1213"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vex-rW-GRa">
@@ -652,8 +463,6 @@
                         </connections>
                     </refreshControl>
                     <connections>
-                        <segue destination="tIc-Ga-z3I" kind="push" identifier="pushContentPageViews" id="cPZ-Qk-bcg"/>
-                        <segue destination="IYg-u6-pbr" kind="push" identifier="pushArticleDetails" id="sa5-ms-oeY"/>
                         <segue destination="YbN-ib-Nkw" kind="modal" identifier="displayEulaSegue" id="qDi-OO-8hr"/>
                         <segue destination="NIc-VT-iqm" kind="push" identifier="pushContentIphoneView" id="Zo0-tv-bSu"/>
                     </connections>
@@ -683,7 +492,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eEI-cB-lhf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="663" y="1027"/>
+            <point key="canvasLocation" x="661" y="600"/>
         </scene>
         <!--SupportVC-->
         <scene sceneID="dTw-qG-6uT">
@@ -694,7 +503,7 @@
                         <viewControllerLayoutGuide type="bottom" id="iKx-rm-0sA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CZT-Gw-sba">
-                        <rect key="frame" x="0.0" y="0.0" width="374" height="484"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="484"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="haW-9x-62D">
@@ -751,7 +560,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fjc-ds-KO2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3274" y="-92.5"/>
+            <point key="canvasLocation" x="3326" y="-1214"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6I9-Bv-QYa">
@@ -769,7 +578,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89z-JL-0mG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2130" y="-736"/>
+            <point key="canvasLocation" x="1718" y="-1212"/>
         </scene>
         <!--AboutVC-->
         <scene sceneID="ULE-Yh-VZh">
@@ -780,7 +589,7 @@
                         <viewControllerLayoutGuide type="bottom" id="WDl-A9-qOZ"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ifg-fP-KY0">
-                        <rect key="frame" x="0.0" y="0.0" width="374" height="484"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="484"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="about_icon" translatesAutoresizingMaskIntoConstraints="NO" id="S4l-aG-biq">
@@ -1021,7 +830,7 @@ IAoKA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuE-up-0eI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3302" y="-1069.5"/>
+            <point key="canvasLocation" x="2859" y="-1490"/>
         </scene>
         <!--HelpVC-->
         <scene sceneID="21A-8j-FqC">
@@ -1032,7 +841,7 @@ IAoKA
                         <viewControllerLayoutGuide type="bottom" id="fT6-0s-aAe"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UKz-tT-CVi">
-                        <rect key="frame" x="0.0" y="0.0" width="374" height="484"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="484"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help_header_icon" translatesAutoresizingMaskIntoConstraints="NO" id="e6a-aK-2cC"/>
@@ -1091,7 +900,7 @@ IAoKA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yx5-kV-sII" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3287" y="-483"/>
+            <point key="canvasLocation" x="2859" y="-913"/>
         </scene>
         <!--EulaVC-->
         <scene sceneID="grB-3l-1fx">
@@ -1168,7 +977,7 @@ IAoKA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rV8-kE-edx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2158" y="-1380"/>
+            <point key="canvasLocation" x="3234" y="-257"/>
         </scene>
         <!--Full ArticleVC-->
         <scene sceneID="8LN-4d-ViD">
@@ -1205,12 +1014,11 @@ IAoKA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HbW-D2-3RA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4107" y="446"/>
+            <point key="canvasLocation" x="2782" y="140"/>
         </scene>
     </scenes>
     <resources>
         <image name="about_icon" width="61" height="60"/>
-        <image name="bluebox_subheader_icon" width="35" height="35"/>
         <image name="eula_icon" width="35" height="35"/>
         <image name="help_content_no_page_control" width="320" height="761"/>
         <image name="help_header_icon" width="33" height="28"/>
@@ -1228,10 +1036,8 @@ IAoKA
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="sa5-ms-oeY"/>
+        <segue reference="Zo0-tv-bSu"/>
         <segue reference="QJk-cp-B2j"/>
-        <segue reference="pjO-04-Vnm"/>
-        <segue reference="hIx-l5-gqv"/>
         <segue reference="1Me-sS-qMG"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.25098039220000001" green="0.59999999999999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -21,6 +21,7 @@
 		378BBF1A1C78EE3300396251 /* ContentIphoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 378BBF181C78EE3300396251 /* ContentIphoneVC.m */; };
 		378BBF1D1C78F5EB00396251 /* SummaryIphoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 378BBF1C1C78F5EB00396251 /* SummaryIphoneVC.m */; };
 		37CCA3C81C890F0B00F4E7EE /* testArticles.json in Resources */ = {isa = PBXBuildFile; fileRef = 37CCA3C71C890F0B00F4E7EE /* testArticles.json */; };
+		37F42F841DB5220B00EAD481 /* WPSAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F42F831DB5220B00EAD481 /* WPSAlertController.m */; };
 		A61466E418F7148B00DB0099 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A61466E318F7148B00DB0099 /* Reachability.m */; };
 		A61CA795186231ED00891E00 /* RSSEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CA794186231ED00891E00 /* RSSEntry.m */; };
 		A61CA7C41863235800891E00 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A61CA7B61863235800891E00 /* GTMNSString+HTML.m */; };
@@ -79,7 +80,6 @@
 		A6D6AFED185B53A700F37E23 /* ShareActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D6AFEC185B53A700F37E23 /* ShareActionSheet.m */; };
 		A6D6AFEF185B5E1400F37E23 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D6AFEE185B5E1400F37E23 /* Social.framework */; };
 		A6D9BC78183BBFE000B42118 /* KeywordArticlesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D9BC77183BBFE000B42118 /* KeywordArticlesTVC.m */; };
-		A6D9BC7B183BF57F00B42118 /* KeywordArticleDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6D9BC7A183BF57F00B42118 /* KeywordArticleDetailVC.m */; };
 		A6DD5B65196C7B6400CC6B04 /* KeywordSearchResults.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DD5B64196C7B6400CC6B04 /* KeywordSearchResults.m */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +113,8 @@
 		378BBF1C1C78F5EB00396251 /* SummaryIphoneVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryIphoneVC.m; sourceTree = "<group>"; };
 		37C4300318B7DE2800CCDE8A /* PopoverViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopoverViewDelegate.h; sourceTree = "<group>"; };
 		37CCA3C71C890F0B00F4E7EE /* testArticles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testArticles.json; sourceTree = "<group>"; };
+		37F42F821DB5220B00EAD481 /* WPSAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPSAlertController.h; sourceTree = "<group>"; };
+		37F42F831DB5220B00EAD481 /* WPSAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPSAlertController.m; sourceTree = "<group>"; };
 		A61466E218F7148B00DB0099 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		A61466E318F7148B00DB0099 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		A61CA793186231ED00891E00 /* RSSEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSEntry.h; sourceTree = "<group>"; };
@@ -219,8 +221,6 @@
 		A6D6AFEE185B5E1400F37E23 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		A6D9BC76183BBFE000B42118 /* KeywordArticlesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordArticlesTVC.h; sourceTree = "<group>"; };
 		A6D9BC77183BBFE000B42118 /* KeywordArticlesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordArticlesTVC.m; sourceTree = "<group>"; };
-		A6D9BC79183BF57F00B42118 /* KeywordArticleDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordArticleDetailVC.h; sourceTree = "<group>"; };
-		A6D9BC7A183BF57F00B42118 /* KeywordArticleDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordArticleDetailVC.m; sourceTree = "<group>"; };
 		A6DD5B63196C7B6400CC6B04 /* KeywordSearchResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordSearchResults.h; sourceTree = "<group>"; };
 		A6DD5B64196C7B6400CC6B04 /* KeywordSearchResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordSearchResults.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -317,6 +317,8 @@
 		A62A1A181823C9C7006A62B3 /* photon */ = {
 			isa = PBXGroup;
 			children = (
+				37F42F821DB5220B00EAD481 /* WPSAlertController.h */,
+				37F42F831DB5220B00EAD481 /* WPSAlertController.m */,
 				A66FB238184D2B9E008F2AB7 /* AboutVC.h */,
 				A66FB239184D2B9E008F2AB7 /* AboutVC.m */,
 				A62A1A211823C9C7006A62B3 /* AppDelegate.h */,
@@ -367,8 +369,6 @@
 				A69AFEBE189554C0009F0A48 /* JsonParserBase.h */,
 				A69AFEBF189554C0009F0A48 /* JsonParserBase.m */,
 				A69AFEBA18945618009F0A48 /* JsonParserProtocol.h */,
-				A6D9BC79183BF57F00B42118 /* KeywordArticleDetailVC.h */,
-				A6D9BC7A183BF57F00B42118 /* KeywordArticleDetailVC.m */,
 				A6D9BC76183BBFE000B42118 /* KeywordArticlesTVC.h */,
 				A6D9BC77183BBFE000B42118 /* KeywordArticlesTVC.m */,
 				A66F689C18D0761F008D3EF5 /* KeywordMO.h */,
@@ -562,10 +562,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A66FB23A184D2B9E008F2AB7 /* AboutVC.m in Sources */,
+				37F42F841DB5220B00EAD481 /* WPSAlertController.m in Sources */,
 				A66FB23D184D2BB0008F2AB7 /* HelpVC.m in Sources */,
 				A62A1A231823C9C7006A62B3 /* AppDelegate.m in Sources */,
 				A6AC5FAA18D794D3000D0832 /* EulaVC.m in Sources */,
-				A6D9BC7B183BF57F00B42118 /* KeywordArticleDetailVC.m in Sources */,
 				A61CA7C61863235800891E00 /* MWFeedItem.m in Sources */,
 				A6A919DE182A9B8700F1CE7D /* FeedArticle.m in Sources */,
 				A69AFEBD1895468A009F0A48 /* JsonParser.m in Sources */,

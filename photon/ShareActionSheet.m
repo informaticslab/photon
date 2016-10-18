@@ -8,6 +8,7 @@
 
 #import "ShareActionSheet.h"
 #import <Social/Social.h>
+#import "WPSAlertController.h"
 
 @implementation ShareActionSheet
 
@@ -27,10 +28,58 @@
         
         
     }
-
-    self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Mail", @"Message", @"Twitter", @"Facebook", nil];
-    
     self.parentVC = parentVC;
+
+//    self.actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Mail", @"Message", @"Twitter", @"Facebook", nil];
+    
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Share" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Mail" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        // Mail button tapped
+        [self showMailSheet];
+
+        [self.parentVC dismissViewControllerAnimated:YES completion:^{
+        }];
+    }]];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Message" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        // Message button tapped
+        [self showMessageSheet];
+        [self.parentVC dismissViewControllerAnimated:YES completion:^{
+        }];
+    }]];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Twitter" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        // Twitter button tapped
+        [self showTweetSheet];
+        [self.parentVC dismissViewControllerAnimated:YES completion:^{
+        }];
+    }]];
+
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Facebook" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        // Cancel button tappped.
+        [self showFacebookSheet];
+        [self.parentVC dismissViewControllerAnimated:YES completion:^{
+        }];
+    }]];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        
+        // Cancel button tappped.
+        [self.parentVC dismissViewControllerAnimated:YES completion:^{
+        }];
+    }]];
+    
+
+
+    // Present action sheet.
+    [self.parentVC presentViewController:actionSheet animated:YES completion:nil];
+
     return self;
     
 }
@@ -38,34 +87,8 @@
 
 -(void)showView
 {
-    [self.actionSheet showInView:self.parentVC.view];
+    //[self.actionSheet showInView:self.parentVC.view];
     [APP_MGR.usageTracker trackNavigationEvent:SC_PAGE_TITLE_SHARE inSection:SC_SECTION_SHARE];
-
-}
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    switch (buttonIndex)
-    {
-        // Mail
-        case 0:
-            [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]}];
-            [self showMailSheet];
-        break;
-        // Message
-        case 1:
-            [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]}];
-            [self showMessageSheet];
-        break;
-        // Twitter
-        case 2:
-            [self showTweetSheet];
-        break;
-        // Facebook
-        case 3:
-            [self showFacebookSheet];
-        break;
-    }
 
 }
 
@@ -179,10 +202,8 @@
         
     } else {
         
-        UIAlertView *anAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"There isn't a mail account setup on the device." delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
-        
-        [anAlert addButtonWithTitle:@"Dismiss"];
-        [anAlert show];
+        [WPSAlertController presentOkayAlertWithTitle:@"Error" message:@"There isn't a mail account setup on the device."];
+
     }
     
     
@@ -203,10 +224,7 @@
 
     } else {
         
-        UIAlertView *anAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"This device does not support messaging or it is not currently configured to send messages." delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
-    
-        [anAlert addButtonWithTitle:@"Cancel"];
-        [anAlert show];
+        [WPSAlertController presentOkayAlertWithTitle:@"Error" message:@"This device does not support messaging or it is not currently configured to send messages."];
         
     }
     

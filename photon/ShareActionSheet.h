@@ -12,7 +12,6 @@
 @interface ShareActionSheet : NSObject <UIActionSheetDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate>
 
 @property(nonatomic, weak) UIViewController *parentVC;
-@property(nonatomic, strong) UIActionSheet *actionSheet;
 @property(nonatomic, strong) MFMailComposeViewController *mailVC;
 @property(nonatomic, strong) MFMessageComposeViewController *msgVC;
 @property(nonatomic, strong) NSString *shareText;

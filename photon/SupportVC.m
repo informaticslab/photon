@@ -7,6 +7,7 @@
 //
 
 #import "SupportVC.h"
+#import "WPSAlertController.h"
 
 @interface SupportVC ()
 
@@ -84,12 +85,9 @@
     }
     else
     {
-        NSLog(@"This device cannot send email");
-        UIAlertView *anAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"There isn't a mail account setup on the device." delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
         
-        [anAlert addButtonWithTitle:@"Dismiss"];
-        [anAlert show];
-
+        NSLog(@"This device cannot send email");
+        [WPSAlertController presentOkayAlertWithTitle:@"Error" message:@"There isn't a mail account setup on the device."];
 
     }
 

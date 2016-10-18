@@ -12,7 +12,6 @@
 #import "ContentPagesVC.h"
 #import "ContentPagesiPadVC.h"
 #import "ContentIphoneVC.h"
-#import "KeywordArticleDetailVC.h"
 #import "FullArticleVC.h"
 
 #import "AppDelegate.h"
@@ -101,13 +100,14 @@ bool didViewJustLoad;
     
     didViewJustLoad = YES;
     
+    [self setNeedsStatusBarAppearanceUpdate];
+
+    
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (UIStatusBarStyle)preferredStatusBarStyle
 {
-    
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-   
+    return UIStatusBarStyleLightContent;
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -335,7 +335,6 @@ bool didViewJustLoad;
         
     }
     else
-        //[self performSegueWithIdentifier:@"pushContentPageViews" sender:nil];
         [self performSegueWithIdentifier:@"pushContentIphoneView" sender:nil];
     
     [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
@@ -347,12 +346,8 @@ bool didViewJustLoad;
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"pushContentPageViews"]) {
-        ContentPagesVC *contentVC = segue.destinationViewController;
-        contentVC.article = _article;
-        contentVC.issue = _issue;
-    }
-    else if([segue.identifier isEqualToString:@"pushContentIphoneView"]) {
+    
+    if([segue.identifier isEqualToString:@"pushContentIphoneView"]) {
         ContentIphoneVC *contentVC = segue.destinationViewController;
         contentVC.article = _article;
         contentVC.issue = _issue;
@@ -365,17 +360,6 @@ bool didViewJustLoad;
         contentVC.issue = _issue;
         
     }
-    else if([segue.identifier isEqualToString:@"pushArticleDetails"]) {
-        KeywordArticleDetailVC *keywordArticleDetailVC = segue.destinationViewController;
-        keywordArticleDetailVC.article = _article;
-        if ([APP_MGR isDeviceIpad] == YES) {
-            keywordArticleDetailVC.modalDelegate = self;
-        }
-    }
-    else if([segue.identifier isEqualToString:@"modalFullArticle"]) {
-        //FullArticleVC *fullArticleVC = segue.destinationViewController;
-        //fullArticleVC.url = _article.url;
-    }
     
 }
 
@@ -387,23 +371,6 @@ bool didViewJustLoad;
     
 }
 
--(void)didClickDoneButton;
-{
-    
-    // dismiss popover
-    [self.detailViewPopover dismissPopoverAnimated:YES];
-    
-}
-
--(void)didClickFullArticleButton
-{
-    
-    // dismiss popover
-    [self.detailViewPopover dismissPopoverAnimated:YES];
-    [self performSegueWithIdentifier:@"modalFullArticle" sender:nil];
-    
-    
-}
 
 -(void)updateArticleSelection
 {
@@ -437,18 +404,6 @@ bool didViewJustLoad;
     [self.refreshControl endRefreshing];
     [self updateArticleSelection];
 }
-
-- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
-{
-	// If a popover is dismissed, set the last button tapped to nil.
-	//self.lastTappedButton = nil;
-    [self.detailViewPopover dismissPopoverAnimated:YES];
-    
-}
-
-
-
-
 
 
 @end

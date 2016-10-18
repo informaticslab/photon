@@ -7,7 +7,6 @@
 //
 
 #import "KeywordArticlesTVC.h"
-#import "KeywordArticleDetailVC.h"
 #import "ArticleDetails.h"
 #import "ShareActionSheet.h"
 #import "ContentPagesVC.h"
@@ -63,7 +62,7 @@ NSArray *keywordArticles;
         self.navigationItem.rightBarButtonItem = shareButton;
     }
     
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [self setNeedsStatusBarAppearanceUpdate];
     
     
 }
@@ -95,6 +94,12 @@ NSArray *keywordArticles;
     
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
+
 -(void)updateArticleSelection
 {
     
@@ -118,25 +123,6 @@ NSArray *keywordArticles;
     }
     
 }
-
--(void)didClickDoneButton;
-{
-    
-    // dismiss popover
-    [self.detailViewPopover dismissPopoverAnimated:YES];
-    
-}
-
--(void)didClickFullArticleButton
-{
-    
-    // dismiss popover
-    [self.detailViewPopover dismissPopoverAnimated:YES];
-    [self performSegueWithIdentifier:@"modalFullArticle" sender:nil];
-    
-    
-}
-
 
 
 - (void)share:(id)sender
@@ -235,38 +221,6 @@ NSArray *keywordArticles;
 }
 
 
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-    
-    ArticleMO *rowArticle = keywordArticles[[indexPath row]];
-    _selectedArticle = rowArticle;
-    
-    if ([APP_MGR isDeviceIpad] == YES) {
-        
-        
-        
-        KeywordArticleDetailVC *content = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverArticleDetails"];
-        content.article = rowArticle;
-        content.modalDelegate = self;
-        content.popoverViewDelegate = self;
-        
-        // Setup the popover for use from the navigation bar.
-        self.detailViewPopover = [[UIPopoverController alloc] initWithContentViewController:content];
-        self.detailViewPopover.popoverContentSize = CGSizeMake(400., 358.);
-        self.detailViewPopover.delegate = self;
-        
-        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-        
-        // Present the popover from the button that was tapped in the detail view.
-        [self.detailViewPopover presentPopoverFromRect:cell.bounds inView:cell.contentView
-                              permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-        
-    } else {
-        [self performSegueWithIdentifier:@"pushContentIphoneView" sender:nil];
-        
-        
-    }
-}
 
 #pragma mark - Modal Views
 
@@ -287,23 +241,11 @@ NSArray *keywordArticles;
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if([segue.identifier isEqualToString:@"pushKeywordArticleDetails"])
-    {
-        KeywordArticleDetailVC *keywordArticleDetailVC = segue.destinationViewController;
-        keywordArticleDetailVC.article = _selectedArticle;
-        if ([APP_MGR isDeviceIpad] == YES) {
-            keywordArticleDetailVC.modalDelegate = self;
-        }
-        
-    } else if([segue.identifier isEqualToString:@"pushKeywordContentIphoneView"]) {
+    if([segue.identifier isEqualToString:@"pushKeywordContentIphoneView"]) {
         ContentIphoneVC *contentVC = segue.destinationViewController;
         contentVC.article = _selectedArticle;
         contentVC.issue = _issue;
-    } else if ([segue.identifier isEqualToString:@"pushContentPagesFromKeyword"]) {
-        ContentPagesVC *contentVC = segue.destinationViewController;
-        contentVC.article = _selectedArticle;
-        contentVC.issue = _selectedArticle.issue;
-    } 
+    }
 }
 
 

@@ -13,7 +13,7 @@
 @implementation ContentIpadVC
 
 ShareActionSheet *shareAS;
-
+InfoVC *infoVC;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,7 +40,7 @@ ShareActionSheet *shareAS;
     
     
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"ipad_detail_navbar"] forBarMetrics:UIBarMetricsDefault];
-    //    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
+
     //set back button arrow color
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
@@ -54,7 +54,7 @@ ShareActionSheet *shareAS;
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
     shareButton.width = 30.0;
     
-    UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
 	[infoButton addTarget:self action:@selector(infoButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     infoButton.accessibilityHint = @"Double tap to access information about MMWR Express.";
     infoButton.accessibilityLabel = @"MMWR Express Info";
@@ -95,14 +95,6 @@ ShareActionSheet *shareAS;
 
     self.parentViewController.navigationItem.title = self.navbarTitle;
     
-    // Setup the popover for use from the navigation bar.
-    InfoVC *content = [self.storyboard instantiateViewControllerWithIdentifier:@"InfoPopoverVC"];
-
-	self.infoPopoverController = [[UIPopoverController alloc] initWithContentViewController:content];
-	self.infoPopoverController.popoverContentSize = CGSizeMake(400., 540.);
-	self.infoPopoverController.delegate = self;
-    content.popoverViewDelegate = self;
-
     if ([APP_MGR isSummaryDefaultArticleView] == YES) {
         self.segCtrlArticleView.selectedSegmentIndex = 1;
         [self selectSummaryView];
@@ -166,20 +158,23 @@ ShareActionSheet *shareAS;
 - (IBAction)infoButtonAction:(UIBarButtonItem *)sender
 {
 	// Set the sender to a UIButton.
-	UIButton *tappedButton = (UIButton *)sender;
-	
-	// Present the popover from the button that was tapped in the detail view.
-	[self.infoPopoverController presentPopoverFromRect:tappedButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    UIButton *tappedButton = (UIButton *)sender;
     
-	// Set the last button tapped to the current button that was tapped.
-	//self.lastTappedButton = sender;
+    // setup the popover for use from the navigation bar.
+    infoVC = [self.storyboard instantiateViewControllerWithIdentifier:@"InfoPopoverVC"];
+    infoVC.modalPresentationStyle = UIModalPresentationPopover;
+    infoVC.popoverPresentationController.sourceView = self.view;
+    infoVC.popoverPresentationController.sourceRect = tappedButton.frame;
+
+    [self presentViewController:infoVC animated:YES completion:nil];
+	
 }
 
 -(void)didTouchReadUserAgreementButton
 {
     
     // dismiss popover
-    [self.infoPopoverController dismissPopoverAnimated:YES];
+//    [self.infoPopoverController dismissPopoverAnimated:YES];
     [self presentEulaModalView];
     
     
@@ -328,30 +323,30 @@ ShareActionSheet *shareAS;
 
 #pragma mark - Split view
 
-- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
-{
-    barButtonItem.title = NSLocalizedString(@"Articles", @"Articles");
-    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
-    self.masterPopoverController = popoverController;
-}
+//- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
+//{
+//    barButtonItem.title = NSLocalizedString(@"Articles", @"Articles");
+//    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
+//    self.masterPopoverController = popoverController;
+//}
+//
+//
+//- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+//{
+//    
+//    // Called when the view is shown again in the split view, invalidating the button and popover controller.
+//    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+//    self.masterPopoverController = nil;
+//    
+//}
+//
+//
+//#pragma mark - Popover controller delegates
 
-
-- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
-{
-    
-    // Called when the view is shown again in the split view, invalidating the button and popover controller.
-    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-    self.masterPopoverController = nil;
-    
-}
-
-
-#pragma mark - Popover controller delegates
-
-- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
-{
-    // If a popover is dismissed, set the last button tapped to nil.
-    //self.lastTappedButton = nil;
-}
+//- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+//{
+//    // If a popover is dismissed, set the last button tapped to nil.
+//    //self.lastTappedButton = nil;
+//}
 
 @end

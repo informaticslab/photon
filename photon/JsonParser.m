@@ -14,6 +14,7 @@
 #import "NSString+HTML.h"
 #import "MWFeedParser.h"
 #import "IssueMO+Issue.h"
+#import "WPSAlertController.h"
 
 @implementation JsonParser
 
@@ -277,23 +278,16 @@ int implicationsFound = 0;
 - (void)feedParser:(MWFeedParser *)parser didFailWithError:(NSError *)error {
     DebugLog(@"Finished Parsing With Error: %@", error);
     if (error.code == 2) {
+        
         // Failed but some items parsed, so show and inform of error
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Could Not Update Articles"
-                                                        message:@"The Internet connection appears to be offline. Please check the connection, and try again."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Dismiss"
-                                              otherButtonTitles:nil];
-        [alert show];
+        [WPSAlertController presentOkayAlertWithTitle:@"Could Not Update Articles" message:@"The Internet connection appears to be offline. Please check the connection, and try again."];
+        
     } else {
-        // Failed but some items parsed, so show and inform of error
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Parsing Incomplete"
-                                                        message:@"There was an error during the parsing of this feed. Not all of the feed items could parsed."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Dismiss"
-                                              otherButtonTitles:nil];
-        [alert show];
+
+        [WPSAlertController presentOkayAlertWithTitle:@"Parsing Incomplete" message:@"There was an error during the parsing of this feed. Not all of the feed items could parsed."];
+
     }
-    //[self updateTableWithParsedItems];
+    
     [[NSNotificationCenter defaultCenter]
      postNotificationName:@"FeedDataUpdated"
      object:self];

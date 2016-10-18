@@ -297,12 +297,5 @@ UIFont *font;
 }
 
 
-#pragma mark - Popover controller delegates
-
-- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
-{
-    // If a popover is dismissed, set the last button tapped to nil.
-    //self.lastTappedButton = nil;
-}
 
 @end

@@ -87,7 +87,7 @@ NSArray *activityProviders;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [[UIButton appearanceWhenContainedIn:[UIActivityViewController class], nil] setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [[UIButton appearanceWhenContainedInInstancesOfClasses:@[[UIActivityViewController class]]] setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]}];
 
 }

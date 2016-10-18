@@ -90,8 +90,15 @@ KeywordMO *selectedKeyword;
     self.definesPresentationContext = YES;
     self.extendedLayoutIncludesOpaqueBars = YES;
 
+    [self setNeedsStatusBarAppearanceUpdate];
+
     [APP_MGR.splitVM searchStart];
     
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 
@@ -145,7 +152,6 @@ KeywordMO *selectedKeyword;
 -(void)viewWillAppear:(BOOL)animated
 {
     
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     [APP_MGR.splitVM searchStart];
     
@@ -194,7 +200,6 @@ KeywordMO *selectedKeyword;
     self.isSearching = YES;
     
     
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bar"] forBarMetrics:UIBarMetricsDefault];
     //    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
     // set back button arrow color
@@ -214,7 +219,6 @@ KeywordMO *selectedKeyword;
 
 - (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller
 {
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     self.isSearching = NO;
     
     
