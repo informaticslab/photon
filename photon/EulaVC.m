@@ -26,6 +26,9 @@ AppManager *appMgr;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor colorWithWhite:0.90 alpha:1.0] ;
+
 
     NSString *path = [[NSBundle mainBundle] pathForResource:@"photon_eula"
                                                      ofType:@"html"];

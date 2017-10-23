@@ -1003,35 +1003,14 @@ IAoKA
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_bar" translatesAutoresizingMaskIntoConstraints="NO" id="zJk-Ml-g0a">
                                 <rect key="frame" x="0.0" y="20" width="375" height="64"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agreement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ua-9i-D8X">
-                                <rect key="frame" x="145.5" y="42" width="84.5" height="20.5"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MMWR Express Agreement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ua-9i-D8X">
+                                <rect key="frame" x="83.5" y="42" width="209" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LyN-VV-YIs" userLabel="Icon-Text Stack View">
-                                <rect key="frame" x="20" y="94" width="222" height="35"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eula_icon" translatesAutoresizingMaskIntoConstraints="NO" id="yGh-ib-wLl">
-                                        <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
-                                    </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0vN-Ru-SBS">
-                                        <rect key="frame" x="45" y="9.5" width="177" height="16.5"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="MMWR Express Agreement">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7I-0F-8kV">
-                                <rect key="frame" x="0.0" y="139" width="375" height="484"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="539"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
                             </webView>
@@ -1042,14 +1021,12 @@ IAoKA
                             <constraint firstItem="dxo-TW-nvj" firstAttribute="trailing" secondItem="UDG-dB-ebv" secondAttribute="trailing" id="4YB-ux-jHv"/>
                             <constraint firstItem="zJk-Ml-g0a" firstAttribute="top" secondItem="UDG-dB-ebv" secondAttribute="top" id="6je-3r-4Bo"/>
                             <constraint firstItem="dxo-TW-nvj" firstAttribute="leading" secondItem="UDG-dB-ebv" secondAttribute="leading" id="AXy-aI-oxZ"/>
-                            <constraint firstItem="c7I-0F-8kV" firstAttribute="top" secondItem="LyN-VV-YIs" secondAttribute="bottom" constant="10" id="CZy-gd-iPY"/>
                             <constraint firstItem="9ua-9i-D8X" firstAttribute="centerX" secondItem="gbh-Kh-4Ao" secondAttribute="centerX" id="G57-xa-aDa"/>
                             <constraint firstItem="zJk-Ml-g0a" firstAttribute="trailing" secondItem="UDG-dB-ebv" secondAttribute="trailing" id="RT9-eg-BOh"/>
-                            <constraint firstItem="LyN-VV-YIs" firstAttribute="leading" secondItem="UDG-dB-ebv" secondAttribute="leading" constant="20" id="UDS-Ps-HB6"/>
                             <constraint firstItem="dxo-TW-nvj" firstAttribute="top" secondItem="c7I-0F-8kV" secondAttribute="bottom" id="fzQ-Eo-J8G"/>
                             <constraint firstItem="c7I-0F-8kV" firstAttribute="trailing" secondItem="UDG-dB-ebv" secondAttribute="trailing" id="hGG-Ar-Dtk"/>
+                            <constraint firstItem="c7I-0F-8kV" firstAttribute="top" secondItem="zJk-Ml-g0a" secondAttribute="bottom" id="lxY-xh-DJZ"/>
                             <constraint firstItem="zJk-Ml-g0a" firstAttribute="leading" secondItem="UDG-dB-ebv" secondAttribute="leading" id="mD0-VS-HZT"/>
-                            <constraint firstItem="LyN-VV-YIs" firstAttribute="top" secondItem="zJk-Ml-g0a" secondAttribute="bottom" constant="10" id="szd-2a-98J"/>
                             <constraint firstItem="dxo-TW-nvj" firstAttribute="bottom" secondItem="UDG-dB-ebv" secondAttribute="bottom" id="t6l-Wa-edI"/>
                             <constraint firstItem="c7I-0F-8kV" firstAttribute="leading" secondItem="UDG-dB-ebv" secondAttribute="leading" id="ya8-Fz-KMT"/>
                         </constraints>
@@ -1243,7 +1220,6 @@ IAoKA
     <resources>
         <image name="about_icon" width="61" height="60"/>
         <image name="bluebox_subheader_icon" width="35" height="35"/>
-        <image name="eula_icon" width="35" height="35"/>
         <image name="help_content_no_page_control" width="320" height="761"/>
         <image name="help_header_icon" width="33" height="28"/>
         <image name="ipad_added_icon" width="38" height="38"/>
