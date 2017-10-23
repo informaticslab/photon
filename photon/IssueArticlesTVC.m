@@ -67,7 +67,10 @@ bool didViewJustLoad;
     UITabBarItem *item = [self.tabBarController.tabBar.items objectAtIndex:0];
     item.image = [UIImage imageNamed:@"issue_tab_icon_inactive"];
     item.selectedImage = [UIImage imageNamed:@"issue_tab_icon_active"];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"ipad_master_navbar"] forBarMetrics:UIBarMetricsDefault];
+    
+    // remove image from navbar
+    //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"ipad_master_navbar"] forBarMetrics:UIBarMetricsDefault];
+    
     if ([APP_MGR isDeviceIpad] == NO) {
         UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
         shareButton.width = 30.0;
