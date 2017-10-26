@@ -86,12 +86,8 @@ bool didViewJustLoad;
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName ]];
     
     // check for diffs between ios 6 & 7
-    if ([UINavigationBar instancesRespondToSelector:@selector(barTintColor)])
-        self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1.0];
-    else {
-        [[UINavigationBar appearance] setBackgroundColor:[UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1.0]];
-    }
-    
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1];
+
     [[NSNotificationCenter defaultCenter]
      addObserver:self
      selector:@selector(feedDataUpdateNotification:)

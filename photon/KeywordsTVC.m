@@ -38,17 +38,12 @@ KeywordMO *selectedKeyword;
     item.image = [UIImage imageNamed:@"search_tab_inactive"];
     item.selectedImage = [UIImage imageNamed:@"search_tab_active"];
     allKeywords  = APP_MGR.issuesMgr.keywords;
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"ipad_master_navbar"] forBarMetrics:UIBarMetricsDefault];
-    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
-    //set back button arrow color
+
+    [[UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UINavigationBar class]]] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
+
     // Do any additional setup after loading the view, typically from a nib.
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName ]];
-    // check for diffs between ios 6 & 7
-    if ([UINavigationBar instancesRespondToSelector:@selector(barTintColor)])
-        self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1.0];
-    else {
-        [[UINavigationBar appearance] setBackgroundColor:[UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1.0]];
-    }
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1];
     self.navigationItem.backBarButtonItem = nil;
 
     
@@ -58,7 +53,7 @@ KeywordMO *selectedKeyword;
     else {
         self.navigationItem.title = @"MMWR Express";
         UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
-        shareButton.style = UIBarButtonItemStyleBordered;
+        shareButton.style = UIBarButtonItemStylePlain;
         shareButton.accessibilityHint = @"Double tap to open share view to share the app with others.";
         shareButton.accessibilityLabel = @"Share";        
         self.navigationItem.rightBarButtonItem = shareButton;
