@@ -445,7 +445,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tuc-nF-oHy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4268.8000000000002" y="-635.98200899550227"/>
+            <point key="canvasLocation" x="4319" y="-663"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vex-rW-GRa">
@@ -640,7 +640,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fjc-ds-KO2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5238.4000000000005" y="-83.208395802098963"/>
+            <point key="canvasLocation" x="5258" y="31"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6I9-Bv-QYa">
@@ -668,37 +668,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="374" height="484"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="about_icon" translatesAutoresizingMaskIntoConstraints="NO" id="S4l-aG-biq">
-                                <rect key="frame" x="25" y="13" width="61" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jne-n6-eh2">
-                                <rect key="frame" x="94" y="21" width="178" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" label="">
-                                    <accessibilityTraits key="traits" staticText="YES"/>
-                                </accessibility>
-                                <attributedString key="attributedText">
-                                    <fragment content="About MMWR Express">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version 0.2.5 Build 4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xD-Zc-pD0">
-                                <rect key="frame" x="94" y="48" width="148" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2MU-se-Wgt">
-                                <rect key="frame" x="10" y="81" width="300" height="208"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2MU-se-Wgt">
+                                <rect key="frame" x="25" y="99" width="333" height="365"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="Text">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
@@ -894,8 +865,51 @@ IAoKA
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                             </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gbz-kM-Toc">
+                                <rect key="frame" x="25" y="31" width="217.5" height="60"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_icon" translatesAutoresizingMaskIntoConstraints="NO" id="S4l-aG-biq">
+                                        <rect key="frame" x="0.0" y="0.0" width="61" height="60"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0T7-fE-LZv">
+                                        <rect key="frame" x="71" y="11.5" width="146.5" height="37.5"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jne-n6-eh2">
+                                                <rect key="frame" x="0.0" y="0.0" width="146.5" height="16.5"/>
+                                                <accessibility key="accessibilityConfiguration" label="">
+                                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                                </accessibility>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="About MMWR Express">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 0.2.5 Build 4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xD-Zc-pD0">
+                                                <rect key="frame" x="0.0" y="21.5" width="124.5" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eqt-dH-dnk" firstAttribute="trailing" secondItem="2MU-se-Wgt" secondAttribute="trailing" constant="16" id="4ZK-K0-1Ym"/>
+                            <constraint firstItem="2MU-se-Wgt" firstAttribute="leading" secondItem="eqt-dH-dnk" secondAttribute="leading" constant="25" id="TQh-Gs-li2"/>
+                            <constraint firstItem="Gbz-kM-Toc" firstAttribute="top" secondItem="eqt-dH-dnk" secondAttribute="top" constant="11" id="Z2E-vG-ggj"/>
+                            <constraint firstItem="eqt-dH-dnk" firstAttribute="bottom" secondItem="2MU-se-Wgt" secondAttribute="bottom" constant="20" id="eCa-Ou-Wuv"/>
+                            <constraint firstItem="Gbz-kM-Toc" firstAttribute="leading" secondItem="eqt-dH-dnk" secondAttribute="leading" constant="25" id="lFS-mn-SrT"/>
+                            <constraint firstItem="2MU-se-Wgt" firstAttribute="top" secondItem="Gbz-kM-Toc" secondAttribute="bottom" constant="8" id="vZb-jX-NBF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="eqt-dH-dnk"/>
                     </view>
                     <toolbarItems/>
@@ -907,7 +921,7 @@ IAoKA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuE-up-0eI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5283.2000000000007" y="-962.06896551724151"/>
+            <point key="canvasLocation" x="5257.6000000000004" y="-1107.3463268365817"/>
         </scene>
         <!--HelpVC-->
         <scene sceneID="21A-8j-FqC">
@@ -979,7 +993,7 @@ IAoKA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yx5-kV-sII" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5259.2000000000007" y="-434.48275862068971"/>
+            <point key="canvasLocation" x="5258" y="-595"/>
         </scene>
         <!--EulaVC-->
         <scene sceneID="grB-3l-1fx">
@@ -1231,7 +1245,7 @@ IAoKA
         <image name="support_header_icon" width="33" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qDi-OO-8hr"/>
+        <segue reference="1Me-sS-qMG"/>
         <segue reference="XfS-BQ-fbZ"/>
         <segue reference="sa5-ms-oeY"/>
         <segue reference="Zo0-tv-bSu"/>
