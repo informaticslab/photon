@@ -70,7 +70,6 @@ ShareActionSheet *shareAS;
     self.childSummaryIphoneVC.txtvArticleTitle.showsVerticalScrollIndicator = YES;
     self.childSummaryIphoneVC.txtvArticleTitle.text = self.contentText;
     
-
     self.parentViewController.navigationItem.title = self.navbarTitle;
     
     // Setup the popover for use from the navigation bar.

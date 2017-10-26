@@ -39,17 +39,10 @@ ShareActionSheet *shareAS;
     self.navigationItem.accessibilityLabel = @"Summary of Article";
     
     
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"ipad_detail_navbar"] forBarMetrics:UIBarMetricsDefault];
-    //    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
     //set back button arrow color
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-    
-    // check for diffs between ios 6 & 7
-    if ([UINavigationBar instancesRespondToSelector:@selector(barTintColor)])
-        self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1.0];
-    else {
-        [[UINavigationBar appearance] setBackgroundColor:[UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1.0]];
-    }
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1];
+
     
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
     shareButton.width = 30.0;
@@ -68,25 +61,25 @@ ShareActionSheet *shareAS;
     
     
     
-    [self.txtvKnownText setScrollEnabled:YES];
+    [self.txtvKnownText setScrollEnabled:NO];
     [self.txtvKnownText setUserInteractionEnabled:YES];
     self.txtvKnownText.delegate = self;
     self.txtvKnownText.showsVerticalScrollIndicator = YES;
     self.txtvKnownText.text = self.contentText;
     
-    [self.txtvAddedText setScrollEnabled:YES];
+    [self.txtvAddedText setScrollEnabled:NO];
     [self.txtvAddedText setUserInteractionEnabled:YES];
     self.txtvAddedText.delegate = self;
     self.txtvAddedText.showsVerticalScrollIndicator = YES;
     self.txtvAddedText.text = self.contentText;
     
-    [self.txtvImplicationsText setScrollEnabled:YES];
+    [self.txtvImplicationsText setScrollEnabled:NO];
     [self.txtvImplicationsText setUserInteractionEnabled:YES];
     self.txtvImplicationsText.delegate = self;
     self.txtvImplicationsText.showsVerticalScrollIndicator = YES;
     self.txtvImplicationsText.text = self.contentText;
 
-    [self.txtvArticleTitle setScrollEnabled:YES];
+    [self.txtvArticleTitle setScrollEnabled:NO];
     [self.txtvArticleTitle setUserInteractionEnabled:YES];
     self.txtvArticleTitle.delegate = self;
     self.txtvArticleTitle.showsVerticalScrollIndicator = YES;
@@ -139,6 +132,7 @@ ShareActionSheet *shareAS;
     [self selectedArticle:[APP_MGR.splitVM getSelectedArticle]];
 
 }
+
 
 -(void)viewDidAppear:(BOOL)animated
 {

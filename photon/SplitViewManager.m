@@ -26,6 +26,11 @@
     
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+    
+}
+
 -(ArticleMO *)getSelectedArticle
 {
     return self.selArticle;
