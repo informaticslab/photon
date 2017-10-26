@@ -585,13 +585,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="374" height="484"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="haW-9x-62D">
-                                <rect key="frame" x="10" y="50" width="300" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6u-M4-eFY">
+                                <rect key="frame" x="139" y="231" width="96" height="30"/>
+                                <state key="normal" title="Email Support"/>
+                                <connections>
+                                    <action selector="btnEmailSupportTouchUp:" destination="HTo-pn-7QL" eventType="touchUpInside" id="eoz-oS-Ag1"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OBi-jR-DOm">
+                                <rect key="frame" x="20" y="38" width="223.5" height="28"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="support_header_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Fw0-gC-LpU">
+                                        <rect key="frame" x="0.0" y="0.0" width="33" height="28"/>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XIs-ZD-5Eb">
+                                        <rect key="frame" x="43" y="6" width="180.5" height="16.5"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" staticText="YES"/>
+                                        </accessibility>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Support for MMWR Express">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="haW-9x-62D">
+                                <rect key="frame" x="16" y="87" width="342" height="80"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="Text">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="yC8-MD-KeE"/>
+                                </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="If you have would like to report a problem with the app or ask for additional help, touch the Email Support button below.   ">
                                         <attributes>
@@ -603,44 +636,24 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6u-M4-eFY">
-                                <rect key="frame" x="96" y="141" width="128" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Email Support"/>
-                                <connections>
-                                    <action selector="btnEmailSupportTouchUp:" destination="HTo-pn-7QL" eventType="touchUpInside" id="eoz-oS-Ag1"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XIs-ZD-5Eb">
-                                <rect key="frame" x="64" y="20" width="218" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" staticText="YES"/>
-                                </accessibility>
-                                <attributedString key="attributedText">
-                                    <fragment content="Support for MMWR Express">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="support_header_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Fw0-gC-LpU">
-                                <rect key="frame" x="23" y="21" width="33" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="U6u-M4-eFY" firstAttribute="centerX" secondItem="k88-gF-P7e" secondAttribute="centerX" id="29x-1d-sVe"/>
+                            <constraint firstItem="haW-9x-62D" firstAttribute="top" secondItem="OBi-jR-DOm" secondAttribute="bottom" constant="21" id="B9e-pa-Edn"/>
+                            <constraint firstItem="OBi-jR-DOm" firstAttribute="leading" secondItem="k88-gF-P7e" secondAttribute="leading" constant="20" id="aOR-BJ-EcK"/>
+                            <constraint firstItem="U6u-M4-eFY" firstAttribute="top" secondItem="haW-9x-62D" secondAttribute="bottom" constant="64" id="bgW-5c-fPv"/>
+                            <constraint firstItem="OBi-jR-DOm" firstAttribute="top" secondItem="k88-gF-P7e" secondAttribute="top" constant="18" id="hro-FP-bd8"/>
+                            <constraint firstItem="haW-9x-62D" firstAttribute="leading" secondItem="k88-gF-P7e" secondAttribute="leading" constant="16" id="tBo-dO-QC5"/>
+                            <constraint firstItem="haW-9x-62D" firstAttribute="trailing" secondItem="k88-gF-P7e" secondAttribute="trailing" constant="-16" id="vF6-Ik-y3X"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="k88-gF-P7e"/>
                     </view>
                     <navigationItem key="navigationItem" id="QbI-hL-cGU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fjc-ds-KO2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5258" y="31"/>
+            <point key="canvasLocation" x="5257.6000000000004" y="30.584707646176913"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6I9-Bv-QYa">
