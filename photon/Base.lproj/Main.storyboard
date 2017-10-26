@@ -1052,132 +1052,126 @@ IAoKA
                         <rect key="frame" x="0.0" y="0.0" width="335" height="944"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_known_icon" translatesAutoresizingMaskIntoConstraints="NO" id="GLt-hY-6VC">
-                                <rect key="frame" x="0.0" y="28" width="69" height="38"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="TWw-8q-08E">
-                                <rect key="frame" x="77" y="326" width="238" height="59"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="Qju-i4-EPj"/>
-                                </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="What is added by this report?">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7JZ-mA-pd3">
+                                <rect key="frame" x="0.0" y="27" width="240" height="38"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_known_icon" translatesAutoresizingMaskIntoConstraints="NO" id="GLt-hY-6VC">
+                                        <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="mAl-Qo-g7V">
+                                        <rect key="frame" x="48" y="8.5" width="192" height="21"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="What is already known?">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BW4-f6-Klc">
-                                <rect key="frame" x="0.0" y="388" width="335" height="240"/>
+                                <rect key="frame" x="0.0" y="169" width="335" height="30"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES"/>
                                 </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="jUA-Ui-6TM"/>
-                                </constraints>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_added_icon" translatesAutoresizingMaskIntoConstraints="NO" id="54F-VQ-PFs">
-                                <rect key="frame" x="0.0" y="337" width="38" height="38"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_implications_icon" translatesAutoresizingMaskIntoConstraints="NO" id="wV1-8x-nMz">
-                                <rect key="frame" x="0.0" y="662" width="38" height="38"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="214" translatesAutoresizingMaskIntoConstraints="NO" id="j4Y-K5-Zh2">
-                                <rect key="frame" x="77" y="636" width="238" height="89"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="89" id="CpB-ip-Vow"/>
-                                </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="What are the implications for public health practice?">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="mAl-Qo-g7V">
-                                <rect key="frame" x="77" y="36" width="192" height="21"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="What is already known?">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="875-vi-ieQ">
-                                <rect key="frame" x="0.0" y="65" width="335" height="240"/>
+                                <rect key="frame" x="0.0" y="69" width="335" height="30"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES"/>
                                 </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="FxD-ii-GGS"/>
-                                </constraints>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1z-aC-g3o">
-                                <rect key="frame" x="0.0" y="708" width="335" height="240"/>
+                                <rect key="frame" x="0.0" y="273" width="335" height="30"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES"/>
                                 </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="ac5-XW-Kb4"/>
-                                </constraints>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Fu8-z5-dZP">
+                                <rect key="frame" x="0.0" y="127" width="286" height="38"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_added_icon" translatesAutoresizingMaskIntoConstraints="NO" id="54F-VQ-PFs">
+                                        <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="TWw-8q-08E">
+                                        <rect key="frame" x="48" y="8.5" width="238" height="21"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="What is added by this report?">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zhK-px-TOU">
+                                <rect key="frame" x="0.0" y="227" width="258" height="42"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kET-MQ-GVC">
+                                        <rect key="frame" x="0.0" y="0.0" width="258" height="42"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_implications_icon" translatesAutoresizingMaskIntoConstraints="NO" id="wV1-8x-nMz">
+                                                <rect key="frame" x="0.0" y="2" width="38" height="38"/>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="214" translatesAutoresizingMaskIntoConstraints="NO" id="j4Y-K5-Zh2">
+                                                <rect key="frame" x="48" y="0.0" width="210" height="42"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="What are the implications for public health practice?">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="TWw-8q-08E" secondAttribute="trailing" constant="4" id="0Tu-hs-vJ3"/>
-                            <constraint firstItem="875-vi-ieQ" firstAttribute="trailing" secondItem="BW4-f6-Klc" secondAttribute="trailing" id="1A3-eM-Ben"/>
-                            <constraint firstItem="mAl-Qo-g7V" firstAttribute="top" secondItem="YWA-nF-f7g" secondAttribute="top" constant="16" id="6AU-Vf-Btc"/>
-                            <constraint firstItem="YWA-nF-f7g" firstAttribute="trailing" secondItem="875-vi-ieQ" secondAttribute="trailing" id="7JO-hu-3l9"/>
-                            <constraint firstItem="GLt-hY-6VC" firstAttribute="leading" secondItem="875-vi-ieQ" secondAttribute="leading" id="9al-zc-dlG"/>
-                            <constraint firstItem="TWw-8q-08E" firstAttribute="leading" secondItem="j4Y-K5-Zh2" secondAttribute="leading" id="AxK-xW-JCn"/>
-                            <constraint firstItem="TWw-8q-08E" firstAttribute="trailing" secondItem="j4Y-K5-Zh2" secondAttribute="trailing" id="BJv-KQ-4Jy"/>
-                            <constraint firstItem="BW4-f6-Klc" firstAttribute="top" secondItem="TWw-8q-08E" secondAttribute="bottom" constant="3" id="Ch6-Ck-BNi"/>
-                            <constraint firstItem="GLt-hY-6VC" firstAttribute="leading" secondItem="BW4-f6-Klc" secondAttribute="leading" id="F2K-Lz-a6y"/>
-                            <constraint firstItem="mAl-Qo-g7V" firstAttribute="leading" secondItem="GLt-hY-6VC" secondAttribute="trailing" constant="8" symbolic="YES" id="Gq6-NB-7y2"/>
-                            <constraint firstItem="GLt-hY-6VC" firstAttribute="leading" secondItem="s1z-aC-g3o" secondAttribute="leading" id="HLh-tY-mea"/>
-                            <constraint firstItem="GLt-hY-6VC" firstAttribute="leading" secondItem="54F-VQ-PFs" secondAttribute="leading" id="Ihm-Eq-CrQ"/>
-                            <constraint firstItem="j4Y-K5-Zh2" firstAttribute="centerY" secondItem="wV1-8x-nMz" secondAttribute="centerY" id="KXa-bb-KBI"/>
-                            <constraint firstItem="j4Y-K5-Zh2" firstAttribute="top" secondItem="BW4-f6-Klc" secondAttribute="bottom" constant="8" symbolic="YES" id="TBb-Ue-jCt"/>
-                            <constraint firstItem="GLt-hY-6VC" firstAttribute="leading" secondItem="YWA-nF-f7g" secondAttribute="leading" id="XN8-Jd-c7d"/>
-                            <constraint firstItem="GLt-hY-6VC" firstAttribute="leading" secondItem="wV1-8x-nMz" secondAttribute="leading" id="ZRp-04-U9X"/>
-                            <constraint firstItem="TWw-8q-08E" firstAttribute="leading" secondItem="mAl-Qo-g7V" secondAttribute="leading" id="bE5-su-hDo"/>
-                            <constraint firstItem="GLt-hY-6VC" firstAttribute="top" secondItem="YWA-nF-f7g" secondAttribute="top" constant="8" id="cec-HG-9vN"/>
-                            <constraint firstItem="875-vi-ieQ" firstAttribute="trailing" secondItem="s1z-aC-g3o" secondAttribute="trailing" id="hqF-4n-oPJ"/>
-                            <constraint firstItem="TWw-8q-08E" firstAttribute="centerY" secondItem="54F-VQ-PFs" secondAttribute="centerY" id="kzK-yH-zny"/>
-                            <constraint firstItem="s1z-aC-g3o" firstAttribute="top" secondItem="j4Y-K5-Zh2" secondAttribute="bottom" constant="-17" id="luf-3t-OKT"/>
-                            <constraint firstItem="TWw-8q-08E" firstAttribute="top" secondItem="875-vi-ieQ" secondAttribute="bottom" constant="21" id="oSS-Lg-lIr"/>
-                            <constraint firstItem="875-vi-ieQ" firstAttribute="top" secondItem="mAl-Qo-g7V" secondAttribute="bottom" constant="8" symbolic="YES" id="r35-QI-F1f"/>
+                            <constraint firstItem="Fu8-z5-dZP" firstAttribute="top" secondItem="875-vi-ieQ" secondAttribute="bottom" constant="28" id="3Jt-DI-rHP"/>
+                            <constraint firstItem="mAl-Qo-g7V" firstAttribute="top" secondItem="YWA-nF-f7g" secondAttribute="top" constant="16" id="3cD-m2-qtf"/>
+                            <constraint firstItem="BW4-f6-Klc" firstAttribute="top" secondItem="Fu8-z5-dZP" secondAttribute="bottom" constant="4" id="4Gq-wf-yfg"/>
+                            <constraint firstItem="Fu8-z5-dZP" firstAttribute="leading" secondItem="YWA-nF-f7g" secondAttribute="leading" id="8KW-pj-cbC"/>
+                            <constraint firstItem="s1z-aC-g3o" firstAttribute="trailing" secondItem="YWA-nF-f7g" secondAttribute="trailing" id="D5g-Yr-gq4"/>
+                            <constraint firstItem="kET-MQ-GVC" firstAttribute="top" secondItem="BW4-f6-Klc" secondAttribute="bottom" constant="28" id="EBz-Fx-GyJ"/>
+                            <constraint firstItem="s1z-aC-g3o" firstAttribute="leading" secondItem="YWA-nF-f7g" secondAttribute="leading" id="J0X-ZP-N5i"/>
+                            <constraint firstItem="7JZ-mA-pd3" firstAttribute="leading" secondItem="YWA-nF-f7g" secondAttribute="leading" id="PCJ-Cr-Kra"/>
+                            <constraint firstItem="875-vi-ieQ" firstAttribute="leading" secondItem="YWA-nF-f7g" secondAttribute="leading" id="TbW-iq-nSd"/>
+                            <constraint firstItem="BW4-f6-Klc" firstAttribute="trailing" secondItem="YWA-nF-f7g" secondAttribute="trailing" id="ano-io-VlL"/>
+                            <constraint firstItem="875-vi-ieQ" firstAttribute="trailing" secondItem="YWA-nF-f7g" secondAttribute="trailing" id="iuF-Ny-VNU"/>
+                            <constraint firstItem="zhK-px-TOU" firstAttribute="leading" secondItem="YWA-nF-f7g" secondAttribute="leading" id="m7W-Gr-J6c"/>
+                            <constraint firstItem="BW4-f6-Klc" firstAttribute="leading" secondItem="YWA-nF-f7g" secondAttribute="leading" id="nGl-07-mpx"/>
+                            <constraint firstItem="s1z-aC-g3o" firstAttribute="top" secondItem="kET-MQ-GVC" secondAttribute="bottom" constant="4" id="sAn-jU-zA7"/>
+                            <constraint firstItem="875-vi-ieQ" firstAttribute="top" secondItem="7JZ-mA-pd3" secondAttribute="bottom" constant="4" id="ycP-7i-FHT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YWA-nF-f7g"/>
                     </view>
                     <connections>
                         <outlet property="txtvAddedText" destination="BW4-f6-Klc" id="MyC-Jg-nX8"/>
-                        <outlet property="txtvAddedTextHeightConstraint" destination="jUA-Ui-6TM" id="cBU-K0-KL2"/>
                         <outlet property="txtvImplicationsText" destination="s1z-aC-g3o" id="2cn-hy-PZe"/>
-                        <outlet property="txtvImplicationsTextHeightConstraint" destination="ac5-XW-Kb4" id="ZXS-fd-Yik"/>
                         <outlet property="txtvKnownText" destination="875-vi-ieQ" id="Hy6-6z-oMv"/>
-                        <outlet property="txtvKnownTextHeightConstraint" destination="FxD-ii-GGS" id="cQT-tn-YFM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dk1-jJ-kkb" userLabel="First Responder" sceneMemberID="firstResponder"/>

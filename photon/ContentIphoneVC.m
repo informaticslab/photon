@@ -46,19 +46,19 @@ ShareActionSheet *shareAS;
     
     self.navigationItem.rightBarButtonItems  = @[shareButton];
     
-    [self.childSummaryIphoneVC.txtvKnownText setScrollEnabled:YES];
+    [self.childSummaryIphoneVC.txtvKnownText setScrollEnabled:NO];
     [self.childSummaryIphoneVC.txtvKnownText setUserInteractionEnabled:YES];
     self.childSummaryIphoneVC.txtvKnownText.delegate = self;
     self.childSummaryIphoneVC.txtvKnownText.showsVerticalScrollIndicator = YES;
     self.childSummaryIphoneVC.txtvKnownText.text = self.contentText;
     
-    [self.childSummaryIphoneVC.txtvAddedText setScrollEnabled:YES];
+    [self.childSummaryIphoneVC.txtvAddedText setScrollEnabled:NO];
     [self.childSummaryIphoneVC.txtvAddedText setUserInteractionEnabled:YES];
     self.childSummaryIphoneVC.txtvAddedText.delegate = self;
     self.childSummaryIphoneVC.txtvAddedText.showsVerticalScrollIndicator = YES;
     self.childSummaryIphoneVC.txtvAddedText.text = self.contentText;
     
-    [self.childSummaryIphoneVC.txtvImplicationsText setScrollEnabled:YES];
+    [self.childSummaryIphoneVC.txtvImplicationsText setScrollEnabled:NO];
     [self.childSummaryIphoneVC.txtvImplicationsText setUserInteractionEnabled:YES];
     self.childSummaryIphoneVC.txtvImplicationsText.delegate = self;
     self.childSummaryIphoneVC.txtvImplicationsText.showsVerticalScrollIndicator = YES;
