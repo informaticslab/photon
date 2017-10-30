@@ -15,6 +15,9 @@
 
 ShareActionSheet *shareAS;
 
+UIFont *font;
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,7 +32,8 @@ ShareActionSheet *shareAS;
 {
     [super viewDidLoad];
 
-    
+    font = [UIFont fontWithName:@"HelveticaNeue" size:15];
+
 	// Do any additional setup after loading the view.
     self.navigationItem.title = @"Summary";
     self.navigationItem.accessibilityLabel = @"Summary of Article";
@@ -46,29 +50,29 @@ ShareActionSheet *shareAS;
     
     self.navigationItem.rightBarButtonItems  = @[shareButton];
     
-    [self.childSummaryIphoneVC.txtvKnownText setScrollEnabled:NO];
-    [self.childSummaryIphoneVC.txtvKnownText setUserInteractionEnabled:YES];
-    self.childSummaryIphoneVC.txtvKnownText.delegate = self;
-    self.childSummaryIphoneVC.txtvKnownText.showsVerticalScrollIndicator = YES;
-    self.childSummaryIphoneVC.txtvKnownText.text = self.contentText;
+    [self.txtvKnownText setScrollEnabled:NO];
+    [self.txtvKnownText setUserInteractionEnabled:YES];
+    self.txtvKnownText.delegate = self;
+    self.txtvKnownText.showsVerticalScrollIndicator = YES;
+    self.txtvKnownText.text = self.contentText;
     
-    [self.childSummaryIphoneVC.txtvAddedText setScrollEnabled:NO];
-    [self.childSummaryIphoneVC.txtvAddedText setUserInteractionEnabled:YES];
-    self.childSummaryIphoneVC.txtvAddedText.delegate = self;
-    self.childSummaryIphoneVC.txtvAddedText.showsVerticalScrollIndicator = YES;
-    self.childSummaryIphoneVC.txtvAddedText.text = self.contentText;
+    [self.txtvAddedText setScrollEnabled:NO];
+    [self.txtvAddedText setUserInteractionEnabled:YES];
+    self.txtvAddedText.delegate = self;
+    self.txtvAddedText.showsVerticalScrollIndicator = YES;
+    self.txtvAddedText.text = self.contentText;
     
-    [self.childSummaryIphoneVC.txtvImplicationsText setScrollEnabled:NO];
-    [self.childSummaryIphoneVC.txtvImplicationsText setUserInteractionEnabled:YES];
-    self.childSummaryIphoneVC.txtvImplicationsText.delegate = self;
-    self.childSummaryIphoneVC.txtvImplicationsText.showsVerticalScrollIndicator = YES;
-    self.childSummaryIphoneVC.txtvImplicationsText.text = self.contentText;
+    [self.txtvImplicationsText setScrollEnabled:NO];
+    [self.txtvImplicationsText setUserInteractionEnabled:YES];
+    self.txtvImplicationsText.delegate = self;
+    self.txtvImplicationsText.showsVerticalScrollIndicator = YES;
+    self.txtvImplicationsText.text = self.contentText;
     
-    [self.childSummaryIphoneVC.txtvArticleTitle setScrollEnabled:YES];
-    [self.childSummaryIphoneVC.txtvArticleTitle setUserInteractionEnabled:YES];
-    self.childSummaryIphoneVC.txtvArticleTitle.delegate = self;
-    self.childSummaryIphoneVC.txtvArticleTitle.showsVerticalScrollIndicator = YES;
-    self.childSummaryIphoneVC.txtvArticleTitle.text = self.contentText;
+    [self.txtvArticleTitle setScrollEnabled:YES];
+    [self.txtvArticleTitle setUserInteractionEnabled:YES];
+    self.txtvArticleTitle.delegate = self;
+    self.txtvArticleTitle.showsVerticalScrollIndicator = YES;
+    self.txtvArticleTitle.text = self.contentText;
     
     self.parentViewController.navigationItem.title = self.navbarTitle;
     
@@ -125,7 +129,7 @@ ShareActionSheet *shareAS;
 {
     [self flashScrollingIndicators];
     CGSize containerSize = self.containerView.frame.size;
-    CGSize scrollContentSize = CGSizeMake(containerSize.width, containerSize.height + 60.0);
+    CGSize scrollContentSize = CGSizeMake(containerSize.width, self.txtvAddedText.contentSize.height + self.txtvKnownText.contentSize.height + self.txtvImplicationsText.contentSize.height + 200);
     self.summaryScrollView.contentSize = scrollContentSize;
     
 }
@@ -221,6 +225,32 @@ ShareActionSheet *shareAS;
     
 }
 
+-(void)setKnownText:(NSString *)text
+{
+    
+    self.txtvKnownText.text = text;
+    self.txtvKnownText.font = font;
+    self.txtvKnownText.textContainerInset = UIEdgeInsetsMake(3,3,3,3);
+    
+}
+
+-(void)setAddedText:(NSString *)text
+{
+    
+    self.txtvAddedText.text = text;
+    self.txtvAddedText.font = font;
+    self.txtvAddedText.textContainerInset = UIEdgeInsetsMake(3,3,3,3);
+    
+}
+
+-(void)setImplicationsText:(NSString *)text
+{
+    
+    self.txtvImplicationsText.text = text;
+    self.txtvImplicationsText.font = font;
+    self.txtvImplicationsText.textContainerInset = UIEdgeInsetsMake(3,3,3,3);
+
+}
 
 -(void)selectedArticle:(ArticleMO *)selArticle
 {
@@ -235,13 +265,13 @@ ShareActionSheet *shareAS;
     
     [self.childFullArticleVC loadUrl:_article.url];
 
-    [self.childSummaryIphoneVC setKnownText:_article.already_known];
-    [self.childSummaryIphoneVC setAddedText:_article.added_by_report];
-    [self.childSummaryIphoneVC setImplicationsText:_article.implications];
+    [self setKnownText:_article.already_known];
+    [self setAddedText:_article.added_by_report];
+    [self setImplicationsText:_article.implications];
 
-    self.childSummaryIphoneVC.txtvArticleTitle.text = _article.title;
-    self.childSummaryIphoneVC.txtvArticleTitle.font = APP_MGR.tableFont;
-    self.childSummaryIphoneVC.txtvArticleTitle.textAlignment = NSTextAlignmentCenter;
+    self.txtvArticleTitle.text = _article.title;
+    self.txtvArticleTitle.font = APP_MGR.tableFont;
+    self.txtvArticleTitle.textAlignment = NSTextAlignmentCenter;
     
     self.navigationItem.accessibilityLabel = [NSString stringWithFormat:@"%@ %@", @"Summary of Article with title ", self.article.title];
     
