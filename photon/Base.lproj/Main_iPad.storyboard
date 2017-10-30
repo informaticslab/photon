@@ -146,132 +146,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rm8-q5-K4G">
-                                <rect key="frame" x="20" y="82" width="240" height="38"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_known_icon" translatesAutoresizingMaskIntoConstraints="NO" id="584-Dy-lpt">
-                                        <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
-                                    </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="jHH-DP-CJN">
-                                        <rect key="frame" x="48" y="8.5" width="192" height="21"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="What is already known?">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="18" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hl9-mZ-D9x">
-                                <rect key="frame" x="16" y="124" width="992" height="92.5"/>
-                                <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" staticText="YES"/>
-                                </accessibility>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <attributes>
-                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
-                                            <font key="NSOriginalFont" size="15" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MQQ-n1-48a">
-                                <rect key="frame" x="16" y="232.5" width="286" height="38"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_added_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ikK-eu-3GF">
-                                        <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
-                                    </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="9OP-ME-cnK">
-                                        <rect key="frame" x="48" y="8.5" width="238" height="21"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="What is added by this report?">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="18" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANr-Cc-vfy">
-                                <rect key="frame" x="16" y="274.5" width="992" height="92.5"/>
-                                <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" staticText="YES"/>
-                                </accessibility>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <attributes>
-                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
-                                            <font key="NSOriginalFont" size="15" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="PhY-e6-a7s">
-                                <rect key="frame" x="20" y="383" width="472.5" height="38"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_implications_icon" translatesAutoresizingMaskIntoConstraints="NO" id="6FQ-xd-nnu">
-                                        <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
-                                    </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="bGx-Rk-heL">
-                                        <rect key="frame" x="54" y="8.5" width="418.5" height="21"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="What are the implications for public health practice?">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="18" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYi-zc-Tce">
-                                <rect key="frame" x="16" y="425" width="992" height="92.5"/>
-                                <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" staticText="YES"/>
-                                </accessibility>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <attributes>
-                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
-                                            <font key="NSOriginalFont" size="15" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0E-oZ-Wc7">
-                                <rect key="frame" x="16" y="36" width="992" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" staticText="YES"/>
-                                </accessibility>
-                                <attributedString key="attributedText"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQo-dJ-Dpa" userLabel="Full Article View">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <connections>
@@ -286,38 +160,176 @@
                                     <segue destination="rRq-Xx-aDe" kind="embed" id="oK6-YJ-b4l"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLj-gK-nZz" userLabel="Content View">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rm8-q5-K4G" userLabel="Known Stack View">
+                                        <rect key="frame" x="20" y="56" width="240" height="38"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_known_icon" translatesAutoresizingMaskIntoConstraints="NO" id="584-Dy-lpt">
+                                                <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="jHH-DP-CJN">
+                                                <rect key="frame" x="48" y="8.5" width="192" height="21"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="What is already known?">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hl9-mZ-D9x">
+                                        <rect key="frame" x="20" y="98" width="984" height="92.5"/>
+                                        <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" staticText="YES"/>
+                                        </accessibility>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                                    <font key="NSOriginalFont" size="15" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MQQ-n1-48a" userLabel="Added Stack View">
+                                        <rect key="frame" x="20" y="206.5" width="286" height="38"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_added_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ikK-eu-3GF">
+                                                <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="9OP-ME-cnK">
+                                                <rect key="frame" x="48" y="8.5" width="238" height="21"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="What is added by this report?">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANr-Cc-vfy">
+                                        <rect key="frame" x="20" y="248.5" width="984" height="92.5"/>
+                                        <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" staticText="YES"/>
+                                        </accessibility>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                                    <font key="NSOriginalFont" size="15" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="PhY-e6-a7s" userLabel="Implications Stack View">
+                                        <rect key="frame" x="20" y="357" width="472.5" height="38"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_implications_icon" translatesAutoresizingMaskIntoConstraints="NO" id="6FQ-xd-nnu">
+                                                <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="bGx-Rk-heL">
+                                                <rect key="frame" x="54" y="8.5" width="418.5" height="21"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="What are the implications for public health practice?">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYi-zc-Tce">
+                                        <rect key="frame" x="20" y="399" width="984" height="92.5"/>
+                                        <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" staticText="YES"/>
+                                        </accessibility>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                                    <font key="NSOriginalFont" size="15" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0E-oZ-Wc7">
+                                        <rect key="frame" x="16" y="10" width="992" height="30"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" staticText="YES"/>
+                                        </accessibility>
+                                        <attributedString key="attributedText"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Hl9-mZ-D9x" secondAttribute="trailing" constant="20" id="1Vd-Od-YC7"/>
+                                    <constraint firstItem="PhY-e6-a7s" firstAttribute="top" secondItem="ANr-Cc-vfy" secondAttribute="bottom" constant="16" id="5op-0v-ez2"/>
+                                    <constraint firstAttribute="trailing" secondItem="yYi-zc-Tce" secondAttribute="trailing" constant="20" id="7VB-Hs-Vln"/>
+                                    <constraint firstAttribute="trailing" secondItem="S0E-oZ-Wc7" secondAttribute="trailing" constant="16" id="8dA-pU-COn"/>
+                                    <constraint firstItem="Hl9-mZ-D9x" firstAttribute="top" secondItem="Rm8-q5-K4G" secondAttribute="bottom" constant="4" id="EFV-t6-5Oi"/>
+                                    <constraint firstItem="S0E-oZ-Wc7" firstAttribute="top" secondItem="xLj-gK-nZz" secondAttribute="top" constant="10" id="Wpu-cg-DeM"/>
+                                    <constraint firstAttribute="trailing" secondItem="ANr-Cc-vfy" secondAttribute="trailing" constant="20" id="cFb-Q6-XBx"/>
+                                    <constraint firstItem="MQQ-n1-48a" firstAttribute="top" secondItem="Hl9-mZ-D9x" secondAttribute="bottom" constant="16" id="fSz-uP-lLk"/>
+                                    <constraint firstItem="yYi-zc-Tce" firstAttribute="leading" secondItem="xLj-gK-nZz" secondAttribute="leading" constant="20" id="lFp-Z0-LMc"/>
+                                    <constraint firstItem="MQQ-n1-48a" firstAttribute="bottom" secondItem="ANr-Cc-vfy" secondAttribute="top" constant="-4" id="ns9-Nv-Pne"/>
+                                    <constraint firstItem="PhY-e6-a7s" firstAttribute="leading" secondItem="xLj-gK-nZz" secondAttribute="leading" constant="20" id="oQR-Dy-zRy"/>
+                                    <constraint firstItem="ANr-Cc-vfy" firstAttribute="leading" secondItem="xLj-gK-nZz" secondAttribute="leading" constant="20" id="pXF-MU-FUQ"/>
+                                    <constraint firstItem="Rm8-q5-K4G" firstAttribute="leading" secondItem="xLj-gK-nZz" secondAttribute="leading" constant="20" id="rBu-IV-ezS"/>
+                                    <constraint firstItem="MQQ-n1-48a" firstAttribute="leading" secondItem="xLj-gK-nZz" secondAttribute="leading" constant="20" id="rfK-dE-fJa"/>
+                                    <constraint firstItem="Rm8-q5-K4G" firstAttribute="top" secondItem="S0E-oZ-Wc7" secondAttribute="bottom" constant="16" id="vvO-HL-YzJ"/>
+                                    <constraint firstItem="S0E-oZ-Wc7" firstAttribute="leading" secondItem="xLj-gK-nZz" secondAttribute="leading" constant="16" id="yjL-fL-bAS"/>
+                                    <constraint firstItem="Hl9-mZ-D9x" firstAttribute="leading" secondItem="xLj-gK-nZz" secondAttribute="leading" constant="20" id="yor-Z6-MQd"/>
+                                    <constraint firstItem="PhY-e6-a7s" firstAttribute="bottom" secondItem="yYi-zc-Tce" secondAttribute="top" constant="-4" id="z85-CM-kwa"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="S0E-oZ-Wc7" firstAttribute="leading" secondItem="7uV-dX-DX6" secondAttribute="leading" constant="16" id="177-Ng-82z"/>
-                            <constraint firstItem="MQQ-n1-48a" firstAttribute="leading" secondItem="7uV-dX-DX6" secondAttribute="leading" constant="16" id="257-KC-KID"/>
-                            <constraint firstItem="7uV-dX-DX6" firstAttribute="trailing" secondItem="ANr-Cc-vfy" secondAttribute="trailing" constant="16" id="4Qw-zi-Hgt"/>
                             <constraint firstItem="BQo-dJ-Dpa" firstAttribute="centerY" secondItem="Udl-rM-iZS" secondAttribute="centerY" id="5gY-Zr-Ji9"/>
                             <constraint firstItem="UN7-bL-OhY" firstAttribute="trailing" secondItem="7uV-dX-DX6" secondAttribute="trailing" id="81g-Lr-DNx"/>
                             <constraint firstItem="7uV-dX-DX6" firstAttribute="bottom" secondItem="UN7-bL-OhY" secondAttribute="bottom" id="9B4-9L-QS7"/>
                             <constraint firstItem="BQo-dJ-Dpa" firstAttribute="centerX" secondItem="Udl-rM-iZS" secondAttribute="centerX" id="Anw-Ck-y7c"/>
-                            <constraint firstItem="MQQ-n1-48a" firstAttribute="top" secondItem="Hl9-mZ-D9x" secondAttribute="bottom" constant="16" id="BBE-vL-Ybw"/>
                             <constraint firstItem="UN7-bL-OhY" firstAttribute="centerY" secondItem="Udl-rM-iZS" secondAttribute="centerY" id="D6K-Da-iuR"/>
                             <constraint firstItem="7uV-dX-DX6" firstAttribute="trailing" secondItem="UN7-bL-OhY" secondAttribute="trailing" id="GpS-S0-xYP"/>
-                            <constraint firstItem="PhY-e6-a7s" firstAttribute="top" secondItem="ANr-Cc-vfy" secondAttribute="bottom" constant="16" id="IRu-Bb-DBd"/>
-                            <constraint firstItem="PhY-e6-a7s" firstAttribute="bottom" secondItem="yYi-zc-Tce" secondAttribute="top" constant="-4" id="Jwh-FY-KPQ"/>
-                            <constraint firstItem="ANr-Cc-vfy" firstAttribute="leading" secondItem="7uV-dX-DX6" secondAttribute="leading" constant="16" id="M1z-kE-upI"/>
-                            <constraint firstItem="yYi-zc-Tce" firstAttribute="leading" secondItem="7uV-dX-DX6" secondAttribute="leading" constant="16" id="NMu-gO-1zg"/>
                             <constraint firstItem="BQo-dJ-Dpa" firstAttribute="top" secondItem="Udl-rM-iZS" secondAttribute="top" id="NQU-vE-ZAL"/>
-                            <constraint firstItem="Hl9-mZ-D9x" firstAttribute="leading" secondItem="7uV-dX-DX6" secondAttribute="leading" constant="16" id="XPl-eV-vAh"/>
+                            <constraint firstItem="7uV-dX-DX6" firstAttribute="bottom" secondItem="xLj-gK-nZz" secondAttribute="bottom" id="Wpu-g7-JVK"/>
                             <constraint firstItem="UN7-bL-OhY" firstAttribute="centerX" secondItem="Udl-rM-iZS" secondAttribute="centerX" id="bKo-HO-Uuc"/>
-                            <constraint firstItem="7uV-dX-DX6" firstAttribute="trailing" secondItem="yYi-zc-Tce" secondAttribute="trailing" constant="16" id="cJ7-wk-vF7"/>
-                            <constraint firstItem="MQQ-n1-48a" firstAttribute="bottom" secondItem="ANr-Cc-vfy" secondAttribute="top" constant="-4" id="hHH-uA-ycW"/>
-                            <constraint firstItem="Rm8-q5-K4G" firstAttribute="leading" secondItem="7uV-dX-DX6" secondAttribute="leading" constant="20" id="hZV-en-Dn7"/>
+                            <constraint firstItem="xLj-gK-nZz" firstAttribute="leading" secondItem="Udl-rM-iZS" secondAttribute="leading" id="hcY-rt-htL"/>
                             <constraint firstItem="BQo-dJ-Dpa" firstAttribute="leading" secondItem="7uV-dX-DX6" secondAttribute="leading" id="iWf-Py-d1e"/>
-                            <constraint firstItem="7uV-dX-DX6" firstAttribute="trailing" secondItem="Hl9-mZ-D9x" secondAttribute="trailing" constant="16" id="nic-Kg-wK2"/>
                             <constraint firstItem="7uV-dX-DX6" firstAttribute="bottom" secondItem="BQo-dJ-Dpa" secondAttribute="bottom" id="pRf-VB-Wbf"/>
+                            <constraint firstItem="xLj-gK-nZz" firstAttribute="top" secondItem="Udl-rM-iZS" secondAttribute="top" id="qYc-zC-fat"/>
                             <constraint firstItem="7uV-dX-DX6" firstAttribute="trailing" secondItem="BQo-dJ-Dpa" secondAttribute="trailing" id="r7x-cP-qjK"/>
-                            <constraint firstItem="Hl9-mZ-D9x" firstAttribute="top" secondItem="Rm8-q5-K4G" secondAttribute="bottom" constant="4" id="s2R-cv-Og7"/>
-                            <constraint firstItem="PhY-e6-a7s" firstAttribute="leading" secondItem="7uV-dX-DX6" secondAttribute="leading" constant="20" id="tK4-BO-xIA"/>
-                            <constraint firstItem="S0E-oZ-Wc7" firstAttribute="top" secondItem="7uV-dX-DX6" secondAttribute="top" constant="16" id="w6B-RA-aSs"/>
-                            <constraint firstItem="S0E-oZ-Wc7" firstAttribute="trailing" secondItem="7uV-dX-DX6" secondAttribute="trailing" constant="-16" id="xUG-ea-KSU"/>
-                            <constraint firstItem="Rm8-q5-K4G" firstAttribute="top" secondItem="S0E-oZ-Wc7" secondAttribute="bottom" constant="16" id="xvD-g8-RYn"/>
+                            <constraint firstAttribute="trailing" secondItem="xLj-gK-nZz" secondAttribute="trailing" id="t27-s3-68v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7uV-dX-DX6"/>
                     </view>
