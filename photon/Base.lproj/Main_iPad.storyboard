@@ -146,20 +146,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQo-dJ-Dpa" userLabel="Full Article View">
-                                <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
-                                <connections>
-                                    <segue destination="EDB-Od-E07" kind="embed" identifier="embedFullArticleView" id="Doz-ZS-vab"/>
-                                </connections>
-                            </containerView>
-                            <containerView hidden="YES" alpha="0.49999999999999961" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UN7-bL-OhY">
-                                <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <segue destination="rRq-Xx-aDe" kind="embed" id="oK6-YJ-b4l"/>
-                                </connections>
-                            </containerView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhs-E2-aUq">
                                 <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                                 <subviews>
@@ -326,6 +312,20 @@
                                     <constraint firstItem="xLj-gK-nZz" firstAttribute="leading" secondItem="lhs-E2-aUq" secondAttribute="leading" id="qsk-tu-iex"/>
                                 </constraints>
                             </scrollView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQo-dJ-Dpa" userLabel="Full Article View">
+                                <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
+                                <connections>
+                                    <segue destination="EDB-Od-E07" kind="embed" identifier="embedFullArticleView" id="Doz-ZS-vab"/>
+                                </connections>
+                            </containerView>
+                            <containerView hidden="YES" alpha="0.49999999999999961" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UN7-bL-OhY">
+                                <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="rRq-Xx-aDe" kind="embed" id="oK6-YJ-b4l"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
