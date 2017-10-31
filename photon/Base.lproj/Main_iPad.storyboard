@@ -147,196 +147,216 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQo-dJ-Dpa" userLabel="Full Article View">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                                 <connections>
                                     <segue destination="EDB-Od-E07" kind="embed" identifier="embedFullArticleView" id="Doz-ZS-vab"/>
                                 </connections>
                             </containerView>
                             <containerView hidden="YES" alpha="0.49999999999999961" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UN7-bL-OhY">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="rRq-Xx-aDe" kind="embed" id="oK6-YJ-b4l"/>
                                 </connections>
                             </containerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLj-gK-nZz" userLabel="Content View">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhs-E2-aUq">
+                                <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rm8-q5-K4G" userLabel="Known Stack View">
-                                        <rect key="frame" x="20" y="56" width="240" height="38"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLj-gK-nZz" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_known_icon" translatesAutoresizingMaskIntoConstraints="NO" id="584-Dy-lpt">
-                                                <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
-                                            </imageView>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="jHH-DP-CJN">
-                                                <rect key="frame" x="48" y="8.5" width="192" height="21"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rm8-q5-K4G" userLabel="Known Stack View">
+                                                <rect key="frame" x="20" y="110" width="240" height="38"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_known_icon" translatesAutoresizingMaskIntoConstraints="NO" id="584-Dy-lpt">
+                                                        <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
+                                                    </imageView>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="jHH-DP-CJN">
+                                                        <rect key="frame" x="48" y="8.5" width="192" height="21"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="What is already known?">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hl9-mZ-D9x">
+                                                <rect key="frame" x="20" y="152" width="663.5" height="131"/>
+                                                <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                                </accessibility>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="What is already known?">
+                                                    <fragment>
+                                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <attributes>
-                                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                                            <font key="NSOriginalFont" size="15" name="HelveticaNeue"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hl9-mZ-D9x">
-                                        <rect key="frame" x="20" y="98" width="984" height="92.5"/>
-                                        <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" staticText="YES"/>
-                                        </accessibility>
-                                        <attributedString key="attributedText">
-                                            <fragment>
-                                                <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <attributes>
-                                                    <font key="NSFont" size="16" name="HelveticaNeue"/>
-                                                    <font key="NSOriginalFont" size="15" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MQQ-n1-48a" userLabel="Added Stack View">
-                                        <rect key="frame" x="20" y="206.5" width="286" height="38"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_added_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ikK-eu-3GF">
-                                                <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
-                                            </imageView>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="9OP-ME-cnK">
-                                                <rect key="frame" x="48" y="8.5" width="238" height="21"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MQQ-n1-48a" userLabel="Added Stack View">
+                                                <rect key="frame" x="20" y="299" width="286" height="38"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_added_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ikK-eu-3GF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
+                                                    </imageView>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="9OP-ME-cnK">
+                                                        <rect key="frame" x="48" y="8.5" width="238" height="21"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="What is added by this report?">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANr-Cc-vfy">
+                                                <rect key="frame" x="20" y="341" width="663.5" height="131"/>
+                                                <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                                </accessibility>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="What is added by this report?">
+                                                    <fragment>
+                                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <attributes>
-                                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                                            <font key="NSOriginalFont" size="15" name="HelveticaNeue"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANr-Cc-vfy">
-                                        <rect key="frame" x="20" y="248.5" width="984" height="92.5"/>
-                                        <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" staticText="YES"/>
-                                        </accessibility>
-                                        <attributedString key="attributedText">
-                                            <fragment>
-                                                <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <attributes>
-                                                    <font key="NSFont" size="16" name="HelveticaNeue"/>
-                                                    <font key="NSOriginalFont" size="15" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="PhY-e6-a7s" userLabel="Implications Stack View">
-                                        <rect key="frame" x="20" y="357" width="472.5" height="38"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_implications_icon" translatesAutoresizingMaskIntoConstraints="NO" id="6FQ-xd-nnu">
-                                                <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
-                                            </imageView>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="bGx-Rk-heL">
-                                                <rect key="frame" x="54" y="8.5" width="418.5" height="21"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="PhY-e6-a7s" userLabel="Implications Stack View">
+                                                <rect key="frame" x="20" y="488" width="472.5" height="38"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_implications_icon" translatesAutoresizingMaskIntoConstraints="NO" id="6FQ-xd-nnu">
+                                                        <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
+                                                    </imageView>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="453" translatesAutoresizingMaskIntoConstraints="NO" id="bGx-Rk-heL">
+                                                        <rect key="frame" x="54" y="8.5" width="418.5" height="21"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="What are the implications for public health practice?">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYi-zc-Tce">
+                                                <rect key="frame" x="20" y="530" width="663.5" height="131"/>
+                                                <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                                </accessibility>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="What are the implications for public health practice?">
+                                                    <fragment>
+                                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <attributes>
-                                                            <color key="NSColor" red="0.0" green="0.36862745098039218" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                                            <font key="NSOriginalFont" size="15" name="HelveticaNeue"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0E-oZ-Wc7">
+                                                <rect key="frame" x="16" y="64" width="671.5" height="30"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                                </accessibility>
+                                                <attributedString key="attributedText"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
-                                    </stackView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYi-zc-Tce">
-                                        <rect key="frame" x="20" y="399" width="984" height="92.5"/>
-                                        <color key="backgroundColor" red="0.88235294119999996" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" staticText="YES"/>
-                                        </accessibility>
-                                        <attributedString key="attributedText">
-                                            <fragment>
-                                                <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <attributes>
-                                                    <font key="NSFont" size="16" name="HelveticaNeue"/>
-                                                    <font key="NSOriginalFont" size="15" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0E-oZ-Wc7">
-                                        <rect key="frame" x="16" y="10" width="992" height="30"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" staticText="YES"/>
-                                        </accessibility>
-                                        <attributedString key="attributedText"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Hl9-mZ-D9x" secondAttribute="trailing" constant="20" id="1Vd-Od-YC7"/>
+                                            <constraint firstItem="PhY-e6-a7s" firstAttribute="top" secondItem="ANr-Cc-vfy" secondAttribute="bottom" constant="16" id="5op-0v-ez2"/>
+                                            <constraint firstAttribute="trailing" secondItem="yYi-zc-Tce" secondAttribute="trailing" constant="20" id="7VB-Hs-Vln"/>
+                                            <constraint firstAttribute="trailing" secondItem="S0E-oZ-Wc7" secondAttribute="trailing" constant="16" id="8dA-pU-COn"/>
+                                            <constraint firstItem="Hl9-mZ-D9x" firstAttribute="top" secondItem="Rm8-q5-K4G" secondAttribute="bottom" constant="4" id="EFV-t6-5Oi"/>
+                                            <constraint firstItem="S0E-oZ-Wc7" firstAttribute="top" secondItem="xLj-gK-nZz" secondAttribute="top" constant="64" id="Wpu-cg-DeM" userLabel="Txtv Article Title.top = top + 20"/>
+                                            <constraint firstAttribute="trailing" secondItem="ANr-Cc-vfy" secondAttribute="trailing" constant="20" id="cFb-Q6-XBx"/>
+                                            <constraint firstItem="MQQ-n1-48a" firstAttribute="top" secondItem="Hl9-mZ-D9x" secondAttribute="bottom" constant="16" id="fSz-uP-lLk"/>
+                                            <constraint firstItem="yYi-zc-Tce" firstAttribute="leading" secondItem="xLj-gK-nZz" secondAttribute="leading" constant="20" id="lFp-Z0-LMc"/>
+                                            <constraint firstItem="MQQ-n1-48a" firstAttribute="bottom" secondItem="ANr-Cc-vfy" secondAttribute="top" constant="-4" id="ns9-Nv-Pne"/>
+                                            <constraint firstItem="PhY-e6-a7s" firstAttribute="leading" secondItem="xLj-gK-nZz" secondAttribute="leading" constant="20" id="oQR-Dy-zRy"/>
+                                            <constraint firstItem="ANr-Cc-vfy" firstAttribute="leading" secondItem="xLj-gK-nZz" secondAttribute="leading" constant="20" id="pXF-MU-FUQ"/>
+                                            <constraint firstItem="Rm8-q5-K4G" firstAttribute="leading" secondItem="xLj-gK-nZz" secondAttribute="leading" constant="20" id="rBu-IV-ezS"/>
+                                            <constraint firstItem="MQQ-n1-48a" firstAttribute="leading" secondItem="xLj-gK-nZz" secondAttribute="leading" constant="20" id="rfK-dE-fJa"/>
+                                            <constraint firstItem="Rm8-q5-K4G" firstAttribute="top" secondItem="S0E-oZ-Wc7" secondAttribute="bottom" constant="16" id="vvO-HL-YzJ"/>
+                                            <constraint firstItem="S0E-oZ-Wc7" firstAttribute="leading" secondItem="xLj-gK-nZz" secondAttribute="leading" constant="16" id="yjL-fL-bAS"/>
+                                            <constraint firstItem="Hl9-mZ-D9x" firstAttribute="leading" secondItem="xLj-gK-nZz" secondAttribute="leading" constant="20" id="yor-Z6-MQd"/>
+                                            <constraint firstItem="PhY-e6-a7s" firstAttribute="bottom" secondItem="yYi-zc-Tce" secondAttribute="top" constant="-4" id="z85-CM-kwa"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Hl9-mZ-D9x" secondAttribute="trailing" constant="20" id="1Vd-Od-YC7"/>
-                                    <constraint firstItem="PhY-e6-a7s" firstAttribute="top" secondItem="ANr-Cc-vfy" secondAttribute="bottom" constant="16" id="5op-0v-ez2"/>
-                                    <constraint firstAttribute="trailing" secondItem="yYi-zc-Tce" secondAttribute="trailing" constant="20" id="7VB-Hs-Vln"/>
-                                    <constraint firstAttribute="trailing" secondItem="S0E-oZ-Wc7" secondAttribute="trailing" constant="16" id="8dA-pU-COn"/>
-                                    <constraint firstItem="Hl9-mZ-D9x" firstAttribute="top" secondItem="Rm8-q5-K4G" secondAttribute="bottom" constant="4" id="EFV-t6-5Oi"/>
-                                    <constraint firstItem="S0E-oZ-Wc7" firstAttribute="top" secondItem="xLj-gK-nZz" secondAttribute="top" constant="10" id="Wpu-cg-DeM"/>
-                                    <constraint firstAttribute="trailing" secondItem="ANr-Cc-vfy" secondAttribute="trailing" constant="20" id="cFb-Q6-XBx"/>
-                                    <constraint firstItem="MQQ-n1-48a" firstAttribute="top" secondItem="Hl9-mZ-D9x" secondAttribute="bottom" constant="16" id="fSz-uP-lLk"/>
-                                    <constraint firstItem="yYi-zc-Tce" firstAttribute="leading" secondItem="xLj-gK-nZz" secondAttribute="leading" constant="20" id="lFp-Z0-LMc"/>
-                                    <constraint firstItem="MQQ-n1-48a" firstAttribute="bottom" secondItem="ANr-Cc-vfy" secondAttribute="top" constant="-4" id="ns9-Nv-Pne"/>
-                                    <constraint firstItem="PhY-e6-a7s" firstAttribute="leading" secondItem="xLj-gK-nZz" secondAttribute="leading" constant="20" id="oQR-Dy-zRy"/>
-                                    <constraint firstItem="ANr-Cc-vfy" firstAttribute="leading" secondItem="xLj-gK-nZz" secondAttribute="leading" constant="20" id="pXF-MU-FUQ"/>
-                                    <constraint firstItem="Rm8-q5-K4G" firstAttribute="leading" secondItem="xLj-gK-nZz" secondAttribute="leading" constant="20" id="rBu-IV-ezS"/>
-                                    <constraint firstItem="MQQ-n1-48a" firstAttribute="leading" secondItem="xLj-gK-nZz" secondAttribute="leading" constant="20" id="rfK-dE-fJa"/>
-                                    <constraint firstItem="Rm8-q5-K4G" firstAttribute="top" secondItem="S0E-oZ-Wc7" secondAttribute="bottom" constant="16" id="vvO-HL-YzJ"/>
-                                    <constraint firstItem="S0E-oZ-Wc7" firstAttribute="leading" secondItem="xLj-gK-nZz" secondAttribute="leading" constant="16" id="yjL-fL-bAS"/>
-                                    <constraint firstItem="Hl9-mZ-D9x" firstAttribute="leading" secondItem="xLj-gK-nZz" secondAttribute="leading" constant="20" id="yor-Z6-MQd"/>
-                                    <constraint firstItem="PhY-e6-a7s" firstAttribute="bottom" secondItem="yYi-zc-Tce" secondAttribute="top" constant="-4" id="z85-CM-kwa"/>
+                                    <constraint firstItem="xLj-gK-nZz" firstAttribute="top" secondItem="lhs-E2-aUq" secondAttribute="top" id="1Jh-QJ-pXs"/>
+                                    <constraint firstAttribute="trailing" secondItem="xLj-gK-nZz" secondAttribute="trailing" id="P93-2P-U9D"/>
+                                    <constraint firstAttribute="trailing" secondItem="xLj-gK-nZz" secondAttribute="trailing" id="Ts2-1w-FcK"/>
+                                    <constraint firstItem="xLj-gK-nZz" firstAttribute="top" secondItem="lhs-E2-aUq" secondAttribute="top" id="d1I-OS-Q34"/>
+                                    <constraint firstItem="xLj-gK-nZz" firstAttribute="centerY" secondItem="lhs-E2-aUq" secondAttribute="centerY" id="nRA-YC-TkD"/>
+                                    <constraint firstItem="xLj-gK-nZz" firstAttribute="centerX" secondItem="lhs-E2-aUq" secondAttribute="centerX" id="o6Z-iN-mA1"/>
+                                    <constraint firstItem="xLj-gK-nZz" firstAttribute="leading" secondItem="lhs-E2-aUq" secondAttribute="leading" id="qsk-tu-iex"/>
                                 </constraints>
-                            </view>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="lhs-E2-aUq" firstAttribute="top" secondItem="Udl-rM-iZS" secondAttribute="top" id="2lL-BM-LgT"/>
                             <constraint firstItem="BQo-dJ-Dpa" firstAttribute="centerY" secondItem="Udl-rM-iZS" secondAttribute="centerY" id="5gY-Zr-Ji9"/>
+                            <constraint firstAttribute="bottom" secondItem="lhs-E2-aUq" secondAttribute="bottom" id="7tW-lO-jlW"/>
                             <constraint firstItem="UN7-bL-OhY" firstAttribute="trailing" secondItem="7uV-dX-DX6" secondAttribute="trailing" id="81g-Lr-DNx"/>
+                            <constraint firstAttribute="trailing" secondItem="lhs-E2-aUq" secondAttribute="trailing" id="8kj-RE-Ie6"/>
                             <constraint firstItem="7uV-dX-DX6" firstAttribute="bottom" secondItem="UN7-bL-OhY" secondAttribute="bottom" id="9B4-9L-QS7"/>
                             <constraint firstItem="BQo-dJ-Dpa" firstAttribute="centerX" secondItem="Udl-rM-iZS" secondAttribute="centerX" id="Anw-Ck-y7c"/>
                             <constraint firstItem="UN7-bL-OhY" firstAttribute="centerY" secondItem="Udl-rM-iZS" secondAttribute="centerY" id="D6K-Da-iuR"/>
+                            <constraint firstItem="BQo-dJ-Dpa" firstAttribute="trailing" secondItem="7uV-dX-DX6" secondAttribute="trailing" id="E71-j1-O90"/>
                             <constraint firstItem="7uV-dX-DX6" firstAttribute="trailing" secondItem="UN7-bL-OhY" secondAttribute="trailing" id="GpS-S0-xYP"/>
+                            <constraint firstItem="BQo-dJ-Dpa" firstAttribute="leading" secondItem="7uV-dX-DX6" secondAttribute="leading" id="KHH-LK-yXd"/>
                             <constraint firstItem="BQo-dJ-Dpa" firstAttribute="top" secondItem="Udl-rM-iZS" secondAttribute="top" id="NQU-vE-ZAL"/>
-                            <constraint firstItem="7uV-dX-DX6" firstAttribute="bottom" secondItem="xLj-gK-nZz" secondAttribute="bottom" id="Wpu-g7-JVK"/>
+                            <constraint firstItem="lhs-E2-aUq" firstAttribute="centerX" secondItem="BQo-dJ-Dpa" secondAttribute="centerX" id="Nb3-iw-vnQ"/>
+                            <constraint firstItem="BQo-dJ-Dpa" firstAttribute="bottom" secondItem="7uV-dX-DX6" secondAttribute="bottom" id="R1X-MB-37n"/>
+                            <constraint firstItem="lhs-E2-aUq" firstAttribute="centerY" secondItem="BQo-dJ-Dpa" secondAttribute="centerY" id="Tb6-1J-bTF"/>
                             <constraint firstItem="UN7-bL-OhY" firstAttribute="centerX" secondItem="Udl-rM-iZS" secondAttribute="centerX" id="bKo-HO-Uuc"/>
-                            <constraint firstItem="xLj-gK-nZz" firstAttribute="leading" secondItem="Udl-rM-iZS" secondAttribute="leading" id="hcY-rt-htL"/>
                             <constraint firstItem="BQo-dJ-Dpa" firstAttribute="leading" secondItem="7uV-dX-DX6" secondAttribute="leading" id="iWf-Py-d1e"/>
+                            <constraint firstItem="lhs-E2-aUq" firstAttribute="leading" secondItem="Udl-rM-iZS" secondAttribute="leading" id="kc9-1a-7JY"/>
                             <constraint firstItem="7uV-dX-DX6" firstAttribute="bottom" secondItem="BQo-dJ-Dpa" secondAttribute="bottom" id="pRf-VB-Wbf"/>
-                            <constraint firstItem="xLj-gK-nZz" firstAttribute="top" secondItem="Udl-rM-iZS" secondAttribute="top" id="qYc-zC-fat"/>
                             <constraint firstItem="7uV-dX-DX6" firstAttribute="trailing" secondItem="BQo-dJ-Dpa" secondAttribute="trailing" id="r7x-cP-qjK"/>
-                            <constraint firstAttribute="trailing" secondItem="xLj-gK-nZz" secondAttribute="trailing" id="t27-s3-68v"/>
+                            <constraint firstItem="BQo-dJ-Dpa" firstAttribute="top" secondItem="Udl-rM-iZS" secondAttribute="top" id="twz-MS-SUB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7uV-dX-DX6"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZNC-9X-86n">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="I99-oY-2jg">
-                            <rect key="frame" x="371.5" y="7" width="281" height="30"/>
+                            <rect key="frame" x="372" y="7" width="281" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Full Article"/>
@@ -349,9 +369,11 @@
                         </segmentedControl>
                     </navigationItem>
                     <connections>
+                        <outlet property="containerView" destination="xLj-gK-nZz" id="baV-Pa-Uct"/>
                         <outlet property="fullArticleContentView" destination="BQo-dJ-Dpa" id="qq0-rz-PGu"/>
                         <outlet property="grayedOutContentView" destination="UN7-bL-OhY" id="Li2-7V-SOC"/>
                         <outlet property="segCtrlArticleView" destination="I99-oY-2jg" id="eRC-q7-yT4"/>
+                        <outlet property="summaryScrollView" destination="lhs-E2-aUq" id="mSY-4R-Uzg"/>
                         <outlet property="txtvAddedText" destination="ANr-Cc-vfy" id="8hu-dv-Kma"/>
                         <outlet property="txtvArticleTitle" destination="S0E-oZ-Wc7" id="Z3J-nD-SN2"/>
                         <outlet property="txtvImplicationsText" destination="yYi-zc-Tce" id="c4R-uw-2sH"/>
@@ -361,7 +383,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ax-rZ-xZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1218" y="-1591"/>
+            <point key="canvasLocation" x="1217.578125" y="-1591.40625"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="kTO-g4-NTt">
@@ -468,7 +490,7 @@
             <objects>
                 <viewController id="rRq-Xx-aDe" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yYw-8b-FjS">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1065,7 +1087,7 @@ IAoKA
             <objects>
                 <viewController id="EDB-Od-E07" customClass="FullArticleVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xGj-w0-Uqm">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BqP-cl-zxt">

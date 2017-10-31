@@ -24,6 +24,20 @@ ShareActionSheet *shareAS;
     return self;
 }
 
+-(void)viewDidLayoutSubviews{
+    
+    //CGSize containerSize = self.containerView.frame.size;
+    NSInteger height = self.txtvAddedText.contentSize.height + self.txtvKnownText.contentSize.height + self.txtvImplicationsText.contentSize.height + self.txtvArticleTitle.contentSize.height + 300;
+//    CGSize scrollContentSize = CGSizeMake(containerSize.width, height);
+    self.summaryScrollView.contentSize = CGSizeMake(self.summaryScrollView.contentSize.width, height);
+    DebugLog(@"Content view width = %.2f", self.summaryScrollView.contentSize.width);
+    DebugLog(@"Scrollview height = %lu", (unsigned long)height);
+    
+
+    
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -66,25 +80,34 @@ ShareActionSheet *shareAS;
     self.txtvKnownText.delegate = self;
     self.txtvKnownText.showsVerticalScrollIndicator = YES;
     self.txtvKnownText.text = self.contentText;
+    [self.txtvKnownText sizeToFit];
+    [self.txtvKnownText layoutIfNeeded];
     
     [self.txtvAddedText setScrollEnabled:NO];
     [self.txtvAddedText setUserInteractionEnabled:YES];
     self.txtvAddedText.delegate = self;
     self.txtvAddedText.showsVerticalScrollIndicator = YES;
     self.txtvAddedText.text = self.contentText;
+    [self.txtvAddedText sizeToFit];
+    [self.txtvAddedText layoutIfNeeded];
     
+
     [self.txtvImplicationsText setScrollEnabled:NO];
     [self.txtvImplicationsText setUserInteractionEnabled:YES];
     self.txtvImplicationsText.delegate = self;
     self.txtvImplicationsText.showsVerticalScrollIndicator = YES;
     self.txtvImplicationsText.text = self.contentText;
+    [self.txtvImplicationsText sizeToFit];
+    [self.txtvImplicationsText layoutIfNeeded];
 
     [self.txtvArticleTitle setScrollEnabled:NO];
     [self.txtvArticleTitle setUserInteractionEnabled:YES];
     self.txtvArticleTitle.delegate = self;
     self.txtvArticleTitle.showsVerticalScrollIndicator = YES;
     self.txtvArticleTitle.text = self.contentText;
-    
+    [self.txtvArticleTitle sizeToFit];
+    [self.txtvArticleTitle layoutIfNeeded];
+
 
     self.parentViewController.navigationItem.title = self.navbarTitle;
     
@@ -105,7 +128,8 @@ ShareActionSheet *shareAS;
         [self selectFullArticleView];
     }
 
-    
+    DebugLog(@"ContentIPadVC viewDidLoad() called");
+
 }
 
 -(void)flashScrollingIndicators
@@ -130,14 +154,16 @@ ShareActionSheet *shareAS;
 {
     
     [self selectedArticle:[APP_MGR.splitVM getSelectedArticle]];
+    DebugLog(@"ContentIPadVC viewWillAppear() called");
+
 
 }
 
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    [self flashScrollingIndicators];
-    
+    DebugLog(@"ContentIPadVC viewDidAppear() called");
+
 }
 
 - (void)share:(id)sender
@@ -249,6 +275,8 @@ ShareActionSheet *shareAS;
 
 -(void)selectedArticle:(ArticleMO *)selArticle
 {
+    DebugLog(@"ContentIPadVC selectedArticle() called");
+
     if (selArticle == nil)
         return;
 
@@ -263,23 +291,33 @@ ShareActionSheet *shareAS;
     self.txtvKnownText.text = _article.already_known;
     self.txtvKnownText.font = font;
     self.txtvKnownText.textContainerInset = UIEdgeInsetsMake(5,5,5,5);
+    [self.txtvKnownText sizeToFit];
+    [self.txtvKnownText setNeedsDisplay];
 
     
     self.txtvAddedText.text = _article.added_by_report;
     self.txtvAddedText.font = font;
     self.txtvAddedText.textContainerInset = UIEdgeInsetsMake(5,5,5,5);
-    
+    [self.txtvAddedText sizeToFit];
+    [self.txtvAddedText setNeedsDisplay];
+
     self.txtvImplicationsText.text = _article.implications;
     self.txtvImplicationsText.font = font;
     self.txtvImplicationsText.textContainerInset = UIEdgeInsetsMake(5,5,5,5);
-    
+    [self.txtvImplicationsText sizeToFit];
+    [self.txtvImplicationsText setNeedsDisplay];
+
     self.txtvArticleTitle.text = _article.title;
     self.txtvArticleTitle.font = APP_MGR.tableFont;
     self.txtvArticleTitle.textAlignment = NSTextAlignmentCenter;
+    [self.txtvArticleTitle sizeToFit];
+    [self.txtvArticleTitle setNeedsDisplay];
     
+
     self.navigationItem.accessibilityLabel = [NSString stringWithFormat:@"%@ %@", @"Summary of Article with title ", self.article.title];
+    [self.containerView setNeedsDisplay];
+
     
-    [self flashScrollingIndicators];
     
 //    // track page
 //    if (self.segCtrlArticleView.selectedSegmentIndex == 0) {
@@ -289,8 +327,24 @@ ShareActionSheet *shareAS;
 //        [APP_MGR.usageTracker trackNavigationEvent:SC_PAGE_TITLE_SUMMARY inSection:SC_SECTION_SUMMARY];
 //    }
 
+    // now with all the content setup, calculate and set scrollview size
+    [self flashScrollingIndicators];
+//    float sizeOfContent = 0;
+//    UIView *lastView = [self.summaryScrollView.subviews lastObject];
+//    UIView *lastView = self.containerView;
+//
+//    NSInteger width = lastView.frame.origin.y;
+//    NSInteger height = lastView.frame.size.height;
+//    sizeOfContent = width+height;
+//    self.summaryScrollView.contentSize = CGSizeMake(self.summaryScrollView.frame.size.width, sizeOfContent);
+    
 
     
+    
+//    DebugLog(@"lastview width = %lu, height = %lu", (unsigned long)width, (unsigned long)height);
+//    DebugLog(@"Scrollview content size = %.2f", sizeOfContent);
+//    DebugLog(@"Scrollview content size = %.2f", sizeOfContent);
+
     
 }
 
@@ -308,7 +362,6 @@ ShareActionSheet *shareAS;
 {
     
     self.grayedOutContentView.hidden = YES;
-    
     
 }
 
