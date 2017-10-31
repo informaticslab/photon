@@ -135,10 +135,7 @@ ShareActionSheet *shareAS;
 -(void)flashScrollingIndicators
 {
     
-    [self.txtvKnownText flashScrollIndicators];
-    [self.txtvAddedText flashScrollIndicators];
-    [self.txtvImplicationsText flashScrollIndicators];
-    
+    [self.summaryScrollView flashScrollIndicators];
     
 }
 
@@ -312,7 +309,7 @@ ShareActionSheet *shareAS;
     self.txtvArticleTitle.textAlignment = NSTextAlignmentCenter;
     [self.txtvArticleTitle sizeToFit];
     [self.txtvArticleTitle setNeedsDisplay];
-    
+
 
     self.navigationItem.accessibilityLabel = [NSString stringWithFormat:@"%@ %@", @"Summary of Article with title ", self.article.title];
     [self.containerView setNeedsDisplay];
