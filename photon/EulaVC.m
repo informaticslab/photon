@@ -27,8 +27,9 @@ AppManager *appMgr;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor colorWithWhite:0.90 alpha:1.0] ;
-
+//    self.view.backgroundColor = [UIColor colorWithWhite:0.90 alpha:1.0] ;
+    self.view.backgroundColor = [UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1];
+    // check for diffs between ios 6 & 7
 
     NSString *path = [[NSBundle mainBundle] pathForResource:@"photon_eula"
                                                      ofType:@"html"];
@@ -52,6 +53,10 @@ AppManager *appMgr;
 }
 
 
+
+-(UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
 
 
 -(BOOL) webView:(UIWebView *)inWeb shouldStartLoadWithRequest:(NSURLRequest *)inRequest navigationType:(UIWebViewNavigationType)inType {

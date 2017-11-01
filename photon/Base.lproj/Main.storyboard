@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8YX-ce-x5E">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="22" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P9Z-Eg-FiL" id="6Iq-BQ-dgR">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1109,9 +1109,6 @@ IAoKA
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_bar" translatesAutoresizingMaskIntoConstraints="NO" id="zJk-Ml-g0a">
-                                <rect key="frame" x="0.0" y="20" width="375" height="64"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MMWR Express Agreement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ua-9i-D8X">
                                 <rect key="frame" x="83.5" y="42" width="209" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1126,17 +1123,15 @@ IAoKA
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="9ua-9i-D8X" firstAttribute="top" secondItem="zJk-Ml-g0a" secondAttribute="bottom" constant="-42" id="2QD-II-9h6"/>
                             <constraint firstItem="dxo-TW-nvj" firstAttribute="trailing" secondItem="UDG-dB-ebv" secondAttribute="trailing" id="4YB-ux-jHv"/>
-                            <constraint firstItem="zJk-Ml-g0a" firstAttribute="top" secondItem="UDG-dB-ebv" secondAttribute="top" id="6je-3r-4Bo"/>
                             <constraint firstItem="dxo-TW-nvj" firstAttribute="leading" secondItem="UDG-dB-ebv" secondAttribute="leading" id="AXy-aI-oxZ"/>
                             <constraint firstItem="9ua-9i-D8X" firstAttribute="centerX" secondItem="gbh-Kh-4Ao" secondAttribute="centerX" id="G57-xa-aDa"/>
-                            <constraint firstItem="zJk-Ml-g0a" firstAttribute="trailing" secondItem="UDG-dB-ebv" secondAttribute="trailing" id="RT9-eg-BOh"/>
+                            <constraint firstItem="9ua-9i-D8X" firstAttribute="centerX" secondItem="gbh-Kh-4Ao" secondAttribute="centerX" id="WOM-t4-dMH"/>
+                            <constraint firstItem="c7I-0F-8kV" firstAttribute="top" secondItem="9ua-9i-D8X" secondAttribute="bottom" constant="21.5" id="bff-gB-wbH"/>
                             <constraint firstItem="dxo-TW-nvj" firstAttribute="top" secondItem="c7I-0F-8kV" secondAttribute="bottom" id="fzQ-Eo-J8G"/>
                             <constraint firstItem="c7I-0F-8kV" firstAttribute="trailing" secondItem="UDG-dB-ebv" secondAttribute="trailing" id="hGG-Ar-Dtk"/>
-                            <constraint firstItem="c7I-0F-8kV" firstAttribute="top" secondItem="zJk-Ml-g0a" secondAttribute="bottom" id="lxY-xh-DJZ"/>
-                            <constraint firstItem="zJk-Ml-g0a" firstAttribute="leading" secondItem="UDG-dB-ebv" secondAttribute="leading" id="mD0-VS-HZT"/>
                             <constraint firstItem="dxo-TW-nvj" firstAttribute="bottom" secondItem="UDG-dB-ebv" secondAttribute="bottom" id="t6l-Wa-edI"/>
+                            <constraint firstItem="9ua-9i-D8X" firstAttribute="top" secondItem="UDG-dB-ebv" secondAttribute="top" constant="22" id="wvA-oj-4fZ"/>
                             <constraint firstItem="c7I-0F-8kV" firstAttribute="leading" secondItem="UDG-dB-ebv" secondAttribute="leading" id="ya8-Fz-KMT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UDG-dB-ebv"/>
@@ -1194,7 +1189,6 @@ IAoKA
         <image name="ipad_implications_icon" width="38" height="38"/>
         <image name="ipad_known_icon" width="38" height="38"/>
         <image name="issue_tab_icon_inactive" width="25" height="25"/>
-        <image name="nav_bar" width="320" height="64"/>
         <image name="search_tab_inactive" width="25" height="25"/>
         <image name="support_header_icon" width="33" height="28"/>
     </resources>
