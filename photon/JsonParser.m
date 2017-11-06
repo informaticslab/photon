@@ -73,18 +73,23 @@ int implicationsFound = 0;
     NSDate *lastReadDate = [APP_MGR getLastFeedRead];
     if (lastReadDate != nil) {
         NSString *lastReadDateStr = [self.dateFormatter stringFromDate:lastReadDate];
-        feedURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@&%@&%@", NEW_FEED, RSS_FEED_ID, FROM_DATE, lastReadDateStr]];
+        feedURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@.rss?%@%@", NEW_FEED, DEV_FEED_ID, FROM_DATE, lastReadDateStr]];
 
         NSLog(@"Last feed read date = %@", lastReadDateStr);
         
     } else {
-        feedURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", NEW_FEED, RSS_FEED_ID]];
+        feedURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", NEW_FEED, DEV_FEED_ID]];
         NSLog(@"No last feed read date");
 
     }
+    
+    // test code that always uses an older date to get a few articles out of DEV_FEED_ID
+    // NSString *lastReadDateStr = @"2017-10-06T11:13:16.240Z";
+    // feedURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@.rss?%@%@", NEW_FEED, DEV_FEED_ID, FROM_DATE, lastReadDateStr]];
+
     NSLog(@"Feed URL = %@", feedURL);
 
-    [_feedParser setUrl:feedURL];
+    [_feedParser setFeedURL:feedURL];
     
 }
 

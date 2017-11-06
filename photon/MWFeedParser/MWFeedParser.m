@@ -92,12 +92,30 @@
         // Create default request with no caching
         NSMutableURLRequest *req = [[NSMutableURLRequest alloc] initWithURL:url
                                                                  cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
-                                                             timeoutInterval:15];
+                                                             timeoutInterval:60];
         [req setValue:@"MWFeedParser" forHTTPHeaderField:@"User-Agent"];
         self.request = req;
 		
 	}
 	return self;
+}
+
+// set the feed URL
+- (void)setFeedURL:(NSURL *)feedURL {
+    
+    // URL
+    if ([feedURL isKindOfClass:[NSString class]]) {
+        feedURL = [NSURL URLWithString:(NSString *)feedURL];
+    }
+    self.url = feedURL;
+    
+    // Create default request with no caching
+    NSMutableURLRequest *req = [[NSMutableURLRequest alloc] initWithURL:url
+                                                            cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                        timeoutInterval:15];
+    [req setValue:@"MWFeedParser" forHTTPHeaderField:@"User-Agent"];
+    self.request = req;
+    
 }
 
 // Init with a custom feed request

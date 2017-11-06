@@ -144,6 +144,7 @@ typedef enum { FeedTypeUnknown, FeedTypeRSS, FeedTypeRSS1, FeedTypeAtom } FeedTy
 - (NSURL *)url;
 
 - (void)setUrl:(NSURL *)value;
+- (void)setFeedURL:(NSURL *)feedURL;
 
 
 @end
