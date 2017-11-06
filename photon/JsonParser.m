@@ -24,7 +24,15 @@ int knownFound = 0;
 int addedFound = 0;
 int implicationsFound = 0;
 
+#define OLD_FEED @"https://t.cdc.gov/feed.aspx?feedid=100"
+#define NEW_FEED @"https://prototype.cdc.gov/api/v2/resources/media/"
 
+#define OLD_FEED_ID @"100"
+#define RSS_FEED_ID @"338387" // Clay's version which is a clone of production feed as of ~ 10/6/2017
+#define DEV_FEED_ID @"338384" // Peter's version which has far fewer article, use this one when adding tests so don't pollute the other dev feed.
+
+// feed params
+#define FROM_DATE @"fromdatemodified="
 
 -(id)init
 {
@@ -35,6 +43,12 @@ int implicationsFound = 0;
         self.parsedItems  = [[NSMutableArray alloc] init];
         self.parsedJsonBlobs  = [[NSMutableArray alloc] init];
         
+        // set date time formatter for last feed read parameter
+        self.dateFormatter = [[NSDateFormatter alloc]init];
+        NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+        [self.dateFormatter setLocale:enUSPOSIXLocale];
+        [self.dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+
         V1JsonParser *v1 = [[V1JsonParser alloc] init];
         _schemaParsers = @[v1];
         
@@ -46,15 +60,38 @@ int implicationsFound = 0;
         _feedParser.feedParseType = ParseTypeFull; // parse feed info and all items
         _feedParser.connectionType = ConnectionTypeAsynchronously;
         
-        
     };
     
     return self;
     
 }
 
+-(void)setFeedUrl
+{
+    NSURL *feedURL = nil;
+    
+    NSDate *lastReadDate = [APP_MGR getLastFeedRead];
+    if (lastReadDate != nil) {
+        NSString *lastReadDateStr = [self.dateFormatter stringFromDate:lastReadDate];
+        feedURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@&%@&%@", NEW_FEED, RSS_FEED_ID, FROM_DATE, lastReadDateStr]];
+
+        NSLog(@"Last feed read date = %@", lastReadDateStr);
+        
+    } else {
+        feedURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", NEW_FEED, RSS_FEED_ID]];
+        NSLog(@"No last feed read date");
+
+    }
+    NSLog(@"Feed URL = %@", feedURL);
+
+    [_feedParser setUrl:feedURL];
+    
+}
+
+
 -(void)updateFromFeed
 {
+    [self setFeedUrl];
     [_feedParser parse];
 }
 
@@ -214,6 +251,7 @@ int implicationsFound = 0;
     DebugLog(@"Finished parsing feed data............................");
     
     [APP_MGR.issuesMgr reloadData];
+    [APP_MGR setLastFeedRead];
     
     [_parsedIssues removeAllObjects];
     [_parsedItems removeAllObjects];
