@@ -38,6 +38,9 @@
 -(BOOL)isDeviceIpad;
 - (void)saveContext;
 -(BOOL)isSummaryDefaultArticleView;
+-(NSDate *)getLastFeedRead;
+-(void)setLastFeedRead;
+
 
 -(NSString *)getDeviceModel;
 -(NSString *)getDeviceSystemVersion;

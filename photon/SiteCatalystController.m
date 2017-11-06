@@ -10,8 +10,8 @@
 
 @implementation SiteCatalystController
 
-NSString *cdcServer = @"http://tools.cdc.gov/metrics.aspx?";
-NSString *localServer = @"http://localhost:5000/metrics?";
+NSString *cdcServer = @"https://tools.cdc.gov/metrics.aspx?";
+NSString *localServer = @"https://localhost:5000/metrics?";
 NSString *commonConstParams = @"c8=Mobile App&c51=Standalone&c52=MMWR Express&c5=eng&channel=IIU";
 NSString *prodConstParams = @"reportsuite=cdcsynd";
 NSString *debugConstParams = @"reportsuite=devcdc";

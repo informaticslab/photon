@@ -21,6 +21,7 @@
 @property(nonatomic, strong) NSMutableArray *parsedJsonBlobs;
 @property(nonatomic, strong) NSArray *schemaParsers;
 @property(nonatomic, strong) MWFeedParser *feedParser;
+@property(nonatomic, strong) NSDateFormatter *dateFormatter;
 
 
 

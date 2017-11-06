@@ -10,6 +10,9 @@
 #import "AppDelegate.h"
 static AppManager *sharedAppManager = nil;
 
+
+#define LAST_FEED_READ @"lastFeedRead"
+
 @implementation AppManager
 
 
@@ -210,6 +213,22 @@ static BOOL isRunningTests(void)
     
 }
 
+-(NSDate *)getLastFeedRead
+{
+    NSDate *lastFeedReadDate = (NSDate *)[[NSUserDefaults standardUserDefaults] objectForKey:LAST_FEED_READ];
+
+    return lastFeedReadDate;
+}
+
+-(void)setLastFeedRead
+{
+    NSDate *now = [NSDate date];
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:now forKey:LAST_FEED_READ];
+    [defaults synchronize];    
+}
+    
 - (void)presentEulaModalView
 {
     
@@ -240,8 +259,6 @@ static BOOL isRunningTests(void)
  //       [self presentModalViewController:eulaVC animated:YES];
         
     }
-    
-    
 }
 
 
