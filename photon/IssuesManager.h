@@ -28,5 +28,6 @@
 -(void)reloadData;
 -(void)clearAllData;
 -(void)deleteArticle:(FeedArticle *)newArticle inIssue:(Issue *)issue;
+-(NSString *)dbStatsString;
 
 @end

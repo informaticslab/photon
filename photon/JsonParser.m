@@ -40,7 +40,7 @@ int db_keywords = 0;
 
 
 #define OLD_FEED @"https://t.cdc.gov/feed.aspx?feedid=100"
-#define NEW_FEED @"https://prototype.cdc.gov/api/v2/resources/media/"
+#define DEV_FEED @"https://prototype.cdc.gov/api/v2/resources/media/"
 #define PROD_FEED @"https://tools.cdc.gov/api/v2/resources/media/"
 
 #define OLD_FEED_ID @"100"

@@ -75,7 +75,7 @@
         
         self.mail.mailComposeDelegate = self;
         [self.mail setSubject:@"App Support Request: MMWR Express for iOS"];
-        NSString *messageBody = [NSString stringWithFormat:@"\n\n\nApp name:  MMWR Express for iOS \nApp version:  %@  \nDevice model:  %@ \nSystem name:  %@ \nSystem version:  %@", [APP_MGR getAppVersion], [APP_MGR getDeviceModel], [APP_MGR getDeviceSystemName], [APP_MGR getDeviceSystemVersion]];
+        NSString *messageBody = [NSString stringWithFormat:@"\n\n\nApp name:  MMWR Express for iOS \nApp version:  %@  \nDevice model:  %@ \nSystem name:  %@ \nSystem version:  %@\n%@", [APP_MGR getAppVersion], [APP_MGR getDeviceModel], [APP_MGR getDeviceSystemName], [APP_MGR getDeviceSystemVersion], [APP_MGR.issuesMgr dbStatsString]];
         [self.mail setMessageBody:messageBody isHTML:NO];
         [self.mail setToRecipients:@[@"informaticslab@cdc.gov"]];
 
@@ -92,8 +92,6 @@
 
 
     }
-
-    
 
 }
 @end

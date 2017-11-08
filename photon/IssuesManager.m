@@ -66,6 +66,12 @@ unsigned long db_keyword_cnt;
     DebugLog(@"DB Keywords: %lu", db_keyword_cnt);
 }
 
+-(NSString *)dbStatsString
+{
+    
+    return [NSString stringWithFormat:@"DB stats: issues = %lu, articles = %lu, keywords = %lu", db_issue_cnt, db_article_cnt, db_keyword_cnt];
+}
+
 -(void)updateDbStats
 {
     db_issue_cnt = self.sortedIssues.count;
@@ -328,6 +334,7 @@ unsigned long db_keyword_cnt;
     storedArticle.already_known = updatedArticle.already_know;
     storedArticle.url = updatedArticle.url;
     storedArticle.version = [NSNumber numberWithInteger:updatedArticle.version ];
+    storedArticle.unread = [NSNumber numberWithBool:YES];
     [APP_MGR saveContext];
 
 }
@@ -559,9 +566,5 @@ unsigned long db_keyword_cnt;
         }
     }
 }
-
-
-
-
 
 @end
