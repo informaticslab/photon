@@ -17,6 +17,9 @@
 NSManagedObjectModel *model;
 NSManagedObjectContext *context;
 
+unsigned long db_issue_cnt;
+unsigned long db_article_cnt;
+unsigned long db_keyword_cnt;
 
 
 -(id)init
@@ -46,10 +49,31 @@ NSManagedObjectContext *context;
         
         [self getAllKeywords];
         [self removeDuplicateKeywords];
+        [self updateDbStats];
+        [self dumpDbStats];
 
     };
 
     return self;
+    
+}
+
+-(void)dumpDbStats
+{
+    DebugLog(@"---DB Stats---: ");
+    DebugLog(@"DB Issues: %lu", db_issue_cnt);
+    DebugLog(@"DB Articles: %lu", db_article_cnt);
+    DebugLog(@"DB Keywords: %lu", db_keyword_cnt);
+}
+
+-(void)updateDbStats
+{
+    db_issue_cnt = self.sortedIssues.count;
+    db_article_cnt = 0;
+    for (IssueMO *issue in self.sortedIssues) {
+        db_article_cnt += issue.articles.count;
+    }
+    db_keyword_cnt = self.keywords.count;
     
 }
 
@@ -73,7 +97,6 @@ NSManagedObjectContext *context;
     
 }
 
-
 -(void)reloadIssues
 {
     NSFetchRequest *fetchRequest = [[model fetchRequestTemplateForName:@"GetAllIssues"] copy];
@@ -91,14 +114,17 @@ NSManagedObjectContext *context;
     }
     
     self.sortedIssues = fetchedObjects;
-   
+    
 }
 
 
 -(void)reloadData
 {
+    
     [self reloadIssues];
     [self reloadKeywords];
+    [self updateDbStats];
+    [self dumpDbStats];
     
 }
 

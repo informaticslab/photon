@@ -24,12 +24,29 @@ int knownFound = 0;
 int addedFound = 0;
 int implicationsFound = 0;
 
+int deleteArticleCmds = 0;
+int jsonBlobsFound = 0;
+int contentVerUpdates = 0;
+
+
+// since last launch stats
+int lastRefreshDateTime = 0;
+int feedErrors = 0;
+
+int db_articles = 0;
+int db_issues = 0;
+int db_keywords = 0;
+
+
+
 #define OLD_FEED @"https://t.cdc.gov/feed.aspx?feedid=100"
 #define NEW_FEED @"https://prototype.cdc.gov/api/v2/resources/media/"
+#define PROD_FEED @"https://tools.cdc.gov/api/v2/resources/media/"
 
 #define OLD_FEED_ID @"100"
 #define RSS_FEED_ID @"338387" // Clay's version which is a clone of production feed as of ~ 10/6/2017
 #define DEV_FEED_ID @"338384" // Peter's version which has far fewer article, use this one when adding tests so don't pollute the other dev feed.
+#define PROD_FEED_ID @"342419"
 
 // feed params
 #define FROM_DATE @"fromdatemodified="
@@ -73,12 +90,12 @@ int implicationsFound = 0;
     NSDate *lastReadDate = [APP_MGR getLastFeedRead];
     if (lastReadDate != nil) {
         NSString *lastReadDateStr = [self.dateFormatter stringFromDate:lastReadDate];
-        feedURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@.rss?%@%@", NEW_FEED, DEV_FEED_ID, FROM_DATE, lastReadDateStr]];
+        feedURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@.rss?%@%@", PROD_FEED, PROD_FEED_ID, FROM_DATE, lastReadDateStr]];
 
         NSLog(@"Last feed read date = %@", lastReadDateStr);
         
     } else {
-        feedURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", NEW_FEED, DEV_FEED_ID]];
+        feedURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@.rss", PROD_FEED, PROD_FEED_ID]];
         NSLog(@"No last feed read date");
 
     }
@@ -140,6 +157,7 @@ int implicationsFound = 0;
                 
                 // delete the article from the database
                 [APP_MGR.issuesMgr deleteArticle:currArticle inIssue:currIssue];
+                deleteArticleCmds += 1;
                 
             } else {
                 
@@ -274,7 +292,8 @@ int implicationsFound = 0;
     DebugLog(@"Known found = %d", knownFound);
     DebugLog(@"Added found = %d", addedFound);
     DebugLog(@"Implication found = %d", implicationsFound);
-    
+    DebugLog(@" found = %d", implicationsFound);
+
     issuesFound = 0;
     articlesFound = 0;
     tagsFound = 0;
