@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		371777681FB4AE1100BC0B3D /* Pushwoosh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371777671FB4AE1100BC0B3D /* Pushwoosh.framework */; };
 		372CDAA51BFB8EE7006D65C8 /* addArticle.json in Resources */ = {isa = PBXBuildFile; fileRef = 372CDAA41BFB8EE7006D65C8 /* addArticle.json */; };
 		372CDAA71BFB8FEE006D65C8 /* versionedArticleSameKeywords.json in Resources */ = {isa = PBXBuildFile; fileRef = 372CDAA61BFB8FEE006D65C8 /* versionedArticleSameKeywords.json */; };
 		373CA3821BFA7114005B5DF1 /* testParsingJsonBlobs.m in Sources */ = {isa = PBXBuildFile; fileRef = 373CA3811BFA7114005B5DF1 /* testParsingJsonBlobs.m */; };
-		374031C71BED682F00765200 /* Pushwoosh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374063FB1BE81943005D4B77 /* Pushwoosh.framework */; };
 		374063FE1BE81B78005D4B77 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 374063FD1BE81B78005D4B77 /* libz.tbd */; };
 		374064001BE81B8B005D4B77 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 374063FF1BE81B8B005D4B77 /* libstdc++.tbd */; };
 		3752D3761C0C723E0083E761 /* SupportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3752D3751C0C723E0083E761 /* SupportVC.m */; };
@@ -95,10 +95,10 @@
 
 /* Begin PBXFileReference section */
 		3716854018A50CDE0025B32F /* ArticleSelectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleSelectionDelegate.h; sourceTree = "<group>"; };
+		371777671FB4AE1100BC0B3D /* Pushwoosh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pushwoosh.framework; path = Carthage/Build/iOS/Pushwoosh.framework; sourceTree = "<group>"; };
 		372CDAA41BFB8EE7006D65C8 /* addArticle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = addArticle.json; sourceTree = "<group>"; };
 		372CDAA61BFB8FEE006D65C8 /* versionedArticleSameKeywords.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = versionedArticleSameKeywords.json; sourceTree = "<group>"; };
 		373CA3811BFA7114005B5DF1 /* testParsingJsonBlobs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testParsingJsonBlobs.m; sourceTree = "<group>"; };
-		374063FB1BE81943005D4B77 /* Pushwoosh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pushwoosh.framework; path = photon/Frameworks/Pushwoosh.framework; sourceTree = "<group>"; };
 		374063FD1BE81B78005D4B77 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		374063FF1BE81B8B005D4B77 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		3752D3741C0C723E0083E761 /* SupportVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupportVC.h; sourceTree = "<group>"; };
@@ -231,9 +231,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3752D3781C0C72E90083E761 /* MessageUI.framework in Frameworks */,
-				374031C71BED682F00765200 /* Pushwoosh.framework in Frameworks */,
 				374064001BE81B8B005D4B77 /* libstdc++.tbd in Frameworks */,
 				374063FE1BE81B78005D4B77 /* libz.tbd in Frameworks */,
+				371777681FB4AE1100BC0B3D /* Pushwoosh.framework in Frameworks */,
 				A647B05A18CA1FEC0081F760 /* CoreData.framework in Frameworks */,
 				A6D6AFEF185B5E1400F37E23 /* Social.framework in Frameworks */,
 				A62A1A151823C9C7006A62B3 /* CoreGraphics.framework in Frameworks */,
@@ -300,10 +300,10 @@
 		A62A1A111823C9C7006A62B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				371777671FB4AE1100BC0B3D /* Pushwoosh.framework */,
 				3752D3771C0C72E90083E761 /* MessageUI.framework */,
 				374063FF1BE81B8B005D4B77 /* libstdc++.tbd */,
 				374063FD1BE81B78005D4B77 /* libz.tbd */,
-				374063FB1BE81943005D4B77 /* Pushwoosh.framework */,
 				A647B05918CA1FEC0081F760 /* CoreData.framework */,
 				A6D6AFEE185B5E1400F37E23 /* Social.framework */,
 				A6B735491843D6C600872B20 /* CoreText.framework */,
@@ -456,6 +456,7 @@
 				A62A1A0B1823C9C7006A62B3 /* Sources */,
 				A62A1A0C1823C9C7006A62B3 /* Frameworks */,
 				A62A1A0D1823C9C7006A62B3 /* Resources */,
+				37E0744A1FB4A116009BDCA3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -556,6 +557,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		37E0744A1FB4A116009BDCA3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Pushwoosh.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Pushwoosh.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A62A1A0B1823C9C7006A62B3 /* Sources */ = {
@@ -773,7 +792,10 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = Z827RBGAJC;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/photon/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/photon/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "photon/photon-Prefix.pch";
@@ -781,6 +803,7 @@
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "DEBUG=1";
 				INFOPLIST_FILE = "photon/photon-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				OTHER_CFLAGS = "";
 				"OTHER_CFLAGS[arch=*]" = "";
 				PRODUCT_BUNDLE_IDENTIFIER = org.cdc.iiu.mmwrexpress;
@@ -803,12 +826,16 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = Z827RBGAJC;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/photon/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/photon/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "photon/photon-Prefix.pch";
 				INFOPLIST_FILE = "photon/photon-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = org.cdc.iiu.mmwrexpress;
 				PRODUCT_NAME = "$(TARGET_NAME)";
