@@ -495,7 +495,7 @@
 				ORGANIZATIONNAME = "Informatics Research and Development Lab";
 				TargetAttributes = {
 					A62A1A0E1823C9C7006A62B3 = {
-						DevelopmentTeam = Z827RBGAJC;
+						DevelopmentTeam = J8992FE8QS;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -790,7 +790,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = Z827RBGAJC;
+				DEVELOPMENT_TEAM = J8992FE8QS;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/photon/Frameworks",
@@ -806,7 +806,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				OTHER_CFLAGS = "";
 				"OTHER_CFLAGS[arch=*]" = "";
-				PRODUCT_BUNDLE_IDENTIFIER = org.cdc.iiu.mmwrexpress;
+				PRODUCT_BUNDLE_IDENTIFIER = gov.cdc.photon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -824,7 +824,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = Z827RBGAJC;
+				DEVELOPMENT_TEAM = J8992FE8QS;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/photon/Frameworks",
@@ -837,7 +837,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				OTHER_CFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = org.cdc.iiu.mmwrexpress;
+				PRODUCT_BUNDLE_IDENTIFIER = gov.cdc.photon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
