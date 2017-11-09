@@ -30,7 +30,7 @@ NSURLConnection *conn;
     
     // these first change most often depending on version and if debug is true
     appVersion = [APP_MGR getAppVersion ];
-    BOOL debug = YES;
+    BOOL debug = NO;
     BOOL debugLocal = NO;
     
     // server information
