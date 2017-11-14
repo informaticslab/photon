@@ -112,14 +112,14 @@ KeywordMO *selectedKeyword;
     self.isSearching = YES;
     searchResults = [allKeywords copy];
     [self.tableView reloadData];
-    NSLog(@"Presenting search controller");
+    DebugLog(@"Presenting search controller");
 }
 
 -(void)didDismissSearchController:(UISearchController *)searchController
 {
     self.isSearching = NO;
     [self.tableView reloadData];
-    NSLog(@"Dismissing search controller");
+    DebugLog(@"Dismissing search controller");
 
     
 }

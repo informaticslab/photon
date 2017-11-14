@@ -92,11 +92,11 @@ int db_keywords = 0;
         NSString *lastReadDateStr = [self.dateFormatter stringFromDate:lastReadDate];
         feedURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@.rss?%@%@", PROD_FEED, PROD_FEED_ID, FROM_DATE, lastReadDateStr]];
 
-        NSLog(@"Last feed read date = %@", lastReadDateStr);
+        DebugLog(@"Last feed read date = %@", lastReadDateStr);
         
     } else {
         feedURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@.rss", PROD_FEED, PROD_FEED_ID]];
-        NSLog(@"No last feed read date");
+        DebugLog(@"No last feed read date");
 
     }
     
@@ -104,7 +104,7 @@ int db_keywords = 0;
     // NSString *lastReadDateStr = @"2017-10-06T11:13:16.240Z";
     // feedURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@.rss?%@%@", NEW_FEED, DEV_FEED_ID, FROM_DATE, lastReadDateStr]];
 
-    NSLog(@"Feed URL = %@", feedURL);
+    DebugLog(@"Feed URL = %@", feedURL);
 
     [_feedParser setFeedURL:feedURL];
     
