@@ -25,7 +25,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -34,7 +34,7 @@
 		<true/>
 	</dict>
 	<key>Pushwoosh_APPID</key>
-	<string>16A6A-2D492</string>
+	<string>0EEA8-DC709</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIMainStoryboardFile~ipad</key>
@@ -69,5 +69,18 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLName</key>
+            <string>com.pushwoosh.scheme</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>pw-0EEA8-DC709</string>
+            </array>
+        </dict>
+    </array>
 </dict>
 </plist>
