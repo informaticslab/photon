@@ -31,19 +31,19 @@
 {
     switch (result) {
         case MFMailComposeResultSent:
-            NSLog(@"You sent the email.");
+            DebugLog(@"You sent the email.");
             break;
         case MFMailComposeResultSaved:
-            NSLog(@"You saved a draft of this email");
+            DebugLog(@"You saved a draft of this email");
             break;
         case MFMailComposeResultCancelled:
-            NSLog(@"You cancelled sending this email.");
+            DebugLog(@"You cancelled sending this email.");
             break;
         case MFMailComposeResultFailed:
-            NSLog(@"Mail failed:  An error occurred when trying to compose this email");
+            DebugLog(@"Mail failed:  An error occurred when trying to compose this email");
             break;
         default:
-            NSLog(@"An error occurred when trying to compose this email");
+            DebugLog(@"An error occurred when trying to compose this email");
             break;
     }
     
@@ -84,7 +84,7 @@
     }
     else
     {
-        NSLog(@"This device cannot send email");
+        DebugLog(@"This device cannot send email");
         UIAlertView *anAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"There isn't a mail account setup on the device." delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
         
         [anAlert addButtonWithTitle:@"Dismiss"];

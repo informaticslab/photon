@@ -44,7 +44,7 @@
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     pageControl.backgroundColor = [UIColor whiteColor];
     
-    NSLog(@"Documents folder: %@",[[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject]);
+    InfoLog(@"Documents folder: %@",[[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject]);
     
     //-----------PUSHWOOSH PART-----------
     // set custom delegate for push handling, in our case - view controller
@@ -212,6 +212,6 @@
 
 
 - (void) onPushAccepted:(PushNotificationManager *)pushManager withNotification:(NSDictionary *)pushNotification {
-    NSLog(@"Push notification received");
+    InfoLog(@"Push notification received");
 }
 @end
