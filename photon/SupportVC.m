@@ -18,9 +18,16 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    UINavigationBar.appearance.barTintColor = [UIColor colorWithRed:45.0/255.0 green:88.0/255.0 blue:167.0/255.0 alpha:1];
 
 
 }
+
+-(UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
+
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -70,11 +77,11 @@
     if ([MFMailComposeViewController canSendMail])
     {
         self.mail = [[MFMailComposeViewController alloc] init];
-        [self.mail.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName]];
+        [self.mail.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName]];
 
         
         self.mail.mailComposeDelegate = self;
-        [self.mail setSubject:@"App Support Request: MMWR Express for iOS"];
+        [self.mail setSubject:@"MMWR Express Support"];
         NSString *messageBody = [NSString stringWithFormat:@"\n\n\nApp name:  MMWR Express for iOS \nApp version:  %@  \nDevice model:  %@ \nSystem name:  %@ \nSystem version:  %@\n%@", [APP_MGR getAppVersion], [APP_MGR getDeviceModel], [APP_MGR getDeviceSystemName], [APP_MGR getDeviceSystemVersion], [APP_MGR.issuesMgr dbStatsString]];
         [self.mail setMessageBody:messageBody isHTML:NO];
         [self.mail setToRecipients:@[@"informaticslab@cdc.gov"]];
