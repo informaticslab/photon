@@ -17,7 +17,7 @@
     
     if (articleUrl == nil ) {
         self.shareText = @"I’m using CDC’s MMWR Express mobile app. Learn more about it here:";
-        self.shareUrl = @"http://www.cdc.gov/mmwr/mmwr_expresspage.html";
+        self.shareUrl = @"https://www.cdc.gov/mmwr/mmwr_expresspage.html";
         self.shareSubject = @"MMWR Express App";
     } else {
         
@@ -49,12 +49,12 @@
     {
         // Mail
         case 0:
-            [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]}];
+            [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
             [self showMailSheet];
         break;
         // Message
         case 1:
-            [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]}];
+            [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
             [self showMessageSheet];
         break;
         // Twitter
@@ -104,7 +104,6 @@
     }];
     
     [APP_MGR.usageTracker trackNavigationEvent:SC_PAGE_TITLE_SHARE_TWITTER inSection:SC_SECTION_SHARE];
-
 
     
 }
